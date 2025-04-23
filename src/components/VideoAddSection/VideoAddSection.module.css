@@ -226,10 +226,10 @@
   transition: all 0.3s ease;
 }
 
-playPauseButton:hover {
+/* playPauseButton:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 1);
-}
+} */
 
 .navButton:hover {
   transform: scale(1.1);
