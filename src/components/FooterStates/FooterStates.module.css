@@ -1,0 +1,122 @@
+/* FooterStates.module.css */
+
+.wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1270px;
+  margin: 8rem auto -5rem;
+  padding: 0 1.5rem;
+}
+
+.statsWrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  position: relative;
+  background: rgb(234 234 234);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.statCard {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: #150578;
+  box-shadow: 0 0 12px rgba(124, 124, 124, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h2 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin: 0 0 0.25rem;
+  color: var(--light-accent);
+  line-height: 1.2;
+}
+
+.statCard p {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin: 0;
+  color: var(--light-accent);
+  white-space: pre-line;
+}
+
+.highlight {
+  background: #150578;
+  color: white;
+}
+
+.highlight h2 {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  color: var(--dark-white);
+}
+
+.highlight p {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: var(--dark-white);
+}
+
+.overlapWithFooter {
+  height: 15rem;
+  margin-top: -10rem;
+  margin-bottom: -90px;
+  background-color: var(--dark-accent);
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .statsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .statsWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "highlight card1 card2"
+      "highlight card3 card4";
+  }
+
+  .highlight {
+    grid-area: highlight;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .statsWrapper > div:nth-child(2) {
+    grid-area: card1;
+  }
+
+  .statsWrapper > div:nth-child(3) {
+    grid-area: card2;
+  }
+
+  .statsWrapper > div:nth-child(4) {
+    grid-area: card3;
+  }
+
+  .statsWrapper > div:nth-child(5) {
+    grid-area: card4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0;
+  }
+
+  .statCard {
+    padding: 2rem;
+  }
+}

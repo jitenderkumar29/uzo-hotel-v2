@@ -1,0 +1,188 @@
+.destinationsContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  position: relative;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  /* text-align: center; */
+}
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 -0.5rem;
+}
+
+.destinationsSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.25rem;
+  padding: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.destinationsSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.destinationCard {
+  flex: 0 0 calc(280px - 1rem);
+  scroll-snap-align: start;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .destinationCard {
+    flex: 0 0 calc(85% - 1rem);
+  }
+}
+
+.destinationCard:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cardImageContainer {
+  position: relative;
+  height: 315px;
+  width: 100%;
+}
+
+.destinationImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.destinationCard:hover .destinationImage {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  ); */
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  color: white;
+  width: 100%;
+  z-index: 1;
+}
+
+.cityName {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.propertiesCount {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.destinationCard:hover .propertiesCount {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.navButton:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.left {
+  left: -1.25rem;
+}
+
+.right {
+  right: -1.25rem;
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    display: none;
+  }
+
+  .destinationsSlider {
+    padding: 0.5rem 1rem;
+  }
+
+  .sliderWrapper {
+    margin: 0;
+  }
+}
+
+/* Touch devices */
+@media (hover: none) {
+  .destinationCard:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .navButton:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transform: translateY(-50%);
+  }
+}

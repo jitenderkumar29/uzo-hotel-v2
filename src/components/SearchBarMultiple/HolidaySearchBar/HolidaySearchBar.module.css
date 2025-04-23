@@ -1,0 +1,392 @@
+.searchOptionsHoliday {
+  padding: 5px 15px 30px 15px;
+}
+
+/* Search Fields */
+.searchFieldsMultipleHoliday {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .searchFieldsMultipleHoliday {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .searchFieldsMultipleHoliday {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .searchButtonContainer {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.fieldGroup {
+  position: relative;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.fieldInput {
+  width: 100%;
+  padding: 0px 0px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  font-size: 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* min-height: 50px; */
+  min-height: 76px;
+}
+
+.inputField {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 500;
+  background: transparent;
+  padding: 0px 5px;
+  margin-bottom: 2px;
+  min-height: 50px;
+  border-radius: 8px;
+}
+
+.inputField::placeholder {
+  color: #ccc;
+}
+
+.fieldSubtext {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.swapButton {
+  position: absolute;
+  right: -20px;
+  top: 67%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swapButton i {
+  color: var(--dark-accent);
+  font-size: 14px;
+}
+
+/* Date Fields */
+.dateInput {
+  position: relative;
+}
+
+.dateDisplay {
+  pointer-events: none;
+}
+
+.dateValue {
+  display: flex;
+  align-items: baseline;
+}
+
+.dateDay {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.dateMonth {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dateYear {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 3px;
+}
+
+.dateWeekday {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Travellers & Class */
+.travellerGroup {
+  position: relative;
+}
+
+.travellerInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 78px;
+}
+
+.travellerValue {
+  font-weight: 500;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.travellerArrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 14px;
+}
+
+.travellerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modalHeader h3 {
+  font-size: 18px;
+  color: var(--light-primary);
+}
+
+.closeModal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.travellerControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.travellerControl label {
+  font-weight: 500;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.counter button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counter span {
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+}
+
+.applyButton {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--logo-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.applyButton:hover {
+  background-color: var(--logo-color-hover);
+}
+
+/* Search Button */
+.searchButtonMultiple {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--logo-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 80px;
+  margin-bottom: 0px;
+}
+
+.searchButtonMultiple:hover {
+  background-color: #c5260f;
+}
+
+/* Filter Styles */
+.sliderContainerFilter {
+  width: 100%;
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.labelFilter {
+  margin-bottom: 20px;
+}
+
+.rangeSliderFilter {
+  position: relative;
+  height: 0px;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.thumb::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #999;
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 3;
+}
+
+.thumb::-moz-range-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #999;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.sliderTrackFilter {
+  position: absolute;
+  height: 5px;
+  background: #d0eaff;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.sliderRangeFilter {
+  position: absolute;
+  height: 5px;
+  background: #28aaff;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.valueLabelsFilter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.classOptionsFilter {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.classOptionFilter {
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.classOptionFilter.selected {
+  border-color: var(--dark-accent);
+  background-color: rgb(254, 255, 255);
+}
+
+.rangeSliderFilterHotel {
+  position: relative;
+}
+
+.labelFilterHotel {
+  margin-bottom: 5px;
+}

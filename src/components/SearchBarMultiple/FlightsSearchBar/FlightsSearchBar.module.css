@@ -1,0 +1,561 @@
+/* Variables */
+/* :root {
+  --primary-color: #0f6aa3;
+  --secondary-color: #e22e12;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e2e2e2;
+  --white: #ffffff;
+  --modal-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --logo-color: #0f6aa3;
+  --logo-color-hover: #0d5a8a;
+  --dark-white: #fff;
+  --light-accent: #f0f8ff;
+} */
+
+/* Base Styles */
+.containerFlights {
+  margin: 0 auto;
+  margin-top: 0;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.searchContainerFlights {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Date Picker Styles */
+.datePickerInput {
+  width: 100%;
+  padding: 10px;
+  color: var(--text-color-black);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  z-index: 9999;
+}
+
+/* Search Options */
+.searchOptions {
+  padding: 1rem;
+}
+
+.tripType {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.tripOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.tripOption :global(input[type="radio"]) {
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.tripOption :global(input[type="radio"]:checked) {
+  border-color: var(--logo-color);
+  color: var(--text-color-gray);
+}
+
+.tripOption :global(input[type="radio"]:checked::before) {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--logo-color);
+  border-radius: 50%;
+}
+
+.tripOption label {
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.tripOption.oneWay label {
+  /* color: var(--text-color); */
+  font-size: 1.125rem;
+}
+
+/* Search Fields */
+.searchFieldsMultiple {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .searchFieldsMultiple {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .searchFieldsMultiple {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.fieldGroup {
+  position: relative;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 17px;
+  /* color: #666; */
+  margin-bottom: 0.3125rem;
+  font-weight: 500;
+}
+
+.fieldInput {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1.25rem;
+  background-color: var(--white);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 3.125rem;
+  /* padding: 0.5rem; */
+}
+
+.inputField {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: transparent;
+  padding: 0 0.3125rem;
+  margin-bottom: 0.125rem;
+  min-height: 2.5rem;
+  border-radius: 8px;
+}
+
+.inputField::placeholder {
+  color: #ccc;
+}
+
+.fieldSubtext {
+  font-size: 0.75rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 0.625rem;
+}
+
+.swapButton {
+  position: absolute;
+  right: -1.25rem;
+  top: 67%;
+  /* transform: translateY(-50%); */
+  background-color: var(--dark-white);
+  border: 1px solid var(--border-color);
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swapIcon {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+
+/* Date Fields */
+.dateInput {
+  position: relative;
+}
+
+.dateDisplay {
+  pointer-events: none;
+}
+
+.dateWeekday {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.returnNote {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.3125rem;
+}
+
+/* Travellers & Class */
+.travellerGroup {
+  position: relative;
+}
+
+.travellerInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 4.2rem;
+}
+
+.travellerValue {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 0.625rem;
+}
+
+.travellerArrow {
+  position: absolute;
+  right: 0.9375rem;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.travellerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--dark-white);
+  border-radius: 12px;
+  padding: 1.25rem;
+  width: 90%;
+  max-width: 25rem;
+  /* box-shadow: var(--modal-shadow); */
+  color: var(--text-color-gray);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.modalHeader h3 {
+  font-size: 1.75rem;
+  color: var(--text-color-gray);
+  font-weight: 600;
+}
+
+.closeModal {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.travellerControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.travellerControl label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.travellerControl p {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0.25rem 0 0 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+}
+
+.counter button {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* background: var(--white); */
+  color: var(--text-color-black);
+}
+
+.counter button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counter span {
+  font-weight: 500;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.classOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.classOption {
+  padding: 0.625rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.classOption.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(15, 106, 163, 0.1);
+}
+
+.applyButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--logo-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.applyButton:hover {
+  background-color: var(--logo-color-hover);
+}
+
+/* Search Button */
+.searchButtonContainer {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+/* .searchButtonMultiple {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--logo-color);
+  color: var(--dark-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 2.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 4.2rem;
+  margin-bottom: -3px;
+} */
+
+.searchButtonMultiple {
+  background-color: var(--logo-color);
+  width: 100%;
+  color: var(--dark-white);
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  /* height: 80px; */
+  margin-bottom: 0;
+  padding: 10px 14px;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.searchButtonMultiple:hover {
+  background-color: var(--logo-color-hover);
+}
+
+/* Special Options */
+.specialOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+}
+
+.optionChip {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.9375rem;
+  border-radius: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.optionChip.active {
+  background-color: var(--light-gray);
+  border-color: var(--primary-color);
+}
+
+.optionChip :global(input[type="radio"]) {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.optionChip :global(input[type="radio"]:checked) {
+  /* border-color: var(--primary-color); */
+  border-color: var(--logo-color);
+  color: var(--text-color-gray);
+}
+
+.optionChip :global(input[type="radio"]:checked::before) {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--logo-color);
+  border-radius: 50%;
+}
+
+.optionTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.optionSubtitle {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.checkboxOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9375rem;
+}
+
+.checkboxOption :global(input[type="checkbox"]) {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.checkboxOption label {
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Accessibility Improvements */
+/* :global(input:focus),
+:global(button:focus),
+:global(select:focus) {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+} */
+
+/* Touch-friendly elements */
+/* :global(button),
+.optionChip,
+.classOption {
+  min-height: 44px;
+  min-width: 44px;
+} */
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .inputField {
+    font-size: 1rem;
+  }
+
+  .fieldSubtext {
+    font-size: 0.6875rem;
+  }
+
+  .tripOption label {
+    font-size: 0.875rem;
+  }
+
+  .searchButtonMultiple {
+    font-size: 1rem;
+    height: 3.5rem;
+  }
+}
+
+/* Animation for better UX */
+.classOption,
+.optionChip,
+.applyButton,
+.searchButtonMultiple {
+  transition: all 0.2s ease;
+}
+
+.classOption:hover,
+.optionChip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* YourStyles css for date picker*/
+.datePickerPopper {
+  z-index: 9999 !important; /* Ensure it appears above other elements */
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: Style for the backdrop */
+.react-datepicker__portal {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}

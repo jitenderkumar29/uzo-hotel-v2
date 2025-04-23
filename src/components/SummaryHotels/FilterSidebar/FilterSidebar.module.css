@@ -1,0 +1,228 @@
+.sidebar {
+  width: 100%;
+  max-height: calc(100vh - 60px);
+  background-color: #f8f8f8;
+  border-right: 1px solid #e0e0e0;
+  padding: 1rem;
+  overflow-y: auto;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  /* padding: 10px; */
+  box-shadow: 9px 5px 9px 3px #00000014;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filterTitle {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s;
+}
+
+.clearBtn:hover,
+.clearBtn:focus {
+  color: #ff5252;
+  outline: none;
+}
+
+.filterSection {
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.25rem 0;
+}
+
+.sectionHeader:hover {
+  opacity: 0.9;
+}
+
+.arrowIcon {
+  margin-right: 0.5rem;
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  fill: #666;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.sectionHeader h4 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.filterList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+}
+
+.filterItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.checkboxInput {
+  margin-right: 0.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+  accent-color: #4a90e2;
+}
+
+.checkboxLabel {
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.checkboxLabel:hover {
+  color: #333;
+}
+
+.filterCount {
+  font-size: 20px;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+.searchBox {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 1.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.searchBox input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.searchBox svg {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  fill: #999;
+}
+
+.showAll {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.showAll:hover,
+.showAll:focus {
+  color: #2a7bde;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 300px;
+    height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
+    transform: none;
+    box-shadow: none;
+    padding: 10px;
+    box-shadow: 9px 5px 9px 3px #00000014;
+  }
+
+  .sidebar.active {
+    transform: none;
+  }
+}
+
+/* Accessibility focus styles */
+.checkboxInput:focus-visible,
+.clearBtn:focus-visible,
+.showAll:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Touch target sizing for mobile */
+@media (max-width: 767px) {
+  .filterItem {
+    min-height: 44px; /* Minimum touch target size */
+  }
+
+  .checkboxLabel {
+    padding: 0.5rem 0;
+  }
+
+  .clearBtn,
+  .showAll {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

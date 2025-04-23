@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filterToggle {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.filterToggle:hover {
+  background-color: #f0f0f0;
+}
+
+.filterToggle svg {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1rem;
+}
+
+.hotelCardHeading h1 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+}
+
+/* .custom-heading {
+  font-size: 2rem;
+  font-weight: bold;
+} */
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .filterToggle {
+    display: none;
+  }
+
+  .mainContent {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .mainContent {
+    padding: 0rem 1rem;
+  }
+}

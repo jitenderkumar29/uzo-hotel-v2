@@ -1,0 +1,197 @@
+/* Base styles */
+.galleryContainer {
+  margin: 0 auto;
+  font-family: "Air India Sans", Arial, sans-serif;
+}
+
+.topbar {
+  background-image: url(../../assets/icons/headerImage.png);
+  background-color: #831143;
+  color: var(--dark-white);
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+}
+
+.topbar h1 {
+  font-size: 2.75rem;
+  color: var(--dark-white);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.topbar p {
+  font-size: 1.25rem;
+  color: var(--dark-white);
+}
+
+/* Gallery section */
+.gallerySec {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  height: 100%;
+  gap: 0;
+  transition: all 0.1s ease;
+}
+
+.item {
+  flex: 1 1 20%;
+  max-width: 20%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.1s ease;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom in hovered image */
+.item:hover .image {
+  transform: scale(1.1);
+  z-index: 3;
+}
+
+/* Shrink other images when one is hovered */
+.gallery:hover .item:not(:hover) .image {
+  filter: brightness(0.7);
+}
+
+/* Flex resizing on hover */
+.gallery:hover .item {
+  flex: 1 1 15%;
+  max-width: 100%;
+}
+
+.gallery .item:hover {
+  flex: 2 1 40%;
+  max-width: 40%;
+  z-index: 2;
+}
+
+/* Title overlay - always visible */
+.titleOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 4; /* Higher than image */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transition: all 0.3s ease;
+}
+
+.titleOverlay h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Caption for subtitle - appears on hover */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 4;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.caption h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .item {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .item {
+    flex: 1 1 45%;
+    max-width: 45%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .image {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .caption {
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery:hover .item {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 250px;
+  }
+
+  .topbar h1 {
+    font-size: 1.8rem;
+  }
+
+  .titleOverlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .caption h4 {
+    font-size: 1rem;
+  }
+}

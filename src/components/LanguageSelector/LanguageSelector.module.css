@@ -1,0 +1,187 @@
+.languageSelector {
+  position: relative;
+  display: inline-block;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  margin: 1.25rem;
+  z-index: 100;
+}
+
+.languageButton {
+  background-color: var(--logo-color);
+  color: var(--light-background);
+  padding: 0.625rem 0.9375rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 7.5rem;
+  transition: all 0.3s ease;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.languageButton:hover {
+  background-color: var(--logo-color-hover);
+}
+
+.selectedLanguage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdownArrow {
+  font-size: 0.625rem;
+  margin-left: 0.625rem;
+  transition: transform 0.2s ease;
+}
+
+.languageSelector.active .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+/* Selector Container Styles */
+.selectorContainer {
+  position: absolute;
+  color: var(--dark-accent);
+  top: 100%;
+  right: 0;
+  margin-top: 0.625rem;
+  z-index: 999;
+}
+
+.selectorCard {
+  width: 100%;
+  min-width: 31.75rem;
+  max-width: 31.25rem;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Form Elements */
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.selectGroup label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.styledSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--logo-color);
+  border: revert;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  background-color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+  outline: 2px solid var(--primary-color);
+}
+
+.styledSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* Button Styles */
+.confirmButton {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--logo-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.625rem;
+}
+
+.confirmButton:hover {
+  background-color: var(--logo-color-hover);
+}
+
+.confirmButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Accessibility improvements */
+.languageButton:focus,
+.styledSelect:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .languageSelector {
+    margin: 0.625rem;
+  }
+
+  .selectorCard {
+    min-width: 15.625rem;
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .confirmButton {
+    padding: 0.75rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .selectorContainer {
+    right: -1.25rem;
+  }
+
+  .selectorCard {
+    width: calc(100vw - 2.5rem);
+    max-width: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .languageButton:hover {
+    background-color: var(--logo-color);
+  }
+
+  .confirmButton:hover {
+    background-color: var(--logo-color);
+  }
+}

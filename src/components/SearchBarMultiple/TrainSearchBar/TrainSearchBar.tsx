@@ -1,0 +1,313 @@
+'use client';
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import styles from "./TrainSearchBar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightLeft } from "@fortawesome/free-solid-svg-icons";
+
+interface TravelClass {
+  name: string;
+  id: string;
+}
+
+// interface SpecialOption {
+//   id: string;
+//   title: string;
+//   subtitle: string;
+// }
+
+const TrainSearchBar = () => {
+  // const [, setActiveTab] = useState<string>("Flights");
+  const [ticketType, setTicketType] = useState<string>("Book Train Tickets");
+  const [departure, setDeparture] = useState<string>("Faridabad");
+  const [destination, setDestination] = useState<string>("Karnataka");
+  const [departureDate, setDepartureDate] = useState<Date>(new Date());
+  // const [returnDate, setReturnDate] = useState<Date>(new Date());
+  // const [specialOption, setSpecialOption] = useState<string>("regular");
+  // const [nonStop, setNonStop] = useState<boolean>(true);
+  // const [, setTravellers] = useState<number>(1);
+  // const [, setTravellersChild] = useState<number>(1);
+  // const [, setTravellersInfant] = useState<number>(1);
+  const [travelClass, setTravelClass] = useState<TravelClass>({
+    name: "All Class",
+    id: "ALL",
+  });
+  const [showTravellerModal, setShowTravellerModal] = useState<boolean>(false);
+
+  // Popper Modifier for Date picker
+  const popperModifiers = [
+    {
+      name: 'offset',
+      options: { offset: [0, 10] },
+      fn: (state: { [key: string]: unknown }) => state,
+    },
+  ];
+
+  // const tabs = [
+  //   { icon: "plane", label: "Flights" },
+  //   { icon: "hotel", label: "Hotels" },
+  //   { icon: "bus", label: "Bus" },
+  //   { icon: "train", label: "Trains" },
+  //   { icon: "umbrella-beach", label: "Holidays" },
+  //   { icon: "taxi", label: "Cabs" },
+  // ];
+
+  // const specialOptions: SpecialOption[] = [
+  //   { id: "regular", title: "Regular", subtitle: "Regular Fares" },
+  //   { id: "student", title: "Student", subtitle: "Extra Baggage" },
+  //   { id: "armed-forces", title: "Armed Forces", subtitle: "Extra Discount" },
+  //   {
+  //     id: "senior-citizen",
+  //     title: "Senior Citizen",
+  //     subtitle: "Extra Discount",
+  //   },
+  //   {
+  //     id: "Doctors-and-Nurses",
+  //     title: "Doctor and Nurse",
+  //     subtitle: "Extra Discount",
+  //   },
+  // ];
+
+  const travelTrainClasses: TravelClass[] = [
+    { name: "All Class", id: "ALL" },
+    { name: "Sleeper Class", id: "SL" },
+    { name: "Third AC", id: "3A" },
+    { name: "Second AC", id: "2A" },
+    { name: "First AC", id: "1A" },
+    { name: "Second Seating", id: "2S" },
+    { name: "Vistadome AC", id: "EV" },
+    { name: "AC Chair Car", id: "CC" },
+    { name: "First Class", id: "FC" },
+    { name: "Third AC Economy", id: "3E" },
+  ];
+
+  const swapCities = (): void => {
+    const temp = departure;
+    setDeparture(destination);
+    setDestination(temp);
+  };
+
+  const formatDate = (date: Date): string => {
+    if (!date) return "";
+    return date.toLocaleDateString("en-US", { weekday: "long" });
+  };
+
+  // const getDateParts = (date: Date): { day: number; month: string; year: string } => {
+  //   if (!date) return { day: 0, month: "", year: "" };
+  //   return {
+  //     day: date.getDate(),
+  //     month: date.toLocaleString("default", { month: "short" }) + "'",
+  //     year: date.getFullYear().toString().slice(-2),
+  //   };
+  // };
+
+  // const handleTravellerChange = (type: "increase" | "decrease"): void => {
+  //   if (type === "increase") {
+  //     setTravellers((prev) => Math.min(prev + 1, 9));
+  //   } else {
+  //     setTravellers((prev) => Math.max(prev - 1, 1));
+  //   }
+  // };
+
+  // const handleTravellerChangeChild = (type: "increase" | "decrease"): void => {
+  //   if (type === "increase") {
+  //     setTravellersChild((prev) => Math.min(prev + 1, 9));
+  //   } else {
+  //     setTravellersChild((prev) => Math.max(prev - 1, 0));
+  //   }
+  // };
+
+  // const handleTravellerChangeInfant = (type: "increase" | "decrease"): void => {
+  //   if (type === "increase") {
+  //     setTravellersInfant((prev) => Math.min(prev + 1, 9));
+  //   } else {
+  //     setTravellersInfant((prev) => Math.max(prev - 1, 0));
+  //   }
+  // };
+
+  // const handleActiveTab = (activeTabSelected: string): void => {
+  //   setActiveTab(activeTabSelected);
+  // };
+
+  // const departureParts = getDateParts(departureDate);
+  // const returnParts = getDateParts(returnDate);
+
+  return (
+    <div className={styles.searchOptionsTrain}>
+      <div className={styles.tripType}>
+        {["Book Train Tickets", "Check PNR Status", "Live Train Status"].map(
+          (type) => (
+            <div
+              className={`${styles.tripOption} ${ticketType === type ? styles.activeTripOption : ""
+                }`}
+              key={type}
+            >
+              <input
+                type="radio"
+                id={type}
+                name="trip-type"
+                checked={ticketType === type}
+                onChange={() => setTicketType(type)}
+              />
+              <label htmlFor={type}>
+                {type
+                  .replace("-", " ")
+                  .replace(/\b\w/g, (char) => char.toUpperCase())}
+              </label>
+            </div>
+          )
+        )}
+      </div>
+
+      <div className={styles.searchFieldsMultipleTrain}>
+        <div className={styles.fieldGroup}>
+          <label className={styles.fieldLabel}>Departure From</label>
+          <div className={styles.fieldInput}>
+            <input
+              type="text"
+              value={departure}
+              onChange={(e) => setDeparture(e.target.value)}
+              placeholder="City or Airport"
+              className={styles.inputField}
+            />
+            <div className={styles.fieldSubtext}>
+              {departure === "Faridabad"
+                ? "Faridabad Railway Station"
+                : departure === "Karnataka"
+                  ? "Karnataka Railway Station"
+                  : ""}
+            </div>
+          </div>
+          <button className={styles.swapButton} onClick={swapCities}>
+            {/* <i className="fas fa-exchange-alt"></i> */}
+            <FontAwesomeIcon className={styles.swapIcon} icon={faRightLeft} />
+          </button>
+        </div>
+
+        <div className={styles.fieldGroup}>
+          <label className={styles.fieldLabel}>Going To</label>
+          <div className={styles.fieldInput}>
+            <input
+              type="text"
+              value={destination}
+              onChange={(e) => setDestination(e.target.value)}
+              placeholder="City or Airport"
+              className={styles.inputField}
+            />
+            <div className={styles.fieldSubtext}>
+              {destination === "Karnataka"
+                ? "Karnataka Railway Station"
+                : destination === "Faridabad"
+                  ? "Faridabad Railway Station"
+                  : ""}
+            </div>
+          </div>
+        </div>
+
+        {/* <div className={styles.fieldGroup}>
+          <label className={styles.fieldLabel}>Departure Date</label>
+          <div className={styles.fieldInput}>
+            <DatePicker
+              selected={departureDate}
+              onChange={(date: Date | null) => date && setDepartureDate(date)}
+              dateFormat="yyyy/MM/dd"
+              className={styles.datePickerInput}
+              selectsStart
+              startDate={departureDate}
+              minDate={new Date()}
+            />
+            <div className={styles.dateDisplay}>
+              <div className={styles.dateValue}>
+                <span className={styles.dateDay}>{departureParts.day}</span>
+                <span className={styles.dateMonth}>{departureParts.month}</span>
+                <span className={styles.dateYear}>{departureParts.year}</span>
+              </div>
+              <div className={styles.dateWeekday}>{formatDate(departureDate)}</div>
+            </div>
+          </div>
+        </div> */}
+        {/* Departure Date new*/}
+        <div className={styles.fieldGroup}>
+          <label className={styles.fieldLabel}>Departure Date</label>
+          <div className={`${styles.fieldInput} ${styles.dateInput}`}>
+            {/* <DatePicker
+              selected={departureDate}
+              onChange={(date: Date | null) => date && setDepartureDate(date)}
+              selectsStart
+              startDate={departureDate}
+              dateFormat="yyyy/MM/dd"
+              className={styles.inputField}
+            /> */}
+            <DatePicker
+              selected={departureDate}
+              onChange={(date: Date | null) => date && setDepartureDate(date)}
+              selectsStart
+              startDate={departureDate}
+              minDate={new Date()}
+              dateFormat="yyyy/MM/dd"
+              className={styles.inputField}
+              id="checkin"
+              popperClassName={styles.datePickerPopper}
+              popperPlacement="bottom-start"
+              popperModifiers={popperModifiers}
+              withPortal
+              shouldCloseOnSelect={true}
+            />
+
+            <div className={styles.dateDisplay}>
+              <div className={styles.dateWeekday}>{formatDate(departureDate)}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`${styles.fieldGroup} ${styles.travellerGroup}`}>
+          <label className={styles.fieldLabel}>Class</label>
+          <div
+            className={`${styles.fieldInput} ${styles.travellerInput}`}
+            onClick={() => setShowTravellerModal(true)}
+          >
+            <div className={styles.travellerValue}>{travelClass.id}</div>
+            <div className={styles.travellerValue}>{travelClass.name}</div>
+            <i className={`fas fa-chevron-down ${styles.travellerArrow}`}></i>
+          </div>
+
+          {showTravellerModal && (
+            <div className={styles.travellerModal}>
+              <div className={styles.modalContent}>
+                <div className={styles.classOptions}>
+                  {travelTrainClasses.map((cls) => (
+                    <div
+                      key={cls.id}
+                      className={`${styles.classOption} ${travelClass.name === cls.name ? styles.selected : ""
+                        }`}
+                      onClick={() => setTravelClass(cls)}
+                    >
+                      {cls.name}
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  className={styles.applyButton}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowTravellerModal(false);
+                  }}
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className={`${styles.fieldGroup} ${styles.searchButtonContainer}`}>
+          <button className={styles.searchButtonMultiple}>Search</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TrainSearchBar;
