@@ -3,10 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './VideoAddSection.module.css';
 import Image from "next/image";
 import rammandir from "@/assets/images/rammandir.jpg";
-import hero111 from "@/assets/images/hero111.jpg";
-import hero222 from "@/assets/images/hero222.jpg";
-import hero333 from "@/assets/images/hero333.jpg";
-import hero444 from "@/assets/images/hero444.jpg";
+import thumbnail1 from "@/assets/images/thumbnail1.jpg";
+import thumbnail2 from "@/assets/images/thumbnail2.jpg";
+import thumbnail3 from "@/assets/images/thumbnail3.jpg";
+import thumbnail4 from "@/assets/images/thumbnail4.jpg";
 
 const VideoAddSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -15,10 +15,10 @@ const VideoAddSection = () => {
   const [, setIsHovering] = useState(false);
 
   const videos = [
-    { title: 'Explore Seychelles', src: '/videos/video1.mp4', thumbnail: hero111 },
-    { title: 'Visit Goa', src: '/videos/video2.mp4', thumbnail: hero222 },
-    { title: 'Magical Maldives', src: '/videos/video3.mp4', thumbnail: hero333 },
-    { title: 'Discover Nainital', src: '/videos/video4.mp4', thumbnail: hero444 },
+    { title: 'Explore Seychelles', src: '/videos/video1.mp4', thumbnail: thumbnail1 },
+    { title: 'Visit Goa', src: '/videos/video2.mp4', thumbnail: thumbnail2 },
+    { title: 'Magical Maldives', src: '/videos/video3.mp4', thumbnail: thumbnail3 },
+    { title: 'Discover Nainital', src: '/videos/video4.mp4', thumbnail: thumbnail4 },
   ];
 
   const handleCardClick = (index: number) => {
