@@ -12,7 +12,7 @@ const VideoAddSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+  const [, setIsHovering] = useState(false);
 
   const videos = [
     { title: 'Explore Seychelles', src: '/videos/video1.mp4', thumbnail: hero111 },
