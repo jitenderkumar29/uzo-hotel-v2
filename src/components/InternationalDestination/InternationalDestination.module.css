@@ -1,13 +1,14 @@
 .destinationsContainer {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 2rem 1.25rem;
+  padding: 1rem 1.25rem;
   position: relative;
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 .sectionTitle {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: 28px;
+  /* font-size: clamp(1.5rem, 2.5vw, 2rem); */
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-weight: 600;

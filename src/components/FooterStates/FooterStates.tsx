@@ -38,7 +38,7 @@ const FooterStates: React.FC = () => {
     },
     {
       value: "300+",
-      description: "Branch offices"
+      description: "Branch Offices"
     }
   ];
 

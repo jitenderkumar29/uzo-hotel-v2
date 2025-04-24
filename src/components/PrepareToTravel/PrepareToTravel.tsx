@@ -35,37 +35,39 @@ const cards = [
 const PrepareToTravel: React.FC = () => {
   return (
     <section className={styles.prepareToTravel} aria-labelledby="prepare-title">
-      <div className={styles.prepareContent}>
-        <h2 id="prepare-title">
-          Prepare
-          <br />
-          To Travel
-          <br />
-          Your Destination
-        </h2>
-        <p>
-          Helpful hints for everything from packing to paperwork, so you are
-          fully prepared.
-        </p>
-      </div>
+      <div className={styles.prepareToTravelBody}>
+        <div className={styles.prepareContent}>
+          <h2 id="prepare-title">
+            Prepare
+            <br />
+            To Travel
+            <br />
+            Your Destination
+          </h2>
+          <p>
+            Helpful hints for everything from packing to paperwork, so you are
+            fully prepared.
+          </p>
+        </div>
 
-      <div className={styles.cardsContainer}>
-        {cards.map((card, index) => (
-          <div className={styles.travelCard} key={index}>
-            <a href={card.link} aria-label={card.title}>
-              <Image
-                src={card.img}
-                alt={card.alt}
-                className={styles.travelImage}
-                loading="lazy"
-                width={100}
-                height={350}
-              />
-            </a>
-            <h3>{card.title}</h3>
-            <p>{card.text}</p>
-          </div>
-        ))}
+        <div className={styles.cardsContainer}>
+          {cards.map((card, index) => (
+            <div className={styles.travelCard} key={index}>
+              <a href={card.link} aria-label={card.title}>
+                <Image
+                  src={card.img}
+                  alt={card.alt}
+                  className={styles.travelImage}
+                  loading="lazy"
+                  width={100}
+                  height={350}
+                />
+              </a>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

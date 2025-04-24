@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./AddOns2.module.css";
 import Image from "next/image";
-import addOns2Image from "@/assets/images/addOns3.jpg";
+import addOns2Image from "@/assets/images/addOns4.jpg";
 
 const AddOns2 = () => {
   return (

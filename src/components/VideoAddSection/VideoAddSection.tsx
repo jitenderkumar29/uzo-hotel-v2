@@ -7,6 +7,8 @@ import thumbnail1 from "@/assets/images/thumbnail1.jpg";
 import thumbnail2 from "@/assets/images/thumbnail2.jpg";
 import thumbnail3 from "@/assets/images/thumbnail3.jpg";
 import thumbnail4 from "@/assets/images/thumbnail4.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const VideoAddSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -66,16 +68,17 @@ const VideoAddSection = () => {
   }, [isPlaying, activeIndex]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div className={styles.leftContent}>
         <h1>
           Discover luxurious enjoyful journey<br />
           of inspiration with UZO hotels where<br />
           discovery meets your dreams
+          <br />
+          <button className={styles.exploreBtn}>Explore</button>
 
         </h1>
 
-        <button className={styles.exploreBtn}>Explore</button>
 
         <div className={styles.newsCard}>
           <div className={styles.newsText}>
@@ -146,6 +149,11 @@ const VideoAddSection = () => {
             </div>
 
             <div className={styles.videoTitle}>{video.title}</div>
+            {/* <div className={styles.videoTitle}>X</div> */}
+            <span onClick={(e) => {
+              e.stopPropagation();
+              goToNextVideo();
+            }}><FontAwesomeIcon className={styles.closeIcon} icon={faTimes} /></span>
 
             {index === activeIndex && (
               <div className={styles.videoControls}>
@@ -184,7 +192,7 @@ const VideoAddSection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div >
   );
 };
 

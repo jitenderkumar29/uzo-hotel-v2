@@ -12,6 +12,13 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.prepareToTravelBody {
+  background-color: var(--light-padding);
+  padding: 2rem;
+  display: flex;
+  border-radius: 12px;
+}
+
 .prepareContent h2 {
   font-size: 2rem;
   color: #460045;
@@ -94,6 +101,7 @@
     flex: 1 1 35%;
     padding-right: 2rem;
     padding-left: 2rem;
+    background-color: var(--dark-white);
   }
 
   .cardsContainer {
@@ -106,7 +114,7 @@
 
   .travelCard {
     flex: 1 1 calc(33.333% - 1rem);
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
     border-bottom: none;
     border-right: 1px solid #eee;
   }
