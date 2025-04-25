@@ -13,6 +13,7 @@ import PopularDestination from '@/components/PopularDestination/PopularDestinati
 import PrepareToTravel from '@/components/PrepareToTravel/PrepareToTravel'
 import SpritualDestination from '@/components/SpritualDestination/SpritualDestination'
 import VideoAddSection from '@/components/VideoAddSection/VideoAddSection';
+import VideoCard from '@/components/VideoCard/VideoCard';
 import React from 'react'
 
 const HomePage = () => {
@@ -29,7 +30,8 @@ const HomePage = () => {
       <SpritualDestination />
       <ImageLayouts />
       <AddOns />
-      <VideoAddSection />
+      <VideoCard />
+      {/* <VideoAddSection /> */}
       <FooterStates />
       <FooterUzo />
     </div>

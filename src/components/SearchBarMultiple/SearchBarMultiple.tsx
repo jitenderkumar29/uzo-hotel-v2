@@ -171,16 +171,18 @@ const SearchBarMultiple: React.FC<SearchBarMultipleProps> = ({ searchMode }) => 
             {/* Tabs */}
             <div className={styles.tabs}>
               {tabs.map((tab) => (
-                <div
-                  key={tab.label}
-                  className={`${styles.tab} ${activeTab === tab.label ? styles.active : ""}`}
-                  onClick={() => handleActiveTab(tab.label)}
-                >
-                  <i className={`fas fa-${tab.icon} ${styles.tabIcon}`}></i>
-                  <FontAwesomeIcon icon={tab.icon} className={`${styles.tabIcon}`} />
-                  {/* <FontAwesomeIcon icon={tab.icon} className={styles.tabIcon} /> */}
-                  <span>{tab.label}</span>
-                </div>
+                <>
+                  <div
+                    key={tab.label}
+                    className={`${styles.tab} ${activeTab === tab.label ? styles.active : ""}`}
+                    onClick={() => handleActiveTab(tab.label)}
+                  >
+                    {/* <i className={`fas fa-${tab.icon} ${styles.tabIcon}`}></i> */}
+                    <FontAwesomeIcon icon={tab.icon} className={`${styles.tabIcon}`} />
+                    {/* <FontAwesomeIcon icon={tab.icon} className={styles.tabIcon} /> */}
+                    <span>{tab.label}</span>
+                  </div>
+                </>
               ))}
             </div>
 

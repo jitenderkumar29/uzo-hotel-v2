@@ -109,12 +109,16 @@ const VideoAddSection = () => {
             onMouseEnter={() => index === activeIndex && setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             style={{
-              zIndex: index === activeIndex ? 10 : videos.length - index,
+              zIndex: index === activeIndex ? 10 : videos.length + index,
               transform: index === activeIndex
                 ? 'rotate(0deg) translateX(0) scale(1.05)'
                 : index < activeIndex
-                  ? 'rotate(-6deg) translateX(-20px)'
-                  : 'rotate(6deg) translateX(20px)'
+                  ? 'rotate(5deg) translateX(10px)'
+                  : 'rotate(10deg) translateX(20px)'
+              // ? 'rotate(0deg) translateX(0) scale(1.05)'
+              // : index < activeIndex
+              //   ? 'rotate(-6deg) translateX(-20px)'
+              //   : 'rotate(6deg) translateX(20px)'
             }}
           >
             <video
