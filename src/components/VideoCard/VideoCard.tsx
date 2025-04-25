@@ -199,7 +199,6 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
           />
         )}
         <div className={styles.videoTitle}>{video.title}</div>
-        {/* <div className={styles.closeButton}>X</div> */}
         <span onClick={() => navigateVideo('next')}><FontAwesomeIcon className={styles.closeButton} icon={faTimes} /></span>
       </div>
     );

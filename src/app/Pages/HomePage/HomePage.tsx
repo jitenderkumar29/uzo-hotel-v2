@@ -12,7 +12,6 @@ import InternationalDestination from '@/components/InternationalDestination/Inte
 import PopularDestination from '@/components/PopularDestination/PopularDestination'
 import PrepareToTravel from '@/components/PrepareToTravel/PrepareToTravel'
 import SpritualDestination from '@/components/SpritualDestination/SpritualDestination'
-import VideoAddSection from '@/components/VideoAddSection/VideoAddSection';
 import VideoCard from '@/components/VideoCard/VideoCard';
 import React from 'react'
 
@@ -31,7 +30,6 @@ const HomePage = () => {
       <ImageLayouts />
       <AddOns />
       <VideoCard />
-      {/* <VideoAddSection /> */}
       <FooterStates />
       <FooterUzo />
     </div>
