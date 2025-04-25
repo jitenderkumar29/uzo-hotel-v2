@@ -1,6 +1,7 @@
 .container {
   max-width: 1270px;
   margin: 0 auto;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 /* Date picker styles */
@@ -36,7 +37,7 @@
   border-radius: 12px;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
   padding: 20px;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   color: var(--light-background);
   font-size: 15px;
 }
@@ -78,13 +79,13 @@
 
 /* Destination field */
 .destination .searchInput {
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 /* Date fields */
 .dateFields {
   display: flex;
-  gap: 8px;
+  gap: 3px;
 }
 
 .dateField {
@@ -297,7 +298,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
-    gap: 8px;
+    gap: 3px;
   }
 
   .destination {

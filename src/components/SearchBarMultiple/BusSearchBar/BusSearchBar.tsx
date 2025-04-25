@@ -41,6 +41,16 @@ const BusSearchBar: React.FC = () => {
     },
   ];
 
+  const CustomInput = React.forwardRef(({ value, onClick }: any, ref) => {
+    const [day, monthYear] = value.split(/ (.+)/); // Split "25 Apr, 2025"
+
+    return (
+      <div onClick={onClick} ref={ref as any} style={{ cursor: "pointer" }}>
+        <span style={{ fontSize: "28px", fontWeight: "bold", padding: "0px 0px 0px 10px" }}>{day}</span>{" "}
+        <span style={{ fontSize: "20px", fontWeight: "bold" }}>{monthYear}</span>
+      </div >
+    );
+  });
   // const tabs: Tab[] = [
   //   { icon: "plane", label: "Flights" },
   //   { icon: "hotel", label: "Hotels" },
@@ -183,7 +193,7 @@ const BusSearchBar: React.FC = () => {
               selectsStart
               startDate={departureDate}
               minDate={new Date()}
-              dateFormat="yyyy/MM/dd"
+              dateFormat="dd MMM, yyyy"
               className={styles.inputField}
               id="checkin"
               popperClassName={styles.datePickerPopper}
@@ -191,6 +201,8 @@ const BusSearchBar: React.FC = () => {
               popperModifiers={popperModifiers}
               withPortal
               shouldCloseOnSelect={true}
+              customInput={<CustomInput />}
+
             />
 
             <div className={styles.dateDisplay}>

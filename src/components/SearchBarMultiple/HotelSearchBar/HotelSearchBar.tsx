@@ -59,6 +59,17 @@ const HotelSearchBar: React.FC = () => {
     });
   };
 
+  // const CustomInput = React.forwardRef(({ value, onClick }: any, ref) => {
+  //   const [day, monthYear] = value.split(/ (.+)/); // Split "25 Apr, 2025"
+
+  //   return (
+  //     <div onClick={onClick} ref={ref as any} style={{ cursor: "pointer" }}>
+  //       <span style={{ fontSize: "20px", fontWeight: "bold" }}>{day}</span>{" "}
+  //       <span style={{ fontSize: "16px", fontWeight: "bold" }}>{monthYear}</span>
+  //     </div >
+  //   );
+  // });
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSearch} className={styles.searchCard}>
@@ -101,7 +112,7 @@ const HotelSearchBar: React.FC = () => {
                 startDate={checkIn}
                 endDate={checkOut}
                 minDate={new Date()}
-                dateFormat="yyyy/MM/dd"
+                dateFormat="dd MMM, yyyy"
                 className={styles.searchInput}
                 id="checkin"
                 popperClassName={styles.datePickerPopper}
@@ -109,6 +120,7 @@ const HotelSearchBar: React.FC = () => {
                 popperModifiers={popperModifiers}
                 withPortal
                 shouldCloseOnSelect={true}
+              // customInput={<CustomInput />}
               />
             </div>
             <div className={styles.dateField}>
@@ -131,7 +143,7 @@ const HotelSearchBar: React.FC = () => {
                 startDate={checkIn}
                 endDate={checkOut}
                 minDate={checkIn}
-                dateFormat="yyyy/MM/dd"
+                dateFormat="dd MMM, yyyy"
                 className={styles.searchInput}
                 id="checcheckoutkin"
                 popperClassName={styles.datePickerPopper}
@@ -139,6 +151,8 @@ const HotelSearchBar: React.FC = () => {
                 popperModifiers={popperModifiers}
                 withPortal
                 shouldCloseOnSelect={true}
+              // customInput={<CustomInput />}
+
               />
             </div>
           </div>

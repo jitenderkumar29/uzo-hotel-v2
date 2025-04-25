@@ -170,6 +170,7 @@
 .searchHotels {
   /* color: var(--text-color); */
   font-weight: 600;
+  /* margin-bottom: -1rem; */
 }
 
 /* Touch targets */

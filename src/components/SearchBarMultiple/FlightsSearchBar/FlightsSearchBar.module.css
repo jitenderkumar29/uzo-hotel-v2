@@ -19,11 +19,12 @@
   margin-top: 0;
   /* max-width: 1300px; */
   width: 100%;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 .searchContainerFlights {
-  background-color: var(--white);
+  background-color: var(--light-accent);
+  /* background-color: var(--white); */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -93,10 +94,11 @@
   font-weight: 500;
   cursor: pointer;
   font-size: 1rem;
+  color: var(--dark-white);
 }
 
 .tripOption.oneWay label {
-  /* color: var(--text-color); */
+  color: var(--dark-white);
   font-size: 1.125rem;
 }
 
@@ -104,18 +106,42 @@
 .searchFieldsMultiple {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 3px;
+}
+
+.searchFieldsMultipleRoundTrip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.searchFieldsMultipleMultiCity {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
 }
 
 @media (min-width: 768px) {
   .searchFieldsMultiple {
     grid-template-columns: repeat(2, 1fr);
   }
+  .searchFieldsMultipleRoundTrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .searchFieldsMultipleMultiCity {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 992px) {
   .searchFieldsMultiple {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .searchFieldsMultipleRoundTrip {
     grid-template-columns: repeat(6, 1fr);
+  }
+  .searchFieldsMultipleMultiCity {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -129,6 +155,7 @@
   /* color: #666; */
   margin-bottom: 0.3125rem;
   font-weight: 500;
+  color: var(--dark-white);
 }
 
 .fieldInput {
@@ -136,13 +163,14 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 1.25rem;
-  background-color: var(--white);
+  background-color: var(--dark-white);
   cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 3.125rem;
+  min-height: 4.125rem;
+  padding: 0px 5px;
   /* padding: 0.5rem; */
 }
 
@@ -150,12 +178,13 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 1.25rem;
+  font-size: 28px;
   font-weight: 500;
   background: transparent;
   padding: 0 0.3125rem;
-  margin-bottom: 0.125rem;
+  /* margin-bottom: 0.125rem; */
   min-height: 2.5rem;
+  min-width: 230px;
   border-radius: 8px;
 }
 
@@ -164,23 +193,23 @@
 }
 
 .fieldSubtext {
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #666;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 0.625rem;
+  /* margin-left: 0.625rem; */
 }
 
 .swapButton {
   position: absolute;
-  right: -1.25rem;
-  top: 67%;
+  right: -14px;
+  top: 47%;
   /* transform: translateY(-50%); */
   background-color: var(--dark-white);
   border: 1px solid var(--border-color);
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -198,6 +227,7 @@
 /* Date Fields */
 .dateInput {
   position: relative;
+  padding: 0px 0px 0px 8px;
 }
 
 .dateDisplay {
@@ -205,7 +235,8 @@
 }
 
 .dateWeekday {
-  font-size: 0.875rem;
+  font-size: 16px;
+  /* font-size: 0.875rem; */
   color: #666;
 }
 
@@ -230,17 +261,16 @@
 
 .travellerValue {
   font-weight: 500;
-  font-size: 1rem;
-  margin-left: 0.625rem;
+  font-size: 28px;
+  /* margin-left: 0.625rem; */
 }
 
 .travellerArrow {
   position: absolute;
-  right: 0.9375rem;
-  top: 50%;
+  right: 10px; /* top: 50%; */
   /* transform: translateY(-50%); */
   color: #666;
-  font-size: 0.875rem;
+  font-size: 15px;
 }
 
 .travellerModal {
@@ -403,7 +433,7 @@
   border: none;
   border-radius: 8px;
   /* height: 80px; */
-  margin-bottom: 0;
+  margin-bottom: -5px;
   padding: 10px 14px;
   font-size: 2rem;
   font-weight: 600;
@@ -434,8 +464,9 @@
 }
 
 .optionChip.active {
-  background-color: var(--light-gray);
-  border-color: var(--primary-color);
+  /* background-color: var(--light-gray);
+  border-color: var(--primary-color); */
+  border-color: var(--dark-white);
 }
 
 .optionChip :global(input[type="radio"]) {
@@ -469,6 +500,7 @@
 .optionTitle {
   font-size: 0.875rem;
   font-weight: 500;
+  color: var(--dark-white);
 }
 
 .optionSubtitle {
@@ -480,19 +512,29 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.9375rem;
+  /* margin-top: 0.9375rem; */
 }
 
-.checkboxOption :global(input[type="checkbox"]) {
+.checkboxOption input[type="checkbox"] {
   width: 1.125rem;
   height: 1.125rem;
-  accent-color: var(--primary-color);
+  /* accent-color: var(--primary-color); */
+  background-color: var(--light-accent) !important;
   cursor: pointer;
 }
 
 .checkboxOption label {
   font-size: 0.875rem;
   cursor: pointer;
+  color: var(--dark-white);
+}
+.inputNonStop {
+  background-color: var(--light-accent) !important;
+}
+
+.uzoGroupLabel {
+  color: var(--text-color-gray) !important;
+  font-size: 15px !important;
 }
 
 /* Accessibility Improvements */
@@ -515,10 +557,12 @@
 @media (max-width: 768px) {
   .inputField {
     font-size: 1rem;
+    min-width: 230px;
   }
 
   .fieldSubtext {
-    font-size: 0.6875rem;
+    font-size: 16px;
+    /* margin-left: 0.625rem; */
   }
 
   .tripOption label {
