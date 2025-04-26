@@ -21,9 +21,9 @@ const CabSearchBar: React.FC = () => {
   const [departure, setDeparture] = useState<string>("Meerut");
   const [destination, setDestination] = useState<string>("Delhi");
   const [departureDate, setDepartureDate] = useState<Date>(new Date());
-  const [returnDate, setReturnDate] = useState<Date>(new Date());
+  // const [returnDate, setReturnDate] = useState<Date>(new Date());
   const [time, setTime] = useState<string>("");
-  const [returnTime, setReturnTime] = useState<string>("");
+  // const [returnTime, setReturnTime] = useState<string>("");
   const [showHoursModal, setShowHoursModal] = useState<boolean>(false);
   const [hoursClass, setHoursClass] = useState<HoursClass>({
     name: "2",
@@ -48,9 +48,9 @@ const CabSearchBar: React.FC = () => {
     setTime(e.target.value);
   };
 
-  const handleReturnTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setReturnTime(e.target.value);
-  };
+  // const handleReturnTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setReturnTime(e.target.value);
+  // };
 
   const cabTypes = [
     "Outstation One Way",
