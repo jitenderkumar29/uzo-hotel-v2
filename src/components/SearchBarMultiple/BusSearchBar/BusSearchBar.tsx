@@ -41,16 +41,48 @@ const BusSearchBar: React.FC = () => {
     },
   ];
 
-  const CustomInput = React.forwardRef(({ value, onClick }: any, ref) => {
-    const [day, monthYear] = value.split(/ (.+)/); // Split "25 Apr, 2025"
+  // const CustomInput = React.forwardRef(({ value, onClick }: any, ref) => {
+  //   const [day, monthYear] = value.split(/ (.+)/); // Split "25 Apr, 2025"
 
-    return (
-      <div onClick={onClick} ref={ref as any} style={{ cursor: "pointer" }}>
-        <span style={{ fontSize: "28px", fontWeight: "bold", padding: "0px 0px 0px 10px" }}>{day}</span>{" "}
-        <span style={{ fontSize: "20px", fontWeight: "bold" }}>{monthYear}</span>
-      </div >
-    );
-  });
+  //   return (
+  //     <div onClick={onClick} ref={ref as any} style={{ cursor: "pointer" }}>
+  //       <span style={{ fontSize: "28px", fontWeight: "bold", padding: "0px 0px 0px 10px" }}>{day}</span>{" "}
+  //       <span style={{ fontSize: "20px", fontWeight: "bold" }}>{monthYear}</span>
+  //     </div >
+  //   );
+  // });
+
+
+  interface CustomInputProps {
+    value?: string;
+    onClick?: () => void;
+  }
+
+  const CustomInput = React.forwardRef<HTMLDivElement, CustomInputProps>(
+    ({ value = '', onClick }, ref) => {
+      // Split the date string into day and month/year parts
+      const [day = '', monthYear = ''] = value.split(/ (.+)/);
+
+      return (
+        <div
+          onClick={onClick}
+          ref={ref}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: "4px"
+          }}
+        >
+          <span style={{ fontSize: "28px", fontWeight: "bold" }}>{day}</span>
+          <span style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "-5px" }}>{monthYear}</span>
+        </div>
+      );
+    }
+  );
+
+  CustomInput.displayName = 'CustomInput';
+
   // const tabs: Tab[] = [
   //   { icon: "plane", label: "Flights" },
   //   { icon: "hotel", label: "Hotels" },
