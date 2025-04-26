@@ -1,5 +1,10 @@
 .searchOptionsCab {
-  padding: 5px 15px 30px 15px;
+  padding: 5px 15px 15px 15px;
+}
+.searchOptionsCabBody {
+  padding: 0.5rem 1rem 1.5rem 1rem;
+  background-color: var(--light-accent);
+  border-radius: 12px;
 }
 
 /* Trip Type */
@@ -48,10 +53,11 @@
 .tripOption label {
   font-weight: 500;
   cursor: pointer;
+  color: var(--dark-white);
 }
 
 .tripOption.active label {
-  /* color: var(--text-color); */
+  color: var(--dark-white);
   font-size: 18px;
 }
 
@@ -59,11 +65,19 @@
 .searchFieldsMultipleCab {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 3px;
+}
+.searchFieldsMultipleCabHourly {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
 }
 
 @media (min-width: 768px) {
   .searchFieldsMultipleCab {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .searchFieldsMultipleCabHourly {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -71,6 +85,9 @@
 @media (min-width: 992px) {
   .searchFieldsMultipleCab {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .searchFieldsMultipleCabHourly {
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .searchButtonContainer {
@@ -83,10 +100,15 @@
   position: relative;
 }
 
+.travellerGroup {
+  position: relative;
+}
+
 .fieldLabel {
   display: block;
-  font-size: 15px;
-  color: #666;
+  font-size: 17px;
+  color: var(--dark-white);
+  /* color: #666; */
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -97,25 +119,128 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 20px;
-  background-color: var(--white);
+  background-color: var(--dark-white);
   cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 50px;
+  min-height: 40px;
+}
+
+.travellerInput {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  display: flex;
+}
+
+.travellerValue {
+  font-weight: 500;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.travellerArrow {
+  position: absolute;
+  right: 10px; /* top: 50%; */
+  /* transform: translateY(-50%); */
+  color: #666;
+  font-size: 15px;
+}
+
+.travellerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--background);
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 250px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.modalHeader h3 {
+  font-size: 1.75rem;
+  color: var(--text-color-gray);
+  font-weight: 600;
+}
+
+.closeModal {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.classOptions {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.classOption {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.classOption.selected {
+  border-color: var(--light-accent);
+  background-color: rgba(15, 106, 163, 0.1);
+}
+
+.applyButton {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--logo-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.applyButton:hover {
+  background-color: var(--logo-color-hover);
 }
 
 .inputField {
   width: 100%;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   outline: none;
   font-size: 25px;
   font-weight: 500;
-  background: transparent;
-  padding: 0px 5px;
+  /* background: transparent; */
+  background-color: var(--dark-white);
+  padding: 0px 10px;
   margin-bottom: 2px;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 8px;
 }
 
@@ -124,23 +249,25 @@
 }
 
 .fieldSubtext {
-  font-size: 12px;
+  font-size: 16px;
   color: #666;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 10px;
+  background-color: var(--dark-white);
+  border-radius: 8px;
 }
 
 .swapButton {
   position: absolute;
-  right: -20px;
-  top: 67%;
+  top: 63%;
+  right: -15px;
   transform: translateY(-50%);
-  background-color: var(--white);
+  background-color: var(--dark-white);
   border: 1px solid var(--border-color);
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -201,8 +328,9 @@
 }
 
 .dateWeekday {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
+  margin-left: 10px;
 }
 
 .returnNote {
@@ -215,7 +343,7 @@
 /* Search Button */
 .searchButtonMultiple {
   width: 100%;
-  padding: 14px;
+  padding: 10px;
   background-color: var(--logo-color);
   color: var(--dark-white);
   border: none;
@@ -224,7 +352,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
-  height: 80px;
+  min-height: 70px;
   margin-bottom: 0px;
 }
 

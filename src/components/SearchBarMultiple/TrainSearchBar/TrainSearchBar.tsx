@@ -133,79 +133,113 @@ const TrainSearchBar = () => {
   // const departureParts = getDateParts(departureDate);
   // const returnParts = getDateParts(returnDate);
 
+
+  interface CustomInputProps {
+    value?: string;
+    onClick?: () => void;
+  }
+
+  const CustomInput = React.forwardRef<HTMLDivElement, CustomInputProps>(
+    ({ value = '', onClick }, ref) => {
+      // Split the date string into day and month/year parts
+      const [day = '', monthYear = ''] = value.split(/ (.+)/);
+
+      return (
+        <div
+          onClick={onClick}
+          ref={ref}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: "4px",
+            marginLeft: "10px"
+          }}
+        >
+          <span style={{ fontSize: "28px", fontWeight: "bold" }}>{day}</span>
+          <span style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "-5px" }}>{monthYear}</span>
+        </div>
+      );
+    }
+  );
+
+  CustomInput.displayName = 'CustomInput';
+
+
   return (
     <div className={styles.searchOptionsTrain}>
-      <div className={styles.tripType}>
-        {["Book Train Tickets", "Check PNR Status", "Live Train Status"].map(
-          (type) => (
-            <div
-              className={`${styles.tripOption} ${ticketType === type ? styles.activeTripOption : ""
-                }`}
-              key={type}
-            >
+      <div className={styles.searchOptionsTrainBody}>
+        <div className={styles.tripType}>
+          {["Book Train Tickets", "Check PNR Status", "Live Train Status"].map(
+            (type) => (
+              <div
+                className={`${styles.tripOption} ${ticketType === type ? styles.activeTripOption : ""
+                  }`}
+                key={type}
+              >
+                <input
+                  type="radio"
+                  id={type}
+                  name="trip-type"
+                  checked={ticketType === type}
+                  onChange={() => setTicketType(type)}
+                />
+                <label htmlFor={type}>
+                  {type
+                    .replace("-", " ")
+                    .replace(/\b\w/g, (char) => char.toUpperCase())}
+                </label>
+              </div>
+            )
+          )}
+        </div>
+
+        <div className={styles.searchFieldsMultipleTrain}>
+          <div className={styles.fieldGroup}>
+            <label className={styles.fieldLabel}>Departure From</label>
+            <div className={styles.fieldInput}>
               <input
-                type="radio"
-                id={type}
-                name="trip-type"
-                checked={ticketType === type}
-                onChange={() => setTicketType(type)}
+                type="text"
+                value={departure}
+                onChange={(e) => setDeparture(e.target.value)}
+                placeholder="City or Airport"
+                className={styles.inputField}
               />
-              <label htmlFor={type}>
-                {type
-                  .replace("-", " ")
-                  .replace(/\b\w/g, (char) => char.toUpperCase())}
-              </label>
-            </div>
-          )
-        )}
-      </div>
-
-      <div className={styles.searchFieldsMultipleTrain}>
-        <div className={styles.fieldGroup}>
-          <label className={styles.fieldLabel}>Departure From</label>
-          <div className={styles.fieldInput}>
-            <input
-              type="text"
-              value={departure}
-              onChange={(e) => setDeparture(e.target.value)}
-              placeholder="City or Airport"
-              className={styles.inputField}
-            />
-            <div className={styles.fieldSubtext}>
-              {departure === "Faridabad"
-                ? "Faridabad Railway Station"
-                : departure === "Karnataka"
-                  ? "Karnataka Railway Station"
-                  : ""}
-            </div>
-          </div>
-          <button className={styles.swapButton} onClick={swapCities}>
-            {/* <i className="fas fa-exchange-alt"></i> */}
-            <FontAwesomeIcon className={styles.swapIcon} icon={faRightLeft} />
-          </button>
-        </div>
-
-        <div className={styles.fieldGroup}>
-          <label className={styles.fieldLabel}>Going To</label>
-          <div className={styles.fieldInput}>
-            <input
-              type="text"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              placeholder="City or Airport"
-              className={styles.inputField}
-            />
-            <div className={styles.fieldSubtext}>
-              {destination === "Karnataka"
-                ? "Karnataka Railway Station"
-                : destination === "Faridabad"
+              <div className={styles.fieldSubtext}>
+                {departure === "Faridabad"
                   ? "Faridabad Railway Station"
-                  : ""}
+                  : departure === "Karnataka"
+                    ? "Karnataka Railway Station"
+                    : ""}
+              </div>
+            </div>
+            <button className={styles.swapButton} onClick={swapCities}>
+              {/* <i className="fas fa-exchange-alt"></i> */}
+              <FontAwesomeIcon className={styles.swapIcon} icon={faRightLeft} />
+            </button>
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <label className={styles.fieldLabel}>Going To</label>
+            <div className={styles.fieldInput}>
+              <input
+                type="text"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                placeholder="City or Airport"
+                className={styles.inputField}
+              />
+              <div className={styles.fieldSubtext}>
+                {destination === "Karnataka"
+                  ? "Karnataka Railway Station"
+                  : destination === "Faridabad"
+                    ? "Faridabad Railway Station"
+                    : ""}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* <div className={styles.fieldGroup}>
+          {/* <div className={styles.fieldGroup}>
           <label className={styles.fieldLabel}>Departure Date</label>
           <div className={styles.fieldInput}>
             <DatePicker
@@ -227,11 +261,11 @@ const TrainSearchBar = () => {
             </div>
           </div>
         </div> */}
-        {/* Departure Date new*/}
-        <div className={styles.fieldGroup}>
-          <label className={styles.fieldLabel}>Departure Date</label>
-          <div className={`${styles.fieldInput} ${styles.dateInput}`}>
-            {/* <DatePicker
+          {/* Departure Date new*/}
+          <div className={styles.fieldGroup}>
+            <label className={styles.fieldLabel}>Departure Date</label>
+            <div className={`${styles.fieldInput} ${styles.dateInput}`}>
+              {/* <DatePicker
               selected={departureDate}
               onChange={(date: Date | null) => date && setDepartureDate(date)}
               selectsStart
@@ -239,71 +273,73 @@ const TrainSearchBar = () => {
               dateFormat="yyyy/MM/dd"
               className={styles.inputField}
             /> */}
-            <DatePicker
-              selected={departureDate}
-              onChange={(date: Date | null) => date && setDepartureDate(date)}
-              selectsStart
-              startDate={departureDate}
-              minDate={new Date()}
-              dateFormat="yyyy/MM/dd"
-              className={styles.inputField}
-              id="checkin"
-              popperClassName={styles.datePickerPopper}
-              popperPlacement="bottom-start"
-              popperModifiers={popperModifiers}
-              withPortal
-              shouldCloseOnSelect={true}
-            />
+              <DatePicker
+                selected={departureDate}
+                onChange={(date: Date | null) => date && setDepartureDate(date)}
+                selectsStart
+                startDate={departureDate}
+                minDate={new Date()}
+                dateFormat="dd MMM, yyyy"
+                className={styles.inputField}
+                id="checkin"
+                popperClassName={styles.datePickerPopper}
+                popperPlacement="bottom-start"
+                popperModifiers={popperModifiers}
+                withPortal
+                shouldCloseOnSelect={true}
+                customInput={<CustomInput />}
+              />
 
-            <div className={styles.dateDisplay}>
-              <div className={styles.dateWeekday}>{formatDate(departureDate)}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className={`${styles.fieldGroup} ${styles.travellerGroup}`}>
-          <label className={styles.fieldLabel}>Class</label>
-          <div
-            className={`${styles.fieldInput} ${styles.travellerInput}`}
-            onClick={() => setShowTravellerModal(true)}
-          >
-            <div className={styles.travellerValue}>{travelClass.id}</div>
-            <div className={styles.travellerValue}>{travelClass.name}</div>
-            <i className={`fas fa-chevron-down ${styles.travellerArrow}`}></i>
-          </div>
-
-          {showTravellerModal && (
-            <div className={styles.travellerModal}>
-              <div className={styles.modalContent}>
-                <div className={styles.classOptions}>
-                  {travelTrainClasses.map((cls) => (
-                    <div
-                      key={cls.id}
-                      className={`${styles.classOption} ${travelClass.name === cls.name ? styles.selected : ""
-                        }`}
-                      onClick={() => setTravelClass(cls)}
-                    >
-                      {cls.name}
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  className={styles.applyButton}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowTravellerModal(false);
-                  }}
-                >
-                  Apply
-                </button>
+              <div className={styles.dateDisplay}>
+                <div className={styles.dateWeekday}>{formatDate(departureDate)}</div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
 
-        <div className={`${styles.fieldGroup} ${styles.searchButtonContainer}`}>
-          <button className={styles.searchButtonMultiple}>Search</button>
+          <div className={`${styles.fieldGroup} ${styles.travellerGroup}`}>
+            <label className={styles.fieldLabel}>Class</label>
+            <div
+              className={`${styles.fieldInput} ${styles.travellerInput}`}
+              onClick={() => setShowTravellerModal(true)}
+            >
+              <div className={styles.travellerValue}>{travelClass.id}</div>
+              <div className={styles.travellerValue}>{travelClass.name}</div>
+              <i className={`fas fa-chevron-down ${styles.travellerArrow}`}></i>
+            </div>
+
+            {showTravellerModal && (
+              <div className={styles.travellerModal}>
+                <div className={styles.modalContent}>
+                  <div className={styles.classOptions}>
+                    {travelTrainClasses.map((cls) => (
+                      <div
+                        key={cls.id}
+                        className={`${styles.classOption} ${travelClass.name === cls.name ? styles.selected : ""
+                          }`}
+                        onClick={() => setTravelClass(cls)}
+                      >
+                        {cls.name}
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    className={styles.applyButton}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowTravellerModal(false);
+                    }}
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className={`${styles.fieldGroup} ${styles.searchButtonContainer}`}>
+            <button className={styles.searchButtonMultiple}>Search</button>
+          </div>
         </div>
       </div>
     </div>

@@ -118,10 +118,11 @@ const FlightsSearchBar: React.FC = () => {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            gap: "4px"
+            gap: "4px",
+            padding: "4px 0px 0px 0px"
           }}
         >
-          <span style={{ fontSize: "28px", fontWeight: "bold" }}>{day}</span>
+          <span style={{ fontSize: "25px", fontWeight: "bold" }}>{day}</span>
           <span style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "-5px" }}>{monthYear}</span>
         </div>
       );
@@ -498,7 +499,6 @@ const FlightsSearchBar: React.FC = () => {
 
               {tripType === "multi-city" && (
                 <div className={styles.searchFieldsMultipleMultiCity}>
-
                   <DepartureFrom />
                   <GoingTo />
                   <DepartureDate />

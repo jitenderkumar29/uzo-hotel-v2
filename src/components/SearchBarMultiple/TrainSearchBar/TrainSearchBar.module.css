@@ -1,5 +1,10 @@
 .searchOptionsTrain {
-  padding: 5px 15px 30px 15px;
+  padding: 5px 15px 15px 15px;
+}
+.searchOptionsTrainBody {
+  padding: 0.5rem 1rem 1.5rem 1rem;
+  background-color: var(--light-accent);
+  border-radius: 12px;
 }
 
 .tripType {
@@ -45,19 +50,21 @@
 }
 
 .tripOption label {
+  color: var(--dark-white);
   font-weight: 500;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .activeTripOption label {
-  color: var(--text-color-black);
+  color: var(--dark-white);
+  font-size: 18px;
 }
 
 .searchFieldsMultipleTrain {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 3px;
 }
 
 @media (min-width: 768px) {
@@ -83,8 +90,9 @@
 
 .fieldLabel {
   display: block;
-  font-size: 15px;
-  color: #666;
+  font-size: 17px;
+  color: var(--dark-white);
+  /* color: #666; */
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -111,9 +119,9 @@
   font-size: 25px;
   font-weight: 500;
   background: transparent;
-  padding: 0px 5px;
-  margin-bottom: 2px;
-  min-height: 50px;
+  padding: 0px 10px;
+  /* margin-bottom: 2px; */
+  min-height: 40px;
   border-radius: 8px;
 }
 
@@ -122,7 +130,7 @@
 }
 
 .fieldSubtext {
-  font-size: 12px;
+  font-size: 16px;
   color: #666;
   white-space: nowrap;
   overflow: hidden;
@@ -132,7 +140,7 @@
 
 .swapButton {
   position: absolute;
-  right: -20px;
+  right: -15px;
   top: 67%;
   transform: translateY(-50%);
   background-color: var(--background);
@@ -165,7 +173,7 @@
   position: absolute;
   top: 85%;
   transform: translateY(-50%);
-  left: 5px;
+  left: 10px;
 }
 
 .dateValue {
@@ -191,7 +199,7 @@
 }
 
 .dateWeekday {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
 }
 
@@ -203,7 +211,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 78px;
+  min-height: 70px;
 }
 
 .travellerValue {
@@ -291,7 +299,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
-  height: 80px;
+  height: 70px;
 }
 
 .searchButtonMultiple:hover {

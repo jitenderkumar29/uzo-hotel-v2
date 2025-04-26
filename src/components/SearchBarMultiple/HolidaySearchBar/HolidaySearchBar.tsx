@@ -164,6 +164,39 @@ const HolidaySearchBar = () => {
   // const departureParts = getDateParts(departureDate);
   // const returnParts = getDateParts(returnDate);
 
+
+  interface CustomInputProps {
+    value?: string;
+    onClick?: () => void;
+  }
+
+  const CustomInput = React.forwardRef<HTMLDivElement, CustomInputProps>(
+    ({ value = '', onClick }, ref) => {
+      // Split the date string into day and month/year parts
+      const [day = '', monthYear = ''] = value.split(/ (.+)/);
+
+      return (
+        <div
+          onClick={onClick}
+          ref={ref}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: "4px",
+            marginLeft: "10px"
+          }}
+        >
+          <span style={{ fontSize: "28px", fontWeight: "bold" }}>{day}</span>
+          <span style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "-5px" }}>{monthYear}</span>
+        </div >
+      );
+    }
+  );
+
+  CustomInput.displayName = 'CustomInput';
+
+
   return (
     <div className={styles.searchOptionsHoliday}>
       <div className={styles.searchFieldsMultipleHoliday}>
@@ -229,7 +262,7 @@ const HolidaySearchBar = () => {
               startDate={departureDate}
               // endDate={returnDate}
               minDate={new Date()}
-              dateFormat="yyyy/MM/dd"
+              dateFormat="dd MMM, yyyy"
               className={styles.datePickerInput}
               id="checkin"
               popperClassName={styles.datePickerPopper}
@@ -237,6 +270,7 @@ const HolidaySearchBar = () => {
               popperModifiers={popperModifiers}
               withPortal
               shouldCloseOnSelect={true}
+              customInput={<CustomInput />}
             />
             <div className={styles.dateDisplay}>
               <div className={styles.dateValue}></div>
@@ -387,9 +421,9 @@ const HolidaySearchBar = () => {
             onClick={() => setShowFilterModal(true)}
           >
             <div className={styles.travellerValue}>
-              <small>
-                ({minVal}N - {maxVal}N) Nights
-              </small>
+              {/* <small> */}
+              ({minVal}N - {maxVal}N) Nights
+              {/* </small> */}
             </div>
             <div className={styles.travellerValue}>
               <small>

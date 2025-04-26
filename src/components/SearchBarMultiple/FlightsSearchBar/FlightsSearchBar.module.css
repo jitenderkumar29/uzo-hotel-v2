@@ -178,7 +178,7 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 500;
   background: transparent;
   padding: 0 0.3125rem;
@@ -203,8 +203,8 @@
 
 .swapButton {
   position: absolute;
-  right: -14px;
-  top: 47%;
+  top: 50%;
+  right: -15px;
   /* transform: translateY(-50%); */
   background-color: var(--dark-white);
   border: 1px solid var(--border-color);
@@ -227,7 +227,7 @@
 /* Date Fields */
 .dateInput {
   position: relative;
-  padding: 0px 0px 0px 8px;
+  padding: 0px 0px 0px 10px;
 }
 
 .dateDisplay {
@@ -261,7 +261,7 @@
 
 .travellerValue {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 25px;
   /* margin-left: 0.625rem; */
 }
 

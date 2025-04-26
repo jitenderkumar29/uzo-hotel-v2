@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3px;
-  padding: 1rem;
+  padding: 1rem 1rem 1.5rem 1rem;
   border-radius: 12px;
   background-color: var(--light-accent);
 }
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 50px;
+  min-height: 67px;
 }
 
 .inputField {

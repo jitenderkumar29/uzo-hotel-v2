@@ -71,12 +71,13 @@ const BusSearchBar: React.FC = () => {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            gap: "4px"
+            gap: "4px",
+            marginLeft: "10px"
           }}
         >
           <span style={{ fontSize: "28px", fontWeight: "bold" }}>{day}</span>
           <span style={{ fontSize: "16px", fontWeight: "bold", marginBottom: "-5px" }}>{monthYear}</span>
-        </div>
+        </div >
       );
     }
   );
