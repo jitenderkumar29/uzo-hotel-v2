@@ -71,7 +71,7 @@
   padding: 12px 12px;
   /* border: 1px solid var(--border-color); */
   border: none;
-  font-size: 25px;
+  font-size: 23px;
   height: 70px;
   border-radius: 8px;
   background-color: var(--dark-white);
@@ -110,18 +110,19 @@
   display: flex;
   /* flex-wrap: wrap; */
   gap: 2px;
-  padding: 0 10px;
-  font-size: 16px;
+  /* padding: 0 10px; */
+  font-size: 17px;
   width: 100%;
-  color: var(--text-color-gray);
+  color: var(--text-color-black);
   /* added css for even listener */
   cursor: pointer;
   pointer-events: auto; /* Ensure it can receive clicks */
+  justify-content: space-around;
+  font-weight: 600;
   /* position: relative; */
   /* Helps with z-index if needed */
   /* z-index: 1; */
   /* Ensure it's above other elements */
-  justify-content: space-around;
 }
 
 .roomGuestItem {
