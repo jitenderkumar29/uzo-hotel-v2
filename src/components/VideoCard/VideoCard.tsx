@@ -262,7 +262,8 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
 
           <div className={styles.newsCard}>
             <div className={styles.newsText}>
-              <h3>UZO Hotels Launches Exclusive Travel Booking Service</h3>
+              <h3>UZO Hotels Launches Exclusive Travel Booking Services for
+              </h3>
               <p>Domestic and International</p>
               {/* <span className={styles.date}>01-May-25</span> */}
               <a href="#" className={styles.viewMore}>Book Now</a>
