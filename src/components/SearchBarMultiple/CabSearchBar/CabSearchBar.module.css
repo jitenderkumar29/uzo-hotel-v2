@@ -250,7 +250,8 @@
 
 .fieldSubtext {
   font-size: 16px;
-  color: #666;
+  color: var(--text-color-black);
+  /* color: #666; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -329,7 +330,8 @@
 
 .dateWeekday {
   font-size: 16px;
-  color: #666;
+  color: var(--text-color-black);
+  /* color: #666; */
   margin-left: 10px;
 }
 

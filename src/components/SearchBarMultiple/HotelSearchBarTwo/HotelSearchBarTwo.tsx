@@ -81,6 +81,10 @@ const HotelSearchBarTwo: React.FC = () => {
 
   CustomInput.displayName = 'CustomInput';
 
+  const formatDate = (date: Date): string => {
+    if (!date) return "";
+    return date.toLocaleDateString("en-US", { weekday: "long" });
+  };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -160,6 +164,11 @@ const HotelSearchBarTwo: React.FC = () => {
                 customInput={<CustomInput />}
               // customInput={<CustomInput />}
               />
+              {/* <div className={styles.dateDisplay}>
+                <div className={styles.dateWeekday}>
+                  {formatDate(checkIn)}
+                </div>
+              </div> */}
             </div>
             <div className={styles.dateField}>
               <label htmlFor="checkout">Check-out</label>

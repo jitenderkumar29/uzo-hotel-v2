@@ -75,12 +75,24 @@
   height: 70px;
   border-radius: 8px;
   background-color: var(--dark-white);
-  color: var(--text-color-gray);
+  color: var(--text-color-black);
+  font-weight: 500;
 }
 
 /* Destination field */
 .destination .searchInput {
   border-radius: 8px;
+}
+
+.dateDisplay {
+  pointer-events: none;
+}
+
+.dateWeekday {
+  font-size: 16px;
+  /* font-size: 0.875rem; */
+  color: var(--text-color-black);
+  /* color: #666; */
 }
 
 /* Date fields */

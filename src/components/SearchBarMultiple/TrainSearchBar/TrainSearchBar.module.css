@@ -66,9 +66,26 @@
   grid-template-columns: 1fr;
   gap: 3px;
 }
+.searchFieldsMultipleTrainPNR {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* This creates a 75%/25% split */
+  gap: 3px;
+}
+.searchFieldsMultipleTrainStatus {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
 
 @media (min-width: 768px) {
   .searchFieldsMultipleTrain {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .searchFieldsMultipleTrainPNR {
+    grid-template-columns: 3fr 1fr;
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+  .searchFieldsMultipleTrainStatus {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -76,6 +93,13 @@
 @media (min-width: 992px) {
   .searchFieldsMultipleTrain {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .searchFieldsMultipleTrainPNR {
+    grid-template-columns: 3fr 1fr; /* Maintain 75%/25% at large screens */
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+  .searchFieldsMultipleTrainStatus {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .searchButtonContainer {
@@ -112,17 +136,47 @@
   min-height: 70px;
 }
 
+.fieldInputPNR {
+  width: 100%;
+  padding: 0px 0px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 20px;
+  background-color: var(--background);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  min-height: 70px;
+}
+.fieldInputPNRStatus {
+  width: 100%;
+  padding: 0px 0px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 20px;
+  background-color: var(--background);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  min-height: 70px;
+}
+
 .inputField {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   background: transparent;
   padding: 0px 10px;
   /* margin-bottom: 2px; */
   min-height: 40px;
   border-radius: 8px;
+  color: var(--text-color-black);
 }
 
 .inputField::placeholder {
@@ -131,7 +185,8 @@
 
 .fieldSubtext {
   font-size: 16px;
-  color: #666;
+  color: var(--text-color-black);
+  /* color: #666; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -200,7 +255,8 @@
 
 .dateWeekday {
   font-size: 16px;
-  color: #666;
+  color: var(--text-color-black);
+  /* color: #666; */
 }
 
 .travellerGroup {
@@ -290,6 +346,7 @@
 
 .searchButtonMultiple {
   width: 100%;
+  min-width: 50%;
   padding: 14px;
   background-color: var(--logo-color);
   color: var(--dark-white);

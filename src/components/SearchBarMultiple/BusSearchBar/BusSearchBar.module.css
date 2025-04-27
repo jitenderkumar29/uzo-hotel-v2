@@ -58,7 +58,7 @@
 
 .fieldSubtext {
   font-size: 16px;
-  color: var(--light-secondary);
+  color: var(--tex-color-black);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -94,12 +94,13 @@
 
 .dateDisplay {
   pointer-events: none;
+  /* color: var(--tex-color-black); */
 }
 
 .dateWeekday {
   font-size: 16px;
   padding: 0px 0px 0px 10px;
-  color: var(--light-secondary);
+  color: var(--text-color-black);
 }
 
 .searchButtonContainer {

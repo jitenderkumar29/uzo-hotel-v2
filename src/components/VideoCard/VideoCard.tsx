@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './VideoCard.module.css';
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import rammandir from "@/assets/images/rammandir.jpg";
+import plane from "@/assets/images/plane.jpg";
 import thumbnail1 from "@/assets/images/thumbnail1.jpg";
 import thumbnail2 from "@/assets/images/thumbnail2.jpg";
 import thumbnail3 from "@/assets/images/thumbnail3.jpg";
@@ -262,17 +262,17 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
 
           <div className={styles.newsCard}>
             <div className={styles.newsText}>
-              <h3>Uzo Hotels launches Exclusive Offer For</h3>
+              <h3>UZO Hotels Launches Exclusive Travel Booking For</h3>
               <p>Domestic and International</p>
               {/* <span className={styles.date}>01-May-25</span> */}
               <a href="#" className={styles.viewMore}>Book Now</a>
             </div>
             <div className={styles.newsImg}>
               <Image
-                src={rammandir}
+                src={plane}
                 alt="Flight route"
-                width={100}
-                height={100}
+                width={125}
+                height={125}
                 className={styles.newsImage}
                 priority
               />
