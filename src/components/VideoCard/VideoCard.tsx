@@ -250,14 +250,14 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
       <div className={styles.containerBody} >
 
         <div className={styles.leftContent}>
-          {/* <h1>
+          <h1>
             Discover luxurious enjoyful journey<br />
             of inspiration with UZO hotels where<br />
             discovery meets your dreams
             <br />
             <button className={styles.exploreBtn}>Explore</button>
 
-          </h1> */}
+          </h1>
 
 
           {/* <div className={styles.newsCard}>
