@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./AddOns.module.css";
-import addOnsImage from "@/assets/images/heroGallaryCard2.jpg";
+import addOnsImage from "@/assets/images/addOns1.jpg";
+// import addOnsImage from "@/assets/images/heroGallaryCard2.jpg";
 
 interface AddOnItem {
   title: string;

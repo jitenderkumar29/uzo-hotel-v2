@@ -4,7 +4,8 @@ import styles from "./HeroGallery.module.css";
 import Image, { StaticImageData } from "next/image";
 import heroGallarySwim from "@/assets/images/heroGallarySwim.jpg";
 import heroShopping from "@/assets/images/heroShopping.jpg";
-import villabangla from "@/assets/images/villabangla.jpg";
+import villabangla from "@/assets/images/premiumResort.jpg";
+// import villabangla from "@/assets/images/villabangla.jpg";
 import heroGallaryCard from "@/assets/images/heroGallaryCard.jpg";
 import premiumhome from "@/assets/images/premiumhome.jpg";
 
@@ -70,7 +71,7 @@ const HeroGallery: React.FC = () => {
     {
       imageUrl: villabangla,
       altText: "Villa bungalows",
-      title: "Premium Villa & bungalows",
+      title: "Premium Villa & Bungalows",
       subtitle: "Enjoy Your Villa Stay & Red Fine Space In Luxury",
       link: "https://www.staralliance.com/en/frequent-flyers",
       linkText: "Learn More",
