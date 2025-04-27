@@ -8,7 +8,7 @@
   padding: 50px 50px;
   background: linear-gradient(to bottom right, #e6f2ff, #ffffff);
   font-family: "Segoe UI", sans-serif;
-  max-width: 1270px;
+  /* max-width: 1270px; */
   margin: 0 auto; /* This centers the container */
   width: 100%; /* Ensures it takes full width up to max-width */
   margin-top: 80px;
