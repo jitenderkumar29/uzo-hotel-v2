@@ -7,6 +7,7 @@ import { FC } from 'react';
 
 import Book from '@/app/Pages/Book/Book';
 import HomePage from '@/app/Pages/HomePage/HomePage';
+import HotelBooking from '@/app/Pages/HotelBooking/HotelBooking';
 
 interface Page {
   Link: string;
@@ -25,6 +26,7 @@ const AppRoutes: FC = () => {
   const pages: Page[] = [
     { Link: '/', View: HomePage },
     { Link: '/book', View: Book },
+    { Link: '/hotelBooking', View: HotelBooking },
     // { Link: '/searchBarMultiple', View: SearchBarMultiple },
   ];
 

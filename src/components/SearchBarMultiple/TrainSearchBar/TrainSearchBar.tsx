@@ -412,7 +412,7 @@ const TrainSearchBar = () => {
           value={liveTrainStatus}
           onChange={(e) => setLiveTrainStatus(e.target.value)}
           placeholder="Enter Train Number"
-          className={styles.inputField}
+          className={styles.inputFieldPNR}
         />
         {/* <div className={styles.fieldSubtext}>
           {departure === "Faridabad"
@@ -436,7 +436,7 @@ const TrainSearchBar = () => {
           value={yourStop}
           onChange={(e) => setYourStop(e.target.value)}
           placeholder="Select Station(optional)"
-          className={styles.inputField}
+          className={styles.inputFieldPNR}
         />
         {/* <div className={styles.fieldSubtext}>
           {departure === "Faridabad"

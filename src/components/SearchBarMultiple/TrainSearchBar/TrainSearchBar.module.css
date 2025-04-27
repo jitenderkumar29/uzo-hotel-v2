@@ -169,6 +169,19 @@
   width: 100%;
   border: none;
   outline: none;
+  font-size: 25px;
+  font-weight: 500;
+  background: transparent;
+  padding: 0px 10px;
+  /* margin-bottom: 2px; */
+  min-height: 40px;
+  border-radius: 8px;
+  color: var(--text-color-black);
+}
+.inputFieldPNR {
+  width: 100%;
+  border: none;
+  outline: none;
   font-size: 20px;
   font-weight: 500;
   background: transparent;
