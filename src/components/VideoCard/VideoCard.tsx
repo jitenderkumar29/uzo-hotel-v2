@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './VideoCard.module.css';
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import rammandir from "@/assets/images/rammandir.jpg";
+// import rammandir from "@/assets/images/rammandir.jpg";
 import thumbnail1 from "@/assets/images/thumbnail1.jpg";
 import thumbnail2 from "@/assets/images/thumbnail2.jpg";
 import thumbnail3 from "@/assets/images/thumbnail3.jpg";
