@@ -250,20 +250,20 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
       <div className={styles.containerBody} >
 
         <div className={styles.leftContent}>
-          <h1>
+          {/* <h1>
             Discover luxurious enjoyful journey<br />
             of inspiration with UZO hotels where<br />
             discovery meets your dreams
             <br />
             <button className={styles.exploreBtn}>Explore</button>
 
-          </h1>
+          </h1> */}
 
 
-          <div className={styles.newsCard}>
+          {/* <div className={styles.newsCard}>
             <div className={styles.newsText}>
-              <h3>Uzo Hotels launches Exclusive Direct Flights Between</h3>
-              <p>Indore and Bhubaneswar</p>
+              <h3>Uzo Hotels launches Exclusive Offer For</h3>
+              <p>Domestic and International</p>
               <span className={styles.date}>01-May-25</span>
               <a href="#" className={styles.viewMore}>View more</a>
             </div>
@@ -277,8 +277,9 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
                 priority
               />
             </div>
-          </div>
+          </div> */}
         </div>
+
         <div
           className={styles.container}
           onMouseMove={resetControlsTimer}
