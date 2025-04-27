@@ -81,10 +81,10 @@ const HotelSearchBarTwo: React.FC = () => {
 
   CustomInput.displayName = 'CustomInput';
 
-  const formatDate = (date: Date): string => {
-    if (!date) return "";
-    return date.toLocaleDateString("en-US", { weekday: "long" });
-  };
+  // const formatDate = (date: Date): string => {
+  //   if (!date) return "";
+  //   return date.toLocaleDateString("en-US", { weekday: "long" });
+  // };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
