@@ -138,13 +138,16 @@
   background-color: white;
   z-index: 1005;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center align the full width dropdown */
 }
 
 .containerBooklist {
   display: flex;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0;
+  justify-content: space-evenly;
 }
 
 .sidebarBooklist {
@@ -154,12 +157,24 @@
   color: var(--dark-accent);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   text-align: left;
+  margin-left: -50px;
 }
 
 .sideBarHeading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.heading {
+  color: var(--dark-accent);
+}
+
+.navListParent {
+  display: flex;
+  gap: 100px;
 }
 
 .navListBooklist {
@@ -187,18 +202,19 @@
 
 .offersBooklist {
   display: flex;
-  gap: 1.5rem;
-  padding: 2rem;
-  flex-wrap: wrap;
+  gap: 6rem;
+  padding: 1rem;
+  /* flex-wrap: wrap; */
 }
 
 .offerCardBooklist {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 7px;
 }
 
 .offerTextBooklist {

@@ -8,7 +8,6 @@ import BusSearchBar from "./BusSearchBar/BusSearchBar";
 import TrainSearchBar from "./TrainSearchBar/TrainSearchBar";
 import HolidaySearchBar from "./HolidaySearchBar/HolidaySearchBar";
 import CabSearchBar from "./CabSearchBar/CabSearchBar";
-import SummaryHotels from "../SummaryHotels/SummaryHotels";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus, faCalendar, faFilm, faHotel, faPlane, faShip, faTasks, faTaxi, faTrain, faUmbrellaBeach, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import HotelSearchBarTwo from "./HotelSearchBarTwo/HotelSearchBarTwo";
@@ -267,7 +266,7 @@ const SearchBarMultiple: React.FC<SearchBarMultipleProps> = ({ searchMode }) => 
         {
           activeTab === "Hotels" && (
             <div>
-              <SummaryHotels />
+              {/* <SummaryHotels /> */}
             </div>
           )
         }

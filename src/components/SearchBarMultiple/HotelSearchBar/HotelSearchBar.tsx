@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 interface Filter {
   id: string;
@@ -202,9 +203,12 @@ const HotelSearchBar: React.FC = () => {
 
           <div className={styles.divider}></div>
 
-          <button type="submit" className={styles.searchButton}>
+          {/* <button type="submit" className={styles.searchButton}>
             Search
-          </button>
+          </button> */}
+          <Link href="/hotelBooking" className={styles.searchButton}>
+            Search
+          </Link>
 
           {showRoomGuestSelector && (
             <div className={styles.travellerModal}>

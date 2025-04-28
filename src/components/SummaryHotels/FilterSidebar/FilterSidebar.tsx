@@ -23,7 +23,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   title,
   items,
   showAll = false,
-  searchable = false,
+  searchable = true,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -124,7 +124,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
       <FilterSection
         title="Popular filters"
         items={[
-          { id: "goStays", label: "goStays", count: 213 },
+          { id: "goStays", label: "GoStays", count: 213 },
           { id: "bookAt0", label: "Book @ ₹0", count: 98 },
           { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
           { id: "earlyBird", label: "Early Bird Deal", count: 617 },

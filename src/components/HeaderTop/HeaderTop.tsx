@@ -8,7 +8,7 @@ import headerTop1 from '@/assets/images/headerTop1.jpg';
 import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faCalendar, faHotel, faPlaneDeparture, faTasks, faTaxi, faTimes, faTrain, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faCalendar, faCreditCard, faFilm, faHotel, faPassport, faPlaneDeparture, faShip, faTasks, faTaxi, faTimes, faTrain, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const HeaderTop = () => {
@@ -91,7 +91,7 @@ const HeaderTop = () => {
               <div className={styles.containerBooklist}>
                 <aside className={styles.sidebarBooklist}>
                   <div className={styles.sideBarHeading}>
-                    <h3>Book</h3>
+                    <h3 className={styles.heading}>Book</h3>
                     <button
                       className={styles.closeModal}
                       onClick={() => setShowBooking(false)}
@@ -99,57 +99,86 @@ const HeaderTop = () => {
                       <FontAwesomeIcon icon={faTimes} />
                     </button>
                   </div>
-
-                  <ul className={styles.navListBooklist}>
-                    <li className={styles.navLinkBooklist}>
-                      <FontAwesomeIcon icon={faPlaneDeparture} />
-                      <Link href="/book?searchMode=Flights" onClick={() => setShowBooking(false)}>
-                        Flights
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faHotel} />
-                      <Link href="/book?searchMode=Hotels" onClick={() => setShowBooking(false)}>
-                        Hotels
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faBus} />
-                      <Link href="/book?searchMode=Bus" onClick={() => setShowBooking(false)}>
-                        Bus
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faTrain} />
-                      <Link href="/book?searchMode=Trains" onClick={() => setShowBooking(false)}>
-                        Trains
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faUmbrellaBeach} />
-                      <Link href="/book?searchMode=Holidays" onClick={() => setShowBooking(false)}>
-                        Holidays
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faTaxi} />
-                      <Link href="/book?searchMode=Cabs" onClick={() => setShowBooking(false)}>
-                        Cabs
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faTasks} />
-                      <Link href="/book?searchMode=Activities" onClick={() => setShowBooking(false)}>
-                        Activities
-                      </Link>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faCalendar} />
-                      <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
-                        Events
-                      </Link>
-                    </li>
-                  </ul>
+                  <div className={styles.navListParent}>
+                    <ul className={styles.navListBooklist}>
+                      <li className={styles.navLinkBooklist}>
+                        <FontAwesomeIcon icon={faPlaneDeparture} />
+                        <Link href="/book?searchMode=Flights" onClick={() => setShowBooking(false)}>
+                          Flights
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faHotel} />
+                        <Link href="/book?searchMode=Hotels" onClick={() => setShowBooking(false)}>
+                          Hotels
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faBus} />
+                        <Link href="/book?searchMode=Bus" onClick={() => setShowBooking(false)}>
+                          Bus
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faTrain} />
+                        <Link href="/book?searchMode=Trains" onClick={() => setShowBooking(false)}>
+                          Trains
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faUmbrellaBeach} />
+                        <Link href="/book?searchMode=Holidays" onClick={() => setShowBooking(false)}>
+                          Holidays
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faTaxi} />
+                        <Link href="/book?searchMode=Cabs" onClick={() => setShowBooking(false)}>
+                          Cabs
+                        </Link>
+                      </li>
+                    </ul>
+                    {/* </div>
+                  <div > */}
+                    <ul className={styles.navListBooklist}>
+                      <li>
+                        <FontAwesomeIcon icon={faTasks} />
+                        <Link href="/book?searchMode=Activities" onClick={() => setShowBooking(false)}>
+                          Activities
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faCalendar} />
+                        <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
+                          Events
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faShip} />
+                        <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
+                          Cruise
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faFilm} />
+                        <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
+                          Movies
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faCreditCard} />
+                        <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
+                          Visa
+                        </Link>
+                      </li>
+                      <li>
+                        <FontAwesomeIcon icon={faPassport} />
+                        <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
+                          Travel Insurance
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </aside>
 
                 <main className={styles.offersBooklist}>

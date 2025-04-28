@@ -43,7 +43,7 @@
 }
 
 .thumbnailList img {
-  width: 60px;
+  width: 67px;
   height: 60px;
   border-radius: 6px;
   object-fit: cover;
@@ -78,6 +78,10 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 4px;
+}
+
+.headingStarHotels {
+  display: flex;
 }
 
 .badgeRating {
@@ -208,6 +212,22 @@
   display: inline-block;
 }
 
+.buttonBookNow {
+  border-radius: 4px;
+  background-color: var(--logo-color);
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px;
+  color: var(--dark-white);
+  font-size: 20px;
+  font: 600;
+  margin-top: 10px;
+}
+
+.buttonBookNow:hover {
+  background-color: var(--logo-color-hover);
+}
+
 .buttonRoom {
   background-color: #fff2f2;
   color: var(--logo-color);
@@ -233,6 +253,7 @@
   .left {
     flex: 1;
     min-width: 250px;
+    max-width: 325px;
     padding: 16px;
   }
 

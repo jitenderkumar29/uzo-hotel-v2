@@ -255,16 +255,20 @@ const HotelCard: React.FC = () => {
               <div className={styles.hotelInfo}>
                 <div>
                   <div className={styles.badgeRating}>
-                    <span className={styles.badge}>
+                    {/* <span className={styles.badge}>
                       {hotel.rating}<span className={styles.star}>★</span> · {hotel.category}
-                    </span>
-                    <span className={styles.ratingTotal}>
+                    </span> */}
+                    {/* <span className={styles.ratingTotal}>
                       {hotel.totalRatings} Ratings{" "}
                       <span className={styles.rating}>{hotel.reviewScore}</span>
-                    </span>
+                    </span> */}
                   </div>
-
-                  <h2>{hotel.name}</h2>
+                  <div className={styles.headingStarHotels}>
+                    <h2>{hotel.name} {" "} {hotel.rating}<span className={styles.star}>★</span></h2>
+                    {/* <span >
+                      {hotel.rating}<span className={styles.star}>★</span>
+                    </span> */}
+                  </div>
                   <p className={styles.location}>{hotel.location}</p>
                   <div className={styles.tags}>
                     {hotel.tags.map((tag, i) => (
@@ -299,7 +303,12 @@ const HotelCard: React.FC = () => {
                   </button>
                 </div> */}
                 <div className={styles.priceBox}>
+
                   <div className="roomLeft">
+                    <span className={styles.ratingTotal}>
+                      {hotel.totalRatings} Ratings{" "}
+                      <span className={styles.rating}>{hotel.reviewScore}</span>
+                    </span>
                     <button type="button" className={styles.buttonRoom}>
                       Last {hotel.leftRoom} Room Left
                     </button>
@@ -315,6 +324,7 @@ const HotelCard: React.FC = () => {
                     <a className={styles.loginMsg} href="#">
                       Login now & save more
                     </a>
+                    {/* <button type="button" className={styles.buttonBookNow}>Book Now</button> */}
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@ import { FC } from 'react';
 
 import Book from '@/app/Pages/Book/Book';
 import HomePage from '@/app/Pages/HomePage/HomePage';
-import HotelBooking from '@/app/Pages/HotelBooking/HotelBooking';
+import HotelBooking from '@/pages/HotelBooking/HotelBooking';
 
 interface Page {
   Link: string;

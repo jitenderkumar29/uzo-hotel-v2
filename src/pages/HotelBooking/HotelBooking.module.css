@@ -1,0 +1,14 @@
+.hotelsearchBarHeader {
+  background-color: var(--dark-white);
+}
+
+/* body {
+  color: #000;
+  background: #ffffff !important;
+} */
+
+.hotelSummary {
+  width: 1270px;
+  margin: 0 auto;
+  /* background-color: var(--color-background); */
+}
