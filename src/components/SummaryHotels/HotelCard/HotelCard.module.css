@@ -1,3 +1,7 @@
+.hotelCardBody {
+  margin-top: 1rem;
+}
+
 .headingSection {
   display: flex;
   justify-content: space-between;
@@ -8,6 +12,13 @@
   font-size: 28px;
   font-weight: 700;
 }
+
+/* .searchContainer {
+  display: flex;
+  background-color: var(--dark-white);
+  color: var(--dark-black);
+  max-width: fit-content;
+} */
 
 .hotelCard {
   background-color: white;
@@ -39,7 +50,8 @@
   display: flex;
   margin-top: 10px;
   gap: 8px;
-  overflow-x: auto;
+  overflow: hidden;
+  /* overflow-x: auto; */
 }
 
 .thumbnailList img {
@@ -107,15 +119,21 @@
   color: #333;
   /* padding: 2px 6px; */
   /* border-radius: 4px; */
-  font-size: 14px;
-  margin-left: 80px;
+  font-size: 12px;
+  margin-left: 65px;
   font-weight: 600;
+  display: flex;
+  gap: 5px;
   /* border: 1px solid #333; */
 }
 
 .location {
   color: #0077cc;
   font-size: 0.85rem;
+}
+
+.locationIcon {
+  font-size: 15px;
 }
 
 .tags {
@@ -163,6 +181,21 @@
   font-size: 15px;
 }
 
+.uzoStay {
+  display: inline-flex; /* Makes the element fit its content */
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  background-color: #d9e8ff;
+  color: var(--dark-black);
+  justify-content: center;
+  padding: 0px 8px;
+}
+
+.iconPercent {
+  align-items: center;
+  justify-content: center;
+}
+
 .couple {
   color: #ff5a5f;
 }
@@ -183,14 +216,16 @@
   color: white;
   padding: 2px 8px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 15px;
   display: inline-block;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .oldPrice {
   text-decoration: line-through;
-  color: #777;
+  color: var(--logo-color-hover);
+  /* color: #777; */
   font-size: 0.9rem;
 }
 
@@ -237,6 +272,27 @@
   font-size: 16px;
   margin-bottom: 8px;
   align-self: flex-start;
+}
+.buttonBankOffer {
+  /* background-color: #fff2f2; */
+  color: var(--dark-black);
+  /* border: 1px solid var(--text-color-gray); */
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  font-weight: 600;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.buttonBankOffer:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bankOfferApply {
+  font-size: 11px;
+  border-top: 1px solid gray;
 }
 
 @media (min-width: 768px) {
@@ -354,4 +410,53 @@
 .active {
   color: #0071f3;
   font-weight: bold;
+}
+
+/* Over view more on image */
+.thumbnailList {
+  display: flex;
+  position: relative;
+}
+
+.thumbnailList img:nth-child(4) {
+  position: relative;
+}
+
+.viewAll {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(25% - 4px); /* assuming 4 items with some gap */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Search Box CSS */
+
+.searchBoxSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  width: 250px;
+}
+
+.searchIconSearch {
+  color: #999;
+  margin-right: 0.5rem;
+}
+
+.searchInputSearch {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.95rem;
 }

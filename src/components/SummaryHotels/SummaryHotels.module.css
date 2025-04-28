@@ -86,6 +86,9 @@
 /* Large desktop screens */
 @media (min-width: 1200px) {
   .mainContent {
-    padding: 0rem 1rem;
+    padding: 0.25rem 1rem;
   }
 }
+
+/* search css */
+/* components/PropertiesSearch.module.css */

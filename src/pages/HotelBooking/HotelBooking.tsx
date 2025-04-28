@@ -1,15 +1,16 @@
 "use client"
-import HotelSearchBar from '@/components/SearchBarMultiple/HotelSearchBar/HotelSearchBar'
 import SummaryHotels from '@/components/SummaryHotels/SummaryHotels'
 import React from 'react'
 import styles from "./HotelBooking.module.css"
+import Header from '@/components/Header/Header'
+import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
 
 const HotelBooking = () => {
   return (
     <div>
-      {/* <HeaderTop /> */}
+      <Header />
       <div className={styles.hotelsearchBarHeader}>
-        <HotelSearchBar />
+        <HotelSearchBarTop />
       </div>
       <div className={styles.hotelSummary}>
         <SummaryHotels />

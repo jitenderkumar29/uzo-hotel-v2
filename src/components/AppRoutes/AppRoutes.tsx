@@ -5,9 +5,10 @@
 import { usePathname } from 'next/navigation'; // Hook to get the current pathname
 import { FC } from 'react';
 
-import Book from '@/app/Pages/Book/Book';
-import HomePage from '@/app/Pages/HomePage/HomePage';
+
 import HotelBooking from '@/pages/HotelBooking/HotelBooking';
+import HomePage from '@/pages/HomePage/HomePage';
+import Book from '@/pages/Book/Book';
 
 interface Page {
   Link: string;

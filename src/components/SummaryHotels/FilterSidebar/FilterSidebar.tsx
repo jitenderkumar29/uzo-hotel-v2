@@ -12,6 +12,7 @@ interface FilterSectionProps {
   items: FilterItem[];
   showAll?: boolean;
   searchable?: boolean;
+  maxHeight?: string; // Add maxHeight prop to control scrollable area
 }
 
 interface FilterSidebarProps {
@@ -23,7 +24,8 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   title,
   items,
   showAll = false,
-  searchable = true,
+  searchable = false,
+  maxHeight = "200px", // Default max height
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -73,25 +75,30 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             </div>
           )}
 
-          <ul className={styles.filterList}>
-            {filteredItems.map((item) => (
-              <li key={item.id} className={styles.filterItem}>
-                <div className={styles.checkboxContainer}>
-                  <input
-                    type="checkbox"
-                    id={item.id}
-                    className={styles.checkboxInput}
-                  />
-                  <label htmlFor={item.id} className={styles.checkboxLabel}>
-                    {item.label}
-                  </label>
-                </div>
-                {item.count !== undefined && (
-                  <span className={styles.filterCount}>({item.count})</span>
-                )}
-              </li>
-            ))}
-          </ul>
+          <div
+            className={styles.scrollableContent}
+            style={{ maxHeight: maxHeight }}
+          >
+            <ul className={styles.filterList}>
+              {filteredItems.map((item) => (
+                <li key={item.id} className={styles.filterItem}>
+                  <div className={styles.checkboxContainer}>
+                    <input
+                      type="checkbox"
+                      id={item.id}
+                      className={styles.checkboxInput}
+                    />
+                    <label htmlFor={item.id} className={styles.checkboxLabel}>
+                      {item.label}
+                    </label>
+                  </div>
+                  {item.count !== undefined && (
+                    <span className={styles.filterCount}>({item.count})</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {showAll && (
             <button className={styles.showAll} aria-label="Show all options">
@@ -124,8 +131,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
       <FilterSection
         title="Popular filters"
         items={[
-          { id: "goStays", label: "GoStays", count: 213 },
-          { id: "bookAt0", label: "Book @ ₹0", count: 98 },
+          { id: "uzoStays", label: "UzoStays", count: 213 },
           { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
           { id: "earlyBird", label: "Early Bird Deal", count: 617 },
           { id: "coupleFriendly", label: "Couple Friendly", count: 1594 },
@@ -133,16 +139,21 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
           { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
         ]}
+        maxHeight="200px"
       />
 
       <FilterSection
         title="Price"
         items={[
-          { id: "price1", label: "₹0 to ₹1500", count: 588 },
-          { id: "price2", label: "₹1500 to ₹3000", count: 730 },
-          { id: "price3", label: "₹3000 to ₹6000", count: 341 },
+          { id: "price1", label: "₹ 0 to ₹ 1500", count: 588 },
+          { id: "price2", label: "₹ 1500 to ₹ 3000", count: 730 },
+          { id: "price3", label: "₹ 3000 to ₹ 6000", count: 341 },
+          { id: "price4", label: "₹ 6000 to ₹ 9000", count: 552 },
+          { id: "price5", label: "₹ 9000 to ₹ 12000", count: 225 },
+          { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
         ]}
-        showAll={true}
+        showAll={false}
+        maxHeight="200px"
       />
 
       <FilterSection
@@ -151,7 +162,12 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "location1", label: "Karol bagh" },
           { id: "location2", label: "Lajpat Nagar" },
           { id: "location3", label: "Mehrauli" },
+          { id: "location4", label: "Bangluru" },
+          { id: "location5", label: "Gubbacci" },
+          { id: "location6", label: "Akila Mehendi Art" },
+          { id: "location7", label: "Popins Holidays" },
         ]}
+        maxHeight="200px"
       />
 
       <FilterSection
@@ -160,9 +176,35 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "amenity1", label: "Airport Transfers", count: 1030 },
           { id: "amenity2", label: "Balcony/Terrace", count: 650 },
           { id: "amenity3", label: "Bar", count: 149 },
+          { id: "amenity4", label: "Free Cancellation", count: 249 },
+          { id: "amenity5", label: "24 Hour Front Desk", count: 349 },
+          { id: "amenity6", label: "Ac", count: 449 },
+          { id: "amenity7", label: "Wifi", count: 549 },
+          { id: "amenity8", label: "Breakfast", count: 649 },
         ]}
-        showAll={true}
-        searchable={true}
+        showAll={false}
+        searchable={false}
+        maxHeight="200px"
+      />
+
+      <FilterSection
+        title="Property Type"
+        items={[
+          { id: "type1", label: "Hotel", count: 1030 },
+          { id: "type2", label: "Villas", count: 650 },
+          { id: "type3", label: "resort", count: 149 },
+          { id: "type4", label: "resort Property", count: 249 },
+          { id: "type5", label: "Inn", count: 349 },
+          { id: "type6", label: "Spa & Resort property", count: 449 },
+          { id: "type7", label: "Lodge", count: 549 },
+          { id: "type8", label: "Guest House", count: 649 },
+          { id: "type9", label: "Apartment", count: 749 },
+          { id: "type10", label: "Homes", count: 849 },
+          { id: "type11", label: "Palace", count: 949 },
+        ]}
+        showAll={false}
+        searchable={false}
+        maxHeight="200px"
       />
     </aside>
   );

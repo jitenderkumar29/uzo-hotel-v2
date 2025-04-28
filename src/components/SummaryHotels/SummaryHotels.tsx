@@ -11,12 +11,15 @@ const SummaryHotels: React.FC = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+
+
+
   return (
     <div className={styles.container}>
       {/* Mobile header */}
-      <header className={styles.header} aria-label="Page header">
+      {/* <header className={styles.header} aria-label="Page header">
         <h1>Hotels in Delhi</h1>
-      </header>
+      </header> */}
 
       {/* Mobile filter toggle - only visible on mobile */}
       <button
@@ -39,6 +42,7 @@ const SummaryHotels: React.FC = () => {
         <span>Filters</span>
       </button>
 
+      {/* <PropertiesSearch /> */}
       <FilterSidebar isOpen={sidebarOpen} onClose={toggleSidebar} />
 
       <main className={styles.mainContent}>

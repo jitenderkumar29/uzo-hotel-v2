@@ -15,6 +15,7 @@
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   /* padding: 10px; */
   box-shadow: 9px 5px 9px 3px #00000014;
+  background-color: var(--dark-white);
 }
 
 .sidebar.active {
@@ -193,6 +194,7 @@
     box-shadow: none;
     padding: 10px;
     box-shadow: 9px 5px 9px 3px #00000014;
+    overflow: scroll;
   }
 
   .sidebar.active {
@@ -226,4 +228,30 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+/* Scrollable filter */
+.scrollableContent {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.scrollableContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollableContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollableContent::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.filterList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

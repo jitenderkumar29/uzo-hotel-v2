@@ -1,13 +1,12 @@
 'use client';
-import React, { useState } from "react";
+import React from "react";
 import styles from "./HotelCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { faCheck, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const HotelCard: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
 
   interface HotelData {
     id: number;
@@ -31,7 +30,7 @@ const HotelCard: React.FC = () => {
   const hotelData: HotelData[] = [
     {
       id: 1,
-      name: "Pride Plaza Hotel Aerocity New Delhi",
+      name: "Pride Plaza Hotel Aerocity",
       rating: "5",
       category: "Hotel",
       location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
@@ -60,7 +59,7 @@ const HotelCard: React.FC = () => {
     },
     {
       id: 2,
-      name: "Hotel The Ventus Near Delhi Airport",
+      name: "Hotel The Ventus Near Airport",
       rating: "4",
       category: "Hotel",
       location: "Mahipalpur | 4.4 km drive to Indira Gandhi International Airport",
@@ -176,18 +175,22 @@ const HotelCard: React.FC = () => {
     },
   ];
 
-  const options = [
-    { label: "Popularity", sub: "" },
-    { label: "Price", sub: "Low to High" },
-    { label: "Price", sub: "High to Low" },
-    { label: "User Rating", sub: "Highest First" },
-  ];
+  // const options = [
+  //   { label: "Popularity", sub: "" },
+  //   { label: "Price", sub: "Low to High" },
+  //   { label: "Price", sub: "High to Low" },
+  //   { label: "User Rating", sub: "Highest First" },
+  // ];
 
 
   return (
     <>
-      <div className={styles.headingSection}>
+      {/* <div className={styles.headingSection}>
         <h1 className={styles.hotelCardHeading}>Properties in Delhi </h1>
+        <div className={styles.searchBoxSearch}>
+          <FaSearch className={styles.searchIconSearch} />
+          <input type="text" placeholder="Enter hotel name or location" className={styles.searchInputSearch} />
+        </div>
         <div className={styles.dropdown}>
           <button
             className={styles.dropdownToggle}
@@ -225,113 +228,135 @@ const HotelCard: React.FC = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
+      <div className={styles.hotelCardBody}>
+        {hotelData.map((hotel) => (
+          <div key={hotel.id} className={styles.hotelCard}>
+            <div className={styles.cardContent}>
+              <div className={styles.left}>
+                <img
+                  className={styles.mainImg}
+                  src={hotel.mainImg}
+                  alt={`Main view of ${hotel.name}`}
+                />
+                <div className={styles.thumbnailList} role="list">
+                  {hotel.thumbnails.map((thumb, i) => (
 
-      {hotelData.map((hotel) => (
-        <div key={hotel.id} className={styles.hotelCard}>
-          <div className={styles.cardContent}>
-            <div className={styles.left}>
-              <img
-                className={styles.mainImg}
-                src={hotel.mainImg}
-                alt={`Main view of ${hotel.name}`}
-              />
-              <div className={styles.thumbnailList} role="list">
-                {hotel.thumbnails.map((thumb, i) => (
-                  <img
-                    key={i}
-                    src={thumb}
-                    alt={`Thumbnail ${i + 1} of ${hotel.name}`}
-                    role="listitem"
-                  />
-                ))}
-                <div className={styles.viewAll} tabIndex={0}>
-                  VIEW ALL
+                    <img
+                      key={i}
+                      src={thumb}
+                      alt={`Thumbnail ${i + 1} of ${hotel.name}`}
+                      role="listitem"
+                    />
+                  ))}
+                  <div className={styles.viewAll} tabIndex={0}>
+                    VIEW ALL
+                  </div>
+
                 </div>
               </div>
-            </div>
 
-            <div className={styles.right}>
-              <div className={styles.hotelInfo}>
-                <div>
-                  <div className={styles.badgeRating}>
-                    {/* <span className={styles.badge}>
+              <div className={styles.right}>
+                <div className={styles.hotelInfo}>
+                  <div>
+                    <div className={styles.badgeRating}>
+                      {/* <span className={styles.badge}>
                       {hotel.rating}<span className={styles.star}>★</span> · {hotel.category}
                     </span> */}
-                    {/* <span className={styles.ratingTotal}>
+                      {/* <span className={styles.ratingTotal}>
                       {hotel.totalRatings} Ratings{" "}
                       <span className={styles.rating}>{hotel.reviewScore}</span>
                     </span> */}
-                  </div>
-                  <div className={styles.headingStarHotels}>
-                    <h2>{hotel.name} {" "} {hotel.rating}<span className={styles.star}>★</span></h2>
-                    {/* <span >
+                    </div>
+                    <div className={styles.headingStarHotels}>
+                      <h2>{hotel.name} {" "}
+                        {/* {hotel.rating}<span className={styles.star}>★</span> */}
+                        {hotel.rating}{" "}
+                        {Array.from({ length: Number(hotel.rating) }, (_, index) => (
+                          <span key={index} className={styles.star}>★</span>
+                        ))}
+                      </h2>
+                      {/* <span >
                       {hotel.rating}<span className={styles.star}>★</span>
                     </span> */}
-                  </div>
-                  <p className={styles.location}>{hotel.location}</p>
-                  <div className={styles.tags}>
-                    {hotel.tags.map((tag, i) => (
-                      <span key={i} className={styles.tagItem}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className={styles.labelsCommon}>
-
-                    <p className={styles.featureCommon}>
-                      {hotel.commonFeature}
-                    </p>
-
-                  </div>
-                  <div className={styles.freatureLabels}>
-                    <div className={styles.labels}>
-                      {hotel.features.map((feature, i) => (
-
-                        <p key={i} className={styles.feature}>
-                          <FontAwesomeIcon className={styles.iconCheck} icon={faCheck} />
-                          {feature}
-                        </p>
+                    </div>
+                    <p className={styles.location}>
+                      <FontAwesomeIcon icon={faLocationDot} className={styles.locationIcon} />{" "}
+                      {hotel.location}</p>
+                    <div className={styles.tags}>
+                      {hotel.tags.map((tag, i) => (
+                        <span key={i} className={styles.tagItem}>
+                          {tag}
+                        </span>
                       ))}
                     </div>
-                  </div>
+                    <div className={styles.labelsCommon}>
 
-                </div>
-                {/* <div className={styles.priceBoxRoom}>
+                      <p className={styles.featureCommon}>
+                        {hotel.commonFeature}
+                      </p>
+
+                    </div>
+                    <div className={styles.freatureLabels}>
+                      <div className={styles.labels}>
+                        {hotel.features.map((feature, i) => (
+
+                          <p key={i} className={styles.feature}>
+                            <FontAwesomeIcon className={styles.iconCheck} icon={faCheck} />
+                            {feature}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                    <div className={styles.uzoStay}>
+                      {/* <FontAwesomeIcon className={styles.iconPercent} icon={faPercent} /> */}
+                      UZOSTAY Discount Applied </div>
+
+                  </div>
+                  {/* <div className={styles.priceBoxRoom}>
                   <button type="button" className={styles.buttonRoom}>
                     Last 1 Room Left
                   </button>
                 </div> */}
-                <div className={styles.priceBox}>
+                  <div className={styles.priceBox}>
 
-                  <div className="roomLeft">
-                    <span className={styles.ratingTotal}>
-                      {hotel.totalRatings} Ratings{" "}
-                      <span className={styles.rating}>{hotel.reviewScore}</span>
-                    </span>
-                    <button type="button" className={styles.buttonRoom}>
-                      Last {hotel.leftRoom} Room Left
-                    </button>
-                  </div>
-                  {/* <div>
+                    <div className="roomLeft">
+                      <span className={styles.ratingTotal}>
+                        Excellent <br />
+                        {hotel.totalRatings} Ratings{" "}
+                        <span className={styles.rating}>{hotel.reviewScore}</span>
+                      </span>
+                      <button type="button" className={styles.buttonRoom}>
+                        Last {hotel.leftRoom} Room Left
+                      </button>
+                    </div>
+
+                    <div className={styles.bankOffer}>
+                      <button type="button" className={styles.buttonBankOffer}>
+                        Bank Offer | ₹637 off
+                        <div className={styles.bankOfferApply}>Get Flat 15% off and No Cost <br /> EMI on HSBC Credit Card EMI</div>
+                      </button>
+                    </div>
+                    {/* <div>
                     {hotel.totalRatings} Ratings{" "}
                     <span className={styles.rating}>{hotel.reviewScore}</span>
                   </div> */}
-                  <div className="priceDetails">
-                    <div className={styles.oldPrice}>{hotel.oldPrice}</div>
-                    <div className={styles.newPrice}>{hotel.newPrice}</div>
-                    <div className={styles.taxes}>{hotel.taxes}</div>
-                    <a className={styles.loginMsg} href="#">
+                    <div className="priceDetails">
+                      <div className={styles.oldPrice}>{hotel.oldPrice}</div>
+                      <div className={styles.newPrice}>{hotel.newPrice}</div>
+                      <div className={styles.taxes}>{hotel.taxes}</div>
+                      {/* <a className={styles.loginMsg} href="#">
                       Login now & save more
-                    </a>
-                    {/* <button type="button" className={styles.buttonBookNow}>Book Now</button> */}
+                    </a> */}
+                      <button type="button" className={styles.buttonBookNow}>Book Now</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };
