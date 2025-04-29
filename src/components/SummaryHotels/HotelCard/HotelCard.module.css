@@ -141,7 +141,9 @@
 
 .badge {
   /* background-color: #ffe08a; */
-  color: #333;
+  color: var(--dark-white);
+  background-color: #3367d1;
+  /* color: #333; */
   padding: 0px 6px;
   border-radius: 50px;
   margin-right: 8px;
@@ -200,7 +202,7 @@
   margin-bottom: 4px;
 }
 .labelsCommon {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   margin-bottom: -10px;
 }
 
@@ -302,7 +304,7 @@
   background-color: var(--logo-color);
   justify-content: center;
   align-items: center;
-  padding: 0px 40px;
+  padding: 6px 40px;
   color: var(--dark-white);
   font-size: 18px;
   font: 600;

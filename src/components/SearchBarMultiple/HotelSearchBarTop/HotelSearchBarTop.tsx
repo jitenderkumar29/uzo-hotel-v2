@@ -79,7 +79,7 @@ const HotelSearchBarTop: React.FC = () => {
           <div className={styles.searchFields}>
             <div className={`${styles.searchField} ${styles.destination}`}>
               <label htmlFor="destination" className={styles.labelText}>
-                Area, Landmark or Property Name
+                City, Landmark or Property Name
               </label>
               <input
                 type="text"
