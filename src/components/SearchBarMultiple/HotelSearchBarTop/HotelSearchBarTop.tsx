@@ -28,7 +28,7 @@ const HotelSearchBarTop: React.FC = () => {
   const [childCount, setChildCount] = useState(0);
   const [checkIn, setCheckIn] = useState<Date>(new Date());
   const [checkOut, setCheckOut] = useState<Date>(new Date());
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState("Delhi, India");
 
   // Popper Modifier for Date picker
   const popperModifiers = [
@@ -79,7 +79,7 @@ const HotelSearchBarTop: React.FC = () => {
           <div className={styles.searchFields}>
             <div className={`${styles.searchField} ${styles.destination}`}>
               <label htmlFor="destination" className={styles.labelText}>
-                City, Landmark or Property Name
+                City, Landmark or Hotel Name
               </label>
               <input
                 type="text"
@@ -375,7 +375,7 @@ const HotelSearchBarTop: React.FC = () => {
       <div className={styles.containerSearch}>
         <div className={styles.contSearchBody}>
           <div className={styles.leftSearch}>
-            <span className={styles.countSearch}>1000</span> Properties Available in Bangluru
+            <span className={styles.countSearch}>1000</span> Properties Available in Delhi
           </div>
           <div className={styles.rightSearch}>
             <div className={styles.searchBoxSearch}>

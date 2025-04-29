@@ -130,7 +130,7 @@ const HotelCard: React.FC = () => {
     },
     {
       id: 3,
-      name: "Hotel ALL IZ WELL By Haveliya Hotels",
+      name: "Hotel ALL IZ WELL",
       rating: "4",
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
