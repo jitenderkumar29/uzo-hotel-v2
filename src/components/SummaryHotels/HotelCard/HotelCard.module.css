@@ -2,6 +2,40 @@
   margin-top: 1rem;
 }
 
+.cardImageTop {
+  position: relative;
+  width: "100%";
+  height: "100px";
+  padding: 0rem 0rem 1rem 0rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hotelImage {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.overlayText {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  /* background-color: rgba(255, 0, 0, 0.8); red with transparency */
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 4px 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlayText p {
+  font-size: 15px;
+}
+
 .headingSection {
   display: flex;
   justify-content: space-between;
@@ -85,6 +119,11 @@
   display: flex;
   flex-direction: column;
 }
+.hotelInfoLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .hotelInfo h2 {
   font-size: 20px;
@@ -103,12 +142,12 @@
 .badge {
   /* background-color: #ffe08a; */
   color: #333;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  padding: 0px 6px;
+  border-radius: 50px;
   margin-right: 8px;
-  font-size: 20px;
+  font-size: 12px;
   border: 1px solid #333;
+  display: inline-block;
 }
 .star {
   /* background-color: #ffe08a; */
@@ -149,6 +188,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 .labels {
@@ -160,7 +200,7 @@
   margin-bottom: 4px;
 }
 .labelsCommon {
-  margin-top: 10px;
+  margin-top: 50px;
   margin-bottom: -10px;
 }
 
@@ -182,13 +222,20 @@
 }
 
 .uzoStay {
-  display: inline-flex; /* Makes the element fit its content */
+  display: inline-flex;
+  align-items: center; /* Vertically centers content */
+  gap: 4px; /* Adds spacing between icon and text */
   border: 1px solid var(--border-color);
   border-radius: 50px;
   background-color: #d9e8ff;
   color: var(--dark-black);
-  justify-content: center;
-  padding: 0px 8px;
+  padding: 0px 8px; /* Increased vertical padding for better fit */
+  white-space: nowrap; /* Prevents text wrapping */
+  width: fit-content; /* Ensures width matches content */
+}
+
+.discountLogo {
+  margin-right: 5px;
 }
 
 .iconPercent {
@@ -226,7 +273,8 @@
   text-decoration: line-through;
   color: var(--logo-color-hover);
   /* color: #777; */
-  font-size: 0.9rem;
+  font-size: 20px;
+  margin-bottom: -5px;
 }
 
 .newPrice {
@@ -238,6 +286,8 @@
 .taxes {
   font-size: 0.8rem;
   color: #666;
+  margin-top: -5px;
+  margin-bottom: 5px;
 }
 
 .loginMsg {
@@ -248,15 +298,15 @@
 }
 
 .buttonBookNow {
-  border-radius: 4px;
+  border-radius: 50px;
   background-color: var(--logo-color);
   justify-content: center;
   align-items: center;
-  padding: 5px 12px;
+  padding: 0px 40px;
   color: var(--dark-white);
-  font-size: 20px;
+  font-size: 18px;
   font: 600;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .buttonBookNow:hover {
@@ -268,7 +318,7 @@
   color: var(--logo-color);
   border: 1px solid var(--logo-color);
   border-radius: 20px;
-  padding: 2px 12px;
+  padding: 0px 12px;
   font-size: 16px;
   margin-bottom: 8px;
   align-self: flex-start;
@@ -280,14 +330,16 @@
   border-radius: 4px;
   padding: 2px 12px;
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-top: 8px;
   align-self: flex-start;
   font-weight: 600;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0 9px 3px #00000014;
 }
 
 .buttonBankOffer:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 9px 3px #00000014; */
 }
 
 .bankOfferApply {
@@ -459,4 +511,122 @@
   outline: none;
   flex: 1;
   font-size: 0.95rem;
+}
+
+/*  rating card module */
+.cardRating {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  /* top: 0; */
+  right: 70;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 350px;
+  background-color: white;
+}
+.MoreTagsBody {
+  /* display: flex; */
+  /* position: relative;
+  z-index: 10;
+  right: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 350px;
+  background-color: white;
+  z-index: 11; */
+  position: absolute; /* or 'fixed' if needed */
+  z-index: 1000; /* Ensures it appears above other elements */
+  background: white; /* Optional: background for visibility */
+  border: 1px solid #ddd; /* Optional: border for clarity */
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+}
+
+.moreTags {
+  margin-bottom: 8px; /* Adds spacing between links */
+}
+
+.moreTags a {
+  display: block;
+  padding: 8px 12px;
+  /* color: #333; */
+  color: #0071f3;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.moreTags a:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+.ratingWrapper {
+  position: relative; /* This allows positioning of the tooltip */
+}
+
+.leftRating {
+  display: flex;
+  flex-direction: column; /* Align vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically if needed */
+  background-color: #27ae60;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  width: 40%;
+}
+
+.scoreRating {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.totalRating {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.rightRating {
+  padding: 12px;
+  width: 60%;
+}
+
+.ratingRowRating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.starLabelRating {
+  /* width: 24px; */
+  font-size: 0.9rem;
+}
+
+.barContainerRating {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  flex: 1;
+  margin: 0 8px;
+  overflow: hidden;
+}
+
+.barFillRating {
+  height: 100%;
+  background-color: #0e918c;
+  border-radius: 4px;
+}
+
+.countRating {
+  width: 30px;
+  font-size: 0.8rem;
+  text-align: right;
 }

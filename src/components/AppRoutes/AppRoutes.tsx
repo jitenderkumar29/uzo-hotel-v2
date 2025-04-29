@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation'; // Hook to get the current pathna
 import { FC } from 'react';
 
 
-import HotelBooking from '@/pages/HotelBooking/HotelBooking';
 import HomePage from '@/pages/HomePage/HomePage';
-import Book from '@/pages/Book/Book';
+// import Book from '@/pages/Book/Book';
+// import HotelBooking from '@/pages/HotelBooking/HotelBooking';
 
 interface Page {
   Link: string;
@@ -25,9 +25,9 @@ const AppRoutes: FC = () => {
 
   // Define the pages and their corresponding components
   const pages: Page[] = [
-    { Link: '/', View: HomePage },
-    { Link: '/book', View: Book },
-    { Link: '/hotelBooking', View: HotelBooking },
+    // { Link: '/', View: HomePage },
+    // { Link: '/book', View: Book },
+    // { Link: '/hotelBooking', View: HotelBooking },
     // { Link: '/searchBarMultiple', View: SearchBarMultiple },
   ];
 

@@ -2,7 +2,9 @@
   max-width: 1350px;
   margin: 0 auto;
   padding: 0.25rem 1rem 0rem 1rem;
-  background-color: var(--light-accent);
+  /* background-color: #fd6e37; */
+  background: linear-gradient(to right, #e04a1a, #fd6e37);
+  /* background-color: var(--light-accent); */
   position: sticky;
 }
 
@@ -35,7 +37,9 @@
 
 /* Search card styles */
 .searchCard {
-  background-color: var(--light-accent);
+  /* background-color: var(--light-accent); */
+  /* background-color: #fd6e37; */
+  background: linear-gradient(to right, #e04a1a, #fd6e37);
   border-radius: 12px;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
   padding: 0px 20px;
@@ -62,7 +66,7 @@
   display: block;
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   color: var(--light-background);
   padding-left: 4px;
   text-align: left;
@@ -194,8 +198,10 @@
 }
 
 .searchButton {
-  background-color: var(--logo-color);
-  color: white;
+  background-color: var(--dark-white);
+  /* background-color: var(--logo-color); */
+  color: var(--text-color-black);
+  /* color: white; */
   border: none;
   border-radius: 4px;
   padding: 8px 24px;
@@ -214,7 +220,7 @@
 }
 
 .searchButton:hover {
-  background-color: var(--logo-color-hover);
+  /* background-color: var(--logo-color-hover); */
 }
 
 /* Filters */
@@ -413,9 +419,17 @@
   margin: 0 auto;
   position: sticky;
   width: 100%;
+  max-width: 1300px auto;
   background-color: var(--background);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+}
+
+.contSearchBody {
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .leftSearch {

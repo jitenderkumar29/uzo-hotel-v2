@@ -1,12 +1,18 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import styles from "./HotelCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Image, { StaticImageData } from "next/image";
+import discountLogo from "@/assets/icons/discountLogo.svg";
 
 const HotelCard: React.FC = () => {
+  const [isOpenRating, setIsOpenRating] = useState(false);
+  const [isOpenMoreTag, setIsOpenMoreTag] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
   // const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const hotelCard1: string | StaticImageData = "https://cdn.sanity.io/images/ocl5w36p/prod3/610a3f0fbe68aed8da441b0c8b4597e486990625-5464x2049.jpg?w=1280&auto=format&dpr=2"
 
   interface HotelData {
     id: number;
@@ -15,18 +21,38 @@ const HotelCard: React.FC = () => {
     category: string;
     location: string;
     tags: string[];
+    moreTags: string[];
     commonFeature: string,
     features: string[];
     mainImg: string;
     thumbnails: string[];
     totalRatings: number;
     reviewScore: string;
+    breakdown: {
+      stars: number;
+      count: number;
+    }[],
     leftRoom: number;
     oldPrice: string;
     newPrice: string;
     taxes: string;
-  }
+  };
 
+  // rating Card
+  type RatingCardProps = {
+    reviewScore: string;
+    totalRatings: number;
+    breakdown: {
+      stars: number;
+      count: number;
+    }[];
+  };
+  type MoreTagsProps = {
+
+    moreTags: string[];
+  };
+
+  // Hotel data 
   const hotelData: HotelData[] = [
     {
       id: 1,
@@ -34,7 +60,8 @@ const HotelCard: React.FC = () => {
       rating: "5",
       category: "Hotel",
       location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
-      tags: ["Gym", "Restaurant", "& more"],
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Option1", "Option2", "Option3"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -52,6 +79,13 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 3145,
       reviewScore: "4/5",
+      breakdown: [
+        { stars: 5, count: 6587 },
+        { stars: 4, count: 1700 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
       leftRoom: 1,
       oldPrice: "₹4,000",
       newPrice: "₹3,600",
@@ -63,7 +97,8 @@ const HotelCard: React.FC = () => {
       rating: "4",
       category: "Hotel",
       location: "Mahipalpur | 4.4 km drive to Indira Gandhi International Airport",
-      tags: ["Gym", "Restaurant", "& more"],
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Option1", "Option2", "Option3"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -81,6 +116,13 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 5145,
       reviewScore: "4/5",
+      breakdown: [
+        { stars: 5, count: 3587 },
+        { stars: 4, count: 1100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 93 },
+      ],
       leftRoom: 2,
       oldPrice: "₹6,999",
       newPrice: "₹2865",
@@ -92,7 +134,8 @@ const HotelCard: React.FC = () => {
       rating: "4",
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
-      tags: ["Gym", "Restaurant", "& more"],
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Option1", "Option2", "Option3"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -110,6 +153,13 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 50,
       reviewScore: "4/5",
+      breakdown: [
+        { stars: 5, count: 5587 },
+        { stars: 4, count: 2100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
       leftRoom: 1,
       oldPrice: "₹3050",
       newPrice: "₹869",
@@ -117,11 +167,12 @@ const HotelCard: React.FC = () => {
     },
     {
       id: 4,
-      name: "Staybook - Hotel Jai Balaji @ New Delhi Railway Station",
+      name: "Staybook - Hotel Jai Balaji",
       rating: "5",
       category: "Hotel",
       location: "Paharganj | 6 minutes walk to New Delhi Railway Station",
-      tags: ["Gym", "Restaurant", "& more"],
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Option1", "Option2", "Option3"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -139,6 +190,13 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 1310,
       reviewScore: "4/5",
+      breakdown: [
+        { stars: 5, count: 8587 },
+        { stars: 4, count: 1100 },
+        { stars: 3, count: 610 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
       oldPrice: "₹1999",
       leftRoom: 3,
       newPrice: "₹768",
@@ -146,11 +204,12 @@ const HotelCard: React.FC = () => {
     },
     {
       id: 5,
-      name: "Hotel SB Inn @ New Delhi",
+      name: "Hotel SB Inn",
       rating: "5",
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
-      tags: ["Gym", "Restaurant", "& more"],
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Option1", "Option2", "Option3"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -166,8 +225,15 @@ const HotelCard: React.FC = () => {
         "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201802231746016635-33a78654c72011ed952b0a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
         "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       ],
-      totalRatings: 1310,
+      totalRatings: 1510,
       reviewScore: "4/5",
+      breakdown: [
+        { stars: 5, count: 9687 },
+        { stars: 4, count: 3100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
       leftRoom: 1,
       oldPrice: "₹1999",
       newPrice: "₹768",
@@ -181,6 +247,48 @@ const HotelCard: React.FC = () => {
   //   { label: "Price", sub: "High to Low" },
   //   { label: "User Rating", sub: "Highest First" },
   // ];
+
+  const RatingCard = ({ reviewScore, totalRatings, breakdown }: RatingCardProps) => {
+    return (
+      <div className={styles.cardRating} onMouseEnter={() => setIsOpenRating(true)} onMouseLeave={() => setIsOpenRating(false)}>
+        <div className={styles.leftRating}>
+          <div className={styles.scoreRating}>{reviewScore}</div>
+          <div className={styles.totalRating}>{totalRatings} Ratings</div>
+        </div>
+        <div className={styles.rightRating}>
+          {breakdown.map((item) => (
+            <div key={item.stars} className={styles.ratingRowRating}>
+              <span className={styles.starLabelRating}>{item.stars} ★</span>
+              <div className={styles.barContainerRating}>
+                <div
+                  className={styles.barFillRating}
+                  style={{ width: `${(item.count / totalRatings) * 100}%` }}
+                />
+              </div>
+              <span className={styles.countRating}>{item.count}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+  const MoreTags = ({ moreTags }: MoreTagsProps) => {
+    return (
+      <div className={styles.MoreTagsBody}
+        onClick={() => setIsOpenMoreTag(false)}
+      // onMouseEnter={() => setIsOpenMoreTag(true)}
+      // onMouseLeave={() => setIsOpenRating(false)}
+      >
+        {moreTags.map((moreTag, i) => (
+          <div key={i} className={styles.moreTags}>
+            <a href={`/`}>{moreTag}</a>
+          </div>
+        ))}
+        {/* <h1>Hello Tags</h1> */}
+      </div >
+    );
+  };
+
 
 
   return (
@@ -230,6 +338,25 @@ const HotelCard: React.FC = () => {
         </div>
       </div> */}
       <div className={styles.hotelCardBody}>
+        <div className={styles.cardImageTop}>
+          <img
+            src={hotelCard1}
+            alt="Hotel card image"
+            className={styles.hotelImage}
+          />
+          <div className={styles.overlayText}>
+            <div>
+              <span>Exclusive Offer</span>
+              <p>Easy Summer Sale</p>
+            </div>
+            {/* <div><span>Get Upto</span>
+              <p>5000 OFF</p>
+            </div>
+            <div><span>Konw More</span>
+              <p>T & C apply</p>
+            </div> */}
+          </div>
+        </div>
         {hotelData.map((hotel) => (
           <div key={hotel.id} className={styles.hotelCard}>
             <div className={styles.cardContent}>
@@ -258,23 +385,26 @@ const HotelCard: React.FC = () => {
 
               <div className={styles.right}>
                 <div className={styles.hotelInfo}>
-                  <div>
-                    <div className={styles.badgeRating}>
-                      {/* <span className={styles.badge}>
+                  <div className={styles.hotelInfoLeft}>
+                    {/* <div className={styles.badgeRating}> */}
+                    {/* <span className={styles.badge}>
                       {hotel.rating}<span className={styles.star}>★</span> · {hotel.category}
                     </span> */}
-                      {/* <span className={styles.ratingTotal}>
+                    {/* <span className={styles.ratingTotal}>
                       {hotel.totalRatings} Ratings{" "}
                       <span className={styles.rating}>{hotel.reviewScore}</span>
                     </span> */}
-                    </div>
+                    {/* </div> */}
                     <div className={styles.headingStarHotels}>
                       <h2>{hotel.name} {" "}
                         {/* {hotel.rating}<span className={styles.star}>★</span> */}
-                        {hotel.rating}{" "}
-                        {Array.from({ length: Number(hotel.rating) }, (_, index) => (
+                        {/* {hotel.rating}{" "} */}
+                        {/* {Array.from({ length: Number(hotel.rating) }, (_, index) => (
                           <span key={index} className={styles.star}>★</span>
-                        ))}
+                        ))} */}
+                        <span className={styles.badge}>
+                          {hotel.rating}<span className={styles.star}> ★</span> {hotel.category}
+                        </span>
                       </h2>
                       {/* <span >
                       {hotel.rating}<span className={styles.star}>★</span>
@@ -285,10 +415,24 @@ const HotelCard: React.FC = () => {
                       {hotel.location}</p>
                     <div className={styles.tags}>
                       {hotel.tags.map((tag, i) => (
-                        <span key={i} className={styles.tagItem}>
-                          {tag}
-                        </span>
+                        <>
+                          <span key={i} className={styles.tagItem}>
+                            {tag}
+                          </span>
+                        </>
                       ))}
+                      <div onClick={() => setIsOpenMoreTag(!isOpenMoreTag)}
+                      // onMouseLeave={() => setIsOpenRating(false)}
+                      >
+                        <span className={styles.tagItem}
+                        >
+                          & More
+                        </span>
+                        {isOpenMoreTag && (
+                          <MoreTags moreTags={hotel.moreTags} />
+                        )}
+                      </div>
+
                     </div>
                     <div className={styles.labelsCommon}>
 
@@ -310,7 +454,18 @@ const HotelCard: React.FC = () => {
                     </div>
                     <div className={styles.uzoStay}>
                       {/* <FontAwesomeIcon className={styles.iconPercent} icon={faPercent} /> */}
-                      UZOSTAY Discount Applied </div>
+                      {/* <img
+                        src={discountLogo}
+                        alt="discount Logo" /> */}
+                      <Image
+                        src={discountLogo}
+                        alt="discount Logo"
+                        width={20} // required
+                        height={20} // required
+                        className={styles.discountLogo}
+                      />
+                      UZOSTAY Discount Applied
+                    </div>
 
                   </div>
                   {/* <div className={styles.priceBoxRoom}>
@@ -320,23 +475,36 @@ const HotelCard: React.FC = () => {
                 </div> */}
                   <div className={styles.priceBox}>
 
-                    <div className="roomLeft">
-                      <span className={styles.ratingTotal}>
-                        Excellent <br />
-                        {hotel.totalRatings} Ratings{" "}
-                        <span className={styles.rating}>{hotel.reviewScore}</span>
-                      </span>
+                    <div className={styles.roomLeft}>
+                      <div
+                        className={styles.ratingWrapper}
+                        onMouseEnter={() => setIsOpenRating(true)}
+                        onMouseLeave={() => setIsOpenRating(false)}
+                      >
+                        <span className={styles.ratingTotal}
+                        // onMouseEnter={() => setIsOpenRating(true)}
+                        // onMouseLeave={() => setIsOpenRating(false)}
+                        // onClick={() => setIsOpenRating(true)}
+                        >
+                          Excellent <br />
+                          {hotel.totalRatings} Ratings{" "}
+                          <span className={styles.rating}>{hotel.reviewScore}</span>
+                        </span>
+                      </div>
                       <button type="button" className={styles.buttonRoom}>
                         Last {hotel.leftRoom} Room Left
                       </button>
                     </div>
-
-                    <div className={styles.bankOffer}>
+                    {isOpenRating &&
+                      (<RatingCard reviewScore="4.1/5" totalRatings={4720} breakdown={hotel.breakdown} />)}
+                    {/* Rating Card component */}
+                    {/* <RatingCard reviewScore="4.1/5" totalRatings={4720} breakdown={hotel.breakdown} /> */}
+                    {/* <div className={styles.bankOffer}>
                       <button type="button" className={styles.buttonBankOffer}>
                         Bank Offer | ₹637 off
                         <div className={styles.bankOfferApply}>Get Flat 15% off and No Cost <br /> EMI on HSBC Credit Card EMI</div>
                       </button>
-                    </div>
+                    </div> */}
                     {/* <div>
                     {hotel.totalRatings} Ratings{" "}
                     <span className={styles.rating}>{hotel.reviewScore}</span>
@@ -350,6 +518,15 @@ const HotelCard: React.FC = () => {
                     </a> */}
                       <button type="button" className={styles.buttonBookNow}>Book Now</button>
                     </div>
+
+                    {/* Bank Offer */}
+                    <div className={styles.bankOffer}>
+                      <button type="button" className={styles.buttonBankOffer}>
+                        Bank Offer | ₹637 off
+                        <div className={styles.bankOfferApply}>Get Flat 15% off and No Cost <br /> EMI on HSBC Credit Card EMI</div>
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -357,6 +534,7 @@ const HotelCard: React.FC = () => {
           </div>
         ))}
       </div>
+
     </>
   );
 };

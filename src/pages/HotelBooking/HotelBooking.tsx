@@ -2,13 +2,13 @@
 import SummaryHotels from '@/components/SummaryHotels/SummaryHotels'
 import React from 'react'
 import styles from "./HotelBooking.module.css"
-import Header from '@/components/Header/Header'
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
+import HeaderTop from '@/components/HeaderTop/HeaderTop'
 
 const HotelBooking = () => {
   return (
     <div>
-      <Header />
+      <HeaderTop />
       <div className={styles.hotelsearchBarHeader}>
         <HotelSearchBarTop />
       </div>

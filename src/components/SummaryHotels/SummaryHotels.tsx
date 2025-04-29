@@ -43,7 +43,10 @@ const SummaryHotels: React.FC = () => {
       </button>
 
       {/* <PropertiesSearch /> */}
-      <FilterSidebar isOpen={sidebarOpen} onClose={toggleSidebar} />
+      <div className={styles.sideBarBody}>
+        <aside><FilterSidebar isOpen={sidebarOpen} onClose={toggleSidebar} /></aside>
+      </div>
+
 
       <main className={styles.mainContent}>
         <HotelCard />

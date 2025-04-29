@@ -79,7 +79,7 @@ const HotelSearchBarTop: React.FC = () => {
           <div className={styles.searchFields}>
             <div className={`${styles.searchField} ${styles.destination}`}>
               <label htmlFor="destination" className={styles.labelText}>
-                Where do you want to stay?
+                Area, Landmark or Property Name
               </label>
               <input
                 type="text"
@@ -209,7 +209,7 @@ const HotelSearchBarTop: React.FC = () => {
             Search
           </button> */}
             <Link href="/hotelBooking" className={styles.searchButton}>
-              Search
+              Modify Search
             </Link>
 
             {showRoomGuestSelector && (
@@ -373,20 +373,22 @@ const HotelSearchBarTop: React.FC = () => {
         </form>
       </div>
       <div className={styles.containerSearch}>
-        <div className={styles.leftSearch}>
-          <span className={styles.countSearch}>1000</span> Properties Available in Bangluru
-        </div>
-        <div className={styles.rightSearch}>
-          <div className={styles.searchBoxSearch}>
-            <FaSearch className={styles.searchIconSearch} />
-            <input type="text" placeholder="Enter hotel name or location" className={styles.searchInputSearch} />
+        <div className={styles.contSearchBody}>
+          <div className={styles.leftSearch}>
+            <span className={styles.countSearch}>1000</span> Properties Available in Bangluru
           </div>
-          <select className={styles.selectBoxSearch}>
-            <option value="popularity">Popularity</option>
-            <option value="priceLowHigh">Price: Low to High</option>
-            <option value="priceHighLow">Price: High to Low</option>
-            <option value="rating">Rating</option>
-          </select>
+          <div className={styles.rightSearch}>
+            <div className={styles.searchBoxSearch}>
+              <FaSearch className={styles.searchIconSearch} />
+              <input type="text" placeholder="Enter hotel name or location" className={styles.searchInputSearch} />
+            </div>
+            <select className={styles.selectBoxSearch}>
+              <option value="popularity">Popularity</option>
+              <option value="priceLowHigh">Price: Low to High</option>
+              <option value="priceHighLow">Price: High to Low</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
         </div>
       </div>
     </>
