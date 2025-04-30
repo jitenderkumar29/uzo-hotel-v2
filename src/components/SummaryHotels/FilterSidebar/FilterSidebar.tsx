@@ -181,14 +181,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
             aria-label="Clear all filters"
           >
-            CLEAR
+            CLEAR ALL
           </button>
         </div>
 
         <FilterSection
           title="Popular filters"
           items={[
-            { id: "uzoStays", label: "UzoStays", count: 213 },
             { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
             { id: "earlyBird", label: "Early Bird Deal", count: 617 },
             { id: "coupleFriendly", label: "Couple Friendly", count: 1594 },

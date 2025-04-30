@@ -562,10 +562,42 @@
   padding: 4px;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); Optional: shadow for depth */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 325px;
+}
+
+/* More TagsList style CSS */
+.twoColumnList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-position: inside;
+  padding-left: 1em;
+  margin: 0;
+}
+
+.twoColumnList li {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 15px;
+  /* margin-bottom: 8px; */
+  list-style-type: disc; /* or 'disc' for filled circles */
+  color: #0066cc;
+}
+
+/* Optional link styling */
+.twoColumnList a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.twoColumnList a:hover {
+  color: #0066cc;
 }
 
 .moreTags {
   /* margin-bottom: 8px; Adds spacing between links */
+  flex: 1;
+  min-width: 0;
 }
 
 .moreTags a {

@@ -63,7 +63,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -100,7 +100,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Mahipalpur | 4.4 km drive to Indira Gandhi International Airport",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -137,7 +137,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -174,7 +174,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 6 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -211,7 +211,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -279,18 +279,26 @@ const HotelCard: React.FC = () => {
   };
   const MoreTags = ({ moreTags }: MoreTagsProps) => {
     return (
-      <div className={styles.MoreTagsBody}
-        onClick={() => setIsOpenMoreTag(false)}
-      // onMouseEnter={() => setIsOpenMoreTag(true)}
-      // onMouseLeave={() => setIsOpenRating(false)}
-      >
-        {moreTags.map((moreTag, i) => (
-          <div key={i} className={styles.moreTags}>
-            <a href={`/`}>{moreTag}</a>
-          </div>
-        ))}
-        {/* <h1>Hello Tags</h1> */}
-      </div >
+      <div className={styles.MoreTagsBody} onClick={() => setIsOpenMoreTag(false)}>
+        <ul className={styles.twoColumnList}>
+          {moreTags.map((moreTag, i) => (
+            <li key={i}>
+              <a href={`/`}>{moreTag}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      // WorkingExample of MoreTags
+      // <div className={styles.MoreTagsBody}
+      //   onClick={() => setIsOpenMoreTag(false)}
+      // >
+      //   {moreTags.map((moreTag, i) => (
+      //     <div key={i} className={styles.moreTags}>
+      //       <a href={`/`}>{moreTag}</a>
+      //     </div>
+      //   ))}
+      // </div >
     );
   };
 
