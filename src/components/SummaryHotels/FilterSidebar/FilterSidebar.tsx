@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import styles from "./FilterSidebar.module.css";
-import Map from "@/components/Map";
+// import Map from "@/components/Map";
 import mapicon from "@/assets/icons/mapicon.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 
-const locations = [
-  {
-    position: { lat: -3.745, lng: -38.523 },
-    title: 'UZO Hotels',
-    content: (
-      <div className="bg-blue-500 text-white p-1 rounded-full w-6 h-6 flex items-center justify-center">
-        A
-      </div>
-    )
-  },
-  // {
-  //   position: { lat: -3.755, lng: -38.533 },
-  //   title: 'Location B',
-  //   content: 'B' // Will be converted to text node
-  // },
-  // {
-  //   position: { lat: -3.735, lng: -38.513 },
-  //   title: 'Location C',
-  //   // No content (will use default marker)
-  // }
-];
+// const locations = [
+//   {
+//     position: { lat: -3.745, lng: -38.523 },
+//     title: 'UZO Hotels',
+//     content: (
+//       <div className="bg-blue-500 text-white p-1 rounded-full w-6 h-6 flex items-center justify-center">
+//         A
+//       </div>
+//     )
+//   },
+//   // {
+//   //   position: { lat: -3.755, lng: -38.533 },
+//   //   title: 'Location B',
+//   //   content: 'B' // Will be converted to text node
+//   // },
+//   // {
+//   //   position: { lat: -3.735, lng: -38.513 },
+//   //   title: 'Location C',
+//   //   // No content (will use default marker)
+//   // }
+// ];
 
 
 interface FilterItem {
