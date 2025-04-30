@@ -4,6 +4,7 @@ import React from 'react'
 import styles from "./HotelBooking.module.css"
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
+import FooterUzo from '@/components/FooterUzo/FooterUzo'
 
 const HotelBooking = () => {
   return (
@@ -15,6 +16,7 @@ const HotelBooking = () => {
       <div className={styles.hotelSummary}>
         <SummaryHotels />
       </div>
+      <FooterUzo />
     </div>
   )
 }

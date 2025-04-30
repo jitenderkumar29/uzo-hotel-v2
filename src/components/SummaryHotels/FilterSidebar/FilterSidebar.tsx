@@ -1,5 +1,29 @@
 import React, { useState } from "react";
 import styles from "./FilterSidebar.module.css";
+import Map from "@/components/Map";
+
+const locations = [
+  {
+    position: { lat: -3.745, lng: -38.523 },
+    title: 'UZO Hotels',
+    content: (
+      <div className="bg-blue-500 text-white p-1 rounded-full w-6 h-6 flex items-center justify-center">
+        A
+      </div>
+    )
+  },
+  // {
+  //   position: { lat: -3.755, lng: -38.533 },
+  //   title: 'Location B',
+  //   content: 'B' // Will be converted to text node
+  // },
+  // {
+  //   position: { lat: -3.735, lng: -38.513 },
+  //   title: 'Location C',
+  //   // No content (will use default marker)
+  // }
+];
+
 
 interface FilterItem {
   id: string;
@@ -25,7 +49,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   items,
   showAll = false,
   searchable = false,
-  maxHeight = "200px", // Default max height
+  maxHeight = "150px", // Default max height
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -117,6 +141,19 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
       className={`${styles.sidebar} ${isOpen ? styles.active : ""}`}
       aria-hidden={!isOpen}
     >
+      <div>
+        <main className="p-4">
+          {/* <h1 className="text-2xl font-bold mb-4">Google Maps with Advanced Markers</h1> */}
+          <div className="border rounded-lg overflow-hidden">
+            <Map
+              center={{ lat: -3.745, lng: -38.523 }}
+              zoom={12}
+              markers={locations}
+              className="h-[150px]"
+            />
+          </div>
+        </main>
+      </div>
       <div className={styles.filterHeader}>
         <h2 className={styles.filterTitle}>FILTERS</h2>
         <button
@@ -139,7 +176,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
           { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
         ]}
-        maxHeight="200px"
+        maxHeight="150px"
       />
 
       <FilterSection
@@ -153,7 +190,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
         ]}
         showAll={false}
-        maxHeight="200px"
+        maxHeight="150px"
       />
 
       <FilterSection
@@ -167,7 +204,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           { id: "location6", label: "Akila Mehendi Art" },
           { id: "location7", label: "Popins Holidays" },
         ]}
-        maxHeight="200px"
+        maxHeight="150px"
       />
 
       <FilterSection
@@ -184,7 +221,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         ]}
         showAll={false}
         searchable={false}
-        maxHeight="200px"
+        maxHeight="150px"
       />
 
       <FilterSection
@@ -204,7 +241,33 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         ]}
         showAll={false}
         searchable={false}
-        maxHeight="200px"
+        maxHeight="150px"
+      />
+      <FilterSection
+        title="Chains"
+        items={[
+
+          { id: "type1", label: "AM Kollection - Larisa Hotels", count: 6 },
+          { id: "type2", label: "Accor - Novotel & ibis", count: 8 },
+          { id: "type3", label: "Ama Stays & Trails", count: 2 },
+          { id: "type4", label: "Amritara", count: 1 },
+          { id: "type5", label: "Inn", count: 349 },
+          { id: "type6", label: "Ascott, Citadines & Somerset", count: 1 },
+          { id: "type7", label: "Bluekite", count: 2 },
+          { id: "type8", label: "Club Mahindra", count: 3 },
+          { id: "type9", label: "Concept Hospitality", count: 6 },
+          { id: "type10", label: "Cygnett Group", count: 1 },
+          { id: "type11", label: "EKO STAY", count: 12 },
+          { id: "type12", label: "Elivaas", count: 65 },
+          { id: "type13", label: "Fab hotels", count: 31 },
+          { id: "type14", label: "Fortune", count: 3 },
+          { id: "type15", label: "Ginger Hotels", count: 4 },
+          { id: "type16", label: "GoStops", count: 3 },
+          { id: "type17", label: "Hilton & Doubletree", count: 3 },
+        ]}
+        showAll={false}
+        searchable={false}
+        maxHeight="150px"
       />
     </aside>
   );
