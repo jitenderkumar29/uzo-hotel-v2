@@ -9,6 +9,8 @@ import discountLogo from "@/assets/icons/discountLogo.svg";
 const HotelCard: React.FC = () => {
   const [isOpenRating, setIsOpenRating] = useState(false);
   const [isOpenMoreTag, setIsOpenMoreTag] = useState(false);
+  const [openRatingId, setOpenRatingId] = useState<number | null>(null);
+  const [openMoreTagsId, setOpenMoreTagsId] = useState<number | null>(null);
   // const [isOpen, setIsOpen] = useState(false);
   // const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -61,7 +63,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Option1", "Option2", "Option3"],
+      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -86,7 +88,7 @@ const HotelCard: React.FC = () => {
         { stars: 2, count: 230 },
         { stars: 1, count: 293 },
       ],
-      leftRoom: 1,
+      leftRoom: 4,
       oldPrice: "₹4,000",
       newPrice: "₹3,600",
       taxes: "+₹432 taxes & fees per night",
@@ -98,7 +100,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Mahipalpur | 4.4 km drive to Indira Gandhi International Airport",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Option1", "Option2", "Option3"],
+      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -135,7 +137,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Option1", "Option2", "Option3"],
+      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -172,7 +174,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 6 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Option1", "Option2", "Option3"],
+      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -209,7 +211,7 @@ const HotelCard: React.FC = () => {
       category: "Hotel",
       location: "Paharganj | 7 minutes walk to New Delhi Railway Station",
       tags: ["Gym", "Restaurant"],
-      moreTags: ["Option1", "Option2", "Option3"],
+      moreTags: ["Free Wi-Fi", "24-hr Room Service"],
       commonFeature: "👫 Couple Friendly",
       features: [
         // "👫 Couple Friendly",
@@ -250,7 +252,10 @@ const HotelCard: React.FC = () => {
 
   const RatingCard = ({ reviewScore, totalRatings, breakdown }: RatingCardProps) => {
     return (
-      <div className={styles.cardRating} onMouseEnter={() => setIsOpenRating(true)} onMouseLeave={() => setIsOpenRating(false)}>
+      <div className={styles.cardRating}
+        onMouseEnter={() => setOpenRatingId(openRatingId)}
+        onMouseLeave={() => setOpenRatingId(null)}
+      >
         <div className={styles.leftRating}>
           <div className={styles.scoreRating}>{reviewScore}</div>
           <div className={styles.totalRating}>{totalRatings} Ratings</div>
@@ -421,14 +426,15 @@ const HotelCard: React.FC = () => {
                           </span>
                         </>
                       ))}
-                      <div onClick={() => setIsOpenMoreTag(!isOpenMoreTag)}
+                      <div onMouseEnter={() => setOpenMoreTagsId(openMoreTagsId === hotel.id ? null : hotel.id)}
+                        onMouseLeave={() => setOpenMoreTagsId(null)}
                       // onMouseLeave={() => setIsOpenRating(false)}
                       >
                         <span className={styles.tagItem}
                         >
                           & More
                         </span>
-                        {isOpenMoreTag && (
+                        {openMoreTagsId === hotel.id && (
                           <MoreTags moreTags={hotel.moreTags} />
                         )}
                       </div>
@@ -478,8 +484,10 @@ const HotelCard: React.FC = () => {
                     <div className={styles.roomLeft}>
                       <div
                         className={styles.ratingWrapper}
-                        onMouseEnter={() => setIsOpenRating(true)}
-                        onMouseLeave={() => setIsOpenRating(false)}
+                        onMouseEnter={() => setOpenRatingId(hotel.id)}
+                        onMouseLeave={() => setOpenRatingId(null)}
+                      // onMouseEnter={() => setIsOpenRating(true)}
+                      // onMouseLeave={() => setIsOpenRating(false)}
                       >
                         <span className={styles.ratingTotal}
                         // onMouseEnter={() => setIsOpenRating(true)}
@@ -491,14 +499,15 @@ const HotelCard: React.FC = () => {
                           <span className={styles.rating}>{hotel.reviewScore}</span>
                         </span>
                       </div>
+                      {openRatingId === hotel.id &&
+                        (<RatingCard reviewScore={hotel.reviewScore} totalRatings={hotel.totalRatings} breakdown={hotel.breakdown} />)}
                       <button type="button" className={styles.buttonRoom}>
                         Last {hotel.leftRoom} Room Left
                       </button>
                     </div>
-                    {isOpenRating &&
-                      (<RatingCard reviewScore="4.1/5" totalRatings={4720} breakdown={hotel.breakdown} />)}
+
                     {/* Rating Card component */}
-                    {/* <RatingCard reviewScore="4.1/5" totalRatings={4720} breakdown={hotel.breakdown} /> */}
+
                     {/* <div className={styles.bankOffer}>
                       <button type="button" className={styles.buttonBankOffer}>
                         Bank Offer | ₹637 off

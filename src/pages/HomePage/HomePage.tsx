@@ -21,6 +21,7 @@ const HomePage = () => {
       <Header />
       <HeaderTop />
       <Hero />
+      {/* <AddOnsImageSlide /> */}
       <PrepareToTravel />
       <HeroGallery />
       <AddOns2 />

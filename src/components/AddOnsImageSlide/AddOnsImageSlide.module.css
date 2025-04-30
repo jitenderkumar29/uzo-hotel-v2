@@ -1,0 +1,186 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 1.25rem 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.divider {
+  height: 2px;
+  background-color: #ddd;
+  margin: 1.25rem 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.imageSections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.imageSection {
+  flex: 1 0 25%;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.imageSection:last-child {
+  border-bottom: none;
+}
+
+.imageSection:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sectionContent {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  z-index: 4;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.sectionContent h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.625rem;
+  font-weight: 500;
+}
+
+.sectionHoverContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.sectionHoverContent h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.9375rem;
+  font-weight: 500;
+}
+
+.sectionHoverContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 37.5rem;
+  margin: 0 auto;
+}
+
+.imageSections:hover ~ .image:first-child {
+  opacity: 0;
+}
+
+.imageSections:hover ~ .image:last-child {
+  opacity: 1;
+}
+
+.imageSection:hover .sectionContent {
+  opacity: 0;
+  bottom: 1.875rem;
+}
+
+.imageSection:hover .sectionHoverContent {
+  opacity: 1;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .imageContainer {
+    height: 37.5rem;
+  }
+
+  .imageSections {
+    flex-direction: row;
+  }
+
+  .imageSection {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .imageSection:last-child {
+    border-right: none;
+  }
+
+  .sectionContent {
+    bottom: 2.5rem;
+    left: 2.5rem;
+  }
+
+  .sectionContent h3 {
+    font-size: 1.8rem;
+  }
+
+  .sectionHoverContent h3 {
+    font-size: 2rem;
+  }
+
+  .sectionHoverContent p {
+    font-size: 1.1rem;
+  }
+}

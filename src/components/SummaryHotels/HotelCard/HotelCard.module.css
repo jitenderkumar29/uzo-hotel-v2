@@ -235,6 +235,8 @@
   padding: 0px 8px; /* Increased vertical padding for better fit */
   white-space: nowrap; /* Prevents text wrapping */
   width: fit-content; /* Ensures width matches content */
+  font-size: 15px;
+  margin-bottom: -5px;
 }
 
 .discountLogo {
@@ -326,6 +328,11 @@
   margin-bottom: 8px;
   align-self: flex-start;
 }
+
+.bankOffer {
+  /* margin-bottom: -5px; */
+}
+
 .buttonBankOffer {
   /* background-color: #fff2f2; */
   color: var(--dark-black);
@@ -371,6 +378,7 @@
   .right {
     flex: 1.5;
     padding: 16px;
+    justify-content: space-around;
   }
 
   .hotelInfo {
@@ -522,14 +530,16 @@
   position: absolute;
   z-index: 10;
   /* top: 0; */
-  right: 70px;
+  right: 10%;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   overflow: hidden;
   font-family: Arial, sans-serif;
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   background-color: white;
+  height: fit-content;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .MoreTagsBody {
   /* display: flex; */
@@ -549,19 +559,20 @@
   background: white; /* Optional: background for visibility */
   border: 1px solid #ddd; /* Optional: border for clarity */
   border-radius: 4px;
-  padding: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+  padding: 4px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); Optional: shadow for depth */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .moreTags {
-  margin-bottom: 8px; /* Adds spacing between links */
+  /* margin-bottom: 8px; Adds spacing between links */
 }
 
 .moreTags a {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 8px;
   /* color: #333; */
-  color: #0071f3;
+  /* color: #0071f3; */
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
