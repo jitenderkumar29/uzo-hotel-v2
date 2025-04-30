@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 0.25rem 1rem 0rem 1rem;
   /* background-color: #fd6e37; */
-  background: linear-gradient(to right, #e04a1a, #fd6e37);
-  /* background-color: var(--light-accent); */
+  /* background: linear-gradient(to right, #e04a1a, #fd6e37); */
+  background-color: var(--dark-accent);
   position: sticky;
 }
 
@@ -37,9 +37,9 @@
 
 /* Search card styles */
 .searchCard {
-  /* background-color: var(--light-accent); */
+  background-color: var(--dark-accent);
   /* background-color: #fd6e37; */
-  background: linear-gradient(to right, #e04a1a, #fd6e37);
+  /* background: linear-gradient(to right, #e04a1a, #fd6e37); */
   border-radius: 12px;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
   padding: 0px 20px;
@@ -419,14 +419,14 @@
   margin: 0 auto;
   position: sticky;
   width: 100%;
-  max-width: 1300px auto;
+  max-width: 1270px auto;
   background-color: var(--background);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 
 .contSearchBody {
-  width: 1300px;
+  width: 1280px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

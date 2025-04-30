@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import styles from "./FilterSidebar.module.css";
 import Map from "@/components/Map";
+import mapicon from "@/assets/icons/mapicon.png";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+
 
 const locations = [
   {
@@ -137,13 +142,24 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 
 const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
   return (
-    <aside
-      className={`${styles.sidebar} ${isOpen ? styles.active : ""}`}
-      aria-hidden={!isOpen}
-    >
-      <div>
-        <main className="p-4">
-          {/* <h1 className="text-2xl font-bold mb-4">Google Maps with Advanced Markers</h1> */}
+    <>
+      <div className={styles.mapIconBody}>
+        <div className={`border rounded-lg overflow-hidden ${styles.mapIconContainer}`}>
+          <Image
+            src={mapicon}
+            alt="Map Icon"
+            className={styles.mapIconImage}
+          />
+          <div className={styles.mapIconButton}>
+            <div><FontAwesomeIcon icon={faLocationDot} className={styles.locationIcon} /></div>
+
+            <button type="button">Show on map</button>
+          </div>
+        </div>
+      </div>
+
+      {/* working map example */}
+      {/* <main className="p-4">
           <div className="border rounded-lg overflow-hidden">
             <Map
               center={{ lat: -3.745, lng: -38.523 }}
@@ -152,124 +168,129 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
               className="h-[150px]"
             />
           </div>
-        </main>
-      </div>
-      <div className={styles.filterHeader}>
-        <h2 className={styles.filterTitle}>FILTERS</h2>
-        <button
-          className={styles.clearBtn}
-          onClick={onClose}
-          aria-label="Clear all filters"
-        >
-          CLEAR
-        </button>
-      </div>
+        </main> */}
+      <aside
+        className={`${styles.sidebar} ${isOpen ? styles.active : ""}`}
+        aria-hidden={!isOpen}
+      >
 
-      <FilterSection
-        title="Popular filters"
-        items={[
-          { id: "uzoStays", label: "UzoStays", count: 213 },
-          { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
-          { id: "earlyBird", label: "Early Bird Deal", count: 617 },
-          { id: "coupleFriendly", label: "Couple Friendly", count: 1594 },
-          { id: "freeCancellation", label: "Free Cancellation", count: 1658 },
-          { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
-          { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
-        ]}
-        maxHeight="150px"
-      />
+        <div className={styles.filterHeader}>
+          <h2 className={styles.filterTitle}>FILTERS</h2>
+          <button
+            className={styles.clearBtn}
+            onClick={onClose}
+            aria-label="Clear all filters"
+          >
+            CLEAR
+          </button>
+        </div>
 
-      <FilterSection
-        title="Price"
-        items={[
-          { id: "price1", label: "₹ 0 to ₹ 1500", count: 588 },
-          { id: "price2", label: "₹ 1500 to ₹ 3000", count: 730 },
-          { id: "price3", label: "₹ 3000 to ₹ 6000", count: 341 },
-          { id: "price4", label: "₹ 6000 to ₹ 9000", count: 552 },
-          { id: "price5", label: "₹ 9000 to ₹ 12000", count: 225 },
-          { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
-        ]}
-        showAll={false}
-        maxHeight="150px"
-      />
+        <FilterSection
+          title="Popular filters"
+          items={[
+            { id: "uzoStays", label: "UzoStays", count: 213 },
+            { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
+            { id: "earlyBird", label: "Early Bird Deal", count: 617 },
+            { id: "coupleFriendly", label: "Couple Friendly", count: 1594 },
+            { id: "freeCancellation", label: "Free Cancellation", count: 1658 },
+            { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
+            { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
+          ]}
+          maxHeight="150px"
+        />
 
-      <FilterSection
-        title="Location"
-        items={[
-          { id: "location1", label: "Karol bagh" },
-          { id: "location2", label: "Lajpat Nagar" },
-          { id: "location3", label: "Mehrauli" },
-          { id: "location4", label: "Bangluru" },
-          { id: "location5", label: "Gubbacci" },
-          { id: "location6", label: "Akila Mehendi Art" },
-          { id: "location7", label: "Popins Holidays" },
-        ]}
-        maxHeight="150px"
-      />
+        <FilterSection
+          title="Price"
+          items={[
+            { id: "price1", label: "₹ 0 to ₹ 1500", count: 588 },
+            { id: "price2", label: "₹ 1500 to ₹ 3000", count: 730 },
+            { id: "price3", label: "₹ 3000 to ₹ 6000", count: 341 },
+            { id: "price4", label: "₹ 6000 to ₹ 9000", count: 552 },
+            { id: "price5", label: "₹ 9000 to ₹ 12000", count: 225 },
+            { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
+          ]}
+          showAll={false}
+          maxHeight="150px"
+        />
 
-      <FilterSection
-        title="Amenities"
-        items={[
-          { id: "amenity1", label: "Airport Transfers", count: 1030 },
-          { id: "amenity2", label: "Balcony/Terrace", count: 650 },
-          { id: "amenity3", label: "Bar", count: 149 },
-          { id: "amenity4", label: "Free Cancellation", count: 249 },
-          { id: "amenity5", label: "24 Hour Front Desk", count: 349 },
-          { id: "amenity6", label: "Ac", count: 449 },
-          { id: "amenity7", label: "Wifi", count: 549 },
-          { id: "amenity8", label: "Breakfast", count: 649 },
-        ]}
-        showAll={false}
-        searchable={false}
-        maxHeight="150px"
-      />
+        <FilterSection
+          title="Location"
+          items={[
+            { id: "location1", label: "Karol bagh" },
+            { id: "location2", label: "Lajpat Nagar" },
+            { id: "location3", label: "Mehrauli" },
+            { id: "location4", label: "Bangluru" },
+            { id: "location5", label: "Gubbacci" },
+            { id: "location6", label: "Akila Mehendi Art" },
+            { id: "location7", label: "Popins Holidays" },
+          ]}
+          maxHeight="150px"
+        />
 
-      <FilterSection
-        title="Property Type"
-        items={[
-          { id: "type1", label: "Hotel", count: 1030 },
-          { id: "type2", label: "Villas", count: 650 },
-          { id: "type3", label: "resort", count: 149 },
-          { id: "type4", label: "resort Property", count: 249 },
-          { id: "type5", label: "Inn", count: 349 },
-          { id: "type6", label: "Spa & Resort property", count: 449 },
-          { id: "type7", label: "Lodge", count: 549 },
-          { id: "type8", label: "Guest House", count: 649 },
-          { id: "type9", label: "Apartment", count: 749 },
-          { id: "type10", label: "Homes", count: 849 },
-          { id: "type11", label: "Palace", count: 949 },
-        ]}
-        showAll={false}
-        searchable={false}
-        maxHeight="150px"
-      />
-      <FilterSection
-        title="Chains"
-        items={[
+        <FilterSection
+          title="Amenities"
+          items={[
+            { id: "amenity1", label: "Airport Transfers", count: 1030 },
+            { id: "amenity2", label: "Balcony/Terrace", count: 650 },
+            { id: "amenity3", label: "Bar", count: 149 },
+            { id: "amenity4", label: "Free Cancellation", count: 249 },
+            { id: "amenity5", label: "24 Hour Front Desk", count: 349 },
+            { id: "amenity6", label: "Ac", count: 449 },
+            { id: "amenity7", label: "Wifi", count: 549 },
+            { id: "amenity8", label: "Breakfast", count: 649 },
+          ]}
+          showAll={false}
+          searchable={false}
+          maxHeight="150px"
+        />
 
-          { id: "type1", label: "AM Kollection - Larisa Hotels", count: 6 },
-          { id: "type2", label: "Accor - Novotel & ibis", count: 8 },
-          { id: "type3", label: "Ama Stays & Trails", count: 2 },
-          { id: "type4", label: "Amritara", count: 1 },
-          { id: "type5", label: "Inn", count: 349 },
-          { id: "type6", label: "Ascott, Citadines & Somerset", count: 1 },
-          { id: "type7", label: "Bluekite", count: 2 },
-          { id: "type8", label: "Club Mahindra", count: 3 },
-          { id: "type9", label: "Concept Hospitality", count: 6 },
-          { id: "type10", label: "Cygnett Group", count: 1 },
-          { id: "type11", label: "EKO STAY", count: 12 },
-          { id: "type12", label: "Elivaas", count: 65 },
-          { id: "type13", label: "Fab hotels", count: 31 },
-          { id: "type14", label: "Fortune", count: 3 },
-          { id: "type15", label: "Ginger Hotels", count: 4 },
-          { id: "type16", label: "GoStops", count: 3 },
-          { id: "type17", label: "Hilton & Doubletree", count: 3 },
-        ]}
-        showAll={false}
-        searchable={false}
-        maxHeight="150px"
-      />
-    </aside>
+        <FilterSection
+          title="Property Type"
+          items={[
+            { id: "type1", label: "Hotel", count: 1030 },
+            { id: "type2", label: "Villas", count: 650 },
+            { id: "type3", label: "resort", count: 149 },
+            { id: "type4", label: "resort Property", count: 249 },
+            { id: "type5", label: "Inn", count: 349 },
+            { id: "type6", label: "Spa & Resort property", count: 449 },
+            { id: "type7", label: "Lodge", count: 549 },
+            { id: "type8", label: "Guest House", count: 649 },
+            { id: "type9", label: "Apartment", count: 749 },
+            { id: "type10", label: "Homes", count: 849 },
+            { id: "type11", label: "Palace", count: 949 },
+          ]}
+          showAll={false}
+          searchable={false}
+          maxHeight="150px"
+        />
+        <FilterSection
+          title="Chains"
+          items={[
+
+            { id: "type1", label: "AM Kollection - Larisa Hotels", count: 6 },
+            { id: "type2", label: "Accor - Novotel & ibis", count: 8 },
+            { id: "type3", label: "Ama Stays & Trails", count: 2 },
+            { id: "type4", label: "Amritara", count: 1 },
+            { id: "type5", label: "Inn", count: 349 },
+            { id: "type6", label: "Ascott, Citadines & Somerset", count: 1 },
+            { id: "type7", label: "Bluekite", count: 2 },
+            { id: "type8", label: "Club Mahindra", count: 3 },
+            { id: "type9", label: "Concept Hospitality", count: 6 },
+            { id: "type10", label: "Cygnett Group", count: 1 },
+            { id: "type11", label: "EKO STAY", count: 12 },
+            { id: "type12", label: "Elivaas", count: 65 },
+            { id: "type13", label: "Fab hotels", count: 31 },
+            { id: "type14", label: "Fortune", count: 3 },
+            { id: "type15", label: "Ginger Hotels", count: 4 },
+            { id: "type16", label: "GoStops", count: 3 },
+            { id: "type17", label: "Hilton & Doubletree", count: 3 },
+          ]}
+          showAll={false}
+          searchable={false}
+          maxHeight="150px"
+        />
+      </aside>
+    </>
   );
 };
 

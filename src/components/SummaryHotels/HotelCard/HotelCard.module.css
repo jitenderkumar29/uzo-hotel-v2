@@ -169,12 +169,13 @@
 }
 
 .location {
-  color: #0077cc;
+  /* color: #0077cc; */
   font-size: 0.85rem;
 }
 
 .locationIcon {
   font-size: 15px;
+  color: #0077cc;
 }
 
 .tags {

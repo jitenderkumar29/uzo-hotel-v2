@@ -1,7 +1,7 @@
 .hotelsearchBarHeader {
-  /* background-color: var(--light-accent); */
+  background-color: var(--dark-accent);
   /* background-color: #fd6e37; */
-  background: linear-gradient(to right, #e04a1a, #fd6e37);
+  /* background: linear-gradient(to right, #e04a1a, #fd6e37); */
   position: sticky;
   top: 0; /* This is crucial for sticky positioning to work */
   z-index: 100; /* Ensures the header stays above other content */
