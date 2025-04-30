@@ -7,8 +7,8 @@ import Image, { StaticImageData } from "next/image";
 import discountLogo from "@/assets/icons/discountLogo.svg";
 
 const HotelCard: React.FC = () => {
-  const [isOpenRating, setIsOpenRating] = useState(false);
-  const [isOpenMoreTag, setIsOpenMoreTag] = useState(false);
+  // const [isOpenRating, setIsOpenRating] = useState(false);
+  const [, setIsOpenMoreTag] = useState(false);
   const [openRatingId, setOpenRatingId] = useState<number | null>(null);
   const [openMoreTagsId, setOpenMoreTagsId] = useState<number | null>(null);
   // const [isOpen, setIsOpen] = useState(false);
