@@ -270,9 +270,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         <FilterSection
           title="Star Rating"
           items={[
-            { id: "star1", label: "3 Star" },
-            { id: "star2", label: "4 Star" },
-            { id: "star3", label: "5 Star" },
+            { id: "star1", label: "3 Star", count: 258 },
+            { id: "star2", label: "4 Star", count: 545 },
+            { id: "star3", label: "5 Star", count: 947 },
           ]}
           showAll={false}
           searchable={false}
@@ -280,11 +280,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         <FilterSection
           title="User Rating"
           items={[
-            { id: "star1", label: "3+" },
-            { id: "star2", label: "3.5+" },
-            { id: "star3", label: "4" },
-            { id: "star4", label: "4.5" },
-            { id: "star5", label: "5" },
+            { id: "star1", label: "3+", count: 741 },
+            { id: "star2", label: "3.5+", count: 852 },
+            { id: "star3", label: "4", count: 963 },
+            { id: "star4", label: "4.5", count: 789 },
+            { id: "star5", label: "5", count: 456 },
           ]}
           showAll={false}
           searchable={false}
