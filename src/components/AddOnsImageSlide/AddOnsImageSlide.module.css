@@ -2,6 +2,8 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem 1.25rem;
+  font-family: "Cinzel", "Palatino Linotype", "sans-serif";
+  width: 1300px;
 }
 
 .header {
@@ -12,12 +14,38 @@
   margin-right: auto;
 }
 
-.title {
+/* .title {
   font-size: 1.75rem;
   color: #333;
   margin: 1.25rem 0;
   font-weight: 500;
   line-height: 1.2;
+  text-transform: uppercase;
+} */
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #333;
+  margin: 1.25rem 0;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  gap: 1rem; /* Space between lines and text */
+}
+
+.title::before,
+.title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #333; /* Or your preferred line color */
+}
+
+.titleText {
+  padding: 0 1rem; /* Space around text */
 }
 
 .description {
@@ -29,9 +57,10 @@
 }
 
 .divider {
-  height: 2px;
+  /* height: 2px; */
   background-color: #ddd;
   margin: 1.25rem 0;
+  width: 120%;
 }
 
 .imageContainer {
@@ -94,19 +123,54 @@
   margin-bottom: 0.625rem;
   font-weight: 500;
 }
-
+/* 
 .sectionHoverContent {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 100%;
+  height: 100%;
   color: white;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   z-index: 5;
   opacity: 0;
   transition: all 0.3s ease;
+  background-color: aqua;
+} */
+
+.sectionHoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color-black);
+
+  /* color: white; */
+  text-align: center;
+  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); */
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.812);
+
+  /* Flexbox for vertical and horizontal centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionHoverContent h3,
+.sectionHoverContent p {
+  width: 100%; /* Ensure full width for proper text centering */
+  max-width: 90%; /* Prevent text from touching edges */
+  margin: 0.5rem 0; /* Add some vertical spacing between elements */
+  padding: 0 1rem; /* Add horizontal padding */
 }
 
 .sectionHoverContent h3 {
@@ -142,7 +206,8 @@
 /* Desktop styles */
 @media (min-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    /* font-size: 2.5rem; */
   }
 
   .description {
@@ -160,7 +225,8 @@
   .imageSection {
     flex: 1;
     border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid var(--dark-white);
+    /* border-right: 2px solid rgba(255, 255, 255, 0.3); */
   }
 
   .imageSection:last-child {

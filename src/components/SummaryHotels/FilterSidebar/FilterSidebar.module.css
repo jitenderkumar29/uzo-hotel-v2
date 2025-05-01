@@ -87,7 +87,8 @@
   align-items: center;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
+  /* border-bottom: 1px solid #e0e0e0; */
 }
 
 .filterTitle {
@@ -116,6 +117,9 @@
 
 .filterSection {
   /* margin-bottom: 1.5rem; */
+  border-bottom: 1px solid var(--border-color);
+  /* border-bottom: 1px solid #e0e0e0; */
+  padding-bottom: 5px;
 }
 
 .sectionHeader {

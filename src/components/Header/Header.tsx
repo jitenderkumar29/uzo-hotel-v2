@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const cityList: Record<string, City> = {
     agra: { id: 'agra', name: 'Agra' },
     bareliy: { id: 'bareliy', name: 'Bareliy' },
-    chemark: { id: 'chemark', name: 'Chemark' },
+    chemark: { id: 'Chennai', name: 'Chennai' },
     hyderabad: { id: 'hyderabad', name: 'Hyderabad' },
     mumbai: { id: 'mumbai', name: 'Mumbai' },
     bangalore: { id: 'bangalore', name: 'Bangalore' },

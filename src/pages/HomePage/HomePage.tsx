@@ -1,6 +1,7 @@
 "use client";
 import AddOns from '@/components/AddOns/AddOns'
 import AddOns2 from '@/components/AddOns2/AddOns2'
+import AddOnsImageSlide from '@/components/AddOnsImageSlide/AddOnsImageSlide';
 import FooterStates from '@/components/FooterStates/FooterStates'
 import FooterUzo from '@/components/FooterUzo/FooterUzo'
 import Header from '@/components/Header/Header'
@@ -21,7 +22,7 @@ const HomePage = () => {
       <Header />
       <HeaderTop />
       <Hero />
-      {/* <AddOnsImageSlide /> */}
+      <AddOnsImageSlide />
       <PrepareToTravel />
       <HeroGallery />
       <AddOns2 />
