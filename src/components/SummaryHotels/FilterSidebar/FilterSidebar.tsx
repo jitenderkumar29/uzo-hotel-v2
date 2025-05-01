@@ -39,9 +39,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({
     )
     : items;
 
-  // Automatically show "Show All" if there are more than 8 items
-  const shouldShowAll = items.length > 8;
-  const displayItems = shouldShowAll && !showAllItems ? filteredItems.slice(0, 8) : filteredItems;
+  // Automatically show "Show All" if there are more than 5 items
+  const shouldShowAll = items.length > 5;
+  const displayItems = shouldShowAll && !showAllItems ? filteredItems.slice(0, 5) : filteredItems;
 
   return (
     <div className={styles.filterSection}>
@@ -152,6 +152,14 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         </div>
 
         <FilterSection
+          title="Previously Used Filters"
+          items={[
+            { id: "usedFilter", label: "Luxury Stays" },
+
+          ]}
+        />
+
+        <FilterSection
           title="Popular filters"
           items={[
             { id: "dailyDeal", label: "Daily Steal Deal", count: 9 },
@@ -161,19 +169,30 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
             { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
           ]}
+          showAll={true}
         />
 
         <FilterSection
           title="Price"
           items={[
-            { id: "price1", label: "₹ 0 to ₹ 1500", count: 588 },
-            { id: "price2", label: "₹ 1500 to ₹ 3000", count: 730 },
-            { id: "price3", label: "₹ 3000 to ₹ 6000", count: 341 },
-            { id: "price4", label: "₹ 6000 to ₹ 9000", count: 552 },
-            { id: "price5", label: "₹ 9000 to ₹ 12000", count: 225 },
-            { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
+            { id: "price1", label: "₹ 0 to ₹ 2000", count: 588 },
+            { id: "price2", label: "₹ 2000 to ₹ 6000", count: 730 },
+            { id: "price3", label: "₹ 12000 to ₹ 20000", count: 341 },
+            { id: "price4", label: "₹ 30000 to ₹ 40000", count: 552 },
+            { id: "price5", label: "₹ 50000 to ₹ 60000", count: 225 },
+            { id: "price6", label: "₹ 70000 to ₹ 80000", count: 999 },
+            { id: "price7", label: "Above ₹ 80000", count: 999 },
           ]}
-          showAll={false}
+          showAll={true}
+        />
+
+        <FilterSection
+          title="Show Properties with"
+          items={[
+            { id: "propertiesWith1", label: "Free Breakfast" },
+            { id: "propertiesWith2", label: "Free Parking" },
+
+          ]}
         />
 
         <FilterSection
@@ -246,6 +265,48 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "chain17", label: "Hilton & Doubletree", count: 3 },
           ]}
           showAll={true}
+          searchable={false}
+        />
+        <FilterSection
+          title="Star Rating"
+          items={[
+            { id: "star1", label: "3 Star" },
+            { id: "star2", label: "4 Star" },
+            { id: "star3", label: "5 Star" },
+          ]}
+          showAll={false}
+          searchable={false}
+        />
+        <FilterSection
+          title="User Rating"
+          items={[
+            { id: "star1", label: "3+" },
+            { id: "star2", label: "3.5+" },
+            { id: "star3", label: "4" },
+            { id: "star4", label: "4.5" },
+            { id: "star5", label: "5" },
+          ]}
+          showAll={false}
+          searchable={false}
+        />
+        <FilterSection
+          title="Payment Mode"
+          items={[
+            { id: "payment1", label: "Prepaid" },
+            { id: "payment2", label: "Pay Later" },
+            { id: "payment3", label: "Pay at Hotel" },
+          ]}
+          showAll={false}
+          searchable={false}
+        />
+        <FilterSection
+          title="Meals"
+          items={[
+            { id: "meal1", label: "Breakfast Included" },
+            { id: "meal2", label: "Lunch Included" },
+            { id: "meal3", label: "Dinner Included" },
+          ]}
+          showAll={false}
           searchable={false}
         />
       </aside>
