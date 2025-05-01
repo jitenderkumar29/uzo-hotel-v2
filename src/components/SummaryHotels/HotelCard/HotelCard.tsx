@@ -30,6 +30,7 @@ const HotelCard: React.FC = () => {
     thumbnails: string[];
     totalRatings: number;
     reviewScore: string;
+    ratingCategory: string;
     breakdown: {
       stars: number;
       count: number;
@@ -80,7 +81,8 @@ const HotelCard: React.FC = () => {
         "https://www.ahstatic.com/photos/a248_ho_05_p_2048x1536.jpg",
       ],
       totalRatings: 3145,
-      reviewScore: "4/5",
+      reviewScore: "4.5/5",
+      ratingCategory: "Excellent",
       breakdown: [
         { stars: 5, count: 6587 },
         { stars: 4, count: 1700 },
@@ -118,6 +120,7 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 5145,
       reviewScore: "4/5",
+      ratingCategory: "Very Good",
       breakdown: [
         { stars: 5, count: 3587 },
         { stars: 4, count: 1100 },
@@ -154,7 +157,8 @@ const HotelCard: React.FC = () => {
         "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       ],
       totalRatings: 50,
-      reviewScore: "4/5",
+      reviewScore: "3.5/5",
+      ratingCategory: "Good",
       breakdown: [
         { stars: 5, count: 5587 },
         { stars: 4, count: 2100 },
@@ -191,7 +195,8 @@ const HotelCard: React.FC = () => {
         "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       ],
       totalRatings: 1310,
-      reviewScore: "4/5",
+      reviewScore: "3/5",
+      ratingCategory: "Poor",
       breakdown: [
         { stars: 5, count: 8587 },
         { stars: 4, count: 1100 },
@@ -228,7 +233,46 @@ const HotelCard: React.FC = () => {
         "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       ],
       totalRatings: 1510,
-      reviewScore: "4/5",
+      reviewScore: "5/5",
+      ratingCategory: "Excellent",
+      breakdown: [
+        { stars: 5, count: 9687 },
+        { stars: 4, count: 3100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
+      leftRoom: 1,
+      oldPrice: "₹2499",
+      newPrice: "₹1250",
+      taxes: "+₹420 taxes & fees per night",
+    },
+    {
+      id: 6,
+      name: "Hard Rock Hotel",
+      rating: "5",
+      category: "Hotel",
+      location: "Delhi | 1.3 km drive to patel nagar",
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
+      commonFeature: "👫 Couple Friendly",
+      features: [
+        // "👫 Couple Friendly",
+        "Free Cancellation",
+        "Book @ $0 Available",
+        "Breakfast available at extra charges",
+      ],
+      mainImg: "https://r1imghtlak.mmtcdn.com/0f02d54e9fd611e99e940242ac110002.jpg?output-quality=75&downsize=243:162&output-format=webp",
+      thumbnails: [
+        "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-a90aeda2797811eba4e00242ac110002.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-308f563a-dc1a-4e9d-bce8-b4e8c1993c18.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201802231746016635-33a78654c72011ed952b0a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      ],
+      totalRatings: 1510,
+      reviewScore: "4.5/5",
+      ratingCategory: "Excellent",
       breakdown: [
         { stars: 5, count: 9687 },
         { stars: 4, count: 3100 },
@@ -239,7 +283,121 @@ const HotelCard: React.FC = () => {
       leftRoom: 1,
       oldPrice: "₹1999",
       newPrice: "₹768",
-      taxes: "+₹223 taxes & fees per night",
+      taxes: "+₹325 taxes & fees per night",
+    },
+    {
+      id: 7,
+      name: "Hotel Rockland C R Park",
+      rating: "5",
+      category: "Hotel",
+      location: "Chittaranjan Park | 5 km drive to new delhi",
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
+      commonFeature: "👫 Couple Friendly",
+      features: [
+        // "👫 Couple Friendly",
+        "Free Cancellation",
+        "Book @ $0 Available",
+        "Breakfast available at extra charges",
+      ],
+      mainImg: "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-574118d80c7811eb82940242ac110002.jpg?downsize=245:152&output-format=webp",
+      thumbnails: [
+        "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-470bd530166911ea99730242ac110005.jpg?downsize=245:152&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-308f563a-dc1a-4e9d-bce8-b4e8c1993c18.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201802231746016635-33a78654c72011ed952b0a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      ],
+      totalRatings: 1510,
+      reviewScore: "4/5",
+      ratingCategory: "Very Good",
+      breakdown: [
+        { stars: 5, count: 9687 },
+        { stars: 4, count: 3100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
+      leftRoom: 1,
+      oldPrice: "₹3999",
+      newPrice: "₹1583",
+      taxes: "+₹345 taxes & fees per night",
+    },
+    {
+      id: 8,
+      name: "Spara Boutique Resort",
+      rating: "5",
+      category: "Hotel",
+      location: "Pushpanjali Farms | 9.1 km drive to T3 - Delhi Airport (IGI)",
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
+      commonFeature: "👫 Couple Friendly",
+      features: [
+        // "👫 Couple Friendly",
+        "Free Cancellation",
+        "Book @ $0 Available",
+        "Breakfast available at extra charges",
+      ],
+      mainImg: "https://r1imghtlak.ibcdn.com/664c106a0f2411e9be570242ac110003.jfif?downsize=245:152&output-format=webp",
+      thumbnails: [
+        "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-470bd530166911ea99730242ac110005.jpg?downsize=245:152&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/73b0a28e0f2411e992750242ac110006.jfif?downsize=245:152&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201802231746016635-33a78654c72011ed952b0a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      ],
+      totalRatings: 1510,
+      reviewScore: "3.5/5",
+      ratingCategory: "Poor",
+      breakdown: [
+        { stars: 5, count: 9687 },
+        { stars: 4, count: 3100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
+      leftRoom: 1,
+      oldPrice: "₹2999",
+      newPrice: "₹968",
+      taxes: "+₹231 taxes & fees per night",
+    },
+    {
+      id: 9,
+      name: "SK Premium Park",
+      rating: "5",
+      category: "Hotel",
+      location: "Delhi Farms | 1.1 km drive to New Delhi",
+      tags: ["Gym", "Restaurant"],
+      moreTags: ["Free Wi-Fi", "24-hr Room", "Jacuzzi", "Spa", "Swimming Pool", "Restaurant", "Fireplace", "Lounge", "Bar", "Steam & Sauna"],
+      commonFeature: "👫 Couple Friendly",
+      features: [
+        // "👫 Couple Friendly",
+        "Free Cancellation",
+        "Book @ $0 Available",
+        "Breakfast available at extra charges",
+      ],
+      mainImg: "https://r1imghtlak.ibcdn.com/b7220c40780511e7b9c6025f77df004f.jpg?downsize=245:152&output-format=webp",
+      thumbnails: [
+        "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r1imghtlak.ibcdn.com/73b0a28e0f2411e992750242ac110006.jfif?downsize=245:152&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201802231746016635-33a78654c72011ed952b0a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+        "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-470bd530166911ea99730242ac110005.jpg?downsize=245:152&output-format=webp",
+      ],
+      totalRatings: 1910,
+      reviewScore: "4.5/5",
+      ratingCategory: "Excellent",
+      breakdown: [
+        { stars: 5, count: 9687 },
+        { stars: 4, count: 3100 },
+        { stars: 3, count: 510 },
+        { stars: 2, count: 230 },
+        { stars: 1, count: 293 },
+      ],
+      leftRoom: 1,
+      oldPrice: "₹4999",
+      newPrice: "₹1968",
+      taxes: "+₹431 taxes & fees per night",
     },
   ];
 
@@ -502,7 +660,8 @@ const HotelCard: React.FC = () => {
                         // onMouseLeave={() => setIsOpenRating(false)}
                         // onClick={() => setIsOpenRating(true)}
                         >
-                          Excellent <br />
+                          {hotel.ratingCategory} <br />
+                          {/* Excellent <br /> */}
                           {hotel.totalRatings} Ratings{" "}
                           <span className={styles.rating}>{hotel.reviewScore}</span>
                         </span>

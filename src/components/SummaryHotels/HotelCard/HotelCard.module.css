@@ -304,7 +304,8 @@
 
 .buttonBookNow {
   border-radius: 50px;
-  background-color: var(--logo-color);
+  background-color: var(--light-orange);
+  /* background-color: var(--logo-color); */
   justify-content: center;
   align-items: center;
   padding: 6px 40px;
@@ -315,7 +316,8 @@
 }
 
 .buttonBookNow:hover {
-  background-color: var(--logo-color-hover);
+  background-color: var(--dark-orange);
+  /* background-color: var(--logo-color-hover); */
 }
 
 .buttonRoom {

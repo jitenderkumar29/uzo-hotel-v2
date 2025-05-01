@@ -44,78 +44,80 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   const displayItems = shouldShowAll && !showAllItems ? filteredItems.slice(0, 5) : filteredItems;
 
   return (
-    <div className={styles.filterSection}>
-      <div
-        className={styles.sectionHeader}
-        onClick={() => setIsOpen(!isOpen)}
-        role="button"
-        aria-expanded={isOpen}
-        aria-controls={`${title}-content`}
-      >
-        <svg
-          viewBox="0 0 16 12"
-          className={`${styles.arrowIcon} ${isOpen ? styles.arrowOpen : ""}`}
-          aria-hidden="true"
+    <>
+      <div className={styles.filterSection}>
+        <div
+          className={styles.sectionHeader}
+          onClick={() => setIsOpen(!isOpen)}
+          role="button"
+          aria-expanded={isOpen}
+          aria-controls={`${title}-content`}
         >
-          <path
-            fillRule="evenodd"
-            d="M6.837 9.571c.642.9 1.688.894 2.326 0l5.674-7.942c.642-.9.268-1.629-.831-1.629H1.994c-1.101 0-1.47.735-.83 1.629z"
-          />
-        </svg>
-        <h4>{title}</h4>
-      </div>
-
-      {isOpen && (
-        <div id={`${title}-content`}>
-          {searchable && (
-            <div className={styles.searchBox}>
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path d="m15.61 13.731-3.095-3.096a6.84 6.84 0 0 0-1.348-9.084 6.83 6.83 0 0 0-9.166.452 6.84 6.84 0 0 0-.449 9.172 6.83 6.83 0 0 0 9.079 1.346l3.095 3.095c.524.512 1.36.512 1.884 0 .52-.52.52-1.364 0-1.885M6.84 2.008a4.83 4.83 0 0 1 4.83 4.833 4.831 4.831 0 1 1-9.661 0 4.837 4.837 0 0 1 4.83-4.833z" />
-              </svg>
-              <input
-                type="text"
-                placeholder={`Search ${title}`}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                aria-label={`Search ${title}`}
-              />
-            </div>
-          )}
-
-          <div className={styles.filterListContainer}>
-            <ul className={styles.filterList}>
-              {displayItems.map((item) => (
-                <li key={item.id} className={styles.filterItem}>
-                  <div className={styles.checkboxContainer}>
-                    <input
-                      type="checkbox"
-                      id={item.id}
-                      className={styles.checkboxInput}
-                    />
-                    <label htmlFor={item.id} className={styles.checkboxLabel}>
-                      {item.label}
-                    </label>
-                  </div>
-                  {item.count !== undefined && (
-                    <span className={styles.filterCount}>({item.count})</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {(shouldShowAll || showAll) && (
-            <button
-              className={styles.showAll}
-              aria-label={showAllItems ? "Show less options" : "Show all options"}
-              onClick={() => setShowAllItems(!showAllItems)}
-            >
-              {showAllItems ? "- Show Less" : "+ Show All"}
-            </button>
-          )}
+          <svg
+            viewBox="0 0 16 12"
+            className={`${styles.arrowIcon} ${isOpen ? styles.arrowOpen : ""}`}
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M6.837 9.571c.642.9 1.688.894 2.326 0l5.674-7.942c.642-.9.268-1.629-.831-1.629H1.994c-1.101 0-1.47.735-.83 1.629z"
+            />
+          </svg>
+          <h4>{title}</h4>
         </div>
-      )}
-    </div>
+
+        {isOpen && (
+          <div id={`${title}-content`}>
+            {searchable && (
+              <div className={styles.searchBox}>
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="m15.61 13.731-3.095-3.096a6.84 6.84 0 0 0-1.348-9.084 6.83 6.83 0 0 0-9.166.452 6.84 6.84 0 0 0-.449 9.172 6.83 6.83 0 0 0 9.079 1.346l3.095 3.095c.524.512 1.36.512 1.884 0 .52-.52.52-1.364 0-1.885M6.84 2.008a4.83 4.83 0 0 1 4.83 4.833 4.831 4.831 0 1 1-9.661 0 4.837 4.837 0 0 1 4.83-4.833z" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder={`Search ${title}`}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label={`Search ${title}`}
+                />
+              </div>
+            )}
+
+            <div className={styles.filterListContainer}>
+              <ul className={styles.filterList}>
+                {displayItems.map((item) => (
+                  <li key={item.id} className={styles.filterItem}>
+                    <div className={styles.checkboxContainer}>
+                      <input
+                        type="checkbox"
+                        id={item.id}
+                        className={styles.checkboxInput}
+                      />
+                      <label htmlFor={item.id} className={styles.checkboxLabel}>
+                        {item.label}
+                      </label>
+                    </div>
+                    {item.count !== undefined && (
+                      <span className={styles.filterCount}>({item.count})</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {(shouldShowAll || showAll) && (
+              <button
+                className={styles.showAll}
+                aria-label={showAllItems ? "Show less options" : "Show all options"}
+                onClick={() => setShowAllItems(!showAllItems)}
+              >
+                {showAllItems ? "- Show Less" : "+ Show All"}
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
@@ -239,26 +241,26 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         <FilterSection
           title="Chain hotels"
           items={[
-            { id: "chain1", label: "IHG", count: 6 },
-            { id: "chain2", label: "OBEROI", count: 8 },
-            { id: "chain3", label: "ITC", count: 2 },
-            { id: "chain4", label: "HILTON", count: 1 },
-            { id: "chain5", label: "LEELA", count: 349 },
-            { id: "chain6", label: "LALIT", count: 1 },
-            { id: "chain7", label: "SAROVOR", count: 2 },
-            { id: "chain8", label: "PRIDE", count: 3 },
-            { id: "chain9", label: "ACCORDING", count: 6 },
-            { id: "chain10", label: "BLOOM", count: 1 },
-            { id: "chain11", label: "PARK", count: 12 },
-            { id: "chain12", label: "GINGER", count: 65 },
-            { id: "chain13", label: "RADISSON", count: 31 },
-            { id: "chain14", label: "MARRIOT", count: 3 },
-            { id: "chain15", label: "TAJ", count: 4 },
-            { id: "chain16", label: "Hyatt ", count: 3 },
-            { id: "chain17", label: "Wyndham", count: 5 },
-            { id: "chain17", label: "Lemontree", count: 8 },
-            { id: "chain17", label: "Royal orchid", count: 7 },
-            { id: "chain17", label: "Club mahindra", count: 9 },
+            { id: "chain1", label: "IHG Hotel", count: 6 },
+            { id: "chain2", label: "OBEROI Hotel", count: 8 },
+            { id: "chain3", label: "ITC Hotel", count: 2 },
+            { id: "chain4", label: "HILTON Hotel", count: 1 },
+            { id: "chain5", label: "LEELA Hotel", count: 349 },
+            { id: "chain6", label: "LALIT Hotel", count: 1 },
+            { id: "chain7", label: "SAROVOR Hotel", count: 2 },
+            { id: "chain8", label: "PRIDE Hotel", count: 3 },
+            { id: "chain9", label: "ACCOR Hotel", count: 6 },
+            { id: "chain10", label: "BLOOM Hotel", count: 1 },
+            { id: "chain11", label: "PARK Hotel", count: 12 },
+            { id: "chain12", label: "GINGER Hotel", count: 65 },
+            { id: "chain13", label: "RADISSON Hotel", count: 31 },
+            { id: "chain14", label: "MARRIOT Hotel", count: 3 },
+            { id: "chain15", label: "TAJ Hotel", count: 4 },
+            { id: "chain16", label: "Hyatt Hotel", count: 3 },
+            { id: "chain17", label: "Wyndham Hotel", count: 5 },
+            { id: "chain17", label: "Lemontree Hotel", count: 8 },
+            { id: "chain17", label: "Royal orchid Hotel", count: 7 },
+            { id: "chain17", label: "Club mahindra Hotel", count: 9 },
           ]}
           showAll={true}
           searchable={false}
@@ -332,21 +334,39 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           searchable={false}
         />
         <FilterSection
-          title="Locations"
+          title="Localities"
           items={[
-            { id: "location1", label: "Agra" },
-            { id: "location2", label: "Bareliy" },
-            { id: "location3", label: "Chennai" },
-            { id: "location4", label: "Hyderabad" },
-            { id: "location5", label: "Mumbai" },
-            { id: "location6", label: "Bangalore" },
-            { id: "location7", label: "Gurgaon" },
-            { id: "location8", label: "Goa" },
-            { id: "location9", label: "Kolkata" },
-            { id: "location10", label: "Noida" },
-            { id: "location11", label: "Pune" },
-            { id: "location12", label: "Ghaziabad" },
-            { id: "location13", label: "Shirdi" },
+            { id: "location1", label: "Karol bagh" },
+            { id: "location2", label: "Lajpat Nagar" },
+            { id: "location3", label: "Mehrauli" },
+            { id: "location4", label: "Bangluru" },
+            { id: "location5", label: "Gubbacci" },
+            { id: "location6", label: "Akila Mehendi Art" },
+            { id: "location7", label: "Popins Holidays" },
+
+          ]}
+          showAll={false}
+          searchable={false}
+        />
+        <FilterSection
+          title="Area & Attraction"
+          items={[
+            { id: "location1", label: "Government Museum" },
+            { id: "location2", label: "Visvesvaraya Industrial" },
+            { id: "location2", label: "Technological Museum" },
+            { id: "location3", label: "Tipus Summer Palace" },
+            { id: "location4", label: "Bull Temple" },
+            { id: "location5", label: "ISKCON Temple" },
+            { id: "location6", label: "Bangalore Palace" },
+            { id: "location7", label: "St. Morys Basilica" },
+            { id: "location8", label: "Banglore Cave Temple" },
+            { id: "location9", label: "Devanahalli Fort" },
+            { id: "location10", label: "St. Marks Cathedral" },
+            { id: "location11", label: "National Gallary Of Modern Art" },
+            { id: "location12", label: "The Heritage Center" },
+            { id: "location13", label: "Aerospace Museum" },
+            { id: "location14", label: "Kempegowda International Airport" },
+
           ]}
           showAll={false}
           searchable={false}

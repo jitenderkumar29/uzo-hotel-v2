@@ -23,6 +23,9 @@
   --light-gold: #cfa25e;
   --logo-color: #ef2e32;
   --logo-color-hover: #c50307;
+  --light-orange: #ef6614;
+  /* --light-orange: #da5200; */
+  --dark-orange: #de5a0d;
   --green-text: #008000;
   --text-color: #fff;
   --text-color-black: #000000;
@@ -63,4 +66,5 @@ body {
   position: relative;
   font-family: "Poppins", "Segoe UI", "Open Sans", "Bahnschrift", sans-serif,
     Arial, Helvetica, sans-serif, "lato";
+  /* font-family: "Cinzel", "Palatino Linotype", "sans-serif"; */
 }

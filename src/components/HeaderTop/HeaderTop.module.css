@@ -136,7 +136,7 @@
   left: 0;
   right: 0;
   background-color: white;
-  z-index: 1005;
+  z-index: 9999;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Center align the full width dropdown */
