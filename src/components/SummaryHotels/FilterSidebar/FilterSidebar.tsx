@@ -1,34 +1,9 @@
 import React, { useState } from "react";
 import styles from "./FilterSidebar.module.css";
-// import Map from "@/components/Map";
 import mapicon from "@/assets/icons/mapicon.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-
-
-// const locations = [
-//   {
-//     position: { lat: -3.745, lng: -38.523 },
-//     title: 'UZO Hotels',
-//     content: (
-//       <div className="bg-blue-500 text-white p-1 rounded-full w-6 h-6 flex items-center justify-center">
-//         A
-//       </div>
-//     )
-//   },
-//   // {
-//   //   position: { lat: -3.755, lng: -38.533 },
-//   //   title: 'Location B',
-//   //   content: 'B' // Will be converted to text node
-//   // },
-//   // {
-//   //   position: { lat: -3.735, lng: -38.513 },
-//   //   title: 'Location C',
-//   //   // No content (will use default marker)
-//   // }
-// ];
-
 
 interface FilterItem {
   id: string;
@@ -41,7 +16,6 @@ interface FilterSectionProps {
   items: FilterItem[];
   showAll?: boolean;
   searchable?: boolean;
-  maxHeight?: string; // Add maxHeight prop to control scrollable area
 }
 
 interface FilterSidebarProps {
@@ -54,16 +28,20 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   items,
   showAll = false,
   searchable = false,
-  maxHeight = "150px", // Default max height
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showAllItems, setShowAllItems] = useState(false);
 
   const filteredItems = searchable
     ? items.filter((item) =>
       item.label.toLowerCase().includes(searchTerm.toLowerCase())
     )
     : items;
+
+  // Automatically show "Show All" if there are more than 8 items
+  const shouldShowAll = items.length > 8;
+  const displayItems = shouldShowAll && !showAllItems ? filteredItems.slice(0, 8) : filteredItems;
 
   return (
     <div className={styles.filterSection}>
@@ -104,12 +82,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             </div>
           )}
 
-          <div
-            className={styles.scrollableContent}
-            style={{ maxHeight: maxHeight }}
-          >
+          <div className={styles.filterListContainer}>
             <ul className={styles.filterList}>
-              {filteredItems.map((item) => (
+              {displayItems.map((item) => (
                 <li key={item.id} className={styles.filterItem}>
                   <div className={styles.checkboxContainer}>
                     <input
@@ -129,9 +104,13 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             </ul>
           </div>
 
-          {showAll && (
-            <button className={styles.showAll} aria-label="Show all options">
-              + Show All
+          {(shouldShowAll || showAll) && (
+            <button
+              className={styles.showAll}
+              aria-label={showAllItems ? "Show less options" : "Show all options"}
+              onClick={() => setShowAllItems(!showAllItems)}
+            >
+              {showAllItems ? "- Show Less" : "+ Show All"}
             </button>
           )}
         </div>
@@ -152,28 +131,15 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           />
           <div className={styles.mapIconButton}>
             <div><FontAwesomeIcon icon={faLocationDot} className={styles.locationIcon} /></div>
-
             <button type="button">Show on map</button>
           </div>
         </div>
       </div>
 
-      {/* working map example */}
-      {/* <main className="p-4">
-          <div className="border rounded-lg overflow-hidden">
-            <Map
-              center={{ lat: -3.745, lng: -38.523 }}
-              zoom={12}
-              markers={locations}
-              className="h-[150px]"
-            />
-          </div>
-        </main> */}
       <aside
         className={`${styles.sidebar} ${isOpen ? styles.active : ""}`}
         aria-hidden={!isOpen}
       >
-
         <div className={styles.filterHeader}>
           <h2 className={styles.filterTitle}>FILTERS</h2>
           <button
@@ -195,7 +161,6 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "freeBreakfast", label: "Free Breakfast", count: 240 },
             { id: "payAtHotel", label: "Pay At Hotel", count: 3 },
           ]}
-          maxHeight="150px"
         />
 
         <FilterSection
@@ -209,7 +174,6 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "price6", label: "₹ 12000 to ₹ 15000", count: 999 },
           ]}
           showAll={false}
-          maxHeight="150px"
         />
 
         <FilterSection
@@ -223,7 +187,6 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "location6", label: "Akila Mehendi Art" },
             { id: "location7", label: "Popins Holidays" },
           ]}
-          maxHeight="150px"
         />
 
         <FilterSection
@@ -240,7 +203,6 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           ]}
           showAll={false}
           searchable={false}
-          maxHeight="150px"
         />
 
         <FilterSection
@@ -260,33 +222,31 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           ]}
           showAll={false}
           searchable={false}
-          maxHeight="150px"
         />
+
         <FilterSection
           title="Chains"
           items={[
-
-            { id: "type1", label: "AM Kollection - Larisa Hotels", count: 6 },
-            { id: "type2", label: "Accor - Novotel & ibis", count: 8 },
-            { id: "type3", label: "Ama Stays & Trails", count: 2 },
-            { id: "type4", label: "Amritara", count: 1 },
-            { id: "type5", label: "Inn", count: 349 },
-            { id: "type6", label: "Ascott, Citadines & Somerset", count: 1 },
-            { id: "type7", label: "Bluekite", count: 2 },
-            { id: "type8", label: "Club Mahindra", count: 3 },
-            { id: "type9", label: "Concept Hospitality", count: 6 },
-            { id: "type10", label: "Cygnett Group", count: 1 },
-            { id: "type11", label: "EKO STAY", count: 12 },
-            { id: "type12", label: "Elivaas", count: 65 },
-            { id: "type13", label: "Fab hotels", count: 31 },
-            { id: "type14", label: "Fortune", count: 3 },
-            { id: "type15", label: "Ginger Hotels", count: 4 },
-            { id: "type16", label: "GoStops", count: 3 },
-            { id: "type17", label: "Hilton & Doubletree", count: 3 },
+            { id: "chain1", label: "AM Kollection - Larisa Hotels", count: 6 },
+            { id: "chain2", label: "Accor - Novotel & ibis", count: 8 },
+            { id: "chain3", label: "Ama Stays & Trails", count: 2 },
+            { id: "chain4", label: "Amritara", count: 1 },
+            { id: "chain5", label: "Inn", count: 349 },
+            { id: "chain6", label: "Ascott, Citadines & Somerset", count: 1 },
+            { id: "chain7", label: "Bluekite", count: 2 },
+            { id: "chain8", label: "Club Mahindra", count: 3 },
+            { id: "chain9", label: "Concept Hospitality", count: 6 },
+            { id: "chain10", label: "Cygnett Group", count: 1 },
+            { id: "chain11", label: "EKO STAY", count: 12 },
+            { id: "chain12", label: "Elivaas", count: 65 },
+            { id: "chain13", label: "Fab hotels", count: 31 },
+            { id: "chain14", label: "Fortune", count: 3 },
+            { id: "chain15", label: "Ginger Hotels", count: 4 },
+            { id: "chain16", label: "GoStops", count: 3 },
+            { id: "chain17", label: "Hilton & Doubletree", count: 3 },
           ]}
-          showAll={false}
+          showAll={true}
           searchable={false}
-          maxHeight="150px"
         />
       </aside>
     </>

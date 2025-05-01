@@ -60,6 +60,6 @@ body {
   margin: 0;
   width: 100%;
   position: relative;
-  font-family: "lato", "Poppins", "Segoe UI", "Open Sans", "Bahnschrift",
-    sans-serif, Arial, Helvetica, sans-serif;
+  font-family: "Poppins", "Segoe UI", "Open Sans", "Bahnschrift", sans-serif,
+    Arial, Helvetica, sans-serif, "lato";
 }
