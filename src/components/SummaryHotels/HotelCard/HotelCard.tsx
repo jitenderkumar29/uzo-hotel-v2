@@ -196,7 +196,7 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 1310,
       reviewScore: "3/5",
-      ratingCategory: "Poor",
+      ratingCategory: "Fair",
       breakdown: [
         { stars: 5, count: 8587 },
         { stars: 4, count: 1100 },
@@ -348,7 +348,7 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 1510,
       reviewScore: "3.5/5",
-      ratingCategory: "Poor",
+      ratingCategory: "Good",
       breakdown: [
         { stars: 5, count: 9687 },
         { stars: 4, count: 3100 },

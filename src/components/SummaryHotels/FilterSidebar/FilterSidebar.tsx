@@ -351,6 +351,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         <FilterSection
           title="Area & Attraction"
           items={[
+
             { id: "location1", label: "Government Museum" },
             { id: "location2", label: "Visvesvaraya Industrial" },
             { id: "location2", label: "Technological Museum" },
