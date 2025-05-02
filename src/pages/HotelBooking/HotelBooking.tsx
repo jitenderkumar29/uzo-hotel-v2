@@ -9,7 +9,9 @@ import FooterUzo from '@/components/FooterUzo/FooterUzo'
 const HotelBooking = () => {
   return (
     <div>
-      <HeaderTop />
+      <div className={styles.headerTopBody}>
+        <HeaderTop />
+      </div>
       <div className={styles.hotelsearchBarHeader} >
         <HotelSearchBarTop />
       </div>

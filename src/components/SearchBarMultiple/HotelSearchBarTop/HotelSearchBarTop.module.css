@@ -422,8 +422,9 @@
   top: 0;
   width: 100%;
   max-width: 1270px auto;
-  background-color: var(--background);
+  background-color: var(--dark-white);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
 }
 
 .contSearchBody {
@@ -451,7 +452,7 @@
 }
 
 .searchBoxSearch {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   background: #fff;

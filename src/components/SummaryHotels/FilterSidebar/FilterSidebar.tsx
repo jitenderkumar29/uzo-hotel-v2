@@ -334,22 +334,38 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           searchable={false}
         />
         <FilterSection
-          title="Localities"
+          title="Area & attraction"
           items={[
-            { id: "location1", label: "Karol bagh" },
-            { id: "location2", label: "Lajpat Nagar" },
-            { id: "location3", label: "Mehrauli" },
-            { id: "location4", label: "Bangluru" },
-            { id: "location5", label: "Gubbacci" },
-            { id: "location6", label: "Akila Mehendi Art" },
-            { id: "location7", label: "Popins Holidays" },
-
+            { id: "location1", label: "Humayuns Tomb" },
+            { id: "location2", label: "Safdarjungs Tomb" },
+            { id: "location3", label: "Red Fort" },
+            { id: "location4", label: "India Gate" },
+            { id: "location5", label: "National Museum" },
+            { id: "location6", label: "Delhi National Museum" },
+            { id: "location7", label: "Jantar Mantar" },
+            { id: "location7", label: "Qutub Minar" },
+            { id: "location7", label: "Raj Ghat" },
+            { id: "location7", label: "Lotus Temple" },
+            { id: "location7", label: "Pitampura TV Tower" },
+            { id: "location7", label: "Old Fort (Purana Qila)" },
+            { id: "location7", label: "Jama Masjid" },
+            { id: "location7", label: "Laxminarayan Temple" },
+            { id: "location7", label: "ISKCON Temple" },
+            { id: "location7", label: "Akshardham Temple" },
+            { id: "location7", label: "Birla Mandir Temple" },
+            { id: "location7", label: "Gurudwara Sis Ganj Temple" },
+            { id: "location7", label: "Teen Murti Bhavan" },
+            { id: "location7", label: "Shankars Dolls Museum" },
+            { id: "location7", label: "St. James Church" },
+            { id: "location7", label: "National Gandhi Museum" },
+            { id: "location7", label: "National Crafts Museum" },
+            { id: "location7", label: "Indira Gandhi International Airport" },
           ]}
           showAll={false}
           searchable={false}
         />
         <FilterSection
-          title="Area & Attraction"
+          title="Localities"
           items={[
 
             { id: "location1", label: "Cannaught Place" },

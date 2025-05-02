@@ -234,7 +234,7 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 1510,
       reviewScore: "5/5",
-      ratingCategory: "Ultra",
+      ratingCategory: "Ultra Plus",
       breakdown: [
         { stars: 5, count: 9687 },
         { stars: 4, count: 3100 },
@@ -500,7 +500,7 @@ const HotelCard: React.FC = () => {
       ],
       totalRatings: 2510,
       reviewScore: "5/5",
-      ratingCategory: "Ultra",
+      ratingCategory: "Ultra Plus",
       breakdown: [
         { stars: 5, count: 987 },
         { stars: 4, count: 300 },

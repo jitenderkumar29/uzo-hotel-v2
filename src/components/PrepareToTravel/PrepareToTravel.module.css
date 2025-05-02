@@ -43,6 +43,7 @@
   flex-direction: column;
   padding: 0;
   margin: 0;
+  margin-right: -10px;
 }
 
 .travelCard {
@@ -161,8 +162,9 @@
   .prepareContent {
     flex: 1 1 35%;
     padding-right: 2rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
     background-color: var(--dark-white);
+    /* background-image: var(./); */
   }
 
   .cardsContainer {
@@ -171,6 +173,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-right: -10px;
   }
 
   .travelCard {
