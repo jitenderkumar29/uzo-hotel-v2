@@ -50,6 +50,7 @@
 }
 .sideBarBody {
   padding: 10px 0px;
+  z-index: 5;
 }
 
 .mainContent {

@@ -10,7 +10,7 @@ const HotelBooking = () => {
   return (
     <div>
       <HeaderTop />
-      <div className={styles.hotelsearchBarHeader}>
+      <div className={styles.hotelsearchBarHeader} >
         <HotelSearchBarTop />
       </div>
       <div className={styles.hotelSummary}>

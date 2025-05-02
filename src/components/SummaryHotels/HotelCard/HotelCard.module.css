@@ -379,7 +379,7 @@
 
   .right {
     flex: 1.5;
-    padding: 16px;
+    padding: 16px 16px 16px 2px;
     justify-content: space-around;
   }
 
