@@ -1,16 +1,34 @@
 "use client"
+import DetailsHotels from '@/components/DetailsHotels/DetailsHotels'
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
+import { useSearchParams } from 'next/navigation'
 import React from 'react'
+// import styles "./HotelDetails.module.css"
+import styles from "./HotelDetails.module.css"
+import FooterUzo from '@/components/FooterUzo/FooterUzo'
 
-const HotelDetails = () => {
+
+const HotelDetails: React.FC = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams?.get("id") ?? undefined; console.log("searchMode in book");
+  console.log("Iddddddddddddd");
+  console.log(id);
+
+
   return (
     <div>
       <div >
         <HeaderTop />
       </div>
-      <div  >
+      <div className={styles.HotelSearchBarTopBody}>
         <HotelSearchBarTop />
+      </div>
+      <div>
+        <DetailsHotels id={id} />
+      </div>
+      <div>
+        <FooterUzo />
       </div>
     </div>
   )

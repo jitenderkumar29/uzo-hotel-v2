@@ -3,16 +3,11 @@ import React, { useEffect, useState } from 'react'
 import styles from "./DetailsHotels.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-// import { useRouter } from 'next/router';
 import { HotelDataInterface } from "@/interfaces"
+import { RatingCardPropsInterFace } from "@/interfaces"
 import mapIcon2 from "@/assets/icons/mapIcon2.png"
 import Image from 'next/image';
-import HeaderTop from '../HeaderTop/HeaderTop';
-import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
-import { useSearchParams } from 'next/navigation';
-import FooterUzo from '../FooterUzo/FooterUzo';
-
-
+import { hotelData } from "@/app/data"
 export interface HotelRoom {
   id: string;
   name: string;
@@ -27,27 +22,62 @@ export interface HotelRoom {
   totalPhotos: number;
 }
 
-const DetailsHotels = () => {
+interface IDProps {
+  id?: string; // Add question mark to make it optional
+}
+
+const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   const [, setCurrentImageIndex] = useState(0);
-  const [, setOpenRatingId] = useState<number | null>(null);
-
-
-  const searchParams = useSearchParams(); // ✅ never null
+  const [openRatingId, setOpenRatingId] = useState<number | null>(null);
+  // const [hotelId, setHotelId] = useState<number | null>(null);
   const [hotel, setHotel] = useState<HotelDataInterface | null>(null);
 
-  useEffect(() => {
-    const data = searchParams!.get('data'); // no need for null check on `searchParams` itself
-    if (data) {
-      try {
-        const parsed: HotelDataInterface = JSON.parse(data);
-        setHotel(parsed);
-      } catch (err) {
-        console.error('Failed to parse hotel data', err);
-      }
-    }
-  }, [searchParams]);
 
-  if (!hotel) return <p></p>;
+  console.log("id in Details hotel")
+  console.log(typeof (id))
+  console.log(hotelData)
+
+  // When you need to set the hotel:
+  const handleSetHotel = (hotelId: string) => {
+    const id = Number(hotelId);
+    if (isNaN(id)) {
+      console.error('Invalid hotel ID');
+      setHotel(null); // Explicitly set to null if invalid
+      return;
+    }
+
+    const foundHotel = hotelData.find(hotel => hotel.id === id);
+    setHotel(foundHotel || null); // Handle undefined case by falling back to null
+    console.log("foundHotel")
+    console.log(hotel)
+  };
+
+  useEffect(() => {
+    if (id) {
+      handleSetHotel(id);
+    }
+  }, [id]);
+
+  if (!hotel) {
+    return <p></p>;
+  }
+
+  // const searchParams = useSearchParams(); // ✅ never null
+
+  // useEffect(() => {
+
+  //   const data = searchParams!.get('data'); // no need for null check on `searchParams` itself
+  //   if (data) {
+  //     try {
+  //       const parsed: HotelDataInterface = JSON.parse(data);
+  //       setHotel(parsed);
+  //     } catch (err) {
+  //       console.error('Failed to parse hotel data', err);
+  //     }
+  //   }
+  // }, [searchParams]);
+
+  // if (!hotel) return <p>Loading...</p>;
 
 
   // const router = useRouter();
@@ -93,11 +123,8 @@ const DetailsHotels = () => {
     totalPhotos: 33
   };
 
-
-
-
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % room.thumbnails.length);
+    setCurrentImageIndex((prev) => (prev + 1) % hotel.thumbnails.length);
   };
 
   const prevImage = () => {
@@ -137,6 +164,9 @@ const DetailsHotels = () => {
 
       <div className={styles.rightHeading}>
         <div className={styles.coupleFriendly}>
+          <span>👩‍👧 Women Friendly</span>
+        </div>
+        <div className={styles.coupleFriendly}>
           <span>{hotel.commonFeature}</span>
         </div>
         <div className={styles.viewsMap}>
@@ -169,14 +199,15 @@ const DetailsHotels = () => {
             </span>
           </div> */}
         </div>
-        {/* {openRatingId === hotel.id &&
-          (<RatingCard reviewScore={hotel.reviewScore} totalRatings={hotel.totalRatings} breakdown={hotel.breakdown} />)} */}
+        {openRatingId === hotel.id &&
+          (<RatingCard reviewScore={hotel.reviewScore} totalRatings={hotel.totalRatings} breakdown={hotel.breakdown} />)}
       </div>
     </div>
   )
 
   const HotelRoomCard = () => (
     <div className={styles.cardBody}>
+      <HotelHeader />
       <div className={styles.card}>
         {/* Left Section - Images */}
         <div className={styles.imageSection}>
@@ -196,82 +227,121 @@ const DetailsHotels = () => {
             </button>
           </div>
 
+          <div className={styles.thumbnailContainer}>
+            {hotel.thumbnails.slice(0, 3).map((thumb, index) => (
+              <img
+                key={index}
+                src={thumb}
+                alt={`Thumbnail ${index + 1}`}
+                className={styles.thumbnail}
+                onClick={() => setCurrentImageIndex(index)}
+              />
+            ))}
+          </div>
 
+          <button className={styles.viewAllPhotos}>
+            ALL PHOTOS {hotel.thumbnails.length}+
+            {/* SEE ALL {room.totalPhotos} PHOTOS */}
+          </button>
         </div>
 
         {/* Right Section - Details */}
         <div className={styles.detailsSection}>
           <div className={styles.detailsSectionText}>
+            <div className={styles.roomInfo}>
+              <h3 className={styles.roomName}>{hotel.name}</h3>
+              <div className={styles.guestInfo}>
+                <span>{room.guests} x Guest</span>
+                <span>{room.rooms} x Room</span>
+              </div>
 
-            <div className={styles.thumbnailContainer}>
-              {hotel.thumbnails.slice(0, 4).map((thumb, index) => (
-                <img
-                  key={index}
-                  src={thumb}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={styles.thumbnail}
-                  onClick={() => setCurrentImageIndex(index)}
-                />
-              ))}
+              <div className={styles.amenities}>
+                <ul>
+                  {hotel.tags.slice(0, 4).map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                  {hotel.moreTags.slice(0, 2).map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+                {hotel.moreTags.length > 2 && (
+                  <button className={styles.moreAmenities}>More Amenities</button>
+                )}
+              </div>
+
+              {/* <button className={styles.selectRoomButton}>
+            Select Rooms
+          </button> */}
             </div>
 
-            <button className={styles.viewAllPhotos}>
-              ALL PHOTOS
-            </button>
+            <div className={styles.pricing}>
+              {room.discountPrice && (
+                <div className={styles.originalPrice}>
+                  {hotel.oldPrice}
+                </div>
+              )}
+              {/* oldPrice: "₹4,000",
+            newPrice: "₹3,600",
+            taxes: "+₹432 taxes & fees per night", */}
+              <div className={styles.discountPrice}>
+                {hotel.newPrice}
+                {/* ₹{room.discountPrice ? room.discountPrice.toLocaleString() : room.price.toLocaleString()} */}
+              </div>
+              <div className={styles.taxes}>{hotel.taxes}</div>
+              {/* <div className={styles.basePrice}>Base price (Per Night)</div> */}
+              {/* <div className={styles.taxes}>+ ₹{hotel.taxes} Taxes & fees</div>
+            <div className={styles.basePrice}>Base price (Per Night)</div> */}
 
+              <button className={styles.bookNowButton}>
+                Book Now
+              </button>
+            </div>
           </div>
+          {/* <div>
+          <button className={styles.bookNowButton}>
+            Book Now
+          </button>
+        </div> */}
         </div>
-
       </div>
-      <HotelHeader />
-
     </div>
-
   )
 
-  // const RatingCard = ({ reviewScore, totalRatings, breakdown }: RatingCardPropsInterFace) => {
-  //   return (
-  //     <div className={styles.cardRating}
-  //       onMouseEnter={() => setOpenRatingId(openRatingId)}
-  //       onMouseLeave={() => setOpenRatingId(null)}
-  //     >
-  //       <div className={styles.leftRating}>
-  //         <div className={styles.scoreRating}>{reviewScore}</div>
-  //         <div className={styles.totalRating}>{totalRatings} Ratings</div>
-  //       </div>
-  //       <div className={styles.rightRating}>
-  //         {breakdown.map((item) => (
-  //           <div key={item.stars} className={styles.ratingRowRating}>
-  //             <span className={styles.starLabelRating}>{item.stars} ★</span>
-  //             <div className={styles.barContainerRating}>
-  //               <div
-  //                 className={styles.barFillRating}
-  //                 style={{ width: `${(item.count / totalRatings) * 100}%` }}
-  //               />
-  //             </div>
-  //             <span className={styles.countRating}>{item.count}</span>
-  //           </div>
-  //         ))}
-  //       </div>
-  //     </div>
-  //   );
-  // };
+  const RatingCard = ({ reviewScore, totalRatings, breakdown }: RatingCardPropsInterFace) => {
+    return (
+      <div className={styles.cardRating}
+        onMouseEnter={() => setOpenRatingId(openRatingId)}
+        onMouseLeave={() => setOpenRatingId(null)}
+      >
+        <div className={styles.leftRating}>
+          <div className={styles.scoreRating}>{reviewScore}</div>
+          <div className={styles.totalRating}>{totalRatings} Ratings</div>
+        </div>
+        <div className={styles.rightRating}>
+          {breakdown.map((item) => (
+            <div key={item.stars} className={styles.ratingRowRating}>
+              <span className={styles.starLabelRating}>{item.stars} ★</span>
+              <div className={styles.barContainerRating}>
+                <div
+                  className={styles.barFillRating}
+                  style={{ width: `${(item.count / totalRatings) * 100}%` }}
+                />
+              </div>
+              <span className={styles.countRating}>{item.count}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <>
       {/* <HeaderTop />
       <HotelSearchBarTop /> */}
-      <div className={styles.headerTopBody}>
-        <HeaderTop />
-      </div>
-      <div className={styles.hotelsearchBarHeader} >
-        <HotelSearchBarTop />
-      </div>
       <div className={styles.mainContentBody}>
         <HotelRoomCard />
-
       </div>
-      <FooterUzo />
     </>
   )
 }

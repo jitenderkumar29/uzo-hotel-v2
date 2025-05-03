@@ -328,14 +328,25 @@ const HotelCard: React.FC = () => {
                       {/* <a className={styles.loginMsg} href="#">
                       Login now & save more
                     </a> */}
-                      <Link href={{
+                      <Link
+                        href={`/hotelDetails/?id=${hotel.id}`}
+                        // href={{
+                        //   pathname: '/detailsHotels',
+                        //   query: {
+                        //     data: JSON.stringify(hotel) // serialize object
+                        //   }
+                        // }} 
+                        className={styles.buttonBookNow}>
+                        Book Now
+                      </Link>
+                      {/* <Link href={{
                         pathname: '/detailsHotels',
                         query: {
                           data: JSON.stringify(hotel) // serialize object
                         }
                       }} className={styles.buttonBookNow}>
                         Book Now
-                      </Link>
+                      </Link> */}
                       {/* <Link href="`/detailsHotels/${hotel.id}`" className={styles.buttonBookNow}>
                         Book Now
                       </Link> */}
