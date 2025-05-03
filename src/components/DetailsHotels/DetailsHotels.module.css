@@ -268,7 +268,7 @@
 }
 
 .thumbnail {
-  width: 125px;
+  width: 220px;
   height: 111px;
   object-fit: cover;
   border-radius: 4px;
@@ -279,7 +279,7 @@
 .viewAllPhotos {
   position: absolute;
   bottom: 10px;
-  right: 3%;
+  right: 5%;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   border: none;
@@ -293,7 +293,7 @@
 /* Details Section */
 .detailsSection {
   flex: 1;
-  padding: 16px;
+  /* padding: 16px; */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -426,7 +426,7 @@
   }
 
   .imageSection {
-    max-width: 60%;
+    max-width: 70%;
     display: flex;
   }
 
@@ -444,13 +444,13 @@
   .thumbnail {
     /* width: 60px;
     height: 60px; */
-    width: 185px;
+    width: 220px;
     height: 111px;
     border-radius: 4px;
   }
 
   .detailsSection {
-    max-width: 40%;
+    max-width: 30%;
   }
 }
 

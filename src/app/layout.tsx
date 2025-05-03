@@ -16,9 +16,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UZO Hotels",
-  description: "Created By UZO Hotels",
+  title: 'Your Site Title',
+  description: 'Your site description',
+  icons: {
+    icon: '/favicon.ico',
+    // Optional: add other icons
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
+
+// export const metadata: Metadata = {
+//   title: "UZO Hotels",
+//   description: "Created By UZO Hotels",
+//   icons: {
+//     icon: [
+//       {
+//         url: "/favicon.ico", // Standard favicon
+//         type: "image/x-icon",
+//       },
+//       {
+//         url: "/favicon-16x16.png", // 16x16 pixel favicon
+//         sizes: "16x16",
+//         type: "image/png",
+//       },
+//       {
+//         url: "/favicon-32x32.png", // 32x32 pixel favicon
+//         sizes: "32x32",
+//         type: "image/png",
+//       },
+//     ],
+//     apple: [
+//       {
+//         url: "/apple-touch-icon.png", // For iOS devices
+//       },
+//     ],
+//   },
+// };
+
+
+
+
 
 export default function RootLayout({
   children,
