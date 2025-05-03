@@ -76,8 +76,14 @@ const HeaderTop = () => {
                 <Link href="/" onClick={closeMobileMenu}>Corporate Member</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
+                <Link href="/" onClick={closeMobileMenu}>Offers</Link>
               </li>
+              <li>
+                <Link href="/" onClick={closeMobileMenu}>UZO Cards</Link>
+              </li>
+              {/* <li>
+                <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
+              </li> */}
               <li>
                 <Link href="/" onClick={closeMobileMenu}><LanguageSelector /></Link>
               </li>
