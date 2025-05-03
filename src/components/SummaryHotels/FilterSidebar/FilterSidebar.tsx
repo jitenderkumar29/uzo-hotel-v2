@@ -359,7 +359,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
             { id: "location7", label: "St. James Church" },
             { id: "location7", label: "National Gandhi Museum" },
             { id: "location7", label: "National Crafts Museum" },
-            { id: "location7", label: "Indira Gandhi International Airport" },
+            { id: "location7", label: "IGI Airport" },
           ]}
           showAll={false}
           searchable={false}

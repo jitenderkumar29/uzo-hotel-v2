@@ -6,7 +6,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
 
 // interface Filter {
 //   id: string;
@@ -372,25 +371,7 @@ const HotelSearchBarTop: React.FC = () => {
           </div>
         </form>
       </div>
-      <div className={styles.containerSearch}>
-        <div className={styles.contSearchBody}>
-          <div className={styles.leftSearch}>
-            <span className={styles.countSearch}>1000</span> Properties Available in Delhi
-          </div>
-          <div className={styles.rightSearch}>
-            <div className={styles.searchBoxSearch}>
-              <FaSearch className={styles.searchIconSearch} />
-              <input type="text" placeholder="Enter hotel name or location" className={styles.searchInputSearch} />
-            </div>
-            <select className={styles.selectBoxSearch}>
-              <option value="popularity">Popularity</option>
-              <option value="priceLowHigh">Price: Low to High</option>
-              <option value="priceHighLow">Price: High to Low</option>
-              <option value="rating">Rating</option>
-            </select>
-          </div>
-        </div>
-      </div>
+      {/* <HotelSearchBy /> */}
     </>
   );
 };

@@ -4,6 +4,7 @@ import { ReactElement } from 'react';
 import Book from './Book/Book';
 import HotelBooking from './HotelBooking/HotelBooking';
 import "../app/globals.css";
+import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 
 // Dynamically import your components for better performance (code splitting)
 // const Book = dynamic(() => import('@/components/Book'));
@@ -13,6 +14,7 @@ import "../app/globals.css";
 const pageMap: Record<string, () => ReactElement> = {
   book: () => <Book />,
   hotelBooking: () => <HotelBooking />,
+  detailsHotels: () => <DetailsHotels />
 };
 
 export default function DynamicPage() {

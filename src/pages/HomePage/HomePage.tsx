@@ -16,6 +16,7 @@ import PopularDestination from '@/components/PopularDestination/PopularDestinati
 import SpritualDestination from '@/components/SpritualDestination/SpritualDestination';
 import VideoCard from '@/components/VideoCard/VideoCard';
 import PrepareToTravelWrapper from '@/components/PrepareToTravel/PrepareToTravelWrapper';
+import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 
 const HomePage = () => {
   // const [scrollKey, setScrollKey] = useState(0);
@@ -38,6 +39,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <DetailsHotels />
       <Header />
       <HeaderTop />
       <Hero />

@@ -1,5 +1,6 @@
 .headerTopBody {
-  z-index: 30;
+  position: relative;
+  z-index: 10001; /* or just don't define z-index */
 }
 
 .hotelsearchBarHeader {

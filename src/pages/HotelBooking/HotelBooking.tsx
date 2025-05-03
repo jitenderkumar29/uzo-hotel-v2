@@ -5,6 +5,7 @@ import styles from "./HotelBooking.module.css"
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
 import FooterUzo from '@/components/FooterUzo/FooterUzo'
+import HotelSearchBy from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBy'
 
 const HotelBooking = () => {
   return (
@@ -14,6 +15,7 @@ const HotelBooking = () => {
       </div>
       <div className={styles.hotelsearchBarHeader} >
         <HotelSearchBarTop />
+        <HotelSearchBy />
       </div>
       <div className={styles.hotelSummary}>
         <SummaryHotels />

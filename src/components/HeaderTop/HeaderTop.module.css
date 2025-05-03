@@ -73,7 +73,7 @@
   font-weight: bold;
   color: var(--text-color);
   text-decoration: none;
-  z-index: 11;
+  /* z-index: 11; */
 }
 
 .logoImage {
@@ -131,7 +131,7 @@
 
 /* Booking dropdown */
 .bookingDropdown {
-  position: absolute;
+  /* position: absolute;
   top: 100%;
   left: 0;
   right: 0;
@@ -139,14 +139,31 @@
   z-index: 9999;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%); */
+  /* top: 100; */
+  /* height: auto; */
+  /* margin: 0 auto; */
+  /* z-index: 10001; Ensure this is higher than all other z-indexes */
+
+  /* background-color: rgba(0, 0, 0, 0.6); Optional: dark background */
+  /* display: flex; */
+
+  position: absolute;
+  top: 80;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .containerBooklist {
   display: flex;
   margin: 0 auto;
   padding: 0 0;
-  justify-content: space-evenly;
+  /* justify-content: space-between; */
+  /* justify-content: space-evenly; */
 }
 
 .sidebarBooklist {
@@ -202,7 +219,7 @@
 .offersBooklist {
   display: flex;
   gap: 6rem;
-  padding: 1rem;
+  padding: 1.5rem 5.25rem;
   /* flex-wrap: wrap; */
 }
 
