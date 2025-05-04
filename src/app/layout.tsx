@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import AppRoutes from "@/components/AppRoutes/AppRoutes";
+import { HotelSearchProvider } from "./Context/HotelSearchContext";
 
 
 const geistSans = Geist({
@@ -16,47 +17,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Your Site Title',
-  description: 'Your site description',
+  title: "UZO Hotels",
+  description: "Created By UZO Hotels",
   icons: {
-    icon: '/favicon.ico',
-    // Optional: add other icons
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
+    icon: [
+      {
+        url: "/favicon.ico", // Standard favicon
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon-16x16.png", // 16x16 pixel favicon
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-32x32.png", // 32x32 pixel favicon
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png", // For iOS devices
+      },
+    ],
   },
 };
-
-// export const metadata: Metadata = {
-//   title: "UZO Hotels",
-//   description: "Created By UZO Hotels",
-//   icons: {
-//     icon: [
-//       {
-//         url: "/favicon.ico", // Standard favicon
-//         type: "image/x-icon",
-//       },
-//       {
-//         url: "/favicon-16x16.png", // 16x16 pixel favicon
-//         sizes: "16x16",
-//         type: "image/png",
-//       },
-//       {
-//         url: "/favicon-32x32.png", // 32x32 pixel favicon
-//         sizes: "32x32",
-//         type: "image/png",
-//       },
-//     ],
-//     apple: [
-//       {
-//         url: "/apple-touch-icon.png", // For iOS devices
-//       },
-//     ],
-//   },
-// };
-
-
-
-
 
 export default function RootLayout({
   children,
@@ -69,9 +55,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-        <AppRoutes />
-        {children}
+        <HotelSearchProvider>
+          <AppRoutes />
+          {children}
+        </HotelSearchProvider>
       </body>
     </html>
   );

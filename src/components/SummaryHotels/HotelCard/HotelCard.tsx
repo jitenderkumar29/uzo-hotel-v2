@@ -9,7 +9,27 @@ import Link from "next/link";
 // import { HotelData } from '@/interfaces'
 import { hotelData } from "@/app/data/hotelData"; // Adjust the import path as necessary
 import { RatingCardPropsInterFace } from "@/interfaces";
+import { useHotelSearch } from "@/app/Context/HotelSearchContext";
+
 const HotelCard: React.FC = () => {
+  const {
+    destination,
+    checkIn,
+    checkOut,
+    roomCount,
+    guestCount,
+    childCount
+  } = useHotelSearch();
+
+  console.log("HotelCard component props:", roomCount,
+    guestCount,
+    childCount,
+    checkIn,
+    checkOut,
+    destination)
+
+
+
   // const [isOpenRating, setIsOpenRating] = useState(false);
   const [, setIsOpenMoreTag] = useState(false);
   const [openRatingId, setOpenRatingId] = useState<number | null>(null);

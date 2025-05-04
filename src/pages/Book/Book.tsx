@@ -7,6 +7,7 @@ import SearchBarMultiple from "@/components/SearchBarMultiple/SearchBarMultiple"
 import FooterUzo from "@/components/FooterUzo/FooterUzo";
 import HeaderTop from "@/components/HeaderTop/HeaderTop";
 import "./Book.module.css"
+import { HotelSearchProvider } from "@/app/Context/HotelSearchContext";
 
 const Book: React.FC = () => {
   const searchParams = useSearchParams();
@@ -18,7 +19,9 @@ const Book: React.FC = () => {
       <Header />
       <HeaderTop />
       <div className="searchBarBody">
-        <SearchBarMultiple searchMode={searchMode} />
+        <HotelSearchProvider>
+          <SearchBarMultiple searchMode={searchMode} />
+        </HotelSearchProvider>
       </div>
 
       <FooterUzo />

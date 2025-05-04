@@ -5,7 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import { useHotelSearch } from "@/app/Context/HotelSearchContext";
+import { useRouter } from 'next/navigation';
 
 interface Filter {
   id: string;
@@ -14,6 +15,63 @@ interface Filter {
 }
 
 const HotelSearchBar: React.FC = () => {
+  const router = useRouter();
+  const {
+    destination,
+    checkIn,
+    checkOut,
+    roomCount,
+    guestCount,
+    childCount,
+    setDestination,
+    setCheckIn,
+    setCheckOut,
+    setRoomCount,
+    setGuestCount,
+    setChildCount,
+    submitSearch
+  } = useHotelSearch();
+
+  // const [showGuestSelector, setShowGuestSelector] = useState(false);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    submitSearch({
+      destination,
+      checkIn,
+      checkOut,
+      roomCount,
+      guestCount,
+      childCount
+    });
+    // Navigate to results
+    router.push('/hotelBooking', { scroll: false });
+  };
+
+
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   // Submit all current values
+  //   handleSearchSubmit({
+  //     destination,
+  //     checkIn,
+  //     checkOut,
+  //     roomCount,
+  //     guestCount,
+  //     childCount
+  //   });
+
+  //   // Navigate to results
+  //   router.push('/hotelBooking', { scroll: false });
+  // };
+  // console.log("In HotelSearchBar", destination,
+  //   checkIn,
+  //   checkOut,
+  //   roomCount,
+  //   guestCount,
+  //   childCount)
+
   const [filters, setFilters] = useState<Filter[]>([
     { id: "free-cancellation", label: "Free cancellation", checked: false },
     { id: "five-stars", label: "5 Stars", checked: false },
@@ -22,12 +80,12 @@ const HotelSearchBar: React.FC = () => {
   ]);
 
   const [showRoomGuestSelector, setShowRoomGuestSelector] = useState(false);
-  const [roomCount, setRoomCount] = useState(1);
-  const [guestCount, setGuestCount] = useState(1);
-  const [childCount, setChildCount] = useState(0);
-  const [checkIn, setCheckIn] = useState<Date>(new Date());
-  const [checkOut, setCheckOut] = useState<Date>(new Date());
-  const [destination, setDestination] = useState("");
+  // const [roomCount, setRoomCount] = useState(1);
+  // const [guestCount, setGuestCount] = useState(1);
+  // const [childCount, setChildCount] = useState(0);
+  // const [checkIn, setCheckIn] = useState<Date>(new Date());
+  // const [checkOut, setCheckOut] = useState<Date>(new Date());
+  // const [destination, setDestination] = useState("");
 
   // Popper Modifier for Date picker
   const popperModifiers = [
@@ -46,19 +104,19 @@ const HotelSearchBar: React.FC = () => {
     );
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Implement search functionality here
-    console.log({
-      destination,
-      checkIn,
-      checkOut,
-      roomCount,
-      guestCount,
-      childCount,
-      filters: filters.filter(f => f.checked).map(f => f.label)
-    });
-  };
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Implement search functionality here
+  //   console.log({
+  //     destination,
+  //     checkIn,
+  //     checkOut,
+  //     roomCount,
+  //     guestCount,
+  //     childCount,
+  //     filters: filters.filter(f => f.checked).map(f => f.label)
+  //   });
+  // };
 
   // const CustomInput = React.forwardRef(({ value, onClick }: any, ref) => {
   //   const [day, monthYear] = value.split(/ (.+)/); // Split "25 Apr, 2025"
@@ -203,12 +261,12 @@ const HotelSearchBar: React.FC = () => {
 
           <div className={styles.divider}></div>
 
-          {/* <button type="submit" className={styles.searchButton}>
+          <button type="submit" className={styles.searchButton}>
             Search
-          </button> */}
-          <Link href="/hotelBooking" className={styles.searchButton}>
+          </button>
+          {/* <Link href="/hotelBooking" className={styles.searchButton}>
             Search
-          </Link>
+          </Link> */}
 
           {showRoomGuestSelector && (
             <div className={styles.travellerModal}>

@@ -2,12 +2,21 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./DetailsHotels.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronLeft, faChevronRight, faConciergeBell, faLocationDot, faMugHot, faShuffle } from '@fortawesome/free-solid-svg-icons';
 import { HotelDataInterface } from "@/interfaces"
 import { RatingCardPropsInterFace } from "@/interfaces"
 import mapIcon2 from "@/assets/icons/mapIcon2.png"
 import Image from 'next/image';
 import { hotelData } from "@/app/data"
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import yesBankImage from "@/assets/icons/yesBank.png";
+import HotelTabNavigationBar from './HotelTabNavigationBar/HotelTabNavigationBar';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
+import { faSpa } from '@fortawesome/free-solid-svg-icons/faSpa';
+import { useRouter } from 'next/router';
+import { useHotelSearch } from '@/app/Context/HotelSearchContext';
+
 export interface HotelRoom {
   id: string;
   name: string;
@@ -33,9 +42,27 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   const [hotel, setHotel] = useState<HotelDataInterface | null>(null);
 
 
+
   console.log("id in Details hotel")
   console.log(typeof (id))
   console.log(hotelData)
+
+  const {
+    destination,
+    checkIn,
+    checkOut,
+    roomCount,
+    guestCount,
+    childCount
+  } = useHotelSearch();
+
+  console.log("DetailsHotels component props:", roomCount,
+    guestCount,
+    childCount,
+    checkIn,
+    checkOut,
+    destination)
+
 
   // When you need to set the hotel:
   const handleSetHotel = (hotelId: string) => {
@@ -133,6 +160,16 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     );
   };
 
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      weekday: 'short'
+    });
+  };
+
+
   const HotelHeader = () => (
     <div className={styles.hotelHeader}>
       <div className={styles.leftHeading}>
@@ -180,7 +217,8 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
           <div>View Map</div>
         </div>
         <div className={styles.reviews} onMouseEnter={() => setOpenRatingId(hotel.id)}
-          onMouseLeave={() => setOpenRatingId(null)}>
+        // onMouseLeave={() => setOpenRatingId(null)}
+        >
           <div>
             <span className={styles.ratingTotal}>
               <div>{hotel.ratingCategory} </div>
@@ -249,13 +287,18 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         <div className={styles.detailsSection}>
           <div className={styles.detailsSectionText}>
             <div className={styles.roomInfo}>
-              <h3 className={styles.roomName}>{hotel.name}</h3>
+              <h3 className={styles.roomName}>{room.name}</h3>
               <div className={styles.guestInfo}>
-                <span>{room.guests} x Guest</span>
-                <span>{room.rooms} x Room</span>
+                <FontAwesomeIcon icon={faUser} className={styles.guestIcon} /><span>{room.guests} x Guest</span>|
+                <FontAwesomeIcon icon={faHome} className={styles.roomIcon} /><span>{room.rooms} x Room</span>
               </div>
 
-              <div className={styles.amenities}>
+              <div className={styles.amenitiesService}>
+                <ul className={styles.breakFast}><FontAwesomeIcon icon={faMugHot} className={styles.beakFastIcon} />Free Breakfast Included</ul>
+
+                <ul className={styles.cancelRoom}><FontAwesomeIcon icon={faArrowRight} className={styles.cancelRoomIcon} />Free Cancelletion till 05-may-2025 22:59</ul>
+              </div>
+              {/* <div className={styles.amenities}>
                 <ul>
                   {hotel.tags.slice(0, 4).map((item, index) => (
                     <li key={index}>{item}</li>
@@ -267,11 +310,12 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
                 {hotel.moreTags.length > 2 && (
                   <button className={styles.moreAmenities}>More Amenities</button>
                 )}
-              </div>
+              </div> */}
 
-              {/* <button className={styles.selectRoomButton}>
-            Select Rooms
-          </button> */}
+              <button className={styles.selectRoomButton}>
+                View 7 Room Options <FontAwesomeIcon icon={faChevronDown} />
+                {/* Select Rooms */}
+              </button>
             </div>
 
             <div className={styles.pricing}>
@@ -287,7 +331,11 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
                 {hotel.newPrice}
                 {/* ₹{room.discountPrice ? room.discountPrice.toLocaleString() : room.price.toLocaleString()} */}
               </div>
-              <div className={styles.taxes}>{hotel.taxes}</div>
+              <div className={styles.taxes}>
+                <div>{hotel.taxes.split(" per night")[0]}</div>
+                <div>per night for 1 room</div>
+              </div>
+              {/* <div className={styles.taxes}>{hotel.taxes}</div> */}
               {/* <div className={styles.basePrice}>Base price (Per Night)</div> */}
               {/* <div className={styles.taxes}>+ ₹{hotel.taxes} Taxes & fees</div>
             <div className={styles.basePrice}>Base price (Per Night)</div> */}
@@ -297,6 +345,20 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
               </button>
             </div>
           </div>
+          {/* <div className={styles.detailsSectionText}> */}
+          <div className={styles.bankOfferCard}>
+            <OfferCard />
+          </div>
+          <div className={styles.bankOfferCard}>
+            <ElitePachage />
+          </div>
+          {/* <div className={styles.bankOfferCard}>
+              <div className={styles.bankOfferText}>
+              </div>
+              <div className={styles.bankOfferText}>
+
+              </div>
+            </div> */}
           {/* <div>
           <button className={styles.bookNowButton}>
             Book Now
@@ -335,13 +397,85 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     );
   };
 
+  const OfferCard = () => {
+    return (
+      <div className={styles.offerCard}>
+        <div className={styles.offerImage}>
+          <Image src={yesBankImage} alt="YES Bank Logo" className={styles.yesBankImage} />
+        </div>
+        <div className={styles.offerDetails}>
+          <div className={styles.offerTitle}>Use UZOYES Code</div>
+          <div className={styles.offerDescription}>
+            Get ₹ 247 off. Pay using YES Bank Credit Cards to avail the...
+          </div>
+        </div>
+        <div className={styles.moreOffers}>+ 1 more offer</div>
+      </div>
+    );
+  };
+  const ElitePachage = () => {
+    return (
+      <div className={styles.offerCard}>
+        {/* <div className={styles.offerImage}>
+          <Image src={yesBankImage} alt="YES Bank Logo" className={styles.yesBankImage} />
+        </div> */}
+        <div className={styles.offerDetails}>
+          <div className={styles.offerTitle}>Elite Package</div>
+          <div className={styles.offerDescriptionElite}>
+            <FontAwesomeIcon icon={faSpa} className={styles.iconElite} />
+            20% off on session of Spa
+          </div>
+          <div className={styles.offerDescriptionElite}>
+            <FontAwesomeIcon icon={faConciergeBell} className={styles.iconElite} />
+            20% Discount on F&B services
+          </div>
+          <div className={styles.offerDescriptionElite}>
+            <FontAwesomeIcon icon={faShuffle} className={styles.iconElite} />
+            20% off on Two-way Local Transfer
+          </div>
+        </div>
+        <div className={styles.moreOffersElite}><FontAwesomeIcon icon={faArrowRight} className={styles.faArrowRightIcon} /></div>
+      </div>
+    );
+  };
+
+  const BackButton = () => {
+    const router = useRouter();
+
+    return (<div>
+      <button
+        onClick={() => router.back()}
+        className={styles.backButton}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} className={styles.backIcon}></FontAwesomeIcon>
+        Back to search
+      </button>
+      {/* <FontAwesomeIcon icon={faChevronRight} className={styles.rightIcon}></FontAwesomeIcon> */}
+      <span className={styles.placeAddress}>
+        <span>{destination}</span>
+        {/* <span>New Delhi, India,</span> */}
+        <span className={styles.dateSearch}> {formatDate(checkIn)}, {formatDate(checkOut)}, </span>
+        {/* <span className={styles.dateSearch}> 05 May 2025, 05 May 2025, </span> */}
+        <span>{roomCount} Room, {guestCount} Guest, {childCount} Child</span>
+        {/* <span>1 Room, 2 Guests</span> */}
+      </span>
+    </div>
+    );
+  };
   return (
     <>
       {/* <HeaderTop />
       <HotelSearchBarTop /> */}
       <div className={styles.mainContentBody}>
+        <BackButton />
+
         <HotelRoomCard />
+
       </div>
+      <div className={styles.hotelTabNavigationBar}>
+        <HotelTabNavigationBar />
+      </div>
+
     </>
   )
 }

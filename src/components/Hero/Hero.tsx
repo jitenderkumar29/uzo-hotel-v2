@@ -23,6 +23,7 @@ import hero8Jpg from "@/assets/images/hero888.jpg";
 import hero9Jpg from "@/assets/images/hero999.jpg";
 import hero10Jpg from "@/assets/images/hero10.jpg";
 import HotelSearchBar from "../SearchBarMultiple/HotelSearchBar/HotelSearchBar";
+import { HotelSearchProvider } from "@/app/Context/HotelSearchContext";
 
 
 
@@ -89,7 +90,9 @@ const Hero = ({ data = defaultPropData }: HeroProps) => {
       <div className={styles.content}>
         <h1 className={styles.heading}>
           <div className={styles.headingDiv}> Discover Premium Luxury Hotels in 20+ Countries</div>
-          <HotelSearchBar />
+          <HotelSearchProvider>
+            <HotelSearchBar />
+          </HotelSearchProvider>
         </h1>
         <div className={styles.searchContainer}>
           {/* <HotelSearch /> */}

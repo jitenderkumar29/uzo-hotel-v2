@@ -1,3 +1,8 @@
 .HotelSearchBarTopBody {
   background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; /* This is crucial for sticky positioning to work */
+  z-index: 100; /* Ensures the header stays above other content */
+  width: 100%; /* Takes full width */
+  /* z-index: 29; */
 }

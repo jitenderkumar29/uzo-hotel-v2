@@ -6,6 +6,7 @@ import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
 import FooterUzo from '@/components/FooterUzo/FooterUzo'
 import HotelSearchBy from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBy'
+import { HotelSearchProvider } from '@/app/Context/HotelSearchContext'
 
 const HotelBooking = () => {
   return (
@@ -14,11 +15,15 @@ const HotelBooking = () => {
         <HeaderTop />
       </div>
       <div className={styles.hotelsearchBarHeader} >
-        <HotelSearchBarTop />
+        <HotelSearchProvider>
+          <HotelSearchBarTop />
+        </HotelSearchProvider>
         <HotelSearchBy />
       </div>
       <div className={styles.hotelSummary}>
-        <SummaryHotels />
+        <HotelSearchProvider>
+          <SummaryHotels />
+        </HotelSearchProvider>
       </div>
       <FooterUzo />
     </div>

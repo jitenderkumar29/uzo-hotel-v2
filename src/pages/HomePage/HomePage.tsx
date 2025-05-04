@@ -17,6 +17,7 @@ import SpritualDestination from '@/components/SpritualDestination/SpritualDestin
 import VideoCard from '@/components/VideoCard/VideoCard';
 import PrepareToTravelWrapper from '@/components/PrepareToTravel/PrepareToTravelWrapper';
 import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
+import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 
 const HomePage = () => {
   // const [scrollKey, setScrollKey] = useState(0);
@@ -39,24 +40,26 @@ const HomePage = () => {
 
   return (
     <div>
-      <DetailsHotels />
-      <Header />
-      <HeaderTop />
-      <Hero />
-      <AddOnsImageSlide />
-      {/* 👇 Force re-render on scroll */}
-      {/* <PrepareToTravel key={scrollKey} /> */}
-      <PrepareToTravelWrapper />
-      <HeroGallery />
-      <AddOns2 />
-      <PopularDestination />
-      <InternationalDestination />
-      <SpritualDestination />
-      <ImageLayouts />
-      <AddOns />
-      <VideoCard />
-      <FooterStates />
-      <FooterUzo />
+      <HotelSearchProvider>
+        <DetailsHotels />
+        <Header />
+        <HeaderTop />
+        <Hero />
+        <AddOnsImageSlide />
+        {/* 👇 Force re-render on scroll */}
+        {/* <PrepareToTravel key={scrollKey} /> */}
+        <PrepareToTravelWrapper />
+        <HeroGallery />
+        <AddOns2 />
+        <PopularDestination />
+        <InternationalDestination />
+        <SpritualDestination />
+        <ImageLayouts />
+        <AddOns />
+        <VideoCard />
+        <FooterStates />
+        <FooterUzo />
+      </HotelSearchProvider>
     </div>
   );
 };

@@ -3,6 +3,15 @@
   max-width: 1300px;
 }
 
+.hotelTabNavigationBar {
+  background-color: var(--background);
+  /* background-color: #fff; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 80px;
+}
+
 .hotelContainer {
   max-width: 100%;
   margin: 0 auto;
@@ -206,7 +215,7 @@
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
   margin: 16px 0;
   flex-direction: column;
   /* padding: 15px; */
@@ -228,7 +237,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 12px;
   z-index: 1; /* Lower than other elements */
 }
 
@@ -271,7 +280,7 @@
   width: 220px;
   height: 111px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   border: 1px solid #eee;
 }
@@ -296,10 +305,11 @@
   /* padding: 16px; */
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 6px;
+  justify-content: space-evenly;
 }
 .detailsSectionText {
-  padding: 16px;
+  padding: 0px 0px 0px 12px;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -311,16 +321,30 @@
 
 .roomName {
   font-size: 18px;
-  margin-bottom: 8px;
-  color: #333;
+  /* margin-bottom: 8px; */
+  color: var(--text-color-black);
+  /* color: #333; */
+  font-weight: 500;
 }
 
 .guestInfo {
   display: flex;
-  gap: 16px;
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 12px;
+  gap: 10px;
+  color: var(--text-color-black);
+  /* color: #666; */
+  font-weight: 500;
+  font-size: 15px;
+  /* margin-bottom: 12px; */
+}
+
+.guestIcon {
+  margin-top: 4px;
+  margin-right: -4px;
+}
+
+.roomIcon {
+  margin-top: 4px;
+  margin-right: -4px;
 }
 
 .amenities {
@@ -359,16 +383,43 @@
   padding: 0;
 }
 
+.amenitiesService {
+  margin-top: 4px;
+}
+
+.breakFast {
+  color: var(--green-text);
+  font-size: 14px;
+}
+
+.beakFastIcon {
+  margin-right: 4px;
+}
+
+.cancelRoom {
+  color: var(--green-text);
+  font-size: 14px;
+}
+
+.cancelRoomIcon {
+  margin-right: 4px;
+}
+
 .selectRoomButton {
-  background: white;
-  border: 1px solid #2276e3;
-  color: #2276e3;
-  padding: 10px 16px;
-  border-radius: 4px;
+  background: var(--light-orange);
+  /* border: 1px solid #2276e3; */
+  color: var(--dark-white);
+  padding: 9px 11px;
+  border-radius: 50px;
+  font-size: 16px;
   font-weight: 600;
   width: 100%;
   cursor: pointer;
-  margin-top: 16px;
+  margin-top: 5px;
+}
+
+.selectRoomButton:hover {
+  background: var(--dark-orange);
 }
 
 /* Pricing Section */
@@ -392,9 +443,12 @@
 }
 
 .taxes {
-  color: #666;
+  color: var(--text-color-black);
+  /* color: #666; */
   font-size: 14px;
   font-weight: 500;
+  align-items: right;
+  text-align: right;
 }
 
 .basePrice {
@@ -408,12 +462,12 @@
   background: var(--light-orange);
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-weight: 500;
   width: 100%;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
 }
 .bookNowButton:hover {
   background: var(--dark-orange);
@@ -446,7 +500,7 @@
     height: 60px; */
     width: 220px;
     height: 111px;
-    border-radius: 4px;
+    border-radius: 12px;
   }
 
   .detailsSection {
@@ -466,7 +520,7 @@
   display: flex;
   position: absolute;
   z-index: 10;
-  top: 39%;
+  top: 266px;
   right: 5%;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
@@ -476,7 +530,7 @@
   max-width: 300px;
   background-color: white;
   height: fit-content;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 
 .leftRating {
@@ -536,4 +590,118 @@
   width: 30px;
   font-size: 0.8rem;
   text-align: right;
+}
+
+.bankOfferCard {
+  padding: 0px 0px 0px 12px;
+}
+
+/* Offer card Bank style css */
+.offerCard {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 8px;
+  max-width: 420px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f5f7fa 0%, #d0ca6cbd 100%);
+  /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+}
+
+.yesBankImage {
+  width: 50px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-right: 12px;
+  margin-left: -5px;
+  border: 1px solid #ddd;
+}
+/* .offerImage img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-right: 12px;
+  margin-left: -5px;
+  border: 1px solid #ddd;
+} */
+
+.offerDetails {
+  flex-grow: 1;
+}
+
+.offerTitle {
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.offerDescription {
+  font-size: 13px;
+  color: #555;
+  /* white-space: nowrap;
+  overflow: hidden; */
+  text-overflow: ellipsis;
+  max-width: 220px;
+  margin-top: -3px;
+}
+.offerDescriptionElite {
+  font-size: 11px;
+  color: #555;
+  /* white-space: nowrap;
+  overflow: hidden; */
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.iconElite {
+  color: #eacd7d90;
+  margin-right: 5px;
+}
+
+.moreOffers {
+  font-size: 13px;
+  font-weight: bold;
+  color: #0073e6;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+.moreOffersElite {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-accent);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.faArrowRightIcon {
+  color: var(--green-text);
+}
+
+.backButton {
+  color: #0073e6;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.backIcon {
+  margin-right: 4px;
+  color: #0073e6;
+  font-size: 15px;
+}
+.rightIcon {
+  color: var(--text-color-gray);
+}
+
+.placeAddress {
+  margin-left: 10px;
+}
+
+.dateSearch {
+  font-weight: 500;
 }

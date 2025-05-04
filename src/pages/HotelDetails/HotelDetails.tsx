@@ -7,6 +7,7 @@ import React from 'react'
 // import styles "./HotelDetails.module.css"
 import styles from "./HotelDetails.module.css"
 import FooterUzo from '@/components/FooterUzo/FooterUzo'
+import { HotelSearchProvider } from '@/app/Context/HotelSearchContext'
 
 
 const HotelDetails: React.FC = () => {
@@ -22,10 +23,14 @@ const HotelDetails: React.FC = () => {
         <HeaderTop />
       </div>
       <div className={styles.HotelSearchBarTopBody}>
-        <HotelSearchBarTop />
+        <HotelSearchProvider>
+          <HotelSearchBarTop />
+        </HotelSearchProvider>
       </div>
       <div>
-        <DetailsHotels id={id} />
+        <HotelSearchProvider>
+          <DetailsHotels id={id} />
+        </HotelSearchProvider>
       </div>
       <div>
         <FooterUzo />

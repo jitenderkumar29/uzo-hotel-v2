@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./SummaryHotels.module.css";
 import HotelCard from "./HotelCard/HotelCard";
 import FilterSidebar from "./FilterSidebar/FilterSidebar";
+import { HotelSearchProvider } from "@/app/Context/HotelSearchContext";
 
 
 const SummaryHotels: React.FC = () => {
@@ -49,7 +50,9 @@ const SummaryHotels: React.FC = () => {
 
 
       <main className={styles.mainContent}>
-        <HotelCard />
+        <HotelSearchProvider>
+          <HotelCard />
+        </HotelSearchProvider>
         {/* Additional HotelCard components would go here */}
       </main>
     </div>
