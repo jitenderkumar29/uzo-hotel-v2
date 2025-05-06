@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from './HotelTabNavigationBar.module.css';
+import AboutHotel from '../AboutHotel/AboutHotel';
+import RoomsPage from '../RoomCard/RoomsPage';
+// import Amenities from '../Amenities/Amenities';
 
 const sections = [
   { id: 'hotel-options', label: 'About Hotel', content: 'Details about hotel.' },
@@ -46,12 +49,19 @@ export default function HotelTabNavigationBar() {
       </nav>
 
       <main className={styles.mainContentBody}>
-        {sections.map(({ id, label, content }) => (
+        {sections.map(({ id }) => (
+          // {sections.map(({ id, label, content }) => (
           <section key={id} id={id} className={styles.section}>
-            <h2>{label}</h2>
-            <p>{content}</p>
+
+            {id === "hotel-options" && (<AboutHotel />)}
+            {id === "room-options" && (<RoomsPage />)}
+            {/* {id === "amenities" && (<Amenities />)} */}
+            {/* <h2>{label}</h2>
+            <p>{content}</p> */}
           </section>
+
         ))}
+        {/* <AboutHotel /> */}
       </main>
     </>
   );

@@ -2,6 +2,7 @@
 
 :root {
   --background: #f3f3f3;
+  --bg-light-blue: #e8f3ff;
   /* --background: #ffffff; */
   --foreground: #171717;
   --light-primary: #000000;
@@ -31,6 +32,7 @@
   --text-color-black: #000000;
   --text-color-gray: #272525;
   --border-color: #e0e0e0;
+  --text-color-red: #ff0000;
   /* --border-color: #a499c9; */
 }
 

@@ -1,0 +1,254 @@
+.roomCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* font-family: "lato", "Cinzel", "Palatino Linotype", "sans-serif"; */
+
+  /* padding: 20px; */
+}
+.roomHeaderStickyBody {
+  position: sticky;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 145px; /* This is where the element will stick when scrolling */
+  overflow: visible;
+  z-index: 1; /* Optional: ensures the sticky header stays above other content */
+}
+
+.roomCardContent {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .roomCardContent {
+    flex-direction: row;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+}
+
+.roomCardLeft {
+  flex: 0 0 30%;
+  padding: 20px;
+}
+
+.roomCardRight {
+  flex: 0 0 70%;
+  /* padding: 20px; */
+  background-color: var(--dark-white);
+  /* background-color: #f9f9f9; */
+  overflow-y: auto;
+  /* height: 450px; or use max-height: 450px; */
+  /* max-height: 450px; */
+  border: 1px solid var(--border-color);
+  border-top-right-radius: 8px;
+  border-top: none;
+  border-right: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* .roomCardLeft {
+  flex: 1;
+  padding: 20px;
+}
+
+.roomCardRight {
+  flex: 0 0 40%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  max-height: 450px;
+} */
+
+.roomImage {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  /* margin-top: 10px; */
+}
+
+.roomName {
+  font-size: 18px !important;
+  font-weight: 600;
+  /* margin-bottom: 8px; */
+  border-bottom: none !important;
+  margin-left: -16px;
+  padding: 8px 15px 0px 15px !important;
+}
+
+.roomType {
+  font-size: 14px;
+  color: #666;
+  /* margin-bottom: 16px; */
+  margin-top: -5px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.roomAmenities {
+  /* list-style: none; */
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 12px;
+  /* margin-bottom: 16px; */
+  padding: 0;
+
+  columns: 2; /* Create 2 columns */
+  column-gap: 20px; /* Optional spacing between columns */
+  /* list-style: disc; Show bullets */
+  /* padding-left: 20px; Indent bullets */
+}
+
+.roomAmenities li {
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+}
+
+.roomAmenities li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: #0071c2;
+}
+
+.showMoreBtn {
+  list-style-type: none;
+  background: none;
+  border: none;
+  color: #0071c2;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.showMoreBtn:hover {
+  text-decoration: underline;
+}
+
+.ratePlan {
+  /* margin-bottom: 20px; */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; or center depending on vertical alignment */
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+
+  flex: 1; /* Added to make each ratePlan take equal space */
+  min-height: 0; /* Important for flex children with scrolling */
+  align-items: stretch; /* Changed to stretch */
+}
+
+.ratePlanContent {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.ratePlanList {
+  flex: 0 0 40%;
+  /* list-style-type: disc; */
+}
+
+.ratePlanList li {
+  margin-bottom: 6px; /* Space between list items */
+  line-height: 1.4;
+  /* list-style-type: disc; */
+}
+
+.roomHeadingType {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.listIcon {
+  font-size: 14px;
+  color: var(--green-text);
+  margin-right: 8px;
+}
+
+.priceContainer {
+  /* flex: 0 0 30%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px; */
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Take full height of parent */
+  margin-top: 0; /* Removed margin */
+  padding-left: 20px; /* Added spacing instead of margin */
+  /* border-left: 1px solid var(--border-color); */
+}
+/* .ratePlanList{
+
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+} */
+
+.priceOriginal {
+  text-decoration: line-through;
+  color: var(--text-color-red);
+  font-weight: 500;
+  /* color: #999; */
+  font-size: 18px;
+}
+
+.priceCurrent {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--text-color-black);
+  /* color: #333; */
+}
+
+.priceTaxes {
+  font-size: 16px;
+  color: var(--text-color-gray);
+  font-weight: 500;
+  /* color: #666; */
+}
+
+.selectButton {
+  background-color: var(--light-orange);
+  /* background-color: var(--logo-color); */
+  /* background-color: #0071c2; */
+  color: var(--dark-white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  width: fit-content; /* Makes button width fit content */
+}
+
+.selectButton:hover {
+  background-color: var(--dark-orange);
+  /* background-color: var(--logo-color); */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Room Type Css Style */
+/* components/RoomTypes.module.css */

@@ -4,7 +4,8 @@
 }
 
 .hotelTabNavigationBar {
-  background-color: var(--background);
+  background-color: var(--bg-light-blue);
+  /* background-color: var(--background); */
   /* background-color: #fff; */
   width: 100%;
   margin: 0;
