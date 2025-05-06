@@ -1,0 +1,135 @@
+.foodSection {
+  /* padding: 1rem; */
+  background: var(--dark-white);
+  /* font-family: Arial, sans-serif; */
+  border-radius: 8px;
+  padding-bottom: 0.1rem;
+}
+
+.foodSection h2 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  padding-top: 0.75rem;
+  padding-left: 1.5rem;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: visible; /* or unset */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem !important;
+}
+
+.cardHeader {
+  background: #e8f2ff;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.cardContent {
+  /* padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; */
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 1.2rem;
+  min-width: 1.5rem;
+}
+
+/* Responsive: Stack columns on small screens */
+@media (max-width: 768px) {
+  .cardContent {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+  }
+
+  .cardHeader {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+}
+
+/* Property Rules card */
+.rulesSection {
+  /* padding: 1rem; */
+  margin-top: 1rem;
+  background-color: var(--dark-white);
+  border-radius: 8px;
+  padding-bottom: 0.1rem;
+}
+
+.rulesSection h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  padding-top: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.subheadingRule {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color-gray);
+  margin-left: 0.25rem;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.cardRule {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #0000001a;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.cardContentRule {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.columnRule h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.iconRule {
+  font-size: 1.25rem;
+  min-width: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cardContentRule {
+    grid-template-columns: 1fr;
+  }
+}

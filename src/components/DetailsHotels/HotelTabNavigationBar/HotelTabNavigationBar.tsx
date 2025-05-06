@@ -1,10 +1,12 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import styles from './HotelTabNavigationBar.module.css';
 import AboutHotel from '../AboutHotel/AboutHotel';
 import RoomsPage from '../RoomCard/RoomsPage';
-// import Amenities from '../Amenities/Amenities';
+import Amenities from '../Amenities/Amenities';
+import FoodDiningCard from '../FoodDiningCard/FoodDiningCard';
+import HotelReviews from '../HotelReviews/HotelReviews';
+import TravelerImpressions from '../HotelReviews/TravelerImpressions/TravelerImpressions';
 
 const sections = [
   { id: 'hotel-options', label: 'About Hotel', content: 'Details about hotel.' },
@@ -55,7 +57,11 @@ export default function HotelTabNavigationBar() {
 
             {id === "hotel-options" && (<AboutHotel />)}
             {id === "room-options" && (<RoomsPage />)}
-            {/* {id === "amenities" && (<Amenities />)} */}
+            {id === "amenities" && (<Amenities />)}
+            {id === "food-dining" && (<FoodDiningCard />)}
+            {id === "guest-reviews" && (<><HotelReviews />
+              <TravelerImpressions /></>)}
+            {/* {id === "policies" && (<PropertyPolicies />)} */}
             {/* <h2>{label}</h2>
             <p>{content}</p> */}
           </section>

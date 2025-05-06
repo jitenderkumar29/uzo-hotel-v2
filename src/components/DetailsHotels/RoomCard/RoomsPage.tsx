@@ -1,3 +1,4 @@
+'use client';
 import RoomCard from "./RoomCard";
 import RoomHeaderSticky from "./RoomHeaderSticky/RoomHeaderSticky";
 import RoomTypes from "./RoomTypes/RoomTypes";
@@ -32,7 +33,7 @@ const sampleRooms = [
         ],
       },
       {
-        title: 'Room with Lunch',
+        title: 'Room with Breakfast',
         originalPrice: '₹5,500',
         currentPrice: '₹5,100',
         taxes: '+ ₹612 taxes & fees per night',

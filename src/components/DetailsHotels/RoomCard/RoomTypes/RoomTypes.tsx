@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react'
 import styles from './RoomTypes.module.css'
 import { FaChevronDown } from 'react-icons/fa';

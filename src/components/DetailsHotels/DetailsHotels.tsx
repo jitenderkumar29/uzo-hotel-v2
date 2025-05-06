@@ -289,10 +289,11 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
             <div className={styles.roomInfo}>
               <h3 className={styles.roomName}>{room.name}</h3>
               <div className={styles.guestInfo}>
-                <FontAwesomeIcon icon={faUser} className={styles.guestIcon} /><span>{room.guests} x Guest</span>|
-                <FontAwesomeIcon icon={faHome} className={styles.roomIcon} /><span>{room.rooms} x Room</span>
+                <FontAwesomeIcon icon={faHome} className={styles.guestIcon} /><span>{roomCount} x Room</span>|
+                <FontAwesomeIcon icon={faUser} className={styles.guestIcon} /><span>{guestCount} x Guest</span>
+                {/* <FontAwesomeIcon icon={faUser} className={styles.roomIcon} /><span>{childCount} x Child</span> */}
               </div>
-
+              {/* <span>{roomCount} Room, {guestCount} Guest, {childCount} Child</span> */}
               <div className={styles.amenitiesService}>
                 <ul className={styles.breakFast}><FontAwesomeIcon icon={faMugHot} className={styles.beakFastIcon} />Free Breakfast Included</ul>
 

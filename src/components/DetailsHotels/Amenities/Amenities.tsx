@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import styles from './Amenities.module.css';
 import amenitiesData from '@/app/data/amenitiesData';
 import { AmenitiesData } from '@/interfaces';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDumbbell, faHotTubPerson, faSpa, faWaterLadder } from '@fortawesome/free-solid-svg-icons';
 
 const Amenities: React.FC = () => {
   const { title, sections } = amenitiesData as AmenitiesData;
-  const [showAll, setShowAll] = useState(false);
+  const [showAll,] = useState(false);
 
   // Show first 5 sections initially, all when expanded
   const visibleSections = showAll ? sections : sections.slice(0, 5);
@@ -17,20 +19,38 @@ const Amenities: React.FC = () => {
     items: showAll ? section.items : section.items.slice(0, 5)
   }));
 
-  const hasMoreSections = sections.length > 5;
-  const hasMoreItems = sections.some(section => section.items.length > 5);
+  // const hasMoreSections = sections.length > 5;
+  // const hasMoreItems = sections.some(section => section.items.length > 5);
 
-  return (
+  // working example of all Amenities
+  // const AmenitiesDisplayAll = () => {
+  //   const allItems = amenitiesData.sections.flatMap(section => section.items);
+  //   return (
+  //     <div className={styles.amenitiesContainerAll}>
+  //       <h1 className="text-2xl font-bold mb-6">{amenitiesData.title}</h1>
+
+  //       <ul className={styles.multiColumnList}>
+  //         {allItems.map((item, index) => (
+  //           <li key={index} className={styles.item}>
+  //             <span className="mr-2">•</span>
+  //             <span>{item}</span>
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
+  // };
+
+  const AmenitiesDisplayLess = () => (
     <div className={styles.container}>
-
       <h1 className={styles.title}>{title}</h1>
       <div className={`${styles.amenitySection} ${styles.popularAmenities}`}>
-        <h2>POPULAR AMENITIES</h2>
+        <p className={styles.amenityHeading}>POPULAR AMENITIES</p>
         <ul className={styles.amenityList}>
-          <li><strong>Jacuzzi</strong></li>
-          <li>Spa</li>
-          <li>Swimming Pool</li>
-          <li>Gym</li>
+          <li><FontAwesomeIcon icon={faHotTubPerson} className={styles.pAIcon} /><strong>Jacuzzi</strong></li>
+          <li><FontAwesomeIcon icon={faSpa} className={styles.pAIcon} /><strong>Spa</strong></li>
+          <li><FontAwesomeIcon icon={faWaterLadder} className={styles.pAIcon} /><strong>Swimming Pool</strong></li>
+          <li><FontAwesomeIcon icon={faDumbbell} className={styles.pAIcon} /><strong>Gym</strong></li>
         </ul>
       </div>
       <div className={styles.amenitiesGrid}>
@@ -53,15 +73,26 @@ const Amenities: React.FC = () => {
         ))}
       </div>
 
-      {(hasMoreSections || hasMoreItems) && (
+      {/* {(hasMoreSections || hasMoreItems) && (
         <button
           className={styles.toggleButton}
           onClick={() => setShowAll(!showAll)}
         >
           {showAll ? 'Show Less' : 'Show All Amenities'}
         </button>
-      )}
+      )} */}
     </div>
+  )
+
+  return (
+    <>
+      {/* {showAll && (
+        <AmenitiesDisplayAll />
+      )} */}
+
+      <AmenitiesDisplayLess />
+
+    </>
   );
 };
 

@@ -96,7 +96,7 @@ const amenitiesData: AmenitiesData = {
       items: ["Spa", "Steam and Sauna", "Massage"],
     },
     {
-      title: "Outdoor Activities and Sports",
+      title: "Outdoor Activities",
       items: ["Vehicle Rentals"],
     },
     {
@@ -112,7 +112,7 @@ const amenitiesData: AmenitiesData = {
       ],
     },
     {
-      title: "Business Center and Conferences",
+      title: "Business Center",
       items: [
         "Fax Service",
         "Business Centre",

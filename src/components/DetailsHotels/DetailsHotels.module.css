@@ -82,7 +82,7 @@
   padding: 12px;
   border-radius: 4px;
   font-size: 14px;
-  margin-top: 8px;
+  margin-top: 15px;
 }
 
 .coupleFriendly svg {
@@ -132,7 +132,7 @@
   display: flex;
   align-items: flex-start;
   color: #666;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .addressIcon {
@@ -205,7 +205,7 @@
 
 /* Galary section style css */
 .cardBody {
-  padding: 15px;
+  padding: 1px 15px;
   background-color: var(--dark-white);
   border-radius: 8px;
   margin: 16px 0;
@@ -521,7 +521,7 @@
   display: flex;
   position: absolute;
   z-index: 10;
-  top: 301px;
+  top: 290px;
   right: 52px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;

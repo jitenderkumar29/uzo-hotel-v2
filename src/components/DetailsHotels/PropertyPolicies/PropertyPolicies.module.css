@@ -1,0 +1,128 @@
+.policyContainer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  /* padding: 20px; */
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--dark-white);
+}
+
+.policyHeader {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.25rem;
+}
+
+.headerText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.timingWrapper {
+  display: flex;
+  gap: 20px;
+  /* font-size: 0.95rem; */
+  color: #555;
+}
+
+.timingWrapper span {
+  display: flex;
+  align-items: center;
+}
+
+.timingWrapper strong {
+  margin-left: 5px;
+  color: #222;
+}
+
+.policyList {
+  list-style: none;
+  /* padding: 0; */
+  margin: 0;
+  padding: 0rem 1.25rem;
+}
+
+.policyItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.checkIcon {
+  margin-top: 2px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.checkIcon {
+  margin-right: 12px;
+  flex-shrink: 0;
+  color: #46484d;
+}
+
+.policyText {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #46484d;
+}
+
+.viewAllButton {
+  background: none;
+  border: none;
+  color: #006ce4;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0rem 1.25rem 1.25rem 1.25rem;
+
+  /* margin-top: 10px; */
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.viewAllButton:hover {
+  color: #004ba0;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .policyContainer {
+    padding: 15px;
+  }
+
+  .headerText {
+    font-size: 1.3rem;
+  }
+
+  .timingWrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .policyContainer {
+    padding: 12px;
+  }
+
+  .headerText {
+    font-size: 1.2rem;
+  }
+
+  .policyItem {
+    align-items: center;
+  }
+
+  .policyText {
+    font-size: 0.9rem;
+  }
+}

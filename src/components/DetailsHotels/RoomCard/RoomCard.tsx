@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import styles from './RoomCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
