@@ -373,7 +373,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     return (
       <div className={styles.cardRating}
         onMouseEnter={() => setOpenRatingId(openRatingId)}
-      // onMouseLeave={() => setOpenRatingId(null)}
+        onMouseLeave={() => setOpenRatingId(null)}
       >
         <div className={styles.leftRating}>
           <div className={styles.scoreRating}>{reviewScore}</div>
