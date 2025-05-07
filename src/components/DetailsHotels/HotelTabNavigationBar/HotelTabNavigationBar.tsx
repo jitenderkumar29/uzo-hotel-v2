@@ -23,7 +23,7 @@ const sections = [
 ];
 
 export default function HotelTabNavigationBar() {
-  const [activeId, setActiveId] = useState('room-options');
+  const [activeId, setActiveId] = useState('hotel-options');
 
   useEffect(() => {
     const handleScroll = () => {
