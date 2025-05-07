@@ -97,11 +97,18 @@ const Map: React.FC<MapProps> = ({ center, zoom, markers = [], className }) => {
   return (
     <div className={className}>
       <GoogleMap
-        mapContainerStyle={{ width: '100%', height: '150px' }}
+        mapContainerStyle={{ width: '100%', height: '100%' }}
         center={center}
         zoom={zoom}
         onLoad={onLoad}
         onUnmount={cleanupMarkers}
+        options={{
+          disableDefaultUI: false,
+          zoomControl: true,
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: true
+        }}
       />
     </div>
   );

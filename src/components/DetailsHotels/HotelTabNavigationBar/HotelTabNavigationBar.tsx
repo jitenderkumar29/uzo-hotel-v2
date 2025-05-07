@@ -7,6 +7,9 @@ import Amenities from '../Amenities/Amenities';
 import FoodDiningCard from '../FoodDiningCard/FoodDiningCard';
 import HotelReviews from '../HotelReviews/HotelReviews';
 import TravelerImpressions from '../HotelReviews/TravelerImpressions/TravelerImpressions';
+import PropertyPolicies from '../PropertyPolicies/PropertyPolicies';
+import SimilarHotels from '../SimilarHotels/SimilarHotels';
+import HotelLocationMap from '../HotelLocationMap/HotelLocationMap';
 
 const sections = [
   { id: 'hotel-options', label: 'About Hotel', content: 'Details about hotel.' },
@@ -61,7 +64,9 @@ export default function HotelTabNavigationBar() {
             {id === "food-dining" && (<FoodDiningCard />)}
             {id === "guest-reviews" && (<><HotelReviews />
               <TravelerImpressions /></>)}
-            {/* {id === "policies" && (<PropertyPolicies />)} */}
+            {id === "policies" && (<PropertyPolicies />)}
+            {id === "location" && (<HotelLocationMap />)}
+            {id === "similar" && (<SimilarHotels />)}
             {/* <h2>{label}</h2>
             <p>{content}</p> */}
           </section>

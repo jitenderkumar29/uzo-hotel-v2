@@ -1,0 +1,280 @@
+/* components/SimilarHotels.module.css */
+.similarHotels {
+  padding: 0;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-color-black);
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  background-color: var(--dark-white);
+  padding: 0rem 0.5rem;
+  border-radius: 50px;
+}
+
+.arrowButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.arrowButton:hover:not(:disabled) {
+  background-color: var(--light-accent);
+  color: var(--dark-white);
+  /* background-color: #f0f0f0; */
+}
+
+.arrowButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrowButton svg {
+  width: 24px;
+  height: 24px;
+  fill: #666;
+}
+
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background-color: var(--dark-white);
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.hotelCard {
+  min-width: 300px;
+  max-width: 350px;
+  flex: 1 0 auto;
+  scroll-snap-align: start;
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hotelCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.currentHotel {
+  background-color: #fffde9;
+  box-shadow: 1rem 0 1.6rem 0 rgba(210, 210, 210, 0.5);
+}
+
+.currentBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.hotelCardInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+}
+
+.hotelImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hotelImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotelDetails {
+  padding: 1rem 0.5rem 0rem 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.starFilled {
+  fill: #fdba00;
+}
+
+.starEmpty {
+  fill: #e5e5e5;
+}
+
+.hotelType {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.hotelName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--light-accent);
+}
+
+.location {
+  font-size: 0.875rem;
+  color: var(--text-color-black);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-color-black);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  /* background-color: #f5f5f5; */
+  /* border-radius: 4px; */
+}
+
+.checkIcon {
+  margin-top: 2px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* .amenity svg {
+  margin-right: 0.25rem;
+  fill: #898b91;
+} */
+
+.pricingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pricing {
+  margin-top: auto;
+  /* padding-top: 1rem; */
+  border-top: 1px solid #eee;
+  /* display: flex; */
+}
+
+.originalPrice {
+  display: block;
+  font-size: 16px;
+  color: var(--text-color-red);
+  text-decoration: line-through;
+}
+
+.discountedPrice {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.perNight {
+  font-size: 0.875rem;
+  color: var(--text-color-black);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.perNight strong {
+  font-weight: 600;
+}
+
+.bookButton {
+  width: fit-content;
+  padding: 0.75rem;
+  background-color: var(--light-orange);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.bookButton:hover {
+  background-color: var(--dark-orange);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hotelCard {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1.25rem;
+  }
+
+  .hotelCard {
+    min-width: 260px;
+  }
+}
