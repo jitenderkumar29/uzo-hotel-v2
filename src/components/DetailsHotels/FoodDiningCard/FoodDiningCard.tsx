@@ -9,7 +9,7 @@ const FoodDiningCard = () => {
   const PropertyRulesCard = () => (
     <section className={styles.rulesSection}>
       <h2>
-        Property Rules<span className={styles.subheadingRule}>For Food & Beverages</span>
+        Property Rules<span className={styles.subheadingRule}>(For Food & Beverages)</span>
       </h2>
       <div className={styles.cardRule}>
         <div className={styles.cardContentRule}>
@@ -17,12 +17,12 @@ const FoodDiningCard = () => {
             <h3>Allowed</h3>
             <div className={styles.rule}>
               {/* <span className={styles.iconRule}>🍖</span> */}
-              <FontAwesomeIcon icon={faDrumstickBite} className={styles.iconRule} />
+              <FontAwesomeIcon icon={faDrumstickBite} className={styles.iconRuleAllow} />
               <p>Non-veg food is allowed</p>
             </div>
             <div className={styles.rule}>
               {/* <span className={styles.iconRule}>🍷</span> */}
-              <FontAwesomeIcon icon={faChampagneGlasses} className={styles.iconRule} />
+              <FontAwesomeIcon icon={faChampagneGlasses} className={styles.iconRuleAllow} />
               <p>Alcohol is allowed in the premises</p>
             </div>
           </div>
@@ -30,12 +30,12 @@ const FoodDiningCard = () => {
             <h3>Not Allowed</h3>
             <div className={styles.rule}>
               {/* <span className={styles.iconRule}>🚫</span> */}
-              <FontAwesomeIcon icon={faBan} className={styles.iconRule} />
+              <FontAwesomeIcon icon={faBan} className={styles.iconRuleBan} />
               <p>Food from outside is not allowed</p>
             </div>
             <div className={styles.rule}>
               {/* <span className={styles.iconRule}>📦</span> */}
-              <FontAwesomeIcon icon={faBox} className={styles.iconRule} />
+              <FontAwesomeIcon icon={faBox} className={styles.iconRuleBan} />
               <p>Food delivery is not allowed</p>
             </div>
           </div>

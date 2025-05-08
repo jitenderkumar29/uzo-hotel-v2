@@ -41,14 +41,24 @@
 
 .tag:hover {
   background-color: #f0f0f0;
+  color: var(--text-color-black);
 }
 
 .selected {
   /* background-color: #0070f3; */
-  color: var(--light-accent);
+  color: var(--dark-white);
+  /* color: var(--light-accent); */
   border-color: var(--dark-aacent);
+  background-color: var(--dark-accent);
   font-size: 16px;
   /* border-color: #0070f3; */
 }
 
+.checkboxfilter {
+  margin-right: 10px;
+  margin-bottom: 2px;
+  height: 15px;
+  width: 15px;
+  vertical-align: middle;
+}
 /* Table header Styles */

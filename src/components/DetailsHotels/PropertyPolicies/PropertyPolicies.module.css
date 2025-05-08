@@ -15,6 +15,7 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #e0e0e0;
   padding: 1.25rem;
+  display: flex;
 }
 
 .headerText {
@@ -28,17 +29,23 @@
   display: flex;
   gap: 20px;
   /* font-size: 0.95rem; */
-  color: #555;
+  color: var(--dark-white);
+  margin-left: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 8px 16px;
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
 }
 
 .timingWrapper span {
   display: flex;
   align-items: center;
+  color: var(--dark-white);
 }
 
 .timingWrapper strong {
   margin-left: 5px;
-  color: #222;
+  color: var(--dark-white);
 }
 
 .policyList {
@@ -125,4 +132,29 @@
   .policyText {
     font-size: 0.9rem;
   }
+}
+
+/* PopUp container and overlay style */
+.popupContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: white;
+  /* padding: 24px; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

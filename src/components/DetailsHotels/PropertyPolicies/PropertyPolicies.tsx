@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from './PropertyPolicies.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import PropertyPoliciesPopUp from './PropertyPoliciesPopUp/PropertyPoliciesPopUp';
 
 const PropertyPolicies = () => {
   const [showAllPolicies, setShowAllPolicies] = useState(false);
@@ -12,14 +13,14 @@ const PropertyPolicies = () => {
     "Passport, Aadhar and Driving License are accepted as ID proof(s)",
     "Pets are not allowed",
     "Outside food is not allowed",
-    "Optional : Fee for buffet breakfast: approximately INR 850 for adults and INR 425 for children",
-    "Early check-in is available for a fee (subject to availability)",
-    "Late check-out is available for a fee (subject to availability)",
-    "Rollaway bed fee: INR 1500.0 per night",
+    // "Optional : Fee for buffet breakfast: approximately INR 850 for adults and INR 425 for children",
+    // "Early check-in is available for a fee (subject to availability)",
+    // "Late check-out is available for a fee (subject to availability)",
+    // "Rollaway bed fee: INR 1500.0 per night",
     // Add more policies here to reach 20 if needed
   ];
 
-  const displayedPolicies = showAllPolicies ? policies : policies.slice(0, 5);
+  const displayedPolicies = showAllPolicies ? policies : policies.slice(0, 4);
 
   return (
     <div className={styles.policyContainer}>
@@ -42,13 +43,22 @@ const PropertyPolicies = () => {
           ))}
         </ul>
 
-        {policies.length > 5 && (
+        {policies.length > 3 && (
           <button
             className={styles.viewAllButton}
             onClick={() => setShowAllPolicies(!showAllPolicies)}
           >
-            {showAllPolicies ? 'Show fewer policies' : `View all ${policies.length} property policies`}
+            {showAllPolicies ? 'Show fewer policies' : `View all property policies`}
+            {/* {showAllPolicies ? 'Show fewer policies' : `View all ${policies.length} property policies`} */}
           </button>
+        )}
+        {showAllPolicies && (
+          <>
+            <div className={styles.overlay} />
+            <div className={styles.popupContainer} onClick={() => setShowAllPolicies(!showAllPolicies)}>
+              <PropertyPoliciesPopUp />
+            </div>
+          </>
         )}
       </div>
     </div>

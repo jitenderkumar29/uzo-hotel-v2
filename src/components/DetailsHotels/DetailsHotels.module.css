@@ -77,10 +77,12 @@
 .coupleFriendly {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #ff6d38;
-  color: #ff6d38;
+  border: 1px solid var(--light-accent);
+  color: var(--text-color-black);
+  /* border: 1px solid #ff6d38;
+  color: #ff6d38; */
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 14px;
   margin-top: 15px;
 }
@@ -94,8 +96,8 @@
   align-items: center;
   margin-top: 12px;
   border: 1px solid black;
-  border-radius: 4px;
-  padding: 8px;
+  border-radius: 50px;
+  padding: 8px 12px;
   gap: 5px;
   font-size: 15px;
   /* padding: 5px; */
@@ -114,7 +116,7 @@
 .badge {
   /* background-color: #ffe08a; */
   color: var(--dark-white);
-  background-color: #3367d1;
+  background-color: var(--bg-star);
   /* color: #333; */
   padding: 0px 6px;
   border-radius: 50px;
@@ -166,11 +168,11 @@
   align-items: center;
   margin-top: 12px;
   border: 1px solid black;
-  border-radius: 4px;
-  padding: 8px;
+  border-radius: 50px;
+  padding: 5px 12px;
   gap: 5px;
   font-size: 15px;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .ratingBadge {
@@ -434,7 +436,8 @@
 .originalPrice {
   text-decoration: line-through;
   color: var(--logo-color);
-  font-size: 17px;
+  font-size: 20px;
+  margin-bottom: -5px;
 }
 
 .discountPrice {
@@ -595,6 +598,41 @@
 
 .bankOfferCard {
   padding: 0px 0px 0px 12px;
+  cursor: pointer;
+}
+
+/* bank offers Popup dropdown */
+.modalOverlayBank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalWrapperBank {
+  max-width: 600px;
+  /* width: 90%; */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Offer card Bank style css */
@@ -661,7 +699,7 @@
 }
 
 .iconElite {
-  color: #eacd7d90;
+  color: var(--golden-color);
   margin-right: 5px;
 }
 
@@ -705,4 +743,57 @@
 
 .dateSearch {
   font-weight: 500;
+}
+
+/* couple friendly popup  style*/
+.coupleFriendlyDetails {
+  position: absolute;
+  top: 288px;
+  /* left: 875px; */
+  background-color: #fff4eb;
+  /* background-color: var(--dark-white); */
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.featuresList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coupleHeading {
+  text-align: center;
+  background-color: var(--dark-white);
+  border-radius: 50px;
+  padding: 3px 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.featureItem {
+  padding: 2px 5px;
+  margin: 5px 0;
+  /* background-color: #f8f8f8; */
+  border-radius: 8px;
+  color: var(--text-color-black);
+  font-size: 15px;
+  text-align: justify;
+  transition: all 0.2s;
+}
+
+.featureItem:hover {
+  /* background-color: #f0f0f0; */
+  /* transform: translateX(5px); */
+}
+
+.coupleFeatureIcon {
+  color: var(--dark-orange);
+  margin-right: 8px;
+  /* margin-top: 5px; */
+  font-size: 15px;
 }

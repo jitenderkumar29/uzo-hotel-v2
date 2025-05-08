@@ -5,10 +5,11 @@ import amenitiesData from '@/app/data/amenitiesData';
 import { AmenitiesData } from '@/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faHotTubPerson, faSpa, faWaterLadder } from '@fortawesome/free-solid-svg-icons';
+import SectionedAmenitiesDisplay from './SectionedAmenitiesDisplay';
 
 const Amenities: React.FC = () => {
   const { title, sections } = amenitiesData as AmenitiesData;
-  const [showAll,] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   // Show first 5 sections initially, all when expanded
   const visibleSections = showAll ? sections : sections.slice(0, 5);
@@ -16,11 +17,15 @@ const Amenities: React.FC = () => {
   // For each section, show max 5 items initially, all when expanded
   const processedSections = visibleSections.map(section => ({
     ...section,
-    items: showAll ? section.items : section.items.slice(0, 5)
+    items: showAll ? section.items : section.items.slice(0, 4)
   }));
 
-  // const hasMoreSections = sections.length > 5;
-  // const hasMoreItems = sections.some(section => section.items.length > 5);
+
+
+
+
+  const hasMoreSections = sections.length > 5;
+  const hasMoreItems = sections.some(section => section.items.length > 5);
 
   // working example of all Amenities
   // const AmenitiesDisplayAll = () => {
@@ -40,8 +45,7 @@ const Amenities: React.FC = () => {
   //     </div>
   //   );
   // };
-
-  const AmenitiesDisplayLess = () => (
+  const AmenitiesHeader = () => (
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
       <div className={`${styles.amenitySection} ${styles.popularAmenities}`}>
@@ -53,15 +57,22 @@ const Amenities: React.FC = () => {
           <li><FontAwesomeIcon icon={faDumbbell} className={styles.pAIcon} /><strong>Gym</strong></li>
         </ul>
       </div>
+    </div >
+  )
+  const AmenitiesDisplayLess = () => (
+    <div className={styles.container}>
+
       <div className={styles.amenitiesGrid}>
         {processedSections.map((section, index) => (
           <div key={index} className={styles.section}>
             <h2 className={styles.sectionTitle}>{section.title}</h2>
-            <ul className={styles.itemsList}>
+            <ul className={styles.itemsList} >
               {section.items.map((item, itemIndex) => (
-                <li key={itemIndex} className={styles.item}>
-                  {item}
-                </li>
+                <>
+                  <li key={itemIndex} className={styles.item}><span className={styles.bullet}>•</span>
+                    {item}
+                  </li>
+                </>
               ))}
             </ul>
           </div>
@@ -86,12 +97,29 @@ const Amenities: React.FC = () => {
 
   return (
     <>
-      {/* {showAll && (
-        <AmenitiesDisplayAll />
-      )} */}
+      <div className={styles.container}>
+        {showAll && (
+          <>
+            <AmenitiesHeader />
+            <SectionedAmenitiesDisplay />
+          </>
+        )}
 
-      <AmenitiesDisplayLess />
-
+        {!showAll && (
+          <>
+            <AmenitiesHeader />
+            <AmenitiesDisplayLess />
+          </>)}
+        {/* <SectionedAmenitiesDisplay /> */}
+        {(hasMoreSections || hasMoreItems) && (
+          <button
+            className={styles.toggleButton}
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? 'Show Less' : 'Show All Amenities'}
+          </button>
+        )}
+      </div>
     </>
   );
 };

@@ -23,6 +23,24 @@
   align-items: center;
   font-size: 20px;
   font-weight: bold;
+  /* justify-content: space-between; */
+}
+
+.roomCardHeader {
+  display: flex;
+  align-items: center;
+  color: var(--dark-white);
+  border: 1px solid var(--border-color);
+  background-color: var(--dark-accent);
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
+  border-radius: 50px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.chevDownIcon {
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .roomCardRight {
@@ -52,4 +70,92 @@
   align-items: center;
   font-size: 20px;
   font-weight: bold;
+}
+
+/* Room Types Drop down Style */
+/* components/RoomTypeDropdown.module.css */
+
+.roomTypeDropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dropdownRoom {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.roomItemRoom {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.roomItemRoom:hover {
+  background-color: #f9f9f9;
+}
+
+.activeRoom {
+  background-color: #f0f4ff;
+}
+
+.activeBarRoom {
+  width: 4px;
+  height: 100%;
+  background-color: #1a73e8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.roomNameRoom {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem;
+  color: #333;
+}
+
+.roomNameActiveRoom {
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+.roomInfoRoom {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .roomItemRoom {
+    padding: 0.75rem;
+  }
+
+  .roomNameRoom {
+    font-size: 0.95rem;
+  }
+
+  .roomInfoRoom {
+    font-size: 0.85rem;
+  }
 }

@@ -39,7 +39,7 @@ const SimilarHotels: React.FC = () => {
       name: 'Deventure Sarovar Portico, New Delhi',
       location: 'Delhi',
       rating: 4,
-      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Health-Spa'],
+      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool', 'Health-Spa'],
       originalPrice: 6000,
       discountedPrice: 5400,
       imageUrl: 'https://r1imghtlak.ibcdn.com/c8a6cdc8-2d3b-429d-a051-37246dddef53.jpg?&output-quality=75&downsize=520:350&crop=520:350;2,0&output-format=webp'
@@ -48,8 +48,8 @@ const SimilarHotels: React.FC = () => {
       id: '3',
       name: 'ibis Aerocity - An Accor Brand',
       location: 'Aerocity',
-      rating: 4,
-      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool'],
+      rating: 5,
+      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool', 'Health-Spa'],
       originalPrice: 4889,
       discountedPrice: 3889,
       imageUrl: 'https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-f2b4ed59-462d-4852-8965-714b6b1b9dd7.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp'
@@ -59,7 +59,7 @@ const SimilarHotels: React.FC = () => {
       name: 'Taurus Sarovar Portico',
       location: 'Mahipalpur',
       rating: 4,
-      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool'],
+      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool', 'Health-Spa'],
       originalPrice: 5499,
       discountedPrice: 5224,
       imageUrl: 'https://r1imghtlak.ibcdn.com/a4b4abb0-5fb0-43cc-acc7-e7c28affe7b2.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp'
@@ -68,8 +68,8 @@ const SimilarHotels: React.FC = () => {
       id: '5',
       name: 'Aloft New Delhi Aerocity',
       location: 'Aerocity',
-      rating: 5,
-      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool'],
+      rating: 3,
+      amenities: ['Air Conditioning', 'Restaurant/Coffee Shop', 'Swimming Pool', 'Health-Spa'],
       originalPrice: 8000,
       discountedPrice: 6999,
       imageUrl: 'https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/202304121711397953-2f87ced8cbef11eeac400a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp'
@@ -133,14 +133,19 @@ const SimilarHotels: React.FC = () => {
                   <Image
                     src={hotel.imageUrl}
                     alt={hotel.name}
-                    width={520}
-                    height={350}
-                    layout="responsive"
+                    fill // This makes the image fill the container
+                    style={{
+                      objectFit: 'cover' // This ensures the image covers the area while maintaining aspect ratio
+                    }}
+                    sizes="(max-width: 768px) 200vw, 150vw" // Responsive sizing
+                  // width={520}
+                  // height={350}
+                  // layout="responsive"
                   />
                 </div>
                 <div className={styles.hotelDetails}>
                   <div className={styles.rating}>
-                    {[...Array(5)].map((_, i) => (
+                    {/* {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
                         width="15"
@@ -149,8 +154,9 @@ const SimilarHotels: React.FC = () => {
                       >
                         <path d="m7.15 11.622 3.469 2.13c.635.39 1.412-.187 1.245-.917l-.92-4.004 3.068-2.699c.56-.492.259-1.425-.477-1.484L9.5 4.3 7.92.515a.831.831 0 0 0-1.537 0l-1.58 3.776-4.036.348C.031 4.7-.27 5.632.29 6.124l3.067 2.698-.92 4.005c-.166.73.61 1.307 1.246.916z" />
                       </svg>
-                    ))}
-                    <span className={styles.hotelType}>Hotel</span>
+                    ))} */}
+                    <div className={styles.hotelTypeButton}> {hotel.rating} <span className={styles.star}>★ </span>Hotel</div>
+                    {/* <span className={styles.hotelType}> {hotel.rating} ★ Hotel</span> */}
                   </div>
                   <h3 className={styles.hotelName}>{hotel.name}</h3>
                   <p className={styles.location}>{hotel.location}</p>

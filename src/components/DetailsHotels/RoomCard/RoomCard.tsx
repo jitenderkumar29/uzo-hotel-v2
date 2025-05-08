@@ -42,9 +42,27 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
     <div className={styles.roomCard}>
       <div className={styles.roomCardContent}>
         <div className={styles.roomCardLeft}>
-          {/* <h1>Day use room (10 am to 4 pm) Maximum 6 hrs stay.</h1> */}
-          <img src={imageUrl} alt={name} className={styles.roomImage} />
           <h2 className={styles.roomName}>{name}</h2>
+
+          {/* <h1>Day use room (10 am to 4 pm) Maximum 6 hrs stay.</h1> */}
+          <div className={styles.container}>
+            <img
+              src={imageUrl}
+              alt={name}
+              className={styles.roomImage}
+            />
+            <button
+              type="button"
+              className={styles.photosButton}
+            // onMouseEnter={handleButtonHover}
+            // onMouseLeave={handleButtonLeave}
+            >
+              +8 Photos
+            </button>
+          </div>
+          {/* <img src={imageUrl} alt={name} className={styles.roomImage} />
+          <button type='button' className={styles.photosButton}>+8 Photos</button> */}
+          {/* <h2 className={styles.roomName}>{name}</h2> */}
           <p className={styles.roomType}>{type}</p>
           <ul className={styles.roomAmenities}>
             {amenities.slice(0, showAllAmenities ? amenities.length : 6).map((item, i) => (
@@ -67,14 +85,14 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
           {ratePlans.map((plan, i) => (
             <div className={styles.ratePlan} key={i}>
               <div className={styles.ratePlanContent}>
-                <ul className={styles.ratePlanList}>
-                  <h3 className={styles.roomHeadingType}>{plan.title}</h3>
+                <ol className={styles.ratePlanList}>
+                  <h3 className={styles.roomHeadingType}>{i + 1}. {plan.title}</h3>
                   {plan.features.map((feat, j) => (
                     <li key={j}>
                       <FontAwesomeIcon icon={faCheck} className={styles.listIcon} />
                       {feat}</li>
                   ))}
-                </ul>
+                </ol>
               </div>
               <div className={styles.priceContainer}>
                 <div>

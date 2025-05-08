@@ -39,7 +39,7 @@
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .info {
@@ -51,6 +51,7 @@
 .icon {
   font-size: 1.2rem;
   min-width: 1.5rem;
+  color: var(--golden-color);
 }
 
 /* Responsive: Stack columns on small screens */
@@ -109,22 +110,32 @@
   gap: 1rem;
 }
 
+.columnRule {
+  gap: 2rem !important;
+}
+
 .columnRule h3 {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .rule {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.iconRule {
+.iconRuleAllow {
   font-size: 1.25rem;
   min-width: 1.5rem;
+  color: var(--green-text);
+}
+.iconRuleBan {
+  font-size: 1.25rem;
+  min-width: 1.5rem;
+  color: var(--text-color-red);
 }
 
 /* Responsive */

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./DetailsHotels.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronLeft, faChevronRight, faConciergeBell, faLocationDot, faMugHot, faShuffle } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronDown, faChevronLeft, faChevronRight, faConciergeBell, faLocationDot, faMugHot, faShuffle } from '@fortawesome/free-solid-svg-icons';
 import { HotelDataInterface } from "@/interfaces"
 import { RatingCardPropsInterFace } from "@/interfaces"
 import mapIcon2 from "@/assets/icons/mapIcon2.png"
@@ -16,6 +16,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { faSpa } from '@fortawesome/free-solid-svg-icons/faSpa';
 import { useRouter } from 'next/router';
 import { useHotelSearch } from '@/app/Context/HotelSearchContext';
+import BankOffers from './BankOffers/BankOffers';
 
 export interface HotelRoom {
   id: string;
@@ -38,6 +39,8 @@ interface IDProps {
 const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   const [, setCurrentImageIndex] = useState(0);
   const [openRatingId, setOpenRatingId] = useState<number | null>(null);
+  const [coupleFriendly, setCoupleFriendly] = useState<boolean | null>(false);
+  const [bankOffers, setBankOffers] = useState<boolean | null>(false);
   // const [hotelId, setHotelId] = useState<number | null>(null);
   const [hotel, setHotel] = useState<HotelDataInterface | null>(null);
 
@@ -63,6 +66,15 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     checkOut,
     destination)
 
+  const HOTEL_FEATURES = [
+    "Couple Friendly Hotels",
+    "Hassle-Free Check-in",
+    "Private Bookings",
+    "Unmarried Couples",
+    "Local IDs Accepted"
+  ] as const;
+
+  // type HotelFeature = typeof HOTEL_FEATURES[number];
 
   // When you need to set the hotel:
   const handleSetHotel = (hotelId: string) => {
@@ -203,9 +215,26 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         <div className={styles.coupleFriendly}>
           <span>👩‍👧 Women Friendly</span>
         </div>
-        <div className={styles.coupleFriendly}>
+        <div className={styles.coupleFriendly} onMouseEnter={() => setCoupleFriendly(true)}
+          onMouseLeave={() => setCoupleFriendly(false)}>
           <span>{hotel.commonFeature}</span>
         </div>
+        {coupleFriendly && (
+          <div className={styles.coupleFriendlyDetails}
+            onMouseEnter={() => setCoupleFriendly(true)}
+            onMouseLeave={() => setCoupleFriendly(false)}
+          >
+            <ul className={styles.featuresList}>
+              <h3 className={styles.coupleHeading}>👫Couple Friendly Hotels</h3>
+              {HOTEL_FEATURES.map((feature, index) => (
+                <li key={index} className={styles.featureItem}>
+                  <FontAwesomeIcon icon={faCheck} className={styles.coupleFeatureIcon} />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className={styles.viewsMap}>
           <div className={styles.mapBadge}>
             <Image
@@ -240,7 +269,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         {openRatingId === hotel.id &&
           (<RatingCard reviewScore={hotel.reviewScore} totalRatings={hotel.totalRatings} breakdown={hotel.breakdown} />)}
       </div>
-    </div>
+    </div >
   )
 
   const HotelRoomCard = () => (
@@ -313,7 +342,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
                 )}
               </div> */}
 
-              <button className={styles.selectRoomButton}>
+              <button className={styles.selectRoomButton} >
                 View 7 Room Options <FontAwesomeIcon icon={faChevronDown} />
                 {/* Select Rooms */}
               </button>
@@ -347,12 +376,20 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
             </div>
           </div>
           {/* <div className={styles.detailsSectionText}> */}
-          <div className={styles.bankOfferCard}>
+          <div className={styles.bankOfferCard} onClick={() => setBankOffers(true)}>
             <OfferCard />
           </div>
-          <div className={styles.bankOfferCard}>
+          {bankOffers && (
+            <div className={styles.modalOverlayBank} onClick={() => setBankOffers(false)}>
+              <div className={styles.modalWrapperBank} onClick={(e) => e.stopPropagation()}>
+                <BankOffers />
+              </div>
+            </div>
+          )}
+          <div className={styles.bankOfferCard} >
             <ElitePachage />
           </div>
+
           {/* <div className={styles.bankOfferCard}>
               <div className={styles.bankOfferText}>
               </div>

@@ -1,0 +1,158 @@
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 450px;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.closeBtn {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.body {
+  padding: 1rem;
+}
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #ff6d38;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.offerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offerItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-items: center;
+}
+
+.selected {
+  background: #e9f6ea;
+  border-color: #90c490;
+}
+
+.details {
+  margin-left: 0.5rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.bankImg {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 0.4rem;
+}
+
+.amount {
+  font-weight: bold;
+  color: green;
+}
+
+.desc {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+  margin-left: 5px;
+}
+
+.footerText,
+.footerPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footerTextHead {
+  color: var(--green-text);
+  font-weight: 600;
+}
+
+.totalSavings {
+  font-weight: 600;
+  color: green;
+}
+
+.discounted {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.perNight {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .offerItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
