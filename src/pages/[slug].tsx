@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 // import dynamic from 'next/dynamic';
 import { lazy, ReactElement, Suspense } from 'react';
 import "../app/globals.css";
+// import GallaryDetailsHotels from '@/components/DetailsHotels/GallaryDetailsHotels/GallaryDetailsHotels';
 
 // Add this type if needed
 // import Book from './Book/Book';
@@ -15,6 +16,7 @@ import "../app/globals.css";
 const Book = lazy(() => import('./Book/Book'));
 const HotelBooking = lazy(() => import('./HotelBooking/HotelBooking'));
 const HotelDetails = lazy(() => import('./HotelDetails/HotelDetails'));
+const GallaryDetailsHotels = lazy(() => import('./HotelGallaryTaBNav/HotelGallaryTabNav'));
 // Example of lazy-loaded components using `dynamic`
 // const Book = dynamic(() => import('./Book/Book'), { suspense: true }) as ComponentType;
 // const HotelBooking = dynamic(() => import('./HotelBooking/HotelBooking'), { suspense: true });
@@ -39,6 +41,11 @@ const pageMap: Record<string, () => ReactElement> = {
   hotelDetails: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <HotelDetails />
+    </Suspense>
+  ),
+  gallaryDetailsHotels: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <GallaryDetailsHotels />
     </Suspense>
   ),
   // book: () => <Book />,

@@ -14,7 +14,7 @@ import yesBankImage from "@/assets/icons/yesBank.png";
 import HotelTabNavigationBar from './HotelTabNavigationBar/HotelTabNavigationBar';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { faSpa } from '@fortawesome/free-solid-svg-icons/faSpa';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useHotelSearch } from '@/app/Context/HotelSearchContext';
 import BankOffers from './BankOffers/BankOffers';
 
@@ -37,12 +37,14 @@ interface IDProps {
 }
 
 const DetailsHotels: React.FC<IDProps> = ({ id }) => {
+  const router = useRouter(); // Correct: useRouter at component level
   const [, setCurrentImageIndex] = useState(0);
   const [openRatingId, setOpenRatingId] = useState<number | null>(null);
   const [coupleFriendly, setCoupleFriendly] = useState<boolean | null>(false);
   const [bankOffers, setBankOffers] = useState<boolean | null>(false);
   // const [hotelId, setHotelId] = useState<number | null>(null);
   const [hotel, setHotel] = useState<HotelDataInterface | null>(null);
+  // const [showGallaryTabNav, setShowGallaryTabNav] = useState(false);
 
 
 
@@ -181,6 +183,19 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     });
   };
 
+  const handleGallaryTabNav = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // event is properly typed
+    console.log('Button clicked!', event.currentTarget.value);
+    // setShowGallaryTabNav(!showGallaryTabNav);
+    // const router = useRouter();
+    // if (router.isReady) {
+    // }
+    router.push('/gallaryDetailsHotels');
+    // if (typeof window !== 'undefined') {
+    //   router.push('/gallaryDetailsHotels');
+    // }
+    // router.push('/gallaryDetailsHotels');
+  };
 
   const HotelHeader = () => (
     <div className={styles.hotelHeader}>
@@ -245,6 +260,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
           </div>
           <div>View Map</div>
         </div>
+
         <div className={styles.reviews} onMouseEnter={() => setOpenRatingId(hotel.id)}
         // onMouseLeave={() => setOpenRatingId(null)}
         >
@@ -306,8 +322,9 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
             ))}
           </div>
 
-          <button className={styles.viewAllPhotos}>
-            ALL PHOTOS {hotel.thumbnails.length}+
+          <button className={styles.viewAllPhotos} onClick={handleGallaryTabNav}>
+            ALL PHOTOS
+            {/* {hotel.thumbnails.length}+ */}
             {/* SEE ALL {room.totalPhotos} PHOTOS */}
           </button>
         </div>
@@ -478,14 +495,14 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   };
 
   const BackButton = () => {
-    const router = useRouter();
+    // const router = useRouter();
 
     return (<div>
       <button
         onClick={() => router.back()}
         className={styles.backButton}
       >
-        <FontAwesomeIcon icon={faChevronLeft} className={styles.backIcon}></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faChevronLeft} className={styles.backIcon} />
         Back to search
       </button>
       {/* <FontAwesomeIcon icon={faChevronRight} className={styles.rightIcon}></FontAwesomeIcon> */}
@@ -513,7 +530,21 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
       <div className={styles.hotelTabNavigationBar}>
         <HotelTabNavigationBar />
       </div>
-
+      <div>
+        {/* <div style={{ width: '100%', margin: '0 auto' }}> */}
+        {/* {showGallaryTabNav && (
+          <div className={styles.overlayGallaryTabNav}>
+            <div>
+              <OverlayGallaryTabNavHeader
+                show={showGallaryTabNav}
+                onClose={() => setShowGallaryTabNav(false)}
+              >
+                <GallaryDetailsHotels />
+              </OverlayGallaryTabNavHeader>
+            </div>
+          </div>
+        )} */}
+      </div>
     </>
   )
 }

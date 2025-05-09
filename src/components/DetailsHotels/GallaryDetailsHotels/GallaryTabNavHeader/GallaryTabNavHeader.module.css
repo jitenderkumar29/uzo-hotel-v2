@@ -1,0 +1,227 @@
+/* components/Gallery/GalleryTabNavHeader.module.css */
+
+.headerWrapper {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem 0.5rem 2rem;
+}
+
+.headerBody {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.backAndTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.backIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.backIcon {
+  margin-right: 4px;
+  color: #0073e6;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-color-black);
+}
+
+.selectRoom {
+  /* background: linear-gradient(to right, #51c5f7, #005eff); */
+  background-color: var(--light-orange);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.selectRoom:hover {
+  /* background: linear-gradient(to right, #3cb4ed, #004bdc); */
+  background-color: var(--dark-orange);
+}
+
+.photoTabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  list-style-type: none;
+  overflow-x: auto;
+}
+
+.photoTabItem {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color-black);
+}
+
+.photoTabItem.selected {
+  border-color: #007bff;
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
+}
+
+.view360 {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.newIcon {
+  width: 20px;
+  height: auto;
+}
+
+.contentTabsWrapper {
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.contentTabs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.contentTabItem {
+  font-size: 0.95rem;
+  color: #444;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.contentTabItem.selected {
+  font-weight: 600;
+  color: #000;
+}
+
+.contentTabItem.selected::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: var(--dark-accent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 2px;
+}
+
+.gallerySectionsContainer {
+  width: 100%;
+  max-width: 1300px;
+  /* padding: 1rem 3rem; */
+  margin: 0 auto;
+  /* padding-top: 2rem; */
+  /* background-color: var(--dark-white); */
+  margin-top: 15px;
+  /*   
+  width: 100%;
+  max-width: 1300px;
+  padding: 0rem 2rem;
+  margin: 0 auto;
+  background-color: var(--dark-white);
+  height: 100vh;  */
+  /* Optional: only if you want a scroll container */
+
+  /* padding-top: 2rem; */
+  /* scroll-snap-type: y mandatory; */
+  /* overflow-y: auto; */
+}
+
+.gallerySection {
+  margin-bottom: 1rem;
+  scroll-margin-top: 200px;
+  /* This helps with scroll positioning */
+
+  background-color: var(--dark-white);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .headerWrapper {
+    padding: 0.75rem 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .selectRoom {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .photoTabs,
+  .contentTabs {
+    gap: 0.75rem;
+  }
+
+  .gallerySection {
+    scroll-margin-top: 150px;
+  }
+}
+
+/* added style for active atb */
+.activeSection {
+  /* Your active section styles here */
+  /* border-left: 3px solid #0071c2;
+  background-color: #f7f7f7; */
+}
+
+/* Toggle Button style */
+/* .toggleAllButton {
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toggleAllButton:hover {
+  background-color: #e0e0e0;
+} */
