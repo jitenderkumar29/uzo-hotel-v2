@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       "static-images.webbeds.com",
       "r2imghtlak.mmtcdn.com",
       "imgak.mmtcdn.com",
+      "gos3.ibcdn.com",
+      "images.pexels.com",
     ],
   },
 };

@@ -199,14 +199,24 @@
 }
 
 .roomHeadingType {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .listIcon {
   font-size: 14px;
   color: var(--green-text);
   margin-right: 8px;
+}
+
+.cancelPolicy {
+  font-size: 15px;
+  color: var(--link-color);
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .priceContainer {

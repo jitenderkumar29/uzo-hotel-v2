@@ -1,8 +1,12 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './HotelReviews.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const HotelReviews = () => {
+  // const [sortBy, setSortBy] = useState<boolean | null>(false);
+
   // Rating data
   const ratings = [
     { stars: 5, count: 1546 },
@@ -32,8 +36,11 @@ const HotelReviews = () => {
         <h2>Guest Reviews & Ratings</h2>
         {/* <h2>Guest Reviews & Rating for Pride Plaza Hotel Aerocity New Delhi</h2> */}
         <div className={styles.sortBy}>
-          <span className={styles.sortLabel}>Sort By:</span>
-          <span className={styles.sortOption}>
+          <SortByDropdown />
+
+          {/* <span className={styles.sortLabel}>Sort By:</span>
+          <span className={styles.sortOption} onMouseEnter={() => setSortBy(true)}
+          >
             Latest first
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +52,14 @@ const HotelReviews = () => {
               <path d="M16 26a3.07 3.07 0 0 1-2.305-1.04L.614 10.091A2.462 2.462 0 0 1 4.312 6.84l11.439 13.003a.334.334 0 0 0 .501 0L27.691 6.84a2.462 2.462 0 1 1 3.697 3.251L18.311 24.955A3.08 3.08 0 0 1 16.002 26z"></path>
             </svg>
           </span>
+          {sortBy && (
+            <div onMouseEnter={() => setSortBy(true)}
+              onMouseLeave={() => setSortBy(false)}>
+              <SortByDropdown />
+            </div>
+          )} */}
         </div>
+
       </div>
 
       <div className={styles.reviewsContent}>
@@ -120,4 +134,33 @@ const getProgressBarColor = (stars: number): string => {
   }
 };
 
+const SortByDropdown = () => {
+  const [selected, setSelected] = useState("Latest first");
+  const sortOptions = ["Latest first", "Helpful first", "Positive first", "Negative first"];
+  return (
+    <div className={styles.dropdownWrapper}>
+      <div className={styles.sortByLabel}>
+        <span>Sort By:</span>
+        <span className={styles.selected}>{selected}</span>
+        <FontAwesomeIcon icon={faChevronDown} className={styles.iconSort} />
+      </div>
+
+      <div className={styles.dropdown}>
+        {/* <div className={styles.title}>Sort By</div> */}
+        {sortOptions.map((option) => (
+          <label key={option} className={styles.option}>
+            <input
+              type="radio"
+              name="sort"
+              readOnly
+              checked={selected === option}
+              onClick={() => setSelected(option)}
+            />
+            <span>{option}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+}
 export default HotelReviews;

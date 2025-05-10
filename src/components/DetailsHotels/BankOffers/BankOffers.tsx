@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import styles from './BankOffers.module.css';
+import Image from 'next/image';
 // import { offers } from './offerData';
 
 export const offers = [
@@ -62,7 +63,7 @@ const BankOffers = () => {
                 <div className={styles.row}>
                   <span className={styles.code}>
                     {offer.bankImage && (
-                      <img src={offer.bankImage} alt="" className={styles.bankImg} />
+                      <Image src={offer.bankImage} alt="" className={styles.bankImg} />
                     )}
                     {offer.code}
                   </span>

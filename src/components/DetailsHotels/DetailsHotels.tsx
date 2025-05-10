@@ -240,7 +240,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
             onMouseLeave={() => setCoupleFriendly(false)}
           >
             <ul className={styles.featuresList}>
-              <h3 className={styles.coupleHeading}>👫Couple Friendly Hotels</h3>
+              {/* <h3 className={styles.coupleHeading}>👫Couple Friendly Hotels</h3> */}
               {HOTEL_FEATURES.map((feature, index) => (
                 <li key={index} className={styles.featureItem}>
                   <FontAwesomeIcon icon={faCheck} className={styles.coupleFeatureIcon} />
@@ -295,7 +295,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         {/* Left Section - Images */}
         <div className={styles.imageSection}>
           <div className={styles.mainImageContainer}>
-            <img
+            <Image
               src={hotel.mainImg}
               alt={hotel.name}
               className={styles.mainImage}
@@ -312,7 +312,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
 
           <div className={styles.thumbnailContainer}>
             {hotel.thumbnails.slice(0, 3).map((thumb, index) => (
-              <img
+              <Image
                 key={index}
                 src={thumb}
                 alt={`Thumbnail ${index + 1}`}

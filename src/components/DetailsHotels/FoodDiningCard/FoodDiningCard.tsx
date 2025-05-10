@@ -50,7 +50,7 @@ const FoodDiningCard = () => {
       <section className={styles.foodSection}>
         <h2 className={styles.foodHeading}>Food & Dining</h2>
         <div className={styles.card}>
-          <div className={styles.cardHeader}>Cafe Pride (Cafe)</div>
+          <div className={styles.cardHeader}><span className={styles.cardTitle}>Cafe Pride (Cafe)</span></div>
           <div className={styles.cardContent}>
             <div className={styles.info}>
               {/* <span className={styles.icon}>🍽️</span> */}
@@ -72,7 +72,7 @@ const FoodDiningCard = () => {
             <div className={styles.info}>
               {/* <span className={styles.icon}>🍛</span> */}
               <FontAwesomeIcon icon={faMugSaucer} className={styles.icon} />
-              <p>Cuisines: North Indian</p>
+              <p>Cuisines: North Indian and South Indian</p>
             </div>
           </div>
         </div>

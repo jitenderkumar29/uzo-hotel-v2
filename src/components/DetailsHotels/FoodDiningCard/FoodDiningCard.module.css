@@ -26,9 +26,18 @@
 .cardHeader {
   background: #e8f2ff;
   padding: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.2rem;
   border-radius: 8px;
+  /* background: linear-gradient(to right, var(--light-accent), #7caceb); */
+}
+
+.cardTitle {
+  padding: 5px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--dark-white);
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
 }
 
 .cardContent {
@@ -90,10 +99,16 @@
 .subheadingRule {
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--text-color-gray);
-  margin-left: 0.25rem;
+  /* color: var(--text-color-gray); */
+  /* margin-left: 0.25rem; */
   font-size: 15px;
   margin-left: 10px;
+
+  padding: 5px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--dark-white);
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
 }
 
 .cardRule {

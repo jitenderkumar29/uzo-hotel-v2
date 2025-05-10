@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import styles from './TravelerImpressions.module.css';
+import Image from 'next/image';
 
 interface Review {
   id: string;
@@ -144,7 +145,7 @@ const TravelerImpressions: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
-          <img
+          <Image
             src="https://go-assets.ibcdn.com/u/GI/images/1742967762081-AIpersuasion.png"
             alt="AI Icon"
             className={styles.aiIcon}
@@ -207,6 +208,72 @@ const TravelerImpressions: React.FC = () => {
       {displayMode === 'paginated' && (
         <>
           <div className={styles.pagination}>
+            {/* First Page Button (<<) */}
+            <button
+              onClick={() => paginate(1)}
+              disabled={currentPage === 1}
+              className={styles.paginationButton}
+              aria-label="First page"
+            >
+              &lt;&lt;
+            </button>
+
+            {/* Previous Page Button (<) */}
+            <button
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={styles.paginationButton}
+              aria-label="Previous page"
+            >
+              &lt;
+            </button>
+
+            {/* Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i + 1}
+                onClick={() => paginate(i + 1)}
+                className={`${styles.paginationButton} ${currentPage === i + 1 ? styles.activePage : ''}`}
+                aria-label={`Page ${i + 1}`}
+                aria-current={currentPage === i + 1 ? "page" : undefined}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            {/* Next Page Button (>) */}
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={styles.paginationButton}
+              aria-label="Next page"
+            >
+              &gt;
+            </button>
+
+            {/* Last Page Button (>>) */}
+            <button
+              onClick={() => paginate(totalPages)}
+              disabled={currentPage === totalPages}
+              className={styles.paginationButton}
+              aria-label="Last page"
+            >
+              &gt;&gt;
+            </button>
+          </div>
+
+          <button
+            className={styles.showMoreButton}
+            onClick={toggleExpanded}
+          >
+            Show Less
+          </button>
+        </>
+      )}
+
+      {/* {displayMode === 'paginated' && (
+        <>
+          <div className={styles.pagination}>
             <button
               onClick={() => paginate(currentPage - 1)}
               disabled={currentPage === 1}
@@ -241,7 +308,7 @@ const TravelerImpressions: React.FC = () => {
             Show Less
           </button>
         </>
-      )}
+      )} */}
     </div>
   );
 };

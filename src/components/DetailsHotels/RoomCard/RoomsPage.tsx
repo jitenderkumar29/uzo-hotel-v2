@@ -6,7 +6,7 @@ import styles from './RoomCard.module.css'
 
 const sampleRooms = [
   {
-    name: 'Day Use Room 11 AM to 5 PM, Check-in and Check-out on same day',
+    name: 'Day Use Room 10 AM to 6 PM, Check-in and Check-out on same day',
     type: '(344 sq.ft (32 sq.mt)) | King Bed',
     imageUrl:
       'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201309021636532583-7b2d56fc-3cd3-462f-9391-ce0a23470d70.jpg',
@@ -70,6 +70,7 @@ const sampleRooms = [
         features: [
           'No meals included',
           'Flexible Rate',
+          'Days of Joy',
           'Non-Refundable',
         ],
       },
@@ -125,6 +126,7 @@ const sampleRooms = [
         features: [
           'No meals included',
           'Flexible Rate',
+          'Days of Joy',
           'Non-Refundable',
         ],
       },
@@ -147,6 +149,76 @@ const sampleRooms = [
         taxes: '+ ₹2,217 taxes & fees per night',
         features: [
           '20% Discount on F&B services',
+          '20% Off on Laundry service',
+          'Complimentary Breakfast',
+          'Complimentary Lunch Or Dinner',
+          // 'Short Break',
+          // 'Non-Refundable',
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Premium Room',
+    type: '344 sq.ft (32 sq.mt) | Double Bed)',
+    imageUrl:
+      'https://r1imghtlak.ibcdn.com/b29afe406ad011eba4640242ac110002.jpg?downsize=428:230',
+    amenities: [
+      'Mineral Water',
+      'Air Conditioning',
+      'Bathroom',
+      'Iron/Ironing Board',
+      'Telephone',
+      'Closet',
+      'Mini Bar',
+      'Safe',
+    ],
+    ratePlans: [
+      {
+        title: 'Room Only',
+        originalPrice: '₹11,125',
+        currentPrice: '₹9,921',
+        taxes: '+ ₹1768 taxes & fees per night',
+        features: [
+          'No meals included',
+          'Flexible Rate',
+          'Days of Joy',
+          'Non-Refundable',
+        ],
+      },
+      {
+        title: 'Room with Breakfast',
+        originalPrice: '₹8,500',
+        currentPrice: '₹7,800',
+        taxes: '+ ₹916 taxes & fees per night',
+        features: [
+          '25% off on Food & Beverage services',
+          'Breakfast included ',
+          'Days of Joy',
+          'Non-Refundable',
+        ],
+      },
+      {
+        title: 'Room with Breakfast + Lunch/Dinner',
+        originalPrice: '₹11,700',
+        currentPrice: '₹9,319',
+        taxes: '+ ₹1,217 taxes & fees per night',
+        features: [
+          '25% Discount on F&B services',
+          '20% Off on Laundry service',
+          'Complimentary Breakfast',
+          'Complimentary Lunch Or Dinner',
+          // 'Short Break',
+          // 'Non-Refundable',
+        ],
+      },
+      {
+        title: 'Room with All Meal (Breakfast, Lunch & Dinner)',
+        originalPrice: '₹15,700',
+        currentPrice: '₹12,319',
+        taxes: '+ ₹1,517 taxes & fees per night',
+        features: [
+          '25% Discount on F&B services',
           '20% Off on Laundry service',
           'Complimentary Breakfast',
           'Complimentary Lunch Or Dinner',
