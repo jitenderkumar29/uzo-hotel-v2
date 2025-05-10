@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import styles from './TravelerImpressions.module.css';
-import Image from 'next/image';
 
 interface Review {
   id: string;
@@ -145,7 +144,7 @@ const TravelerImpressions: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
-          <Image
+          <img
             src="https://go-assets.ibcdn.com/u/GI/images/1742967762081-AIpersuasion.png"
             alt="AI Icon"
             className={styles.aiIcon}

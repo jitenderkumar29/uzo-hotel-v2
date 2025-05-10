@@ -295,7 +295,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         {/* Left Section - Images */}
         <div className={styles.imageSection}>
           <div className={styles.mainImageContainer}>
-            <Image
+            <img
               src={hotel.mainImg}
               alt={hotel.name}
               className={styles.mainImage}
@@ -312,7 +312,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
 
           <div className={styles.thumbnailContainer}>
             {hotel.thumbnails.slice(0, 3).map((thumb, index) => (
-              <Image
+              <img
                 key={index}
                 src={thumb}
                 alt={`Thumbnail ${index + 1}`}

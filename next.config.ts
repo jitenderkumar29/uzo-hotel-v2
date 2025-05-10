@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
       "imgak.mmtcdn.com",
       "gos3.ibcdn.com",
       "images.pexels.com",
+      "cdn.sanity.io",
+      "www.ahstatic.com",
+      "media.easemytrip.com",
     ],
   },
 };

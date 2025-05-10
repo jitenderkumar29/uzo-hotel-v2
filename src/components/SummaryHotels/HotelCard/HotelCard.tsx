@@ -166,7 +166,7 @@ const HotelCard: React.FC = () => {
       </div> */}
       <div className={styles.hotelCardBody}>
         <div className={styles.cardImageTop}>
-          <Image
+          <img
             src={hotelCard1}
             alt="Hotel card image"
             className={styles.hotelImage}
@@ -188,7 +188,7 @@ const HotelCard: React.FC = () => {
           <div key={hotel.id} className={styles.hotelCard}>
             <div className={styles.cardContent}>
               <div className={styles.left}>
-                <Image
+                <img
                   className={styles.mainImg}
                   src={hotel.mainImg}
                   alt={`Main view of ${hotel.name}`}
@@ -196,7 +196,7 @@ const HotelCard: React.FC = () => {
                 <div className={styles.thumbnailList} role="list">
                   {hotel.thumbnails.map((thumb, i) => (
 
-                    <Image
+                    <img
                       key={i}
                       src={thumb}
                       alt={`Thumbnail ${i + 1} of ${hotel.name}`}

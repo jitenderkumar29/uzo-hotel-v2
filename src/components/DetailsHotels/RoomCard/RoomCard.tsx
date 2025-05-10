@@ -7,7 +7,6 @@ import CancellationPolicy from './CancellationPolicy/CancellationPolicy';
 import { policy1 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import RoomTypesMoreDetails from './RoomTypesMoreDetails/RoomTypesMoreDetails';
-import Image from 'next/image';
 
 interface RatePlan {
   title: string;
@@ -53,7 +52,7 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
 
           {/* <h1>Day use room (10 am to 4 pm) Maximum 6 hrs stay.</h1> */}
           <div className={styles.container}>
-            <Image
+            <img
               src={imageUrl}
               alt={name}
               className={styles.roomImage}
