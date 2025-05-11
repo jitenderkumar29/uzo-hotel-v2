@@ -133,6 +133,8 @@
 
 .headingStarHotels {
   display: flex;
+  align-items: center; /* Vertical centering */
+  /* justify-content: center; Horizontal centering */
 }
 
 .badgeRating {
@@ -140,16 +142,26 @@
 }
 
 .badge {
-  /* background-color: #ffe08a; */
-  color: var(--dark-white);
+  /* color: var(--dark-white);
   background-color: #3367d1;
-  /* color: #333; */
   padding: 0px 6px;
   border-radius: 50px;
   margin-right: 8px;
   font-size: 12px;
   border: 1px solid #333;
-  display: inline-block;
+  display: inline-block; */
+  color: var(--dark-white);
+  background-color: #3367d1;
+  padding: 0px 6px;
+  border-radius: 50px;
+  /* margin-right: 8px; */
+  margin-left: 8px;
+  font-size: 12px;
+  border: 1px solid var(--border-color);
+  display: inline-flex; /* Changed from inline-block to inline-flex */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  height: 20px; /* Set a fixed height for consistent centering */
 }
 .star {
   /* background-color: #ffe08a; */
@@ -161,10 +173,13 @@
   /* padding: 2px 6px; */
   /* border-radius: 4px; */
   font-size: 12px;
-  margin-left: 65px;
+  /* margin-left: 65px; */
   font-weight: 600;
   display: flex;
   gap: 5px;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 3px;
   /* border: 1px solid #333; */
 }
 
@@ -236,7 +251,7 @@
   white-space: nowrap; /* Prevents text wrapping */
   width: fit-content; /* Ensures width matches content */
   font-size: 15px;
-  margin-bottom: -5px;
+  /* margin-bottom: -5px; */
 }
 
 .discountLogo {
@@ -266,7 +281,7 @@
 .rating {
   background-color: #28a745;
   color: white;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   font-size: 15px;
   display: inline-block;
@@ -332,7 +347,8 @@
 }
 
 .bankOffer {
-  /* margin-bottom: -5px; */
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .buttonBankOffer {
@@ -392,6 +408,7 @@
     text-align: right;
     min-width: 180px;
     margin-top: 0;
+    border-left: 1px solid var(--border-color);
   }
 
   .priceBox {
@@ -532,7 +549,7 @@
   position: absolute;
   z-index: 10;
   /* top: 0; */
-  right: 10%;
+  right: 115px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   overflow: hidden;
@@ -677,4 +694,70 @@
   width: 30px;
   font-size: 0.8rem;
   text-align: right;
+}
+
+/* Bank offer card component style */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  /* padding: 1rem; */
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  justify-content: center;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 5px;
+  /* margin-left: 5px; */
+}
+
+.discountTitle {
+  color: #222;
+}
+
+.separator {
+  border-top: 1px solid #e0e0e0;
+  margin: 5px 0;
+  /* margin: 0.75rem 0; */
+}
+
+.description {
+  font-size: 12px;
+  color: var(--text-color-black);
+  line-height: 1.4;
+  padding: 0px 5px 5px 5px;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 0.75rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .topSection {
+    font-size: 0.9rem;
+  }
 }

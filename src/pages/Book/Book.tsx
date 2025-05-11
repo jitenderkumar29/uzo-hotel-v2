@@ -11,8 +11,9 @@ import { HotelSearchProvider } from "@/app/Context/HotelSearchContext";
 
 const Book: React.FC = () => {
   const searchParams = useSearchParams();
-  const searchMode = searchParams?.get("searchMode") ?? undefined; console.log("searchMode in book");
-  console.log(searchMode);
+  const searchMode = searchParams?.get("searchMode") ?? undefined;
+  // console.log("searchMode in book");
+  // console.log(searchMode);
 
   return (
     <>

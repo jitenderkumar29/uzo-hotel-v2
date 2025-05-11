@@ -621,3 +621,328 @@ export const galleryData: GallerySection[] = [
     ]
   }
 ];
+
+
+export const galleryDataTraveller: GallerySection[] = [
+
+  {
+    id: 'room',
+    title: 'Room',
+    items: [
+      {
+        id: 'room1',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/07f55b33_z.jpg',
+        alt: 'Deluxe Room'
+      },
+      {
+        id: 'room2',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/e517410d_z.jpg',
+        alt: 'Suite'
+      },
+      {
+        id: 'room3',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/2abfa0e1_z.jpg',
+        alt: 'Bathroom'
+      },
+      {
+        id: 'room4',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/6171b7f9_z.jpg',
+        alt: 'Bedroom'
+      },
+      {
+        id: 'room5',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/b9d24a3456cb11eab2d10242ac110002.jpg',
+        alt: 'Living Area'
+      },
+      {
+        id: 'room-more',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/e59e3694_z.jpg',
+        alt: 'More Rooms',
+        title: 'More Photos'
+      }
+    ]
+  },
+  {
+    id: 'outdoors',
+    title: 'Outdoors',
+    items: [
+      {
+        id: 'outdoor1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/3771e1821eed11e59e4a001ec9b85d13.jfif',
+        alt: 'Garden View'
+      },
+      {
+        id: 'outdoor2',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/6f594bec_z.jpg',
+        alt: 'Outdoor Seating'
+      },
+      {
+        id: 'outdoor3',
+        type: 'image',
+        url: 'https://static-images.webbeds.com/0/image/33c20544-bb74-4cf4-99dd-1f174821366e.jpg',
+        alt: 'Landscaping'
+      },
+      {
+        id: 'outdoor4',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/64515cdf_z.jpg',
+        alt: 'Terrace'
+      },
+      {
+        id: 'outdoor5',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/cb9027e8_z.jpg',
+        alt: 'Courtyard'
+      },
+      {
+        id: 'outdoor6',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/be7db1d9_z.jpg',
+        alt: 'Patio'
+      }
+    ]
+  },
+  {
+    id: 'facade',
+    title: 'Facade',
+    items: [
+      {
+        id: 'facade1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/d076a970c29e11ebbbed0242ac110005.jpg',
+        alt: 'Building Front'
+      },
+      {
+        id: 'facade2',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/fb05ca06a71d11ea87640242ac110003.jpeg',
+        alt: 'Hotel Entrance'
+      },
+      {
+        id: 'facade3',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/95cc2704c2cc11eb87490242ac110005.png',
+        alt: 'Exterior View'
+      },
+      {
+        id: 'facade4',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/7434c086f0c511e9994d0242ac110003.jpg',
+        alt: 'Architectural Detail'
+      }
+    ]
+  },
+  {
+    id: 'washroom',
+    title: 'Washroom',
+    items: [
+      {
+        id: 'washroom1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/cf8782e4295e11ea9c6a0242ac110003.jfif',
+        alt: 'Bathroom'
+      },
+      {
+        id: 'washroom2',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/45b4c67056d211ea97d00242ac110002.jpg',
+        alt: 'Shower'
+      },
+      {
+        id: 'washroom3',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/af6e1f36295e11ea876d0242ac110003.jfif',
+        alt: 'Vanity'
+      },
+      {
+        id: 'washroom4',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/44fd136856d211eab49b0242ac110002.jpg',
+        alt: 'Toilet'
+      },
+      {
+        id: 'washroom5',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/d6f89c9456cb11ea90310242ac110003.jpg',
+        alt: 'Amenities'
+      },
+      {
+        id: 'washroom-more',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/18dccddc56dc11eaae280242ac110002.jpg',
+        alt: 'More Washroom Photos',
+        title: 'More Photos'
+      }
+    ]
+  },
+  {
+    id: 'restaurant',
+    title: 'Restaurant',
+    items: [
+      {
+        id: 'restaurant1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/aa475d0cc67a11eeb2b20a58a9feac02.jpg',
+        alt: 'Dining Area'
+      },
+      {
+        id: 'restaurant2',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/aa09e292c67a11eeba340a58a9feac02.jpg',
+        alt: 'Buffet'
+      },
+      {
+        id: 'restaurant3',
+        type: 'image',
+        url: 'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200703161155527273-265452-a9c671a6adbc11ed96620a58a9feac02.jpg',
+        alt: 'Bar Counter'
+      },
+      {
+        id: 'restaurant4',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/466740d4adb911edbe1b0a58a9feac02.jpg',
+        alt: 'Outdoor Dining'
+      },
+      {
+        id: 'restaurant5',
+        type: 'image',
+        url: 'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200703161155527273-2809680-72735b84adbb11eda7070a58a9feac02.jpg',
+        alt: 'Private Dining'
+      },
+      {
+        id: 'restaurant-more',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/7364abf8f0c511e9b23f0242ac110003.jpg',
+        alt: 'More Restaurant Photos',
+        title: 'More Photos'
+      }
+    ]
+  },
+  {
+    id: 'swimming-pool',
+    title: 'Swimming Pool',
+    items: [
+      {
+        id: 'pool1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/e7af0dbcc29e11eb8cf70242ac110006.jpg',
+        alt: 'Main Pool'
+      },
+      {
+        id: 'pool2',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/49e9c474665111e991240242ac110002.jpg',
+        alt: 'Pool Area'
+      },
+      {
+        id: 'pool3',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/74ab48bef0c511e9bca10242ac110003.jpg',
+        alt: 'Pool View'
+      },
+      {
+        id: 'pool4',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/74bf9b66f0c511e9aa010242ac110002.jpg',
+        alt: 'Poolside'
+      }
+    ]
+  },
+  {
+    id: 'others',
+    title: 'Others',
+    items: [
+      {
+        id: 'other1',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/a8941cc4cd6a11eebc190a58a9feac02.jpg',
+        alt: 'Other Facility'
+      },
+      {
+        id: 'other2',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/6171b7f9_z.jpg',
+        alt: 'Miscellaneous'
+      },
+      {
+        id: 'other3',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/c8c82fa3_z.jpg',
+        alt: 'Additional Facility'
+      },
+      {
+        id: 'other4',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/8f0dd050_z.jpg',
+        alt: 'Other Area'
+      },
+      {
+        id: 'other5',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/2b2d23df_z.jpg',
+        alt: 'Extra Space'
+      },
+      {
+        id: 'other6',
+        type: 'image',
+        url: 'https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/bgdefault_bg.jpg',
+        alt: 'More Facilities'
+      }
+    ]
+  }
+]
+
+
+export const galleryDataView: GallerySection[] = [
+  {
+    id: 'room',
+    title: 'Room',
+    items: [
+      {
+        id: 'room1',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/07f55b33_z.jpg',
+        alt: 'Deluxe Room'
+      },
+      {
+        id: 'room2',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/e517410d_z.jpg',
+        alt: 'Suite'
+      },
+      {
+        id: 'room3',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/2abfa0e1_z.jpg',
+        alt: 'Bathroom'
+      },
+      {
+        id: 'room4',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/6171b7f9_z.jpg',
+        alt: 'Bedroom'
+      },
+      {
+        id: 'room5',
+        type: 'image',
+        url: 'https://r1imghtlak.mmtcdn.com/b9d24a3456cb11eab2d10242ac110002.jpg',
+        alt: 'Living Area'
+      },
+      {
+        id: 'room-more',
+        type: 'image',
+        url: 'https://i.travelapi.com/lodging/2000000/1530000/1528800/1528788/e59e3694_z.jpg',
+        alt: 'More Rooms',
+        title: 'More Photos'
+      }
+    ]
+  },
+]

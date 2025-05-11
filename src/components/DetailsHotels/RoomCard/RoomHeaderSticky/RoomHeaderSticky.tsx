@@ -84,8 +84,9 @@ const RoomHeaderSticky = () => {
       <div className={styles.roomCard}>
         <div className={styles.roomCardContent}>
           <div className={styles.roomCardLeft}>
+            {/* <RoomTypesDropdown /> */}
             <div className={styles.roomCardHeader} onClick={() => SetRoomTypeOpen(!roomTypeOpen)}>
-              <h1>Room Types</h1>
+              <h1>4 Room Types</h1>
               <FaChevronDown className={styles.chevDownIcon} />
             </div>
             {(roomTypeOpen) && (
@@ -113,4 +114,34 @@ const RoomHeaderSticky = () => {
   )
 }
 
+
+// const RoomTypesDropdown = () => {
+//   const [selected, setSelected] = useState("Latest first");
+//   const sortOptions = ["Latest first", "Helpful first", "Positive first", "Negative first"];
+//   return (
+//     <div className={styles.dropdownWrapper}>
+//       <div className={styles.sortByLabel}>
+//         <span>Sort By:</span>
+//         <span className={styles.selected}>{selected}</span>
+//         <FontAwesomeIcon icon={faChevronDown} className={styles.iconSort} />
+//       </div>
+
+//       <div className={styles.dropdown}>
+//         {/* <div className={styles.title}>Sort By</div> */}
+//         {sortOptions.map((option) => (
+//           <label key={option} className={styles.option}>
+//             <input
+//               type="radio"
+//               name="sort"
+//               readOnly
+//               checked={selected === option}
+//               onClick={() => setSelected(option)}
+//             />
+//             <span>{option}</span>
+//           </label>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 export default RoomHeaderSticky

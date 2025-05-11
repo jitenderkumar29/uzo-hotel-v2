@@ -165,7 +165,7 @@ const VideoCard = ({ videos = defaultVideos }: { videos?: VideoItem[] }) => {
     // Will log: 0, 5, 10, 15 cyclically
     // const rotation = isActive ? 0 : (index % 4) * 5;
     const rotation = (index - activeIndex + videos.length) % videos.length * 5;
-    console.log("rotation", rotation);
+    // console.log("rotation", rotation);
 
     return (
       <div

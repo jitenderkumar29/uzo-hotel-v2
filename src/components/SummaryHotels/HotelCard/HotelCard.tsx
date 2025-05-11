@@ -6,27 +6,25 @@ import { faCheck, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Image, { StaticImageData } from "next/image";
 import discountLogo from "@/assets/icons/discountLogo.svg";
 import Link from "next/link";
-// import { HotelData } from '@/interfaces'
 import { hotelData } from "@/app/data/hotelData"; // Adjust the import path as necessary
 import { RatingCardPropsInterFace } from "@/interfaces";
-import { useHotelSearch } from "@/app/Context/HotelSearchContext";
 
 const HotelCard: React.FC = () => {
-  const {
-    destination,
-    checkIn,
-    checkOut,
-    roomCount,
-    guestCount,
-    childCount
-  } = useHotelSearch();
+  // const {
+  //   destination,
+  //   checkIn,
+  //   checkOut,
+  //   roomCount,
+  //   guestCount,
+  //   childCount
+  // } = useHotelSearch();
 
-  console.log("HotelCard component props:", roomCount,
-    guestCount,
-    childCount,
-    checkIn,
-    checkOut,
-    destination)
+  // console.log("HotelCard component props:", roomCount,
+  //   guestCount,
+  //   childCount,
+  //   checkIn,
+  //   checkOut,
+  //   destination)
 
 
 
@@ -211,6 +209,7 @@ const HotelCard: React.FC = () => {
               </div>
 
               <div className={styles.right}>
+
                 <div className={styles.hotelInfo}>
                   <div className={styles.hotelInfoLeft}>
                     {/* <div className={styles.badgeRating}> */}
@@ -229,10 +228,10 @@ const HotelCard: React.FC = () => {
                         {/* {Array.from({ length: Number(hotel.rating) }, (_, index) => (
                           <span key={index} className={styles.star}>★</span>
                         ))} */}
-                        <span className={styles.badge}>
-                          {hotel.rating}<span className={styles.star}> ★</span> {hotel.category}
-                        </span>
                       </h2>
+                      <span className={styles.badge}>
+                        {hotel.rating}<span className={styles.star}> ★</span> {hotel.category}
+                      </span>
                       {/* <span >
                       {hotel.rating}<span className={styles.star}>★</span>
                     </span> */}
@@ -375,14 +374,18 @@ const HotelCard: React.FC = () => {
 
                     {/* Bank Offer */}
                     <div className={styles.bankOffer}>
+                      <BankOfferCard />
+                    </div>
+                    {/* <div className={styles.bankOffer}>
                       <button type="button" className={styles.buttonBankOffer}>
                         Bank Offer | ₹637 off
                         <div className={styles.bankOfferApply}>Get Flat 15% off and No Cost <br /> EMI on HSBC Credit Card EMI</div>
                       </button>
-                    </div>
+                    </div> */}
 
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -390,6 +393,27 @@ const HotelCard: React.FC = () => {
       </div>
 
     </>
+  );
+};
+
+const BankOfferCard = () => {
+  return (
+    <div className={styles.card}>
+      <div className={styles.topSection}>
+        <Image
+          src="https://go-assets.ibcdn.com/u/GI/images/1726036804650-BankofferDT.png"
+          alt="Bank offer icon"
+          width={20}
+          height={20}
+          className={styles.icon}
+        />
+        <span className={styles.discountTitle}>Bank offer | ₹891 off</span>
+      </div>
+      <div className={styles.separator} />
+      <div className={styles.description}>
+        Get Flat 15% off and No Cost <br /> EMI on HSBC Credit Card EMI
+      </div>
+    </div>
   );
 };
 

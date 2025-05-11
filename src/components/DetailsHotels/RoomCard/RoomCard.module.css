@@ -102,7 +102,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .roomName {
@@ -210,12 +210,23 @@
   margin-right: 8px;
 }
 
+.cancelIcon {
+  font-size: 14px;
+  color: var(--green-text);
+  margin-right: 8px;
+}
+
+.cancelIconList {
+  color: var(--green-text);
+  font-weight: 600;
+}
+
 .cancelPolicy {
   font-size: 15px;
   color: var(--link-color);
   margin-left: 10px;
   margin-top: 10px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -287,5 +298,35 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Room Type Css Style */
-/* components/RoomTypes.module.css */
+.loginButton {
+  color: var(--link-color);
+  font-size: 15px;
+  font-weight: bold;
+  text-align: start;
+  cursor: pointer;
+}
+
+/* discount offer button Style */
+.discountTag {
+  display: inline-block;
+  background-color: var(--logo-color);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.discountTag::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 10px solid var(--logo-color);
+}

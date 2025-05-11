@@ -2,7 +2,7 @@
   background-color: #d1e5ff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: sticky;
   top: 0; /* Required for sticky to work */
   z-index: 100; /* Ensure it stays above other content */
@@ -76,16 +76,16 @@
 /* components/RoomTypeDropdown.module.css */
 
 .roomTypeDropdown {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 80;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 .dropdownRoom {
@@ -160,3 +160,60 @@
     font-size: 0.85rem;
   }
 }
+
+/* Room Type Drop Down style */
+/* 
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sortByLabel {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.selected {
+  margin-left: 4px;
+  color: var(--link-color);
+}
+
+.iconSort {
+  margin-left: 5px;
+  color: var(--link-color);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 10px;
+  min-width: 160px;
+}
+
+.dropdownWrapper:hover .dropdown {
+  display: block;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.option input[type="radio"] {
+  accent-color: #1a73e8;
+} */

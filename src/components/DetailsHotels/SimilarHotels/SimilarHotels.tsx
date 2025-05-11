@@ -156,7 +156,20 @@ const SimilarHotels: React.FC = () => {
                       </svg>
                     ))} */}
                     <div className={styles.hotelTypeButton}> {hotel.rating} <span className={styles.star}>★ </span>Hotel</div>
-                    {/* <span className={styles.hotelType}> {hotel.rating} ★ Hotel</span> */}
+                    {/* <div> Rating Review</div> */}
+                    <div className={styles.reviews}>
+                      <div>
+                        <span className={styles.ratingTotal}>
+                          <div>Excellent </div>
+                          <div>3125 Ratings{" "}</div>
+                          {/* <br /> */}
+
+                          {/* <span className={styles.rating}></span> */}
+                        </span>
+                      </div>
+                      <div className={styles.ratingBadge}>4/5</div>
+                      {/* <span className={styles.hotelType}> {hotel.rating} ★ Hotel</span> */}
+                    </div>
                   </div>
                   <h3 className={styles.hotelName}>{hotel.name}</h3>
                   <p className={styles.location}>{hotel.location}</p>

@@ -16,7 +16,7 @@ export default function GallerySectionContent({ section }: GallerySectionContent
 
   const handleItemClick = (item: GalleryItem, index: number) => {
     if (item.title?.startsWith('+')) {
-      console.log(`Show ${item.title} for ${section.title}`);
+      // console.log(`Show ${item.title} for ${section.title}`);
     } else {
       setExpandedItem(item);
       setCurrentIndex(index);

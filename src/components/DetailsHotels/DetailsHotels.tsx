@@ -48,9 +48,9 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
 
 
 
-  console.log("id in Details hotel")
-  console.log(typeof (id))
-  console.log(hotelData)
+  // console.log("id in Details hotel")
+  // console.log(typeof (id))
+  // console.log(hotelData)
 
   const {
     destination,
@@ -61,12 +61,12 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     childCount
   } = useHotelSearch();
 
-  console.log("DetailsHotels component props:", roomCount,
-    guestCount,
-    childCount,
-    checkIn,
-    checkOut,
-    destination)
+  // console.log("DetailsHotels component props:", roomCount,
+  //   guestCount,
+  //   childCount,
+  //   checkIn,
+  //   checkOut,
+  //   destination)
 
   const HOTEL_FEATURES = [
     "Couple Friendly Hotels",
@@ -89,8 +89,8 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
 
     const foundHotel = hotelData.find(hotel => hotel.id === id);
     setHotel(foundHotel || null); // Handle undefined case by falling back to null
-    console.log("foundHotel")
-    console.log(hotel)
+    // console.log("foundHotel")
+    // console.log(hotel)
   };
 
   useEffect(() => {
@@ -183,9 +183,10 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
     });
   };
 
-  const handleGallaryTabNav = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleGallaryTabNav = () => {
+    // const handleGallaryTabNav = (event: React.MouseEvent<HTMLButtonElement>) => {
     // event is properly typed
-    console.log('Button clicked!', event.currentTarget.value);
+    // console.log('Button clicked!', event.currentTarget.value);
     // setShowGallaryTabNav(!showGallaryTabNav);
     // const router = useRouter();
     // if (router.isReady) {
@@ -360,7 +361,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
               </div> */}
 
               <button className={styles.selectRoomButton} >
-                View 7 Room Options <FontAwesomeIcon icon={faChevronDown} />
+                View 4 Room Options <FontAwesomeIcon icon={faChevronDown} />
                 {/* Select Rooms */}
               </button>
             </div>

@@ -3,7 +3,8 @@ import { HotelDataInterface } from "@/interfaces";
 export const hotelData: HotelDataInterface[] = [
   {
     id: 1,
-    name: "Pride Plaza Hotel Aerocity New Delhi",
+    // name: "Pride Plaza Hotel Aerocity",
+    name: "Pride Plazas Hotel Aerocity New Delhi",
     rating: "5",
     category: "Hotel",
     location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
@@ -128,7 +129,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-f2b4ed59-462d-4852-8965-714b6b1b9dd7.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-a90aeda2797811eba4e00242ac110002.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -178,7 +179,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/a4b4abb0-5fb0-43cc-acc7-e7c28affe7b2.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      "https://images.pexels.com/photos/2507010/pexels-photo-2507010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-a90aeda2797811eba4e00242ac110002.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -228,7 +229,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/202304121711397953-2f87ced8cbef11eeac400a58a9feac02.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
+      "https://images.pexels.com/photos/635041/pexels-photo-635041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-a90aeda2797811eba4e00242ac110002.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -278,7 +279,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.mmtcdn.com/0f02d54e9fd611e99e940242ac110002.jpg?output-quality=75&downsize=243:162&output-format=webp",
+      "https://images.pexels.com/photos/2506988/pexels-photo-2506988.jpeg?auto=compress&cs=tinysrgb&w=600",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201407242019374758-a90aeda2797811eba4e00242ac110002.jpg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -328,7 +329,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-574118d80c7811eb82940242ac110002.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/2290753/pexels-photo-2290753.jpeg?auto=compress&cs=tinysrgb&w=600",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-470bd530166911ea99730242ac110005.jpg?downsize=245:152&output-format=webp",
@@ -378,7 +379,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/664c106a0f2411e9be570242ac110003.jfif?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/322154/pexels-photo-322154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/f56160302c6511e9a4210242ac110004.jfif?&downsize=245:152&crop=245:152;25,0&output-format=webp",
       "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201008191622101947-470bd530166911ea99730242ac110005.jpg?downsize=245:152&output-format=webp",
@@ -428,7 +429,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/b7220c40780511e7b9c6025f77df004f.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/261108/pexels-photo-261108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -528,7 +529,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/f012724c3c0811e9a80c0242ac110002.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/1082326/pexels-photo-1082326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -578,7 +579,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/924e65a4933c11ee95160a58a9feac02.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/2057610/pexels-photo-2057610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -628,7 +629,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/116f425f-f306-4a1f-a5d3-f7220f2dc3f9.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/1457845/pexels-photo-1457845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -678,7 +679,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/0a45a9f82b7f11e9856a0242ac110006.jfif?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/804878/pexels-photo-804878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",
@@ -728,7 +729,7 @@ export const hotelData: HotelDataInterface[] = [
       "Breakfast available at extra charges",
     ],
     mainImg:
-      "https://r1imghtlak.ibcdn.com/568845ba714c11e98adf0242ac110004.jpg?downsize=245:152&output-format=webp",
+      "https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     thumbnails: [
       "https://r1imghtlak.ibcdn.com/6bf90398c67011ee90870a58a9feac02.jpg?downsize=245:152&output-format=webp",
       "https://r1imghtlak.ibcdn.com/77e0ce4e32da11eaaef30242ac110004.jpeg?&downsize=245:152&crop=245:152;25,0&output-format=webp",

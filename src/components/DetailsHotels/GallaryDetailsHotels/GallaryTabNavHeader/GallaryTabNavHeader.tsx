@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { galleryData } from '@/app/data/gallery';
+import { galleryData, galleryDataTraveller, galleryDataView } from '@/app/data/gallery';
 import GallerySectionContent from '../GallerySectionContent/GallerySectionContent';
 import styles from './GallaryTabNavHeader.module.css';
 import { useRouter } from 'next/router';
@@ -158,15 +158,39 @@ export default function GalleryTabNavHeader() {
           {/* Content Tabs */}
           <div className={styles.contentTabsWrapper}>
             <ul className={styles.contentTabs}>
-              {galleryData.map(section => (
-                <li
-                  key={section.id}
-                  className={`${styles.contentTabItem} ${selectedContentTab === section.id ? styles.selected : ''}`}
-                  onClick={() => handleTabClick(section.id)}
-                >
-                  {section.title}
-                </li>
-              ))}
+              {selectedPhotoTab === "Property Photos" && (
+                galleryData.map(section => (
+                  <li
+                    key={section.id}
+                    className={`${styles.contentTabItem} ${selectedContentTab === section.id ? styles.selected : ''}`}
+                    onClick={() => handleTabClick(section.id)}
+                  >
+                    {section.title}
+                  </li>
+                ))
+              )}
+              {selectedPhotoTab === "Traveller Photos" && (
+                galleryDataTraveller.map(section => (
+                  <li
+                    key={section.id}
+                    className={`${styles.contentTabItem} ${selectedContentTab === section.id ? styles.selected : ''}`}
+                    onClick={() => handleTabClick(section.id)}
+                  >
+                    {section.title}
+                  </li>
+                ))
+              )}
+              {selectedPhotoTab === "View" && (
+                galleryDataView.map(section => (
+                  <li
+                    key={section.id}
+                    className={`${styles.contentTabItem} ${selectedContentTab === section.id ? styles.selected : ''}`}
+                    onClick={() => handleTabClick(section.id)}
+                  >
+                    {section.title}
+                  </li>
+                ))
+              )}
             </ul>
           </div>
 
@@ -174,7 +198,7 @@ export default function GalleryTabNavHeader() {
       </div>
 
       {/* Content sections - Always visible for scrolling */}
-      <div className={styles.gallerySectionsContainer}>
+      {/* <div className={styles.gallerySectionsContainer}>
         {galleryData.map((section, index) => (
           <section
             key={section.id}
@@ -185,16 +209,87 @@ export default function GalleryTabNavHeader() {
             }}
             style={{
               scrollMarginTop: `${getScrollOffset()}px`,
-              // All sections are always visible for scrolling
               display: 'block'
             }}
-          >
-            {/* <h3 className={styles.sectionTitle}>{section.title}</h3> */}
-            {/* {selectedContentTab === section.id && (<GallerySectionContent section={section} />)} */}
+            >
             <GallerySectionContent section={section} />
           </section>
         ))}
-      </div>
+      </div> */}
+      {/* // All sections are always visible for scrolling */}
+      {/* <h3 className={styles.sectionTitle}>{section.title}</h3> */}
+      {/* {selectedContentTab === section.id && (<GallerySectionContent section={section} />)} */}
+
+      {selectedPhotoTab === "Property Photos" && (
+        <div className={styles.gallerySectionsContainer}>
+          {galleryData.map((section, index) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className={`${styles.gallerySection} ${selectedContentTab === section.id ? styles.activeSection : ''}`}
+              ref={el => {
+                sectionRefs.current[index] = el;
+              }}
+              style={{
+                scrollMarginTop: `${getScrollOffset()}px`,
+                // All sections are always visible for scrolling
+                display: 'block'
+              }}
+            >
+              {/* <h3 className={styles.sectionTitle}>{section.title}</h3> */}
+              {/* {selectedContentTab === section.id && (<GallerySectionContent section={section} />)} */}
+              <GallerySectionContent section={section} />
+            </section>
+          ))}
+        </div>
+      )}
+      {selectedPhotoTab === "Traveller Photos" && (
+        <div className={styles.gallerySectionsContainer}>
+          {galleryDataTraveller.map((section, index) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className={`${styles.gallerySection} ${selectedContentTab === section.id ? styles.activeSection : ''}`}
+              ref={el => {
+                sectionRefs.current[index] = el;
+              }}
+              style={{
+                scrollMarginTop: `${getScrollOffset()}px`,
+                // All sections are always visible for scrolling
+                display: 'block'
+              }}
+            >
+              {/* <h3 className={styles.sectionTitle}>{section.title}</h3> */}
+              {/* {selectedContentTab === section.id && (<GallerySectionContent section={section} />)} */}
+              <GallerySectionContent section={section} />
+            </section>
+          ))}
+        </div>
+      )}
+      {selectedPhotoTab === "View" && (
+        <div className={styles.gallerySectionsContainer}>
+          {galleryDataView.map((section, index) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className={`${styles.gallerySection} ${selectedContentTab === section.id ? styles.activeSection : ''}`}
+              ref={el => {
+                sectionRefs.current[index] = el;
+              }}
+              style={{
+                scrollMarginTop: `${getScrollOffset()}px`,
+                // All sections are always visible for scrolling
+                display: 'block'
+              }}
+            >
+              {/* <h3 className={styles.sectionTitle}>{section.title}</h3> */}
+              {/* {selectedContentTab === section.id && (<GallerySectionContent section={section} />)} */}
+              <GallerySectionContent section={section} />
+            </section>
+          ))}
+        </div>
+      )}
+
     </>
   );
 }

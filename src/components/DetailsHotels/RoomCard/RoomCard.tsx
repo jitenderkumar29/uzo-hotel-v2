@@ -10,6 +10,7 @@ import RoomTypesMoreDetails from './RoomTypesMoreDetails/RoomTypesMoreDetails';
 
 interface RatePlan {
   title: string;
+  discount: string
   originalPrice: string;
   currentPrice: string;
   taxes: string;
@@ -119,6 +120,10 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
                       <FontAwesomeIcon icon={faCheck} className={styles.listIcon} />
                       {feat}</li>
                   ))}
+                  <li className={styles.cancelIconList}>
+                    <FontAwesomeIcon icon={faCheck} className={styles.cancelIcon} /> Free Cancellation
+                  </li>
+
                   <li className={styles.cancelPolicy} onClick={() => setShowCancellationPolicy(true)}>View plan details & policies</li>
                 </ol>
               </div>
@@ -131,11 +136,14 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
               )}
               <div className={styles.priceContainer}>
                 <div>
+                  <div className={styles.discountTag}>{plan.discount} % off</div>
+                  {/* <div className={styles.discountTag}>10 % off</div> */}
                   <p className={styles.priceOriginal}>{plan.originalPrice}</p>
                   <p className={styles.priceCurrent}>{plan.currentPrice}</p>
                   <p className={styles.priceTaxes}>{plan.taxes}</p>
                 </div>
                 <button className={styles.selectButton}>SELECT ROOM</button>
+                <button className={styles.loginButton}>Login Now to unlock best deals and offers!</button>
               </div>
             </div>
           ))}

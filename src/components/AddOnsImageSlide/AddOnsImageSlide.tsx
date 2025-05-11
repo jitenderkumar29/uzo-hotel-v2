@@ -114,7 +114,10 @@ const AddOnsImageSlide = () => {
             <div
               key={index}
               className={styles.imageSection}
-              onMouseEnter={() => { setSectionId(section.id); console.log("section.id", section.id) }}
+              onMouseEnter={() => {
+                setSectionId(section.id);
+                // console.log("section.id", section.id) 
+              }}
             // onMouseLeave={() => setHoveredSection(1)}
             // onMouseEnter={() => setHoveredSection(index)}
             // onMouseLeave={() => setHoveredSection(null)}

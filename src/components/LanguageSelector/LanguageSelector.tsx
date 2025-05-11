@@ -76,7 +76,7 @@ const LanguageSelector: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Selected:", { country, language, currency });
+    // console.log("Selected:", { country, language, currency });
     setIsOpen(false);
   };
 

@@ -63,8 +63,12 @@ const BankOffers = () => {
                 <div className={styles.row}>
                   <span className={styles.code}>
                     {offer.bankImage && (
-                      <Image src={offer.bankImage} alt="" className={styles.bankImg} fill
-                        style={{ objectFit: 'cover' }} />
+                      <Image src={offer.bankImage} alt="" className={styles.bankImg}
+                        width={20}
+                        height={20}
+                      // fill
+                      // style={{ objectFit: 'cover' }} 
+                      />
                     )}
                     {offer.code}
                   </span>

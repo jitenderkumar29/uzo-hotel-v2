@@ -38,7 +38,7 @@ const RoomTypes = () => {
                 <button
                   key={index}
                   // className={styles.tag}
-                  // className={`${styles.tag} ${selectedType === type ? styles.selected : ''}`}
+                  className={`${styles.tagButton} ${selectedType === type ? styles.selected : ''}`}
                   onClick={() => handleSelect(type)}
                 >
                   {type}

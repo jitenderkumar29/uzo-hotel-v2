@@ -213,11 +213,11 @@ const HotelSearchBarTop: React.FC = () => {
                   //   setShowRoomGuestSelector(prev => !prev); // Use functional update
                   // }}
                   onClick={(e) => {
-                    console.log('Click event triggered'); // Debug log
+                    // console.log('Click event triggered'); // Debug log
                     e.stopPropagation();
-                    console.log('Current state:', showRoomGuestSelector); // Debug log
+                    // console.log('Current state:', showRoomGuestSelector); // Debug log
                     setShowRoomGuestSelector(prev => {
-                      console.log('Updating state to:', !prev); // Debug log
+                      // console.log('Updating state to:', !prev); // Debug log
                       return !prev;
                     });
                   }}

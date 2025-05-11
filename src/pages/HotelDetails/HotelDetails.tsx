@@ -12,9 +12,10 @@ import { HotelSearchProvider } from '@/app/Context/HotelSearchContext'
 
 const HotelDetails: React.FC = () => {
   const searchParams = useSearchParams();
-  const id = searchParams?.get("id") ?? undefined; console.log("searchMode in book");
-  console.log("Iddddddddddddd");
-  console.log(id);
+  const id = searchParams?.get("id") ?? undefined;
+  // console.log("searchMode in book");
+  // console.log("Iddddddddddddd");
+  // console.log(id);
 
 
   return (

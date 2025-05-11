@@ -60,12 +60,12 @@ const SearchBarMultiple: React.FC<SearchBarMultipleProps> = ({ searchMode }) => 
   // const router = useRouter();
   // const { searchModeData } = router.query; // Access query parameter
 
-  console.log("searchMode Props");
-  console.log(searchMode);
+  // console.log("searchMode Props");
+  // console.log(searchMode);
 
   useEffect(() => {
     setActiveTab(searchMode || "");
-    console.log("useEffect..........");
+    // console.log("useEffect..........");
   }, [searchMode]);
 
   // const tabs: Tab[] = [

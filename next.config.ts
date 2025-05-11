@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       "cdn.sanity.io",
       "www.ahstatic.com",
       "media.easemytrip.com",
+      "go-assets.ibcdn.com",
     ],
   },
 };
