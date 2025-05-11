@@ -749,7 +749,7 @@
 .coupleFriendlyDetails {
   position: absolute;
   top: 288px;
-  /* left: 875px; */
+  right: 390px;
   background-color: #fff4eb;
   /* background-color: var(--dark-white); */
   padding: 10px;
