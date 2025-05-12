@@ -58,11 +58,15 @@
   align-items: flex-start;
   gap: 0.5rem;
 }
+.info p {
+  font-size: 17px;
+}
 
 .icon {
   font-size: 1.2rem;
   min-width: 1.5rem;
   color: var(--golden-color);
+  margin-top: 5px;
 }
 
 /* Responsive: Stack columns on small screens */
@@ -145,16 +149,21 @@
   gap: 0.5rem;
   margin-bottom: 1.25rem;
 }
+.rule p {
+  font-size: 17px;
+}
 
 .iconRuleAllow {
   font-size: 1.25rem;
   min-width: 1.5rem;
   color: var(--green-text);
+  margin-top: 2px;
 }
 .iconRuleBan {
   font-size: 1.25rem;
   min-width: 1.5rem;
   color: var(--text-color-red);
+  margin-top: 2px;
 }
 
 /* Responsive */

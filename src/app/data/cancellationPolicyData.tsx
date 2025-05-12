@@ -22,8 +22,11 @@ export const policy2 = {
   freeCancellationDeadline: "11 May, 1:59 PM",
   checkInTime: "12 May 1:59 PM",
   policies: [
-    { date: "Before 11 May, 1:59 PM", fee: "0.0% of booking amount" },
-    { date: "After 11 May, 2:00 PM", fee: "100.0% of booking amount" },
-    { date: "After 12 May, 2:00 PM", fee: "100.0% of booking amount" }
+    { date: "Before 14 May, 1:59 PM", fee: "0.0% of booking amount" },
+    { date: "After 14 May, 2:00 PM", fee: "100.0% of booking amount" },
+    { date: "After 14 May, 2:00 PM", fee: "100.0% of booking amount" }
+  ],
+  amenities: [
+    "10% Off on Laundry service for upto 4 clothing item(s)"
   ]
 };

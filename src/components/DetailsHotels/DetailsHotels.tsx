@@ -17,6 +17,7 @@ import { faSpa } from '@fortawesome/free-solid-svg-icons/faSpa';
 import { useRouter } from 'next/navigation';
 import { useHotelSearch } from '@/app/Context/HotelSearchContext';
 import BankOffers from './BankOffers/BankOffers';
+import Link from 'next/link';
 
 export interface HotelRoom {
   id: string;
@@ -400,9 +401,12 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
               {/* <div className={styles.taxes}>+ ₹{hotel.taxes} Taxes & fees</div>
             <div className={styles.basePrice}>Base price (Per Night)</div> */}
 
-              <button className={styles.bookNowButton}>
+              {/* <button className={styles.bookNowButton}>
                 Book Now
-              </button>
+              </button> */}
+              <Link href={`/propertyHotelInfoPage/?id=${1}&roomId=${1}`} className={styles.bookNowButton}>
+                Book Now
+              </Link>
             </div>
           </div>
           {/* <div className={styles.detailsSectionText}> */}

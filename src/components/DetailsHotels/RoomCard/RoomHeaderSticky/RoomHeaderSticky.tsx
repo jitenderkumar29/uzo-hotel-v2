@@ -5,48 +5,48 @@ import { FaChevronDown } from 'react-icons/fa'
 
 const roomTypes = [
   {
-    name: 'Standard Room',
-    price: '₹6,545',
+    name: 'Day Use Room, 6 hrs stay',
+    price: '₹3,700',
     size: '250 sq.ft',
     active: true,
   },
   {
-    name: 'Deluxe Twin Room',
-    price: '₹7,326',
+    name: 'Deluxe King Room',
+    price: '₹₹5,700',
     size: '301 sq.ft',
     active: true,
   },
   {
-    name: 'Superior Twin Room With Pool View',
-    price: '₹8, 225',
+    name: 'Superior Room Double',
+    price: '₹9,821',
     size: '323 sq.ft',
     active: true,
   },
   {
-    name: 'Superior King Room With Pool View',
-    price: '₹9, 225',
+    name: 'Premium Room',
+    price: '₹9,921',
     size: '324 sq.ft',
     active: true,
   },
 
-  {
-    name: 'Superior Sea View Balcony Room',
-    price: '₹8,139',
-    size: '22500 sq.ft',
-    active: false,
-  },
-  {
-    name: 'Queens Necklace Suite',
-    price: '₹8,359',
-    size: '550 sq.ft',
-    active: false,
-  },
-  {
-    name: 'Premium Room',
-    price: '₹7,359',
-    size: '555 sq.ft',
-    active: false,
-  },
+  // {
+  //   name: 'Superior Sea View Balcony Room',
+  //   price: '₹8,139',
+  //   size: '22500 sq.ft',
+  //   active: false,
+  // },
+  // {
+  //   name: 'Queens Necklace Suite',
+  //   price: '₹8,359',
+  //   size: '550 sq.ft',
+  //   active: false,
+  // },
+  // {
+  //   name: 'Premium Room',
+  //   price: '₹7,359',
+  //   size: '555 sq.ft',
+  //   active: false,
+  // },
 ];
 
 const RoomHeaderSticky = () => {

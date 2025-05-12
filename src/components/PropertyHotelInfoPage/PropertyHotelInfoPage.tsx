@@ -1,8 +1,29 @@
-'use client';
-import RoomCard from "./RoomCard";
-import RoomHeaderSticky from "./RoomHeaderSticky/RoomHeaderSticky";
-import RoomTypes from "./RoomTypes/RoomTypes";
-import styles from './RoomCard.module.css'
+import React, { useEffect, useState } from 'react'
+import PropertyHotelInfo from './PropertyHotelInfo/PropertyHotelInfo'
+import styles from './PropertyHotelInfoPage.module.css'
+import PropertyHotelInfoPrice from './PropertyHotelInfoPrice/PropertyHotelInfoPrice'
+import HeaderTop from '../HeaderTop/HeaderTop'
+import { useSearchParams } from 'next/navigation'
+
+
+// First, define a type for your room data
+type Room = {
+  id: number;
+  name: string;
+  type: string;
+  imageUrl: string;
+  amenities: string[];
+  ratePlans: {
+    roomId: number;
+    title: string;
+    discount: string;
+    originalPrice: string;
+    currentPrice: string;
+    taxes: string;
+    features: string[];
+  }[];
+};
+
 
 const sampleRooms = [
   {
@@ -289,26 +310,56 @@ const sampleRooms = [
     ],
   },
 ];
+const PropertyHotelInfoPage = () => {
+  const searchParams = useSearchParams();
+  // const [sampleRoomsData, setSampleRoomsData] = useState<Room[]>([]);
+  const [foundRoom, setFoundRoom] = useState<Room | null>(null);
+  const [foundRoomId, setFoundRoomId] = useState<string>();
 
-export default function RoomsPage() {
+  const id = searchParams?.get("id") ?? undefined;
+  const roomId = searchParams?.get("roomId") ?? undefined;
+
+  useEffect(() => {
+    console.log("PropertyHotelInfoPage id and roomId");
+    console.log(id);
+    console.log(roomId);
+    setFoundRoomId(roomId); // <-- moved into useEffect
+  }, [roomId, id]);
+
+  useEffect(() => {
+    // Only proceed if we have a valid ID that's different from current state
+    if (!id || id === foundRoomId) return;
+
+    const room = sampleRooms.find(room => room.id === Number(id));
+
+    // Only update state if we found a different room
+    if (room && room.id.toString() !== foundRoomId) {
+      setFoundRoom(room);
+      setFoundRoomId(roomId);
+    } else if (!room && foundRoomId) {
+      // Clear if no room found but we had a previous ID
+      setFoundRoom(null);
+      setFoundRoomId('');
+    }
+  }, [id, foundRoomId]);
+
+  if (!foundRoom) {
+    return <div>Loading or no room found...</div>;
+  }
+
   return (
-    <div className="rooms-container">
-      {/* Room types filter component */}
-      <RoomTypes />
-      <div className={styles.roomHeaderStickyBody}>
-        <RoomHeaderSticky />
+    <>
+      <HeaderTop />
+      <div className={styles.layout}>
+        <main className={styles.mainContent}>
+          <PropertyHotelInfo foundRoom={foundRoom} roomId={foundRoomId} />
+        </main>
+        <aside className={styles.sidebar}>
+          <PropertyHotelInfoPrice />
+        </aside>
       </div>
-      {/* Room cards listing */}
-      <div className="rooms-list">
-        {/* {sampleRooms.map((room, index) => ( */}
-        <RoomCard
-
-          roomData={sampleRooms}
-        />
-        {/* ))} */}
-      </div>
-
-      {/* You can add more sections or components here */}
-    </div>
+    </>
   );
-}
+};
+
+export default PropertyHotelInfoPage;

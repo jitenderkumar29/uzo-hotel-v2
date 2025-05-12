@@ -8,8 +8,10 @@ import { policy1 } from '@/app/data/cancellationPolicyData'; // Adjust the path 
 import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import RoomTypesMoreDetails from './RoomTypesMoreDetails/RoomTypesMoreDetails';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface RatePlan {
+  roomId: number
   title: string;
   discount: string
   originalPrice: string;
@@ -19,6 +21,7 @@ interface RatePlan {
 }
 
 interface RoomData {
+  id: number,
   name: string;
   type: string;
   imageUrl: string;
@@ -41,7 +44,7 @@ export default function RoomCard({ roomData }: Props) {
 }
 
 function SingleRoomCard({ roomData }: { roomData: RoomData }) {
-  const { name, type, imageUrl, amenities, ratePlans } = roomData;
+  const { id, name, type, imageUrl, amenities, ratePlans } = roomData;
   const [showAllAmenities, setShowAllAmenities] = useState(false);
   // const [showRoomTypesMore, setShowRoomTypesMore] = useState(false);
   const [showCancellationPolicy, setShowCancellationPolicy] = useState(false);
@@ -197,13 +200,19 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
                   <p className={styles.priceCurrent}>{plan.currentPrice}</p>
                   <p className={styles.priceTaxes}>{plan.taxes}</p>
                 </div>
-                <button className={styles.selectButton}>SELECT ROOM</button>
+                {/* <button className={styles.selectButton} >SELECT ROOM</button> */}
+                <Link href={`/propertyHotelInfoPage/?id=${id}&roomId=${plan.roomId}`} className={styles.selectButton}>
+                  {/* <Link href={`/propertyHotelInfoPage/?id=${plan.roomId}`} className={styles.selectButton}> */}
+                  {/* <Link href={`/propertyHotelInfoPage`} className={styles.selectButton}> */}
+                  {/* <Link href={`/hotelDetails/?id=${hotel.id}`}> */}
+                  SELECT ROOM
+                </Link>
                 <button className={styles.loginButton}>Login Now to unlock best deals and offers!</button>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 }

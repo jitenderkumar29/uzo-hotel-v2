@@ -288,11 +288,11 @@ const SectionedAmenitiesDisplay: React.FC<SectionedAmenitiesDisplayProps> = ({
         }
         
         .amenities-title {
-          font-weight: 600;
+          font-weight: bold;
           // margin-top: 12px;
           color: var(--text-color-black);
           margin-left: 10px;
-          font-size: 16px;
+          font-size: 17px;
         }
         
         .amenities-content {

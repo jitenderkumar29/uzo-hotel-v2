@@ -1,0 +1,464 @@
+/* PropertyHotelInfo.module.css */
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* max-width: 800px; */
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 20px; */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 25px;
+  border: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-color-black);
+  margin: 0;
+}
+
+.arrowDown {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrowDown:hover {
+  /* transform: translateY(-3px); */
+}
+
+.hotelnfoBody {
+  padding: 10px 30px 30px 30px;
+}
+
+.hotelInfo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.hotelImage {
+  flex: 0 0 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotelImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotelDetails {
+  flex: 1;
+}
+
+.rating {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.hotelName {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-black);
+  margin: 0 0 8px 0;
+}
+
+.location {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.location svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.location span {
+  color: var(--text-color-black);
+  font-weight: 500;
+}
+
+.mapIcon {
+  font-size: 12px;
+  margin-top: -3px !important;
+  color: var(--text-color-black);
+}
+
+.durationBlock {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 0 10px;
+  /* border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; */
+  margin-bottom: 20px;
+}
+
+.checkInOut {
+  text-align: left;
+  flex: 1;
+}
+
+.checkInOut span:first-child {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color-black);
+  /* margin-bottom: 5px; */
+}
+
+.checkInOut p {
+  font-size: 15px;
+  font-weight: bold;
+  /* margin: 0 0 5px 0; */
+  color: var(--text-color-black);
+}
+
+.checkInOut span:last-child {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+.roomDetails {
+  margin-top: 20px;
+}
+
+.roomHeader {
+  margin-bottom: 15px;
+}
+
+.savingText {
+  font-size: 14px;
+  color: #4caf50;
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+
+.roomCount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+/* 
+.roomInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.roomLeft {
+  flex: 1;
+}
+
+.roomType {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.guestInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.guestInfo svg {
+  fill: #333;
+}
+
+.guestInfo span {
+  font-size: 14px;
+  color: #333;
+}
+
+.roomAmenities {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.roomAmenities span {
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.nonRefundable {
+  background-color: #fff8e1 !important;
+  color: #ff9800;
+}
+
+.policyLink {
+  font-size: 14px;
+  color: #1976d2;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.policyLink:hover {
+  text-decoration: underline;
+}
+
+.roomRight {
+  display: flex;
+  align-items: flex-start;
+}
+
+.roomFeature {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #647a97;
+}
+
+.roomFeature svg {
+  fill: #647a97;
+} */
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hotelInfo {
+    flex-direction: column;
+  }
+
+  .hotelImage {
+    flex: 0 0 180px;
+    width: 100%;
+  }
+
+  .durationBlock {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .checkInOut {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .checkInOut p {
+    margin: 0;
+  }
+
+  .roomInfo {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    /* padding: 15px; */
+  }
+
+  .hotelImage {
+    height: 150px;
+  }
+
+  .checkInOut {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* RoomDetails component style */
+.roomDetails {
+  font-family: "Roboto", sans-serif;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  /* padding: 1.5rem; */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid var(--border-color);
+}
+
+.headerRoom {
+  /* margin-bottom: 1.5rem; */
+  padding: 15px 20px;
+}
+
+.subHeader {
+  color: #4caf50;
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* margin-bottom: 0.5rem; */
+}
+
+.mainHeader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* padding: 1rem 1rem; */
+  border-top: 1px solid #eee;
+}
+
+.leftBlock {
+  width: 50%;
+  padding: 1rem 1rem;
+  /* flex: 1; */
+}
+
+.rightBlock {
+  width: 50%;
+  padding: 1rem 1rem;
+  /* flex: 0 0 auto; */
+}
+
+.roomType {
+  font-size: 14px;
+  color: var(--text-color-black);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.guestInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-left: 3px solid var(--border-color);
+  padding-left: 10px;
+}
+
+.guests {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guestIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #141823;
+}
+
+.guestCount {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.amenities {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mealPlan {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.refundable {
+  margin-top: -10px;
+}
+
+.refundPolicy {
+  font-size: 0.8rem;
+  color: var(--text-color-red);
+  /* background-color: #ffebee; */
+  /* padding: 0.2rem 0.5rem; */
+  /* border-radius: 4px; */
+  font-weight: 600;
+}
+
+.policyLink {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  font-size: 14px;
+  padding: 0.5rem 0 0 0;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.policyLink:hover {
+  color: var(--link-color-dark);
+  text-decoration: underline;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color-black);
+}
+
+.checkIcon {
+  font-size: 15px;
+}
+
+.checkIcon {
+  /* height: 1.1rem;
+  width: 1.1rem; */
+  /* fill: #647a97; */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .detailItem {
+    flex-direction: row;
+  }
+
+  .rightBlock {
+    padding-left: 1.5rem;
+    border-left: 1px solid #eee;
+  }
+}
+
+/*  min max Body content  */
+.arrowDownMinMax {
+  transition: transform 0.3s ease;
+}
+
+.arrowUpMinMax {
+  transform: rotate(180deg);
+}
+
+.header {
+  cursor: pointer; /* Add this to show it's clickable */
+}
