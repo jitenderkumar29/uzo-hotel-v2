@@ -222,13 +222,18 @@ const HotelCard: React.FC = () => {
                     </span> */}
                     {/* </div> */}
                     <div className={styles.headingStarHotels}>
-                      <h2>{hotel.name} {" "}
-                        {/* {hotel.rating}<span className={styles.star}>★</span> */}
-                        {/* {hotel.rating}{" "} */}
-                        {/* {Array.from({ length: Number(hotel.rating) }, (_, index) => (
+                      <Link
+                        href={`/hotelDetails/?id=${hotel.id}`}
+                      >
+                        <h2>{hotel.name} {" "}</h2>
+                      </Link>
+                      {/* <h2>{hotel.name} {" "} */}
+                      {/* {hotel.rating}<span className={styles.star}>★</span> */}
+                      {/* {hotel.rating}{" "} */}
+                      {/* {Array.from({ length: Number(hotel.rating) }, (_, index) => (
                           <span key={index} className={styles.star}>★</span>
                         ))} */}
-                      </h2>
+                      {/* </h2> */}
                       <span className={styles.badge}>
                         {hotel.rating}<span className={styles.star}> ★</span> {hotel.category}
                       </span>

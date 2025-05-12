@@ -45,7 +45,19 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   // const [hotelId, setHotelId] = useState<number | null>(null);
   const [hotel, setHotel] = useState<HotelDataInterface | null>(null);
   // const [showGallaryTabNav, setShowGallaryTabNav] = useState(false);
+  const scrollToRoomOptions = () => {
+    const roomOptionsSection = document.getElementById('room-options');
+    if (roomOptionsSection) {
+      const offset = 80; // Adjust this value based on your header height
+      const elementPosition = roomOptionsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
 
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
 
   // console.log("id in Details hotel")
@@ -360,7 +372,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
                 )}
               </div> */}
 
-              <button className={styles.selectRoomButton} >
+              <button className={styles.selectRoomButton} onClick={scrollToRoomOptions}>
                 View 4 Room Options <FontAwesomeIcon icon={faChevronDown} />
                 {/* Select Rooms */}
               </button>

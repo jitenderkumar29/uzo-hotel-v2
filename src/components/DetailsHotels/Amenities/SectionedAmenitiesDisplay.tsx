@@ -256,7 +256,7 @@ const SectionedAmenitiesDisplay: React.FC<SectionedAmenitiesDisplayProps> = ({
           display: grid;
           grid-template-columns: repeat(1, 1fr);
           gap: 20px;
-          margin-top: 10px;
+          margin-top: 19px;
         }
         
         @media (min-width: 768px) {
@@ -302,6 +302,10 @@ const SectionedAmenitiesDisplay: React.FC<SectionedAmenitiesDisplayProps> = ({
         .amenities-content-wrapper {
           display: flex;
           align-items: flex-start;
+          font-size: 16px;
+          line-height: 1.4;
+          // margin-bottom: 5px;
+          padding: 4px 0px
         }
         
         .amenities-bullet {

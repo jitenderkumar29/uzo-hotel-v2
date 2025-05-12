@@ -9,9 +9,9 @@
 .foodSection h2 {
   margin-bottom: 1rem;
   font-weight: bold;
-  padding-top: 0.75rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   padding-left: 1.5rem;
-  padding-bottom: 0.5rem;
   font-size: 22px;
   font-weight: 600;
   border-bottom: 1px solid var(--border-color);
@@ -22,12 +22,12 @@
   border-radius: 8px;
   overflow: visible; /* or unset */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  margin: 1rem !important;
+  margin: 1.5rem !important;
 }
 
 .cardHeader {
   background: #e8f2ff;
-  padding: 1rem;
+  padding: 1.25rem;
   font-weight: 600;
   font-size: 1.2rem;
   border-radius: 8px;
@@ -47,10 +47,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem; */
-  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1.75rem;
+  padding: 2.5rem 2rem;
 }
 
 .info {
@@ -94,8 +94,8 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   border-bottom: 1px solid var(--border-color);
 }
@@ -119,8 +119,8 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 8px #0000001a;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 1.5rem;
 }
 
 .cardContentRule {
@@ -143,7 +143,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .iconRuleAllow {

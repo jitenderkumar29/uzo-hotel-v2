@@ -6,8 +6,8 @@ import styles from './RoomCard.module.css'
 
 const sampleRooms = [
   {
-    name: 'Day Use Room (10 am to 4 pm) Maximum 6 hrs stay, Check-in and Check-out on same day',
-    type: '(344 sq.ft (32 sq.mt)) | King Bed',
+    name: 'Day Use Room, 6 hrs stay (10 am to 4 pm), Check-in and Check-out on same day',
+    type: '(344 sq.ft (32 sq.mt))',
     imageUrl:
       'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201309021636532583-7b2d56fc-3cd3-462f-9391-ce0a23470d70.jpg',
     amenities: [
@@ -50,7 +50,7 @@ const sampleRooms = [
   },
   {
     name: 'Deluxe King Room',
-    type: '(400 sq.ft (37 sq.mt)) | King Bed',
+    type: '(400 sq.ft (37 sq.mt))',
     imageUrl:
       'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201309021636532583-7b2d56fc-3cd3-462f-9391-ce0a23470d70.jpg',
     amenities: [

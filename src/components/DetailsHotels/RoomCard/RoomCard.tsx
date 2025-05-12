@@ -7,6 +7,7 @@ import CancellationPolicy from './CancellationPolicy/CancellationPolicy';
 import { policy1 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import RoomTypesMoreDetails from './RoomTypesMoreDetails/RoomTypesMoreDetails';
+import Image from 'next/image';
 
 interface RatePlan {
   title: string;
@@ -45,6 +46,17 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
   // const [showRoomTypesMore, setShowRoomTypesMore] = useState(false);
   const [showCancellationPolicy, setShowCancellationPolicy] = useState(false);
 
+  const today = new Date();
+  const dayAfterTomorrow = new Date(today);
+  dayAfterTomorrow.setDate(today.getDate() + 2);
+
+  const formattedDate = dayAfterTomorrow.toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
   return (
     <div className={styles.roomCard}>
       <div className={styles.roomCardContent}>
@@ -81,12 +93,55 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
           {/* <img src={imageUrl} alt={name} className={styles.roomImage} />
           <button type='button' className={styles.photosButton}>+8 Photos</button> */}
           {/* <h2 className={styles.roomName}>{name}</h2> */}
-          <p className={styles.roomType}>{type}</p>
-          <ul className={styles.roomAmenities}>
+          {/* <p className={styles.roomType}>{type}</p> */}
+
+          <div className={styles.roomDetails}>
+            <ul className={styles.highlightsList}>
+              <li>
+                <Image
+                  src="https://gos3.ibcdn.com/roomSizeBlack-1678093548.png"
+                  alt="Size"
+                  width={20}
+                  height={20}
+                />
+                <span>{type}</span>
+                {/* <span>301 sq.ft (28 sq.mt)</span> */}
+              </li>
+              <li>
+                <Image
+                  src="https://promos.makemytrip.com/Hotels_product/Hotel_SR/Android/drawable-hdpi/bed.png"
+                  alt="Bed"
+                  width={20}
+                  height={20}
+                />
+                <span>2 twin beds</span>
+              </li>
+              <li>
+                <Image
+                  src="https://gos3.ibcdn.com/paxBlackIcon-1678093500.png"
+                  alt="Guests"
+                  width={20}
+                  height={20}
+                />
+                <span>Max 3 Guests</span>
+              </li>
+              <li>
+                <Image
+                  src="https://gos3.ibcdn.com/roomViewIcon-1678093525.png"
+                  alt="View"
+                  width={20}
+                  height={20}
+                />
+                <span>City View</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* <ul className={styles.roomAmenities}>
             {amenities.slice(0, showAllAmenities ? amenities.length : 6).map((item, i) => (
               <li key={i}>{item}</li>
             ))}
-          </ul>
+          </ul> */}
           {amenities.length > 6 && (
             <div>
               <button
@@ -121,7 +176,7 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
                       {feat}</li>
                   ))}
                   <li className={styles.cancelIconList}>
-                    <FontAwesomeIcon icon={faCheck} className={styles.cancelIcon} /> Free Cancellation
+                    <FontAwesomeIcon icon={faCheck} className={styles.cancelIcon} /> Free Cancellation before {formattedDate} 01:59 PM
                   </li>
 
                   <li className={styles.cancelPolicy} onClick={() => setShowCancellationPolicy(true)}>View plan details & policies</li>

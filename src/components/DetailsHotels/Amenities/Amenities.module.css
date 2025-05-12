@@ -9,7 +9,7 @@
 .title {
   font-size: 22px;
   font-weight: 600;
-  /* margin-bottom: 2rem; */
+  margin-bottom: 12px;
   /* text-align: center; */
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border-color);
@@ -35,7 +35,7 @@
 
 .sectionTitle {
   font-size: 1rem !important;
-  /* margin-bottom: 0.75rem; */
+  margin-bottom: 12px;
   color: #333;
   font-weight: 600;
   padding-top: 0.5rem;
@@ -55,7 +55,7 @@
 }
 
 .item {
-  font-size: 0.9rem;
+  font-size: 16px;
   color: var(--text-color-black);
   padding: 0.25rem 0;
 }
@@ -114,7 +114,7 @@
 
 .amenityHeading {
   color: var(--dark-white);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   /* margin-bottom: 15px; */
   padding: 5px 1rem;
@@ -130,6 +130,8 @@
   grid-column: 1 / -1;
   background-color: var(--light-color);
   display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .amenityList {
@@ -181,13 +183,14 @@
   /* margin-bottom: 0.5rem; */
   display: flex;
   align-items: flex-start;
-  font-size: 0.875rem;
+  font-size: 16px;
   transition: color 0.2s ease;
+  line-height: 1.4;
 }
 
-.item:hover {
+/* .item:hover {
   color: #1d4ed8;
-}
+} */
 
 .bullet {
   margin-right: 0.5rem;

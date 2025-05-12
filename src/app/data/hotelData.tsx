@@ -4,7 +4,7 @@ export const hotelData: HotelDataInterface[] = [
   {
     id: 1,
     // name: "Pride Plaza Hotel Aerocity",
-    name: "Pride Plazas Hotel Aerocity New Delhi",
+    name: "Pride Plaza Hotel Aerocity New Delhi",
     rating: "5",
     category: "Hotel",
     location: "Aerocity | 4 km drive to Indira Gandhi International Airport",

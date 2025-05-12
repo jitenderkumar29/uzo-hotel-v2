@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './RoomHeaderSticky.module.css'
 import { FaChevronDown } from 'react-icons/fa'
 
@@ -50,10 +50,29 @@ const roomTypes = [
 ];
 
 const RoomHeaderSticky = () => {
-  const [roomTypeOpen, SetRoomTypeOpen] = useState(false);
+  const [roomTypeOpen, setRoomTypeOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null); // Properly typed ref
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setRoomTypeOpen(false);
+      }
+    };
+
+    if (roomTypeOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [roomTypeOpen]);
 
   const RoomTypeDropdown = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
+
 
     return (
       <ul className={styles.dropdownRoom}>
@@ -83,15 +102,15 @@ const RoomHeaderSticky = () => {
     <div>
       <div className={styles.roomCard}>
         <div className={styles.roomCardContent}>
-          <div className={styles.roomCardLeft}>
+          <div className={styles.roomCardLeft} ref={dropdownRef}>
             {/* <RoomTypesDropdown /> */}
-            <div className={styles.roomCardHeader} onClick={() => SetRoomTypeOpen(!roomTypeOpen)}>
+            <div className={styles.roomCardHeader} onClick={() => setRoomTypeOpen(!roomTypeOpen)}>
               <h1>4 Room Types</h1>
               <FaChevronDown className={styles.chevDownIcon} />
             </div>
             {(roomTypeOpen) && (
               <div className={styles.roomTypeDropdown}
-                onClick={() => SetRoomTypeOpen(!roomTypeOpen)}
+                onClick={() => setRoomTypeOpen(!roomTypeOpen)}
               >
                 <RoomTypeDropdown />
               </div>
