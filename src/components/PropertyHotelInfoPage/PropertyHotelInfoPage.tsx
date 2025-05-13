@@ -4,6 +4,11 @@ import styles from './PropertyHotelInfoPage.module.css'
 import PropertyHotelInfoPrice from './PropertyHotelInfoPrice/PropertyHotelInfoPrice'
 import HeaderTop from '../HeaderTop/HeaderTop'
 import { useSearchParams } from 'next/navigation'
+import PropertyHotelGuestDetails from './PropertyHotelGuestDetails/PropertyHotelGuestDetails'
+import PropertyHotelTripSecure from './PropertyHotelTripSecure/PropertyHotelTripSecure'
+import PropertyHotelPaymentOptions from './PropertyHotelPaymentOptions/PropertyHotelPaymentOptions'
+import PropertyHotelAddons from './PropertyHotelAddons/PropertyHotelAddons'
+import PropertyHotelBankOffers from './PropertyHotelBankOffers/PropertyHotelBankOffers'
 
 
 // First, define a type for your room data
@@ -353,9 +358,19 @@ const PropertyHotelInfoPage = () => {
       <div className={styles.layout}>
         <main className={styles.mainContent}>
           <PropertyHotelInfo foundRoom={foundRoom} roomId={foundRoomId} />
+          <PropertyHotelGuestDetails />
+          <PropertyHotelTripSecure />
+          <PropertyHotelPaymentOptions />
+          <div className={styles.buttonContainer}>
+            <button type="submit" className={styles.submitButton}>
+              Proceed To Payment Options
+            </button>
+          </div>
         </main>
         <aside className={styles.sidebar}>
           <PropertyHotelInfoPrice />
+          <PropertyHotelAddons />
+          <PropertyHotelBankOffers />
         </aside>
       </div>
     </>

@@ -21,9 +21,9 @@
 }
 
 .title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #141823;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-color-black);
   margin: 0;
 }
 
