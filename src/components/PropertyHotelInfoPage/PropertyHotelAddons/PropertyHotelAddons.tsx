@@ -33,17 +33,18 @@ const PropertyHotelAddons: React.FC = () => {
       description: 'Includes taxes and fees',
       selected: false,
     },
-    {
-      id: 'breakfast-lunch-dinner',
-      title: 'Breakfast + Lunch/Dinner',
-      price: 4511,
-      description: 'Includes taxes and fees',
-      selected: false,
-    },
+
     {
       id: 'All Meals',
       title: 'All Meals',
       price: 5511,
+      description: 'Includes taxes and fees',
+      selected: false,
+    },
+    {
+      id: 'Cabs',
+      title: 'Cabs for pickup and drop',
+      price: 4511,
       description: 'Includes taxes and fees',
       selected: false,
     },

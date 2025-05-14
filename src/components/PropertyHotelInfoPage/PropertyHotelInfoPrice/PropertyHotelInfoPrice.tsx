@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./PropertyHotelInfoPrice.module.css";
 import { ChevronDown, ChevronUp, Gift } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const PropertyHotelInfoPrice = () => {
   const [isExpanded, setIsExpanded] = React.useState(true);
@@ -21,7 +23,7 @@ const PropertyHotelInfoPrice = () => {
         </button>
       </div>
 
-      {isExpanded && (<div
+      <div
         className={`${styles.priceDetails} ${isExpanded ? styles.expanded : styles.collapsed
           }`}
       >
@@ -34,24 +36,33 @@ const PropertyHotelInfoPrice = () => {
           <div className={styles.priceRow}>
             <div className={styles.priceLabel}>
               Total Discount
-              {/* <div className={styles.discountBadge}>
-              <FontAwesomeIcon icon={faCheckCircle} />
-              <span className={styles.discountCode}>GOSMARTDEAL</span>
-              <span>applied</span>
-            </div> */}
+              <div className={styles.discountBadge}>
+                <FontAwesomeIcon icon={faCheckCircle} />
+                <span className={styles.discountCode}>UZOSTAY</span>
+                <span>applied</span>
+              </div>
             </div>
             <div className={`${styles.priceValue} ${styles.discountValue}`}>
               -₹450
             </div>
           </div>
-          <div className={styles.priceRow}>
-            <div className={styles.priceLabel}>
-              Discount by the Property
+          {isExpanded && (<>
+            <div className={styles.priceRow}>
+              <div className={styles.priceLabel}>
+                Discount by the Property
+              </div>
+              <div className={`${styles.priceValue}`}>
+                ₹400
+              </div>
             </div>
-            <div className={`${styles.priceValue}`}>
-              ₹400
-            </div>
-          </div>
+            <div className={styles.priceRow}>
+              <div className={styles.priceLabel}>
+                UZODEAL
+              </div>
+              <div className={`${styles.priceValue}`}>
+                ₹153
+              </div>
+            </div></>)}
         </div>
 
         <div className={styles.divider} />
@@ -66,10 +77,16 @@ const PropertyHotelInfoPrice = () => {
             <div className={styles.priceLabel}>Taxes & Service Fees</div>
             <div className={styles.priceValue}>₹1,127</div>
           </div>
-          <div className={styles.priceRow}>
-            <div className={styles.priceLabel}>Hotel GST</div>
-            <div className={styles.priceValue}>₹432</div>
-          </div>
+          {isExpanded && (<>
+            <div className={styles.priceRow}>
+              <div className={styles.priceLabel}>Hotel GST</div>
+              <div className={styles.priceValue}>₹432</div>
+            </div>
+            <div className={styles.priceRow}>
+              <div className={styles.priceLabel}>Platform Fees</div>
+              <div className={styles.priceValue}>₹424</div>
+            </div>
+          </>)}
         </div>
 
         <div className={styles.divider} />
@@ -78,7 +95,7 @@ const PropertyHotelInfoPrice = () => {
           <div className={styles.totalLabel}>Total Amount to be paid</div>
           <div className={styles.totalValue}>₹6,617</div>
         </div>
-      </div>)}
+      </div>
 
 
       <div className={styles.loginPrompt}>

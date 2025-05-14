@@ -97,7 +97,7 @@
   gap: 4px;
   margin-top: 4px;
   font-size: 12px;
-  color: #2276e3;
+  color: var(--green-text);
 }
 
 .checkIcon {

@@ -48,6 +48,24 @@ const PropertyHotelBankOffers: React.FC = () => {
       description: 'Special Deal ending at Midnight.!!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
+    {
+      code: 'IDBIDEAL',
+      discount: '-₹1,515',
+      description: 'Special IDBI Deal ending at Midnight.!!',
+      disclaimer: '(Not available with "Book @ ₹0")',
+    },
+    {
+      code: 'UCOBANK',
+      discount: '-₹1,515',
+      description: 'Special UCO Bank Deal ending at Midnight.!!',
+      disclaimer: '(Not available with "Book @ ₹0")',
+    },
+    {
+      code: 'ICICIBANK',
+      discount: '-₹1,515',
+      description: 'Special ICICI Bank Deal ending at Midnight.!!',
+      disclaimer: '(Not available with "Book @ ₹0")',
+    },
   ]);
 
   const [selectedOffer, setSelectedOffer] = useState<string>('HDFCDCEMI');

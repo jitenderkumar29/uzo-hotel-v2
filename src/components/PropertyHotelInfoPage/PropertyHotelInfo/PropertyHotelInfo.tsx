@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faPerson } from '@fortawesome/free-solid-svg-icons';
 import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import CancellationPolicy from '@/components/DetailsHotels/RoomCard/CancellationPolicy/CancellationPolicy';
-import { policy2 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
+import { policy3 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 
 import { HotelDataInterface } from "@/interfaces";
 import RatingCard from '../RatingCard/RatingCard';
@@ -127,10 +127,11 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
                     </span>
                   </div>
                 </div>
-                <div className={styles.reviews} onMouseEnter={() => setOpenRatingId(true)}
-                  onMouseLeave={() => setOpenRatingId(false)}
+                <div className={styles.reviews}
+                  onMouseEnter={() => setOpenRatingId(true)}
+                // onMouseLeave={() => setOpenRatingId(false)}
                 >
-                  <div>
+                  <div className={styles.ratingTotalReview}>
                     <span className={styles.ratingTotal}>
                       <div>Excellent</div>
                       <div>3145 Ratings{" "}</div>
@@ -140,7 +141,9 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
                 </div>
                 {openRatingId &&
                   (
-                    <div>
+                    <div onMouseEnter={() => setOpenRatingId(true)}
+                      onMouseLeave={() => setOpenRatingId(false)}
+                    >
                       <RatingCard reviewScore={hotelData[0].reviewScore} totalRatings={hotelData[0].totalRatings} breakdown={hotelData[0].breakdown} />
                     </div>)}
                 {/* <div className={styles.location}>
@@ -203,9 +206,10 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
           </div>
         </div> */}
 
-        </div>)}
+        </div>)
+      }
 
-    </div>
+    </div >
   );
 };
 
@@ -246,7 +250,7 @@ const RoomDetails = () => {
               <OverlayContainer
                 show={showCancellationPolicy}
                 onClose={() => setShowCancellationPolicy(false)}>
-                <CancellationPolicy {...policy2} onClose={() => setShowCancellationPolicy(false)} />
+                <CancellationPolicy {...policy3} onClose={() => setShowCancellationPolicy(false)} />
               </OverlayContainer>
             )}
 
@@ -256,6 +260,18 @@ const RoomDetails = () => {
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
                 <span>Room Only</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+                <span>Room With Free Cancellation</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+                <span>10% off on One-way Airport Transfer</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+                <span>Early Check-In upto 2 hours (subject to availability)</span>
               </li>
             </ul>
           </div>

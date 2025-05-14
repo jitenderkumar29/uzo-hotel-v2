@@ -4,6 +4,8 @@ import { CircleAlert, Star } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
+import PropertyHotelTripSecureMore from '../PropertyHotelTripSecureMore/PropertyHotelTripSecureMore';
 
 interface BenefitItem {
   icon: string;
@@ -14,7 +16,7 @@ interface BenefitItem {
 
 const PropertyHotelTripSecure: React.FC = () => {
   const [isTripSecured, setIsTripSecured] = useState<boolean>(true);
-  const [, setShowTripSecured] = useState<boolean>(false);
+  const [showTripSecured, setShowTripSecured] = useState<boolean>(false);
   const [benefits,] = useState<BenefitItem[]>([
     {
       icon: 'https://tripmoneycmsimgak.mmtcdn.com/img/Frame_1244833940_a6954650a7.png',
@@ -109,13 +111,13 @@ const PropertyHotelTripSecure: React.FC = () => {
         <button className={styles.viewMoreBtn} onClick={() => setShowTripSecured(true)}>11 more benefits</button>
       </div>
 
-      {/* (showTripSecured && {
+      (showTripSecured && {
         <OverlayContainer
           show={showTripSecured}
           onClose={() => setShowTripSecured(false)}>
           <PropertyHotelTripSecureMore onClose={() => setShowTripSecured(false)} />
         </OverlayContainer>
-      }) */}
+      })
 
       <div className={styles.priceSection}>
         <div className={styles.priceDetails}>

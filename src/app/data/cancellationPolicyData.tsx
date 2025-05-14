@@ -30,3 +30,22 @@ export const policy2 = {
     "10% Off on Laundry service for upto 4 clothing item(s)"
   ]
 };
+// Example 2: Free Breakfast | Free Cancellation
+export const policy3 = {
+  planType: "Free Breakfast | Free Cancellation",
+  roomType: "Must read",
+  freeCancellationDeadline: "11 May, 1:59 PM",
+  checkInTime: "12 May 1:59 PM",
+  policies: [
+    { date: "Before 14 May, 1:59 PM", fee: "0.0% of booking amount" },
+    { date: "After 14 May, 2:00 PM", fee: "100.0% of booking amount" },
+    { date: "After 14 May, 2:00 PM", fee: "100.0% of booking amount" }
+  ],
+  amenities: [
+    "Primary guest should be atleast 18 years of age",
+    "Passport, Aadhar and Driving License are accepted as ID proof(s)",
+    "Pets are not allowed",
+    "Outside food is not allowed",
+    "Smoking within the premises is not allowed"
+  ]
+};
