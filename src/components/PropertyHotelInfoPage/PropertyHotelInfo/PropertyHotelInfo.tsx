@@ -8,7 +8,7 @@ import CancellationPolicy from '@/components/DetailsHotels/RoomCard/Cancellation
 import { policy3 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 
 import { HotelDataInterface } from "@/interfaces";
-import RatingCard from '../RatingCard/RatingCard';
+// import RatingCard from '../RatingCard/RatingCard';
 
 export const hotelData: HotelDataInterface[] = [
   {
@@ -128,7 +128,7 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
                   </div>
                 </div>
                 <div className={styles.reviews}
-                  onMouseEnter={() => setOpenRatingId(true)}
+                // onMouseEnter={() => setOpenRatingId(true)}
                 // onMouseLeave={() => setOpenRatingId(false)}
                 >
                   <div className={styles.ratingTotalReview}>
@@ -139,13 +139,13 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
                   </div>
                   <div className={styles.ratingBadge}>4/5</div>
                 </div>
-                {openRatingId &&
+                {/* {openRatingId &&
                   (
                     <div onMouseEnter={() => setOpenRatingId(true)}
                       onMouseLeave={() => setOpenRatingId(false)}
                     >
                       <RatingCard reviewScore={hotelData[0].reviewScore} totalRatings={hotelData[0].totalRatings} breakdown={hotelData[0].breakdown} />
-                    </div>)}
+                    </div>)} */}
                 {/* <div className={styles.location}>
                   <MapPin className={styles.mapIcon} />
                   <span>Janakpuri District Centre Complex, New Delhi, Delhi, India, 110058</span>

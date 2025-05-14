@@ -63,7 +63,7 @@ const PropertyHotelBankOffers: React.FC = () => {
     {
       code: 'ICICIBANK',
       discount: '-₹1,515',
-      description: 'Pay using ICICI Bank and get a Flat 30% Instant Discount!',
+      description: 'Pay using IDBI Bank and get a Flat 20% Instant Discount!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
   ]);
