@@ -237,14 +237,14 @@ const RoomDetails = () => {
               </div>
 
               <div className={styles.amenities}>
-                <span className={styles.mealPlan}>Room Only</span>
+                <span className={styles.mealPlan}>Room with Breakfast</span>
               </div>
               <div className={styles.refundable}>
                 <span className={styles.freeCancel}>Free Cancellation before 17 Jun 11:59 AM</span>
               </div>
-              <div className={styles.refundable}>
+              {/* <div className={styles.refundable}>
                 <span className={styles.refundPolicy}>Non-Refundable</span>
-              </div>
+              </div> */}
             </div>
 
             <button className={styles.policyLink} onClick={() => setShowCancellationPolicy(true)}>View Booking & Cancellation Policy</button>
@@ -263,7 +263,7 @@ const RoomDetails = () => {
             <ul className={styles.featuresList}>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
-                <span>Room Only</span>
+                <span>Room with Breakfast</span>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
