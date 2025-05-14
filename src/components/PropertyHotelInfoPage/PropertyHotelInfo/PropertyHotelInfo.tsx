@@ -91,7 +91,7 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
   console.log("PropertyHotelInfo")
   console.log(foundRoom, roomId)
   const [isExpanded, setIsExpanded] = useState(true);
-  const [openRatingId, setOpenRatingId] = useState(false);
+  // const [openRatingId, setOpenRatingId] = useState(false);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
