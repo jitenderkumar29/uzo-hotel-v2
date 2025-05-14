@@ -320,6 +320,11 @@ const PropertyHotelInfoPage = () => {
   // const [sampleRoomsData, setSampleRoomsData] = useState<Room[]>([]);
   const [foundRoom, setFoundRoom] = useState<Room | null>(null);
   const [foundRoomId, setFoundRoomId] = useState<string>();
+  const [isChecked, setIsChecked] = useState(true);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const id = searchParams?.get("id") ?? undefined;
   const roomId = searchParams?.get("roomId") ?? undefined;
@@ -365,6 +370,44 @@ const PropertyHotelInfoPage = () => {
             <button type="submit" className={styles.submitButton}>
               Proceed To Payment Options
             </button>
+          </div>
+          <div className={styles.container}>
+            <input
+              type="checkbox"
+              className={styles.checkbox}
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+              aria-label="Agree to terms and conditions"
+            />
+            <p className={styles.text}>
+              By proceeding, I agree to Uzo &apos s{' '}
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                Privacy Policy
+              </a>
+              ,{' '}
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                User Agreement
+              </a>{' '}
+              &{' '}
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                Terms of Service
+              </a>
+            </p>
           </div>
         </main>
         <aside className={styles.sidebar}>

@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
       "www.ahstatic.com",
       "media.easemytrip.com",
       "go-assets.ibcdn.com",
+      "play-lh.googleusercontent.com",
+      "encrypted-tbn0.gstatic.com",
     ],
   },
 };

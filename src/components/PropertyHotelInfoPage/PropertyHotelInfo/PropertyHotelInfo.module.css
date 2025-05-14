@@ -50,6 +50,7 @@
   height: 120px;
   border-radius: 8px;
   overflow: hidden;
+  width: 20%;
 }
 
 .hotelImage img {
@@ -58,14 +59,26 @@
   object-fit: cover;
 }
 
+.hotelInfoCont {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  width: 80%;
+}
+
 .hotelDetails {
   flex: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .rating {
   display: flex;
   gap: 3px;
   margin-bottom: 8px;
+}
+
+.hotelNameCont {
+  display: flex;
 }
 
 .hotelName {
@@ -463,4 +476,55 @@
 
 .header {
   cursor: pointer; /* Add this to show it's clickable */
+}
+
+/* Star hotels style */
+
+.hotelRating {
+  color: var(--dark-white);
+  padding: 0px 6px;
+  margin-right: 8px;
+  /* margin-top: 0px; */
+  font-size: 12px;
+  display: flex;
+  /* align-items: center; */
+  height: fit-content;
+  justify-content: center;
+}
+
+.badge {
+  color: var(--dark-white);
+  background-color: var(--bg-star);
+  /* color: #333; */
+  padding: 0px 6px;
+  border-radius: 50px;
+  margin-right: 8px;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+  display: inline-block;
+}
+.star {
+  color: var(--star-color);
+}
+
+/* rating small card style */
+.reviews {
+  display: flex;
+  text-align: end;
+  justify-content: end;
+}
+
+.ratingTotal {
+  color: var(--text-color-black);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ratingBadge {
+  background-color: #1ca54f;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  height: fit-content;
 }

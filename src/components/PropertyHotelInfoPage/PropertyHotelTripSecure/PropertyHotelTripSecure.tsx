@@ -3,6 +3,7 @@ import styles from './PropertyHotelTripSecure.module.css';
 import { CircleAlert, Star } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 interface BenefitItem {
   icon: string;
@@ -64,16 +65,21 @@ const PropertyHotelTripSecure: React.FC = () => {
           <p className={styles.subtitle}>Worry Free Hotel stay</p>
         </div>
         <div className={styles.vendorLogos}>
-          {/* <img
-            src="https://tripmoneycmsimgak.mmtcdn.com/img/Frame_1244832613_2x_1_58aef322c1.png"
+          <Image
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLHYgvpTbO8gjGcbZCXFXlSojYXumJ1XUzg&s"
             alt="vendor logo"
             className={styles.vendorLogo}
+            height={50}
+            width={50}
           />
-          <img
-            src="https://tripmoneycmsimgak.mmtcdn.com/img/tataaig_610dd21890.jpg"
+          <Image
+            src="https://play-lh.googleusercontent.com/ohrWQzCBzWWE0xYk23TNdO4V1YBXyMMIqLvI61FDAPda-Jkt7Re4V5gmG-JqOFsXq-Y=w480-h960-rw"
             alt="vendor logo"
             className={styles.vendorLogo}
-          /> */}
+            height={50}
+            width={50}
+          />
+
         </div>
       </div>
 

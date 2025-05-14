@@ -1,0 +1,80 @@
+/*  rating card module css */
+.cardRating {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  top: 244;
+  right: 484;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 300px;
+  background-color: white;
+  height: fit-content;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+
+.leftRating {
+  display: flex;
+  flex-direction: column; /* Align vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically if needed */
+  background-color: #27ae60;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  width: 40%;
+}
+
+.scoreRating {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.totalRating {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.rightRating {
+  padding: 12px;
+  width: 60%;
+}
+
+.ratingRowRating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.starLabelRating {
+  font-size: 0.9rem;
+}
+
+.barContainerRating {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  flex: 1;
+  margin: 0 8px;
+  overflow: hidden;
+}
+
+.barFillRating {
+  height: 100%;
+  background-color: #0e918c;
+  border-radius: 4px;
+}
+
+.countRating {
+  width: 30px;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.bankOfferCard {
+  padding: 0px 0px 0px 12px;
+  cursor: pointer;
+}

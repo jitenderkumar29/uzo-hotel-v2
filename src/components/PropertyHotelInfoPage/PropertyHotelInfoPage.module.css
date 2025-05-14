@@ -42,3 +42,45 @@
 .submitButton:active {
   background-color: var(--logo-color-hover);
 }
+
+/* Agree to privacy policy style */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--link-color);
+  cursor: pointer;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--text-color-black);
+  line-height: 1.4;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    align-items: flex-start;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+}

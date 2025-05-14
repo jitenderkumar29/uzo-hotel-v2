@@ -115,3 +115,110 @@
     align-self: flex-end;
   }
 }
+
+/* SalesBanner style */
+.cardWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  margin-top: 10px;
+}
+
+.cardWrapper:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  flex: 0 0 120px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-white);
+}
+
+.mainImage {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.contentWrapper {
+  flex: 1;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: var(--link-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 0px 0;
+}
+
+.descriptionWrapper {
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-black);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ctaButton {
+  align-self: flex-start;
+  background-color: #195eb7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover,
+.ctaHover {
+  background-color: #134a96;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .cardWrapper {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    flex: 0 0 auto;
+    padding: 8px;
+  }
+
+  .mainImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contentWrapper {
+    padding: 12px;
+  }
+
+  .header {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}

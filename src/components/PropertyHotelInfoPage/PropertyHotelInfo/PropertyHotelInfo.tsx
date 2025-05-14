@@ -7,6 +7,60 @@ import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import CancellationPolicy from '@/components/DetailsHotels/RoomCard/CancellationPolicy/CancellationPolicy';
 import { policy2 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 
+import { HotelDataInterface } from "@/interfaces";
+import RatingCard from '../RatingCard/RatingCard';
+
+export const hotelData: HotelDataInterface[] = [
+  {
+    id: 1,
+    // name: "Pride Plaza Hotel Aerocity",
+    name: "Pride Plaza Hotel Aerocity New Delhi",
+    rating: "5",
+    category: "Hotel",
+    location: "Aerocity | 4 km drive to Indira Gandhi International Airport",
+    tags: ["Gym", "Restaurant"],
+    moreTags: [
+      "Free Wi-Fi",
+      "24-hr Room",
+      "Jacuzzi",
+      "Spa",
+      "Swimming Pool",
+      "Restaurant",
+      "Fireplace",
+      "Lounge",
+      "Bar",
+      "Steam & Sauna",
+    ],
+    commonFeature: "👫 Couple Friendly",
+    features: [
+      // "👫 Couple Friendly",
+      "Free Cancellation",
+      "Book @ $0 Available",
+      "Breakfast available at extra charges",
+    ],
+    mainImg: "https://www.ahstatic.com/photos/9470_roskc_01_p_1024x768.jpg",
+    thumbnails: [
+      "https://www.ahstatic.com/photos/a248_ho_00_p_2048x1536.jpg",
+      "https://www.ahstatic.com/photos/a248_ro_01_p_2048x1536.jpg",
+      "https://www.ahstatic.com/photos/a248_rs_00_p_2048x1536.jpg",
+      "https://www.ahstatic.com/photos/a248_rs_03_p_2048x1536.jpg",
+      "https://www.ahstatic.com/photos/a248_ho_05_p_2048x1536.jpg",
+    ],
+    totalRatings: 3145,
+    reviewScore: "4.5/5",
+    ratingCategory: "Excellent",
+    breakdown: [
+      { stars: 5, count: 6587 },
+      { stars: 4, count: 1700 },
+      { stars: 3, count: 510 },
+      { stars: 2, count: 230 },
+      { stars: 1, count: 293 },
+    ],
+    leftRoom: 4,
+    oldPrice: "₹4,000",
+    newPrice: "₹3,600",
+    taxes: "+₹432 taxes & fees per night",
+  }]
 
 
 // First, define a type for your room data
@@ -37,6 +91,7 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
   console.log("PropertyHotelInfo")
   console.log(foundRoom, roomId)
   const [isExpanded, setIsExpanded] = useState(true);
+  const [openRatingId, setOpenRatingId] = useState(false);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -62,33 +117,43 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
                 alt="Hyatt Centric Janakpuri, New Delhi"
               />
             </div>
-
-            <div className={styles.hotelDetails}>
-              <div className={styles.rating}>
-                {[...Array(4)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="15" height="14">
-                    <g fill="none" fillRule="evenodd">
-                      <path d="M-5-5h24v24H-5z"></path>
-                      <path fill="#FDBA00" d="m7.15 11.622 3.469 2.13c.635.39 1.412-.187 1.245-.917l-.92-4.004 3.068-2.699c.56-.492.259-1.425-.477-1.484L9.5 4.3 7.92.515a.831.831 0 0 0-1.537 0l-1.58 3.776-4.036.348C.031 4.7-.27 5.632.29 6.124l3.067 2.698-.92 4.005c-.166.73.61 1.307 1.246.916z"></path>
-                    </g>
-                  </svg>
-                ))}
+            <div className={styles.hotelInfoCont}>
+              <div className={styles.hotelDetails}>
+                <div className={styles.hotelNameCont}>
+                  <h4 className={styles.hotelName}>Pride Plaza Hotel Aerocity New Delhi</h4>
+                  <div className={styles.hotelRating}>
+                    <span className={styles.badge}>
+                      5<span className={styles.star}> ★</span> Hotels
+                    </span>
+                  </div>
+                </div>
+                <div className={styles.reviews} onMouseEnter={() => setOpenRatingId(true)}
+                  onMouseLeave={() => setOpenRatingId(false)}
+                >
+                  <div>
+                    <span className={styles.ratingTotal}>
+                      <div>Excellent</div>
+                      <div>3145 Ratings{" "}</div>
+                    </span>
+                  </div>
+                  <div className={styles.ratingBadge}>4/5</div>
+                </div>
+                {openRatingId &&
+                  (
+                    <div>
+                      <RatingCard reviewScore={hotelData[0].reviewScore} totalRatings={hotelData[0].totalRatings} breakdown={hotelData[0].breakdown} />
+                    </div>)}
+                {/* <div className={styles.location}>
+                  <MapPin className={styles.mapIcon} />
+                  <span>Janakpuri District Centre Complex, New Delhi, Delhi, India, 110058</span>
+                </div> */}
               </div>
-
-              <h4 className={styles.hotelName}>Pride Plaza Hotel Aerocity New Delhi</h4>
-              {/* <h4 className={styles.hotelName}>Hyatt Centric Janakpuri, New Delhi</h4> */}
-
               <div className={styles.location}>
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-              <path d="M22.301 24.38a1.334 1.334 0 1 0-.224 2.658 40 40 0 0 1 5.035.697.333.333 0 0 1 0 .651A53.4 53.4 0 0 1 16 29.334a53.4 53.4 0 0 1-11.111-.948.333.333 0 0 1 0-.651 39 39 0 0 1 4.981-.693 1.333 1.333 0 0 0-.227-2.656c-9.644.815-9.644 2.815-9.644 3.673 0 3.557 11.089 3.941 16 3.941s16-.384 16-3.941c0-.859 0-2.859-9.699-3.679zM16 28.8c.455 0 .878-.232 1.123-.615 2.611-4.084 8.683-14.048 8.683-18.381 0-5.416-4.391-9.807-9.807-9.807S6.192 4.388 6.192 9.804c0 4.333 6.072 14.299 8.684 18.381.244.385.669.617 1.124.615M11.333 9.333A4.667 4.667 0 1 1 16 14a4.667 4.667 0 0 1-4.667-4.667"></path>
-            </svg> */}
                 <MapPin className={styles.mapIcon} />
-
                 <span>Janakpuri District Centre Complex, New Delhi, Delhi, India, 110058</span>
               </div>
             </div>
           </div>
-
           <div className={styles.durationBlock}>
             <div className={styles.checkInOut}>
               <span>Check In</span>
@@ -186,7 +251,6 @@ const RoomDetails = () => {
             )}
 
           </div>
-
           <div className={styles.rightBlock}>
             <ul className={styles.featuresList}>
               <li>
@@ -200,5 +264,7 @@ const RoomDetails = () => {
     </section >
   );
 };
+
+
 
 export default PropertyHotelInfo;
