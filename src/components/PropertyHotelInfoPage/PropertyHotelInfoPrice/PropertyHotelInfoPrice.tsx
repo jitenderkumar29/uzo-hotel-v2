@@ -55,14 +55,15 @@ const PropertyHotelInfoPrice = () => {
                 ₹400
               </div>
             </div>
-            <div className={styles.priceRow}>
+            {/* <div className={styles.priceRow}>
               <div className={styles.priceLabel}>
                 UZODEAL
               </div>
               <div className={`${styles.priceValue}`}>
                 ₹153
               </div>
-            </div></>)}
+            </div> */}
+          </>)}
         </div>
 
         <div className={styles.divider} />
