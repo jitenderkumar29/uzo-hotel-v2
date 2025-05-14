@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './PropertyHotelTripSecureMore.module.css';
 import { Check, ChevronDown, X } from 'lucide-react';

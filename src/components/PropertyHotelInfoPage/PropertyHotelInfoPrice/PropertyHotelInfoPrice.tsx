@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import styles from "./PropertyHotelInfoPrice.module.css";
 import { ChevronDown, ChevronUp, Gift } from "lucide-react";
@@ -86,6 +87,10 @@ const PropertyHotelInfoPrice = () => {
             <div className={styles.priceRow}>
               <div className={styles.priceLabel}>Platform Fees</div>
               <div className={styles.priceValue}>₹424</div>
+            </div>
+            <div className={styles.priceRow}>
+              <div className={styles.priceLabel}>Travel Protection</div>
+              <div className={styles.priceValue}>₹138</div>
             </div>
           </>)}
         </div>

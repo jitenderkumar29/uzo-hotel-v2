@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './PropertyHotelTripSecure.module.css';
 import { CircleAlert, Star } from 'lucide-react';

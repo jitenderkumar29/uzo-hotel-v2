@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './PropertyHotelInfo.module.css';
 import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';

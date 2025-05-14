@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react'
 import PropertyHotelInfo from './PropertyHotelInfo/PropertyHotelInfo'
 import styles from './PropertyHotelInfoPage.module.css'
