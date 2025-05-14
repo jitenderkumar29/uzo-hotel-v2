@@ -172,7 +172,7 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
 
             <div className={styles.checkInOut}>
               <span>Guests</span>
-              <p>2 Adults</p>
+              <p>2 Adults 1 Child</p>
               <span>1 Night</span>
             </div>
           </div>
@@ -232,11 +232,15 @@ const RoomDetails = () => {
               <div className={styles.guests}>
                 <FontAwesomeIcon icon={faPerson} />
                 <FontAwesomeIcon icon={faPerson} />
-                <span className={styles.guestCount}>2 Adults</span>
+                <FontAwesomeIcon icon={faPerson} className={styles.childIcon} />
+                <span className={styles.guestCount}>2 Adults 1 Child</span>
               </div>
 
               <div className={styles.amenities}>
                 <span className={styles.mealPlan}>Room Only</span>
+              </div>
+              <div className={styles.refundable}>
+                <span className={styles.freeCancel}>Free Cancellation before 17 Jun 11:59 AM</span>
               </div>
               <div className={styles.refundable}>
                 <span className={styles.refundPolicy}>Non-Refundable</span>

@@ -90,7 +90,7 @@ const PropertyHotelBankOffers: React.FC = () => {
   return (
     <div className={styles.outerWrapper}>
       <div className={styles.offerWrapper}>
-        <h4 className={styles.sectionHeader}>Goibibo Offers</h4>
+        <h4 className={styles.sectionHeader}>UZO Offers</h4>
       </div>
 
       <div className={styles.promoCodeWrapper}>

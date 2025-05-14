@@ -382,9 +382,15 @@
   fill: #141823;
 }
 
+.childIcon {
+  height: 12px;
+  width: 12px;
+  /* margin-left: -5px; */
+}
+
 .guestCount {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color-black);
 }
 
 .amenities {
@@ -400,6 +406,12 @@
 
 .refundable {
   margin-top: -10px;
+}
+
+.freeCancel {
+  font-size: 0.8rem;
+  color: var(--green-text);
+  font-weight: 600;
 }
 
 .refundPolicy {
@@ -516,6 +528,11 @@
   text-align: end;
   justify-content: end;
   /* margin-right: -130px; */
+}
+
+.ratingTotalReview {
+  margin-right: 10px;
+  margin-top: -2px;
 }
 
 .ratingTotal {
