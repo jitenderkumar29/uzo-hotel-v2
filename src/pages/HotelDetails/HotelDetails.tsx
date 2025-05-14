@@ -20,7 +20,7 @@ const HotelDetails: React.FC = () => {
 
   return (
     <div>
-      <div >
+      <div className={styles.headerTopBody}>
         <HeaderTop />
       </div>
       <div className={styles.HotelSearchBarTopBody}>
