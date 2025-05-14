@@ -1,3 +1,12 @@
+.layoutCont {
+  background-image: url("https://www.lemontreehotels.com/assets/front/images/rewards_banner_1.jpg");
+  width: 100vw; /* or fixed value like 800px */
+  height: 300px; /* adjust as needed */
+  background-size: cover; /* or 'contain' based on your needs */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat;
+}
+
 .layout {
   display: flex;
   max-width: 1300px;
@@ -9,11 +18,13 @@
 
 .mainContent {
   width: 70%;
+  margin-top: 150px;
 }
 
 .sidebar {
   width: 30%;
   /* background-color: #f9f9f9; optional */
+  margin-top: 150px;
 }
 
 /* Button Style */

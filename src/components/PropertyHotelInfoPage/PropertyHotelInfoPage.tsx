@@ -360,61 +360,63 @@ const PropertyHotelInfoPage = () => {
   return (
     <>
       <HeaderTop />
-      <div className={styles.layout}>
-        <main className={styles.mainContent}>
-          <PropertyHotelInfo foundRoom={foundRoom} roomId={foundRoomId} />
-          <PropertyHotelGuestDetails />
-          <PropertyHotelTripSecure />
-          <PropertyHotelPaymentOptions />
-          <div className={styles.buttonContainer}>
-            <button type="submit" className={styles.submitButton}>
-              Proceed To Payment Options
-            </button>
-          </div>
-          <div className={styles.container}>
-            <input
-              type="checkbox"
-              className={styles.checkbox}
-              checked={isChecked}
-              onChange={handleCheckboxChange}
-              aria-label="Agree to terms and conditions"
-            />
-            <p className={styles.text}>
-              By proceeding, I agree to Uzo &apos s{' '}
-              <a
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
-                Privacy Policy
-              </a>
-              ,{' '}
-              <a
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
-                User Agreement
-              </a>{' '}
-              &{' '}
-              <a
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
-                Terms of Service
-              </a>
-            </p>
-          </div>
-        </main>
-        <aside className={styles.sidebar}>
-          <PropertyHotelInfoPrice />
-          <PropertyHotelAddons />
-          <PropertyHotelBankOffers />
-        </aside>
+      <div className={styles.layoutCont}>
+        <div className={styles.layout}>
+          <main className={styles.mainContent}>
+            <PropertyHotelInfo foundRoom={foundRoom} roomId={foundRoomId} />
+            <PropertyHotelGuestDetails />
+            <PropertyHotelTripSecure />
+            <PropertyHotelPaymentOptions />
+            <div className={styles.buttonContainer}>
+              <button type="submit" className={styles.submitButton}>
+                Proceed To Payment Options
+              </button>
+            </div>
+            <div className={styles.container}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+                aria-label="Agree to terms and conditions"
+              />
+              <p className={styles.text}>
+                By proceeding, I agree to Uzo &apos s{' '}
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  Privacy Policy
+                </a>
+                ,{' '}
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  User Agreement
+                </a>{' '}
+                &{' '}
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  Terms of Service
+                </a>
+              </p>
+            </div>
+          </main>
+          <aside className={styles.sidebar}>
+            <PropertyHotelInfoPrice />
+            <PropertyHotelAddons />
+            <PropertyHotelBankOffers />
+          </aside>
+        </div>
       </div>
     </>
   );

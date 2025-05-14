@@ -45,25 +45,25 @@ const PropertyHotelBankOffers: React.FC = () => {
     {
       code: 'STEALDEAL',
       discount: '-₹1,315',
-      description: 'Special Deal ending at Midnight.!!',
+      description: 'Pay using Credit card and get a Flat 15% Instant Discount!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
     {
       code: 'IDBIDEAL',
       discount: '-₹1,515',
-      description: 'Special IDBI Deal ending at Midnight.!!',
+      description: 'Pay using IDBI Bank and get a Flat 20% Instant Discount!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
     {
       code: 'UCOBANK',
       discount: '-₹1,515',
-      description: 'Special UCO Bank Deal ending at Midnight.!!',
+      description: 'Pay using UCO Bank and get a Flat 10% Instant Discount!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
     {
       code: 'ICICIBANK',
       discount: '-₹1,515',
-      description: 'Special ICICI Bank Deal ending at Midnight.!!',
+      description: 'Pay using ICICI Bank and get a Flat 30% Instant Discount!',
       disclaimer: '(Not available with "Book @ ₹0")',
     },
   ]);
