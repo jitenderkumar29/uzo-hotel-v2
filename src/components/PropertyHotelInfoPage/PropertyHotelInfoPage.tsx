@@ -10,6 +10,7 @@ import PropertyHotelTripSecure from './PropertyHotelTripSecure/PropertyHotelTrip
 import PropertyHotelPaymentOptions from './PropertyHotelPaymentOptions/PropertyHotelPaymentOptions'
 import PropertyHotelAddons from './PropertyHotelAddons/PropertyHotelAddons'
 import PropertyHotelBankOffers from './PropertyHotelBankOffers/PropertyHotelBankOffers'
+import Link from 'next/link';
 
 
 // First, define a type for your room data
@@ -369,9 +370,18 @@ const PropertyHotelInfoPage = () => {
             <PropertyHotelTripSecure />
             <PropertyHotelPaymentOptions />
             <div className={styles.buttonContainer}>
-              <button type="submit" className={styles.submitButton}>
+
+              <Link href={`/paymentPage`}>
+                <button type="submit" className={styles.submitButton}>
+                  Proceed To Payment Options
+                </button>
+              </Link>
+              {/* <button type="submit" className={styles.submitButton}>
                 Proceed To Payment Options
-              </button>
+              </button> */}
+              {/* <Link href={`/propertyHotelInfoPage/?id=${1}&roomId=${1}`} className={styles.bookNowButton}>
+                Book Now
+              </Link> */}
             </div>
             <div className={styles.container}>
               <input

@@ -1,0 +1,124 @@
+.paymentContainer {
+  /* font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif; */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.walletLoginPrompt {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  /* margin: 1.25rem 0; */
+  transition: all 0.3s ease;
+}
+
+.walletLoginPrompt:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.promptContent {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 1.25rem; */
+  width: 100%;
+}
+
+.walletIcon {
+  width: 2.375rem;
+  height: 2.375rem;
+  margin-right: 1rem;
+}
+
+.promptMessage {
+  font-size: 18px;
+  color: var(--text-color-black);
+  flex: 1;
+}
+
+.promptMessage strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+.loginButton {
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: fit-content;
+  text-transform: uppercase;
+}
+
+.loginButton:hover {
+  background-color: var(--dark-orange);
+  transform: translateY(-1px);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .walletLoginPrompt {
+    padding: 1rem;
+  }
+
+  .promptContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .walletIcon {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .promptMessage {
+    font-size: 0.9375rem;
+  }
+
+  .loginButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paymentContainer {
+    padding: 0.625rem;
+  }
+
+  .promptMessage {
+    font-size: 0.875rem;
+  }
+}
+
+.paymentLayout {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  /* gap: 20px; */
+  /* padding: 1.5rem 1.25rem; */
+}
+
+.mainBody {
+  width: 70%;
+}
+
+.asideBody {
+  width: 30%;
+}
