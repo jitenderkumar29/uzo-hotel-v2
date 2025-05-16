@@ -135,7 +135,7 @@ const PaymentSummary = () => {
                     <span>₹0</span>
                   </div>
                   <div className={styles.breakdownRow}>
-                    <span><FontAwesomeIcon icon={faCheck} className={styles.checkIcon} /> EMT Offer</span>
+                    <span><FontAwesomeIcon icon={faCheck} className={styles.checkIcon} /> UZO Offer</span>
                     <span>₹{priceSummary.discount}</span>
                   </div>
                 </div>
