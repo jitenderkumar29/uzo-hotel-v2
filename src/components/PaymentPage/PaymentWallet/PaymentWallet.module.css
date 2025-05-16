@@ -1,0 +1,154 @@
+.walletContainer {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.walletHeader {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.walletOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  /* display: flex;
+  flex-direction: column;
+  gap: 12px; */
+}
+
+.walletOption {
+  position: relative;
+  padding: 08px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* .walletOption:hover {
+  background-color: var(--background);
+} */
+
+.walletLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.walletLabel:hover {
+  /* background-color: #f5f5f5; */
+}
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.hiddenInput:focus-visible + .checkmark {
+  box-shadow: 0 0 0 2px #007bff;
+  outline: none;
+}
+
+/* 
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+} */
+
+.hiddenInput:checked ~ .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.hiddenInput:checked ~ .checkmark:after {
+  display: block;
+}
+
+.walletIcon {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.walletName {
+  font-size: 14px;
+  color: #333;
+  flex-grow: 1;
+}
+
+.checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+  .walletContainer {
+    padding: 15px;
+  }
+
+  .walletHeader {
+    font-size: 15px;
+  }
+
+  .walletLabel {
+    padding: 8px 10px;
+  }
+
+  .walletIcon {
+    margin-right: 10px;
+  }
+
+  .walletName {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .walletIcon img {
+    width: 22px;
+    height: auto;
+  }
+}

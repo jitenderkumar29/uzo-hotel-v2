@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './PaymentPage.module.css';
 import HeaderTop from '../HeaderTop/HeaderTop';
 import PaymentMode from './PaymentMode/PaymentMode';
+import PaymentSummary from './PaymentSummary/PaymentSummary';
+import Image from 'next/image';
 
 const PaymentPage = () => {
   const [, setIsLoggedIn] = useState(false);
@@ -25,10 +27,12 @@ const PaymentPage = () => {
     <div className={styles.paymentContainer}>
       <div className={styles.walletLoginPrompt}>
         <div className={styles.promptContent}>
-          <img
-            src="https://flight.easemytrip.com/Content/img/walletIcon.svg"
+          <Image
+            src="/icons/walletIcon.svg"
             className={styles.walletIcon}
             alt="Wallet icon"
+            width={50}
+            height={50}
           />
           <span className={styles.promptMessage}>
             You have to login to use your <strong>wallet amount</strong>
@@ -53,7 +57,7 @@ const PaymentPage = () => {
           <PaymentMode />
         </main>
         <aside className={styles.asideBody}>
-          {/* <div>Hello Aside bar</div> */}
+          <div><PaymentSummary /></div>
         </aside>
       </div>
     </div>

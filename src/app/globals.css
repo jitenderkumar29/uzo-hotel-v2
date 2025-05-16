@@ -8,6 +8,7 @@
   --light-primary: #000000;
   --light-secondary: #777777;
   --light-accent: #162271; /* //criteo.com dar blue color */
+  --light-accent-2: #7caceb; /* //criteo.com dar blue color */
   --dark-accent: #0d0156;
   --dark-white: #ffffff;
   --dark-black: #000000;
@@ -37,7 +38,7 @@
   --light-color-red: #fde0db;
   --golden-color: #ebd19aca;
   --star-color: #fcc914e9;
-  --bg-star: #3367d1;
+  --bg-star: #040505;
   --link-color: #2274e0;
   --link-color-dark: #2274e0;
   /* --golden-color: #eacd7d90; */

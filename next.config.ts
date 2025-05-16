@@ -28,6 +28,7 @@ const nextConfig: NextConfig = {
       "d2j6dbq0eux0bg.cloudfront.net",
       "miro.medium.com",
       "e7.pngegg.com",
+      "yt3.googleusercontent.com",
     ],
   },
 };

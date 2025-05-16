@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './PaymentMode.module.css';
 import { Clock } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 interface PaymentMethod {
   id: string;
@@ -14,6 +14,11 @@ interface PaymentMethod {
   description: string;
   url: string
 }
+
+type BankOption = {
+  value: string;
+  label: string;
+};
 
 export default function PaymentMode() {
   const [activeTab, setActiveTab] = useState<string>('upi');
@@ -24,17 +29,92 @@ export default function PaymentMode() {
   const [saveCard, setSaveCard] = useState<boolean>(false);
   const [upiId, setUpiId] = useState<string>('');
   const [selectedBank, setSelectedBank] = useState<string>('');
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes
+  // const [selectedBank, setSelectedBank] = useState<string>('');
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  };
+
 
   const paymentMethods: PaymentMethod[] = [
-    { id: 'upi', name: 'UPI', icon: 'upi-icon', description: 'Make Online Payments Directly from Bank', url: "https://cdn.iconscout.com/icon/free/png-256/free-upi-logo-icon-download-in-svg-png-gif-file-formats--unified-payments-interface-payment-money-transfer-logos-icons-1747946.png?f=webp" },
-    { id: 'card', name: 'Credit/Debit/ATM Cards', icon: 'card-icon', description: 'Use VISA, Mastercard, American Express etc.', url: "https://images.goodreturns.in/img/2019/01/creditcard-23-1461389394-1547703670.jpg" },
-    { id: 'wallet', name: 'Wallets', icon: 'wallet-icon', description: 'Choose Mobikwik, Payzapp, PhonePe or Amazon', url: "https://www.idsolutionsindia.com/wp-content/uploads/2020/12/E-Purse-App-2.png" },
-    { id: 'netbanking', name: 'Net Banking', icon: 'netbanking-icon', description: 'All Major banks are supported', url: "https://cdn-icons-png.flaticon.com/512/2655/2655001.png" },
-    { id: 'emi', name: 'EMI', icon: 'emi-icon', description: 'HSBC, RBL, ICICI, Yes and others bank for EMI', url: "https://www.rrfinance.com/Blogs/images/What-is-the-EMI.png" },
-    { id: 'paylater', name: 'PayLater', icon: 'paylater-icon', description: 'Simpl, ICICI Bank Pay later and Mobikwik Zip Available', url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQZBgwQeZBPAo3d-tojI4z-K8t6xnpcSVdsg&s" },
-    { id: 'giftcard', name: 'Gift Card', icon: 'giftcard-icon', description: 'Pay with GiftCard', url: "https://d2j6dbq0eux0bg.cloudfront.net/default-store/giftcards/gift_card_003_1500px.jpg" },
-    { id: 'googlepay', name: 'Google Pay', icon: 'googlepay-icon', description: 'Pay Easily with Google Pay', url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSzaBF2M98Xp1_7uBP4sVRzl7D7L_DrNrMzQ&s" }
+    { id: 'upi', name: 'UPI', icon: 'upi-icon', description: 'Make Online Payments Directly from Bank', url: "/icons/upi.png" },
+    { id: 'card', name: 'Credit/Debit/ATM Cards', icon: 'card-icon', description: 'Use VISA, Mastercard, American Express etc.', url: "/icons/creditcard.png" },
+    { id: 'wallet', name: 'Wallets', icon: 'wallet-icon', description: 'Choose Mobikwik, Payzapp, PhonePe or Amazon', url: "/icons/E-Purse.png" },
+    { id: 'netbanking', name: 'Net Banking', icon: 'netbanking-icon', description: 'All Major banks are supported', url: "/icons/netBanking.png" },
+    { id: 'emi', name: 'EMI', icon: 'emi-icon', description: 'HSBC, RBL, ICICI, Yes and others bank for EMI', url: "/icons/emi.png" },
+    { id: 'paylater', name: 'PayLater', icon: 'paylater-icon', description: 'Simpl, ICICI Bank Pay later and Mobikwik Zip Available', url: "/icons/payLater.png" },
+    { id: 'giftcard', name: 'Gift Card', icon: 'giftcard-icon', description: 'Pay with GiftCard', url: "/icons/giftcard.png" },
+    { id: 'googlepay', name: 'Google Pay', icon: 'googlepay-icon', description: 'Pay Easily with Google Pay', url: "/icons/googlePay.png" },
+    { id: 'paytm', name: 'PayTM', icon: 'paytm-icon', description: 'Pay Easily with PayTM', url: "/icons/payTm.png" }
   ];
+
+  const bankOptions: BankOption[] = [
+    { value: 'Select Bank', label: 'Select Bank' },
+    { value: 'ybl', label: 'Yes Bank' },
+    { value: 'okhdfcbank', label: 'HDFC Bank' },
+    { value: 'ibl', label: 'IndusInd Bank' },
+    { value: 'apl', label: 'Axis Bank' },
+    { value: 'axis', label: 'Axis Bank' },
+    { value: 'icici', label: 'ICICI Bank' },
+    { value: 'hdfcbankjd', label: 'HDFC Bank' },
+    { value: 'myicici', label: 'ICICI Bank' },
+    { value: 'kotak', label: 'Kotak Mahindra Bank' },
+    { value: 'okaxis', label: 'Axis Bank' },
+    { value: 'okicici', label: 'ICICI Bank' },
+    { value: 'oksbi', label: 'State Bank of India' },
+    { value: 'sbi', label: 'State Bank of India' },
+    { value: 'ptyes', label: 'Yes Bank' },
+    { value: 'ptaxis', label: 'Axis Bank' },
+    { value: 'pthdfc', label: 'HDFC Bank' },
+    { value: 'ptsbi', label: 'State Bank of India' },
+    { value: 'yesbank', label: 'Yes Bank' },
+    { value: 'idfcbank', label: 'IDFC First Bank' },
+    { value: 'goaxb', label: 'Axis Bank' },
+    { value: 'allbank', label: 'Allahabad Bank' },
+    { value: 'aubank', label: 'AU Small Finance Bank' },
+    { value: 'axisb', label: 'Axis Bank' },
+    { value: 'axisbank', label: 'Axis Bank' },
+    { value: 'abfspay', label: 'ABFS Pay' },
+    { value: 'axl', label: 'Axis Bank' },
+    { value: 'freecharge', label: 'Freecharge' },
+    { value: 'citi', label: 'Citibank' },
+    { value: 'citigold', label: 'Citibank Gold' },
+    { value: 'indus', label: 'IndusInd Bank' },
+    { value: 'hsbc', label: 'HSBC Bank' },
+    { value: 'dbs', label: 'DBS Bank' },
+    { value: 'fbl', label: 'Federal Bank' },
+    { value: 'federal', label: 'Federal Bank' },
+    { value: 'barodapay', label: 'Bank of Baroda' },
+    { value: 'ikwik', label: 'iKwik' },
+    { value: 'pingpay', label: 'Ping Pay' },
+    { value: 'rbl', label: 'RBL Bank' },
+    { value: 'sib', label: 'South Indian Bank' },
+    { value: 'upi', label: 'UPI' },
+    { value: 'waaxis', label: 'Axis Bank' },
+    { value: 'wahdfcbank', label: 'HDFC Bank' },
+    { value: 'wasbi', label: 'State Bank of India' },
+    { value: 'airtel', label: 'Airtel Payments Bank' },
+    { value: 'pnb', label: 'Punjab National Bank' },
+    { value: 'bob', label: 'Bank of Baroda' },
+    { value: 'canara', label: 'Canara Bank' },
+    { value: 'unionbank', label: 'Union Bank of India' },
+    { value: 'bandhan', label: 'Bandhan Bank' },
+    { value: 'standardchartered', label: 'Standard Chartered' }
+  ];
+
 
   const formatCardNumber = (value: string) => {
     // Format card number with spaces after every 4 digits
@@ -63,6 +143,13 @@ export default function PaymentMode() {
     return true;
   };
 
+
+  const handleBankChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedBank(e.target.value);
+    // You can add additional logic here when the bank changes
+  };
+
+
   const makePayment = () => {
     if (validateForm()) {
       // Payment processing logic would go here
@@ -76,7 +163,11 @@ export default function PaymentMode() {
         <div className={styles['timer-message']}>
           <Clock className={styles['clock-icon']} />
           {/* <Image src="/assets/images/watch.png" alt="Timer" width={16} height={16} /> */}
-          <span>The session will expire in: <strong>03:50s</strong></span>
+          <span className={styles['session']} >The session will expire in: <strong>{timeLeft > 0 ? (
+            <p className={styles['time-left']}>{formatTime(timeLeft)}</p>
+          ) : (
+            <p className={styles['session-expired']}>Session Expired</p>
+          )}</strong></span>
         </div>
 
         <div className={styles['payment-header']}>
@@ -109,7 +200,7 @@ export default function PaymentMode() {
 
                 <div className={styles['qr-section']}>
                   <div className={styles['qr-code']}>
-                    <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Scan QR" className={styles['blurred-qr']} width={193} height={193} />
+                    <Image src="/icons/qrCode.png" alt="Scan QR" className={styles['blurred-qr']} width={193} height={193} />
                     <button className={styles['generate-qr-btn']}>Generate QR Code</button>
                   </div>
 
@@ -123,9 +214,9 @@ export default function PaymentMode() {
 
                     <h3>We accepting all UPI apps</h3>
                     <div className={styles['upi-apps']}>
-                      <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyOoxY1k_Hj78I_Vb6S9sP4qV4cL5HkRzsa_7s5_ScOF5FSnIYXSWSwDXOE3xR6KHEu0&usqp=CAU" alt="PhonePe" width={40} height={40} />
+                      <Image src="/icons/pp-nw-icon.png" alt="PhonePe" width={40} height={40} />
                       <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0NrHT4rEeertzPwN7CT7V6DSYqxNq0cWv8g&s" alt="Amazon Pay" width={40} height={40} />
-                      <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSzaBF2M98Xp1_7uBP4sVRzl7D7L_DrNrMzQ&s" alt="Google Pay" width={40} height={40} />
+                      <Image src="/icons/googlePay.png" alt="Google Pay" width={40} height={40} />
                       <span>+ more</span>
                     </div>
                   </div>
@@ -149,19 +240,21 @@ export default function PaymentMode() {
                         <div className={styles['error-message']}>Please enter valid UPI ID</div>
                       )}
                     </div>
+                    <span className={styles['upiAt']}>@</span>
                     <div className={styles['upi-bank-select']}>
                       <select
                         value={selectedBank}
-                        onChange={(e) => setSelectedBank(e.target.value)}
+                        onChange={handleBankChange}
+                        className="bank-select"
+                        aria-label="Select your bank"
                       >
-                        <option value="">Select Bank</option>
-                        <option value="ybl">ybl</option>
-                        <option value="okhdfcbank">okhdfcbank</option>
-                        <option value="axis">axis</option>
-                        <option value="icici">icici</option>
-                        <option value="sbi">sbi</option>
-                        <option value="paytm">paytm</option>
+                        {bankOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.value}
+                          </option>
+                        ))}
                       </select>
+                      <FontAwesomeIcon icon={faChevronDown} className={styles['select-chevron']} />
                     </div>
                     <button className={styles['verify-btn']}>Verify & Pay</button>
                   </div>
@@ -256,6 +349,8 @@ export default function PaymentMode() {
             )}
 
             {/* Other payment methods would go here */}
+
+            {/* {activeTab === 'wallet' && (<PaymentWallet />)} */}
 
             <div className={styles['total-section']}>
               <div className={styles['total-amount']}>
