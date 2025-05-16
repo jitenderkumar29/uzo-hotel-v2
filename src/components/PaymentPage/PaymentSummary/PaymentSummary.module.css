@@ -102,8 +102,10 @@
 
 .roomType {
   font-weight: 500;
-  color: var(--light-orange);
-  border: 1px solid var(--light-orange);
+  color: var(--green-text);
+  border: 1px solid var(--green-text);
+  /* color: var(--light-orange);
+  border: 1px solid var(--light-orange); */
   border-radius: 50px;
   width: fit-content;
   padding: 0px 10px;

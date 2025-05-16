@@ -12,7 +12,7 @@ const PaymentSummary = () => {
     checkIn: { day: '29', month: 'Jun', year: '2025' },
     checkOut: { day: '30', month: 'Jun', year: '2025' },
     roomType: 'Deluxe King Or Twin Bed Room',
-    breakfast: 'Breakfast not included',
+    breakfast: 'Breakfast included',
     guests: '1 Room | 2 Adults'
   };
 
@@ -75,7 +75,7 @@ const PaymentSummary = () => {
           <div className={styles.guestInfo}>{hotel.guests}</div>
           <div className={styles.roomType}>{hotel.roomType}</div>
           {/* <div className={styles.divider}></div> */}
-          <div className={styles.breakfastInfo}>{hotel.breakfast}</div>
+          <div className={styles.roomType}>{hotel.breakfast}</div>
           <div className={styles.breakfastInfo}>Lunch not included</div>
           <div className={styles.breakfastInfo}>Cabs not included</div>
         </div>
