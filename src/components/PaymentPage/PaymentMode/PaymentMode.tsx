@@ -6,6 +6,8 @@ import styles from './PaymentMode.module.css';
 import { Clock } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faPlay } from '@fortawesome/free-solid-svg-icons';
+import PaymentWallet from '../PaymentWallet/PaymentWallet';
+// import PaymentNetBanking from '../PaymentNetBanking/PaymentNetBanking';
 
 interface PaymentMethod {
   id: string;
@@ -350,7 +352,8 @@ export default function PaymentMode() {
 
             {/* Other payment methods would go here */}
 
-            {/* {activeTab === 'wallet' && (<PaymentWallet />)} */}
+            {activeTab === 'wallet' && (<PaymentWallet />)}
+            {/* {activeTab === 'netbanking' && (<PaymentNetBanking />)} */}
 
             <div className={styles['total-section']}>
               <div className={styles['total-amount']}>

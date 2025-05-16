@@ -1,0 +1,179 @@
+.paymentNetBanking {
+  font-family: "Arial", sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.bankSelectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.otherBanksToggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0066cc;
+  border-bottom: none;
+  padding: 10px 0;
+}
+
+/* .otherBanksToggle:hover {
+  text-decoration: underline;
+} */
+
+.toggleIcon {
+  font-size: 12px;
+}
+
+.bankOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.bankOption {
+  position: relative;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radioInput:checked ~ .bankLabel {
+  border-color: #0066cc;
+  background-color: #f0f7ff;
+}
+
+.radioInput:checked ~ .bankLabel .checkmark {
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+
+.radioInput:checked ~ .bankLabel .checkmark:after {
+  display: block;
+}
+
+.bankLabel {
+  display: flex;
+  align-items: center;
+  padding: 12px 0px 12px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bankLabel:hover {
+  border-color: #aaa;
+}
+
+.bankLogo {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.bankLogo img {
+  height: 25px;
+  object-fit: contain;
+}
+
+.bankName {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-left: -5px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.otherBanks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bankDropdown {
+  margin-top: -10px;
+}
+
+.bankSelect {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+.bankSelect:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .paymentNetBanking {
+    padding: 15px;
+  }
+
+  .bankOptions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .bankLabel {
+    padding: 10px 12px;
+  }
+
+  .bankName {
+    font-size: 13px;
+  }
+}

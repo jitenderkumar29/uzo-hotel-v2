@@ -8,7 +8,7 @@ const PaymentSummary = () => {
 
   const hotel = {
     name: 'Pride Plaza Hotel Aerocity New Delhi',
-    address: 'Aerocity | 4 km drive to Indira Gandhi International Airport',
+    address: 'Site 627, Aecs Layout, Aerocity | 4 km drive to Indira Gandhi International Airport, 201002',
     checkIn: { day: '29', month: 'Jun', year: '2025' },
     checkOut: { day: '30', month: 'Jun', year: '2025' },
     roomType: 'Deluxe King Or Twin Bed Room',
@@ -76,6 +76,8 @@ const PaymentSummary = () => {
           <div className={styles.roomType}>{hotel.roomType}</div>
           {/* <div className={styles.divider}></div> */}
           <div className={styles.breakfastInfo}>{hotel.breakfast}</div>
+          <div className={styles.breakfastInfo}>Lunch not included</div>
+          <div className={styles.breakfastInfo}>Cabs not included</div>
         </div>
 
         <div className={styles.divider}></div>
@@ -157,6 +159,16 @@ const PaymentSummary = () => {
         <div className={`${styles.priceRow} ${styles.grandTotal}`}>
           <span className={styles.priceLabel}>Grand Total</span>
           <span className={styles.priceValue}>{formatCurrency(priceSummary.grandTotal)}</span>
+        </div>
+      </div>
+      {/* total pay amount */}
+      <div className={`${styles.summaryCard} ${styles.priceSummary}`}>
+        {/* <div className={styles.summaryHeader}>
+          <h2>Price Summary</h2>
+        </div> */}
+        <div className={styles.priceTotal}>
+          <span className={styles.priceTotalLabel}>Total Bill Pay</span>
+          <span className={styles.priceTotalValue}>{formatCurrency(priceSummary.baseFare)}</span>
         </div>
       </div>
     </div>
