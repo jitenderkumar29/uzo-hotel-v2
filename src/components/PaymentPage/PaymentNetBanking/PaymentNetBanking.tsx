@@ -15,7 +15,7 @@ interface BankSelect {
 
 export default function PaymentNetBanking() {
   const [selectedBank, setSelectedBank] = useState<string>('');
-  const [showOtherBanks, setShowOtherBanks] = useState<boolean>(false);
+  // const [showOtherBanks, setShowOtherBanks] = useState<boolean>(false);
 
   const popularBanks: Bank[] = [
     { id: 'rdoSBIB', name: 'State Bank of India', logo: '/icons/SBIB.png', code: 'SBIB|Payu' },
