@@ -76,8 +76,9 @@ const PaymentSummary = () => {
           <div className={styles.roomType}>{hotel.roomType}</div>
           {/* <div className={styles.divider}></div> */}
           <div className={styles.roomType}>{hotel.breakfast}</div>
-          <div className={styles.breakfastInfo}>Lunch not included</div>
-          <div className={styles.breakfastInfo}>Cabs not included</div>
+          {/* <div className={styles.breakfastInfo}>Lunch nssssot included</div> */}
+          <div className={styles.roomType}>Cabs not included</div>
+          {/* <div className={styles.breakfastInfo}>Cabs not included</div> */}
         </div>
 
         <div className={styles.divider}></div>
@@ -167,7 +168,7 @@ const PaymentSummary = () => {
           <h2>Price Summary</h2>
         </div> */}
         <div className={styles.priceTotal}>
-          <span className={styles.priceTotalLabel}>Total Bill Pay</span>
+          <span className={styles.priceTotalLabel}>Total Payment</span>
           <span className={styles.priceTotalValue}>{formatCurrency(priceSummary.baseFare)}</span>
         </div>
       </div>
