@@ -1,0 +1,219 @@
+.container {
+  font-family: "Roboto", sans-serif;
+  /* max-width: 500px; */
+  margin: 0 auto;
+  /* padding: 20px; */
+  color: var(--text-color-black);
+}
+
+.paymentBox {
+  background: var(--dark-white);
+  border-radius: 8px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px; */
+}
+
+.providersSection {
+  display: flex;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.providerButton {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: #f5f5f5;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.providerButton:hover {
+  background: #e0e0e0;
+}
+
+.providerButton.active {
+  background: var(--link-color);
+  color: var(--dark-white);
+  border-color: var(--link-color);
+}
+
+.providerLogo {
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+}
+
+.eligibilitySection {
+  margin-bottom: 24px;
+}
+
+.eligibilityHeader {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: var(--text-color-black);
+}
+
+.mobileInputContainer {
+  margin-bottom: 16px;
+}
+
+.mobileInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.mobileInput:focus {
+  outline: none;
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.errorMessage {
+  color: var(--text-color-red);
+  font-size: 14px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  background: var(--light-orange);
+  color: var(--dark-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitButton:hover {
+  background: var(--dark-orange);
+}
+
+.submitButton:disabled {
+  background: var(--dark-orange);
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--dark-white);
+  animation: spin 1s ease-in-out infinite;
+}
+
+.benefitsHeader {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--text-color-black);
+  /* padding-top: 16px; */
+  /* border-top: 1px solid var(--border-color); */
+}
+
+.benefitsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  list-style: none;
+  /* padding: 0; */
+  margin: 0;
+  padding: 10px 10px 0px 10px;
+  background-color: var(--background);
+  border-radius: 8px;
+  /* list-style: none;
+  padding: 0;
+  margin: 0; */
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  /* margin-bottom: 16px; */
+  padding-bottom: 16px;
+  /* border-bottom: 1px solid var(--border-color); */
+}
+
+.benefitItem:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.benefitIcon {
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+.benefitIcon img {
+  width: 100%;
+  height: auto;
+} */
+
+.benefitListIcon {
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+}
+
+.benefitText {
+  flex: 1;
+}
+
+.benefitTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-color-black);
+}
+
+.benefitDescription {
+  font-size: 12px;
+  color: var(--text-color-black);
+  line-height: 1.4;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .paymentBox {
+    padding: 16px;
+  }
+
+  .providersSection {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

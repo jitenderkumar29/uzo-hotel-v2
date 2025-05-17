@@ -7,7 +7,10 @@ import { Clock } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faPlay } from '@fortawesome/free-solid-svg-icons';
 import PaymentWallet from '../PaymentWallet/PaymentWallet';
-// import PaymentNetBanking from '../PaymentNetBanking/PaymentNetBanking';
+import PaymentNetBanking from '../PaymentNetBanking/PaymentNetBanking';
+import PaymentEmi from '../PaymentEmi/PaymentEmi';
+import PaymentPayLater from '../PaymentPayLater/PaymentPayLater';
+import PaymentGiftCard from '../PaymentGiftCard/PaymentGiftCard';
 
 interface PaymentMethod {
   id: string;
@@ -353,7 +356,12 @@ export default function PaymentMode() {
             {/* Other payment methods would go here */}
 
             {activeTab === 'wallet' && (<PaymentWallet />)}
-            {/* {activeTab === 'netbanking' && (<PaymentNetBanking />)} */}
+            {activeTab === 'netbanking' && (<PaymentNetBanking />)}
+            {activeTab === 'emi' && (<PaymentEmi />)}
+            {activeTab === 'paylater' && (<PaymentPayLater />)}
+            {activeTab === 'giftcard' && (<PaymentGiftCard />)}
+            {/* {activeTab === 'googlepay' && (<PaymentGooglePay />)}
+            {activeTab === 'paytm' && (<PaymentPayTm />)} */}
 
             <div className={styles['total-section']}>
               <div className={styles['total-amount']}>
@@ -381,6 +389,7 @@ export default function PaymentMode() {
                 <a href="#">Terms & Conditions</a> of UZO Hotels
               </span>
             </div>
+
           </div>
         </div>
       </div>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.391" height="19.186" viewBox="0 0 28.391 19.186">
+  <g id="shopping" transform="translate(-15.9 -33.9)">
+    <rect id="Rectangle_27" data-name="Rectangle 27" width="28.191" height="18.794" rx="2" transform="translate(16 34)" fill="#eee9de" opacity="0.01"/>
+    <g id="Group_26" data-name="Group 26" transform="translate(16 34)">
+      <path id="Path_5" data-name="Path 5" d="M44.143,39.952,24.9,39.933V34H23.12v5.933H16v1.78h7.12V52.986H24.9V41.713l19.243.019Z" transform="translate(-16 -34)" fill="#ccbc9d" stroke="#000" stroke-miterlimit="10" stroke-width="0.2"/>
+      <path id="Path_6" data-name="Path 6" d="M31.9,47.258a2.681,2.681,0,1,0-2.125-4.649,2.68,2.68,0,1,0-2.125,4.649l-3.454,3.454,1.258,1.258,4.321-4.321,4.386,4.386,1.258-1.258ZM31.563,43.7a.9.9,0,1,1,0,1.8h-.9v-.9A.9.9,0,0,1,31.563,43.7Zm-4.487.9a.9.9,0,1,1,1.8,0v.9h-.9A.9.9,0,0,1,27.077,44.6Z" transform="translate(-21.761 -39.568)" fill="#bb6174" stroke="#231f20" stroke-miterlimit="10" stroke-width="0.2"/>
+      <rect id="Rectangle_28" data-name="Rectangle 28" width="28.191" height="18.794" rx="2" fill="none" stroke="#231f20" stroke-miterlimit="10" stroke-width="0.2"/>
+    </g>
+  </g>
+</svg>
