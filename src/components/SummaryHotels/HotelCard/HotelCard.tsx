@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Image, { StaticImageData } from "next/image";
 import discountLogo from "@/assets/icons/discountLogo.svg";
+import offerBanner from "@/assets/images/offerBanner.jpg";
 import Link from "next/link";
 import { hotelData } from "@/app/data/hotelData"; // Adjust the import path as necessary
 import { RatingCardPropsInterFace } from "@/interfaces";
@@ -35,7 +36,8 @@ const HotelCard: React.FC = () => {
   // const [isOpen, setIsOpen] = useState(false);
   // const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const hotelCard1: string | StaticImageData = "https://cdn.sanity.io/images/ocl5w36p/prod3/610a3f0fbe68aed8da441b0c8b4597e486990625-5464x2049.jpg?w=1280&auto=format&dpr=2"
+  const hotelCard1: string | StaticImageData = offerBanner;
+  // const hotelCard1: string | StaticImageData = "https://cdn.sanity.io/images/ocl5w36p/prod3/610a3f0fbe68aed8da441b0c8b4597e486990625-5464x2049.jpg?w=1280&auto=format&dpr=2"
 
 
   // rating Card
@@ -164,10 +166,12 @@ const HotelCard: React.FC = () => {
       </div> */}
       <div className={styles.hotelCardBody}>
         <div className={styles.cardImageTop}>
-          <img
+          <Image
             src={hotelCard1}
             alt="Hotel card image"
             className={styles.hotelImage}
+            width={2048}
+            height={768}
           />
           <div className={styles.overlayText}>
             <div>
