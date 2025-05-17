@@ -132,6 +132,16 @@
 
 /* Booking dropdown */
 .bookingDropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
   /* position: absolute;
   top: 100%;
   left: 0;
@@ -149,7 +159,7 @@
   /* background-color: rgba(0, 0, 0, 0.6); Optional: dark background */
   /* display: flex; */
 
-  position: absolute;
+  /* position: absolute;
   top: 80px;
   left: 0px;
   background-color: white;
@@ -157,13 +167,13 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10000; /* Ensures the header stays above other content */
+  z-index: 10000; */
 }
 
 .containerBooklist {
   display: flex;
   margin: 0 auto;
-  padding: 0 0;
+  padding: 0;
   /* justify-content: space-between; */
   /* justify-content: space-evenly; */
 }
@@ -173,9 +183,9 @@
   background: var(--dark-white);
   padding: 0.75rem 5rem;
   color: var(--dark-accent);
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
   text-align: left;
-  margin-left: -50px;
+  /* margin-left: -50px; */
 }
 
 .sideBarHeading {
