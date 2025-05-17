@@ -220,8 +220,11 @@
 
 .offersBooklist {
   display: flex;
-  gap: 6rem;
-  padding: 1.5rem 5.25rem;
+  padding: 1.5rem 1.25rem;
+  /* display: flex; */
+  justify-content: space-evenly;
+  /* gap: 6rem;
+  padding: 1.5rem 5.25rem; */
   /* flex-wrap: wrap; */
 }
 
@@ -377,5 +380,126 @@
 @media (min-width: 992px) {
   .navLinks li {
     margin: 0 5px;
+  }
+}
+
+/* Responsive adjustments */
+
+/* Small mobile devices (portrait) */
+@media (max-width: 480px) {
+  .header {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logoImage {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bookingDropdown {
+    top: 70px;
+    max-height: calc(100vh - 70px);
+  }
+
+  .navListParent {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .offersBooklist {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Tablets and larger phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  .navListParent {
+    gap: 1.5rem;
+  }
+
+  .offersBooklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .menuToggle {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .containerBooklist {
+    flex-direction: row;
+  }
+
+  .sidebarBooklist {
+    width: 35%;
+    padding: 1rem 1.5rem;
+  }
+
+  .offersBooklist {
+    width: 65%;
+    padding: 1rem;
+  }
+
+  .navLinks li {
+    margin: 0 5px;
+  }
+}
+
+/* Laptops and desktops */
+@media (min-width: 992px) {
+  .containerBooklist {
+    flex-direction: row;
+  }
+
+  .sidebarBooklist {
+    width: 30%;
+    padding: 1.5rem 2rem;
+  }
+
+  .offersBooklist {
+    width: 70%;
+    padding: 1.5rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .navListParent {
+    gap: 2rem;
+  }
+
+  .navLinks li {
+    margin: 0 8px;
+  }
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  .sidebarBooklist {
+    padding: 1.5rem 3rem;
+  }
+
+  .offersBooklist {
+    padding: 1.5rem 3rem;
+  }
+
+  .navLinks li {
+    margin: 0 10px;
+  }
+
+  .navListBooklist li {
+    font-size: 1.1rem;
   }
 }
