@@ -23,14 +23,12 @@ const HotelSearchBar: React.FC = () => {
     roomCount,
     guestCount,
     childCount,
-    infantCount,
     setDestination,
     setCheckIn,
     setCheckOut,
     setRoomCount,
     setGuestCount,
     setChildCount,
-    setInfantCount,
     submitSearch
   } = useHotelSearch();
 
@@ -325,7 +323,7 @@ const HotelSearchBar: React.FC = () => {
 
                 <div className={styles.counter}>
                   <span>Child
-                    <br /> <p className={styles.counterPara}>2-12 Years</p>
+                    <br /> <p className={styles.counterPara}>0-12 Years</p>
                   </span>
 
                   <div className={styles.counterControls}>
@@ -346,7 +344,8 @@ const HotelSearchBar: React.FC = () => {
                     </button>
                   </div>
                 </div>
-                <div className={styles.counter}>
+
+                {/* <div className={styles.counter}>
                   <span>Infant
                     <br /> <p className={styles.counterPara}>0-2 Years</p>
                   </span>
@@ -368,7 +367,7 @@ const HotelSearchBar: React.FC = () => {
                       <FontAwesomeIcon icon={faPlus} />
                     </button>
                   </div>
-                </div>
+                </div> */}
 
                 <div className={styles.counter}>
                   <button
