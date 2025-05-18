@@ -23,12 +23,14 @@ const HotelSearchBar: React.FC = () => {
     roomCount,
     guestCount,
     childCount,
+    infantCount,
     setDestination,
     setCheckIn,
     setCheckOut,
     setRoomCount,
     setGuestCount,
     setChildCount,
+    setInfantCount,
     submitSearch
   } = useHotelSearch();
 
@@ -86,6 +88,7 @@ const HotelSearchBar: React.FC = () => {
   // const [checkIn, setCheckIn] = useState<Date>(new Date());
   // const [checkOut, setCheckOut] = useState<Date>(new Date());
   // const [destination, setDestination] = useState("");
+  // const [infantCount, setInfantCount] = useState(0);
 
   // Popper Modifier for Date picker
   const popperModifiers = [
@@ -298,7 +301,9 @@ const HotelSearchBar: React.FC = () => {
                 </div>
 
                 <div className={styles.counter}>
-                  <span>Guests</span>
+                  <span>Adults
+                    <br /> <p className={styles.counterPara}>Above 12 Years</p>
+                  </span>
                   <div className={styles.counterControls}>
                     <button
                       type="button"
@@ -317,8 +322,12 @@ const HotelSearchBar: React.FC = () => {
                     </button>
                   </div>
                 </div>
+
                 <div className={styles.counter}>
-                  <span>Child</span>
+                  <span>Child
+                    <br /> <p className={styles.counterPara}>2-12 Years</p>
+                  </span>
+
                   <div className={styles.counterControls}>
                     <button
                       type="button"
@@ -337,6 +346,30 @@ const HotelSearchBar: React.FC = () => {
                     </button>
                   </div>
                 </div>
+                <div className={styles.counter}>
+                  <span>Infant
+                    <br /> <p className={styles.counterPara}>0-2 Years</p>
+                  </span>
+
+                  <div className={styles.counterControls}>
+                    <button
+                      type="button"
+                      onClick={() => setInfantCount(Math.max(0, infantCount - 1))}
+                      aria-label="Decrease Infant count"
+                    >
+                      <FontAwesomeIcon icon={faMinus} />
+                    </button>
+                    <span>{infantCount}</span>
+                    <button
+                      type="button"
+                      onClick={() => setInfantCount(infantCount + 1)}
+                      aria-label="Increase infant count"
+                    >
+                      <FontAwesomeIcon icon={faPlus} />
+                    </button>
+                  </div>
+                </div>
+
                 <div className={styles.counter}>
                   <button
                     type="button"

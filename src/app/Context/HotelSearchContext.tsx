@@ -10,6 +10,7 @@ type HotelSearchState = {
   roomCount: number;
   guestCount: number;
   childCount: number;
+  infantCount: number;
   filters: string[];
 };
 
@@ -20,6 +21,7 @@ type HotelSearchContextType = HotelSearchState & {
   setRoomCount: (count: number) => void;
   setGuestCount: (count: number) => void;
   setChildCount: (count: number) => void;
+  setInfantCount: (count: number) => void;
   setFilters: (filters: string[]) => void;
   submitSearch: (searchData: Partial<HotelSearchState>) => void;
 };
@@ -37,6 +39,7 @@ export function HotelSearchProvider({ children }: { children: ReactNode }) {
     roomCount: 1,
     guestCount: 1,
     childCount: 0,
+    infantCount: 0,
     filters: []
   };
 
@@ -92,6 +95,7 @@ export function HotelSearchProvider({ children }: { children: ReactNode }) {
     setRoomCount: (roomCount) => setSearchState(prev => ({ ...prev, roomCount })),
     setGuestCount: (guestCount) => setSearchState(prev => ({ ...prev, guestCount })),
     setChildCount: (childCount) => setSearchState(prev => ({ ...prev, childCount })),
+    setInfantCount: (infantCount) => setSearchState(prev => ({ ...prev, infantCount })),
     setFilters: (filters) => setSearchState(prev => ({ ...prev, filters })),
     submitSearch
   };
