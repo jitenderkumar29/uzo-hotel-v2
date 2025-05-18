@@ -18,6 +18,7 @@ import VideoCard from '@/components/VideoCard/VideoCard';
 import PrepareToTravelWrapper from '@/components/PrepareToTravel/PrepareToTravelWrapper';
 import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
+import ImagePagination from '@/components/ImagePagination/ImagePagination';
 
 const HomePage = () => {
   // const [scrollKey, setScrollKey] = useState(0);
@@ -46,7 +47,7 @@ const HomePage = () => {
         <HeaderTop />
         <Hero />
         <AddOnsImageSlide />
-        {/* <ImagePagination /> */}
+        <ImagePagination />
         {/* 👇 Force re-render on scroll */}
         {/* <PrepareToTravel key={scrollKey} /> */}
         <PrepareToTravelWrapper />

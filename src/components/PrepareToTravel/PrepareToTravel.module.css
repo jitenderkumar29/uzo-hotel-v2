@@ -24,6 +24,10 @@
   margin: 0 auto;
 }
 
+.prepareContent {
+  padding-left: 2rem !important;
+}
+
 .prepareContent h2 {
   font-size: 2rem;
   color: #460045;
