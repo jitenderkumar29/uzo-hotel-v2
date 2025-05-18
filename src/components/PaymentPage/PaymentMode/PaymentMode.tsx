@@ -11,6 +11,8 @@ import PaymentNetBanking from '../PaymentNetBanking/PaymentNetBanking';
 import PaymentEmi from '../PaymentEmi/PaymentEmi';
 import PaymentPayLater from '../PaymentPayLater/PaymentPayLater';
 import PaymentGiftCard from '../PaymentGiftCard/PaymentGiftCard';
+import PaymentGooglePay from '../PaymentGooglePay/PaymentGooglePay';
+import PaymentPayTm from '../PaymentPayTm/PaymentPayTm';
 
 interface PaymentMethod {
   id: string;
@@ -360,8 +362,8 @@ export default function PaymentMode() {
             {activeTab === 'emi' && (<PaymentEmi />)}
             {activeTab === 'paylater' && (<PaymentPayLater />)}
             {activeTab === 'giftcard' && (<PaymentGiftCard />)}
-            {/* {activeTab === 'googlepay' && (<PaymentGooglePay />)}
-            {activeTab === 'paytm' && (<PaymentPayTm />)} */}
+            {activeTab === 'googlepay' && (<PaymentGooglePay />)}
+            {activeTab === 'paytm' && (<PaymentPayTm />)}
 
             <div className={styles['total-section']}>
               <div className={styles['total-amount']}>
