@@ -54,9 +54,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center; /* Center text inside elements */
+  /* align-items: center; Center horizontally */
+  /* text-align: center; Center text inside elements */
   height: 100%;
+  padding-left: 10rem;
 }
 
 .slideTitle {
@@ -70,6 +71,7 @@
   font-size: 29px;
   margin-bottom: 0;
   color: white;
+  width: 500px;
 }
 
 /* Navigation arrows */

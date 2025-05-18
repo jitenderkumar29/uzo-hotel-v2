@@ -47,11 +47,11 @@ const HomePage = () => {
         <HeaderTop />
         <Hero />
         <AddOnsImageSlide />
-        <ImagePagination />
         {/* 👇 Force re-render on scroll */}
         {/* <PrepareToTravel key={scrollKey} /> */}
         <PrepareToTravelWrapper />
         <HeroGallery />
+        <ImagePagination />
         <AddOns2 />
         <PopularDestination />
         <InternationalDestination />
