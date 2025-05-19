@@ -3,11 +3,22 @@
   max-width: 1300px;
   margin: 0 auto;
   font-family: "Segoe UI", sans-serif;
+  position: relative; /* Added this */
+}
+
+.headContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonContainer {
+  display: flex;
 }
 
 .title {
   font-size: 28px;
-  color: #333;
+  color: var(--text-color-black);
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -77,7 +88,7 @@
   left: 0;
   padding: 1.25rem;
   width: 100%;
-  color: white;
+  color: var(--dark-white);
   z-index: 1;
 }
 
@@ -96,14 +107,15 @@
 .properties {
   font-size: 1rem;
   font-weight: 600;
-  color: #f0f0f0;
+  color: var(--dark-white);
 }
 
-.navButton {
+.navButtonLeft {
   position: absolute;
-  top: 50%;
+  top: 45px;
+  right: 70px;
   transform: translateY(-50%);
-  background: white;
+  background: var(--dark-white);
   border: none;
   width: 2.5rem;
   height: 2.5rem;
@@ -117,9 +129,33 @@
   transition: background 0.3s;
 }
 
+.navButton {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  transform: translateY(-50%);
+  background: var(--dark-white);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.navButtonLeft:hover {
+  background: var(--dark-accent);
+  color: var(--dark-white);
+}
+
 .navButton:hover {
-  background: #e63946;
-  color: white;
+  background: var(--dark-accent);
+  color: var(--dark-white);
 }
 
 .left {

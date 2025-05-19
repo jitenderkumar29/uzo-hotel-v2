@@ -2,6 +2,8 @@
 .containerBody {
   width: 100%;
   background-color: var(--dark-white);
+  /* font-family: Inter, Cinzel, sans-serif; */
+  font-family: "Cinzel", "Palatino Linotype", "sans-serif";
 }
 
 .container {
@@ -14,20 +16,30 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+
   text-align: center;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
+}
+
+.headerDescription {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .divider {
   border: none;
   height: 1px;
-  background-color: #e0e0e0;
+  background-color: var(--border-color);
   margin: 1rem auto;
-  width: 92%;
+  width: 12%;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 50px;
   font-weight: 500;
   color: #333;
   margin: 1rem 0;
@@ -64,7 +76,7 @@
 .card {
   width: calc(100% / 3.11);
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
   overflow: hidden;
   background: white;

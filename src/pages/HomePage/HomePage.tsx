@@ -18,6 +18,7 @@ import VideoCard from '@/components/VideoCard/VideoCard';
 import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import ImagePagination from '@/components/ImagePagination/ImagePagination';
+import ImagePaginationTwo from '@/components/ImagePaginationTwo/ImagePaginationTwo';
 
 const HomePage = () => {
   // const [scrollKey, setScrollKey] = useState(0);
@@ -52,7 +53,7 @@ const HomePage = () => {
         <HeroGallery />
         <ImagePagination />
         <AddOns2 />
-        {/* <ImagePaginationTwo /> */}
+        <ImagePaginationTwo />
         <PopularDestination />
         <InternationalDestination />
         <SpritualDestination />

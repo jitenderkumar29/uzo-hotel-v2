@@ -1,5 +1,4 @@
-// components/ImageCarousel/ImageCarousel.tsx
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './ImagePagination.module.css';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,11 +17,7 @@ interface SlideProps {
 const ImagePagination: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
-  const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const slideContainerRef = useRef<HTMLDivElement | null>(null);
-  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides: SlideProps[] = [
     {
@@ -41,9 +36,10 @@ const ImagePagination: React.FC = () => {
       title3: "CHECK OUT WITH",
       title4: "REWARDS",
       description: "Unlock exclusive rates & room upgrades",
-      description2: "with our Infinity Rewards Program",
+      description2: "",
+      // description2: "with our Infinity Rewards Program",
       image: "/images/imagePagination2.jpg",
-      alt: "Poolside family - The Ritz-Carlton"
+      alt: "Poolside family"
     },
     {
       title: "RESERVE FOR A",
@@ -51,7 +47,8 @@ const ImagePagination: React.FC = () => {
       title3: "GET EXCLUSIVE",
       title4: "DISCOUNTS ON MEALS",
       description: "With Infinity Rewards your points go",
-      description2: "beyond stays, Join us to dine, relax, and indulge",
+      description2: "",
+      // description2: "beyond stays, Join us to dine, relax, and indulge",
       image: "/images/imagePagination3.jpg",
       alt: "Beachfront dining"
     },
@@ -61,7 +58,8 @@ const ImagePagination: React.FC = () => {
       title3: "",
       title4: "",
       description: "Find sparkling pools, kid-friendly activities ",
-      description2: "and serene spas in Phoenix.",
+      description2: "",
+      // description2: "and serene spas in Phoenix.",
       image: "/images/imagePagination4.jpg",
       alt: "Pool Resort in Scottsdale AZ"
     },
@@ -71,7 +69,8 @@ const ImagePagination: React.FC = () => {
       title3: "",
       title4: "",
       description: "Explore all-inclusive resorts made for ",
-      description2: "family vacations and spa retreats.",
+      description2: "",
+      // description2: "family vacations and spa retreats.",
       image: "/images/imagePagination5.jpg",
       alt: "Spa massage tables"
     },
@@ -87,301 +86,177 @@ const ImagePagination: React.FC = () => {
     },
   ];
 
-  // Animation variants
-  const textVariants = {
-    hidden: (custom: { direction: string }) => ({
-      opacity: 0,
-      x: custom.direction === 'left' ? -80 : 80,
-      y: 20,
-      scale: 0.95,
-    }),
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 1.5 },
     visible: {
       opacity: 1,
-      x: 0,
-      y: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 70,
-        damping: 15,
-        duration: 1,
-        delay: 0.5,
-      },
-    },
-    exit: (custom: { direction: string }) => ({
-      opacity: 0,
-      x: custom.direction === 'left' ? 80 : -80,
-      y: -20,
-      scale: 0.95,
-      transition: {
-        type: "tween",
-        ease: "easeInOut",
-        duration: 0.6,
-      },
-    }),
-  };
-
-  // const textVariants = {
-  //   hidden: (custom: { direction: string }) => ({
-  //     opacity: 0,
-  //     x: custom.direction === 'left' ? -50 : 50,
-  //   }),
-  //   visible: {
-  //     opacity: 1,
-  //     x: 0,
-  //     transition: {
-  //       duration: 0.8,
-  //       ease: "easeOut"
-  //     }
-  //   },
-  //   exit: (custom: { direction: string }) => ({
-  //     opacity: 0,
-  //     x: custom.direction === 'left' ? 50 : -50,
-  //     transition: {
-  //       duration: 0.5
-  //     }
-  //   })
-  // };
-
-  const descriptionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2 + 0.3,
-        duration: 0.6
+        duration: 0.8,
+        ease: "easeOut"
       }
-    })
+    },
+    exit: {
+      opacity: 0,
+      scale: 1.1, // zoom-in while fading out
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut"
+      }
+    }
   };
 
-  // Clone first and last slides for seamless infinite scrolling
-  const extendedSlides = [
-    slides[slides.length - 1],
-    ...slides,
-    slides[0]
-  ];
-
-  const totalSlides = extendedSlides.length;
-  const realSlideCount = slides.length;
-
-  const updateSlidePosition = useCallback((index: number, withTransition: boolean = true) => {
-    if (slideContainerRef.current) {
-      setIsTransitioning(withTransition);
-      slideContainerRef.current.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
-      slideContainerRef.current.style.transform = `translateX(-${index * 100}%)`;
-    }
-  }, []);
-
-  const handleTransitionEnd = useCallback(() => {
-    setIsTransitioning(false);
-
-    // If we're at the cloned first slide (index 0), jump to the real last slide
-    if (activeSlide === 0) {
-      updateSlidePosition(realSlideCount, false);
-      setActiveSlide(realSlideCount);
-    }
-    // If we're at the cloned last slide (index totalSlides - 1), jump to the real first slide
-    else if (activeSlide === totalSlides - 1) {
-      updateSlidePosition(1, false);
-      setActiveSlide(1);
-    }
-  }, [activeSlide, realSlideCount, totalSlides, updateSlidePosition]);
-
-  const goToSlide = (index: number): void => {
-    const adjustedIndex = index + 1;
-    setDirection(index > getRealSlideIndex(activeSlide) ? 'right' : 'left');
-    setActiveSlide(adjustedIndex);
-    updateSlidePosition(adjustedIndex);
+  const goToSlide = (index: number) => {
+    setActiveSlide(index);
     resetAutoplay();
   };
 
-  const nextSlide = useCallback((): void => {
-    setDirection('right');
-    setActiveSlide(prev => {
-      const nextIndex = (prev + 1) % totalSlides;
-      updateSlidePosition(nextIndex);
-      return nextIndex;
-    });
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % slides.length);
     resetAutoplay();
-  }, [totalSlides, updateSlidePosition]);
+  };
 
-  // const prevSlide = useCallback((): void => {
-  //   setDirection('left');
-  //   setActiveSlide(prev => {
-  //     const prevIndex = (prev - 1 + totalSlides) % totalSlides;
-  //     updateSlidePosition(prevIndex);
-  //     return prevIndex;
-  //   });
-  //   resetAutoplay();
-  // }, [totalSlides, updateSlidePosition]);
-
-  const togglePlayPause = (): void => {
+  const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const resetAutoplay = (): void => {
-    if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
+  const resetAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
     }
     if (isPlaying) {
-      autoplayTimerRef.current = setInterval(nextSlide, 5000);
+      autoplayRef.current = setInterval(nextSlide, 5000);
     }
   };
 
   useEffect(() => {
-    // Initialize the carousel position to the first real slide (index 1)
-    updateSlidePosition(1, false);
-  }, [updateSlidePosition]);
-
-  useEffect(() => {
-    // Setup autoplay timer
     if (isPlaying) {
-      autoplayTimerRef.current = setInterval(nextSlide, 0);
-      // autoplayTimerRef.current = setInterval(nextSlide, 5000);
-    } else if (autoplayTimerRef.current) {
-      clearInterval(autoplayTimerRef.current);
+      autoplayRef.current = setInterval(nextSlide, 5000);
     }
-
     return () => {
-      if (autoplayTimerRef.current) {
-        clearInterval(autoplayTimerRef.current);
-      }
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
-  }, [isPlaying, nextSlide]);
+  }, [isPlaying]);
 
-  useEffect(() => {
-    // Add transition end event listener
-    const container = slideContainerRef.current;
-    if (container) {
-      container.addEventListener('transitionend', handleTransitionEnd);
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener('transitionend', handleTransitionEnd);
-      }
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-      }
-    };
-  }, [handleTransitionEnd]);
-
-  // Calculate the real slide index for dots and aria attributes
-  const getRealSlideIndex = (index: number): number => {
-    if (index === 0) return realSlideCount - 1;
-    if (index === totalSlides - 1) return 0;
-    return index - 1;
-  };
-
-  const realActiveSlide = getRealSlideIndex(activeSlide);
-  const currentSlide = extendedSlides[activeSlide];
+  const currentSlide = slides[activeSlide];
 
   return (
     <div className={styles.carouselContainer}>
-      {/* Main Carousel */}
       <div className={styles.carouselWrapper}>
-        <div
-          className={styles.carouselSlides}
-          ref={slideContainerRef}
-        >
-          {extendedSlides.map((slide, index) => (
-            <div key={`${index}-${slide.title}`} className={styles.carouselSlide}>
-              <Image
-                src={slide.image}
-                alt={slide.alt}
-                className={styles.slideImage}
-                width={1600}
-                height={800}
-                priority={index === activeSlide}
-              />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSlide}
+            className={styles.carouselSlide}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={imageVariants}
+          >
+            <Image
+              src={currentSlide.image}
+              alt={currentSlide.alt}
+              className={styles.slideImage}
+              width={1600}
+              height={800}
+              priority
+            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`content-${activeSlide}`}
+                className={styles.slideContent}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.15,
+                      delayChildren: 0.2,
+                    },
+                  },
+                  exit: {
+                    transition: {
+                      staggerChildren: 0.1,
+                      staggerDirection: -1,
+                    },
+                  },
+                }}
+              >
+                {/* Top-down: title */}
+                <motion.h3
+                  className={styles.slideTitle}
+                  variants={{
+                    hidden: { opacity: 0, y: -40 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
+                  }}
+                >
+                  <span>{currentSlide.title}</span>{" "}
+                  <span className={styles.title2}>{currentSlide.title2}</span>
+                </motion.h3>
 
-              {index === activeSlide && (
-                <div className={styles.slideContent}>
-                  <AnimatePresence custom={{ direction }} mode="wait">
-                    <motion.h3
-                      key={`title-${index}`}
-                      custom={{ direction }}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={textVariants}
-                      className={styles.slideTitle}
-                    >
-                      <span>{currentSlide.title}</span>{" "}
-                      <span className={styles.title2}>{currentSlide.title2}</span>
-                    </motion.h3>
-                  </AnimatePresence>
+                {/* Top-down: title2 */}
+                <motion.h3
+                  className={styles.slideTitle2}
+                  variants={{
+                    hidden: { opacity: 0, y: -40 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
+                  }}
+                >
+                  <span>{currentSlide.title3}</span>{" "}
+                  <span className={styles.title4}>{currentSlide.title4}</span>
+                </motion.h3>
 
-                  <AnimatePresence custom={{ direction }} mode="wait">
-                    <motion.h3
-                      key={`title2-${index}`}
-                      custom={{ direction }}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={textVariants}
-                      className={styles.slideTitle2}
-                    >
-                      <span>{currentSlide.title3}</span>{" "}
-                      <span className={styles.title4}>{currentSlide.title4}</span>
-                    </motion.h3>
-                  </AnimatePresence>
+                {/* Bottom-up: description */}
+                <motion.p
+                  className={styles.slideDescription}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                    exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
+                  }}
+                >
+                  {currentSlide.description}
+                </motion.p>
 
-                  <AnimatePresence custom={{ direction }} mode="wait">
-                    <motion.p
-                      key={`desc1-${index}`}
-                      custom={0}
-                      initial="hidden"
-                      animate="visible"
-                      variants={descriptionVariants}
-                      className={styles.slideDescription}
-                    >
-                      {currentSlide.description}
-                    </motion.p>
-                  </AnimatePresence>
+                {/* Bottom-up: description2 (conditionally) */}
+                {currentSlide.description2 && (
+                  <motion.p
+                    className={styles.slideDescription}
+                    variants={{
+                      hidden: { opacity: 0, y: 40 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                      exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
+                    }}
+                  >
+                    {currentSlide.description2}
+                  </motion.p>
+                )}
+              </motion.div>
+            </AnimatePresence>
 
-                  {currentSlide.description2 && (
-                    <AnimatePresence custom={{ direction }} mode="wait">
-                      <motion.p
-                        key={`desc2-${index}`}
-                        custom={1}
-                        initial="hidden"
-                        animate="visible"
-                        variants={descriptionVariants}
-                        className={styles.slideDescription}
-                      >
-                        {currentSlide.description2}
-                      </motion.p>
-                    </AnimatePresence>
-                  )}
-                </div>
+
+            {/* <div className={styles.slideContent}>
+              <h3 className={styles.slideTitle}>
+                <span>{currentSlide.title}</span>{" "}
+                <span className={styles.title2}>{currentSlide.title2}</span>
+              </h3>
+              <h3 className={styles.slideTitle2}>
+                <span>{currentSlide.title3}</span>{" "}
+                <span className={styles.title4}>{currentSlide.title4}</span>
+              </h3>
+              <p className={styles.slideDescription}>{currentSlide.description}</p>
+              {currentSlide.description2 && (
+                <p className={styles.slideDescription}>{currentSlide.description2}</p>
               )}
-            </div>
-          ))}
-        </div>
+            </div> */}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
-      {/* <button
-        onClick={prevSlide}
-        className={`${styles.carouselNavButton} ${styles.prevButton}`}
-        aria-label="Previous slide"
-        disabled={isTransitioning}
-      >
-        <span className={`${styles.arrowIcon} ${styles.leftArrow}`}></span>
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className={`${styles.carouselNavButton} ${styles.nextButton}`}
-        aria-label="Next slide"
-        disabled={isTransitioning}
-      >
-        <span className={`${styles.arrowIcon} ${styles.rightArrow}`}></span>
-      </button> */}
-
-      {/* Controls: Play/Pause button and Dots */}
+      {/* Controls */}
       <div className={styles.carouselControls}>
         <button
           onClick={togglePlayPause}
@@ -403,10 +278,9 @@ const ImagePagination: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`${styles.carouselDot} ${index === realActiveSlide ? styles.active : ''}`}
+              className={`${styles.carouselDot} ${index === activeSlide ? styles.active : ''}`}
               aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === realActiveSlide ? true : undefined}
-              disabled={isTransitioning}
+              aria-current={index === activeSlide ? true : undefined}
             />
           ))}
         </div>

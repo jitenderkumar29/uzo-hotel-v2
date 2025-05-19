@@ -66,6 +66,8 @@ export default function ImagePaginationTwo() {
           <hr className={styles.divider} />
           <h2 className={styles.title}>Fine Dining at Taj Restaurants</h2>
           <hr className={styles.divider} />
+        </div>
+        <div className={styles.headerDescription}>
           <p className={styles.subtitle}>
             Embark on a journey of exquisite experiences for the discerning connoisseur,
             seamlessly woven together with impeccable service, sophisticated ambience and

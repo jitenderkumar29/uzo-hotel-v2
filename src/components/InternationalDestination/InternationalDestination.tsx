@@ -88,16 +88,31 @@ const InternationalDestination: React.FC = () => {
 
   return (
     <section className={styles.destinationsContainer}>
-      <h2 className={styles.sectionTitle}>Explore The International Destinations</h2>
+      <div className={styles.headContainer}>
+        <h2 className={styles.sectionTitle}>Explore The International Destinations</h2>
+
+        <div className={styles.buttonContainer}>
+          <button
+            className={`${styles.navButtonLeft}`}
+            // className={`${styles.navButton} ${styles.left}`}
+            onClick={scrollLeft}
+            aria-label="Scroll left"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            className={`${styles.navButton}`}
+            // className={`${styles.navButton} ${styles.right}`}
+            onClick={scrollRight}
+            aria-label="Scroll right"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+      </div>
 
       <div className={styles.sliderWrapper}>
-        <button
-          className={`${styles.navButton} ${styles.left}`}
-          onClick={scrollLeft}
-          aria-label="Scroll left"
-        >
-          <FaChevronLeft />
-        </button>
+
 
         <div className={styles.destinationsSlider} ref={sliderRef}>
           {destinations.map((destination, index) => (
@@ -124,13 +139,7 @@ const InternationalDestination: React.FC = () => {
           ))}
         </div>
 
-        <button
-          className={`${styles.navButton} ${styles.right}`}
-          onClick={scrollRight}
-          aria-label="Scroll right"
-        >
-          <FaChevronRight />
-        </button>
+
       </div>
     </section>
   );

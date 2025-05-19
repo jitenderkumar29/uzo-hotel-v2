@@ -47,14 +47,23 @@ const PopularDestination: React.FC = () => {
 
   return (
     <section className={styles.container} aria-labelledby="popular-destinations-heading">
-      <h2 id="popular-destinations-heading" className={styles.title}>
-        Popular Indian Destinations
-      </h2>
+      <div className={styles.headContainer}>
+        <h2 id="popular-destinations-heading" className={styles.title}>
+          Popular Indian Destinations
+        </h2>
+        <div className={styles.buttonContainer}>
+          <button className={`${styles.navButtonLeft}`} onClick={() => scroll("left")} aria-label="Scroll Left">
+            {/* <button className={`${styles.navButton} ${styles.left}`} onClick={() => scroll("left")} aria-label="Scroll Left"> */}
+            <FaChevronLeft />
+          </button>
+          <button className={`${styles.navButton}`} onClick={() => scroll("right")} aria-label="Scroll Right">
+            <FaChevronRight />
+          </button>
+        </div>
+      </div>
 
       <div className={styles.sliderWrapper}>
-        <button className={`${styles.navButton} ${styles.left}`} onClick={() => scroll("left")} aria-label="Scroll Left">
-          <FaChevronLeft />
-        </button>
+
 
         <div className={styles.slider} ref={sliderRef}>
           {destinations.map((destination, index) => (
@@ -72,7 +81,7 @@ const PopularDestination: React.FC = () => {
                 <div className={styles.overlay}></div>
                 <div className={styles.cardContent}>
                   <h3 className={styles.cityName}>{destination.name}</h3>
-                  <p className={styles.cityCode}>{destination.code}</p>
+                  {/* <p className={styles.cityCode}>{destination.code}</p> */}
                   <span className={styles.properties}>
                     {destination.properties.toLocaleString()} Properties →
                   </span>
@@ -82,9 +91,7 @@ const PopularDestination: React.FC = () => {
           ))}
         </div>
 
-        <button className={`${styles.navButton} ${styles.right}`} onClick={() => scroll("right")} aria-label="Scroll Right">
-          <FaChevronRight />
-        </button>
+
       </div>
     </section>
   );

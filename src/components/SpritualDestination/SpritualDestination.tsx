@@ -42,14 +42,24 @@ const SpritualDestination = () => {
 
   return (
     <section className={styles.container} aria-labelledby="spiritual-destinations-title">
-      <h2 id="spiritual-destinations-title" className={styles.title}>
-        Explore The Spiritual Destinations in India
-      </h2>
+
+      <div className={styles.headContainer}>
+        <h2 id="spiritual-destinations-title" className={styles.title}>
+          Explore The Spiritual Destinations in India
+        </h2>
+        <div className={styles.buttonContainer}>
+          <button className={`${styles.navButtonLeft}`} onClick={() => scroll(-300)} aria-label="Scroll left">
+            {/* <button className={`${styles.navButton} ${styles.left}`} onClick={() => scroll(-300)} aria-label="Scroll left"> */}
+            <FaChevronLeft />
+          </button>
+          <button className={`${styles.navButton}`} onClick={() => scroll(300)} aria-label="Scroll right">
+            <FaChevronRight />
+          </button>
+        </div>
+      </div>
 
       <div className={styles.sliderWrapper}>
-        <button className={`${styles.navButton} ${styles.left}`} onClick={() => scroll(-300)} aria-label="Scroll left">
-          <FaChevronLeft />
-        </button>
+
 
         <div className={styles.slider} ref={sliderRef}>
           {destinations.map((dest, index) => (
@@ -74,9 +84,7 @@ const SpritualDestination = () => {
           ))}
         </div>
 
-        <button className={`${styles.navButton} ${styles.right}`} onClick={() => scroll(300)} aria-label="Scroll right">
-          <FaChevronRight />
-        </button>
+
       </div>
     </section>
   );
