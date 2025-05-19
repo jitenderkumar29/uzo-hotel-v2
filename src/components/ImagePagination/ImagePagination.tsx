@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './ImagePagination.module.css';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SlideProps {
   title: string;
@@ -18,21 +19,12 @@ const ImagePagination: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const slideContainerRef = useRef<HTMLDivElement | null>(null);
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides: SlideProps[] = [
-    // {
-    //   title: "Book Hotels on",
-    //   title2: "",
-    //   title3: "uzohotels.com",
-    //   title4: "",
-    //   description: "Get up to 40% off*",
-    //   description2: "",
-    //   image: "/images/imagePagination6.jpg",
-    //   alt: "Spa massage tables"
-    // },
     {
       title: "ULTIMATE",
       title2: "RELAXATION",
@@ -83,23 +75,91 @@ const ImagePagination: React.FC = () => {
       image: "/images/imagePagination5.jpg",
       alt: "Spa massage tables"
     },
-    // {
-    //   title: "What Will You Bring Back?",
-    //   title2: "",
-    //   title3: "",
-    //   title4: "",
-    //   description: "Explore our extraordinary hotels and experiences around the world.",
-    //   description2: "",
-    //   image: "/images/imagePagination1.jpg",
-    //   alt: "Woman Travelling"
-    // },
+    {
+      title: "Book Hotels on",
+      title2: "",
+      title3: "uzohotels.com",
+      title4: "",
+      description: "Get up to 40% off*",
+      description2: "",
+      image: "/images/imagePagination6.jpg",
+      alt: "Spa massage tables"
+    },
   ];
+
+  // Animation variants
+  const textVariants = {
+    hidden: (custom: { direction: string }) => ({
+      opacity: 0,
+      x: custom.direction === 'left' ? -80 : 80,
+      y: 20,
+      scale: 0.95,
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        damping: 15,
+        duration: 1,
+        delay: 0.5,
+      },
+    },
+    exit: (custom: { direction: string }) => ({
+      opacity: 0,
+      x: custom.direction === 'left' ? 80 : -80,
+      y: -20,
+      scale: 0.95,
+      transition: {
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.6,
+      },
+    }),
+  };
+
+  // const textVariants = {
+  //   hidden: (custom: { direction: string }) => ({
+  //     opacity: 0,
+  //     x: custom.direction === 'left' ? -50 : 50,
+  //   }),
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       duration: 0.8,
+  //       ease: "easeOut"
+  //     }
+  //   },
+  //   exit: (custom: { direction: string }) => ({
+  //     opacity: 0,
+  //     x: custom.direction === 'left' ? 50 : -50,
+  //     transition: {
+  //       duration: 0.5
+  //     }
+  //   })
+  // };
+
+  const descriptionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2 + 0.3,
+        duration: 0.6
+      }
+    })
+  };
 
   // Clone first and last slides for seamless infinite scrolling
   const extendedSlides = [
-    slides[slides.length - 1], // last slide cloned at beginning
+    slides[slides.length - 1],
     ...slides,
-    slides[0] // first slide cloned at end
+    slides[0]
   ];
 
   const totalSlides = extendedSlides.length;
@@ -129,14 +189,15 @@ const ImagePagination: React.FC = () => {
   }, [activeSlide, realSlideCount, totalSlides, updateSlidePosition]);
 
   const goToSlide = (index: number): void => {
-    // Adjust for the extended slides array
     const adjustedIndex = index + 1;
+    setDirection(index > getRealSlideIndex(activeSlide) ? 'right' : 'left');
     setActiveSlide(adjustedIndex);
     updateSlidePosition(adjustedIndex);
     resetAutoplay();
   };
 
   const nextSlide = useCallback((): void => {
+    setDirection('right');
     setActiveSlide(prev => {
       const nextIndex = (prev + 1) % totalSlides;
       updateSlidePosition(nextIndex);
@@ -146,6 +207,7 @@ const ImagePagination: React.FC = () => {
   }, [totalSlides, updateSlidePosition]);
 
   // const prevSlide = useCallback((): void => {
+  //   setDirection('left');
   //   setActiveSlide(prev => {
   //     const prevIndex = (prev - 1 + totalSlides) % totalSlides;
   //     updateSlidePosition(prevIndex);
@@ -163,7 +225,7 @@ const ImagePagination: React.FC = () => {
       clearInterval(autoplayTimerRef.current);
     }
     if (isPlaying) {
-      autoplayTimerRef.current = setInterval(nextSlide, 3000);
+      autoplayTimerRef.current = setInterval(nextSlide, 5000);
     }
   };
 
@@ -175,7 +237,8 @@ const ImagePagination: React.FC = () => {
   useEffect(() => {
     // Setup autoplay timer
     if (isPlaying) {
-      autoplayTimerRef.current = setInterval(nextSlide, 3000);
+      autoplayTimerRef.current = setInterval(nextSlide, 0);
+      // autoplayTimerRef.current = setInterval(nextSlide, 5000);
     } else if (autoplayTimerRef.current) {
       clearInterval(autoplayTimerRef.current);
     }
@@ -206,12 +269,13 @@ const ImagePagination: React.FC = () => {
 
   // Calculate the real slide index for dots and aria attributes
   const getRealSlideIndex = (index: number): number => {
-    if (index === 0) return realSlideCount - 1; // first clone is last real slide
-    if (index === totalSlides - 1) return 0; // last clone is first real slide
-    return index - 1; // adjust for the cloned first slide
+    if (index === 0) return realSlideCount - 1;
+    if (index === totalSlides - 1) return 0;
+    return index - 1;
   };
 
   const realActiveSlide = getRealSlideIndex(activeSlide);
+  const currentSlide = extendedSlides[activeSlide];
 
   return (
     <div className={styles.carouselContainer}>
@@ -231,18 +295,68 @@ const ImagePagination: React.FC = () => {
                 height={800}
                 priority={index === activeSlide}
               />
-              <div className={styles.slideContent}>
-                <h3 className={styles.slideTitle}>
-                  <span>{slide.title}</span>{" "}
-                  <span className={styles.title2}>{slide.title2}</span>
-                </h3>
-                <h3 className={styles.slideTitle2}>
-                  <span>{slide.title3}</span>{" "}
-                  <span className={styles.title4}>{slide.title4}</span>
-                </h3>
-                <p className={styles.slideDescription}>{slide.description}</p>
-                <p className={styles.slideDescription}>{slide.description2}</p>
-              </div>
+
+              {index === activeSlide && (
+                <div className={styles.slideContent}>
+                  <AnimatePresence custom={{ direction }} mode="wait">
+                    <motion.h3
+                      key={`title-${index}`}
+                      custom={{ direction }}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={textVariants}
+                      className={styles.slideTitle}
+                    >
+                      <span>{currentSlide.title}</span>{" "}
+                      <span className={styles.title2}>{currentSlide.title2}</span>
+                    </motion.h3>
+                  </AnimatePresence>
+
+                  <AnimatePresence custom={{ direction }} mode="wait">
+                    <motion.h3
+                      key={`title2-${index}`}
+                      custom={{ direction }}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={textVariants}
+                      className={styles.slideTitle2}
+                    >
+                      <span>{currentSlide.title3}</span>{" "}
+                      <span className={styles.title4}>{currentSlide.title4}</span>
+                    </motion.h3>
+                  </AnimatePresence>
+
+                  <AnimatePresence custom={{ direction }} mode="wait">
+                    <motion.p
+                      key={`desc1-${index}`}
+                      custom={0}
+                      initial="hidden"
+                      animate="visible"
+                      variants={descriptionVariants}
+                      className={styles.slideDescription}
+                    >
+                      {currentSlide.description}
+                    </motion.p>
+                  </AnimatePresence>
+
+                  {currentSlide.description2 && (
+                    <AnimatePresence custom={{ direction }} mode="wait">
+                      <motion.p
+                        key={`desc2-${index}`}
+                        custom={1}
+                        initial="hidden"
+                        animate="visible"
+                        variants={descriptionVariants}
+                        className={styles.slideDescription}
+                      >
+                        {currentSlide.description2}
+                      </motion.p>
+                    </AnimatePresence>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>
