@@ -1,0 +1,210 @@
+/* ImageCarousel.module.css */
+.containerBody {
+  width: 100%;
+  background-color: var(--dark-white);
+}
+
+.container {
+  max-width: 1400px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  font-family: "Arial", sans-serif;
+  background-color: var(--dark-white);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.carouselContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: fit-content;
+  background-color: var(--dark-white);
+}
+
+.card {
+  width: calc(100% / 3.11);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  margin: 0 0.5rem;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* aspect-ratio: 16/9; */
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardDivider {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0 0 1rem 0;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.arrowPrev,
+.arrowNext {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.arrowPrev::before,
+.arrowNext::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #ad8b3a;
+  border-left: 2px solid #ad8b3a;
+  top: 50%;
+  left: 50%;
+}
+
+.arrowPrev::before {
+  transform: translate(-30%, -50%) rotate(-45deg);
+}
+
+.arrowNext::before {
+  transform: translate(-70%, -50%) rotate(135deg);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #ad8b3a;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .arrowPrev,
+  .arrowNext {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+}

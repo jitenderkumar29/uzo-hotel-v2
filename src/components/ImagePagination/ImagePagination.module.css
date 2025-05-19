@@ -46,9 +46,14 @@
   padding: 24px;
   background: linear-gradient(
     to top,
+    rgba(6, 6, 6, 0.592) 0%,
+    rgba(50, 50, 50, 0) 100%
+  );
+  /* background: linear-gradient(
+    to top,
     rgba(0, 0, 0, 0.7) 0%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
   color: white;
 
   display: flex;
@@ -63,7 +68,23 @@
 .slideTitle {
   font-size: 40px;
   font-weight: 600;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
+  color: white;
+}
+
+.title2 {
+  color: var(--golden-color);
+  font-weight: bold;
+}
+.title4 {
+  color: var(--golden-color);
+  font-weight: bold;
+}
+
+.slideTitle2 {
+  font-size: 40px;
+  font-weight: 500;
+  /* margin-bottom: 8px; */
   color: white;
 }
 
@@ -71,7 +92,8 @@
   font-size: 29px;
   margin-bottom: 0;
   color: white;
-  width: 500px;
+  width: 600px;
+  margin-top: 10px;
 }
 
 /* Navigation arrows */

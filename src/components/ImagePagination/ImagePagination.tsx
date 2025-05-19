@@ -5,7 +5,11 @@ import Image from 'next/image';
 
 interface SlideProps {
   title: string;
+  title2: string;
+  title3: string;
+  title4: string;
   description: string;
+  description2: string;
   image: string;
   alt: string;
 }
@@ -19,36 +23,76 @@ const ImagePagination: React.FC = () => {
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides: SlideProps[] = [
+    // {
+    //   title: "Book Hotels on",
+    //   title2: "",
+    //   title3: "uzohotels.com",
+    //   title4: "",
+    //   description: "Get up to 40% off*",
+    //   description2: "",
+    //   image: "/images/imagePagination6.jpg",
+    //   alt: "Spa massage tables"
+    // },
     {
-      title: "What Will You Bring Back?",
-      description: "Explore our extraordinary hotels and experiences around the world.",
+      title: "ULTIMATE",
+      title2: "RELAXATION",
+      title3: "WITH UNLIMITED",
+      title4: "REWARDS",
+      description: "Rewarded with Infinity Rewards Program",
+      description2: "",
       image: "/images/imagePagination1.jpg",
       alt: "Woman Travelling"
     },
     {
-      title: "Orlando",
-      description: "Stay close to theme parks, nature reserves and celebrated restaurants.",
+      title: "CHECK IN FOR",
+      title2: "COMFORT",
+      title3: "CHECK OUT WITH",
+      title4: "REWARDS",
+      description: "Unlock exclusive rates & room upgrades",
+      description2: "with our Infinity Rewards Program",
       image: "/images/imagePagination2.jpg",
       alt: "Poolside family - The Ritz-Carlton"
     },
     {
-      title: "Aruba",
-      description: "Escape to white-sand beaches, resort-style pools and relaxing spas.",
+      title: "RESERVE FOR A",
+      title2: "REWARDING STAY",
+      title3: "GET EXCLUSIVE",
+      title4: "DISCOUNTS ON MEALS",
+      description: "With Infinity Rewards your points go",
+      description2: "beyond stays, Join us to dine, relax, and indulge",
       image: "/images/imagePagination3.jpg",
       alt: "Beachfront dining"
     },
     {
       title: "Phoenix",
-      description: "Find sparkling pools, kid-friendly activities and serene spas in Phoenix.",
+      title2: "",
+      title3: "",
+      title4: "",
+      description: "Find sparkling pools, kid-friendly activities ",
+      description2: "and serene spas in Phoenix.",
       image: "/images/imagePagination4.jpg",
       alt: "Pool Resort in Scottsdale AZ"
     },
     {
       title: "Cancun",
-      description: "Explore all-inclusive resorts made for family vacations and spa retreats.",
+      title2: "",
+      title3: "",
+      title4: "",
+      description: "Explore all-inclusive resorts made for ",
+      description2: "family vacations and spa retreats.",
       image: "/images/imagePagination5.jpg",
       alt: "Spa massage tables"
-    }
+    },
+    // {
+    //   title: "What Will You Bring Back?",
+    //   title2: "",
+    //   title3: "",
+    //   title4: "",
+    //   description: "Explore our extraordinary hotels and experiences around the world.",
+    //   description2: "",
+    //   image: "/images/imagePagination1.jpg",
+    //   alt: "Woman Travelling"
+    // },
   ];
 
   // Clone first and last slides for seamless infinite scrolling
@@ -101,14 +145,14 @@ const ImagePagination: React.FC = () => {
     resetAutoplay();
   }, [totalSlides, updateSlidePosition]);
 
-  const prevSlide = useCallback((): void => {
-    setActiveSlide(prev => {
-      const prevIndex = (prev - 1 + totalSlides) % totalSlides;
-      updateSlidePosition(prevIndex);
-      return prevIndex;
-    });
-    resetAutoplay();
-  }, [totalSlides, updateSlidePosition]);
+  // const prevSlide = useCallback((): void => {
+  //   setActiveSlide(prev => {
+  //     const prevIndex = (prev - 1 + totalSlides) % totalSlides;
+  //     updateSlidePosition(prevIndex);
+  //     return prevIndex;
+  //   });
+  //   resetAutoplay();
+  // }, [totalSlides, updateSlidePosition]);
 
   const togglePlayPause = (): void => {
     setIsPlaying(!isPlaying);
@@ -188,8 +232,16 @@ const ImagePagination: React.FC = () => {
                 priority={index === activeSlide}
               />
               <div className={styles.slideContent}>
-                <h3 className={styles.slideTitle}>{slide.title}</h3>
+                <h3 className={styles.slideTitle}>
+                  <span>{slide.title}</span>{" "}
+                  <span className={styles.title2}>{slide.title2}</span>
+                </h3>
+                <h3 className={styles.slideTitle2}>
+                  <span>{slide.title3}</span>{" "}
+                  <span className={styles.title4}>{slide.title4}</span>
+                </h3>
                 <p className={styles.slideDescription}>{slide.description}</p>
+                <p className={styles.slideDescription}>{slide.description2}</p>
               </div>
             </div>
           ))}
@@ -197,7 +249,7 @@ const ImagePagination: React.FC = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button
+      {/* <button
         onClick={prevSlide}
         className={`${styles.carouselNavButton} ${styles.prevButton}`}
         aria-label="Previous slide"
@@ -213,7 +265,7 @@ const ImagePagination: React.FC = () => {
         disabled={isTransitioning}
       >
         <span className={`${styles.arrowIcon} ${styles.rightArrow}`}></span>
-      </button>
+      </button> */}
 
       {/* Controls: Play/Pause button and Dots */}
       <div className={styles.carouselControls}>

@@ -43,6 +43,7 @@ const AddOns2 = () => {
           </div>
         </div>
       </div>
+
     </section>
   );
 };

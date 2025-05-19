@@ -52,6 +52,7 @@ const HomePage = () => {
         <HeroGallery />
         <ImagePagination />
         <AddOns2 />
+        {/* <ImagePaginationTwo /> */}
         <PopularDestination />
         <InternationalDestination />
         <SpritualDestination />
