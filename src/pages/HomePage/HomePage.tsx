@@ -15,7 +15,6 @@ import InternationalDestination from '@/components/InternationalDestination/Inte
 import PopularDestination from '@/components/PopularDestination/PopularDestination';
 import SpritualDestination from '@/components/SpritualDestination/SpritualDestination';
 import VideoCard from '@/components/VideoCard/VideoCard';
-import PrepareToTravelWrapper from '@/components/PrepareToTravel/PrepareToTravelWrapper';
 import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import ImagePagination from '@/components/ImagePagination/ImagePagination';
@@ -49,7 +48,7 @@ const HomePage = () => {
         <AddOnsImageSlide />
         {/* 👇 Force re-render on scroll */}
         {/* <PrepareToTravel key={scrollKey} /> */}
-        <PrepareToTravelWrapper />
+        {/* <PrepareToTravelWrapper /> */}
         <HeroGallery />
         <ImagePagination />
         <AddOns2 />
