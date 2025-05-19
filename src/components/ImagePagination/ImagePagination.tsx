@@ -97,7 +97,7 @@ const ImagePagination: React.FC = () => {
   ];
 
   const imageVariants = {
-    hidden: { opacity: 0.5, scale: 1.5 },
+    hidden: { opacity: 0.8, scale: 1.5 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -107,7 +107,7 @@ const ImagePagination: React.FC = () => {
       }
     },
     exit: {
-      opacity: 0.5,
+      opacity: 0.8,
       scale: 1.5, // zoom-in while fading out
       transition: {
         // delay: 0.1,
