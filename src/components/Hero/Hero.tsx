@@ -48,6 +48,9 @@ const defaultPropData = {
     hero8Jpg.src,
     hero9Jpg.src,
     hero10Jpg.src,
+    "/images/imagePagination7.jpg",
+    "/images/imagePagination8.jpg",
+    "/images/imagePagination9.jpg",
   ],
 };
 

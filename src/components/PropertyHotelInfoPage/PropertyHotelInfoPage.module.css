@@ -1,5 +1,6 @@
 .layoutCont {
-  background-image: url("https://cdn.sanity.io/images/ocl5w36p/prod4/28be5ff526dc125584f9a493f99e879a2de8f5d7-3841x1861.jpg?w=1920&auto=format&dpr=2");
+  background-image: url("/images/infoBg.jpg");
+  /* background-image: url("https://cdn.sanity.io/images/ocl5w36p/prod4/28be5ff526dc125584f9a493f99e879a2de8f5d7-3841x1861.jpg?w=1920&auto=format&dpr=2"); */
   /* background-image: url("https://www.lemontreehotels.com/assets/front/images/rewards_banner_1.jpg"); */
   width: 100vw; /* or fixed value like 800px */
   height: 300px; /* adjust as needed */

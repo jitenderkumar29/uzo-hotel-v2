@@ -60,7 +60,7 @@ const ImagePagination: React.FC = () => {
       description: "Find sparkling pools, kid-friendly activities ",
       description2: "",
       // description2: "and serene spas in Phoenix.",
-      image: "/images/imagePagination4.jpg",
+      image: "/images/imagePagination7.jpg",
       alt: "Pool Resort in Scottsdale AZ"
     },
     {
@@ -71,7 +71,7 @@ const ImagePagination: React.FC = () => {
       description: "Explore all-inclusive resorts made for ",
       description2: "",
       // description2: "family vacations and spa retreats.",
-      image: "/images/imagePagination5.jpg",
+      image: "/images/imagePagination8.jpg",
       alt: "Spa massage tables"
     },
     {
@@ -81,13 +81,23 @@ const ImagePagination: React.FC = () => {
       title4: "",
       description: "Get up to 40% off*",
       description2: "",
-      image: "/images/imagePagination6.jpg",
+      image: "/images/imagePagination9.jpg",
       alt: "Spa massage tables"
     },
+    // {
+    //   title: "Book Hotels on",
+    //   title2: "",
+    //   title3: "uzohotels.com",
+    //   title4: "",
+    //   description: "Get up to 40% off*",
+    //   description2: "",
+    //   image: "/images/imagePagination6.jpg",
+    //   alt: "Spa massage tables"
+    // },
   ];
 
   const imageVariants = {
-    hidden: { opacity: 0, scale: 1.5 },
+    hidden: { opacity: 0.5, scale: 1.5 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -97,9 +107,10 @@ const ImagePagination: React.FC = () => {
       }
     },
     exit: {
-      opacity: 0,
-      scale: 1.1, // zoom-in while fading out
+      opacity: 0.5,
+      scale: 1.5, // zoom-in while fading out
       transition: {
+        // delay: 0.1,
         duration: 0.6,
         ease: "easeInOut"
       }

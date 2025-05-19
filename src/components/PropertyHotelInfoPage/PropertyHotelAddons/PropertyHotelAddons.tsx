@@ -108,7 +108,7 @@ const SalesBanner: React.FC = () => {
     >
       <div className={styles.imageContainer}>
         <Image
-          src="https://promos.makemytrip.com/Hotels_product/GI/big_sale.png"
+          src="/icons/bigSale.png"
           alt="Limited Period Offer"
           width={120}
           height={120}
