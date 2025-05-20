@@ -95,36 +95,87 @@ const ImagePagination: React.FC = () => {
     //   alt: "Spa massage tables"
     // },
   ];
+  // Effect 5
+  // const imageVariants = {
+  //   hidden: {
+  //     opacity: 0,
+  //     y: 50,
+  //     scale: 0.8,
+  //     filter: "blur(4px)"
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     scale: 1,
+  //     filter: "blur(0px)",
+  //     transition: {
+  //       duration: 0.8,
+  //       ease: [0.2, 0.8, 0.4, 1],
+  //       when: "beforeChildren"
+  //     }
+  //   },
+  //   exit: {
+  //     opacity: 0,
+  //     scale: 1.1,
+  //     transition: {
+  //       duration: 0.3,
+  //       ease: "easeIn"
+  //     }
+  //   }
+  // };
 
-  // Effect3
+  // Effect 4
   const imageVariants = {
     hidden: {
       opacity: 0,
-      rotate: -500, // Slight initial rotation
-      y: 30,
-      scale: 1.2
+      rotateX: 90,
+      scale: 0.5
     },
     visible: {
       opacity: 1,
-      rotate: 0,
-      y: 0,
+      rotateX: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        damping: 10,
-        stiffness: 100,
-        mass: 0.5
+        duration: 0.7,
+        ease: "backOut"
       }
     },
     exit: {
       opacity: 0,
-      x: -50, // Slide out to the left
-      transition: {
-        duration: 0.4,
-        ease: "easeIn"
-      }
+      rotateY: 90,
+      transition: { duration: 0.3 }
     }
   };
+
+  // Effect3
+  // const imageVariants = {
+  //   hidden: {
+  //     opacity: 0,
+  //     rotate: -500, // Slight initial rotation
+  //     y: 30,
+  //     scale: 1.2
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     rotate: 0,
+  //     y: 0,
+  //     scale: 1,
+  //     transition: {
+  //       type: "spring",
+  //       damping: 10,
+  //       stiffness: 100,
+  //       mass: 0.5
+  //     }
+  //   },
+  //   exit: {
+  //     opacity: 0,
+  //     x: -50, // Slide out to the left
+  //     transition: {
+  //       duration: 0.4,
+  //       ease: "easeIn"
+  //     }
+  //   }
+  // };
 
   // effect2
   // const imageVariants = {

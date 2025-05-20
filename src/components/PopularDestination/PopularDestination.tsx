@@ -27,14 +27,14 @@ const PopularDestination: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const destinations: Destination[] = [
-    { name: "Agra", code: "Uttar Pradesh", properties: 488, image: agra },
-    { name: "Shimla", code: "Himachal Pradesh", properties: 4588, image: shimla },
-    { name: "New Delhi", code: "DELHI", properties: 4688, image: delhiindiagate },
-    { name: "Mumbai", code: "Maharashtra", properties: 1766, image: mumbaitaj },
     { name: "Goa", code: "GOA", properties: 4728, image: goabeach },
     { name: "Chennai", code: "Tamil Nadu", properties: 1801, image: chennai },
     { name: "Noida", code: "Uttar Pradesh", properties: 101, image: noidamall },
     { name: "Jaipur", code: "Rajasthan", properties: 501, image: jaipur },
+    { name: "Agra", code: "Uttar Pradesh", properties: 488, image: agra },
+    { name: "Shimla", code: "Himachal Pradesh", properties: 4588, image: shimla },
+    { name: "New Delhi", code: "DELHI", properties: 4688, image: delhiindiagate },
+    { name: "Mumbai", code: "Maharashtra", properties: 1766, image: mumbaitaj },
     { name: "Bangalore", code: "Karnataka", properties: 1187, image: bangalore },
   ];
 

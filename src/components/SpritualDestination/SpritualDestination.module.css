@@ -47,7 +47,8 @@
 
 .card {
   flex: 0 0 85%;
-  max-width: 280px;
+  max-width: 300px;
+  /* max-width: 280px; */
   scroll-snap-align: start;
   border-radius: 0.625rem;
   overflow: hidden;
@@ -97,15 +98,20 @@
 }
 
 .cityName {
-  font-size: 1.25rem;
+  font-size: 22px;
+  font-weight: bold;
+  /* font-size: 1.25rem; */
   margin: 0 0 0.25rem 0;
 }
 
 .cityCode {
-  font-size: 0.875rem;
-  text-transform: uppercase;
+  font-size: 1rem;
+  /* font-size: 0.875rem; */
+  text-transform: capitalize;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
-  opacity: 0.9;
+  font-weight: bold;
+  /* opacity: 0.9; */
 }
 
 .navButtonLeft {

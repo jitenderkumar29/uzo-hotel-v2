@@ -49,7 +49,8 @@
 }
 
 .destinationCard {
-  flex: 0 0 calc(280px - 1rem);
+  flex: 0 0 calc(300px);
+  /* flex: 0 0 calc(280px - 1rem); */
   scroll-snap-align: start;
   border-radius: 0.625rem;
   overflow: hidden;
@@ -112,9 +113,10 @@
 }
 
 .cityName {
-  font-size: 1.25rem;
+  font-size: 22px;
+  /* font-size: 1.25rem; */
   margin: 0 0 0.5rem 0;
-  font-weight: 600;
+  font-weight: bold;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
