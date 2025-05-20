@@ -9,6 +9,7 @@ import CancellationPolicy from '@/components/DetailsHotels/RoomCard/Cancellation
 import { policy3 } from '@/app/data/cancellationPolicyData'; // Adjust the path as needed
 
 import { HotelDataInterface } from "@/interfaces";
+import Image from 'next/image';
 // import RatingCard from '../RatingCard/RatingCard';
 
 export const hotelData: HotelDataInterface[] = [
@@ -113,9 +114,11 @@ const PropertyHotelInfo = ({ foundRoom, roomId }: PropertyHotelInfoProps) => {
         <div className={styles.hotelnfoBody}>
           <div className={styles.hotelInfo}>
             <div className={styles.hotelImage}>
-              <img
+              <Image
                 src="https://r1imghtlak.ibcdn.com/082f1ae6330211eb9c050242ac110004.jpg"
                 alt="Hyatt Centric Janakpuri, New Delhi"
+                height={100}
+                width={150}
               />
             </div>
             <div className={styles.hotelInfoCont}>

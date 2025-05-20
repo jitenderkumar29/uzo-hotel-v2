@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './PaymentEmi.module.css';
+import Image from 'next/image';
 
 interface Bank {
   id: string;
@@ -126,7 +127,7 @@ export default function PaymentEmi() {
                     className={`${styles.bankItem} ${selectedBank?.id === bank.id ? styles.selected : ''}`}
                     onClick={() => selectBank(bank)}
                   >
-                    <img src={bank.logo} alt={bank.name} className={styles.bankLogo} />
+                    <Image src={bank.logo} alt={bank.name} className={styles.bankLogo} height={50} width={50} />
                     <span className={styles.bankName}>{bank.name}</span>
                     <input
                       type="radio"

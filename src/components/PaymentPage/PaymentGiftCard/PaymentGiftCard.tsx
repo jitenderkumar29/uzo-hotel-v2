@@ -2,6 +2,7 @@ import { useState, ChangeEvent } from 'react';
 import styles from './PaymentGiftCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 interface GiftCard {
   number: string;
@@ -99,10 +100,12 @@ export default function PaymentGiftCard() {
                 placeholder="Gift Card Number"
                 maxLength={16}
               />
-              <img
+              <Image
                 src="icons/giftcard.svg"
                 alt="credit-card"
                 className={styles.cardIcon}
+                height={25}
+                width={25}
               />
               {!giftCardNumber.match(/^[0-9]{16}$/) && giftCardNumber.length > 0 && (
                 <p className={styles.errorMessage}>

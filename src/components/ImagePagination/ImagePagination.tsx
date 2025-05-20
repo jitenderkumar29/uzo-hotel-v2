@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './ImagePagination.module.css';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -96,58 +96,117 @@ const ImagePagination: React.FC = () => {
     // },
   ];
 
+  // Effect3
   const imageVariants = {
-    hidden: { opacity: 0.8, scale: 1.5 },
+    hidden: {
+      opacity: 0,
+      rotate: -500, // Slight initial rotation
+      y: 30,
+      scale: 1.2
+    },
     visible: {
       opacity: 1,
+      rotate: 0,
+      y: 0,
       scale: 1,
       transition: {
-        duration: 0.8,
-        ease: "easeOut"
+        type: "spring",
+        damping: 10,
+        stiffness: 100,
+        mass: 0.5
       }
     },
     exit: {
-      opacity: 0.8,
-      scale: 1.5, // zoom-in while fading out
+      opacity: 0,
+      x: -50, // Slide out to the left
       transition: {
-        // delay: 0.1,
-        duration: 0.6,
-        ease: "easeInOut"
+        duration: 0.4,
+        ease: "easeIn"
       }
     }
   };
+
+  // effect2
+  // const imageVariants = {
+  //   hidden: {
+  //     opacity: 0,
+  //     y: 20,  // Start slightly below
+  //     scale: 0.95
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,   // Move to normal position
+  //     scale: 1,
+  //     transition: {
+  //       duration: 0.7,
+  //       ease: [0.2, 0.8, 0.4, 1] // Custom cubic bezier for more bounce
+  //     }
+  //   },
+  //   exit: {
+  //     opacity: 0,
+  //     scale: 1.1, // Slight zoom out while fading
+  //     transition: {
+  //       duration: 0.5,
+  //       ease: "easeIn"
+  //     }
+  //   }
+  // };
+
+  // effect1
+  // const imageVariants = {
+  //   hidden: { opacity: 0.8, scale: 1.5 },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       duration: 0.8,
+  //       ease: "easeOut"
+  //     }
+  //   },
+  //   exit: {
+  //     opacity: 0.8,
+  //     scale: 1.5, // zoom-in while fading out
+  //     transition: {
+  //       // delay: 0.1,
+  //       duration: 0.6,
+  //       ease: "easeInOut"
+  //     }
+  //   }
+  // };
 
   const goToSlide = (index: number) => {
     setActiveSlide(index);
     resetAutoplay();
   };
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setActiveSlide((prev) => (prev + 1) % slides.length);
-    resetAutoplay();
-  };
+    // resetAutoplay();
+  }, [slides.length]);
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const resetAutoplay = () => {
+  const resetAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
     }
     if (isPlaying) {
-      autoplayRef.current = setInterval(nextSlide, 5000);
+      autoplayRef.current = setInterval(() => {
+        nextSlide();
+      }, 5000);
     }
-  };
+  }, [isPlaying, nextSlide]);
+
 
   useEffect(() => {
-    if (isPlaying) {
-      autoplayRef.current = setInterval(nextSlide, 5000);
-    }
+    resetAutoplay();
     return () => {
       if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
-  }, [isPlaying]);
+  }, [isPlaying, resetAutoplay]);
+
 
   const currentSlide = slides[activeSlide];
 

@@ -270,6 +270,8 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
               src={mapIcon2}
               alt="Map Icon"
               className={styles.mapIcon2}
+              height={30}
+              width={30}
             />
           </div>
           <div>View Map</div>
@@ -309,10 +311,12 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
         {/* Left Section - Images */}
         <div className={styles.imageSection}>
           <div className={styles.mainImageContainer}>
-            <img
+            <Image
               src={hotel.mainImg}
               alt={hotel.name}
               className={styles.mainImage}
+              height={500}
+              width={400}
             />
             <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevImage}>
               {/* &lt; */}
@@ -326,12 +330,14 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
 
           <div className={styles.thumbnailContainer}>
             {hotel.thumbnails.slice(0, 3).map((thumb, index) => (
-              <img
+              <Image
                 key={index}
                 src={thumb}
                 alt={`Thumbnail ${index + 1}`}
                 className={styles.thumbnail}
                 onClick={() => setCurrentImageIndex(index)}
+                height={150}
+                width={250}
               />
             ))}
           </div>

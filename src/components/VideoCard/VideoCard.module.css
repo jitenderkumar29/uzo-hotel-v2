@@ -11,8 +11,8 @@
   /* max-width: 1270px; */
   margin: 0 auto; /* This centers the container */
   width: 100%; /* Ensures it takes full width up to max-width */
-  margin-top: 80px;
-  margin-bottom: -70px;
+  margin-top: 60px;
+  margin-bottom: -90px;
   border-radius: 12px;
   background-image: url(/images/videoCardImg.png);
   /* background-image: url(/images/videoImage.jpg); */

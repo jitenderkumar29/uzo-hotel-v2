@@ -68,10 +68,12 @@ function SingleRoomCard({ roomData }: { roomData: RoomData }) {
 
           {/* <h1>Day use room (10 am to 4 pm) Maximum 6 hrs stay.</h1> */}
           <div className={styles.container}>
-            <img
+            <Image
               src={imageUrl}
               alt={name}
               className={styles.roomImage}
+              height={300}
+              width={400}
             />
             <button
               type="button"

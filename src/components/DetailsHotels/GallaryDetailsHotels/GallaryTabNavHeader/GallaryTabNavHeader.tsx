@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { galleryData, galleryDataTraveller, galleryDataView } from '@/app/data/gallery';
 import GallerySectionContent from '../GallerySectionContent/GallerySectionContent';
 import styles from './GallaryTabNavHeader.module.css';
@@ -67,7 +67,7 @@ export default function GalleryTabNavHeader() {
     }, 1000);
   };
 
-  const updateActiveTab = () => {
+  const updateActiveTab = useCallback(() => {
     if (isScrolling) return;
 
     const offset = getScrollOffset();
@@ -82,13 +82,11 @@ export default function GalleryTabNavHeader() {
       const sectionTop = section.offsetTop;
       const sectionBottom = sectionTop + section.offsetHeight;
 
-      // If we're within the section bounds
       if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
         activeSection = section.id;
         return;
       }
 
-      // Otherwise, find the closest section
       const distanceFromTop = Math.abs(currentPosition - sectionTop);
       if (distanceFromTop < minDistance) {
         minDistance = distanceFromTop;
@@ -99,7 +97,42 @@ export default function GalleryTabNavHeader() {
     if (activeSection !== selectedContentTab) {
       setSelectedContentTab(activeSection);
     }
-  };
+  }, [isScrolling, selectedContentTab]); // <-- dependencies
+
+
+  // const updateActiveTab = () => {
+  //   if (isScrolling) return;
+
+  //   const offset = getScrollOffset();
+  //   const currentPosition = window.scrollY + offset;
+
+  //   let activeSection = galleryData[0].id;
+  //   let minDistance = Infinity;
+
+  //   sectionRefs.current.forEach(section => {
+  //     if (!section) return;
+
+  //     const sectionTop = section.offsetTop;
+  //     const sectionBottom = sectionTop + section.offsetHeight;
+
+  //     // If we're within the section bounds
+  //     if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
+  //       activeSection = section.id;
+  //       return;
+  //     }
+
+  //     // Otherwise, find the closest section
+  //     const distanceFromTop = Math.abs(currentPosition - sectionTop);
+  //     if (distanceFromTop < minDistance) {
+  //       minDistance = distanceFromTop;
+  //       activeSection = section.id;
+  //     }
+  //   });
+
+  //   if (activeSection !== selectedContentTab) {
+  //     setSelectedContentTab(activeSection);
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,7 +142,6 @@ export default function GalleryTabNavHeader() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial check in case page loads with hash
     updateActiveTab();
 
     return () => {
@@ -118,7 +150,26 @@ export default function GalleryTabNavHeader() {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, [isScrolling, selectedContentTab]);
+  }, [isScrolling, updateActiveTab]); // ✅ now valid
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!isScrolling) {
+  //       updateActiveTab();
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   // Initial check in case page loads with hash
+  //   updateActiveTab();
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //     if (scrollTimeoutRef.current) {
+  //       clearTimeout(scrollTimeoutRef.current);
+  //     }
+  //   };
+  // }, [isScrolling, selectedContentTab]);
 
   return (
     <>

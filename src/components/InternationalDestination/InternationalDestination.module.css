@@ -1,7 +1,7 @@
 .destinationsContainer {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0rem 1.25rem;
   position: relative;
   font-family: "Segoe UI", system-ui, sans-serif;
 }
@@ -20,7 +20,8 @@
   font-size: 28px;
   /* font-size: clamp(1.5rem, 2.5vw, 2rem); */
   color: var(--text-color-black);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  /* margin-bottom: 1.5rem; */
   font-weight: 600;
   /* text-align: center; */
 }
@@ -37,7 +38,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1.25rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
@@ -134,7 +135,7 @@
 
 .navButtonLeft {
   position: absolute;
-  top: 50px;
+  top: 25px;
   right: 70px;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
@@ -154,7 +155,7 @@
 
 .navButton {
   position: absolute;
-  top: 50px;
+  top: 25px;
   right: 20px;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);

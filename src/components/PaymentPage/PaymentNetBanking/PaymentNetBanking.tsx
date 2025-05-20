@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './PaymentNetBanking.module.css';
+import Image from 'next/image';
 
 interface Bank {
   id: string;
@@ -367,7 +368,7 @@ export default function PaymentNetBanking() {
               <label htmlFor={bank.id} className={styles.bankLabel}>
                 <span className={styles.checkmark}></span>
                 <span className={styles.bankLogo}>
-                  <img src={bank.logo} alt={`${bank.name} logo`} width="25" height="25" />
+                  <Image src={bank.logo} alt={`${bank.name} logo`} width="25" height="25" />
                 </span>
                 <span className={styles.bankName}>{bank.name}</span>
               </label>

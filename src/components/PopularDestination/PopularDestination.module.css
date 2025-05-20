@@ -34,7 +34,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1.25rem;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -113,7 +113,7 @@
 
 .navButtonLeft {
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 70px;
   transform: translateY(-50%);
   background: var(--dark-white);
@@ -132,7 +132,7 @@
 
 .navButton {
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 20px;
   transform: translateY(-50%);
   background: var(--dark-white);

@@ -332,9 +332,9 @@ const PropertyHotelInfoPage = () => {
   const roomId = searchParams?.get("roomId") ?? undefined;
 
   useEffect(() => {
-    console.log("PropertyHotelInfoPage id and roomId");
-    console.log(id);
-    console.log(roomId);
+    // console.log("PropertyHotelInfoPage id and roomId");
+    // console.log(id);
+    // console.log(roomId);
     setFoundRoomId(roomId); // <-- moved into useEffect
   }, [roomId, id]);
 
@@ -353,7 +353,7 @@ const PropertyHotelInfoPage = () => {
       setFoundRoom(null);
       setFoundRoomId('');
     }
-  }, [id, foundRoomId]);
+  }, [id, foundRoomId, roomId]);
 
   if (!foundRoom) {
     return <div>Loading or no room found...</div>;

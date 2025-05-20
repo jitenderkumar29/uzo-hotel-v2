@@ -20,7 +20,7 @@
   font-size: 28px;
   /* font-size: 1.75rem; */
   color: #333;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   /* text-align: center; */
   font-weight: 600;
 }
@@ -35,7 +35,7 @@
   display: flex;
   overflow-x: auto;
   gap: 1.25rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -110,7 +110,7 @@
 
 .navButtonLeft {
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 70px;
   transform: translateY(-50%);
   border: none;
@@ -130,7 +130,7 @@
 
 .navButton {
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 20px;
   transform: translateY(-50%);
   border: none;
