@@ -34,70 +34,71 @@ const AddOnsImageSlide = () => {
   ];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.divider}></div>
-        {/* <h1 className={styles.title}>------ Global Icon of Indian Hospitality -------</h1> */}
-        <h1 className={styles.title}>
-          <span className={styles.titleText}>Global Icon of Indian Hospitality</span>
-        </h1>
-        <div className={styles.divider}></div>
-        <p className={styles.description}>
-          Enter a realm of storied halls, sophisticated delights and unrivalled indulgence.
-          Immerse yourself in the grandeur of luxury at our exquisite palaces, hotels, resorts and safaris.
-        </p>
-      </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.divider}></div>
+          {/* <h1 className={styles.title}>------ Global Icon of Indian Hospitality -------</h1> */}
+          <h1 className={styles.title}>
+            <span className={styles.titleText}>Global Icon of Indian Hospitality</span>
+          </h1>
+          <div className={styles.divider}></div>
+          <p className={styles.description}>
+            Enter a realm of storied halls, sophisticated delights and unrivalled indulgence.
+            Immerse yourself in the grandeur of luxury at our exquisite palaces, hotels, resorts and safaris.
+          </p>
+        </div>
 
-      <div className={styles.imageContainer}>
-        {/* Base Image */}
+        <div className={styles.imageContainer}>
+          {/* Base Image */}
 
-        {sectionId === 1 && (
-          <div className={styles.image}>
-            <Image
-              src={addOnsImageSlide1}
-              alt="Indian Hospitality"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-        )}
-        {sectionId === 2 && (
-          <div className={styles.image}>
-            <Image
-              src={addOnsImageSlide2}
-              alt="Indian Hospitality"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-        )}
-        {sectionId === 3 && (
-          <div className={styles.image}>
-            <Image
-              src={addOnsImageSlide3}
-              alt="Indian Hospitality"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-        )}
-        {sectionId === 4 && (
-          <div className={styles.image}>
-            <Image
-              src={addOnsImageSlide4}
-              alt="Indian Hospitality"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-        )}
+          {sectionId === 1 && (
+            <div className={styles.image}>
+              <Image
+                src={addOnsImageSlide1}
+                alt="Indian Hospitality"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          )}
+          {sectionId === 2 && (
+            <div className={styles.image}>
+              <Image
+                src={addOnsImageSlide2}
+                alt="Indian Hospitality"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          )}
+          {sectionId === 3 && (
+            <div className={styles.image}>
+              <Image
+                src={addOnsImageSlide3}
+                alt="Indian Hospitality"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          )}
+          {sectionId === 4 && (
+            <div className={styles.image}>
+              <Image
+                src={addOnsImageSlide4}
+                alt="Indian Hospitality"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          )}
 
-        {/* Hover Image - Only shown when a section is hovered */}
-        {/* {hoveredSection !== null && (
+          {/* Hover Image - Only shown when a section is hovered */}
+          {/* {hoveredSection !== null && (
           <div className={styles.hoverImage}>
             <Image
               src={addOnsImageSlide2}
@@ -108,32 +109,36 @@ const AddOnsImageSlide = () => {
           </div>
         )} */}
 
-        {/* Interactive sections */}
-        <div className={styles.imageSections}>
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className={styles.imageSection}
-              onMouseEnter={() => {
-                setSectionId(section.id);
-                // console.log("section.id", section.id) 
-              }}
-            // onMouseLeave={() => setHoveredSection(1)}
-            // onMouseEnter={() => setHoveredSection(index)}
-            // onMouseLeave={() => setHoveredSection(null)}
-            >
-              <div className={`${styles.sectionContent} ${hoveredSection === index ? styles.hidden : ''}`}>
-                <h3>{section.title}</h3>
+          {/* Interactive sections */}
+          <div className={styles.imageSections}>
+            {sections.map((section, index) => (
+              <div
+                key={index}
+                className={styles.imageSection}
+                onMouseEnter={() => {
+                  setSectionId(section.id);
+                  // console.log("section.id", section.id) 
+                }}
+              // onMouseLeave={() => setHoveredSection(1)}
+              // onMouseEnter={() => setHoveredSection(index)}
+              // onMouseLeave={() => setHoveredSection(null)}
+              >
+                <div className={`${styles.sectionContent} ${hoveredSection === index ? styles.hidden : ''}`}>
+                  <h3>{section.title}</h3>
+                </div>
+                <div className={`${styles.sectionHoverContent} ${hoveredSection === index ? '' : styles.hidden}`}>
+                  <h3>{section.title}</h3>
+                  <p>{section.hoverText}</p>
+                </div>
               </div>
-              <div className={`${styles.sectionHoverContent} ${hoveredSection === index ? '' : styles.hidden}`}>
-                <h3>{section.title}</h3>
-                <p>{section.hoverText}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className={styles.tempImage}>
+        <Image src={"/images/restaurant.jpg"} alt='rest' width={1871} height={754} />
+      </div>
+    </>
   );
 };
 
