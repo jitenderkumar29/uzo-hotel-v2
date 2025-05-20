@@ -145,12 +145,12 @@ const ImageLayouts: React.FC = () => {
             <ImageCard image={images.layoutA.large} size="large" />
           )}
         </div>
-        <div className={styles.column}>
+        <div className={styles.column2}>
           {images.layoutA.middle?.map((img, index) => (
             <ImageCard key={`middle-${index}`} image={img} size="small" />
           ))}
         </div>
-        <div className={styles.column}>
+        <div className={styles.column3}>
           {images.layoutA.right?.map((img, index) => (
             <ImageCard key={`right-${index}`} image={img} size="small" />
           ))}
@@ -164,12 +164,12 @@ const ImageLayouts: React.FC = () => {
             <ImageCard key={`left-${index}`} image={img} size="small" />
           ))}
         </div>
-        <div className={styles.column}>
+        <div className={styles.column2}>
           {images.layoutB.middle?.map((img, index) => (
             <ImageCard key={`middle-b-${index}`} image={img} size="small" />
           ))}
         </div>
-        <div className={styles.column}>
+        <div className={styles.column2}>
           {images.layoutB.large && (
             <ImageCard image={images.layoutB.large} size="large" />
           )}

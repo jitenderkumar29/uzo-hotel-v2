@@ -17,10 +17,11 @@
   background-color: var(--dark-accent);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   color: white;
-  padding: 1rem;
+  padding: 0rem 1rem;
   margin-top: 0;
+  padding-right: 2rem;
 }
 
 .appSection {
@@ -91,7 +92,7 @@
 .hotelsInInternational {
   background-color: var(--dark-accent);
   color: var(--dark-white);
-  padding: 1rem 2.5rem;
+  padding: 1rem 1.75rem;
   margin-top: 2.1rem;
   border-top: 1px dashed white;
   font-size: 24px;
@@ -111,6 +112,7 @@
   padding: 1rem 0 1rem 2.5rem;
   margin-top: 0;
   color: var(--dark-white);
+  padding: 0rem 2rem 1rem 2rem;
 }
 
 /* Toggle Buttons */
@@ -262,10 +264,14 @@
   }
 
   .footerTop {
-    padding: 2rem;
+    padding: 0rem 1rem;
+    padding-right: 3rem;
+
+    /* padding: 2rem; */
   }
 
   .footerBottom {
-    padding: 2rem;
+    padding: 0rem 2rem 1rem 2rem;
+    /* padding: 2rem; */
   }
 }

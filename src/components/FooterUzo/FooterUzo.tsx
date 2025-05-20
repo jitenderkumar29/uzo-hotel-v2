@@ -39,8 +39,8 @@ interface FooterData {
 
 const FooterUzo: React.FC = () => {
   const [showTop, setShowTop] = useState(true);
-  const [showBottom, setShowBottom] = useState(true);
-  const [showInternational, setShowInternational] = useState(true);
+  const [showBottom, setShowBottom] = useState(false);
+  const [showInternational, setShowInternational] = useState(false);
 
   const footerData: FooterData = {
     appSection: {
