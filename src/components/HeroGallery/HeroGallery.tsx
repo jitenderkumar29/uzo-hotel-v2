@@ -99,7 +99,8 @@ const HeroGallery: React.FC = () => {
     <div className={styles.heroGal}>
       <div className={styles.galleryContainer}>
         <header className={styles.topbar}>
-          <h1>UZO - A Premium Luxury Hotels Chain in The World</h1>
+          <h1>UZO - A&nbsp;&nbsp;Global Premium Luxury Hospitality Chain</h1>
+          {/* <h1>UZO - A Premium Luxury Hotels Chain in The World</h1> */}
           <p>
             Discover our world of exclusive offers and services that change the
             way you travel.

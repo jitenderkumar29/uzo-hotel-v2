@@ -49,6 +49,7 @@
   margin: 0;
   color: var(--light-accent);
   white-space: pre-line;
+  font-weight: bold;
 }
 
 .highlight {
