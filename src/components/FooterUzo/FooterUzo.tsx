@@ -64,7 +64,8 @@ const FooterUzo: React.FC = () => {
         heading: "Support",
         links: [
           "Contact Us",
-          "FAQ",
+          "Travel Tips",
+          // "FAQ",
           "Sustainability",
           "Medical Assistance",
           "Disclaimer",
@@ -77,7 +78,8 @@ const FooterUzo: React.FC = () => {
         links: [
           "Partner with Us",
           "Magazines",
-          "Travel Tips",
+          "List Your Property",
+          // "Travel Tips",
           "Cookies Policy",
           "Advertise Your Hotels",
         ],
@@ -219,7 +221,7 @@ const FooterUzo: React.FC = () => {
         {showTop && (
           <div className={styles.footerTop}>
             <div className={styles.appSection}>
-              <h4 className={styles.appSectionHead}>{footerData.appSection.title}</h4>
+              <h4 className={`${styles.appSectionHead} ${styles.headingCol}`}>{footerData.appSection.title}</h4>
               <div className={styles.storeButtons}>
                 {footerData.appSection.storeButtons.map((src, idx) => (
                   <Image
@@ -237,7 +239,7 @@ const FooterUzo: React.FC = () => {
             <div className={styles.footerLinks}>
               {footerData.footerLinks.map((col, idx) => (
                 <div key={idx} className={styles.column}>
-                  <h4>{col.heading}</h4>
+                  <h4 className={styles.headingCol}>{col.heading}</h4>
                   {col.links.map((link, i) => (
                     <a key={i} href="#">
                       {link}
@@ -250,7 +252,7 @@ const FooterUzo: React.FC = () => {
             <div className={styles.footerLinks}>
               {footerData.footerLinks2.map((col, idx) => (
                 <div key={idx} className={styles.column}>
-                  <h4>{col.heading}</h4>
+                  <h4 className={styles.headingCol}>{col.heading}</h4>
                   {col.links.map((link, i) => (
                     <a key={i} href="#">
                       {link}
@@ -263,7 +265,7 @@ const FooterUzo: React.FC = () => {
             <div className={styles.footerLinks}>
               {footerData.footerLinks3.map((col, idx) => (
                 <div key={idx} className={styles.column}>
-                  <h4>{col.heading}</h4>
+                  <h4 className={styles.headingCol}>{col.heading}</h4>
                   {col.links.map((link, i) => (
                     <a key={i} href="#">
                       {link}
@@ -276,7 +278,7 @@ const FooterUzo: React.FC = () => {
             <div className={styles.footerLinks}>
               {footerData.footerLinks4.map((col, idx) => (
                 <div key={idx} className={styles.column}>
-                  <h4>{col.heading}</h4>
+                  <h4 className={styles.headingCol}>{col.heading}</h4>
                   {col.links.map((link, i) => (
                     <a key={i} href="#">
                       {link}

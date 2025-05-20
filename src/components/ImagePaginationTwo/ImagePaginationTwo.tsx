@@ -64,7 +64,7 @@ export default function ImagePaginationTwo() {
         {/* Header Section */}
         <div className={styles.header}>
           <hr className={styles.divider} />
-          <h2 className={styles.title}>Fine Dining at Taj Restaurants</h2>
+          <h2 className={styles.title}>Fine Dining at Uzo Restaurants</h2>
           <hr className={styles.divider} />
         </div>
         <div className={styles.headerDescription}>
