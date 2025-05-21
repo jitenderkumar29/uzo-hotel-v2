@@ -6,9 +6,9 @@ const ImagePaginationThree = () => {
 
   const slides = [
     {
-      title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY PROGRAM",
-      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty.",
-      // description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty Program.",
+      title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY",
+      // title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY PROGRAM",
+      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty Program.",
       imageUrl: "/images/paginationThree3.jpg"
     },
     {
