@@ -116,7 +116,8 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 1rem;
-  width: 220px;
+  width: 300px;
+  /* width: 220px; */
   z-index: 100;
   /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

@@ -80,9 +80,8 @@ const Header: React.FC = () => {
 
                     {activeDropdown === city.cityId && (
                       <div className={styles.popupCity}>
-                        <h3 className={styles.headingCity}>Popular Hotels</h3>
-                        {/* <h3 className={styles.headingCity}>Popular Localities</h3> */}
-                        {currentHotels.map((hotel, index) => (
+                        <h3 className={styles.headingCity}>Popular Localities</h3>
+                        {currentHotels.slice(0, 10).map((hotel, index) => (
                           <Link
                             key={index}
                             href={`/hotels-in-${index}-${city.name.toLowerCase()}/`}
@@ -95,7 +94,6 @@ const Header: React.FC = () => {
                           <Link href="#" className={styles.allLinkCity}>
                             All of {city.name}
                             <FaChevronRight className={styles.chevronRight} />
-                            {/* <span className={styles.chevronCity}>➔</span> */}
                           </Link>
                         </div>
                       </div>
