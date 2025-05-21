@@ -98,7 +98,7 @@ const ImagePaginationThree = () => {
         {/* <div className={styles.divider}></div> */}
         <hr className={styles.divider} />
         <h1 className={styles.title}>
-          <span>Unmatched UZO Privileges</span>
+          <span>Unmatched UZO ONE Privileges</span>
           <span></span>
         </h1>
         <hr className={styles.divider} />

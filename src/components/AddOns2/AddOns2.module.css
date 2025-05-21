@@ -13,6 +13,7 @@
   justify-content: center;
   text-align: center;
   color: var(--dark-white);
+  margin-top: 2rem;
 }
 
 .imageContainer {
