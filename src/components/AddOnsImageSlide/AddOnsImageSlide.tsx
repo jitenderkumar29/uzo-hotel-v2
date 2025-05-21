@@ -135,16 +135,6 @@ const AddOnsImageSlide = () => {
           </div>
         </div>
       </div>
-      <div className={styles.tempImage}>
-        <Image src={'/images/restaurant.jpg'} alt='rest' width={1871} height={754} />
-        {/* <Image
-          src={'/images/restaurant.jpg'}
-          alt="Indian Hospitality"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        /> */}
-      </div>
     </>
   );
 };

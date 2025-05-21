@@ -74,7 +74,7 @@
 }
 
 .card {
-  width: calc(100% / 3.11);
+  width: calc(100% / 3.155);
   flex-shrink: 0;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
@@ -85,7 +85,9 @@
 
 .cardImage {
   width: 100%;
-  height: auto;
+  height: 425px; /* Fixed height */
+
+  /* height: auto; */
   display: block;
   /* aspect-ratio: 16/9; */
   object-fit: cover;

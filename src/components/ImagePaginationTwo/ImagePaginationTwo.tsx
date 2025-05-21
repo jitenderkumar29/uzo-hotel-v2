@@ -10,13 +10,13 @@ export default function ImagePaginationTwo() {
       id: '1',
       title: 'CELEBRATED CHEFS',
       description: 'A distinguished roster of world-class talent that embodies culinary excellence with expertise, creativity and precision.',
-      imageUrl: '/images/ImagePaginationTwo1.jpg'
+      imageUrl: '/images/ImagePaginationTwo22.jpg'
     },
     {
       id: '2',
       title: 'LEGENDARY RESTAURANTS',
       description: 'A collection of restaurants recognised for unparalleled dining experiences, authentic culinary traditions, exemplary service and immersive ambience.',
-      imageUrl: '/images/ImagePaginationTwo2.jpg'
+      imageUrl: '/images/ImagePaginationTwo11.jpg'
     },
     {
       id: '3',
@@ -96,8 +96,10 @@ export default function ImagePaginationTwo() {
                     alt={item.title}
                     className={styles.cardImage}
                     loading="lazy"
-                    width={3200}
-                    height={3433}
+                    width={1600}
+                    height={900}
+                  // width={3200}
+                  // height={3433}
                   />
                   <div className={styles.cardContent}>
                     {/* <hr className={styles.cardDivider} /> */}

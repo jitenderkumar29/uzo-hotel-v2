@@ -19,6 +19,7 @@ import DetailsHotels from '@/components/DetailsHotels/DetailsHotels';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import ImagePagination from '@/components/ImagePagination/ImagePagination';
 import ImagePaginationTwo from '@/components/ImagePaginationTwo/ImagePaginationTwo';
+import ImagePaginationThree from '@/components/ImagePaginationThree/ImagePaginationThree';
 
 const HomePage = () => {
   // const [scrollKey, setScrollKey] = useState(0);
@@ -52,6 +53,7 @@ const HomePage = () => {
         {/* <PrepareToTravelWrapper /> */}
         <HeroGallery />
         <ImagePagination />
+        <ImagePaginationThree />
         <AddOns2 />
         <ImagePaginationTwo />
         <PopularDestination />
