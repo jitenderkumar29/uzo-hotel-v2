@@ -170,7 +170,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: var(--border-color);
   border: none;
   cursor: pointer;
   padding: 0;
@@ -178,7 +178,8 @@
 }
 
 .activeDot {
-  background-color: #ad8b3a;
+  background-color: var(--golden-color);
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {

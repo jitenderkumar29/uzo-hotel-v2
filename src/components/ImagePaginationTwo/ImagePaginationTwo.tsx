@@ -16,7 +16,7 @@ export default function ImagePaginationTwo() {
       id: '2',
       title: 'LEGENDARY RESTAURANTS',
       description: 'A collection of restaurants recognised for unparalleled dining experiences, authentic culinary traditions, exemplary service and immersive ambience.',
-      imageUrl: '/images/ImagePaginationTwo11.jpg'
+      imageUrl: '/images/ImagePaginationTwo21.jpg'
     },
     {
       id: '3',
@@ -35,7 +35,49 @@ export default function ImagePaginationTwo() {
       title: 'BEYOND THE ORDINARY',
       description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
       imageUrl: '/images/ImagePaginationTwo5.jpg'
-    }
+    },
+    {
+      id: '6',
+      title: 'PREMIER GLOBAL',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo6.jpg'
+    },
+    {
+      id: '7',
+      title: 'Luxury GLOBAL',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo7.jpg'
+    },
+    {
+      id: '8',
+      title: 'ORDINARY GLOBAL',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo8.jpg'
+    },
+    {
+      id: '9',
+      title: 'GLOBAL CUISINES',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo9.jpg'
+    },
+    {
+      id: '10',
+      title: 'GLOBAL SIGNATURE',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo10.jpg'
+    },
+    {
+      id: '11',
+      title: 'GLOBAL RESTAURANTS',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo11.jpg'
+    },
+    {
+      id: '12',
+      title: 'GLOBAL LEGENDARY',
+      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+      imageUrl: '/images/ImagePaginationTwo12.jpg'
+    },
   ];
 
   const displayCount = 3;

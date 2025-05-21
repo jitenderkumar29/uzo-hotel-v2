@@ -6,48 +6,56 @@ const ImagePaginationThree = () => {
 
   const slides = [
     {
-      title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY",
-      // title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY PROGRAM",
-      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty Program.",
+      id: 1,
+      title: "PLATINUM MEMBERSHIP OF LOYALTY PROGRAM",
+      // title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY",
+      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the UzoOne Loyalty Program.",
       imageUrl: "/images/paginationThree3.jpg"
     },
     {
+      id: 2,
       title: "INVITATIONS TO EXCLUSIVE EVENTS",
       description: "Members enjoy access to ultra-exclusive events curated especially by The Chambers.",
       imageUrl: "/images/paginationThree4.jpg"
 
     },
     {
+      id: 3,
       title: "COMPLIMENTARY ROOM UPGRADE",
-      description: "Members enjoy priority bookings with complimentary one-level room upgrade, across Taj, SeleQtions and Vivanta hotels.",
+      description: "Members enjoy priority bookings with complimentary one-level room upgrade, across Uzo, SeleQtions and Vivanta hotels.",
       imageUrl: "/images/paginationThree5.jpg"
 
     },
     {
+      id: 4,
       title: "DINING & WELLNESS EXPERIENCES",
-      description: "Members receive exclusive vouchers for complimentary dining and wellness services across Taj, SeleQtions and Vivanta hotels.",
+      description: "Members receive exclusive vouchers for complimentary dining and wellness services across Uzo, SeleQtions and Vivanta hotels.",
       imageUrl: "/images/paginationThree6.jpg"
 
     },
     {
+      id: 5,
       title: "COMPLIMENTARY ACCESS TO HOTEL FACILITIES",
-      description: "Members enjoy complimentary access to the pool and fitness centre across all Taj, SeleQtions and Vivanta hotels worldwide.",
+      description: "Members enjoy complimentary access to the pool and fitness centre across all Uzo, SeleQtions and Vivanta hotels worldwide.",
       imageUrl: "/images/paginationThree7.jpg"
 
     },
     {
+      id: 6,
       title: "BUSINESS CENTRE & LOUNGE ACCESS",
-      description: "Members enjoy unrestricted access to the business centre and club lounge across all Taj, SeleQtions and Vivanta hotels worldwide.",
+      description: "Members enjoy unrestricted access to the business centre and club lounge across all Uzo, SeleQtions and Vivanta hotels worldwide.",
       imageUrl: "/images/paginationThree8.jpg"
 
     },
     {
+      id: 7,
       title: "A LIFETIME OF PRIVILEGES",
       description: "Members enjoy a lifetime of unfettered access to all benefits and privileges associated with the membership.",
       imageUrl: "/images/paginationThree1.jpg"
 
     },
     {
+      id: 8,
       title: "ADD-ON CARD",
       description: "Members can share select privileges with their spouse by availing the complimentary add-on card facility.",
       imageUrl: "/images/paginationThree2.jpg"
@@ -88,15 +96,18 @@ const ImagePaginationThree = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         {/* <div className={styles.divider}></div> */}
+        <hr className={styles.divider} />
         <h1 className={styles.title}>
-          <span>Unmatched Privileges</span>
+          <span>Unmatched UZO Privileges</span>
           <span></span>
         </h1>
+        <hr className={styles.divider} />
+      </div>
+      <div className={styles.header}>
         <p className={styles.subtitle}>
           The Chambers Global Membership brings a bouquet of benefits and enhanced privileges for the discerning elite.
         </p>
       </div>
-
       <div className={styles.carouselContainer}>
         <button className={`${styles.arrow} ${styles.prevArrow}`} onClick={prevSlide}>
           <span className="sr-only">Previous</span>
@@ -134,7 +145,7 @@ const ImagePaginationThree = () => {
       </div>
 
       <div className={styles.pagination}>
-        {Array.from({ length: slides.length - 1 }).map((_, index) => (
+        {Array.from({ length: slides.length }).map((_, index) => (
           <button
             key={index}
             className={`${styles.paginationDot} ${index === currentSlide ? styles.active : ''}`}
