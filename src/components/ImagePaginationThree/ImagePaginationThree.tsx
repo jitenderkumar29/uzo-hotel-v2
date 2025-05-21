@@ -6,44 +6,51 @@ const ImagePaginationThree = () => {
 
   const slides = [
     {
-      title: "A LIFETIME OF PRIVILEGES",
-      description: "Members enjoy a lifetime of unfettered access to all benefits and privileges associated with the membership.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/542fe3ae73435cc2a7d6030259c78010380ca3ec-952x952.jpg?w=768&auto=format&dpr=2"
-    },
-    {
-      title: "ADD-ON CARD",
-      description: "Members can share select privileges with their spouse by availing the complimentary add-on card facility.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/543b2aac064274a9e2ffedf6d93bb18de388ffb1-1398x1228.jpg?w=768&auto=format&dpr=2"
-    },
-    {
       title: "PLATINUM MEMBERSHIP OF NEUPASS LOYALTY PROGRAM",
-      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty Program.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/c591dcf25ba49ae7f8f871cbc6ebc8a73fbd3af8-1398x1228.jpg?w=768&auto=format&dpr=2"
+      description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty.",
+      // description: "Members can enjoy the benefits of the highest-tier Platinum membership of the NeuPass Loyalty Program.",
+      imageUrl: "/images/paginationThree3.jpg"
     },
     {
       title: "INVITATIONS TO EXCLUSIVE EVENTS",
       description: "Members enjoy access to ultra-exclusive events curated especially by The Chambers.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/dcd343a34cb1375a9628906f155d23f44d92c43e-1401x1228.jpg?w=768&auto=format&dpr=2"
+      imageUrl: "/images/paginationThree4.jpg"
+
     },
     {
       title: "COMPLIMENTARY ROOM UPGRADE",
       description: "Members enjoy priority bookings with complimentary one-level room upgrade, across Taj, SeleQtions and Vivanta hotels.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/dfbf98f21183274346cded0e3341f6c65f3e7d9d-1398x1228.png?w=768&auto=format&dpr=2"
+      imageUrl: "/images/paginationThree5.jpg"
+
     },
     {
       title: "DINING & WELLNESS EXPERIENCES",
       description: "Members receive exclusive vouchers for complimentary dining and wellness services across Taj, SeleQtions and Vivanta hotels.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/187c6ac44a997ec9a7ea5984e5326aa05ce872d0-1398x1228.jpg?w=768&auto=format&dpr=2"
+      imageUrl: "/images/paginationThree6.jpg"
+
     },
     {
       title: "COMPLIMENTARY ACCESS TO HOTEL FACILITIES",
       description: "Members enjoy complimentary access to the pool and fitness centre across all Taj, SeleQtions and Vivanta hotels worldwide.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/3c084bf091ded4bd16215467ff6c4acfac46658d-1398x1228.png?w=768&auto=format&dpr=2"
+      imageUrl: "/images/paginationThree7.jpg"
+
     },
     {
       title: "BUSINESS CENTRE & LOUNGE ACCESS",
       description: "Members enjoy unrestricted access to the business centre and club lounge across all Taj, SeleQtions and Vivanta hotels worldwide.",
-      imageUrl: "https://cdn.sanity.io/images/ocl5w36p/prod4/1177babe5b6576c0795724bfc5d5906c0fa2abb4-699x614.png?w=768&auto=format&dpr=2"
+      imageUrl: "/images/paginationThree8.jpg"
+
+    },
+    {
+      title: "A LIFETIME OF PRIVILEGES",
+      description: "Members enjoy a lifetime of unfettered access to all benefits and privileges associated with the membership.",
+      imageUrl: "/images/paginationThree1.jpg"
+
+    },
+    {
+      title: "ADD-ON CARD",
+      description: "Members can share select privileges with their spouse by availing the complimentary add-on card facility.",
+      imageUrl: "/images/paginationThree2.jpg"
     }
   ];
 
