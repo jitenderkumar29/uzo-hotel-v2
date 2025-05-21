@@ -1,38 +1,63 @@
 "use client"
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import styles from './Header.module.css';
+import { hotelsList } from '@/app/data';
+import { HotelInterface } from "@/interfaces";
 
 interface City {
-  id: string;
+  cityId: string;
   name: string;
 }
 
 const Header: React.FC = () => {
-  const buttonRef = useRef<HTMLAnchorElement>(null);
+  // const buttonRef = useRef<HTMLAnchorElement>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [currentHotels, setCurrentHotels] = useState<HotelInterface[]>([]);  // const [cityData, setCityData] = useState<string | null>(null);
 
   const cityList: Record<string, City> = {
-    agra: { id: 'agra', name: 'Agra' },
-    bareliy: { id: 'bareliy', name: 'Bareliy' },
-    chemark: { id: 'Chennai', name: 'Chennai' },
-    hyderabad: { id: 'hyderabad', name: 'Hyderabad' },
-    mumbai: { id: 'mumbai', name: 'Mumbai' },
-    bangalore: { id: 'bangalore', name: 'Bangalore' },
-    delhi: { id: 'delhi', name: 'Delhi' },
-    gurgaon: { id: 'gurgaon', name: 'Gurgaon' },
-    goa: { id: 'goa', name: 'Goa' },
-    kolkata: { id: 'kolkata', name: 'Kolkata' },
-    noida: { id: 'noida', name: 'Noida' },
-    pune: { id: 'pune', name: 'Pune' },
-    ghaziabad: { id: 'ghaziabad', name: 'Ghaziabad' },
-    giles: { id: 'cities', name: 'Cities' },
+    agra: { cityId: "1", name: 'Agra' },
+    bareliy: { cityId: '2', name: 'Bareliy' },
+    chemark: { cityId: '3', name: 'Chennai' },
+    hyderabad: { cityId: '4', name: 'Hyderabad' },
+    mumbai: { cityId: '5', name: 'Mumbai' },
+    bangalore: { cityId: "6", name: 'Bangalore' },
+    delhi: { cityId: '7', name: 'Delhi' },
+    gurgaon: { cityId: '8', name: 'Gurgaon' },
+    goa: { cityId: '9', name: 'Goa' },
+    kolkata: { cityId: "10", name: 'Kolkata' },
+    noida: { cityId: "11", name: 'Noida' },
+    pune: { cityId: "12", name: 'Pune' },
+    ghaziabad: { cityId: "13", name: 'Ghaziabad' },
+    // cities: { cityId: "14", name: 'All Cities' },
   };
 
-  const toggleDropdown = (cityName: string) => {
-    setActiveDropdown(activeDropdown === cityName ? null : cityName);
+  // const findCityData = (cityId: string): HotelsListInterface | undefined => {
+  //   return hotelsList.find(city => city.cityId === cityId);
+  // };
+
+  const toggleDropdown = (cityId: string) => {
+    // Find the city data
+    const foundCity = hotelsList.find(city => city.cityId === cityId);
+
+    if (foundCity) {
+      setCurrentHotels(foundCity.hotels);
+      setActiveDropdown(activeDropdown === cityId ? null : cityId);
+    }
   };
+  // const toggleDropdown = (cityId: string) => {
+  //   setActiveDropdown(activeDropdown === cityId ? null : cityId);
+
+  //   const cityData = findCityData(cityId);
+  //   if (cityData) {
+  //     // setCityData(cityData);
+  //     console.log("CityID:", cityData.cityId);
+  //     console.log("City:", cityData.cityName);
+  //     console.log("Hotels:", cityData.hotels);
+  //     // setCurrentCity(cityData);
+  //   }
+  // };
 
   return (
     <header>
@@ -42,25 +67,90 @@ const Header: React.FC = () => {
             {Object.keys(cityList).map((key, index) => {
               const city = cityList[key];
               return (
-                <li key={index}>
-                  <Link
-                    href={`/`}
-                    className={styles.cityLink}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toggleDropdown(city.name);
-                    }}
-                    ref={buttonRef}
+                <li key={index} className={styles.cityItem}>
+                  <div
+                    className={styles.cityWrapper}
+                    onMouseEnter={() => toggleDropdown(city.cityId)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    {city.name}
-                    <FaChevronDown className={styles.chevron} />
-                  </Link>
+                    <Link href="/" className={styles.cityLink}>
+                      {city.name}
+                      <FaChevronDown className={styles.chevron} />
+                    </Link>
+
+                    {activeDropdown === city.cityId && (
+                      <div className={styles.popupCity}>
+                        <h3 className={styles.headingCity}>Popular Hotels</h3>
+                        {/* <h3 className={styles.headingCity}>Popular Localities</h3> */}
+                        {currentHotels.map((hotel, index) => (
+                          <Link
+                            key={index}
+                            href={`/hotels-in-${index}-${city.name.toLowerCase()}/`}
+                            className={styles.localityItemCity}
+                          >
+                            {hotel.name}
+                          </Link>
+                        ))}
+                        <div className={styles.allBangaloreCity}>
+                          <Link href="#" className={styles.allLinkCity}>
+                            All of {city.name}
+                            <FaChevronRight className={styles.chevronRight} />
+                            {/* <span className={styles.chevronCity}>➔</span> */}
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </li>
+
+                // <li key={index}>
+                //   <Link
+                //     href={`/`}
+                //     className={styles.cityLink}
+                //     onMouseEnter={(e) => {
+                //       e.preventDefault();
+                //       toggleDropdown(city.cityId);
+                //     }}
+                //     onMouseLeave={() => setActiveDropdown(null)}
+                //     ref={buttonRef}
+                //   >
+                //     {city.name}
+                //     <FaChevronDown className={styles.chevron} />
+                //   </Link>
+                // </li>
+
               );
             })}
+            <li className={styles.cityItem}>
+              <Link href="/" className={styles.cityLink}>
+                {/* <Link href="/allCityList" className={styles.cityLink}> */}
+                All Cities
+                {/* <FaChevronDown className={styles.chevron} /> */}
+              </Link></li>
           </ul>
         </div>
       </section>
+
+      {/* {activeDropdown && (
+        <div className={styles.popupCity}>
+          <h3 className={styles.headingCity}>Popular Localities</h3>
+          {currentHotels.map((hotel, index) => (
+            <Link
+              key={index}
+              href={`/hotels-in-${index}-bangalore/`}
+              className={styles.localityItemCity}
+            >
+              {hotel.name}
+            </Link>
+          ))}
+          <div className={styles.allBangaloreCity}>
+            <Link href="#" className={styles.allLink}>
+              All of Bangalore
+              <span className={styles.chevronCity}>➔</span>
+            </Link>
+          </div>
+        </div>
+      )} */}
 
     </header>
   );

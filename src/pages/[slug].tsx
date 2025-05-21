@@ -21,6 +21,7 @@ const HotelDetails = lazy(() => import('./HotelDetails/HotelDetails'));
 const GallaryDetailsHotels = lazy(() => import('./HotelGallaryTaBNav/HotelGallaryTabNav'));
 const PropertyHotelInfoPage = lazy(() => import('../components/PropertyHotelInfoPage/PropertyHotelInfoPage'));
 const PaymentPage = lazy(() => import('../components/PaymentPage/PaymentPage'))
+const AllCityList = lazy(() => import('../components/AllCityList/AllCityList'))
 // Example of lazy-loaded components using `dynamic`
 // const Book = dynamic(() => import('./Book/Book'), { suspense: true }) as ComponentType;
 // const HotelBooking = dynamic(() => import('./HotelBooking/HotelBooking'), { suspense: true });
@@ -60,6 +61,11 @@ const pageMap: Record<string, () => ReactElement> = {
   paymentPage: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <PaymentPage />
+    </Suspense>
+  ),
+  allCityList: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AllCityList />
     </Suspense>
   ),
   // book: () => <Book />,

@@ -53,7 +53,9 @@
   /* padding: 10px; */
   color: white;
   text-decoration: none;
-  gap: 4px;
+  gap: 2px;
+  font-weight: 600;
+  white-space: nowrap; /* Prevents text wrapping */
 }
 
 .cityLink:hover {
@@ -62,12 +64,23 @@
 }
 
 .chevron {
-  color: var(--dark-white);
-  font-size: 15px;
+  /* color: var(--dark-white);
+  font-size: 15px; */
+  margin-top: 3px;
 }
 .chevron:hover {
-  background: var(--light-accent-secondary);
-  color: var(--light-accent);
+  /* transform: rotate(180deg); */
+}
+
+.cityLink:hover .chevron {
+  transform: rotate(180deg);
+  transition: transform 0.6s ease; /* Optional: adds smooth animation */
+}
+
+.chevronRight {
+  /* margin-top: 3px; */
+  font-size: 18px;
+  font-weight: 100;
 }
 
 /* Responsive adjustments */
@@ -90,5 +103,110 @@
     font-size: 14px;
     padding: 0.5rem;
     white-space: nowrap;
+  }
+}
+
+/* Drop down style */
+
+.popupCity {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  z-index: 100;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: var(--border-color);
+}
+/* .popupCity {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+} */
+
+.headingCity {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 0s5rem;
+  color: var(--text-color-black);
+}
+
+.localityItemCity {
+  display: block;
+  color: var(--text-color-black);
+  /* color: #333; */
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.localityItemCity:hover {
+  color: var(--text-color-red);
+}
+
+.allBangaloreCity {
+  /* margin-top: 1rem; */
+  /* border-top: 1px solid #eee; */
+  padding-top: 0.25rem;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.allLinkCity {
+  color: var(--text-color-red);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease;
+}
+
+.allLinkCity:hover {
+  color: var(--text-color-red);
+}
+
+.chevronCity {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.cityItem {
+  position: relative;
+}
+
+.cityWrapper {
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .popupCity {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+
+  .headingCity {
+    font-size: 1rem;
+  }
+
+  .localityItemCity {
+    font-size: 0.95rem;
+  }
+
+  .allLinkCity {
+    font-size: 0.95rem;
   }
 }

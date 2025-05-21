@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ImagePaginationThree.module.css';
+import Image from 'next/image';
 
 const ImagePaginationThree = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,7 +106,7 @@ const ImagePaginationThree = () => {
       </div>
       <div className={styles.header}>
         <p className={styles.subtitle}>
-          The Chambers Global Membership brings a bouquet of benefits and enhanced privileges for the discerning elite.
+          The Uzo One Global Membership brings a bouquet of benefits and enhanced privileges for the discerning elite.
         </p>
       </div>
       <div className={styles.carouselContainer}>
@@ -121,11 +122,13 @@ const ImagePaginationThree = () => {
             >
               <div className={styles.card}>
                 <div className={styles.imageContainer}>
-                  <img
+                  <Image
                     src={slide.imageUrl}
                     alt={slide.title}
                     className={styles.image}
                     loading="lazy"
+                    width={400}
+                    height={400}
                   />
                 </div>
                 <div className={styles.content}>
