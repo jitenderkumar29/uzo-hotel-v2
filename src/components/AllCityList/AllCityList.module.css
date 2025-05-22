@@ -14,14 +14,17 @@
 }
 
 .imageContainer {
-  background-image: url("/images/city2.png");
+  background-image: url("/images/city3.png");
+  /* background-image: url("/images/city2.jpg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional: makes it fixed while scrolling */
-  /* min-height: 300px; Ensures it covers full viewport height */
-  width: 100%;
-  height: 300px;
+  min-height: 300px;
+  /* Ensures it covers full viewport height */
+  width: 100vw;
+  height: auto;
+  /* height: 300px; */
   margin-bottom: -150px;
 }
 

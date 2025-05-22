@@ -72,12 +72,12 @@ export default function ImagePaginationTwo() {
       description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
       imageUrl: '/images/ImagePaginationTwo11.jpg'
     },
-    {
-      id: '12',
-      title: 'GLOBAL LEGENDARY',
-      description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
-      imageUrl: '/images/ImagePaginationTwo12.jpg'
-    },
+    // {
+    //   id: '12',
+    //   title: 'GLOBAL LEGENDARY',
+    //   description: 'Elegant and intricately crafted experiences embellished with bespoke service, opulent settings and a repertoire of gourmet offerings.',
+    //   imageUrl: '/images/ImagePaginationTwo12.jpg'
+    // },
   ];
 
   const displayCount = 3;
