@@ -1,3 +1,18 @@
+.HotelSearchBarTopBody {
+  background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; /* This is crucial for sticky positioning to work */
+  z-index: 1;
+  /* Ensures the header stays above other content */
+  width: 100%; /* Takes full width */
+  /* z-index: 29; */
+}
+
+.headerTopBody {
+  position: relative;
+  z-index: 10001; /* or just don't define z-index */
+}
+
 .imageContainer {
   background-image: url("/images/city.jpg");
   background-size: cover;
@@ -245,14 +260,4 @@
   .cityList {
     grid-template-columns: 1fr;
   }
-}
-
-.HotelSearchBarTopBody {
-  background-color: var(--dark-accent);
-  position: sticky;
-  top: 0; /* This is crucial for sticky positioning to work */
-  z-index: 1;
-  /* Ensures the header stays above other content */
-  width: 100%; /* Takes full width */
-  /* z-index: 29; */
 }

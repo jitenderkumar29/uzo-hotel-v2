@@ -4,6 +4,7 @@ import { cities } from '@/app/data/allCityListData';
 import { allCityInterface } from '@/interfaces';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
+import HeaderTop from '../HeaderTop/HeaderTop';
 
 interface StateGroup {
   state: string;
@@ -99,10 +100,13 @@ const AllCityList = () => {
       grouped[city.state].push(city);
     });
 
-    return Object.keys(grouped).map(state => ({
-      state,
-      cities: grouped[state]
-    }));
+    // Sort states alphabetically and then sort cities within each state
+    return Object.keys(grouped)
+      .sort((a, b) => a.localeCompare(b)) // Sort states A-Z
+      .map(state => ({
+        state,
+        cities: grouped[state].sort((a, b) => a.city.localeCompare(b.city)) // Sort cities A-Z
+      }));
   };
 
   const toggleState = (state: string) => {
@@ -118,6 +122,9 @@ const AllCityList = () => {
 
   return (
     <>
+      <div className={styles.headerTopBody}>
+        <HeaderTop />
+      </div>
       <div className={styles.HotelSearchBarTopBody}>
         <HotelSearchProvider>
           <HotelSearchBarTop />
@@ -233,6 +240,7 @@ const AllCityList = () => {
             </div>
           ))}
         </div>
+
       </div>
       {/* </div> */}
     </>

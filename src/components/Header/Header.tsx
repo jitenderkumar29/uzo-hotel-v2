@@ -73,7 +73,7 @@ const Header: React.FC = () => {
                     onMouseEnter={() => toggleDropdown(city.cityId)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <Link href="/" className={styles.cityLink}>
+                    <Link href="/hotelBooking" className={styles.cityLink}>
                       {city.name}
                       <FaChevronDown className={styles.chevron} />
                     </Link>
@@ -84,14 +84,15 @@ const Header: React.FC = () => {
                         {currentHotels.slice(0, 10).map((hotel, index) => (
                           <Link
                             key={index}
-                            href={`/hotels-in-${index}-${city.name.toLowerCase()}/`}
+                            href={`/hotelBooking`}
+                            // href={`/hotels-in-${index}-${city.name.toLowerCase()}/`}
                             className={styles.localityItemCity}
                           >
                             {hotel.name}
                           </Link>
                         ))}
                         <div className={styles.allBangaloreCity}>
-                          <Link href="#" className={styles.allLinkCity}>
+                          <Link href="/hotelBooking" className={styles.allLinkCity}>
                             All of {city.name}
                             <FaChevronRight className={styles.chevronRight} />
                           </Link>
