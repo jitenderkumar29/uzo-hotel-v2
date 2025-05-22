@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './AllCityList.module.css';
 import { cities } from '@/app/data/allCityListData';
-import HeaderTop from '../HeaderTop/HeaderTop';
 import { allCityInterface } from '@/interfaces';
+import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
+import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 
 interface StateGroup {
   state: string;
@@ -21,7 +22,7 @@ const AllCityList = () => {
   const [expandedStates, setExpandedStates] = useState<ExpandedStates>({});
 
   // Get unique states
-  const states = Array.from(new Set(cities.map(item => item.state)));
+  const states = Array.from(new Set(cities.map(item => item.state))).sort((a, b) => a.localeCompare(b));;
 
   // Get districts for selected state
   const districts: string[] = Array.from(
@@ -31,7 +32,7 @@ const AllCityList = () => {
         .map(city => city.district)
         .filter(Boolean)
     )
-  );
+  ).sort((a, b) => a.localeCompare(b));;
   // const districts = Array.from(new Set(
   //   cities
   //     .filter(city => selectedState ? city.state === selectedState : false)
@@ -43,7 +44,7 @@ const AllCityList = () => {
   const filteredCities = cities.filter(city =>
     (selectedState ? city.state === selectedState : true) &&
     (selectedDistrict ? city.district === selectedDistrict : true)
-  );
+  ).sort((a, b) => a.city.localeCompare(b.city));
 
   // Get final filtered results
   const getFilteredResults = (): allCityInterface[] => {
@@ -117,13 +118,18 @@ const AllCityList = () => {
 
   return (
     <>
-      <HeaderTop />
+      <div className={styles.HotelSearchBarTopBody}>
+        <HotelSearchProvider>
+          <HotelSearchBarTop />
+        </HotelSearchProvider>
+      </div>
+      <div className={styles.imageContainer}></div>
       <div className={styles.wrapper}>
         <div className={styles.headerContainer}>
           <div className={styles.filterColumn}>
             <div className={styles.filterBox}>
               <label className={styles.heading}>
-                Select State:
+                <h3 className={styles.headingSelect}>Select State:</h3>
                 <select
                   value={selectedState}
                   onChange={(e) => {
@@ -143,7 +149,7 @@ const AllCityList = () => {
 
             <div className={styles.filterBox}>
               <label className={styles.heading}>
-                Select District:
+                <h3 className={styles.headingSelect}>Select District:</h3>
                 <select
                   value={selectedDistrict}
                   onChange={(e) => {
@@ -163,7 +169,7 @@ const AllCityList = () => {
 
             <div className={styles.filterBox}>
               <label className={styles.heading}>
-                Select City:
+                <h3 className={styles.headingSelect}>Select City:</h3>
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
@@ -182,12 +188,12 @@ const AllCityList = () => {
           </div>
 
           <div className={styles.searchColumn}>
-            <div className={styles.filterBox}>
+            <div className={`${styles.filterBoxSelect} ${styles.searchBox}`}>
               <label className={styles.heading}>
-                Search:
+                <h3 className={styles.headingSelect}>Search:</h3>
                 <input
                   type="text"
-                  placeholder="City or district..."
+                  placeholder="Search By State, District or City..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className={styles.input}
@@ -217,9 +223,9 @@ const AllCityList = () => {
                   {stateGroup.cities.map((city, index) => (
                     <li key={index} className={styles.cityItem}>
                       <span className={styles.cityName}>{city.city}</span>
-                      {city.district && (
+                      {/* {city.district && (
                         <span className={styles.district}>{city.district}</span>
-                      )}
+                      )} */}
                     </li>
                   ))}
                 </ul>
@@ -228,6 +234,7 @@ const AllCityList = () => {
           ))}
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };

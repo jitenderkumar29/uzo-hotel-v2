@@ -120,8 +120,8 @@ const Header: React.FC = () => {
               );
             })}
             <li className={styles.cityItem}>
-              <Link href="/" className={styles.cityLink}>
-                {/* <Link href="/allCityList" className={styles.cityLink}> */}
+              {/* <Link href="/" className={styles.cityLink}> */}
+              <Link href="/allCityList" className={styles.cityLink}>
                 All Cities
                 {/* <FaChevronDown className={styles.chevron} /> */}
               </Link></li>
