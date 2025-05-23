@@ -7,6 +7,7 @@
 
 .topbar {
   background-image: url(../../assets/icons/headerImage.png);
+  /* background-image: url(/images/city.png); */
   background-color: #831143;
   color: var(--dark-white);
   text-align: center;

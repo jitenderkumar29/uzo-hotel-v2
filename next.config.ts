@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
       // "miro.medium.com",
       // "e7.pngegg.com",
       // "yt3.googleusercontent.com",
+      "media.radissonhotels.net",
+      // "media.radissonhotels.net",
     ],
   },
 };

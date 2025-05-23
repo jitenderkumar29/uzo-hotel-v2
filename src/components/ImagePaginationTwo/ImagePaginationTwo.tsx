@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import styles from './ImagePaginationTwo.module.css';
 import Image from 'next/image';

@@ -1,0 +1,343 @@
+.section {
+  padding: 4rem 0;
+  padding: 1rem 0.5rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  background-color: var(--dark-white);
+  border-radius: 8px;
+}
+
+.header {
+  /* text-align: center; */
+  margin-bottom: 1rem;
+  margin-left: 1.25rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-color-black);
+  /* margin-bottom: 0.5rem; */
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-color-black);
+  /* max-width: 800px; */
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* Desktop Grid Styles */
+.desktopGrid {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.gridItem {
+  flex: 1;
+  max-width: 25%;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.card {
+  display: block;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: var(--text-color-black);
+  text-decoration: none;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  background-color: var(--dark-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+  justify-content: center;
+  align-items: center;
+}
+
+.iconCard {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  background-color: var(--dark-white);
+  /* background-color: #f9f9f9; */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .iconCard {
+  color: var(--link-color); /* Fallback for color property */
+  stroke: var(--link-color); /* Lucide icons use stroke */
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-member {
+  background-image: url("/icons/member-benefits.svg");
+}
+
+.icon-earn {
+  background-image: url("/icons/earn-points.svg");
+}
+
+.icon-discount {
+  background-image: url("/icons/discount-booster.svg");
+}
+
+.icon-points {
+  background-image: url("/icons/pay-with-points.svg");
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-color-black);
+  line-height: 1.5;
+}
+
+/* Guide Line with Interactive Dots */
+.guideLine {
+  position: absolute;
+  bottom: -10%;
+  left: 12px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.gridItem:hover .guideLine,
+.guideLine.active {
+  opacity: 1;
+}
+
+.gridItem:hover .guideLine .line,
+.guideLine.active .line {
+  background-color: var(--link-color);
+}
+
+.gridItem:hover .guideLine .dots,
+.guideLine.active .dots {
+  background-color: var(--link-color);
+  transform: scale(1.2);
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--dark-white);
+  transition: all 0.3s ease;
+}
+
+.dots {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+/* Desktop Dot Indicators */ /* Desktop Dot Indicators with Dividers */
+.desktopDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.desktopDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+}
+
+.dotDivider {
+  display: block;
+  width: 270px;
+  height: 2px;
+  background-color: var(--border-color);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+/* Active/hover states affect both dots and dividers */
+.desktopDot:hover,
+.desktopDot.active {
+  background-color: var(--link-color);
+  transform: scale(1.3);
+}
+
+.desktopDot:hover,
+.desktopDot.active,
+.desktopDots:hover .dotDivider {
+  background-color: var(--link-color);
+}
+/* 
+.desktopDot:hover + .dotDivider,
+.desktopDot.active + .dotDivider,
+.desktopDots:hover .dotDivider {
+  background-color: #0066cc;
+} */
+
+.desktopDot::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--link-color);
+  color: var(--dark-white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.desktopDot:hover::after {
+  opacity: 1;
+}
+
+/* Mobile Carousel Styles */
+.mobileCarousel {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.carouselContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.slide {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--link-color);
+  border-right: 2px solid var(--link-color);
+}
+
+.arrow.left {
+  transform: rotate(-135deg);
+  margin-right: 5px;
+}
+
+.arrow.right {
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--link-color);
+  transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .gridItem {
+    padding: 0 0.5rem;
+  }
+
+  .guideLine {
+    right: -12%;
+    width: 24%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .desktopGrid,
+  .desktopDots {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileCarousel {
+    display: none;
+  }
+}

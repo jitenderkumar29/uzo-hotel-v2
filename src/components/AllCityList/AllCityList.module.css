@@ -184,9 +184,15 @@
   padding: 1rem 1.5rem;
   margin: 0;
   /* background-color: var(--background); */
-  background-color: #f1f3f5;
+  /* background-color: #f1f3f5; */
+  background: linear-gradient(
+    to right,
+    var(--light-accent),
+    var(--light-accent-sky)
+  );
+
   font-size: 1.1rem;
-  color: var(--text-color-black);
+  color: var(--dark-white);
   /* color: var(--link-color); */
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -194,7 +200,7 @@
 }
 
 .stateHeader:hover {
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
   /* background-color: #e9ecef; */
 }
 
@@ -262,5 +268,56 @@
 
   .cityList {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Country Style */
+/* Add these new styles to your existing CSS */
+.country {
+  font-size: 0.8rem;
+  color: #555;
+  margin-left: 8px;
+  font-style: italic;
+}
+
+/* Update the cityItem to accommodate the country display */
+.cityItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.cityName {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.district {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+/* Update the responsive styles if needed */
+@media (max-width: 768px) {
+  .filterColumn {
+    flex-direction: column;
+  }
+
+  .filterBox {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .searchColumn {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
   }
 }

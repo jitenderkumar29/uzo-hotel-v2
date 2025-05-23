@@ -70,7 +70,7 @@ const HeaderTop = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>Become a Member</Link>
+                <Link href="/becomeAMember" onClick={closeMobileMenu}>Become a Member</Link>
               </li>
               <li>
                 <Link href="/" onClick={closeMobileMenu}>Corporate Member</Link>
@@ -240,7 +240,7 @@ const HeaderTop = () => {
                 <Link href="/book" onClick={closeMobileMenu}>Book</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>Become a Member</Link>
+                <Link href="/becomeAMember" onClick={closeMobileMenu}>Become a Member</Link>
               </li>
               <li>
                 <Link href="/" onClick={closeMobileMenu}>Corporate Member</Link>

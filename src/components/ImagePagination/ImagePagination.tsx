@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './ImagePagination.module.css';
 import Image from 'next/image';

@@ -20,7 +20,11 @@
   padding: 15px 20px;
   background: #f5f5f5;
   border-bottom: 1px solid var(--border-color);
-  background: linear-gradient(to right, var(--light-accent), #7caceb);
+  background: linear-gradient(
+    to right,
+    var(--light-accent),
+    var(--light-accent-sky)
+  );
 }
 
 .summaryHeader h2 {

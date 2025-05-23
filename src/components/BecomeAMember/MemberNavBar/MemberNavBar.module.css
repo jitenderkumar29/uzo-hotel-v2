@@ -1,0 +1,146 @@
+/* Base styles */
+.rhgMenuSecondary {
+  /* width: 1300px; */
+  background-color: var(--dark-white);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  margin: 0 auto;
+}
+
+.rhgMenuSecondaryContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.rhgMenuSecondaryMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rhgMenuSecondaryList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.rhgMenuSecondaryList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.rhgMenuSecondaryListItem {
+  /* flex: 0 0 auto; */
+  padding: 0;
+}
+
+.rhgMenuSecondaryListItem a {
+  display: block;
+  padding: 8px 20px;
+  margin: 5px;
+  text-decoration: none;
+  color: var(--dark-white);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  /* transition: color 0.2s ease, border-bottom 0.2s ease; */
+  border-bottom: 2px solid transparent;
+  border: var(--border-color);
+  border-radius: 50px;
+  background-color: var(--light-accent);
+}
+
+.rhgMenuSecondaryListItem a:hover {
+  color: var(--dark-white);
+  background-color: var(--dark-accent);
+}
+
+.rhgMenuSecondaryListItem a.active {
+  color: var(--dark-white);
+  /* border-bottom: 2px solid #0066cc; */
+  font-weight: 600;
+  border: var(--border-color);
+  border-radius: 50px;
+  background-color: var(--dark-accent);
+}
+
+.rhgMenuSecondaryGradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.rhgMenuSecondaryGradientLeft {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.rhgMenuSecondaryGradientRight {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.rhgFontIcon {
+  color: #333;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.rhgMenuSecondaryGradient:hover .rhgFontIcon {
+  color: #0066cc;
+}
+
+.rhgMenuSecondaryButton {
+  display: none;
+}
+
+.rhgMenuSecondarySearchbar {
+  display: none;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .rhgMenuSecondaryList {
+    padding: 0 0px;
+  }
+
+  .rhgMenuSecondaryListItem a {
+    padding: 8px 20px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rhgMenuSecondaryContainer {
+    max-width: 1200px;
+  }
+}

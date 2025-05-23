@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './AllCityList.module.css';
 import { cities } from '@/app/data/allCityListData';
@@ -17,32 +18,37 @@ interface ExpandedStates {
 
 const AllCityList = () => {
   const [search, setSearch] = useState<string>('');
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [selectedState, setSelectedState] = useState<string>('');
   const [selectedDistrict, setSelectedDistrict] = useState<string>('');
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [expandedStates, setExpandedStates] = useState<ExpandedStates>({});
 
-  // Get unique states
-  const states = Array.from(new Set(cities.map(item => item.state))).sort((a, b) => a.localeCompare(b));;
+  // Get unique countries
+  const countries = Array.from(new Set(cities.map(item => item.country))).sort((a, b) => a.localeCompare(b));
+
+  // Get states based on selected country
+  const states = Array.from(
+    new Set(
+      cities
+        .filter(city => selectedCountry ? city.country === selectedCountry : true)
+        .map(item => item.state)
+    )
+  ).sort((a, b) => a.localeCompare(b));
 
   // Get districts for selected state
-  const districts: string[] = Array.from(
+  const districts = Array.from(
     new Set(
       cities
         .filter(city => selectedState ? city.state === selectedState : false)
         .map(city => city.district)
         .filter(Boolean)
     )
-  ).sort((a, b) => a.localeCompare(b));;
-  // const districts = Array.from(new Set(
-  //   cities
-  //     .filter(city => selectedState ? city.state === selectedState : false)
-  //     .map(city => city.district)
-  //     .filter(Boolean)
-  // ) as string[];
+  ).sort((a, b) => a.localeCompare(b));
 
   // Get filtered cities based on current filters
   const filteredCities = cities.filter(city =>
+    (selectedCountry ? city.country === selectedCountry : true) &&
     (selectedState ? city.state === selectedState : true) &&
     (selectedDistrict ? city.district === selectedDistrict : true)
   ).sort((a, b) => a.city.localeCompare(b.city));
@@ -50,6 +56,10 @@ const AllCityList = () => {
   // Get final filtered results
   const getFilteredResults = (): allCityInterface[] => {
     let results = [...cities];
+
+    if (selectedCountry) {
+      results = results.filter(city => city.country === selectedCountry);
+    }
 
     if (selectedState) {
       results = results.filter(city => city.state === selectedState);
@@ -67,28 +77,14 @@ const AllCityList = () => {
       const searchTerm = search.toLowerCase();
       results = results.filter(city =>
         city.city.toLowerCase().includes(searchTerm) ||
-        (city.district && city.district.toLowerCase().includes(searchTerm))
+        (city.district && city.district.toLowerCase().includes(searchTerm)) ||
+        city.state.toLowerCase().includes(searchTerm) ||
+        city.country.toLowerCase().includes(searchTerm)
       );
     }
 
     return results;
   };
-
-  // const getFilteredResults = (): allCityInterface[] => {
-  //   let results = [...cities];
-
-  //   if (selectedState) results = results.filter(city => city.state === selectedState);
-  //   if (selectedDistrict) results = results.filter(city => city.district === selectedDistrict);
-  //   if (selectedCity) results = results.filter(city => city.city === selectedCity);
-  //   if (search) {
-  //     const searchTerm = search.toLowerCase();
-  //     results = results.filter(city =>
-  //       city.city.toLowerCase().includes(searchTerm) ||
-  //       (city.district && city.district.toLowerCase().includes(searchTerm))
-
-
-  //   return results;)
-  // };
 
   // Group results by state
   const getGroupedResults = (): StateGroup[] => {
@@ -100,12 +96,11 @@ const AllCityList = () => {
       grouped[city.state].push(city);
     });
 
-    // Sort states alphabetically and then sort cities within each state
     return Object.keys(grouped)
-      .sort((a, b) => a.localeCompare(b)) // Sort states A-Z
+      .sort((a, b) => a.localeCompare(b))
       .map(state => ({
         state,
-        cities: grouped[state].sort((a, b) => a.city.localeCompare(b.city)) // Sort cities A-Z
+        cities: grouped[state].sort((a, b) => a.city.localeCompare(b.city))
       }));
   };
 
@@ -114,6 +109,7 @@ const AllCityList = () => {
   };
 
   const resetFilters = () => {
+    setSelectedCountry('');
     setSelectedState('');
     setSelectedDistrict('');
     setSelectedCity('');
@@ -136,6 +132,27 @@ const AllCityList = () => {
           <div className={styles.filterColumn}>
             <div className={styles.filterBox}>
               <label className={styles.heading}>
+                <h3 className={styles.headingSelect}>Select Country:</h3>
+                <select
+                  value={selectedCountry}
+                  onChange={(e) => {
+                    setSelectedCountry(e.target.value);
+                    setSelectedState('');
+                    setSelectedDistrict('');
+                    setSelectedCity('');
+                  }}
+                  className={styles.select}
+                >
+                  <option value="">-- All Countries --</option>
+                  {countries.map((country, index) => (
+                    <option key={index} value={country}>{country}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <div className={styles.filterBox}>
+              <label className={styles.heading}>
                 <h3 className={styles.headingSelect}>Select State:</h3>
                 <select
                   value={selectedState}
@@ -145,6 +162,7 @@ const AllCityList = () => {
                     setSelectedCity('');
                   }}
                   className={styles.select}
+                  disabled={!selectedCountry}
                 >
                   <option value="">-- All States --</option>
                   {states.map((state, index) => (
@@ -200,7 +218,7 @@ const AllCityList = () => {
                 <h3 className={styles.headingSelect}>Search:</h3>
                 <input
                   type="text"
-                  placeholder="Search By State, District or City..."
+                  placeholder="Search By Country, State, District or City..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className={styles.input}
@@ -230,9 +248,10 @@ const AllCityList = () => {
                   {stateGroup.cities.map((city, index) => (
                     <li key={index} className={styles.cityItem}>
                       <span className={styles.cityName}>{city.city}</span>
-                      {/* {city.district && (
-                        <span className={styles.district}>{city.district}</span>
-                      )} */}
+                      {city.district && (
+                        <span className={styles.district}>{city.district}, {city.country}</span>
+                      )}
+                      {/* <span className={styles.country}>{city.country}</span> */}
                     </li>
                   ))}
                 </ul>
@@ -240,9 +259,7 @@ const AllCityList = () => {
             </div>
           ))}
         </div>
-
       </div>
-      {/* </div> */}
     </>
   );
 };

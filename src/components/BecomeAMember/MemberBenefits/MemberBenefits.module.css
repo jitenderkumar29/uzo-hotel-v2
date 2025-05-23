@@ -1,0 +1,259 @@
+/* components/MemberBenefits/MemberBenefits.module.css */
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.benefitsSection {
+  position: relative;
+}
+
+.progressBar {
+  height: 4px;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-black);
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color-black);
+  /* margin-bottom: 2rem; */
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.benefitsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tierCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: var(--dark-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.tierCard:hover {
+  transform: translateY(-5px);
+}
+
+.tierHeader {
+  padding: 1.5rem;
+  color: var(--dark-white);
+}
+
+.clubHeader {
+  background-color: #6c63ff; /* Purple */
+}
+
+.premiumHeader {
+  background-color: #4a5568; /* Gunmetal */
+}
+
+.vipHeader {
+  background-color: #000; /* Black */
+}
+
+.tierTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tierSubtitle {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin: 0.25rem 0 0;
+}
+
+.benefitsList {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.benefitItem {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.benefitIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.memberRateIcon {
+  background-image: url("/icons/member-rate.svg");
+}
+
+.foodDiscountIcon {
+  background-image: url("/icons/food-discount.svg");
+}
+
+.priorityIcon {
+  background-image: url("/icons/priority-line.svg");
+}
+
+.roomUpgradeIcon {
+  background-image: url("/icons/room-upgrade.svg");
+}
+
+.favoriteHotelIcon {
+  background-image: url("/icons/favorite-hotel.svg");
+}
+
+.discountBoosterIcon {
+  background-image: url("/icons/discount-booster.svg");
+}
+
+.breakfastIcon {
+  background-image: url("/icons/breakfast.svg");
+}
+
+.vipAccessIcon {
+  background-image: url("/icons/vip-access.svg");
+}
+
+.contactCenterIcon {
+  background-image: url("/icons/contact-center.svg");
+}
+
+.benefitText {
+  flex-grow: 1;
+}
+
+.benefitTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--text-color-black);
+}
+
+.benefitDescription {
+  font-size: 0.875rem;
+  color: var(--text-color-black);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.moreBenefits {
+  padding: 0 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: var(--link-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.moreButton:hover {
+  color: var(--link-color-dark);
+  text-decoration: underline;
+}
+
+.arrowIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 0.5rem;
+  background-image: url("/icons/arrow-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .benefitsCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .benefitItem {
+    flex-direction: column;
+  }
+
+  .benefitIcon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* icon style */
+/* Add or modify these styles in your existing CSS module */
+.benefitIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  color: #6c63ff; /* Purple color for icons */
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+/* If you want different colors for different tiers */
+.clubTier .benefitIcon {
+  color: #6c63ff; /* Purple */
+}
+
+.premiumTier .benefitIcon {
+  color: #4a5568; /* Gunmetal */
+}
+
+.vipTier .benefitIcon {
+  color: #000; /* Black */
+}
