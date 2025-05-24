@@ -14,6 +14,7 @@ const CorporateTiers = () => {
       imgUrl: "/icons/card1.png",
       cardNumber: "1111  1111  1111  1111",
       description: "UZO INNERCIRCLE",
+      expiry: "12/32"
     },
     {
       name: 'GOLD',
@@ -22,6 +23,8 @@ const CorporateTiers = () => {
       imgUrl: "/icons/card2.png",
       cardNumber: "1111  1111  1111  1111",
       description: "UZO INNERCIRCLE",
+      expiry: "12/35"
+
     },
     {
       name: 'SILVER',
@@ -30,7 +33,7 @@ const CorporateTiers = () => {
       imgUrl: "/icons/card3.png",
       cardNumber: "1111  1111  1111  1111",
       description: "UZO INNERCIRCLE",
-
+      expiry: "12/31"
     },
     {
       name: 'COPPER',
@@ -39,6 +42,8 @@ const CorporateTiers = () => {
       imgUrl: "/icons/card4.png",
       cardNumber: "1111  1111  1111  1111",
       description: "UZO INNERCIRCLE",
+      expiry: "12/30"
+
 
     },
   ];
@@ -71,7 +76,7 @@ const CorporateTiers = () => {
                 <div className={styles.textOverlay}>
                   <p className={styles.cardNumber}>
                     <div>{tier.cardNumber}</div>
-                    <div className={styles.expiry}>Exp: 12/24</div>
+                    <div className={styles.expiry}>Exp: {tier.expiry}</div>
                   </p>
                   <p className={styles.description}>{tier.description}</p>
                   <h4 className={styles.tierName}>
