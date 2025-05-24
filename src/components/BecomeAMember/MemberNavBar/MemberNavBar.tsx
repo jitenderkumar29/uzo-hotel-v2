@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './MemberNavBar.module.css';
 import MemberRewards from '../MemberRewards/MemberRewards';
 import MemberBenefits from '../MemberBenefits/MemberBenefits';
+import EarnRewards from '../EarnRewards/EarnRewards';
 
 const MemberNavBar = () => {
   const [activeItem, setActiveItem] = useState('uzoRewards');
@@ -106,7 +107,7 @@ const MemberNavBar = () => {
       {/* Conditionally render MemberRewards */}
       {activeItem === "uzoRewards" && <MemberRewards />}
       {activeItem === "memberBenefits" && <MemberBenefits />}
-      {/* {activeItem === "earn" && <EarnRewards />} */}
+      {activeItem === "earn" && <EarnRewards />}
     </>
   );
 };

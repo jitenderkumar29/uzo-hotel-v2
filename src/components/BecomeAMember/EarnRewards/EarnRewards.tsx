@@ -3,7 +3,6 @@ import React, { useRef } from 'react';
 import styles from './EarnRewards.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import UzoRewards from '../MemberRewards/UzoRewards/UzoRewards';
 import EarnPoints from './EarnPoints/EarnPoints';
 
 interface RewardCard {
@@ -113,9 +112,9 @@ const EarnRewards = () => {
       <div>
         <EarnPoints />
       </div>
-      <div>
+      {/* <div>
         <UzoRewards />
-      </div>
+      </div> */}
     </>
   );
 };

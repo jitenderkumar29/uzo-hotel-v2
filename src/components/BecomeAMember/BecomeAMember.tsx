@@ -7,6 +7,9 @@ import MemberNavBar from './MemberNavBar/MemberNavBar';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import FooterUzo from '../FooterUzo/FooterUzo';
+import MemberRewards from './MemberRewards/MemberRewards';
+import MemberBenefits from './MemberBenefits/MemberBenefits';
+import EarnRewards from './EarnRewards/EarnRewards';
 
 const BecomeAMember = () => {
   return (
@@ -36,7 +39,7 @@ const BecomeAMember = () => {
             <div className={styles.rhgHeroText}>
               <div className={styles.textContent}>
                 <h3 className={`${styles.h3} ${styles.rhgTextStrong} ${styles.rhgText2xl} ${styles.rhgHeroTitle}`}>
-                  Member benefits
+                  Membership
                 </h3>
                 <p className={`${styles.rhgTextNormal} ${styles.rhgTextMd}`}>
                   Elevate your travel experience with UZO Hotels Rewards
@@ -46,8 +49,10 @@ const BecomeAMember = () => {
           </div>
         </section>
       </div>
-      <MemberNavBar />
-
+      {/* <MemberNavBar /> */}
+      <MemberRewards />
+      <MemberBenefits />
+      <EarnRewards />
       <div className={styles.footerBox}>
         <FooterUzo />
       </div>

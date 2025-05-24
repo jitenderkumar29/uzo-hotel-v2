@@ -17,7 +17,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MemberTiersBenefits from './MemberTiersBenefits/MemberTiersBenefits';
 import BoosterBenefits from './BoosterBenefits/BoosterBenefits';
-import UzoRewards from '../MemberRewards/UzoRewards/UzoRewards';
 
 const MemberBenefits = () => {
   return (
@@ -179,9 +178,9 @@ const MemberBenefits = () => {
       <div>
         <BoosterBenefits />
       </div>
-      <div>
+      {/* <div>
         <UzoRewards />
-      </div>
+      </div> */}
     </>
   );
 };
