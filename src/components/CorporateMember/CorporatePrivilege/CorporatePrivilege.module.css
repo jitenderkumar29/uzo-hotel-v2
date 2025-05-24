@@ -13,7 +13,7 @@
 
 .containerHeader {
   text-align: center; /* Center the text between lines */
-  padding: 0 2rem; /* Add some horizontal spacing */
+  padding: 0 1rem; /* Add some horizontal spacing */
   display: flex;
 }
 
@@ -135,7 +135,7 @@
   background: var(--dark-white);
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 410px;
+  width: 415px;
   display: flex;
   /* height: 400px; */
 }
