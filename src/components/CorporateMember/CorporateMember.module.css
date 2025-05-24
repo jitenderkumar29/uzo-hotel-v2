@@ -1,0 +1,188 @@
+.headerTopBody {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.HotelSearchBarTopBody {
+  background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; /* This is crucial for sticky positioning to work */
+  z-index: 10;
+  /* Ensures the header stays above other content */
+  width: 100%; /* Takes full width */
+  /* z-index: 29; */
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  overflow: hidden;
+  /* border-radius: 8px; */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Cinzel", "Palatino Linotype", "sans-serif";
+  /* font-family: "Inter", "Cinzel", sans-serif; */
+  height: 500px;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.imageContainer {
+  /* position: relative; */
+  width: 100%;
+  height: 0;
+  padding-bottom: 34.375%; /* 660/1920 aspect ratio */
+  overflow: hidden;
+}
+
+.slideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
+  color: white;
+  width: 100%;
+  padding: 0 8rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 6rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 800px;
+  /* margin: 0 auto; */
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navArrow:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+}
+
+.prevArrow {
+  left: 20px;
+}
+
+.nextArrow {
+  right: 20px;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .navArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .imageContainer {
+    padding-bottom: 56.25%; /* Switch to 16:9 for mobile */
+  }
+}
+
+/* Footer style */
+.footerBox {
+  margin-top: -70px !important;
+}
