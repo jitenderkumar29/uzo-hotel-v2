@@ -79,24 +79,24 @@ const CorporateTiers = () => {
                   <div >
                     <p className={styles.cardType}>
                       <div className={styles.cardName}>{tier.name}</div>
-                      {/* <div className={styles.expiry}>UZO Pass</div> */}
+                      <div className={styles.expiry}>UZO Pass</div>
                     </p>
                   </div>
                   <div className={styles.cardBottom}>
-                    {/* <p className={styles.cardNumber}>
+                    <p className={styles.cardNumber}>
                       {tier.cardNumber.match(/.{1,4}/g)?.map((group, index) => (
                         <span key={index} className={styles.cardNumberGroup}>
                           {group}
                         </span>
                       ))}
-                    </p> */}
-                    {/* <p className={styles.description}>
+                    </p>
+                    <p className={styles.description}>
                       <div className={styles.expiry}>Valid From: 05/25</div>
                       <div className={styles.expiry}>Valid Thru: {tier.expiry}</div>
-                    </p> */}
-                    {/* <h4 className={styles.tierName}>
+                    </p>
+                    <h4 className={styles.tierName}>
                       <div>Cardholder Name</div>
-                    </h4> */}
+                    </h4>
                   </div>
 
                 </div>
