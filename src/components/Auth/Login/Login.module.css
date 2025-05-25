@@ -25,6 +25,18 @@
   width: 40%;
 }
 
+.logoImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 3rem;
+  color: var(--dark-white);
+  font-weight: 700;
+}
+
 .descHeading {
   font-size: 3.5rem;
   font-weight: 700;

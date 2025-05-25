@@ -1,6 +1,9 @@
 import { useState, useRef, FormEvent } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import styles from './Login.module.css';
+import Image from 'next/image';
+import logoImage from '@/assets/icons/logo26.png';
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +54,11 @@ const Login = () => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.loginCardDesc}>
-          <span className={styles.descHeading}>There&apos;s a smarter way to UZO around</span>
+          {/* <div className={styles.logoImage}>
+            <Image src={logoImage} alt="Logo" height={80} width={80} />
+          </div>
+          <div><h3 className={styles.heading}>UZO Login</h3></div> */}
+          <span className={styles.descHeading}>There&apos;s a better way to roam the world</span>
           <span className={styles.descText}>
             Sign up with your account and get exclusive access to discounts and
             savings on UZO stays and with our many travel partners.
