@@ -95,7 +95,7 @@ const CorporateTiers = () => {
                       <div className={styles.expiry}>Valid Thru: {tier.expiry}</div>
                     </p>
                     <h4 className={styles.tierName}>
-                      <div>Cardholder Name</div>
+                      <div>Rahul Kumar Sharma</div>
                     </h4>
                   </div>
 

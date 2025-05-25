@@ -42,7 +42,7 @@
 .subtitle {
   font-size: 1rem;
   color: var(--text-color-black);
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   line-height: 1.5;
 }
