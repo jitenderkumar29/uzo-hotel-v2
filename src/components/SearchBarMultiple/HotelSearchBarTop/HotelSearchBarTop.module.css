@@ -219,6 +219,11 @@
   max-width: 100%;
   align-items: center;
   justify-content: center;
+
+  display: flex; /* Changed from default to flex */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow if text is too long */
+  text-overflow: ellipsis; /* Add ellipsis if text is too long */
 }
 
 .searchButton:hover {
