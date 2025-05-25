@@ -1,8 +1,8 @@
 import { useState, useRef, FormEvent } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import styles from './Login.module.css';
-import Image from 'next/image';
-import logoImage from '@/assets/icons/logo26.png';
+// import Image from 'next/image';
+// import logoImage from '@/assets/icons/logo26.png';
 
 
 const Login = () => {
