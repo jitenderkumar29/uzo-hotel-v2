@@ -7,6 +7,7 @@
   /* Ensures the header stays above other content */
   width: 100%; /* Takes full width */
   /* z-index: 29; */
+  font-family: "Arial", sans-serif;
 }
 
 .headerTopBody {
@@ -96,8 +97,17 @@
 }
 
 .rhgHeroTitle {
-  margin: 0.5rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  /* margin: 0.5rem 0;
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 2.5rem; */
 }
 
 .rhgTextMd {

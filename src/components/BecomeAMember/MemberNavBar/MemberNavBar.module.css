@@ -5,6 +5,7 @@
   border-bottom: 1px solid var(--border-color);
   position: relative;
   margin: 0 auto;
+  font-family: Arial, sans-serif;
 }
 
 .rhgMenuSecondaryContainer {

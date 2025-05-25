@@ -49,7 +49,20 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
   const scrollToRoomOptions = () => {
     const roomOptionsSection = document.getElementById('room-options');
     if (roomOptionsSection) {
-      const offset = 80; // Adjust this value based on your header height
+      const offset = 150; // Adjust this value based on your header height
+      const elementPosition = roomOptionsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+  const scrollToLocationOptions = () => {
+    const roomOptionsSection = document.getElementById('location');
+    if (roomOptionsSection) {
+      const offset = 150; // Adjust this value based on your header height
       const elementPosition = roomOptionsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -264,7 +277,7 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
             </ul>
           </div>
         )}
-        <div className={styles.viewsMap}>
+        <div className={styles.viewsMap} onClick={scrollToLocationOptions}>
           <div className={styles.mapBadge}>
             <Image
               src={mapIcon2}
@@ -274,7 +287,8 @@ const DetailsHotels: React.FC<IDProps> = ({ id }) => {
               width={30}
             />
           </div>
-          <div>View Map</div>
+          <div
+          >View Map</div>
         </div>
 
         <div className={styles.reviews} onMouseEnter={() => setOpenRatingId(hotel.id)}

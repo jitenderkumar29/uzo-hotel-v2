@@ -199,10 +199,10 @@ const CorporateBenefits: React.FC<CorporateBenefitsProps> = ({
         <div className={styles.sectionContentHead}>
           <div className={styles.rowHead}>
             <div className={styles.rowTitleHead}>UZO Pass</div>
-            <div className={styles.rowValueHead}>PLATINUM</div>
-            <div className={styles.rowValueHead}>GOLD</div>
-            <div className={styles.rowValueHead}>TITANIUM</div>
             <div className={styles.rowValueHead}>DIAMOND</div>
+            <div className={styles.rowValueHead}>TITANIUM</div>
+            <div className={styles.rowValueHead}>GOLD</div>
+            <div className={styles.rowValueHead}>PLATINUM</div>
           </div>
         </div>
 

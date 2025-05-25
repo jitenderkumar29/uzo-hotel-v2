@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 1rem 0.5rem; /* optional: gives padding inside page edges */
   /* background-color: white; ✅ White background */
+  font-family: Arial, sans-serif;
 }
 
 .containerUzoCard {

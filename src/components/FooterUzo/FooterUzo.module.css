@@ -85,7 +85,7 @@
   text-decoration: none;
   color: #ccc;
   margin-bottom: 0.3rem;
-  transition: color 0.3s, transform 0.3s;
+  /* transition: color 0.3s, transform 0.3s; */
 }
 
 .column a:hover {
