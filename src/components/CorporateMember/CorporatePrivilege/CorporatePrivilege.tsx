@@ -152,12 +152,12 @@ const CorporatePrivilege: React.FC = () => {
           <hr className={styles.divider} />
           <div className={styles.titleContainer}>
             {/* <h2 className={styles.titleLine1}>Join UZO</h2> */}
-            <h2 className={styles.titleLine2}>Join UZO Corporate Membership <br />Privileges And Benefits</h2>
+            <h2 className={styles.titleLine2}>Join UZO PASS Corporate Membership <br />Privileges And Benefits</h2>
           </div>
           <hr className={styles.divider} />
         </div>
         <p className={styles.subtitle}>
-          Unlock a host of elevated experiences and countless rewards with UZO One loyalty program.
+          Unlock a host of elevated experiences and countless rewards with UZO pass loyalty program.
           Enjoy special room rates, earn and redeem UZO Coins and indulge in exceptional benefits
           on plush stays, exquisite dining, relaxing spa & salon services and more.
         </p>

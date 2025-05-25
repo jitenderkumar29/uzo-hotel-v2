@@ -9,7 +9,8 @@ const FoodDiningCard = () => {
   const PropertyRulesCard = () => (
     <section className={styles.rulesSection}>
       <h2>
-        Property Rules<span className={styles.subheadingRule}>(For Food & Beverages)</span>
+        Property Rules
+        <span className={styles.subheadingRule}>(For Food & Beverages)</span>
       </h2>
       <div className={styles.cardRule}>
         <div className={styles.cardContentRule}>

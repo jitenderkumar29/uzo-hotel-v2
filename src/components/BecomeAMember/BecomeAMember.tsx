@@ -9,6 +9,7 @@ import FooterUzo from '../FooterUzo/FooterUzo';
 import MemberRewards from './MemberRewards/MemberRewards';
 import MemberBenefits from './MemberBenefits/MemberBenefits';
 import EarnRewards from './EarnRewards/EarnRewards';
+import MemberRedeem from './MemberRedeem/MemberRedeem';
 
 const BecomeAMember = () => {
   return (
@@ -52,6 +53,7 @@ const BecomeAMember = () => {
       <MemberRewards />
       <MemberBenefits />
       <EarnRewards />
+      <MemberRedeem />
       <div className={styles.footerBox}>
         <FooterUzo />
       </div>

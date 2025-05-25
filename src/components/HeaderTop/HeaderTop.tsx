@@ -15,6 +15,7 @@ const HeaderTop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
+  const [showLogInDropDown, setShowLogInDropDown] = useState(false);
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -89,7 +90,17 @@ const HeaderTop = () => {
               </li>
             </ul>
 
-            <button className={styles.loginBtn}>Log In/SignUp</button>
+            <button className={styles.loginBtn} onMouseEnter={() => setShowLogInDropDown(true)}
+              onMouseLeave={() => setShowLogInDropDown(false)}
+            >Log In/SignUp</button>
+
+            {showLogInDropDown && (
+              <div className={styles.loginDropDown} onMouseEnter={() => setShowLogInDropDown(true)}
+                onMouseLeave={() => setShowLogInDropDown(false)}
+              >
+                <LogInSignUp />
+              </div>
+            )}
           </nav>
 
           {showBooking && (
@@ -261,8 +272,35 @@ const HeaderTop = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       </div>
-    </div>
+    </div >
   );
 };
+
+const LogInSignUp = () => {
+  return (
+    <div className={styles.sideMenuDropdown}>
+      <div className={styles.sideMenuDropdown__linksListWrapper}>
+        <div className={styles.sideMenuDropdown__linkItem} >
+          <Link href="/login" type='button' >
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            UZO Login
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <a href="tel:+91 9313 9313 93">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            UZO One Login
+          </a>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <a>
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            UZO Pass Login
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default HeaderTop;

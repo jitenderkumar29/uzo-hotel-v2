@@ -6,6 +6,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  font-family: Arial, sans-serif;
+
   /* font-family: "lato", "Cinzel", "Palatino Linotype", "sans-serif"; */
 
   /* padding: 20px; */
@@ -17,7 +19,8 @@
   padding: 0;
   top: 155px; /* This is where the element will stick when scrolling */
   overflow: visible;
-  z-index: 1; /* Optional: ensures the sticky header stays above other content */
+  z-index: 1;
+  /* Optional: ensures the sticky header stays above other content */
 }
 
 .roomCardContent {

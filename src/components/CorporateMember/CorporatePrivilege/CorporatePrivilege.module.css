@@ -4,7 +4,8 @@
   margin: 0 auto;
   padding: 1rem 0.75rem;
   text-align: center;
-  font-family: "Inter" "Cinzel", "Palatino Linotype", "sans-serif";
+  font-family: Arial, sans-serif;
+  /* font-family: "Cinzel", "Palatino Linotype", "sans-serif"; */
 }
 
 .header {
@@ -22,7 +23,7 @@
   height: 2px;
   background-color: var(--border-color);
   margin: 4rem auto;
-  width: 25%;
+  width: 20%;
 }
 
 .titleContainer {

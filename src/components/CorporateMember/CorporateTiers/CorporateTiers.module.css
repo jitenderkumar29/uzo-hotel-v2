@@ -4,7 +4,7 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 1rem 0.5rem;
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -33,9 +33,10 @@
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   color: #333;
+  text-transform: uppercase;
 }
 
 .subtitle {
@@ -94,7 +95,7 @@
 }
 
 .tierName {
-  font-size: 1.25rem;
+  font-size: 14px;
   font-weight: 600;
   color: var(--dark-white);
   text-align: start;
@@ -188,15 +189,27 @@
   bottom: 0; /* Aligns overlay to the bottom */
   left: 0;
   width: 100%;
-  padding: 20px;
+  height: 100%;
+  padding: 10px 1rem;
   box-sizing: border-box;
   color: var(--dark-white); /* Your text color */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Pushes content to the bottom */
+  justify-content: space-between; /* Pushes content to the bottom */
   /* align-items: center; Centers horizontally */
 }
 
+.cardType {
+  margin-bottom: -5px;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+}
+
+.cardName {
+  text-transform: uppercase;
+  font-size: 18px;
+}
 /* Add any additional styling for your text elements */
 .description,
 .cardNumber,
@@ -204,16 +217,30 @@
   /* margin: 2px 0; */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improves readability */
 }
+
+.cardBottom {
+  margin-bottom: 15px;
+}
+
 .cardNumber {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   margin-bottom: -3px;
   display: flex;
   justify-content: space-between;
+  /* padding: 0rem 0.75rem !important; */
 }
+.cardNumberGroup {
+  flex: 1;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  min-width: 0; /* Allows text to shrink properly */
+}
+
 .description {
-  margin-bottom: -5px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Contact Info style */

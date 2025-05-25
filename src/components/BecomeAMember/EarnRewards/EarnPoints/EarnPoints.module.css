@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 0.75rem;
-  background-color: #eeeeef;
+  /* background-color: #eeeeef; */
   max-width: 1300px;
   margin: 0 auto;
   justify-content: space-between;

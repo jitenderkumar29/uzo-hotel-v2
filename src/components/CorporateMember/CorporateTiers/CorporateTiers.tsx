@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CorporateTiers.module.css';
 import { FaCrown, FaMedal, FaAward, FaStar } from 'react-icons/fa';
 import { ChevronRight, Mail, Phone } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
+import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
+import CorporateBenefits from '../CorporateBenefits/CorporateBenefits';
 
 const CorporateTiers = () => {
+  const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
   const tiers = [
     {
       name: 'PLATINUM',
       icon: <FaCrown className={styles.tierIcon} />,
       color: '#E5E4E2', // Platinum color
       imgUrl: "/icons/card1.png",
-      cardNumber: "1111  1111  1111  1111",
+      cardNumber: "1478523698741258",
       description: "UZO INNERCIRCLE",
       expiry: "12/32"
     },
@@ -21,26 +23,26 @@ const CorporateTiers = () => {
       icon: <FaMedal className={styles.tierIcon} />,
       color: '#FFD700', // Gold color
       imgUrl: "/icons/card2.png",
-      cardNumber: "1111  1111  1111  1111",
+      cardNumber: "1236547896541236",
       description: "UZO INNERCIRCLE",
       expiry: "12/35"
 
     },
     {
-      name: 'SILVER',
+      name: 'Titanium',
       icon: <FaAward className={styles.tierIcon} />,
       color: '#C0C0C0', // Silver color
       imgUrl: "/icons/card3.png",
-      cardNumber: "1111  1111  1111  1111",
+      cardNumber: "7896541236549874",
       description: "UZO INNERCIRCLE",
       expiry: "12/31"
     },
     {
-      name: 'COPPER',
+      name: 'Diamond',
       icon: <FaStar className={styles.tierIcon} />,
       color: '#B87333', // Copper color
-      imgUrl: "/icons/card4.png",
-      cardNumber: "1111  1111  1111  1111",
+      imgUrl: "/icons/card44.png",
+      cardNumber: "1478963258741258",
       description: "UZO INNERCIRCLE",
       expiry: "12/30"
 
@@ -55,7 +57,7 @@ const CorporateTiers = () => {
           <div className={styles.titleGroup}>
             <hr className={styles.divider} />
             <h2 className={styles.title}>
-              <span>UZO One</span>
+              <span>UZO PASS</span>
               <span>Corporate Tiers</span>
             </h2>
             <hr className={styles.divider} />
@@ -74,15 +76,33 @@ const CorporateTiers = () => {
               </div> */}
                 <Image src={tier.imgUrl} width={500} height={500} alt="Card" className={styles.imgCard} />
                 <div className={styles.textOverlay}>
-                  <p className={styles.cardNumber}>
-                    <div>{tier.cardNumber}</div>
-                    <div className={styles.expiry}>Exp: {tier.expiry}</div>
-                  </p>
-                  <p className={styles.description}>{tier.description}</p>
-                  <h4 className={styles.tierName}>
-                    <div>{tier.name}</div>
-                    {/* <div className={styles.cardType}>UZO One</div> */}
-                  </h4>
+                  <div >
+                    <p className={styles.cardType}>
+                      <div className={styles.cardName}>{tier.name}</div>
+                      <div className={styles.expiry}>UZO Pass</div>
+                    </p>
+                  </div>
+                  <div className={styles.cardBottom}>
+                    <p className={styles.cardNumber}>
+                      {tier.cardNumber.match(/.{1,4}/g)?.map((group, index) => (
+                        <span key={index} className={styles.cardNumberGroup}>
+                          {group}
+                        </span>
+                      ))}
+                    </p>
+                    {/* <p className={styles.cardNumber}>
+                      <div className={styles.cardNumberHeading}>{tier.cardNumber}</div>
+                    </p> */}
+                    <p className={styles.description}>
+                      <div className={styles.expiry}>Valid From: 05/25</div>
+                      <div className={styles.expiry}>Valid Thru: {tier.expiry}</div>
+                    </p>
+                    <h4 className={styles.tierName}>
+                      <div>Cardholder Name</div>
+                      {/* <div className={styles.cardType}>UZO One</div> */}
+                    </h4>
+                  </div>
+
                 </div>
               </div>
             ))}
@@ -90,11 +110,22 @@ const CorporateTiers = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Link href="/en-in/neupass/benefits" className={styles.benefitsButton}>
+          <button type='button' className={styles.benefitsButton} onClick={() => setShowCorporateBenefits(true)}>
             VIEW BENEFITS
             <ChevronRight className={styles.buttonIcon} />
-          </Link>
+          </button>
+          {/* <Link href="/en-in/neupass/benefits" className={styles.benefitsButton}>
+            VIEW BENEFITS
+            <ChevronRight className={styles.buttonIcon} />
+          </Link> */}
         </div>
+        {showCorporateBenefits && (
+          <OverlayContainer
+            show={showCorporateBenefits}
+            onClose={() => setShowCorporateBenefits(false)}>
+            <CorporateBenefits onClose={() => setShowCorporateBenefits(false)} />
+          </OverlayContainer>
+        )}
       </section>
       <div>
         <ContactSupport />

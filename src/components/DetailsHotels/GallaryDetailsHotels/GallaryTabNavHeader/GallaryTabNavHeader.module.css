@@ -9,6 +9,7 @@
   top: 0;
   z-index: 100;
   padding: 1rem 2rem 0.5rem 2rem;
+  font-family: Arial, sans-serif;
 }
 
 .headerBody {

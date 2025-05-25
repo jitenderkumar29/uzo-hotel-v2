@@ -1,7 +1,7 @@
 .headerTopBody {
   width: 100%;
   position: relative;
-  z-index: 1;
+  z-index: 11;
 }
 
 .HotelSearchBarTopBody {
@@ -22,7 +22,8 @@
   overflow: hidden;
   /* border-radius: 8px; */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: "Cinzel", "Palatino Linotype", "sans-serif";
+  font-family: Arial, sans-serif;
+  /* font-family: "Cinzel", "Palatino Linotype", "sans-serif"; */
   /* font-family: "Inter", "Cinzel", sans-serif; */
   height: 500px;
 }

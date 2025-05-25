@@ -79,7 +79,7 @@ const EarnRewards = () => {
         </div>
 
         <p className={styles.subtitle}>
-          As a Radisson Rewards member, you get rewarded every day, from the very first day.
+          As a UZO Rewards member, you get rewarded every day, from the very first day.
           Discover various ways by which you can earn points to get discounts or free Award Nights.
         </p>
 

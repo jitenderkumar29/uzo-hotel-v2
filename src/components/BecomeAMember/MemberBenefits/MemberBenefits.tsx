@@ -38,8 +38,8 @@ const MemberBenefits = () => {
             {/* Club Tier */}
             <div className={`${styles.tierCard} ${styles.clubTier}`}>
               <div className={`${styles.tierHeader} ${styles.clubHeader}`}>
-                <h3 className={styles.tierTitle}>Club</h3>
-                <p className={styles.tierSubtitle}></p>
+                <h3 className={styles.tierTitle}>UZO One Club</h3>
+                <p className={styles.tierSubtitle}>Best Deals!</p>
               </div>
               <div className={styles.benefitsList}>
 
@@ -83,7 +83,7 @@ const MemberBenefits = () => {
             {/* Premium Tier */}
             <div className={`${styles.tierCard} ${styles.premiumTier}`}>
               <div className={`${styles.tierHeader} ${styles.premiumHeader}`}>
-                <h3 className={styles.tierTitle}>Premium</h3>
+                <h3 className={styles.tierTitle}>UZO One Premium</h3>
                 <p className={styles.tierSubtitle}>5 nights/3 stays</p>
               </div>
               <div className={styles.benefitsList}>
@@ -126,7 +126,7 @@ const MemberBenefits = () => {
             {/* VIP Tier */}
             <div className={`${styles.tierCard} ${styles.vipTier}`}>
               <div className={`${styles.tierHeader} ${styles.vipHeader}`}>
-                <h3 className={styles.tierTitle}>VIP</h3>
+                <h3 className={styles.tierTitle}>UZO One VIP</h3>
                 <p className={styles.tierSubtitle}>30 nights/20 stays</p>
               </div>
               <div className={styles.benefitsList}>

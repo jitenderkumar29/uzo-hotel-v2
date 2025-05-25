@@ -1,0 +1,256 @@
+/* CorporateBenefits.module.css */
+
+.container {
+  font-family: "Arial", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: var(--text-color-black);
+}
+
+.headerContainer {
+  /* display: flex; */
+}
+
+.header {
+  display: flex;
+  text-align: center;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-color-black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.closeIcon {
+  font-size: 25px;
+}
+
+.membershipTiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tier {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  /* background: linear-gradient(
+    to right,
+    var(--light-accent),
+    var(--light-accent-sky)
+  ); */
+}
+
+.tierName {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.tierEligibility {
+  font-size: 14px;
+  color: var(--text-color-black);
+}
+
+.section {
+  margin-bottom: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sectionHead {
+  /* margin-bottom: 25px; */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  /* background-color: #f5f5f5; */
+  background: linear-gradient(
+    to right,
+    var(--light-accent),
+    var(--light-accent-sky)
+  );
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--dark-white);
+}
+
+.sectionHeader:hover {
+  background-color: #eee;
+}
+
+.sectionHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sectionContent {
+  background-color: var(--dark-white);
+}
+
+.sectionContentHead {
+  background-color: var(--dark-white);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.rowHead {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowTitle {
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.rowTitleHead {
+  padding: 15px;
+  /* font-size: 20px; */
+  /* font-weight: 500; */
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.rowValueHead {
+  padding: 15px;
+  /* font-size: 20px; */
+  /* font-weight: 500; */
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.rowValue {
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-color);
+}
+
+.rowValue:last-child {
+  border-right: none;
+}
+
+.iconCell {
+  background-color: #fafafa;
+}
+
+.checkIcon {
+  color: var(--green-text);
+}
+
+.infoIcon {
+  margin-left: 8px;
+  color: var(--text-color-black);
+  font-size: 14px;
+  cursor: help;
+}
+
+.footnotes {
+  margin-top: 30px;
+  font-size: 13px;
+  color: var(--text-color-black);
+  line-height: 1.6;
+}
+
+.footnote {
+  margin-bottom: 8px;
+}
+
+.footnote a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.footnote a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .membershipTiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .rowTitle {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 15px;
+  }
+
+  .rowValue {
+    padding: 8px 15px;
+    text-align: left;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    justify-content: flex-start;
+  }
+
+  .rowValue:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .membershipTiers {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

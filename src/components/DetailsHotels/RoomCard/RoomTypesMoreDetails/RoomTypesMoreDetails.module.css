@@ -13,6 +13,7 @@
   z-index: 1000;
   padding: 20px;
   overflow-y: auto;
+  font-family: Arial, sans-serif;
 }
 
 .modalContent {

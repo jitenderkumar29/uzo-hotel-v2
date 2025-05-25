@@ -161,7 +161,7 @@ const FooterUzo: React.FC = () => {
       {
         heading: "",
         links: [
-          "Hotels near Usa",
+          "Hotels in USA",
           "Hotels in Switzerland",
           "Hotels in Japan",
           "Hotels in Canada",

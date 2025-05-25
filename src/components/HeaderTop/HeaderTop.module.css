@@ -130,6 +130,12 @@
   color: var(--dark-white);
 }
 
+.loginDropDown {
+  position: absolute;
+  top: 63px;
+  right: 15px;
+}
+
 /* Booking dropdown */
 .bookingDropdown {
   position: absolute;
@@ -515,5 +521,66 @@
 
   .navListBooklist li {
     font-size: 1.1rem;
+  }
+}
+
+/* Drop down style */
+/* components/LogInSignUp.module.css */
+.sideMenuDropdown {
+  position: relative;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.sideMenuDropdown__linksListWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0;
+}
+
+.sideMenuDropdown__linkItem {
+  width: 100%;
+  transition: background-color 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.sideMenuDropdown__linkItem:hover {
+  background-color: #f5f5f5;
+}
+
+.sideMenuDropdown__linkItem a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 12px;
+  width: 18px;
+  color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sideMenuDropdown {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #eee;
+  }
+
+  .sideMenuDropdown__linkItem a {
+    padding: 15px 20px;
   }
 }

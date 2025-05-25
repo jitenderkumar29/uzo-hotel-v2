@@ -3,6 +3,7 @@
 .container {
   margin-bottom: 18px;
   display: flex;
+  font-family: Arial, sans-serif;
 }
 
 .header {

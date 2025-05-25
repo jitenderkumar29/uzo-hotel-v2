@@ -1,0 +1,332 @@
+/* Base Styles */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("https://assets.oyoroomscdn.com/cmsMedia/b3c9905c-31d1-4349-8594-c07deae6b36d.jpg");
+  /* background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3"); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+  gap: 10px;
+}
+
+.loginCardDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+  width: 40%;
+}
+
+.descHeading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dark-white);
+}
+
+.descText {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-white);
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loginCardDesc {
+    margin-bottom: 16px;
+  }
+
+  .descHeading {
+    font-size: 1.25rem;
+  }
+
+  .descText {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginCardDesc {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .descHeading {
+    font-size: 1.1rem;
+  }
+
+  .descText {
+    font-size: 0.8125rem;
+  }
+}
+
+.loginBox {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 3em;
+  color: var(--dark-white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loginHeader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--logo-color);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.loginHeader span {
+  font-size: 30px;
+  color: var(--dark-white);
+  font-weight: 600;
+}
+
+.loginHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+  box-shadow: -15px 0 0 0 var(--logo-color);
+}
+
+.loginHeader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 0 0 0 var(--logo-color);
+}
+
+.inputBox {
+  position: relative;
+  margin: 25px 0;
+}
+
+.inputField {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--dark-white);
+  padding: 0 20px 0 45px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: var(--logo-color);
+  box-shadow: 0 0 10px rgba(255, 31, 128, 0.5);
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus ~ .label,
+.inputField:valid ~ .label {
+  top: 0;
+  left: 30px;
+  font-size: 12px;
+  background-color: var(--logo-color);
+  color: var(--dark-white);
+  padding: 0 8px;
+  border-radius: 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+}
+
+.rememberForgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin: 15px 5px;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.rememberMe input {
+  margin-right: 5px;
+  accent-color: var(--link-color);
+  cursor: pointer;
+  font-size: 18px;
+  height: 17px;
+  width: 17px;
+}
+
+.inputSubmit {
+  width: 100%;
+  height: 50px;
+  background: var(--logo-color);
+  color: var(--dark-white);
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 0 10px;
+  box-shadow: 0 5px 15px rgba(255, 31, 128, 0.4);
+}
+
+.inputSubmit:hover {
+  background: var(--logo-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(255, 31, 128, 0.6);
+}
+
+.inputSubmit:active {
+  transform: translateY(0);
+}
+
+.inputSubmit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin: 20px 0;
+}
+
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-accent);
+  /* background: rgba(255, 255, 255, 0.1); */
+  color: var(--dark-white);
+  transition: all 0.3s ease;
+}
+
+.socialBtn:hover {
+  background: var(--logo-color);
+  transform: translateY(-3px);
+}
+
+.link {
+  color: var(--text-color-red);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--text-color-red);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 564px) {
+  .loginBox {
+    padding: 6em 1.5em 2em;
+  }
+
+  .loginHeader {
+    width: 120px;
+    height: 60px;
+  }
+
+  .loginHeader span {
+    font-size: 24px;
+  }
+}
