@@ -15,7 +15,6 @@ import {
   faHeadset
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import MemberTiersBenefits from './MemberTiersBenefits/MemberTiersBenefits';
 import BoosterBenefits from './BoosterBenefits/BoosterBenefits';
 
 const MemberBenefits = () => {
@@ -38,7 +37,7 @@ const MemberBenefits = () => {
             {/* Club Tier */}
             <div className={`${styles.tierCard} ${styles.clubTier}`}>
               <div className={`${styles.tierHeader} ${styles.clubHeader}`}>
-                <h3 className={styles.tierTitle}>UZO One Club</h3>
+                <h3 className={styles.tierTitle}>UZO ONE Classic</h3>
                 <p className={styles.tierSubtitle}>Best Deals!</p>
               </div>
               <div className={styles.benefitsList}>
@@ -83,7 +82,7 @@ const MemberBenefits = () => {
             {/* Premium Tier */}
             <div className={`${styles.tierCard} ${styles.premiumTier}`}>
               <div className={`${styles.tierHeader} ${styles.premiumHeader}`}>
-                <h3 className={styles.tierTitle}>UZO One Premium</h3>
+                <h3 className={styles.tierTitle}>UZO ONE Milania</h3>
                 <p className={styles.tierSubtitle}>5 nights/3 stays</p>
               </div>
               <div className={styles.benefitsList}>
@@ -126,7 +125,7 @@ const MemberBenefits = () => {
             {/* VIP Tier */}
             <div className={`${styles.tierCard} ${styles.vipTier}`}>
               <div className={`${styles.tierHeader} ${styles.vipHeader}`}>
-                <h3 className={styles.tierTitle}>UZO One VIP</h3>
+                <h3 className={styles.tierTitle}>UZO ONE Royal</h3>
                 <p className={styles.tierSubtitle}>30 nights/20 stays</p>
               </div>
               <div className={styles.benefitsList}>
@@ -172,9 +171,9 @@ const MemberBenefits = () => {
           </div>
         </section>
       </div>
-      <div>
+      {/* <div>
         <MemberTiersBenefits />
-      </div>
+      </div> */}
       <div>
         <BoosterBenefits />
       </div>

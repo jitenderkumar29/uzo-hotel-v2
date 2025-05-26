@@ -1,8 +1,8 @@
 'use client';
 import Image from "next/image";
 import styles from "./MemberRewards.module.css";
-import RewardsHowItWorks from "./RewardsHowItWorks/RewardsHowItWorks";
-import UzoRewards from "./UzoRewards/UzoRewards";
+// import RewardsHowItWorks from "./RewardsHowItWorks/RewardsHowItWorks";
+// import UzoRewards from "./UzoRewards/UzoRewards";
 
 // interface MemberRewardsProps {
 //   onClose: () => void;
@@ -42,9 +42,6 @@ const MemberRewards = () => {
                       fill="#68478c"
                     />
                   </svg>
-                  {/* <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-                  <path d="M0,0 A50,50 0 0,0 500,0 L500,150 L0,150 Z" fill="#68478c" />
-                </svg> */}
                 </div>
                 <div className={styles.cardBody}>
                   <h5 className={styles.cardTitle}>Instant benefits from day 1</h5>
@@ -76,9 +73,6 @@ const MemberRewards = () => {
                       fill="#000"
                     />
                   </svg>
-                  {/* <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-                  <path d="M0,150 A250,250 0 0,1 500,150 L500,0 L0,0 Z" fill="#000000" />
-                </svg> */}
                 </div>
                 <div className={styles.cardBodyTop}>
                   <h5 className={styles.cardTitleTop}>
@@ -93,8 +87,8 @@ const MemberRewards = () => {
           </div>
         </div>
       </section>
-      <UzoRewards />
-      <RewardsHowItWorks />
+      {/* <UzoRewards />
+      <RewardsHowItWorks /> */}
     </div>
   );
 };

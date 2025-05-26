@@ -54,7 +54,7 @@
 
 .tiersGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   justify-content: center;
 }
@@ -114,18 +114,10 @@
   font-size: 14px;
 }
 
-.buttonSection {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-}
-
 .buttonContainer {
   display: flex;
   justify-content: center;
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
 }
 
 .benefitsButton {
@@ -143,7 +135,6 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  text-transform: uppercase;
 }
 
 .benefitsButton:hover {

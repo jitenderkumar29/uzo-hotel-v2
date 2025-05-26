@@ -1,0 +1,282 @@
+.termsConditionsContainer {
+  font-family: "Inter", sans-serif;
+  color: #45443f;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.headerSection {
+  text-align: center;
+  /* margin-bottom: 3rem; */
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  /* margin-bottom: 1rem; */
+  color: #333;
+  position: relative;
+  /* padding-bottom: 1rem; */
+}
+/* 
+.mainTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: #ad8b3a;
+} */
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+.closeButton:hover {
+  background-color: #f0f0f0;
+} */
+
+.closeIcon {
+  width: 25px;
+  height: 25px;
+  color: var(--text-color-black);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.membershipSection {
+  margin-top: 1rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.downloadLink {
+  margin-top: 1.5rem;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ad8b3a;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.downloadBtn:hover {
+  color: #8a6d2b;
+}
+
+.privilegesContainer {
+  margin-top: 2rem;
+}
+
+.privilegeSection {
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.privilegeSection.expanded {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.privilegeHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(
+    to right,
+    var(--light-accent),
+    var(--light-accent-sky)
+  );
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--dark-white);
+}
+
+.privilegeHeader:hover {
+  background-color: #f0f0f0;
+}
+
+.privilegeTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dark-white);
+  text-align: left;
+}
+
+.toggleIcon {
+  color: var(--dark-white);
+  transition: transform 0.2s;
+  font-weight: bold;
+}
+
+.privilegeSection.expanded .toggleIcon {
+  transform: rotate(180deg);
+}
+
+.privilegeContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.privilegeContent.visible {
+  max-height: 5000px;
+}
+
+.privilegeItems {
+  padding: 1.5rem;
+  list-style-type: none;
+}
+
+.privilegeItem {
+  margin-bottom: 1.5rem;
+}
+
+.itemTitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.subItems {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  list-style-type: disc;
+}
+
+.subItem {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.inlineLink {
+  color: var(--link-color);
+  font-weight: 400;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.inlineLink:hover {
+  color: #8a6d2b;
+}
+
+.contactInfo {
+  background-color: #f5f5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.contactLink {
+  color: var(--link-color);
+  font-weight: 500;
+  margin: 0 0.3rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactLink:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .termsConditionsContainer {
+    padding: 1.5rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .privilegeTitle {
+    font-size: 1.1rem;
+  }
+
+  .privilegeHeader {
+    padding: 1rem;
+  }
+
+  .privilegeItems {
+    padding: 1rem;
+  }
+
+  .itemTitle,
+  .subItem {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .termsConditionsContainer {
+    padding: 1rem;
+  }
+
+  .mainTitle {
+    font-size: 1.7rem;
+  }
+
+  .privilegeTitle {
+    font-size: 1rem;
+    max-width: 80%;
+  }
+
+  .privilegeHeader {
+    padding: 0.8rem;
+  }
+
+  .subItems {
+    padding-left: 1rem;
+  }
+}

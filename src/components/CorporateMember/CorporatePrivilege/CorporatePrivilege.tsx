@@ -157,7 +157,7 @@ const CorporatePrivilege: React.FC = () => {
           <hr className={styles.divider} />
         </div>
         <p className={styles.subtitle}>
-          Unlock a host of elevated experiences and countless rewards with UZO pass loyalty program.
+          Unlock a host of elevated experiences and countless rewards with UZO PASS loyalty program.
           Enjoy special room rates, earn and redeem UZO Coins and indulge in exceptional benefits
           on plush stays, exquisite dining, relaxing spa & salon services and more.
         </p>

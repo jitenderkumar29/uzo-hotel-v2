@@ -68,15 +68,21 @@
 }
 
 .clubHeader {
-  background-color: #6c63ff; /* Purple */
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
+  /* background-color: #6c63ff;  */
+  /* Purple */
 }
 
 .premiumHeader {
-  background-color: #4a5568; /* Gunmetal */
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
+  /* background-color: #4a5568;  */
+  /* Gunmetal */
 }
 
 .vipHeader {
-  background-color: #000; /* Black */
+  background: linear-gradient(to right, var(--light-accent), #7caceb);
+  /* background-color: #000;  */
+  /* Black */
 }
 
 .tierTitle {

@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
-import styles from './CorporateTiers.module.css';
-import { FaCrown, FaMedal, FaAward, FaStar } from 'react-icons/fa';
-import { ChevronRight, Mail, Phone } from 'lucide-react';
+'use client';
+import styles from './BecomeMemberCards.module.css';
+import { FaCrown, FaMedal, FaAward } from 'react-icons/fa';
+import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
-import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
-import CorporateBenefits from '../CorporateBenefits/CorporateBenefits';
-
-const CorporateTiers = () => {
-  const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
-  const [showTermsConditions, setShowTermsConditions] = useState(false);
+const BecomeMemberCards = () => {
+  // const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
   const tiers = [
     {
       name: 'PLATINUM',
       icon: <FaCrown className={styles.tierIcon} />,
-      color: '#E5E4E2', // Platinum color
+      color: '#E5E4E2',
       imgUrl: "/icons/sbiCard1.png",
       cardNumber: "1478523698741258",
       description: "UZO INNERCIRCLE",
@@ -22,62 +18,46 @@ const CorporateTiers = () => {
     {
       name: 'GOLD',
       icon: <FaMedal className={styles.tierIcon} />,
-      color: '#FFD700', // Gold color
+      color: '#FFD700',
       imgUrl: "/icons/sbiCard2.png",
       cardNumber: "1236547896541236",
       description: "UZO INNERCIRCLE",
       expiry: "12/35"
-
     },
     {
       name: 'Titanium',
       icon: <FaAward className={styles.tierIcon} />,
-      color: '#C0C0C0', // Silver color
+      color: '#C0C0C0',
       imgUrl: "/icons/sbiCard3.png",
       cardNumber: "7896541236549874",
       description: "UZO INNERCIRCLE",
       expiry: "12/31"
-    },
-    {
-      name: 'Diamond',
-      icon: <FaStar className={styles.tierIcon} />,
-      color: '#B87333', // Copper color
-      imgUrl: "/icons/sbiCard4.png",
-      cardNumber: "1478963258741258",
-      description: "UZO INNERCIRCLE",
-      expiry: "12/30"
-
-
-    },
+    }
   ];
 
   return (
     <>
-      <section className={styles.container} id="loyalty.group-4-cards-with-comperative-specifications">
+      <section className={styles.container} id="membership-cards">
         <div className={styles.header}>
           <div className={styles.titleGroup}>
             <hr className={styles.divider} />
             <h2 className={styles.title}>
-              <span>UZO PASS Corporate Tiers</span>
-              {/* <span>Corporate Tiers</span> */}
+              <span>UZO PASS Membership Cards</span>
             </h2>
             <hr className={styles.divider} />
           </div>
           <p className={styles.subtitle}>
-            Welcome to a world of tailored privileges and benefits, designed to enhance and enrich your experience.
+            Welcome to a world of tailored privileges and benefits, designed to enhance your experience.
           </p>
         </div>
 
-        <div className={styles.tiersContainer} id="membershipSpecs">
+        <div className={styles.tiersContainer}>
           <div className={styles.tiersGrid}>
             {tiers.map((tier, index) => (
               <div key={index} className={styles.tierCard}>
-                {/* <div className={styles.tierCircle} style={{ backgroundColor: tier.color }}>
-                {tier.icon}
-              </div> */}
-                <Image src={tier.imgUrl} width={500} height={500} alt="Card" className={styles.imgCard} />
+                <Image src={tier.imgUrl} width={500} height={500} alt={`${tier.name} card`} className={styles.imgCard} />
                 <div className={styles.textOverlay}>
-                  <div >
+                  <div>
                     <p className={styles.cardType}>
                       <div className={styles.cardName}>{tier.name}</div>
                       <div className={styles.expiry}>UZO PASS</div>
@@ -99,28 +79,18 @@ const CorporateTiers = () => {
                       <div>Rahul Kumar Sharma</div>
                     </h4>
                   </div>
-
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className={styles.buttonSection}>
-          <div className={styles.buttonContainer}>
-            <button type='button' className={styles.benefitsButton} onClick={() => setShowCorporateBenefits(true)}>
-              VIEW BENEFITS
-              <ChevronRight className={styles.buttonIcon} />
-            </button>
-          </div>
-          <div className={styles.buttonContainer}>
-            <button type='button' className={styles.benefitsButton} onClick={() => setShowTermsConditions(true)}>
-              Terms & Conditions
-              <ChevronRight className={styles.buttonIcon} />
-            </button>
-          </div>
+        {/* <div className={styles.buttonContainer}>
+          <button type='button' className={styles.benefitsButton} onClick={() => setShowCorporateBenefits(true)}>
+            VIEW BENEFITS
+            <ChevronRight className={styles.buttonIcon} />
+          </button>
         </div>
-
 
         {showCorporateBenefits && (
           <OverlayContainer
@@ -128,23 +98,15 @@ const CorporateTiers = () => {
             onClose={() => setShowCorporateBenefits(false)}>
             <CorporateBenefits onClose={() => setShowCorporateBenefits(false)} />
           </OverlayContainer>
-        )}
-        {showTermsConditions && (
-          <div></div>
-          // <OverlayContainer
-          //   show={showTermsConditions}
-          //   onClose={() => setShowTermsConditions(false)}>
-          //   <TermsConditionsCorporate onClose={() => setShowTermsConditions(false)} />
-          // </OverlayContainer>
-        )}
+        )} */}
       </section>
+
       <div>
         <ContactSupport />
       </div>
     </>
   );
 };
-
 
 const ContactSupport = () => (
   <div className={styles.containerContact}>
@@ -172,5 +134,4 @@ const ContactSupport = () => (
   </div>
 );
 
-
-export default CorporateTiers;
+export default BecomeMemberCards;
