@@ -14,19 +14,19 @@ const MemberTiersBenefits: React.FC = () => {
   const swiperRef = useRef<HTMLDivElement>(null);
   const cards: TierCard[] = [
     {
-      title: 'UZO ONE Club',
+      title: 'UZO ONE Classic',
       description: 'Instant benefits from day 1 and become Premium after only 3 stays.',
       imageUrl: '/images/MemberTiersBenefits1.jpg',
       imageAlt: 'Uzo Rewards Brand - Free Room Upgrade Uzo Rewards'
     },
     {
-      title: 'UZO ONE Premium',
+      title: 'UZO ONE Milania',
       description: 'Choose how to be rewarded for a truly elevated experience.',
       imageUrl: '/images/MemberTiersBenefits2.jpg',
       imageAlt: 'Uzo Rewards Brand - Member enjoying a drink with the room sea view'
     },
     {
-      title: 'UZO ONE VIP',
+      title: 'UZO ONE Royal',
       description: 'Ultimate Uzo Rewards experience with tailor-made benefits.',
       imageUrl: '/images/MemberTiersBenefits3.jpg',
       imageAlt: 'UZO Rewards Brand - Friends having Free breakfast for 2 - UZO Rewards'
