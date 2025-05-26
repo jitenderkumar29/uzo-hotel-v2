@@ -11,3 +11,8 @@
 .headerTopBody {
   z-index: 9999;
 }
+
+.footerUzoBody {
+  background-color: var(--bg-light-blue);
+  margin-top: -90px;
+}

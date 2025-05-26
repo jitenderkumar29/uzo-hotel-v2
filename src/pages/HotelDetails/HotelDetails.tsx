@@ -33,7 +33,7 @@ const HotelDetails: React.FC = () => {
           <DetailsHotels id={id} />
         </HotelSearchProvider>
       </div>
-      <div>
+      <div className={styles.footerUzoBody}>
         <FooterUzo />
       </div>
     </div>

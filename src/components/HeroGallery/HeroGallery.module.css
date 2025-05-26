@@ -1,7 +1,8 @@
 /* Base styles */
 .galleryContainer {
   margin: 0 auto;
-  font-family: "Air India Sans", Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  /* font-family: "Air India Sans", Arial, sans-serif; */
   padding-top: 1rem;
 }
 

@@ -287,16 +287,16 @@ const LogInSignUp = () => {
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <a href="tel:+91 9313 9313 93">
+          <Link href="/LoginOne">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             UZO One Login
-          </a>
+          </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <a>
+          <Link href="/LoginPass">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             UZO Pass Login
-          </a>
+          </Link>
         </div>
       </div>
     </div>

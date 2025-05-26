@@ -1,6 +1,6 @@
 import { useState, useRef, FormEvent } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
-import styles from './Login.module.css';
+import styles from './LoginOne.module.css';
 import Image from 'next/image';
 import logoImage from '@/assets/icons/logo26.png';
 import { useRouter } from 'next/navigation';
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-const Login = () => {
+const LoginOne = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -74,13 +74,14 @@ const Login = () => {
               <div className={styles.logoImage}>
                 <Image src={logoImage} alt="Logo" height={80} width={80} />
               </div>
-              <div><h3 className={styles.heading}>UZO Login</h3></div>
-              <span className={styles.descHeading}>There&apos;s a better way to roam the world</span>
+              <div><h3 className={styles.heading}>UZO One Login</h3></div>
+              <span className={styles.descHeading}>Where Loyalty Feels Like Luxury.</span>
+              {/* <span className={styles.descHeading}>Unlock More with Every Stay.</span> */}
               <span className={styles.descText}>
-                Sign up with your account and get exclusive access to discounts and
-                savings on UZO stays and with our many travel partners.
+                Join our hotel membership program and elevate your travel experience. As a valued member, you&apos;ll unlock special rates, priority check-in, room upgrades (when available), and access to exclusive offers designed just for you.
               </span>
             </div>
+
           </div>
           <div className={styles.loginBox}>
             <div className={styles.loginHeader}>
@@ -186,4 +187,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginOne;

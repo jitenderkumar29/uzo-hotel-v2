@@ -1,9 +1,10 @@
 /* components/SimilarHotels.module.css */
 .similarHotels {
-  padding: 0;
+  padding: 0 0.5rem;
   /* max-width: 1200px; */
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  padding-bottom: 2rem;
 }
 
 .header {
@@ -72,7 +73,8 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  background-color: var(--dark-white);
+  background-color: var(--bg-light-blue);
+  /* background-color: var(--dark-white); */
 }
 
 .carousel::-webkit-scrollbar {
@@ -80,8 +82,8 @@
 }
 
 .hotelCard {
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 310px;
+  max-width: 310px;
   /* height: auto; */
   flex: 1 0 auto;
   scroll-snap-align: start;

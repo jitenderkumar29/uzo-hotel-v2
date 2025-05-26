@@ -551,7 +551,9 @@
 }
 
 .sideMenuDropdown__linkItem:hover {
-  background-color: #f5f5f5;
+  background-color: var(--background);
+  border: 2px solid var(--border-color);
+  /* background-color: #f5f5f5; */
 }
 
 .sideMenuDropdown__linkItem a {
