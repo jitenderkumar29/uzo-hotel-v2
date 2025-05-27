@@ -33,10 +33,10 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
   onClose,
 }) => {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    copper: false,
-    silver: false,
-    gold: false,
-    platinum: false
+    copper: true,
+    silver: true,
+    gold: true,
+    platinum: true
   });
 
   const toggleSection = (section: string) => {
