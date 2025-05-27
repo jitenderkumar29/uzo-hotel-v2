@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './CorporateTiers.module.css';
 import { FaCrown, FaMedal, FaAward, FaStar } from 'react-icons/fa';
@@ -5,6 +6,7 @@ import { ChevronRight, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 import OverlayContainer from '@/components/OverlayContainer/OverlayContainer';
 import CorporateBenefits from '../CorporateBenefits/CorporateBenefits';
+import TermsConditionsCorporate from './TermsConditionsCorporate/TermsConditionsCorporate';
 
 const CorporateTiers = () => {
   const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
@@ -130,12 +132,11 @@ const CorporateTiers = () => {
           </OverlayContainer>
         )}
         {showTermsConditions && (
-          <div></div>
-          // <OverlayContainer
-          //   show={showTermsConditions}
-          //   onClose={() => setShowTermsConditions(false)}>
-          //   <TermsConditionsCorporate onClose={() => setShowTermsConditions(false)} />
-          // </OverlayContainer>
+          <OverlayContainer
+            show={showTermsConditions}
+            onClose={() => setShowTermsConditions(false)}>
+            <TermsConditionsCorporate onClose={() => setShowTermsConditions(false)} />
+          </OverlayContainer>
         )}
       </section>
       <div>

@@ -15,7 +15,7 @@ const MemberTiersBenefits: React.FC = () => {
   const cards: TierCard[] = [
     {
       title: 'UZO ONE Classic',
-      description: 'Instant benefits from day 1 and become Premium after only 3 stays.',
+      description: 'Instant benefits from day 1 and become Classic after only 3 stays.',
       imageUrl: '/images/MemberTiersBenefits1.jpg',
       imageAlt: 'Uzo Rewards Brand - Free Room Upgrade Uzo Rewards'
     },
@@ -48,7 +48,7 @@ const MemberTiersBenefits: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Enjoy our UZO ONE tiers and world of benefits</h2>
+        <h2 className={styles.title}>Join our UZO ONE tiers and world of benefits</h2>
         {/* <h2 className={styles.title}>Discover our tiers and world of benefits</h2> */}
         {/* <div className={styles.controls}>
           <button

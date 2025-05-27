@@ -201,10 +201,12 @@
   justify-content: center;
   z-index: 10;
   transition: all 0.3s ease;
+  color: var(--text-color-black);
 }
 
 .arrow:hover {
-  background-color: #fff;
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
