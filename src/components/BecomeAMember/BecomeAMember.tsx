@@ -12,6 +12,7 @@ import MemberRedeem from './MemberRedeem/MemberRedeem';
 import UzoRewards from './MemberRewards/UzoRewards/UzoRewards';
 import RewardsHowItWorks from './MemberRewards/RewardsHowItWorks/RewardsHowItWorks';
 import MemberTiersBenefits from './MemberBenefits/MemberTiersBenefits/MemberTiersBenefits';
+import BecomeMemberCards from './BecomeMemberCards/BecomeMemberCards';
 
 const BecomeAMember = () => {
   return (
@@ -56,7 +57,7 @@ const BecomeAMember = () => {
       <MemberTiersBenefits />
       <UzoRewards />
       <RewardsHowItWorks />
-      {/* <BecomeMemberCards /> */}
+      <BecomeMemberCards />
       <MemberBenefits />
       <EarnRewards />
       <MemberRedeem />

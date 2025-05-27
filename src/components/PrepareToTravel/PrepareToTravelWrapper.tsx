@@ -8,6 +8,10 @@ const PrepareToTravelWrapper = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const node = ref.current; // Capture ref.current at the time of effect
+
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,16 +19,35 @@ const PrepareToTravelWrapper = () => {
         }
       },
       {
-        threshold: 0.5, // triggers when 50% is in view
+        threshold: 0.5,
       }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(node);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(node); // Use the captured node
     };
   }, []);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setKey(prev => prev + 1); // force re-render
+  //       }
+  //     },
+  //     {
+  //       threshold: 0.5, // triggers when 50% is in view
+  //     }
+  //   );
+
+  //   if (ref.current) observer.observe(ref.current);
+
+  //   return () => {
+  //     if (ref.current) observer.unobserve(ref.current);
+  //   };
+  // }, []);
 
   return (
     <div ref={ref}>

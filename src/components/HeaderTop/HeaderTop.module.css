@@ -202,6 +202,7 @@
   align-items: center;
   font-size: 25px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .heading {
@@ -224,10 +225,11 @@
   display: flex;
   gap: 22px;
   font-size: 18px;
-  color: #1e1e2d;
+  color: var(--text-color-black);
   padding: 0.75rem 0;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-weight: 600;
 }
 
 .navListBooklist li:hover {

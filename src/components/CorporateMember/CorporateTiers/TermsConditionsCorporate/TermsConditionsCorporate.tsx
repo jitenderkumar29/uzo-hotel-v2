@@ -48,26 +48,26 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
 
   const privilegesData: Record<string, PrivilegeSection> = {
     copper: {
-      title: "TAJ INNERCIRCLE COPPER PRIVILEGES",
+      title: "UZO PASS DIAMOND PRIVILEGES",
       items: [
         {
-          title: "Taj InnerCircle Copper is the base tier available to guests above the age of 18 years."
+          title: "UZO PASS DIAMOND is the base tier available to guests above the age of 18 years."
         },
         {
-          title: "A Copper tier member will earn 4 NeuCoins for every INR 100 of eligible spends, net of taxes at participating IHCL Hotels."
+          title: "A DIAMOND tier member will earn 4 UZOCoins for every INR 100 of eligible spends, net of taxes at participating UZO Hotels."
         },
         {
-          title: "A Copper Tier member will earn 4 NeuCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
+          title: "A DIAMOND Tier member will earn 4 UZOCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
         },
         {
           title: "Exclusive Member Rates",
           subItems: [
             "10% Savings on Best Available Rates (BAR) through the year for room reservations applicable for Room only and Breakfast inclusive rates on direct bookings.",
             "A valid Membership number should be provided at the time of booking for further verification during check-in.",
-            "The offer is available at participating Taj, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
+            "The offer is available at participating UZO, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
             "Maximum length of stay at any of the participating hotels is 30 nights.",
-            "Members are eligible to earn member points/NeuCoins only on direct bookings made via the Taj Website, Taj Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
-            "All Terms and Conditions of the Tata Neu Member Program will apply."
+            "Members are eligible to earn member points/UZOCoins only on direct bookings made via the UZO Website, UZO Reservation Worldwide, UZO Regional Reservation Office or Hotel Reservation Office.",
+            "All Terms and Conditions of the UZO PASS Member Program will apply."
           ],
           link: {
             text: "here",
@@ -75,16 +75,16 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           }
         },
         {
-          title: "Member Points/NeuCoins can be redeemed and gifted in the form of Taj Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
+          title: "Member Points/UZOCoins can be redeemed and gifted in the form of UZO Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
         },
         {
-          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem NeuCoins under NeuPass loyalty membership program."
+          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem UXOCoins under UZO Pass loyalty membership program."
         },
         {
-          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn NeuCoins."
+          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn UZOCoins."
         },
         {
-          title: "All NeuPass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
+          title: "All UZOPass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
         }
       ],
       contact: {
@@ -93,26 +93,26 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
       }
     },
     silver: {
-      title: "TAJ INNERCIRCLE SILVER PRIVILEGES",
+      title: "UZO PASS TITANIUM PRIVILEGES",
       items: [
         {
-          title: "Taj InnerCircle Silver tier is achieved on eligible spends of INR 1 lakh or stays of 10 eligible room nights."
+          title: "UZO PASS TITANIUM tier is achieved on eligible spends of INR 1 lakh or stays of 10 eligible room nights."
         },
         {
-          title: "A Silver tier member will earn 5 NeuCoins for every INR 100 of eligible spends, net of taxes at participating IHCL Hotels."
+          title: "A TITANIUM tier member will earn 5 UZOCoins for every INR 100 of eligible spends, net of taxes at participating UZO Hotels."
         },
         {
-          title: "A Silver tier member will earn 4 NeuCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
+          title: "A TITANIUM tier member will earn 4 UZOCoins for every INR 100 of eligible spends, net of taxes at participating UZO Hotels."
         },
         {
           title: "Exclusive Member Rates",
           subItems: [
             "10% Savings on Best Available Rates (BAR) through the year for room reservations applicable for Room only and Breakfast inclusive rates on direct bookings.",
             "A valid Membership number should be provided at the time of booking for further verification during check-in.",
-            "The offer is available at participating Taj, SeleQtions, Gateway, Vivanta and Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
+            "The offer is available at participating UZO, SeleQtions, Gateway, Vivanta and Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
             "Maximum length of stay at any of the participating hotels is 30 nights.",
-            "Members are eligible to earn member points/NeuCoins only on direct bookings made via Taj Website, Taj Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
-            "All Terms and Conditions of the Tata Neu Member Program will apply."
+            "Members are eligible to earn member points/UZOCoins only on direct bookings made via UZO Website, UZO Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
+            "All Terms and Conditions of the UZO PASS Member Program will apply."
           ],
           link: {
             text: "here",
@@ -120,16 +120,16 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           }
         },
         {
-          title: "Member Points/NeuCoins can be redeemed and gifted in the form of Taj Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
+          title: "Member Points/UZOCoins can be redeemed and gifted in the form of UZO Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
         },
         {
-          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem NeuCoins under NeuPass loyalty membership program."
+          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem UZOCoins under UZO PASS loyalty membership program."
         },
         {
-          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn NeuCoins."
+          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn UZOCoins."
         },
         {
-          title: "All NeuPass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
+          title: "All UZO PASS Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
         }
       ],
       contact: {
@@ -138,16 +138,16 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
       }
     },
     gold: {
-      title: "TAJ INNERCIRCLE GOLD PRIVILEGES",
+      title: "UZO PASS GOLD PRIVILEGES",
       items: [
         {
-          title: "Taj InnerCircle Gold tier is achieved on eligible spends of INR 4 lakhs or stays of 40 eligible room nights."
+          title: "UZO PASS GOLD tier is achieved on eligible spends of INR 4 lakhs or stays of 40 eligible room nights."
         },
         {
-          title: "A Gold tier member will earn 7 NeuCoins for every INR 100 of eligible spends, net of taxes at participating IHCL Hotels."
+          title: "A Gold tier member will earn 7 UZOCoins for every INR 100 of eligible spends, net of taxes at participating UZO Hotels."
         },
         {
-          title: "A Gold tier member will earn 4 NeuCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
+          title: "A Gold tier member will earn 4 UZOCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
         },
         {
           title: "A Gold tier member will be eligible for a 2-hour early check-in and 2-hour late check-out, subject to availability."
@@ -157,10 +157,10 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           subItems: [
             "15% Savings on Best Available Rates (BAR) through the year for room reservations applicable for Room only and Breakfast inclusive rates on direct bookings.",
             "A valid Membership number should be provided at the time of booking for further verification during check-in.",
-            "The offer is available at participating Taj, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
+            "The offer is available at participating UZO, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
             "Maximum length of stay at any of the participating hotels is 30 nights.",
-            "Members are eligible to earn member points/NeuCoins only on direct bookings made via Taj Website, Taj Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
-            "All Terms and Conditions of the Tata Neu Member Program will apply."
+            "Members are eligible to earn member points/UZOCoins only on direct bookings made via UZO Website, UZO Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
+            "All Terms and Conditions of the UZO PASS Member Program will apply."
           ],
           link: {
             text: "here",
@@ -178,12 +178,12 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           ]
         },
         {
-          title: "2 Upgrade E-Vouchers to Taj Club rooms",
+          title: "2 Upgrade E-Vouchers to UZO Classic rooms",
           subItems: [
             "This upgrade does not include airport transfer/s and any other service deemed as an outsourced service by the participating hotel.",
-            "Taj Club room benefits are only applicable to the occupants of this room category.",
-            "The hotel management reserves the right to restrict entry to the Taj Club lounge.",
-            "Taj Club rules and regulations will apply.",
+            "UZO Club room benefits are only applicable to the occupants of this room category.",
+            "The hotel management reserves the right to restrict entry to the UZO Club lounge.",
+            "UZO Club rules and regulations will apply.",
             "Upgrades are subject to availability at the time of check-in.",
             "These E-Vouchers are non-transferable and their validity cannot be extended."
           ]
@@ -191,9 +191,9 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
         {
           title: "15% Savings on Spa",
           subItems: [
-            "This benefit entitles Members to a discount at Spas across Taj, SeleQtions, Gateway and Vivanta Hotels.",
+            "This benefit entitles Members to a discount at Spas across UZO, SeleQtions, Gateway and Vivanta Hotels.",
             "This offer is not applicable on purchase of any retail products.",
-            "A valid Tata NeuPass Membership number and/or mobile number must be provided.",
+            "A valid UZO PASS Membership number and/or mobile number must be provided.",
             "Government taxes/levies must be paid as applicable, on the total bill value.",
             "The Member must be present to avail any such benefit."
           ]
@@ -203,22 +203,22 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           subItems: [
             "This benefit entitles Members to Food & Beverage discount (including alcohol), at participating restaurants.",
             "The benefit is applicable on all Food & Beverage outlets, including in-room dining and take away orders.",
-            "A valid Tata NeuPass Membership number and/or mobile number must be provided.",
+            "A valid UZO PASS Membership number and/or mobile number must be provided.",
             "Government taxes/levies must be paid as applicable, on the total bill value.",
             "The Member must be present to avail any such benefit."
           ]
         },
         {
-          title: "Member Points/NeuCoins can be redeemed and gifted in the form of Taj Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
+          title: "Member Points/UZOCoins can be redeemed and gifted in the form of UZO Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
         },
         {
-          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem NeuCoins under NeuPass loyalty membership Program."
+          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem UZOCoins under UZO PASS loyalty membership Program."
         },
         {
-          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn NeuCoins."
+          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn UZOCoins."
         },
         {
-          title: "All NeuPass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
+          title: "All UZO PASS Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
         }
       ],
       contact: {
@@ -227,16 +227,16 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
       }
     },
     platinum: {
-      title: "TAJ INNERCIRCLE PLATINUM PRIVILEGES",
+      title: "UZO PASS PLATINUM PRIVILEGES",
       items: [
         {
-          title: "Taj InnerCircle Platinum tier is achieved on eligible spends of INR 8 lakhs or stays of 80 eligible room nights."
+          title: "UZO PASS Platinum tier is achieved on eligible spends of INR 8 lakhs or stays of 80 eligible room nights."
         },
         {
-          title: "A Platinum tier member will earn 8 NeuCoins for every INR 100 of eligible spends, net of taxes at participating IHCL Hotels."
+          title: "A Platinum tier member will earn 8 UZOCoins for every INR 100 of eligible spends, net of taxes at participating IHCL Hotels."
         },
         {
-          title: "A Platinum tier member will earn 4 NeuCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
+          title: "A Platinum tier member will earn 4 UZOCoins for every INR 100 of eligible spends, net of taxes at participating Ginger Hotels."
         },
         {
           title: "A Platinum tier member will be eligible for a 2 hour early check-in and 2-hour late check-out, subject to availability."
@@ -249,10 +249,10 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           subItems: [
             "20% Savings on Best Available Rates (BAR) through the year for room reservations applicable for Room only and Breakfast inclusive rates on direct bookings.",
             "A valid Membership number should be provided at the time of booking for further verification during check-in.",
-            "The offer is available at participating Taj, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
+            "The offer is available at participating UZO, SeleQtions, Gateway, Vivanta, Ginger Hotels and ama Stays & Trails only and is subject to room availability.",
             "Maximum Length of stay at any of the participating hotels is 30 nights.",
-            "Members are eligible to earn member points/NeuCoins only on direct bookings made via Taj Website, Taj Reservation Worldwide, IHCL Regional Reservation Office or Hotel Reservation Office.",
-            "All Terms and Conditions of the Tata Neu Member Program will apply."
+            "Members are eligible to earn member points/UZOCoins only on direct bookings made via UZO Website, UZO Reservation Worldwide, UZO Regional Reservation Office or Hotel Reservation Office.",
+            "All Terms and Conditions of the UZO PASS Member Program will apply."
           ],
           link: {
             text: "here",
@@ -270,12 +270,12 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           ]
         },
         {
-          title: "4 upgrade E-Vouchers to Taj Club rooms",
+          title: "4 upgrade E-Vouchers to UZO Classic rooms",
           subItems: [
             "This upgrade does not include airport transfer/s and any other service deemed as an outsourced service by the participating hotel.",
-            "Taj Club room benefits are only applicable to the occupants of this room category.",
-            "The hotel management reserves the right to restrict entry to the Taj Club lounge.",
-            "Taj Club rules and regulations will apply.",
+            "UZO Classic room benefits are only applicable to the occupants of this room category.",
+            "The hotel management reserves the right to restrict entry to the UZO Classic lounge.",
+            "UZO Classic rules and regulations will apply.",
             "Upgrades are subject to availability at the time of check-in.",
             "These E-Vouchers are non-transferable and their validity cannot be extended."
           ]
@@ -283,9 +283,9 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
         {
           title: "20% Savings on Spa",
           subItems: [
-            "This benefit entitles members to a discount at Spas across Taj, SeleQtions, Gateway and Vivanta hotels.",
+            "This benefit entitles members to a discount at Spas across UZO, SeleQtions, Gateway and Vivanta hotels.",
             "This offer is not applicable on purchase of any retail products.",
-            "A valid Tata NeuPass Membership number and/or mobile number must be provided.",
+            "A valid UZO Pass Membership number and/or mobile number must be provided.",
             "Government taxes/levies must be paid as applicable, on the total bill value.",
             "The Member must be present to avail any such benefit."
           ]
@@ -295,7 +295,7 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           subItems: [
             "This benefit entitles Members to Food & Beverage discount (including alcohol), at participating restaurants.",
             "The benefit is applicable on all Food & Beverage outlets, including in-room dining and take away orders.",
-            "A valid Tata NeuPass Membership number and/or mobile number must be provided.",
+            "A valid UZO Pass Membership number and/or mobile number must be provided.",
             "Government taxes/levies must be paid as applicable, on the total bill value.",
             "The Member must be present to avail any such benefit."
           ]
@@ -311,16 +311,16 @@ const TermsConditionsCorporate: React.FC<TermsConditionsProps> = ({
           ]
         },
         {
-          title: "Member Points/NeuCoins can be redeemed and gifted in the form of Taj Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
+          title: "Member Points/UZOCoins can be redeemed and gifted in the form of UZO Experience Gift Cards to friends and/or family of the Member, for a minimum amount of INR 1000."
         },
         {
-          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem NeuCoins under NeuPass loyalty membership Program."
+          title: "Tree of Life Resorts & Hotels are currently not eligible to Earn/Redeem UZOCoins under UZO Pass loyalty membership Program."
         },
         {
-          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn NeuCoins."
+          title: "Food and Beverage (F&B) expense incurred during In-Room Dining, Dine-In and Takeaways at Ginger Hotels are currently not eligible to earn UZOCoins."
         },
         {
-          title: "All NeuPass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
+          title: "All UZO Pass Members benefits & vouchers are not applicable at Tree of Life Resorts & Hotels."
         }
       ],
       contact: {

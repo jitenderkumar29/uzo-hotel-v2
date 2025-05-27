@@ -1,37 +1,36 @@
 'use client';
 import styles from './BecomeMemberCards.module.css';
 import { FaCrown, FaMedal, FaAward } from 'react-icons/fa';
-import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 const BecomeMemberCards = () => {
   // const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
   const tiers = [
     {
-      name: 'PLATINUM',
+      name: 'UZO ONE Classic',
       icon: <FaCrown className={styles.tierIcon} />,
       color: '#E5E4E2',
-      imgUrl: "/icons/sbiCard1.png",
-      cardNumber: "1478523698741258",
-      description: "UZO INNERCIRCLE",
-      expiry: "12/32"
+      imgUrl: "/icons/card1.png",
+      cardNumber: "1598472635847586",
+      description: "Rahul Kumar Sharma",
+      expiry: "12/31"
     },
     {
-      name: 'GOLD',
+      name: 'UZO ONE Milania',
       icon: <FaMedal className={styles.tierIcon} />,
       color: '#FFD700',
-      imgUrl: "/icons/sbiCard2.png",
-      cardNumber: "1236547896541236",
-      description: "UZO INNERCIRCLE",
-      expiry: "12/35"
+      imgUrl: "/icons/card2.png",
+      cardNumber: "1598763254147895",
+      description: "Rahul Kumar Sharma",
+      expiry: "12/36"
     },
     {
-      name: 'Titanium',
+      name: 'UZO ONE Royal',
       icon: <FaAward className={styles.tierIcon} />,
       color: '#C0C0C0',
-      imgUrl: "/icons/sbiCard3.png",
-      cardNumber: "7896541236549874",
-      description: "UZO INNERCIRCLE",
-      expiry: "12/31"
+      imgUrl: "/icons/card3.png",
+      cardNumber: "7532145896587412",
+      description: "Rahul Kumar Sharma",
+      expiry: "12/33"
     }
   ];
 
@@ -72,11 +71,11 @@ const BecomeMemberCards = () => {
                       ))}
                     </p>
                     <p className={styles.description}>
-                      <div className={styles.expiry}>Valid From: 05/25</div>
+                      <div className={styles.expiry}>Valid From: 05/24</div>
                       <div className={styles.expiry}>Valid Thru: {tier.expiry}</div>
                     </p>
                     <h4 className={styles.tierName}>
-                      <div>Rahul Kumar Sharma</div>
+                      <div>{tier.description}</div>
                     </h4>
                   </div>
                 </div>
@@ -101,37 +100,37 @@ const BecomeMemberCards = () => {
         )} */}
       </section>
 
-      <div>
+      {/* <div>
         <ContactSupport />
-      </div>
+      </div> */}
     </>
   );
 };
 
-const ContactSupport = () => (
-  <div className={styles.containerContact}>
-    <div className={styles.contentWrapperContact}>
-      <div className={styles.contentContact}>
-        <p className={styles.supportTextContact}>
-          For any assistance please contact UZO ONE Customer Care at
-        </p>
+// const ContactSupport = () => (
+//   <div className={styles.containerContact}>
+//     <div className={styles.contentWrapperContact}>
+//       <div className={styles.contentContact}>
+//         <p className={styles.supportTextContact}>
+//           For any assistance please contact UZO ONE Customer Care at
+//         </p>
 
-        <div className={styles.contactItemsContact}>
-          <a href="tel:18002028282" className={styles.contactLinkContact}>
-            <Phone className={styles.iconContact} size={16} />
-            <span>1800 202 8211</span>
-          </a>
+//         <div className={styles.contactItemsContact}>
+//           <a href="tel:18002028282" className={styles.contactLinkContact}>
+//             <Phone className={styles.iconContact} size={16} />
+//             <span>1800 202 8211</span>
+//           </a>
 
-          <span className={styles.separatorContact}>or</span>
+//           <span className={styles.separatorContact}>or</span>
 
-          <a href="mailto:customercare@uzohotels.com" className={styles.contactLinkContact}>
-            <Mail className={styles.iconContact} size={16} />
-            <span>customercare@uzohotels.com</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+//           <a href="mailto:customercare@uzohotels.com" className={styles.contactLinkContact}>
+//             <Mail className={styles.iconContact} size={16} />
+//             <span>customercare@uzohotels.com</span>
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// );
 
 export default BecomeMemberCards;

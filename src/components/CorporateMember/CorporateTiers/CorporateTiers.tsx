@@ -152,7 +152,7 @@ const ContactSupport = () => (
     <div className={styles.contentWrapperContact}>
       <div className={styles.contentContact}>
         <p className={styles.supportTextContact}>
-          For any assistance please contact UZO ONE Customer Care at
+          For any assistance please contact UZO PASS Customer Care at
         </p>
 
         <div className={styles.contactItemsContact}>
