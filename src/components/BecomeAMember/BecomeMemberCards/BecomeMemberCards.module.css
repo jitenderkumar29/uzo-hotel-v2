@@ -117,6 +117,25 @@
   font-size: 14px;
 }
 
+.imageCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.25rem;
+  margin-top: -10px;
+  margin-bottom: -15px;
+}
+
+.qrImage {
+  height: 40px;
+  width: 40px;
+}
+
+.wifiImage {
+  height: 40px;
+  width: 40px;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: center;

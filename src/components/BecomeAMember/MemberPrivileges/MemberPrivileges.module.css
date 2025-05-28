@@ -1,0 +1,224 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+}
+
+.containerHeader {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  /* margin-bottom: 1rem; */
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: var(--border-color);
+  width: 15%;
+}
+
+.titleContainer {
+}
+
+.titleLine1 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0;
+  color: var(--text-color-black);
+}
+
+.titleLine2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+  color: var(--text-color-black);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  line-height: 1.6;
+  color: var(--text-color-black);
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joinButton {
+  padding: 0.8rem 2rem;
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.joinButton:hover {
+  background-color: var(--dark-orange);
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.joinButton:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+
+  /* gap: 1rem; */
+}
+
+.card {
+  flex: 0 0 calc(100% / 3);
+  /* flex: 0 0 calc(100% / 3); */
+  box-sizing: border-box;
+  padding: 0 0rem;
+  opacity: 0.6;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  /* , opacity 0.3s ease; */
+  opacity: 1;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1rem;
+  background: var(--dark-white);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.cardDivider {
+  border: none;
+  height: 2px;
+  background-color: #ddd;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  margin: 0;
+  margin-left: 10px;
+  white-space: pre-line;
+  text-align: start;
+}
+
+.arrowButton {
+  background: var(--dark-white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.arrowButton:hover {
+  background: var(--dark-accent);
+  transform: translateY(-50%) scale(1.1);
+  color: var(--dark-white);
+}
+
+.arrowButton:first-of-type {
+  left: -20px;
+}
+
+.arrowButton:last-of-type {
+  right: -20px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleLine1 {
+    font-size: 1.5rem;
+  }
+
+  .titleLine2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    flex: 0 0 100%;
+  }
+
+  .arrowButton:first-of-type {
+    left: 0;
+  }
+
+  .arrowButton:last-of-type {
+    right: 0;
+  }
+}

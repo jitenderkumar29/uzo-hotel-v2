@@ -6,7 +6,7 @@ const BecomeMemberCards = () => {
   // const [showCorporateBenefits, setShowCorporateBenefits] = useState(false);
   const tiers = [
     {
-      name: 'UZO ONE Classic',
+      name: 'Classic',
       icon: <FaCrown className={styles.tierIcon} />,
       color: '#E5E4E2',
       imgUrl: "/icons/card1.png",
@@ -15,7 +15,7 @@ const BecomeMemberCards = () => {
       expiry: "12/31"
     },
     {
-      name: 'UZO ONE Milania',
+      name: 'Milania',
       icon: <FaMedal className={styles.tierIcon} />,
       color: '#FFD700',
       imgUrl: "/icons/card2.png",
@@ -24,7 +24,7 @@ const BecomeMemberCards = () => {
       expiry: "12/36"
     },
     {
-      name: 'UZO ONE Royal',
+      name: 'Royal',
       icon: <FaAward className={styles.tierIcon} />,
       color: '#C0C0C0',
       imgUrl: "/icons/card3.png",
@@ -59,7 +59,13 @@ const BecomeMemberCards = () => {
                   <div>
                     <p className={styles.cardType}>
                       <div className={styles.cardName}>{tier.name}</div>
-                      <div className={styles.expiry}>UZO PASS</div>
+                      <div className={styles.expiry}>UZO ONE</div>
+                    </p>
+                  </div>
+                  <div>
+                    <p className={styles.imageCont}>
+                      <Image src={"/icons/qrCode.png"} alt='QR Code' className={styles.qrImage} width={20} height={50} />
+                      <Image src={"/icons/wifi.png"} alt='Wifie' className={styles.wifiImage} width={20} height={50} />
                     </p>
                   </div>
                   <div className={styles.cardBottom}>

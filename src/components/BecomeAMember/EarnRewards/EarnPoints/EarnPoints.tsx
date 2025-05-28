@@ -1,4 +1,5 @@
 // components/EarnPoints.tsx
+'use client';
 import styles from './EarnPoints.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faGift } from '@fortawesome/free-solid-svg-icons';

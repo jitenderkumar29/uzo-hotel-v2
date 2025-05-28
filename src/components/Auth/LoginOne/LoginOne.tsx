@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, FormEvent } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import styles from './LoginOne.module.css';

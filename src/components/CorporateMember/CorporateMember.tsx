@@ -8,7 +8,7 @@ import CorporatePrivilege from './CorporatePrivilege/CorporatePrivilege';
 import FooterUzo from '../FooterUzo/FooterUzo';
 import CorporateTiers from './CorporateTiers/CorporateTiers';
 import Image from 'next/image';
-import CorporateSlide from './CorporateSlide/CorporateSlide';
+import CorporateSlideWellness from './CorporateSlideWellness/CorporateSlideWellness';
 
 const CorporateMember = () => {
   const [currentSlide,] = useState(0);
@@ -116,7 +116,8 @@ const CorporateMember = () => {
         <CorporateTiers />
       </div>
       <div>
-        <CorporateSlide />
+        {/* <CorporateSlide /> */}
+        <CorporateSlideWellness />
       </div>
       <div className={styles.footerBox}>
         <FooterUzo />

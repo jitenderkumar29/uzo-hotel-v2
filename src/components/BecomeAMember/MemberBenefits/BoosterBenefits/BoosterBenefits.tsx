@@ -1,4 +1,5 @@
 // components/BoosterBenefits.tsx
+'use client';
 import React from 'react';
 import styles from './BoosterBenefits.module.css';
 import Image from 'next/image';
@@ -32,7 +33,7 @@ const BoosterBenefits = () => {
             </div>
             <div className={styles.imageContainer}>
               <Image
-                src="/images/BoosterBenefits.jpg"
+                src="/images/CorporateSlide5.jpg"
                 alt="Radisson Blu Resort and Spa, Split - Outdoor Pool"
                 width={384}
                 height={670}

@@ -1,4 +1,5 @@
 // components/EarnRewards/EarnRewards.tsx
+'use client';
 import React, { useRef } from 'react';
 import styles from './EarnRewards.module.css';
 import Image from 'next/image';
@@ -34,8 +35,8 @@ const EarnRewards = () => {
       linkUrl: "/rewards/food-beverage"
     },
     {
-      title: "Meetings and Events",
-      description: "Earn 5 points per USD spent when booking meetings and events.",
+      title: "Wellness",
+      description: "Unlock your innermost energy with Innergise stay retreats, and wellness journey.",
       imageUrl: "/images/EarnRewards3.jpg",
       imageAlt: "Business meeting at Radisson",
       linkUrl: "/rewards/meetings-events",

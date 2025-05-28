@@ -13,6 +13,7 @@ import UzoRewards from './MemberRewards/UzoRewards/UzoRewards';
 import RewardsHowItWorks from './MemberRewards/RewardsHowItWorks/RewardsHowItWorks';
 import MemberTiersBenefits from './MemberBenefits/MemberTiersBenefits/MemberTiersBenefits';
 import BecomeMemberCards from './BecomeMemberCards/BecomeMemberCards';
+import MemberPrivileges from './MemberPrivileges/MemberPrivileges';
 
 const BecomeAMember = () => {
   return (
@@ -54,6 +55,7 @@ const BecomeAMember = () => {
       </div>
       {/* <MemberNavBar /> */}
       {/* <MemberRewards /> */}
+      <MemberPrivileges />
       <MemberTiersBenefits />
       <UzoRewards />
       <RewardsHowItWorks />

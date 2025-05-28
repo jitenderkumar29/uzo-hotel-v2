@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './MemberRedeem.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,29 +33,53 @@ const MemberRedeem: React.FC = () => {
       altText: 'Radisson Rewards - web & offers - Full Size Points Redemption Priority Pass'
     },
     {
-      id: 'sos-children',
-      title: 'SOS Children\'s Villages',
-      description: 'Donate your points to enable SOS Children\'s Villages and extend a helping hand to these vulnerable children and provide the care, love and support they need.',
-      imageUrl: '/images/MemberRedeem3.jpg',
+      id: 'Wellness',
+      title: 'Wellness',
+      description: 'Unlock your innermost energy with Innergise stay retreats, designed to guide you on a holistic, transformative wellness journey.',
+      imageUrl: '/images/CorporateSlide5.jpg',
       link: '/',
       altText: 'Radisson Rewards - Mozambique'
     },
     {
-      id: 'first-climate',
-      title: 'First Climate',
-      description: 'Donate your points to First Climate to help support climate protection projects.',
+      id: 'food-beverage',
+      title: 'Food Beverages',
+      description: "Elevate your taste buds, Where food meets art, Experience flavors like never before, Fine dining for the modern palate, Taste the difference.",
       imageUrl: '/images/MemberRedeem4.jpg',
       link: '/',
       altText: 'Responsible Business - BRUZT RH Earth Hour x Landing Page Original'
     },
     {
-      id: 'carbon-compensated',
-      title: 'Carbon Compensated Stays',
-      description: 'Compensate your carbon footprint with just 325 points per night.',
+      id: 'Transfer',
+      title: 'Transfer',
+      description: 'Arrive in style, stay in comfort," "Seamless transfers, unforgettable stays," or "Your journey starts with us.',
       imageUrl: '/images/MemberRedeem5.jpg',
       link: '/',
       altText: 'Responsible Business - Making a difference'
     }
+    // {
+    //   id: 'sos-children',
+    //   title: 'SOS Children\'s Villages',
+    //   description: 'Donate your points to enable SOS Children\'s Villages and extend a helping hand to these vulnerable children and provide the care, love and support they need.',
+    //   imageUrl: '/images/MemberRedeem3.jpg',
+    //   link: '/',
+    //   altText: 'Radisson Rewards - Mozambique'
+    // },
+    // {
+    //   id: 'first-climate',
+    //   title: 'First Climate',
+    //   description: 'Donate your points to First Climate to help support climate protection projects.',
+    //   imageUrl: '/images/MemberRedeem4.jpg',
+    //   link: '/',
+    //   altText: 'Responsible Business - BRUZT RH Earth Hour x Landing Page Original'
+    // },
+    // {
+    //   id: 'carbon-compensated',
+    //   title: 'Carbon Compensated Stays',
+    //   description: 'Compensate your carbon footprint with just 325 points per night.',
+    //   imageUrl: '/images/MemberRedeem5.jpg',
+    //   link: '/',
+    //   altText: 'Responsible Business - Making a difference'
+    // }
   ];
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
