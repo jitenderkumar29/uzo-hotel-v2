@@ -112,14 +112,16 @@
   border: 1px solid var(--border-color);
 }
 .blurred {
-  opacity: 0.9;
+  opacity: 1;
+  /* opacity: 0.9; */
   /* filter: blur(1px); */
   pointer-events: none;
 }
 
 .blurred .imageContainer {
   /* filter: blur(1px); */
-  opacity: 0.9;
+  opacity: 1;
+  /* opacity: 0.9; */
 }
 
 .blurred .content {

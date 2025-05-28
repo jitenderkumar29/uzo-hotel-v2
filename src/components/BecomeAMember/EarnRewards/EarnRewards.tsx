@@ -37,7 +37,7 @@ const EarnRewards = () => {
     {
       title: "Wellness",
       description: "Unlock your innermost energy with Innergise stay retreats, and wellness journey.",
-      imageUrl: "/images/EarnRewards3.jpg",
+      imageUrl: "https://images.pexels.com/photos/3673941/pexels-photo-3673941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       imageAlt: "Business meeting at Radisson",
       linkUrl: "/rewards/meetings-events",
       linkText: "See more"

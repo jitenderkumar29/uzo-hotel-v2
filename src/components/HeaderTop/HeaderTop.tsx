@@ -1,6 +1,6 @@
 "use client"
 // components/HeaderTop.tsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './HeaderTop.module.css';
 import logoImage from '@/assets/icons/logo26.png';
@@ -16,6 +16,7 @@ const HeaderTop = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
+  const bookingRef = useRef<HTMLDivElement>(null);
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -33,6 +34,23 @@ const HeaderTop = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle click outside booking dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: globalThis.MouseEvent) => {
+      if (bookingRef.current && !bookingRef.current.contains(event.target as Node)) {
+        setShowBooking(false);
+      }
+    };
+
+    if (showBooking) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showBooking]);
 
   return (
     <div className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ''}`}>
@@ -104,7 +122,7 @@ const HeaderTop = () => {
           </nav>
 
           {showBooking && (
-            <div className={styles.bookingDropdown}>
+            <div className={styles.bookingDropdown} ref={bookingRef}>
               <div className={styles.containerBooklist}>
                 <aside className={styles.sidebarBooklist}>
                   <div className={styles.sideBarHeading}>

@@ -52,7 +52,7 @@ const MemberRedeem: React.FC = () => {
       id: 'Transfer',
       title: 'Transfer',
       description: 'Arrive in style, stay in comfort," "Seamless transfers, unforgettable stays," or "Your journey starts with us.',
-      imageUrl: '/images/MemberRedeem5.jpg',
+      imageUrl: 'https://images.pexels.com/photos/4606338/pexels-photo-4606338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       link: '/',
       altText: 'Responsible Business - Making a difference'
     }

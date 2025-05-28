@@ -12,7 +12,7 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     title: 'EXCLUSIVE MEMBER RATES',
-    image: 'https://images.pexels.com/photos/3943726/pexels-photo-3943726.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/8636603/pexels-photo-8636603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   },
   {
     title: 'UPTO 25% SAVINGS ON STAYS',
@@ -101,7 +101,7 @@ const MemberPrivileges: React.FC = () => {
           <hr className={styles.divider} />
         </div>
         <p className={styles.subtitle}>
-          Unlock a host of elevated experiences and countless rewards with UZO ONE loyalty program...
+          Unlock a world of refined comfort and personalized hospitality - where your membership grants you priority privileges, exclusive stays, and unforgettable experiences across every destination we call home.
         </p>
         {/* <button className={styles.joinButton}>
           JOIN NOW
@@ -129,7 +129,7 @@ const MemberPrivileges: React.FC = () => {
                   />
                 </div>
                 <div className={styles.cardContent}>
-                  {/* <hr className={styles.cardDivider} /> */}
+                  <hr className={styles.cardDivider} />
                   <h3 className={styles.cardTitle}>{benefit.title}</h3>
                 </div>
               </div>

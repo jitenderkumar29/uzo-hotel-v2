@@ -52,7 +52,7 @@ const CorporateSlideWellness = () => {
 
     // Previous slide (blurred)
     const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-    slidesToShow.push({ ...slides[prevIndex], position: 'left', blurred: true });
+    slidesToShow.push({ ...slides[prevIndex], position: 'left', blurred: false });
 
     // Current slides (main)
     slidesToShow.push({ ...slides[currentSlide], position: 'center', blurred: false });
@@ -64,7 +64,7 @@ const CorporateSlideWellness = () => {
 
     // Next slide (blurred)
     const nextIndex = currentSlide + 2 >= slides.length ? (currentSlide + 2) % slides.length : currentSlide + 2;
-    slidesToShow.push({ ...slides[nextIndex], position: 'right', blurred: true });
+    slidesToShow.push({ ...slides[nextIndex], position: 'right', blurred: false });
 
     return slidesToShow;
   };
