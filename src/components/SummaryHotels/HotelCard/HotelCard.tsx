@@ -178,10 +178,16 @@ const HotelCard: React.FC = () => {
               <span>Exclusive Offer</span>
               <p>Easy Summer Sale</p>
             </div>
-            {/* <div><span>Get Upto</span>
-              <p>5000 OFF</p>
+            <div><span>UZO Hotels Sale</span>
+              <p>Get Upto 5000 OFF</p>
             </div>
-            <div><span>Konw More</span>
+            <div className={styles.bannerOffer}>
+              <span><Image src={"/images/offerBanner2.png"} alt="Offer" height={250} width={201} /></span>
+            </div>
+            {/* <div><span>Book Now</span>
+              <p>Pay Later</p>
+            </div> */}
+            {/* <div><span>Konw More</span>
               <p>T & C apply</p>
             </div> */}
           </div>

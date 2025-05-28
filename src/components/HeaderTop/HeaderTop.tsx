@@ -307,13 +307,13 @@ const LogInSignUp = () => {
         <div className={styles.sideMenuDropdown__linkItem}>
           <Link href="/LoginOne">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
-            UZO One Login
+            UZO ONE Login
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
           <Link href="/LoginPass">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
-            UZO Pass Login
+            UZO PASS Login
           </Link>
         </div>
       </div>
