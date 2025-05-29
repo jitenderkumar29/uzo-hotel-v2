@@ -1,0 +1,140 @@
+/* components/HomeStayHotels.module.css */
+.section {
+  padding: 3rem 0;
+  background-color: #fff;
+}
+
+.headingWrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.headingTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  color: var(--text-color-black);
+}
+
+.headingContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .headingContent {
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+  }
+}
+
+.headingDescription {
+  max-width: 1000px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-color-black);
+}
+
+.headingDescription {
+  padding-left: 3rem;
+  margin-top: -15px;
+}
+
+.headingCta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  text-decoration: none;
+  transition: color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaLink:hover {
+  color: var(--text-color-red); /* gold color for hover */
+  /* color: #b8860b; gold color for hover */
+}
+
+.ctaIcon {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.ctaLink:hover .ctaIcon {
+  transform: translateX(3px);
+}
+
+.tabGroup {
+  position: relative;
+  display: flex;
+  list-style: none;
+  /* padding: 0; */
+  margin: 1rem auto 0;
+  max-width: 1300px;
+  /* border-bottom: 1px solid #e0e0e0; */
+  padding: 0 1.5rem;
+}
+
+.tabSlider {
+  position: absolute;
+  bottom: -1px;
+  height: 0px;
+  background-color: #b8860b;
+  /* transition: left 0.3s ease, width 0.3s ease; */
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.tabButton {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.tab.active .tabButton {
+  color: var(--dark-white);
+  font-weight: 600;
+  background-color: var(--dark-accent);
+  border-radius: 50px;
+}
+
+.tabButton:hover {
+  color: var(--text-color-red);
+  /* color: #b8860b; */
+}
+
+@media (min-width: 768px) {
+  .tabButton {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}

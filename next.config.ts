@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
       // "yt3.googleusercontent.com",
       "media.radissonhotels.net",
       // "media.radissonhotels.net",
+      "cdn-assets-eu.frontify.com",
     ],
   },
 };

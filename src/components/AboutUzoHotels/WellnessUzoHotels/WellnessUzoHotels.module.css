@@ -1,0 +1,118 @@
+/* AboutUzoHotels.module.css */
+
+/* .headerTopBody {
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.HotelSearchBarTopBody {
+  background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; 
+  z-index: 10;
+  width: 100%; 
+  font-family: "Arial", sans-serif;
+} */
+
+/*  Banner Section Container Style */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.masthead {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  /* font-family: "Helvetica Neue", sans-serif; */
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.videoBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.videoButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.contentContainer {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  max-width: 600px;
+  /* background: rgba(0, 0, 0, 0.3); */
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(1px);
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.textBody {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.descConstainer {
+  padding: 1rem 0.5rem;
+  display: flex;
+}
+
+.description {
+  font-size: 24px;
+  line-height: 1.6;
+  max-width: 915px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .videoWrapper {
+    height: 60vh;
+  }
+
+  .contentContainer {
+    bottom: 20px;
+    left: 20px;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}

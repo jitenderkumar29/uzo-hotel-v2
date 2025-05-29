@@ -1,0 +1,239 @@
+/* AboutUzoHotels.module.css */
+.headerTopBody {
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.HotelSearchBarTopBody {
+  background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; /* This is crucial for sticky positioning to work */
+  z-index: 10;
+  /* Ensures the header stays above other content */
+  width: 100%; /* Takes full width */
+  font-family: "Arial", sans-serif;
+}
+
+.masthead {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: var(--dark-white);
+  font-family: "Arial", sans-serif;
+
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+}
+
+.mastheadWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+}
+
+.mastheadVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoWrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.videoWrapper video.playing {
+  opacity: 1;
+}
+
+.videoWrapper video.paused {
+  opacity: 0.7;
+}
+
+.videoControls {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.videoControls:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.mastheadContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.palaceTitle {
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mastheadNav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.1);
+  /* background: rgba(0, 0, 0, 0.5); */
+  padding: 20px 0;
+  gap: 30px;
+}
+
+.navItem {
+  color: var(--dark-white);
+  text-decoration: none;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  transform: translateY(-5px);
+  color: var(--dark-golden);
+}
+
+.navItem:hover .navTitle {
+  text-decoration: underline;
+}
+
+.activeNavItem {
+  color: var(--dark-golden);
+  text-decoration: underline;
+
+  /* border-bottom: 2px solid var(--dark-golden); */
+}
+
+.navItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navIcon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.navTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.mastheadDescription {
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left; /* Changed from center to left */
+  color: var(--text-color-black);
+  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+
+  /* padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+  line-height: 1.6; */
+}
+
+.descriptionText {
+  max-width: 800px;
+  text-align: left;
+  font-size: 24px;
+  margin: 0;
+  color: var(--text-color-black);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .palaceTitle {
+    font-size: 4.5rem;
+  }
+
+  .navItem {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .palaceTitle {
+    font-size: 3.5rem;
+  }
+
+  .mastheadNav {
+    padding: 15px 0;
+  }
+
+  .navItem {
+    margin: 0 8px;
+    width: calc(25% - 16px);
+    margin-bottom: 15px;
+  }
+
+  .navIcon {
+    font-size: 1.3rem;
+  }
+
+  .navTitle {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .palaceTitle {
+    font-size: 2.5rem;
+  }
+
+  .mastheadNav {
+    padding: 10px 0;
+  }
+
+  .navItem {
+    width: calc(50% - 16px);
+    margin-bottom: 10px;
+  }
+
+  .descriptionText {
+    font-size: 1rem;
+  }
+}

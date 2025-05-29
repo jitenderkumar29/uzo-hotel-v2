@@ -5,3 +5,4 @@ export * from "./hotelList.interfaces";
 export * from "./allCity.interfaces";
 export * from "./memberNavBar.interfaces";
 export * from "./rewards.interfaces";
+export * from "./aboutUzoData.interfaces";
