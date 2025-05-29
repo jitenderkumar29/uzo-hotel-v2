@@ -4,8 +4,6 @@ import styles from './AboutUzoHotels.module.css';
 import { FaHotel, FaHome, FaUtensils, FaSpa, FaMapMarkedAlt, FaGift } from 'react-icons/fa';
 import { GiPartyPopper } from 'react-icons/gi';
 import HeaderTop from '../HeaderTop/HeaderTop';
-import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
-import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import HomeStayHotelsHeader from './HomeStayHotels/HomeStayHotelsHeader';
 import WellnessUzoHotels from './WellnessUzoHotels/WellnessUzoHotels';
 
