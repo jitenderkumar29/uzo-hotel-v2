@@ -4,16 +4,15 @@
   position: relative;
   z-index: 11;
 }
-
+/* 
 .HotelSearchBarTopBody {
   background-color: var(--dark-accent);
   position: sticky;
-  top: 0; /* This is crucial for sticky positioning to work */
+  top: 0; 
   z-index: 10;
-  /* Ensures the header stays above other content */
-  width: 100%; /* Takes full width */
+  width: 100%; 
   font-family: "Arial", sans-serif;
-}
+} */
 
 .masthead {
   position: relative;

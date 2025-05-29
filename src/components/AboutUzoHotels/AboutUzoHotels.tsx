@@ -77,11 +77,11 @@ const AboutUzoHotels = () => {
       <div className={styles.headerTopBody}>
         <HeaderTop />
       </div>
-      <div className={styles.HotelSearchBarTopBody}>
+      {/* <div className={styles.HotelSearchBarTopBody}>
         <HotelSearchProvider>
           <HotelSearchBarTop />
         </HotelSearchProvider>
-      </div>
+      </div> */}
       <section className={styles.masthead}>
         <div className={styles.mastheadWrapper}>
           <div className={styles.mastheadVideo}>
