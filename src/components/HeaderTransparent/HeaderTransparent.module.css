@@ -1,0 +1,596 @@
+/* components/HeaderTransparent/HeaderTransparent.module.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  /* backdrop-filter: blur(5px); */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  z-index: 10;
+  padding: 5px 0;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerTrans {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 0px;
+}
+
+.logoContainer {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 10px;
+  position: relative;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  top: 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  /* z-index: 11; */
+}
+
+.logoImage {
+  height: 70px;
+  width: 70px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0 10px;
+  position: relative;
+  display: flex;
+}
+
+.navLinks a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+.navLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Change link color when scrolled */
+.navbar.scrolled .navLink {
+  color: var(--text-color-black); /* Or any color you prefer */
+}
+
+/* Hover states */
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled .navLink:hover {
+  color: var(--text-color-black); /* Darker shade for hover */
+  background-color: rgba(139, 115, 85, 0.1); /* Light tint of your link color */
+}
+
+/* Active link style */
+.navLink.active {
+  color: var(--dark-accent);
+  font-weight: 700;
+}
+
+.loginBtn {
+  background-color: var(--logo-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.1s;
+  margin-left: 15px;
+  font-size: 17px;
+}
+
+.loginBtn:hover {
+  background-color: var(--logo-color-hover);
+  color: var(--dark-white);
+}
+
+.loginDropDown {
+  position: absolute;
+  top: 63px;
+  right: 15px;
+  z-index: 11111;
+}
+
+/* Booking dropdown */
+.bookingDropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+
+  /* position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); */
+  /* top: 100; */
+  /* height: auto; */
+  /* margin: 0 auto; */
+  /* z-index: 10001; Ensure this is higher than all other z-indexes */
+
+  /* background-color: rgba(0, 0, 0, 0.6); Optional: dark background */
+  /* display: flex; */
+
+  /* position: absolute;
+  top: 80px;
+  left: 0px;
+  background-color: white;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000; */
+}
+
+.containerBooklist {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  /* justify-content: space-between; */
+  /* justify-content: space-evenly; */
+}
+
+.sidebarBooklist {
+  width: auto;
+  background: var(--dark-white);
+  padding: 0.75rem 5rem;
+  color: var(--dark-accent);
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+  text-align: left;
+  /* margin-left: -50px; */
+  margin-left: 80px;
+}
+
+.sideBarHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.heading {
+  color: var(--dark-accent);
+}
+
+.navListParent {
+  display: flex;
+  gap: 100px;
+}
+
+.navListBooklist {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  margin: 0;
+}
+
+.navListBooklist li {
+  display: flex;
+  gap: 22px;
+  font-size: 18px;
+  color: var(--text-color-black);
+  padding: 0.75rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+}
+
+.navListBooklist li:hover {
+  color: var(--logo-color-hover);
+  background-color: #eaf8ff;
+  border-radius: 10px;
+}
+
+.offersBooklist {
+  display: flex;
+  padding: 1.5rem 1.25rem;
+  /* display: flex; */
+  justify-content: space-evenly;
+  /* gap: 6rem;
+  padding: 1.5rem 5.25rem; */
+  /* flex-wrap: wrap; */
+  /* margin-left: -90px; */
+  align-items: center;
+}
+
+.offerCardBooklist {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  /* margin-top: 7px; */
+}
+
+.offerTextBooklist {
+  position: absolute;
+  bottom: 35px;
+  width: 92%;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* Mobile menu styles remain the same */
+.menuToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.menuToggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.menuToggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: var(--dark-white);
+  z-index: 10;
+  padding: 20px;
+  transition: left 0.3s;
+}
+
+.mobileMenu.active {
+  left: 0;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.closeBtn {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-color);
+}
+
+.mobileNavLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavLinks li {
+  margin-bottom: 15px;
+}
+
+.mobileNavLinks a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.mobileLoginBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .navLinks li {
+    margin: 0 5px;
+  }
+}
+
+/* Responsive adjustments */
+
+/* Small mobile devices (portrait) */
+@media (max-width: 480px) {
+  .header {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logoImage {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bookingDropdown {
+    top: 70px;
+    max-height: calc(100vh - 70px);
+  }
+
+  .navListParent {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .offersBooklist {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Tablets and larger phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  .navListParent {
+    gap: 1.5rem;
+  }
+
+  .offersBooklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .menuToggle {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .containerBooklist {
+    flex-direction: row;
+  }
+
+  .sidebarBooklist {
+    width: 35%;
+    padding: 1rem 1.5rem;
+  }
+
+  .offersBooklist {
+    width: 65%;
+    padding: 1rem;
+  }
+
+  .navLinks li {
+    margin: 0 5px;
+  }
+}
+
+/* Laptops and desktops */
+@media (min-width: 992px) {
+  .containerBooklist {
+    flex-direction: row;
+  }
+
+  .sidebarBooklist {
+    width: 35%;
+    padding: 1.5rem 2rem;
+  }
+
+  .offersBooklist {
+    width: 65%;
+    padding: 1.5rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .navListParent {
+    gap: 8rem;
+  }
+
+  .navLinks li {
+    margin: 0 8px;
+  }
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  .sidebarBooklist {
+    padding: 1.5rem 3rem;
+  }
+
+  .offersBooklist {
+    padding: 1.5rem 3rem;
+  }
+
+  .navLinks li {
+    margin: 0 10px;
+  }
+
+  .navListBooklist li {
+    font-size: 1.1rem;
+  }
+}
+
+/* Drop down style */
+/* components/LogInSignUp.module.css */
+.sideMenuDropdown {
+  position: relative;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.sideMenuDropdown__linksListWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0;
+}
+
+.sideMenuDropdown__linkItem {
+  width: 100%;
+  transition: background-color 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.sideMenuDropdown__linkItem:hover {
+  background-color: var(--background);
+  border: 2px solid var(--border-color);
+  /* background-color: #f5f5f5; */
+}
+
+.sideMenuDropdown__linkItem a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--text-color-black);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sideMenuDropdown__linkItem a:hover {
+  color: var(--logo-color);
+}
+
+.icon {
+  margin-right: 12px;
+  width: 18px;
+  color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sideMenuDropdown {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #eee;
+  }
+
+  .sideMenuDropdown__linkItem a {
+    padding: 15px 20px;
+  }
+}

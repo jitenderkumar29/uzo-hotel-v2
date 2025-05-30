@@ -1,0 +1,147 @@
+/* components/Dining.module.css */
+.teaserLink {
+  padding: 0rem 0rem;
+  font-family: Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  color: var(--text-color-black);
+  width: 100%;
+  background-color: var(--background);
+  margin-bottom: 1rem;
+}
+
+.teaserLinkWrapper {
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  /* border-radius: 8px; */
+  overflow: hidden;
+  height: 550px;
+}
+
+.teaserLinkImage {
+  height: 550px;
+  background-image: url("https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJvYXV0aCI6eyJjbGllbnRfaWQiOiJzaXRlY29yZSJ9LCJwYXRoIjoibWFuZGFyaW4tb3JpZW50YWwtaG90ZWwtZ3JvdXBcL2ZpbGVcL2I2U2ZMZTN4Z3BXR0p4M3B0c3R5LmpwZyJ9:mandarin-oriental-hotel-group:uDyjgE1cHi-VTRa_vuNxkIvdN8f71V0X_ojX_HBYZwc?width=1280&wid=1280&fmt=jpeg&op_usm=1,1,5,0&resMode=sharp2&fit=crop&qlt=75,0");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.teaserLinkContent {
+  padding: 2rem;
+  background: var(--background);
+  width: 50%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-color-black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--link-color); /* Dark red for contrast */
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text-color-black);
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.ctaIcon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.ctaPrimary {
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: 2px solid var(--dark-orange);
+  border-radius: 50px;
+}
+
+.ctaPrimary:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
+.ctaSecondary {
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: 2px solid var(--dark-orange);
+  border-radius: 50px;
+}
+
+.ctaSecondary:hover {
+  background-color: var(--dark-orange);
+  /* background-color: rgba(139, 0, 0, 0.1); */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .teaserLinkWrapper {
+    flex-direction: row;
+  }
+
+  .teaserLinkImage {
+    flex: 1;
+    height: auto;
+    min-height: 350px;
+  }
+
+  .teaserLinkContent {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .teaserLink {
+    padding: 0rem 0rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}

@@ -102,6 +102,11 @@
   z-index: 10;
 }
 
+.arrowButton:hover {
+  color: var(--dark-white);
+  background-color: var(--dark-accent);
+}
+
 .arrowButton:first-of-type {
   left: -20px;
 }

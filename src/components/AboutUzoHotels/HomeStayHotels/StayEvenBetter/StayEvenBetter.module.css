@@ -1,0 +1,150 @@
+/* StayEvenBetter.module.css */
+.teaserLink {
+  padding: 0rem 0;
+  font-family: Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  color: var(--text-color-black);
+  background-color: var(--dark-white);
+  padding-bottom: 1rem;
+}
+
+.teaserLinkWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0rem 0.75rem;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.teaserLinkImage {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /* background-image: url("https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/Vf1u1zL5V57ehUGxKLvc.jpg?width=1280&wid=1280&fmt=jpeg&op_usm=1,1,5,0&resMode=sharp2&fit=crop&qlt=75,0"); */
+}
+
+.teaserLinkContent {
+  padding: 2rem;
+  background-color: var(--background);
+
+  /* background-color: white; */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-color-black);
+}
+
+.description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--text-color-black);
+}
+
+.benefitsList {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.benefitsList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.icon {
+  margin-right: 0.8rem;
+  color: var(--link-color); /* Gold color for icons */
+  width: 1rem;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.primaryCta {
+  background-color: var(--light-orange);
+  color: white;
+  border: 1px solid var(--dark-orange);
+  border-radius: 50px;
+}
+
+.primaryCta:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+  transform: translateY(-2px);
+}
+
+.secondaryCta {
+  background-color: var(--light-orange);
+  color: white;
+  border: 1px solid var(--dark-orange);
+  border-radius: 50px;
+}
+
+.secondaryCta:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .teaserLinkWrapper {
+    flex-direction: row;
+    min-height: 400px;
+  }
+
+  .teaserLinkImage {
+    flex: 1;
+    height: auto;
+  }
+
+  .teaserLinkContent {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
+}

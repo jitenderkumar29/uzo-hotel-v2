@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './HomeStayHotelsHeader.module.css';
-import StaySpotlight from './StaySpotlight/StaySpotlight';
-import { AsiaPacific, spotlightData } from '@/app/data';
+import StaySpotlight from '../StaySpotlight/StaySpotlight';
+import { AsiaPacific, Europe, MiddleEastAfrica, spotlightData, TheAmericas } from '@/app/data';
 import Link from 'next/link';
 
 const HomeStayHotelsHeader = () => {
@@ -72,10 +72,9 @@ const HomeStayHotelsHeader = () => {
       </ul>
       {activeTab === "spotlight" && (<StaySpotlight spotlightData={spotlightData} />)}
       {activeTab === "asia-pacific" && (<StaySpotlight spotlightData={AsiaPacific} />)}
-      {/* {activeTab === "the-americas" && (<StaySpotlight spotlightData={TheAmericas} />)}
+      {activeTab === "the-americas" && (<StaySpotlight spotlightData={TheAmericas} />)}
       {activeTab === "europe" && (<StaySpotlight spotlightData={Europe} />)}
-      {activeTab === "middle-east-africa" && (<StaySpotlight spotlightData={MiddleEastAfrica} />)} */}
-      {/* {activeTab === "asia-pacific" && <StaySpotlight />} */}
+      {activeTab === "middle-east-africa" && (<StaySpotlight spotlightData={MiddleEastAfrica} />)}
     </section>
   );
 };

@@ -155,3 +155,169 @@ export const MiddleEastAfrica: SpotlightItemInterFace[] = [
     imageUrl: 'https://images.pexels.com/photos/3889843/pexels-photo-3889843.jpeg?auto=compress&cs=tinysrgb&w=600',
     link: '/en/hong-kong/the-landmark/spa',
   }]
+
+// ResidencesOperationData
+export const ResidencesOperationData: SpotlightItemInterFace[] = [
+  {
+    id: 1,
+    title: 'Bangkok',
+    imageUrl: 'https://images.pexels.com/photos/1004366/pexels-photo-1004366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: 'Barcelona',
+    imageUrl: 'https://images.pexels.com/photos/2430953/pexels-photo-2430953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 3,
+    title: 'Beverly Hills',
+    imageUrl: 'https://images.pexels.com/photos/1152847/pexels-photo-1152847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 4,
+    title: 'Bodrum',
+    imageUrl: 'https://images.pexels.com/photos/2506992/pexels-photo-2506992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 5,
+    title: 'Boston',
+    imageUrl: 'https://images.pexels.com/photos/32301544/pexels-photo-32301544/free-photo-of-urban-black-and-white-cityscape-with-skyscrapers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  }]
+
+// Upcoming Residences
+export const UpcomingResidencesData: SpotlightItemInterFace[] = [
+  {
+    id: 1,
+    title: 'Boca Raton',
+    imageUrl: 'https://images.pexels.com/photos/27183057/pexels-photo-27183057/free-photo-of-a-church-with-two-towers-and-a-clock-on-it.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: 'Grand Cayman',
+    imageUrl: 'https://images.pexels.com/photos/32251225/pexels-photo-32251225/free-photo-of-stately-building-facade-with-columns.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 3,
+    title: 'Honolulu',
+    imageUrl: 'https://images.pexels.com/photos/4319885/pexels-photo-4319885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 4,
+    title: 'Madrid',
+    imageUrl: 'https://images.pexels.com/photos/930595/pexels-photo-930595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 5,
+    title: 'Miami',
+    imageUrl: 'https://images.pexels.com/photos/2935255/pexels-photo-2935255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  }]
+
+
+// apartHotels
+export const apartHotelsData: SpotlightItemInterFace[] = [
+  {
+    id: 1,
+    title: 'Umbria',
+    imageUrl: 'https://images.pexels.com/photos/30251270/pexels-photo-30251270/free-photo-of-stunning-view-of-basilica-di-san-francesco-in-assisi.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: 'French Riviera',
+    imageUrl: 'https://images.pexels.com/photos/2096983/pexels-photo-2096983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 3,
+    title: 'Mallorca',
+    imageUrl: 'https://images.pexels.com/photos/12698616/pexels-photo-12698616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 4,
+    title: 'Santorini',
+    imageUrl: 'https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 5,
+    title: 'Costa Brava',
+    imageUrl: 'https://images.pexels.com/photos/18115984/pexels-photo-18115984/free-photo-of-castle-in-tossa-de-mar-spain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  }]
+
+// Michelin Starred
+export const michelinStarredData: SpotlightItemInterFace[] = [
+  {
+    id: 1,
+    title: 'Amber',
+    imageUrl: 'https://images.pexels.com/photos/28397638/pexels-photo-28397638/free-photo-of-delicious-asian-meal-setup-with-diverse-dishes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: 'Colonnade',
+    imageUrl: 'https://images.pexels.com/photos/8345549/pexels-photo-8345549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 3,
+    title: 'ORSINI',
+    imageUrl: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 4,
+    title: 'Sushi Shikon',
+    imageUrl: 'https://images.pexels.com/photos/31228747/pexels-photo-31228747/free-photo-of-delicious-barbecue-feast-with-beer-and-corn.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 5,
+    title: 'Mandarin Grill + Bar',
+    imageUrl: 'https://images.pexels.com/photos/8696561/pexels-photo-8696561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  }]
+
+// Amazing Bars
+export const amazingBarsData: SpotlightItemInterFace[] = [
+  {
+    id: 1,
+    title: 'ABar Lounge',
+    imageUrl: 'https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=600',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: 'The Bamboo Bar',
+    imageUrl: 'https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 3,
+    title: 'PDT Bar',
+    imageUrl: 'https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 4,
+    title: 'CO.MO Bar & Bistrot',
+    imageUrl: 'https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  },
+  {
+    id: 5,
+    title: 'The Aubrey',
+    imageUrl: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: '/',
+  }]

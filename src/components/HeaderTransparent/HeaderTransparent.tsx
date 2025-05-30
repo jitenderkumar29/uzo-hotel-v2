@@ -1,26 +1,28 @@
-"use client"
-// components/HeaderTop.tsx
-import { useState, useEffect, useRef } from 'react';
+// components/HeaderTransparent/HeaderTransparent.tsx
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import styles from './HeaderTop.module.css';
+import styles from './HeaderTransparent.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faPlaneDeparture, faHotel, faBus, faTrain, faUmbrellaBeach, faTaxi, faTasks, faCalendar, faShip, faFilm, faCreditCard, faPassport } from '@fortawesome/free-solid-svg-icons';
 import logoImage from '@/assets/icons/logo26.png';
 import headerTop1 from '@/assets/images/headerTop1.jpg';
 import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faCalendar, faCreditCard, faFilm, faHotel, faPassport, faPlaneDeparture, faShip, faTasks, faTaxi, faTimes, faTrain, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
-const HeaderTop = () => {
+const HeaderTransparent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
   const bookingRef = useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,9 +54,39 @@ const HeaderTop = () => {
     };
   }, [showBooking]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  // const formatDate = (date: Date) => {
+  //   return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+  // };
+
   return (
-    <div className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.headerContainer}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      <div className={styles.containerTrans}>
+        {/* Logo */}
+        {/* <div className={styles.logoContainer}>
+          <Link href="/">
+            <Image src={logoImage}
+              alt="taj-logo"
+              className={styles.logo} />
+          </Link>
+        </div> */}
         <header className={styles.header}>
           <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
             <Image
@@ -84,27 +116,28 @@ const HeaderTop = () => {
                     e.preventDefault();
                     setShowBooking((prev) => !prev);
                   }}
+                  className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}
                 >
                   Book
                 </Link>
               </li>
               <li>
-                <Link href="/becomeAMember" onClick={closeMobileMenu}>Become a Member</Link>
+                <Link href="/becomeAMember" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}>Become a Member</Link>
               </li>
               <li>
-                <Link href="/corporateMember" onClick={closeMobileMenu}>Corporate Member</Link>
+                <Link href="/corporateMember" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}>Corporate Member</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>Offers</Link>
+                <Link href="/" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}>Offers</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>UZO Cards</Link>
+                <Link href="/" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}>UZO Cards</Link>
               </li>
               {/* <li>
                 <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
               </li> */}
               <li>
-                <Link href="/" onClick={closeMobileMenu}><LanguageSelector /></Link>
+                <Link href="/" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}><LanguageSelector /></Link>
               </li>
             </ul>
 
@@ -290,10 +323,13 @@ const HeaderTop = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
 
+
       </div>
-    </div >
+
+    </nav >
   );
 };
+
 
 const LogInSignUp = () => {
   return (
@@ -322,4 +358,5 @@ const LogInSignUp = () => {
   )
 }
 
-export default HeaderTop;
+
+export default HeaderTransparent;

@@ -1,6 +1,6 @@
 /* components/HomeStayHotels.module.css */
 .section {
-  padding: 3rem 0;
+  padding: 1rem 0;
   background-color: #fff;
 }
 
@@ -26,14 +26,6 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-}
-
-@media (min-width: 768px) {
-  .headingContent {
-    flex-direction: row;
-    justify-content: space-between;
-    /* align-items: flex-end; */
-  }
 }
 
 .headingDescription {
@@ -136,5 +128,13 @@
   .tabButton {
     font-size: 1rem;
     padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .headingContent {
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-end; */
   }
 }
