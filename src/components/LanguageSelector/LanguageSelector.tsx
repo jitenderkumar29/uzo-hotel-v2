@@ -20,11 +20,11 @@ interface Currency {
 
 const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage,] = useState<Language>({
-    lang: "en",
-    name: "English",
-    flag: "🌐",
-  });
+  // const [selectedLanguage,] = useState<Language>({
+  //   lang: "en",
+  //   name: "English",
+  //   flag: "🌐",
+  // });
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages: Language[] = [
@@ -56,9 +56,9 @@ const LanguageSelector: React.FC = () => {
   const [language, setLanguage] = useState<string>("English");
   const [currency, setCurrency] = useState<string>("USD");
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   // const selectLanguage = (lang: string) => {
   //   const selected = languages.find((l) => l.lang === lang);
@@ -98,7 +98,7 @@ const LanguageSelector: React.FC = () => {
       className={`${styles.languageSelector} ${isOpen ? styles.active : ""}`}
       ref={dropdownRef}
     >
-      <button
+      {/* <button
         className={styles.languageButton}
         onClick={toggleDropdown}
         aria-expanded={isOpen}
@@ -110,74 +110,74 @@ const LanguageSelector: React.FC = () => {
           {selectedLanguage.name}
         </span>
         <span className={styles.dropdownArrow}>▼</span>
-      </button>
+      </button> */}
 
-      {isOpen && (
-        <div className={styles.selectorContainer}>
-          <div className={styles.selectorCard}>
-            <h2 className={styles.sectionTitle}>
-              Select Your Language and Currency
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <div className={styles.selectGroup}>
-                <label htmlFor="country">Country/Region</label>
-                <select
-                  id="country"
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  className={styles.styledSelect}
-                  aria-label="Select country"
-                >
-                  {countries.map((country) => (
-                    <option key={country.value} value={country.value}>
-                      {country.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+      {/* {isOpen && (
+              )} */}
+      <div className={styles.selectorContainer}>
+        <div className={styles.selectorCard}>
+          <h2 className={styles.sectionTitle}>
+            Select Your Language and Currency
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.selectGroup}>
+              <label htmlFor="country">Country/Region</label>
+              <select
+                id="country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                className={styles.styledSelect}
+                aria-label="Select country"
+              >
+                {countries.map((country) => (
+                  <option key={country.value} value={country.value}>
+                    {country.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-              <div className={styles.selectGroup}>
-                <label htmlFor="currency">Currency</label>
-                <select
-                  id="currency"
-                  value={currency}
-                  onChange={(e) => setCurrency(e.target.value)}
-                  className={styles.styledSelect}
-                  aria-label="Select currency"
-                >
-                  {currencies.map((curr) => (
-                    <option key={curr.value} value={curr.value}>
-                      {curr.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className={styles.selectGroup}>
+              <label htmlFor="currency">Currency</label>
+              <select
+                id="currency"
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+                className={styles.styledSelect}
+                aria-label="Select currency"
+              >
+                {currencies.map((curr) => (
+                  <option key={curr.value} value={curr.value}>
+                    {curr.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-              <div className={styles.selectGroup}>
-                <label htmlFor="language">Language</label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
-                  className={styles.styledSelect}
-                  aria-label="Select language"
-                >
-                  {languages.map((lang) => (
-                    <option key={lang.lang} value={lang.name}>
-                      {lang.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className={styles.selectGroup}>
+              <label htmlFor="language">Language</label>
+              <select
+                id="language"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                className={styles.styledSelect}
+                aria-label="Select language"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.lang} value={lang.name}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-              <button type="submit" className={styles.confirmButton}>
-                Confirm
-                {/* Confirm language and currency */}
-              </button>
-            </form>
-          </div>
+            <button type="submit" className={styles.confirmButton}>
+              Confirm
+              {/* Confirm language and currency */}
+            </button>
+          </form>
         </div>
-      )}
+      </div>
     </div>
   );
 };

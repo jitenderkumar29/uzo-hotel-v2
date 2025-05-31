@@ -15,6 +15,7 @@ const HeaderTransparent = () => {
   const [, setIsScrolled] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
+  const [showLanguage, setShowLanguage] = useState(false);
   const bookingRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
 
@@ -137,13 +138,27 @@ const HeaderTransparent = () => {
                 <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
               </li> */}
               <li>
-                <Link href="/" onClick={closeMobileMenu} className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}><LanguageSelector /></Link>
+                <button type='button'
+                  //  href="/aboutUzoHotels" 
+                  onMouseEnter={closeMobileMenu}
+                  onClick={() => setShowLanguage(true)}
+                  className={`${styles.languageButton} ${scrolled ? styles.scrolledLink : ''}`}>
+                  Select Language
+                  {/* <LanguageSelector /> */}
+                </button>
               </li>
             </ul>
+            {showLanguage && (
+              <div className={styles.loginDropDown} onMouseEnter={() => setShowLanguage(true)}
+                onMouseLeave={() => setShowLanguage(false)}
+              >
+                <LanguageSelector />
+              </div>
+            )}
 
             <button className={styles.loginBtn} onMouseEnter={() => setShowLogInDropDown(true)}
               onMouseLeave={() => setShowLogInDropDown(false)}
-            >Log In/SignUp</button>
+            >LogIn/SignUp</button>
 
             {showLogInDropDown && (
               <div className={styles.loginDropDown} onMouseEnter={() => setShowLogInDropDown(true)}

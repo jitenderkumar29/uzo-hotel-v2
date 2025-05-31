@@ -3,17 +3,21 @@ import React, { useState, useRef } from 'react';
 import styles from './AboutUzoHotels.module.css';
 import { FaHotel, FaHome, FaUtensils, FaSpa, FaMapMarkedAlt, FaGift, FaInvision } from 'react-icons/fa';
 import { GiPartyPopper } from 'react-icons/gi';
-import HeaderTop from '../HeaderTop/HeaderTop';
 import HomeStayHotelsHeader from './HomeStayHotels/HomeStayHotelsHeader/HomeStayHotelsHeader';
 import StayEvenBetter from './HomeStayHotels/StayEvenBetter/StayEvenBetter';
 import StaySpotlight from './HomeStayHotels/StaySpotlight/StaySpotlight';
-import { apartHotelsData, michelinStarredData, ResidencesOperationData, UpcomingResidencesData } from '@/app/data';
+import { amazingBarsData, apartHotelsData, michelinStarredData, ResidencesOperationData, UpcomingResidencesData } from '@/app/data';
 import ResortWelcome from './Resorts/ResortWelcome/ResortWelcome';
 import ApartHotels from './ApartHotels/ApartHotels';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import WellnessLatestNews from './WellnessUzoHotels/WellnessLatestNews/WellnessLatestNews';
+import Dining from './Dining/Dining';
+import WellnessUzoHotels from './WellnessUzoHotels/WellnessUzoHotels';
+import Explore from './Explore/Explore';
+import HeaderAboutUzo from '../HeaderAboutUzo/HeaderAboutUzo';
+import Vision from './Vision/Vision';
 
 const AboutUzoHotels = () => {
   const [isVideoPlaying,] = useState(true);
@@ -86,8 +90,9 @@ const AboutUzoHotels = () => {
   return (
     <>
       <div className={styles.headerTopBody}>
+        <HeaderAboutUzo />
         {/* <HeaderTransparent /> */}
-        <HeaderTop />
+        {/* <HeaderTop /> */}
       </div>
       {/* <div className={styles.HotelSearchBarTopBody}>
         <HotelSearchProvider>
@@ -301,7 +306,7 @@ const AboutUzoHotels = () => {
           </div>
           <StaySpotlight spotlightData={michelinStarredData} />
 
-          {/* <Dining />
+          <Dining />
           <div className={styles.headingWrapper}>
             <h2 className={styles.headingTitle}>
               <span>Amazing Bars</span>
@@ -318,7 +323,7 @@ const AboutUzoHotels = () => {
               </div>
             </div>
           </div>
-          <StaySpotlight spotlightData={amazingBarsData} /> */}
+          <StaySpotlight spotlightData={amazingBarsData} />
 
 
           {/* <div>
@@ -335,7 +340,21 @@ const AboutUzoHotels = () => {
       </div> */}
       {activeTab === "WELLNESS" && (
         <>
+          <WellnessUzoHotels />
           <WellnessLatestNews />
+        </>)}
+      {activeTab === "VISION" && (
+        <>
+          <Vision />
+        </>)}
+      {activeTab === "EXPLORE" && (
+        <>
+          <Explore />
+          {/* <ExclusiveJourneys /> */}
+        </>)}
+      {activeTab === "CELEBRATE" && (
+        <>
+          {/* <Celebrate /> */}
         </>)}
 
       {/* You'll need to add similar refs and components for other tabs */}

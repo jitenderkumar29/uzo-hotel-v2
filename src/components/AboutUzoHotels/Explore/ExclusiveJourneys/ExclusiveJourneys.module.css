@@ -1,0 +1,332 @@
+.carousel {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 500px;
+}
+
+.slideImage {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.slide:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.brandingTop {
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fanIcon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fan {
+  width: 120px;
+  height: 80px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.brandingBottom {
+  text-align: center;
+  color: white;
+}
+
+.brandLine {
+  width: 200px;
+  height: 1px;
+  background: white;
+  margin: 0 auto 1rem;
+  opacity: 0.8;
+}
+
+.brandText {
+  font-family: "Georgia", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.brandSubtext {
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.slideContent {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  background: white;
+}
+
+.contentWrapper {
+  width: 100%;
+}
+
+.slideTitle {
+  font-family: "Georgia", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.slideDescription {
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2.5rem;
+  text-align: justify;
+}
+
+.slideUtility {
+  display: flex;
+  align-items: center;
+}
+
+.slideCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #000;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.slideCta:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ctaIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.slideCta:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .slide {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .slideImage {
+    height: 400px;
+  }
+
+  .brandingTop {
+    font-size: 1.8rem;
+  }
+
+  .fan {
+    width: 100px;
+    height: 65px;
+  }
+
+  .slideTitle {
+    font-size: 2.2rem;
+  }
+
+  .slideContent {
+    padding: 2.5rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .carousel {
+    padding: 1rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .slideImage {
+    height: 300px;
+  }
+
+  .imageOverlay {
+    padding: 2rem 1rem;
+  }
+
+  .brandingTop {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+  }
+
+  .fan {
+    width: 80px;
+    height: 50px;
+  }
+
+  .brandLine {
+    width: 150px;
+  }
+
+  .brandText {
+    font-size: 1rem;
+  }
+
+  .brandSubtext {
+    font-size: 0.8rem;
+  }
+
+  .slideContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .slideTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .slideCta {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .slideImage {
+    height: 250px;
+  }
+
+  .imageOverlay {
+    padding: 1.5rem 1rem;
+  }
+
+  .brandingTop {
+    font-size: 1.2rem;
+  }
+
+  .fan {
+    width: 70px;
+    height: 45px;
+  }
+
+  .slideContent {
+    padding: 1.5rem 1rem;
+  }
+
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .slideCta {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1400px) {
+  .slide {
+    min-height: 600px;
+  }
+
+  .slideContent {
+    padding: 4rem;
+  }
+
+  .slideTitle {
+    font-size: 3rem;
+  }
+
+  .slideDescription {
+    font-size: 1.1rem;
+  }
+
+  .brandingTop {
+    font-size: 2.2rem;
+  }
+
+  .fan {
+    width: 140px;
+    height: 90px;
+  }
+}

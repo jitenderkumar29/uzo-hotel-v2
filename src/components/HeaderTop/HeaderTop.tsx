@@ -17,6 +17,7 @@ const HeaderTop = () => {
   const [showBooking, setShowBooking] = useState(false);
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
   const bookingRef = useRef<HTMLDivElement>(null);
+  const [showLanguage, setShowLanguage] = useState(false);
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -104,9 +105,24 @@ const HeaderTop = () => {
                 <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
               </li> */}
               <li>
-                <Link href="/" onClick={closeMobileMenu}><LanguageSelector /></Link>
+                <Link href="/" onMouseEnter={closeMobileMenu}
+                  onClick={() => setShowLanguage(true)}
+                  className={styles.languageButton}
+                // className={`${styles.navLink} ${scrolled ? styles.scrolledLink : ''}`}
+                >
+                  Select Language
+                  {/* <LanguageSelector /> */}
+                </Link>
+                {/* <Link href="/" onClick={closeMobileMenu}><LanguageSelector /></Link> */}
               </li>
             </ul>
+            {showLanguage && (
+              <div className={styles.loginDropDown} onMouseEnter={() => setShowLanguage(true)}
+                onMouseLeave={() => setShowLanguage(false)}
+              >
+                <LanguageSelector />
+              </div>
+            )}
 
             <button className={styles.loginBtn} onMouseEnter={() => setShowLogInDropDown(true)}
               onMouseLeave={() => setShowLogInDropDown(false)}

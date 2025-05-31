@@ -1,7 +1,7 @@
 /* AboutUzoHotels.module.css */
 .headerTopBody {
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 11;
 }
 /* 
