@@ -188,7 +188,7 @@
 .megaMenu {
   position: absolute;
   top: 120%;
-  left: -75;
+  left: -75px;
   right: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -459,7 +459,7 @@
   }
 
   .megaMenu {
-    left: -120px;
+    left: -75px;
   }
 }
 
