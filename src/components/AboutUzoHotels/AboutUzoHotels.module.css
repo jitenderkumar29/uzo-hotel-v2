@@ -113,7 +113,7 @@
   background: rgba(0, 0, 0, 0.1);
   /* background: rgba(0, 0, 0, 0.5); */
   padding: 20px 0;
-  gap: 38px;
+  gap: 55px;
 }
 
 .navItem {
@@ -333,4 +333,9 @@
 
 .ctaLink:hover .ctaIcon {
   transform: translateX(3px);
+}
+
+/* Footer style */
+.footerBox {
+  margin-top: -90px !important;
 }

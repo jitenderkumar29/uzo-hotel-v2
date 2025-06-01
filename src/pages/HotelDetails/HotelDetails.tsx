@@ -1,6 +1,6 @@
 "use client"
 import DetailsHotels from '@/components/DetailsHotels/DetailsHotels'
-import HeaderTop from '@/components/HeaderTop/HeaderTop'
+import HeaderTop from '@/components/Headers/HeaderTop/HeaderTop'
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'

@@ -8,7 +8,7 @@ import logoImage from '@/assets/icons/logo26.png';
 import headerTop1 from '@/assets/images/headerTop1.jpg';
 import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import LanguageSelector from '../../LanguageSelector/LanguageSelector';
 
 const HeaderTransparent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

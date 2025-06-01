@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import styles from './AboutUzoHotels.module.css';
-import { FaHotel, FaHome, FaUtensils, FaSpa, FaMapMarkedAlt, FaGift, FaInvision } from 'react-icons/fa';
+import { FaHotel, FaHome, FaUtensils, FaSpa, FaMapMarkedAlt, FaInvision } from 'react-icons/fa';
 import { GiPartyPopper } from 'react-icons/gi';
 import HomeStayHotelsHeader from './HomeStayHotels/HomeStayHotelsHeader/HomeStayHotelsHeader';
 import StayEvenBetter from './HomeStayHotels/StayEvenBetter/StayEvenBetter';
@@ -16,8 +16,14 @@ import WellnessLatestNews from './WellnessUzoHotels/WellnessLatestNews/WellnessL
 import Dining from './Dining/Dining';
 import WellnessUzoHotels from './WellnessUzoHotels/WellnessUzoHotels';
 import Explore from './Explore/Explore';
-import HeaderAboutUzo from '../HeaderAboutUzo/HeaderAboutUzo';
+import HeaderAboutUzo from '../Headers/HeaderAboutUzo/HeaderAboutUzo';
 import Vision from './Vision/Vision';
+import Celebrate from './Celebrate/Celebrate';
+import ExclusiveJourneys from './Explore/ExclusiveJourneys/ExclusiveJourneys';
+import VisionChoice from './Vision/VisionChoice/VisionChoice';
+import CelebrationType from './Celebrate/CelebrationType/CelebrationType';
+import FooterUzo from '../FooterUzo/FooterUzo';
+import WellnessProgrammes from './WellnessUzoHotels/WellnessProgrammes/WellnessProgrammes';
 
 const AboutUzoHotels = () => {
   const [isVideoPlaying,] = useState(true);
@@ -67,9 +73,9 @@ const AboutUzoHotels = () => {
       case 'CELEBRATE':
         celebrateRef.current?.scrollIntoView({ behavior: 'smooth' });
         break;
-      case 'GIFT':
-        giftRef.current?.scrollIntoView({ behavior: 'smooth' });
-        break;
+      // case 'GIFT':
+      //   giftRef.current?.scrollIntoView({ behavior: 'smooth' });
+      //   break;
       default:
         hotelsRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -84,7 +90,7 @@ const AboutUzoHotels = () => {
     { title: 'VISION', icon: <FaInvision />, link: '/', ref: visionRef },
     { title: 'EXPLORE', icon: <FaMapMarkedAlt />, link: '/', ref: exploreRef },
     { title: 'CELEBRATE', icon: <GiPartyPopper />, link: '/', ref: celebrateRef },
-    { title: 'GIFT', icon: <FaGift />, link: '/', ref: giftRef }
+    // { title: 'GIFT', icon: <FaGift />, link: '/', ref: giftRef }
   ];
 
   return (
@@ -341,22 +347,28 @@ const AboutUzoHotels = () => {
       {activeTab === "WELLNESS" && (
         <>
           <WellnessUzoHotels />
+          <WellnessProgrammes />
           <WellnessLatestNews />
         </>)}
       {activeTab === "VISION" && (
         <>
           <Vision />
+          <VisionChoice />
         </>)}
       {activeTab === "EXPLORE" && (
         <>
           <Explore />
-          {/* <ExclusiveJourneys /> */}
+          <ExclusiveJourneys />
         </>)}
       {activeTab === "CELEBRATE" && (
         <>
-          {/* <Celebrate /> */}
+          <Celebrate />
+          <CelebrationType />
         </>)}
 
+      <div className={styles.footerBox}>
+        <FooterUzo />
+      </div>
       {/* You'll need to add similar refs and components for other tabs */}
       {/* For example: */}
       {/* <div ref={dineRef}>

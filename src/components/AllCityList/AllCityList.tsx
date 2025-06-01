@@ -5,7 +5,7 @@ import { cities } from '@/app/data/allCityListData';
 import { allCityInterface } from '@/interfaces';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
-import HeaderTop from '../HeaderTop/HeaderTop';
+import HeaderTop from '../Headers/HeaderTop/HeaderTop';
 
 interface StateGroup {
   state: string;

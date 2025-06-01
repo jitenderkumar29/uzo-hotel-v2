@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './PaymentPage.module.css';
-import HeaderTop from '../HeaderTop/HeaderTop';
+import HeaderTop from '../Headers/HeaderTop/HeaderTop';
 import PaymentMode from './PaymentMode/PaymentMode';
 import PaymentSummary from './PaymentSummary/PaymentSummary';
 import Image from 'next/image';

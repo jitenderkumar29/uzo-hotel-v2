@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './CorporateMember.module.css';
-import HeaderTop from '../HeaderTop/HeaderTop';
+import HeaderTop from '../Headers/HeaderTop/HeaderTop';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import CorporatePrivilege from './CorporatePrivilege/CorporatePrivilege';

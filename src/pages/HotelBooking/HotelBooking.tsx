@@ -3,7 +3,7 @@ import SummaryHotels from '@/components/SummaryHotels/SummaryHotels'
 import React from 'react'
 import styles from "./HotelBooking.module.css"
 import HotelSearchBarTop from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop'
-import HeaderTop from '@/components/HeaderTop/HeaderTop'
+import HeaderTop from '@/components/Headers/HeaderTop/HeaderTop'
 import FooterUzo from '@/components/FooterUzo/FooterUzo'
 import HotelSearchBy from '@/components/SearchBarMultiple/HotelSearchBarTop/HotelSearchBy'
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext'

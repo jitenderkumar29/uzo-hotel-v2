@@ -2,10 +2,10 @@
 import React from "react";
 
 import { useSearchParams } from "next/navigation";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Headers/Header/Header";
 import SearchBarMultiple from "@/components/SearchBarMultiple/SearchBarMultiple";
 import FooterUzo from "@/components/FooterUzo/FooterUzo";
-import HeaderTop from "@/components/HeaderTop/HeaderTop";
+import HeaderTop from "@/components/Headers/HeaderTop/HeaderTop";
 import "./Book.module.css"
 import { HotelSearchProvider } from "@/app/Context/HotelSearchContext";
 

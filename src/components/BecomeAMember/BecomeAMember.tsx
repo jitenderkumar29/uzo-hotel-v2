@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './BecomeAMember.module.css';
 import Image from 'next/image';
-import HeaderTop from '../HeaderTop/HeaderTop';
+import HeaderTop from '../Headers/HeaderTop/HeaderTop';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 import FooterUzo from '../FooterUzo/FooterUzo';

@@ -9,7 +9,7 @@ import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus, faCalendar, faCreditCard, faFilm, faHotel, faPassport, faPlaneDeparture, faShip, faTasks, faTaxi, faTimes, faTrain, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import LanguageSelector from '../../LanguageSelector/LanguageSelector';
 
 const HeaderTop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

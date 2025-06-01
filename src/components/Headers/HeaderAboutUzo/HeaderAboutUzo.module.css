@@ -13,7 +13,7 @@
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 5px 0px;
   position: relative;
   /* height: 70px; */
   display: flex;
@@ -585,6 +585,10 @@
 
 .header.scrolled .loginBtn {
   background-color: var(--logo-color);
+}
+.header.scrolled .loginBtn:hover {
+  background-color: var(--logo-color-hover);
+  color: var(--dark-white);
 }
 /* Drop down style */
 /* components/LogInSignUp.module.css */
