@@ -38,7 +38,7 @@ const AboutUzoHotels = () => {
   const visionRef = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
   const celebrateRef = useRef<HTMLDivElement>(null);
-  const giftRef = useRef<HTMLDivElement>(null);
+  // const giftRef = useRef<HTMLDivElement>(null);
 
   // const toggleVideo = () => {
   //   setIsVideoPlaying(!isVideoPlaying);

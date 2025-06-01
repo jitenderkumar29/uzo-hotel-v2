@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './CelebrationType.module.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -43,16 +43,20 @@ const CelebrationType: React.FC = () => {
     slides[0]               // Clone of first
   ];
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentIndex(index);
     setIsTransitioning(true);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  }, []);
 
-  const nextSlide = () => {
-    goToSlide(currentIndex + 1);
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => prev + 1);
+    setIsTransitioning(true);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  }, []);
+
 
   const prevSlide = () => {
     goToSlide(currentIndex - 1);
@@ -63,7 +67,8 @@ const CelebrationType: React.FC = () => {
       if (isAutoPlaying) nextSlide();
     }, 5000);
     return () => clearInterval(interval);
-  }, [currentIndex, isAutoPlaying]);
+  }, [isAutoPlaying, nextSlide]);
+
 
   const handleTransitionEnd = () => {
     if (currentIndex === 0) {

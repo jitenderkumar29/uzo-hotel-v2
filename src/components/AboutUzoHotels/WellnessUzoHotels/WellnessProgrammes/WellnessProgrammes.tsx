@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+'use client'
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './WellnessProgrammes.module.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -43,16 +44,17 @@ const WellnessProgrammes: React.FC = () => {
     programmes[0]               // Clone of first
   ];
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentIndex(index);
     setIsTransitioning(true);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  }, []);
 
-  const nextSlide = () => {
+
+  const nextSlide = useCallback(() => {
     goToSlide(currentIndex + 1);
-  };
+  }, [currentIndex, goToSlide]);
 
   const prevSlide = () => {
     goToSlide(currentIndex - 1);
@@ -63,7 +65,8 @@ const WellnessProgrammes: React.FC = () => {
       if (isAutoPlaying) nextSlide();
     }, 5000);
     return () => clearInterval(interval);
-  }, [currentIndex, isAutoPlaying]);
+  }, [isAutoPlaying, nextSlide]);
+
 
   const handleTransitionEnd = () => {
     if (currentIndex === 0) {
