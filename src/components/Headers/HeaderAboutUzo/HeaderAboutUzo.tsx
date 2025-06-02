@@ -1,5 +1,4 @@
 "use client"
-
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { ChevronRight, ChevronDown } from "lucide-react"
@@ -28,8 +27,7 @@ const HeaderAboutUzo: React.FC = () => {
   const menuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
   const [scrolled, setScrolled] = useState(false); // New state for scroll detection
-
-  // Add scroll event listener
+  const [hoveredSection, setHoveredSection] = useState<number | null>(0);  // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -99,11 +97,11 @@ const HeaderAboutUzo: React.FC = () => {
             { label: "24hours Hotels", href: "/" },
             { label: "Delano", href: "/" },
             { label: "Hyde", href: "/" },
-            // { label: "JO&JOE", href: "/" },
-            // { label: "Mama Shelter", href: "/" },
-            // { label: "Mama Shelter", href: "/" },
-            // { label: "Mondrian", href: "/" },
-            // { label: "Morgans Originals", href: "/" },
+            { label: "JO&JOE", href: "/" },
+            { label: "Mama Shelter", href: "/" },
+            { label: "Mama Shelter", href: "/" },
+            { label: "Mondrian", href: "/" },
+            { label: "Morgans Originals", href: "/" },
             // { label: "SLS", href: "/" },
             // { label: "SO/", href: "/" },
             // { label: "Mama Shelter", href: "/" },
@@ -122,48 +120,70 @@ const HeaderAboutUzo: React.FC = () => {
             { label: "Pullman", href: "/" },
             { label: "Swissôtel", href: "/" },
             { label: "Angsana", href: "/" },
-            // { label: "Mövenpick", href: "/" },
-            // { label: "Grand Mercure", href: "/" },
-            // { label: "Peppers", href: "/" },
-            // { label: "The Sebel", href: "/" },
+            { label: "Mövenpick", href: "/" },
+            { label: "Grand Mercure", href: "/" },
+            { label: "Peppers", href: "/" },
+            { label: "The Sebel", href: "/" },
           ],
         },
 
-        // {
-        //   title: "Midscale",
-        //   items: [
-        //     { label: "", href: "/" },
-        //     { label: "", href: "/" },
-        //   ],
-        // },
-        // {
-        //   title: "Economy",
-        //   items: [
-        //     { label: "", href: "/" },
-        //     { label: "", href: "/" },
-        //   ],
-        // },
-        // {
-        //   title: "Workspaces, Entertainment & Experiences",
-        //   items: [
-        //     { label: "", href: "/" },
-        //     { label: "", href: "/" },
-        //   ],
-        // },
-        // {
-        //   title: "Business Boosters",
-        //   items: [
-        //     { label: "", href: "/" },
-        //     { label: "", href: "/" },
-        //   ],
-        // },
-        // {
-        //   title: "Booking & Loyalty",
-        //   items: [
-        //     { label: "", href: "/" },
-        //     { label: "", href: "/" },
-        //   ],
-        // },
+        {
+          title: "Midscale",
+          items: [
+            { label: "Mantra", href: "/" },
+            { label: "Handwritten Collection", href: "/" },
+            { label: "Novotel", href: "/" },
+            { label: "Mercure", href: "/" },
+            { label: "TRIBE", href: "/" },
+            { label: "Adagio", href: "/" },
+          ],
+        },
+
+        {
+          title: "Economy",
+          items: [
+            { label: "BreakFree", href: "/" },
+            { label: "ibis", href: "/" },
+            { label: "ibis styles", href: "/" },
+            { label: "greet", href: "/" },
+            { label: "ibis budget", href: "/" },
+            { label: "hotelF1", href: "/" },
+          ],
+        },
+        {
+          title: "Workspaces, Entertainment & Experiences",
+          items: [
+            { label: "Wojo", href: "/" },
+            { label: "Worklib", href: "/" },
+            { label: "Lido 2 Paris", href: "/" },
+            { label: "Potel et Chabot", href: "/" },
+            { label: "onefinestay", href: "/" },
+            { label: "Thalassa Sea & Spa", href: "/" },
+          ],
+        },
+        {
+          title: "Business Boosters",
+          items: [
+            { label: "Astore", href: "/" },
+            { label: "D-EDGE", href: "/" },
+            { label: "Gekko Group", href: "/" },
+            { label: "John Paul", href: "/" },
+            { label: "VeryChic", href: "/" },
+          ],
+        },
+        {
+          title: "Booking & Loyalty",
+          items: [
+            { label: "Mantis", href: "/" },
+            { label: "Pullman", href: "/" },
+            { label: "Swissôtel", href: "/" },
+            { label: "Angsana", href: "/" },
+            { label: "Mövenpick", href: "/" },
+            { label: "Grand Mercure", href: "/" },
+            { label: "Peppers", href: "/" },
+            { label: "The Sebel", href: "/" },
+          ],
+        },
       ],
     },
     {
@@ -186,8 +206,69 @@ const HeaderAboutUzo: React.FC = () => {
           items: [
             { label: "ALL: Booking Platform and Loyalty Programme", href: "/" },
             { label: "Distribution", href: "/" },
+            { label: "Sales", href: "/" },
+            { label: "Revenue Management", href: "/" },
+            { label: "Marketing", href: "/" },
+            { label: "Food & Beverage", href: "/" },
             { label: "Revenue Management", href: "/" },
             { label: "Food & Beverage", href: "/" },
+          ],
+        },
+        {
+          title: "Optimise your costs",
+          items: [
+            { label: "IT Digital", href: "/" },
+            { label: "Procurement", href: "/" },
+            { label: "Insurance", href: "/" },
+            { label: "People", href: "/" },
+            { label: "Environment & CSR", href: "/" },
+            { label: "Design & Construction", href: "/" },
+
+          ],
+        },
+        {
+          title: "Secure your design",
+          items: [
+            { label: "Hotel Performance", href: "/" },
+            { label: "Step by step process", href: "/" },
+          ],
+        },
+        {
+          title: "Choose your contract",
+          items: [
+            { label: "Franchise", href: "/" },
+            { label: "Management", href: "/" },
+            { label: "Owners' support", href: "/" },
+          ],
+        },
+        {
+          title: "Choose your contract",
+          items: [
+            { label: "Franchise", href: "/" },
+            { label: "Management", href: "/" },
+            { label: "Owners' support", href: "/" },
+          ],
+        },
+        {
+          title: "Contact a Luxury & Lifestyle Developer",
+          items: [
+            { label: "IT Digital", href: "/" },
+            { label: "Procurement", href: "/" },
+            { label: "Insurance", href: "/" },
+            { label: "People", href: "/" },
+            { label: "Environment & CSR", href: "/" },
+            { label: "Design & Construction", href: "/" },
+          ],
+        },
+        {
+          title: "Contact a Premium, Midscale & Economy Developer",
+          items: [
+            { label: "Europe and North Africa", href: "/" },
+            { label: "Americas", href: "/" },
+            { label: "Middle East, Africa and Türkiye", href: "/" },
+            { label: "Asia", href: "/" },
+            { label: "Pacific", href: "/" },
+            { label: "Greater China", href: "/" },
           ],
         },
       ],
@@ -201,16 +282,26 @@ const HeaderAboutUzo: React.FC = () => {
         {
           title: "Welcome to Accor",
           items: [
-            { label: "Job Openings", href: "/careers/jobs" },
-            { label: "Internships", href: "/careers/internships" },
+            { label: "Who We Are", href: "/careers/jobs" },
+            { label: "Our Philosophy", href: "/careers/internships" },
           ],
         },
         {
           title: "Discover Our Culture of Inclusion",
           items: [
+            { label: "Our Commitment", href: "/careers/jobs" },
+            { label: "Gender Diversity & Equality", href: "/careers/internships" },
+            { label: "Inclusion of People with Disabilities", href: "/careers/internships" },
+            { label: "Social, Ethnic, Racial and Cultural Diversity", href: "/careers/internships" },
+            { label: "LGBTQI+ Inclusion", href: "/careers/internships" },
+          ],
+        },
+        {
+          title: "Join Our Community",
+          items: [
             { label: "Learning & Development", href: "/careers/jobs" },
-            { label: "Career Growth Opportunities", href: "/careers/internships" },
-            { label: "Benefits", href: "/careers/internships" },
+            { label: "Career Growth Opportunities", href: "/careers/jobs" },
+            { label: "Benefits", href: "/careers/jobs" },
           ],
         },
       ],
@@ -232,6 +323,15 @@ const HeaderAboutUzo: React.FC = () => {
         {
           title: "Our Areas of Focus",
           items: [
+            { label: "People", href: "/" },
+            { label: "Stay", href: "/" },
+            { label: "Food", href: "/" },
+            { label: "Explore", href: "/" },
+          ],
+        },
+        {
+          title: "Our Collective Force",
+          items: [
             { label: "Collective Mobilization", href: "/" },
             { label: "Endowment Fund", href: "/" },
             { label: "Partnerships & Alliances", href: "/" },
@@ -246,27 +346,61 @@ const HeaderAboutUzo: React.FC = () => {
       href: "/aboutUzoHotels",
       sections: [
         {
-          title: "Investor Relations",
-          items: [
-            { label: "Financial Results", href: "/finance/results" },
-            { label: "Share Information", href: "/finance/shares" },
-            { label: "Annual Reports", href: "/finance/reports" },
-          ],
-        },
-        {
-          title: "Corporate Governance",
-          items: [
-            { label: "Board of Directors", href: "/finance/board" },
-            { label: "Compliance", href: "/finance/compliance" },
-          ],
-        },
-        {
           title: "Accor Share",
           items: [
             { label: "Accor Share Quotation", href: "/" },
             { label: "Dividends", href: "/" },
+            { label: "Shareholding Structure", href: "/" },
             { label: "ADR", href: "/" },
             { label: "Analysts Coverage", href: "/" },
+          ],
+        },
+        {
+          title: "Results and Publications",
+          items: [
+            { label: "Financial Result", href: "/finance/board" },
+            { label: "Financial Result", href: "/finance/compliance" },
+            { label: "Universal Registration Document", href: "/finance/compliance" },
+            { label: "Key Indicators", href: "/finance/compliance" },
+            { label: "Group Fiscal Policy", href: "/finance/compliance" },
+          ],
+        },
+        {
+          title: "Debt Financing",
+          items: [
+            { label: "Financing Strategy", href: "/" },
+            { label: "Debt structure", href: "/" },
+            { label: "Credit Rating", href: "/" },
+          ],
+        },
+        {
+          title: "Events and Announcements",
+          items: [
+            { label: "About AGM", href: "/" },
+            { label: "2025 Annual General Meeting", href: "/" },
+            { label: "Shareholders Meeting records", href: "/" },
+          ],
+        },
+        {
+          title: "Annual General Meeting",
+          items: [
+            { label: "About AGM", href: "/" },
+            { label: "2025 Annual General Meeting", href: "/" },
+            { label: "Shareholders Meeting records", href: "/" },
+          ],
+        },
+        {
+          title: "Individual Shareholders",
+          items: [
+            { label: "Periodic Information", href: "/" },
+            { label: "Permanent Information", href: "/" },
+          ],
+        },
+        {
+          title: "Regulated Information",
+          items: [
+            { label: "Periodic Information", href: "/" },
+            { label: "Permanent Information", href: "/" },
           ],
         },
       ],
@@ -387,7 +521,7 @@ const HeaderAboutUzo: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className={styles.nav}
-        // onMouseLeave={handleMouseLeave} 
+          onMouseLeave={handleMouseLeave}
         >
           <ul className={styles.navList}>
             {menuItems.map((item, index) => (
@@ -424,11 +558,11 @@ const HeaderAboutUzo: React.FC = () => {
                   clearTimeout(menuTimeoutRef.current)
                 }
               }}
-              onMouseLeave={handleMouseLeave}
+            // onMouseLeave={() => handleMouseLeave}
             >
-
               <div className={styles.megaMenuContent}>
 
+                {/* Left Side Content */}
                 <div className={styles.megaMenuSidebar}>
                   <div className={styles.featuredContent}>
                     {/* {menuItems[activeMenuItem]?.map((menuItem, index) => ( */}
@@ -457,27 +591,77 @@ const HeaderAboutUzo: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Right Side Content */}
                 <div className={styles.megaMenuMain}>
-                  <h2 className={styles.megaMenuTitle}>{menuItems[activeMenuItem].label}</h2>
-                  <div className={styles.megaMenuSections}>
+                  {/* <h2 className={styles.megaMenuTitle}>{menuItems[activeMenuItem].label}</h2> */}
+
+                  <div className={styles.megaMenuSectionsRow}>
                     {menuItems[activeMenuItem].sections?.map((section, sectionIndex) => (
-                      <div key={sectionIndex} className={styles.megaMenuSection}>
-                        <h3 className={styles.sectionTitle}>{section.title}</h3>
-                        {section.items && (
-                          <ul className={styles.sectionItems}>
-                            {section.items.map((subItem, subIndex) => (
-                              <li key={subIndex}>
-                                <Link href={subItem.href} className={styles.sectionLink}>
-                                  {subItem.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                      <div
+                        key={sectionIndex}
+                        className={styles.megaMenuSectionContainer}
+                      // onMouseLeave={() => setHoveredSection(null)}
+                      >
+                        {/* Section Title (always visible) */}
+                        <div className={styles.megaMenuSection}>
+                          <h3 className={`${styles.sectionTitle} ${hoveredSection === sectionIndex ? styles.activeTitle : ''
+                            }`}
+                            onMouseEnter={() => setHoveredSection(sectionIndex)}
+                            onMouseLeave={() => setHoveredSection(sectionIndex)}
+
+                          >{section.title}
+                          </h3>
+                          {hoveredSection === sectionIndex && (<ChevronRight className={styles.chevronIcon} />)}
+                        </div>
+
+                        {/* Items Column (appears below on hover) */}
+                        {hoveredSection === sectionIndex && (
+                          <div className={styles.megaMenuItemsColumn}>
+                            {section.items && (
+                              <ul className={styles.sectionItems}>
+                                {section.items.map((subItem, subIndex) => (
+                                  <li key={subIndex}>
+                                    <Link href={subItem.href} className={styles.sectionLink}>
+                                      {subItem.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
                         )}
                       </div>
                     ))}
                   </div>
                 </div>
+                {/* <div className={styles.megaMenuMain}>
+                  <h2 className={styles.megaMenuTitle}>{menuItems[activeMenuItem].label}</h2>
+
+                  <div className={styles.megaMenuSections}>
+                    {menuItems[activeMenuItem].sections?.map((section, sectionIndex) => (
+                      <div className={styles.megaMenuSectionBody}>
+                        <div key={sectionIndex} className={styles.megaMenuSectionContainer}>
+                          <div key={sectionIndex} className={styles.megaMenuSection}>
+                            <h3 className={styles.sectionTitle}>{section.title}</h3>
+                          </div>
+                          <div className={styles.megaMenuSectionRight}> {section.items && (
+                            <ul className={styles.sectionItems}>
+                              {section.items.map((subItem, subIndex) => (
+                                <li key={subIndex}>
+                                  <Link href={subItem.href} className={styles.sectionLink}>
+                                    {subItem.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div> */}
 
 
 

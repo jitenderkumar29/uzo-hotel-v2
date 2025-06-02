@@ -249,23 +249,60 @@
 }
 
 .megaMenuSections {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   gap: 32px;
   margin-top: 24px;
 }
 
+.megaMenuSectionBody {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.megaMenuSectionContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
 .megaMenuSection {
-  margin-bottom: 24px;
+  width: 50%;
+  display: flex;
+  cursor: pointer;
+}
+.megaMenuSection:hover .sectionTitle,
+.chevronIcon {
+  color: var(--link-color);
+}
+
+.megaMenuSectionRight {
+  width: 50%; /* Changed to 70% to make total 100% with the 30% section */
+  padding-left: 2rem;
 }
 
 .sectionTitle {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   color: var(--text-color-black);
-  border-bottom: 2px solid var(--golden-color);
+  /* border-bottom: 2px solid var(--golden-color); */
   padding-bottom: 4px;
+}
+
+.activeTitle {
+  color: var(--link-color); /* Same as hover color */
+  text-decoration: underline;
+}
+
+.chevronIcon {
+  color: var(--link-color);
+}
+.megaMenuItemsColumn {
+  position: absolute;
+  top: 35px;
+  left: 70%;
 }
 
 .sectionItems {
@@ -275,16 +312,17 @@
 }
 
 .sectionLink {
-  color: #666;
+  color: var(--text-color-black);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   padding: 6px 0;
   display: block;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .sectionLink:hover {
-  color: #1a1f3a;
+  color: var(--link-color);
 }
 
 .megaMenuSidebar {
@@ -358,7 +396,8 @@
 }
 
 .featuredLink:hover {
-  color: #d4af37;
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 /* Mobile Navigation */
