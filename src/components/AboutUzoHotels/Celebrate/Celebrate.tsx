@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import styles from "./Celebrate.module.css";
 import { FaCheck } from "react-icons/fa";

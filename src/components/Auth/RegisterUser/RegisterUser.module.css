@@ -1,0 +1,452 @@
+.container {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/images/loginBG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.backButton {
+  color: var(--dark-white);
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.backIcon {
+  margin-right: 4px;
+  color: var(--dark-white);
+  font-size: 15px;
+}
+
+/* Base Styles */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  gap: 10px;
+}
+
+.leftContainer {
+  width: 40%;
+  height: 100vh;
+}
+
+.btnContainer {
+  margin-left: -100px;
+}
+
+.registerCardDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+}
+
+.logoImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 3rem;
+  color: var(--dark-white);
+  font-weight: 700;
+}
+
+.descHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dark-white);
+}
+
+.descText {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-white);
+  font-weight: 600;
+}
+
+.registerBox {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 3em;
+  color: var(--dark-white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+  background: rgba(0, 0, 0, 0.4);
+  width: 60%;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registerHeader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--logo-color);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.registerHeader span {
+  font-size: 30px;
+  color: var(--dark-white);
+  font-weight: 600;
+}
+
+.registerHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+  box-shadow: -15px 0 0 0 var(--logo-color);
+}
+
+.registerHeader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 0 0 0 var(--logo-color);
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameFields {
+  display: flex;
+  gap: 15px;
+}
+
+.nameFields .inputBox {
+  flex: 1;
+}
+
+.inputBox {
+  position: relative;
+  margin: 15px 0;
+}
+
+.inputField {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--dark-white);
+  padding: 0 20px 0 45px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: var(--logo-color);
+  box-shadow: 0 0 10px rgba(255, 31, 128, 0.5);
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.selectLabel {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 12px;
+  background-color: var(--logo-color);
+  color: var(--dark-white);
+  padding: 0 8px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus ~ .label,
+.inputField:valid ~ .label,
+.inputField:focus ~ .selectLabel,
+.inputField:valid ~ .selectLabel {
+  top: 0;
+  left: 30px;
+  font-size: 12px;
+  background-color: var(--logo-color);
+  color: var(--dark-white);
+  padding: 0 8px;
+  border-radius: 10px;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputSubmit {
+  width: 100%;
+  height: 50px;
+  background: var(--logo-color);
+  color: var(--dark-white);
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 0 10px;
+  box-shadow: 0 5px 15px rgba(255, 31, 128, 0.4);
+}
+
+.inputSubmit:hover {
+  background: var(--logo-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(255, 31, 128, 0.6);
+}
+
+.inputSubmit:active {
+  transform: translateY(0);
+}
+
+.inputSubmit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.addressSection {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.addressTitle {
+  margin-bottom: 15px;
+  color: var(--dark-white);
+  font-size: 18px;
+  text-align: center;
+}
+
+.socialRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.socialText {
+  margin-bottom: 10px;
+  color: var(--dark-white);
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-accent);
+  color: var(--dark-white);
+  transition: all 0.3s ease;
+}
+
+.socialBtn:hover {
+  background: var(--logo-color);
+  transform: translateY(-3px);
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.link {
+  color: var(--text-color-red);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--text-color-red);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .leftContainer {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .registerBox {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .btnContainer {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .registerCardDesc {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .registerBox {
+    padding: 6em 1.5em 2em;
+  }
+
+  .registerHeader {
+    width: 120px;
+    height: 60px;
+  }
+
+  .registerHeader span {
+    font-size: 24px;
+  }
+
+  .heading,
+  .descHeading {
+    font-size: 2rem;
+  }
+
+  .descText {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 564px) {
+  .nameFields {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .registerBox {
+    padding: 6em 1em 2em;
+  }
+
+  .heading,
+  .descHeading {
+    font-size: 1.5rem;
+  }
+
+  .descText {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .registerBox {
+    padding: 5em 0.8em 1.5em;
+  }
+
+  .inputField {
+    padding: 0 15px 0 40px;
+    font-size: 14px;
+  }
+
+  .icon {
+    left: 10px;
+    font-size: 16px;
+  }
+
+  .inputSubmit {
+    font-size: 20px;
+    height: 45px;
+  }
+}

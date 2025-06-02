@@ -1,7 +1,8 @@
 /* components/HomeStayHotels.module.css */
 .section {
   padding: 1rem 0;
-  background-color: #fff;
+  background-color: var(--dark-white);
+  font-family: "Arial", sans-serif;
 }
 
 .headingWrapper {

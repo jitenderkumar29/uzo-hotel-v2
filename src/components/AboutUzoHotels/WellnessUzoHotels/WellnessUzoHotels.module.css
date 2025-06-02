@@ -201,18 +201,18 @@
   height: 0.75rem;
   border-radius: 50%;
   border: none;
-  background: #d1d5db;
+  background: var(--border-color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot:hover {
-  background: #9ca3af;
+  background: var(--dark-white);
   transform: scale(1.1);
 }
 
 .activeDot {
-  background: #1a1a1a;
+  background: var(--text-color-black);
   transform: scale(1.2);
 }
 
@@ -374,7 +374,7 @@
 
   .dot:hover {
     transform: none;
-    background: #d1d5db;
+    background: var(--dark-white);
   }
 
   .activeDot {
@@ -385,15 +385,15 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .slideContent {
-    border: 2px solid #000;
+    border: 2px solid var(--text-color-black);
   }
 
   .navButton {
-    border: 2px solid #000;
+    border: 2px solid var(--text-color-black);
   }
 
   .seeMoreButton {
-    border: 2px solid #000;
+    border: 2px solid var(--text-color-black);
   }
 }
 

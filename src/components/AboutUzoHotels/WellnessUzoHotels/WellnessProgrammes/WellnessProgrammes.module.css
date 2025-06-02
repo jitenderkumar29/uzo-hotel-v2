@@ -4,6 +4,7 @@
   position: relative;
   padding: 0 0.75rem;
   padding-bottom: 2rem;
+  font-family: "Arial", sans-serif;
 }
 
 .carouselWrapper {
@@ -57,10 +58,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  color: white;
+  color: var(--dark-white);
   padding: 2rem;
   text-align: center;
   z-index: 2;
+  font-weight: 600;
 }
 
 .programmeTitle {
@@ -86,7 +88,7 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.3);
   border: none;
-  color: white;
+  color: var(--dark-white);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -138,7 +140,7 @@
 
 .dot:hover,
 .activeDot {
-  background: white;
+  background: var(--dark-white);
   transform: scale(1.2);
 }
 

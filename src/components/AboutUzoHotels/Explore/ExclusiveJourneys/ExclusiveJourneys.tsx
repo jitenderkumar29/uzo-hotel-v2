@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import styles from "./ExclusiveJourneys.module.css"

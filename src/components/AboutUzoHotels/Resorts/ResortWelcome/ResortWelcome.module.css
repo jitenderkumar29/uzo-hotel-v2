@@ -62,7 +62,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin: 1.5rem 0;
-  color: #555;
+  color: var(--text-color-black);
   font-weight: 300;
   letter-spacing: 0.5px;
 }
@@ -81,7 +81,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #444;
+  color: var(--text-color-black);
 }
 
 .serviceIcon {
@@ -97,7 +97,7 @@
   margin-top: 2rem;
   font-style: italic;
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-color-black);
   text-transform: uppercase;
   letter-spacing: 1px;
 }

@@ -7,6 +7,7 @@ import logoImage from '@/assets/icons/logo26.png';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 
 const Login = () => {
@@ -141,9 +142,9 @@ const Login = () => {
                 </div>
 
                 <div className={styles.forgot}>
-                  <a href="#" className={styles.link}>
+                  <Link href="#" className={styles.link}>
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -158,23 +159,23 @@ const Login = () => {
               </div>
 
               <div className={styles.socialLogin}>
-                <a href="#" className={styles.socialBtn} aria-label="Login with Google">
+                <Link href="#" className={styles.socialBtn} aria-label="Login with Google">
                   <FaGoogle />
-                </a>
-                <a href="#" className={styles.socialBtn} aria-label="Login with Facebook">
+                </Link>
+                <Link href="#" className={styles.socialBtn} aria-label="Login with Facebook">
                   <FaFacebookF />
-                </a>
-                <a href="#" className={styles.socialBtn} aria-label="Login with Twitter">
+                </Link>
+                <Link href="#" className={styles.socialBtn} aria-label="Login with Twitter">
                   <FaTwitter />
-                </a>
+                </Link>
               </div>
 
               <div className={styles.register}>
                 <span>
                   Don&apos;t have an account?{' '}
-                  <a href="#" className={styles.link}>
+                  <Link href="/registerUser" className={styles.link}>
                     Register
-                  </a>
+                  </Link>
                 </span>
               </div>
             </form>

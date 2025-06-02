@@ -4,6 +4,7 @@
   position: relative;
   padding: 0rem 0.75rem;
   padding-bottom: 2rem;
+  font-family: "Arial", sans-serif;
 }
 
 .carouselWrapper {
@@ -49,7 +50,7 @@
     transparent 100%
   );
   /* background: rgba(0, 0, 0, 0.1); */
-  color: white;
+  color: var(--text-color-black);
   padding: 2rem;
   text-align: center;
 }
@@ -58,6 +59,8 @@
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: var(--dark-white);
+  font-weight: 600;
 }
 
 .slideDescription {
@@ -65,6 +68,7 @@
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
+  color: var(--dark-white);
 }
 
 .arrowButton {
@@ -73,7 +77,7 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.3);
   border: none;
-  color: white;
+  color: var(--text-color-black);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -124,7 +128,7 @@
 
 .dot:hover,
 .activeDot {
-  background: white;
+  background: var(--dark-white);
   transform: scale(1.2);
 }
 

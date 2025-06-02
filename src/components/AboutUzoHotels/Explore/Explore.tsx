@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 import styles from "./explore.module.css"

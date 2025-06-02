@@ -94,7 +94,7 @@
 
 .primaryCta {
   background-color: var(--light-orange);
-  color: white;
+  color: var(--dark-white);
   border: 1px solid var(--dark-orange);
   border-radius: 50px;
 }
@@ -107,7 +107,7 @@
 
 .secondaryCta {
   background-color: var(--light-orange);
-  color: white;
+  color: var(--dark-white);
   border: 1px solid var(--dark-orange);
   border-radius: 50px;
 }

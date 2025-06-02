@@ -1,8 +1,9 @@
 /* UzoLatestNews.module.css */
 .section {
   padding: 1rem 0;
-  background-color: #fff;
+  background-color: var(--dark-white);
   padding-bottom: 2rem;
+  font-family: "Arial", sans-serif;
 }
 
 .headingWrapper {
@@ -16,7 +17,7 @@
   /* font-family: "Playfair Display", serif; */
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-color-black);
   text-align: center;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -53,7 +54,7 @@
 }
 
 .card {
-  background: #fff;
+  background: var(--dark-white);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -108,7 +109,7 @@
   /* font-family: "Playfair Display", serif; */
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-color-black);
   margin-bottom: 15px;
 }
 
@@ -117,7 +118,7 @@
   /* font-family: "Open Sans", sans-serif; */
   font-size: 1rem;
   line-height: 1.6;
-  color: #666;
+  color: var(--text-color-black);
   margin-bottom: 20px;
   flex: 1;
 }
@@ -131,7 +132,7 @@
   padding: 10px 20px;
   background-color: var(--light-orange);
   /* background-color: #b38b6d; */
-  color: white;
+  color: var(--dark-white);
   text-decoration: none;
   border-radius: 50px;
   font-family: "Arial", sans-serif;
