@@ -4,7 +4,7 @@ import { Plane, Hotel, Bus, Car, Flame, Clock } from 'lucide-react';
 import { FaPiggyBank } from 'react-icons/fa';
 import OfferCards from '../OfferCards/OfferCards';
 import { BiSolidOffer } from 'react-icons/bi';
-import { bankOffers, filterBankCategories, filterCategories, filterHotelCategories, hotelOffers, mockOffers } from '@/app/data';
+import { bankOffers, filterBankCategories, filterCategories, mockOffers } from '@/app/data';
 
 const OffersTab: React.FC = () => {
   const [activeTab, setActiveTab] = useState('special-offers');
