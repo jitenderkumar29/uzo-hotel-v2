@@ -569,99 +569,99 @@ export const filterBankCategories: FilterCategoryInterface[] = [
 
 export const flightOffers: OfferInterface[] = [
   {
-      "id": 1,
-      "title": "New User Offer",
-      "description": "Get Discount on Booking First Flight with Us",
-      "imageUrl": "https://images.emtcontent.com/offer-img/emtfirst-3jan24-sm.webp",
-      "link": "https://www.easemytrip.com/offers/new-user.html?CouponCode=emtfirst",
-      "bookingPeriod": "Valid till: 30th Jun, 2025",
-      "promoCode": "EMTFIRST",
-      "categories": ["new_user"]
-    },
-    {
-      "id": 2,
-      "title": "Anniversary sale",
-      "description": "Now Celebrate the Special Season With Up to INR 10,000 OFF* on Travel Bookings",
-      "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
-      "link": "https://www.easemytrip.com/deals/anniversary-sale/",
-      "bookingPeriod": "Valid till: 10th Jun, 2025",
-      "promoCode": "EMT17",
-      "categories": ["anniversary"]
-    },
-    {
-      "id": 3,
-      "title": "AirAsia",
-      "description": "Book Flights from India with AirAsia & Enjoy Up to 15% OFF*",
-      "imageUrl": "https://images.emtcontent.com/offer-img/airasia-02-jun-25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/airasia.html",
-      "bookingPeriod": "Valid till: 8th Jun, 2025",
-      "categories": ["airAsia_insrt"]
-    },
-    {
-      "id": 4,
-      "title": "Qatar Airways",
-      "description": "Now Fly to Wonderful Australia from India at Fares Starting from INR 35,404*",
-      "imageUrl": "https://images.emtcontent.com/offer-img/qatar-airways-30-may-25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/qatar-airways.html",
-      "bookingPeriod": "Valid From: 1st Jun 2025",
-      "categories": ["qatarairways_insrt"]
-    },
-    {
-      "id": 5,
-      "title": "Air Astana Offer",
-      "description": "Book Flights Between Delhi & Kyrgyzstan at One-Way Fares Starting from INR 17,727*",
-      "imageUrl": "https://images.emtcontent.com/offer-img/air-astana-5feb25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/air-astana-discount.html",
-      "bookingPeriod": "Valid From: 28th May 2025",
-      "categories": ["airastana"]
-    },
-    {
-      "id": 6,
-      "title": "Akasa Air",
-      "description": "Book Your Domestic Flight with Akasa Air and Save Big on Fares!",
-      "imageUrl": "https://images.emtcontent.com/offer-img/akasa-4feb25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/akasa-air.html",
-      "categories": ["akasaair_insrt"]
-    },
-    {
-      "id": 7,
-      "title": "Egypt Air Offer",
-      "description": "Fly from Delhi to Egypt & MS Networks with Discounted Promotional Fares of EgyptAir",
-      "imageUrl": "https://images.emtcontent.com/offer-img/egyptair-4sep24-sm.png",
-      "link": "https://www.easemytrip.com/offers/egyptair.html",
-      "bookingPeriod": "Valid till: 30th Jun, 2025",
-      "categories": ["egyptair_insrt"]
-    },
-    {
-      "id": 8,
-      "title": "Cathay Pacific",
-      "description": "Now Fly Between Hong Kong & Yiwu Seamlessly with Cathay Pacific & HK Express",
-      "imageUrl": "https://images.emtcontent.com/offer-img/Cathay-22-may-25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/cathay-pacific-flight.html",
-      "bookingPeriod": "Valid From : 29th May, 2025",
-      "categories": ["cathaypacific"]
-    },
-    {
-      "id": 9,
-      "title": "IndiGo Offer",
-      "description": "Grab Exclusive Discounts on IndiGo Airlines Flight Bookings",
-      "imageUrl": "https://images.emtcontent.com/offer-img/indigo-3feb25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/indigo.html",
-      "categories": ["indigo_insrt"]
-    },
-    {
-      "id": 10,
-      "title": "Malaysia Airlines",
-      "description": "Now Fly from Trivadrum with Malaysia Airlines at Fares Starting from INR 14,799*",
-      "imageUrl": "https://images.emtcontent.com/offer-img/malaysia-airlines-08-may25-sm.webp",
-      "link": "https://www.easemytrip.com/offers/malaysia-airlines.html",
-      "bookingPeriod": "Valid till : 30th Jun, 2025",
-      "categories": ["malaysiaair_insrt"]
-    }
+    "id": 1,
+    "title": "New User Offer",
+    "description": "Get Discount on Booking First Flight with Us",
+    "imageUrl": "https://images.emtcontent.com/offer-img/emtfirst-3jan24-sm.webp",
+    "link": "https://www.easemytrip.com/offers/new-user.html?CouponCode=emtfirst",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTFIRST",
+    "categories": ["new_user"]
+  },
+  {
+    "id": 2,
+    "title": "Anniversary sale",
+    "description": "Now Celebrate the Special Season With Up to INR 10,000 OFF* on Travel Bookings",
+    "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
+    "link": "https://www.easemytrip.com/deals/anniversary-sale/",
+    "bookingPeriod": "Valid till: 10th Jun, 2025",
+    "promoCode": "EMT17",
+    "categories": ["anniversary"]
+  },
+  {
+    "id": 3,
+    "title": "AirAsia",
+    "description": "Book Flights from India with AirAsia & Enjoy Up to 15% OFF*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/airasia-02-jun-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/airasia.html",
+    "bookingPeriod": "Valid till: 8th Jun, 2025",
+    "categories": ["airAsia_insrt"]
+  },
+  {
+    "id": 4,
+    "title": "Qatar Airways",
+    "description": "Now Fly to Wonderful Australia from India at Fares Starting from INR 35,404*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/qatar-airways-30-may-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/qatar-airways.html",
+    "bookingPeriod": "Valid From: 1st Jun 2025",
+    "categories": ["qatarairways_insrt"]
+  },
+  {
+    "id": 5,
+    "title": "Air Astana Offer",
+    "description": "Book Flights Between Delhi & Kyrgyzstan at One-Way Fares Starting from INR 17,727*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/air-astana-5feb25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/air-astana-discount.html",
+    "bookingPeriod": "Valid From: 28th May 2025",
+    "categories": ["airastana"]
+  },
+  {
+    "id": 6,
+    "title": "Akasa Air",
+    "description": "Book Your Domestic Flight with Akasa Air and Save Big on Fares!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/akasa-4feb25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/akasa-air.html",
+    "categories": ["akasaair_insrt"]
+  },
+  {
+    "id": 7,
+    "title": "Egypt Air Offer",
+    "description": "Fly from Delhi to Egypt & MS Networks with Discounted Promotional Fares of EgyptAir",
+    "imageUrl": "https://images.emtcontent.com/offer-img/egyptair-4sep24-sm.png",
+    "link": "https://www.easemytrip.com/offers/egyptair.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["egyptair_insrt"]
+  },
+  {
+    "id": 8,
+    "title": "Cathay Pacific",
+    "description": "Now Fly Between Hong Kong & Yiwu Seamlessly with Cathay Pacific & HK Express",
+    "imageUrl": "https://images.emtcontent.com/offer-img/Cathay-22-may-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/cathay-pacific-flight.html",
+    "bookingPeriod": "Valid From : 29th May, 2025",
+    "categories": ["cathaypacific"]
+  },
+  {
+    "id": 9,
+    "title": "IndiGo Offer",
+    "description": "Grab Exclusive Discounts on IndiGo Airlines Flight Bookings",
+    "imageUrl": "https://images.emtcontent.com/offer-img/indigo-3feb25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/indigo.html",
+    "categories": ["indigo_insrt"]
+  },
+  {
+    "id": 10,
+    "title": "Malaysia Airlines",
+    "description": "Now Fly from Trivadrum with Malaysia Airlines at Fares Starting from INR 14,799*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/malaysia-airlines-08-may25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/malaysia-airlines.html",
+    "bookingPeriod": "Valid till : 30th Jun, 2025",
+    "categories": ["malaysiaair_insrt"]
+  }
 ]
 
 export const filterFlightCategories: FilterCategoryInterface[] = [
-{ "value": "airindia", "label": "Air India" },
+  { "value": "airindia", "label": "Air India" },
   { "value": "airAsia_insrt", "label": "AirAsia" },
   { "value": "akasaair_insrt", "label": "Akasa Air" },
   { "value": "airastana", "label": "Air Astana" },
@@ -673,3 +673,248 @@ export const filterFlightCategories: FilterCategoryInterface[] = [
   { "value": "qatarairways_insrt", "label": "Qatar Airways" },
   { "value": "thaiairways_insrt", "label": "Thai Airways" }
 ]
+
+export const hotelOffers: OfferInterface[] = [
+  {
+    "id": 1,
+    "title": "Hotel Deals",
+    "description": "Save up to 45% OFF* on Your Favorite Hotel",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/emtstay-12may25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/emtstay.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTHOTELS",
+    "categories": ["hotel_deals"]
+  },
+  {
+    "id": 2,
+    "title": "Anniversary sale",
+    "description": "Now Celebrate the Special Season With Up to INR 10,000 OFF* on Travel Bookings",
+    "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
+    "link": "https://www.easemytrip.com/deals/anniversary-sale/?type=hotel",
+    "bookingPeriod": "Valid till: 10th Jun, 2025",
+    "promoCode": "EMT17",
+    "categories": ["anniversary_sale"]
+  },
+  {
+    "id": 3,
+    "title": "New User Offer",
+    "description": "Register & Enjoy Great Discount on First Hotel Booking",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-new-6feb25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/hotel-new-user.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTFIRST",
+    "categories": ["new_user", "hotel"]
+  },
+  {
+    "id": 4,
+    "title": "Book With ₹0 Payment",
+    "description": "Book Your Favorite Hotels INR 0 with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/offer-img/bookwith-25-04-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/book-now-pay-later.html",
+    "bookingPeriod": "Book Now",
+    "categories": ["zero_payment"]
+  },
+  {
+    "id": 5,
+    "title": "Lords Hotels & Resorts",
+    "description": "Elevate Your Stay with Up to 35% Discount* on Lords Hotels & Resorts",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/lords-hotels-resorts-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/lords-hotel/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 6,
+    "title": "Treat Group of Hotels",
+    "description": "Enjoy Up to 30% OFF* on Treat Group of Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/treat-group-htels-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/treat-group-of-hotels/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 7,
+    "title": "DLS Hotels",
+    "description": "Get Up to 55% OFF* on Booking DLS Hotels & Resorts",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/dls-hotels-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/dls-hotels-deal/",
+    "bookingPeriod": "Valid till: 31st July 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 8,
+    "title": "Hotel Sonar Bangla",
+    "description": "Grab Up to 35% OFF* & Experience Rich Hospitality of Bengal",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/Hotel-Sonar-Bangla-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/hotel-sonar-bangla/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 9,
+    "title": "Suba Group of Hotels",
+    "description": "Book Suba Group of Hotels & Enjoy Up to 35% OFF*",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/Suba-Group-Hotels-27-03-25-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/suba-group-hotel/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 10,
+    "title": "Zone Hotels",
+    "description": "Grab Incredible Deals on Zone By The Park Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/zone-the-park-04-04-25-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/zone-hotel/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 11,
+    "title": "Amritara Hotels",
+    "description": "Unlock Up to 40% OFF* on Booking Amritara Hotels & Resorts with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/amritara-hotels-27feb25-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/amritara-hotels/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 12,
+    "title": "The Byke Hotels",
+    "description": "Enjoy Massive Discount of Up to 30%* on The Byke Hotels & Resorts",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/the-byke-hotels-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/the-byke-hotels/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 13,
+    "title": "The Hosteller Hotels",
+    "description": "Make Your Stay An Affordable Getaway With Up to 45% OFF* on the Hosteller",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/the-hosteller-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/the-hosteller/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 14,
+    "title": "Spree Hotels",
+    "description": "Grab Amazing Offer On Hotel Like Never Before",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/Spree-31-mar-25-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/spree-hotel/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "SPREE",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 15,
+    "title": "Sterling Hotels",
+    "description": "Book Sterling Hotels & Grab Unbeatable Discounts with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/sterling-hotels-17June24-sm.png",
+    "link": "https://www.easemytrip.com/hotels/chains/sterling-group/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 16,
+    "title": "Windflower Hotels",
+    "description": "Plan Delightful Stays With Up to 40% OFF* on Windflower Hotel Bookings",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/windflower-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/windflower-hotels/",
+    "bookingPeriod": "Valid till: 30th Sep, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 17,
+    "title": "The Fern Hotels",
+    "description": "Enjoy Massive Savings with Up to 30%* Discount on The Fern Hotels & Resorts",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/fern-hotels-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/the-fern-hotels/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 18,
+    "title": "Treehouse Hotels",
+    "description": "Enjoy Special discount of Up to 40%* on Treehouse Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/tree-house-group-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/tree-house-group/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 19,
+    "title": "VITS Hotels",
+    "description": "Enjoy Massive Discount of Up to 20%* on Booking VITS Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/vits-hotels-sm.png",
+    "link": "https://www.easemytrip.com/hotels/chains/vits-hotel/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 20,
+    "title": "WelcomHeritage Hotel",
+    "description": "Get Special Discount of Up to 35%* on WelcomHeritage Hotel Bookings",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/welcom-heritage-20may24-sm2.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/welcomheritage-hotels/",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "categories": ["hotel_chains"]
+  },
+  {
+    "id": 21,
+    "title": "Deal of the Day",
+    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
+    "link": "https://www.easemytrip.com/offers/hotel-easeday.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EASEDAY",
+    "categories": ["daily_deal"]
+  },
+  {
+    "id": 22,
+    "title": "Flyers Deal",
+    "description": "Flat 20% off on Hotel Booking for Flyers",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-deal-for-flyers-sm.png",
+    "link": "https://www.easemytrip.com/offers/hotel-deal-for-flyers.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTFLY",
+    "categories": ["flyers_deal"]
+  },
+  {
+    "id": 23,
+    "title": "Zero cancellation fees on Hotel Bookings",
+    "description": "Enjoy No Cancellation Fees on Domestic Hotel Bookings",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/zc-on-hotels-17jun19-sm.png",
+    "link": "https://www.easemytrip.com/offers/zero-cancellation-charge-on-hotels.html",
+    "categories": ["zero_cancellation"]
+  },
+  {
+    "id": 24,
+    "title": "Couple Friendly Hotels",
+    "description": "Stay in Couple Friendly Hotels to have unforgettable memories",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-couple-sm2.png",
+    "link": "https://www.easemytrip.com/offers/couple-friendly-hotels.html",
+    "categories": ["couple_friendly"]
+  },
+  {
+    "id": 25,
+    "title": "Hotel Offer",
+    "description": "Last Minute Hotel Booking with up to 30% Discount",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/emt30-7aug24-sm.png",
+    "link": "https://www.easemytrip.com/offers/last-minute-hotel-booking-deal.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMT30",
+    "categories": ["last_minute"]
+  },
+  {
+    "id": 26,
+    "title": "Hotel Offer",
+    "description": "Upto 20% Discount on Selected Hotel Booking",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/grab20-28apr-sm2.png",
+    "link": "https://www.easemytrip.com/offers/flash-sale-on-hotel.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "GRAB20",
+    "categories": ["flash_sale"]
+  }
+]
+
+export const filterHotelCategories: FilterCategoryInterface[] = []

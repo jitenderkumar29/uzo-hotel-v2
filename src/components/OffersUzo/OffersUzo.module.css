@@ -178,3 +178,8 @@
     font-size: 1rem;
   }
 }
+
+/* Footer style */
+.footerBox {
+  margin-top: -70px !important;
+}

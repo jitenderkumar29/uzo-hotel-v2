@@ -22,7 +22,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
   // useEffect(() => {
   //   filterOffers();
   // }, [searchTerm, activeFilters, offers]);
-
+  // console.log('filterCategories', filterCategories.length);
   const filterOffers = useCallback(() => {
     let result = [...offers];
 
@@ -103,7 +103,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
 
       <div className={styles.mainContent}>
         {/* Filters sidebar - shown on desktop and when toggled on mobile */}
-        <div className={`${styles.filtersSidebar} ${showFilters ? styles.showFilters : ''}`}>
+        {filterCategories.length > 0 && (<div className={`${styles.filtersSidebar} ${showFilters ? styles.showFilters : ''}`}>
           <div className={styles.filtersHeader}>
             <h3>Special offers</h3>
             <button className={styles.resetButton} onClick={resetFilters}>
@@ -139,7 +139,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
           >
             Apply Filters
           </button>
-        </div>
+        </div>)}
 
         {/* Offers grid */}
         <div className={styles.offersGrid}>

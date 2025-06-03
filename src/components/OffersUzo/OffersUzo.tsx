@@ -5,6 +5,7 @@ import OffersTab from './OffersTab/OffersTab';
 import HeaderTop from '../Headers/HeaderTop/HeaderTop';
 import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
 import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
+import FooterUzo from '../FooterUzo/FooterUzo';
 
 const OffersUzo: React.FC = () => {
   return (
@@ -55,6 +56,9 @@ const OffersUzo: React.FC = () => {
       <section>
         <OffersTab />
       </section>
+      <div className={styles.footerBox}>
+        <FooterUzo />
+      </div>
     </>
   );
 };
