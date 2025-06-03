@@ -2,10 +2,20 @@ import React from 'react';
 import styles from './OffersUzo.module.css';
 import Image from 'next/image';
 import OffersTab from './OffersTab/OffersTab';
+import HeaderTop from '../Headers/HeaderTop/HeaderTop';
+import { HotelSearchProvider } from '@/app/Context/HotelSearchContext';
+import HotelSearchBarTop from '../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop';
 
 const OffersUzo: React.FC = () => {
   return (
-    <>
+    <> <div className={styles.headerTopBody}>
+      <HeaderTop />
+    </div>
+      <div className={styles.HotelSearchBarTopBody}>
+        <HotelSearchProvider>
+          <HotelSearchBarTop />
+        </HotelSearchProvider>
+      </div>
       <section className={styles.bckwht}>
         <div className={styles.top_banner}>
           {/* <div className={styles.banner_content}>
