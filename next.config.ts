@@ -32,6 +32,8 @@ const nextConfig: NextConfig = {
       "media.radissonhotels.net",
       // "media.radissonhotels.net",
       "cdn-assets-eu.frontify.com",
+      "images.emtcontent.com",
+      "images.emtcontent.com",
     ],
   },
 };
