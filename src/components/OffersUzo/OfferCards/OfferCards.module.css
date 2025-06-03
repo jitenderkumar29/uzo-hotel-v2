@@ -1,0 +1,415 @@
+.container {
+  background-color: var(--background);
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color-black);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.searchInput {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.searchInput input:focus {
+  border-color: var(--link-color);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  color: var(--text-color-black);
+}
+
+.clearSearch {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-color-black);
+  cursor: pointer;
+  padding: 5px;
+}
+
+.filterButton {
+  padding: 0 20px;
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.filterButton:hover {
+  background-color: #e9ecef;
+}
+
+.mainContent {
+  display: flex;
+  gap: 20px;
+}
+
+.filtersSidebar {
+  width: 300px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filtersHeader h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.resetButton {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.closeFilters {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color-black);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.filtersList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--dark-white);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #f1f1f1;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: var(--link-color);
+  border-color: var(--link-color-dark);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--dark-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filterLabel {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.applyFilters {
+  display: none;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--light-accent);
+  color: var(--dark-white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.applyFilters:hover {
+  background-color: var(--link-color);
+}
+
+.offersGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  position: relative;
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--dark-white);
+  max-height: 380px;
+}
+
+.offerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+}
+
+.imageContainer {
+  height: 190px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.offerCard:hover .imageContainer img {
+  transform: scale(1.05);
+}
+
+.offerDetails {
+  padding: 15px;
+  /* flex: 1; */
+}
+
+.offerTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: var(--text-color-black);
+}
+
+.offerDescription {
+  font-size: 14px;
+  color: var(--text-color-black);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.offerMeta {
+  padding: 15px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.bookingPeriod {
+  font-size: 13px;
+}
+
+.bookingPeriod div:first-child {
+  font-weight: 600;
+  color: var(--text-color-black);
+}
+
+.bookingPeriod div:last-child {
+  color: var(--text-color-black);
+}
+
+.promoCode {
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.promoCode:hover {
+  background-color: #e9ecef;
+}
+
+.promoLabel {
+  font-size: 12px;
+  color: var(--text-color-black);
+}
+
+.code {
+  flex: 1;
+  font-weight: 600;
+  color: #007bff;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Adjust spacing between text and icon */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copyIcon {
+  color: var(--text-color-black);
+  transition: color 0.3s;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.promoCode:hover .copyIcon {
+  color: var(--link-color);
+}
+
+.copiedIcon {
+  color: var(--green-text);
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--text-color-black);
+  font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .offersGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .filtersSidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    overflow-y: auto;
+  }
+
+  .filtersSidebar.showFilters {
+    transform: translateX(0);
+  }
+
+  .closeFilters {
+    display: block;
+  }
+
+  .applyFilters {
+    display: block;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+  }
+
+  .filterButton {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .offersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}

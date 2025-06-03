@@ -257,7 +257,7 @@ const HeaderTransparent = () => {
                       <li>
                         <FontAwesomeIcon icon={faPassport} />
                         <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
-                          Travel Insurance
+                          Insurance
                         </Link>
                       </li>
                     </ul>

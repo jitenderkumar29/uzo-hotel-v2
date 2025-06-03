@@ -203,9 +203,11 @@
 .megaMenuContent {
   display: flex;
   min-height: 400px;
-  max-width: 100vw; /* or your desired max width */
+  /* max-width: 100vw;  */
+  /* or your desired max width */
   margin: 0 auto;
-  padding: 0 20px; /* optional padding */
+  padding: 0 0px; /* optional padding */
+  /* max-width: 1410px; */
 }
 /* .megaMenu {
   position: absolute;
@@ -238,7 +240,8 @@
 
 .megaMenuMain {
   flex: 2;
-  padding: 40px;
+  /* padding: 40px; */
+  display: flex;
 }
 
 .megaMenuTitle {
@@ -261,10 +264,24 @@
   flex-direction: row;
 }
 
+.megaMenuSectionsRow {
+  padding: 40px;
+  width: 48%;
+  /* background: var(--background); */
+}
+
 .megaMenuSectionContainer {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+}
+
+.contentRight {
+  /* padding: 40px; */
+  width: 52%;
+  background: var(--background);
+  /* margin-right: -200px; */
+  max-width: 100vw;
 }
 
 .megaMenuSection {
@@ -327,8 +344,10 @@
 
 .megaMenuSidebar {
   flex: 1;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   padding: 40px 32px;
+  margin-left: 70px;
+  /* margin-left: 5%; */
 }
 
 .featuredContent {
@@ -622,9 +641,9 @@
   color: var(--dark-white);
 }
 
-.header.scrolled .loginBtn {
+/* .header.scrolled .loginBtn {
   background-color: var(--logo-color);
-}
+} */
 .header.scrolled .loginBtn:hover {
   background-color: var(--logo-color-hover);
   color: var(--dark-white);

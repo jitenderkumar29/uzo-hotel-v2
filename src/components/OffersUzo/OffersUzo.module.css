@@ -1,0 +1,163 @@
+.bckwht {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.top_banner {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner_img {
+  object-fit: contain;
+  background-size: cover; /* Fills viewport, may crop */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner_content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner_title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.cta_button {
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta_button:hover {
+  background-color: #e05d00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta_icon {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.decorative_elements {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.star {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .banner_title {
+    font-size: 2.5rem;
+  }
+
+  .top_banner {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner_title {
+    font-size: 2rem;
+  }
+
+  .top_banner {
+    height: 300px;
+  }
+
+  .cta_button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner_title {
+    font-size: 1.5rem;
+  }
+
+  .top_banner {
+    height: 250px;
+  }
+
+  .banner_content {
+    padding: 1rem;
+  }
+
+  .decorative_elements {
+    top: 10px;
+    right: 10px;
+  }
+
+  .star {
+    font-size: 1rem;
+  }
+}

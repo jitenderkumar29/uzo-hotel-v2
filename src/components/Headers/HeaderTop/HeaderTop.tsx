@@ -96,7 +96,7 @@ const HeaderTop = () => {
                 <Link href="/corporateMember" onClick={closeMobileMenu}>Corporate Member</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>Offers</Link>
+                <Link href="/offersUzo" onClick={closeMobileMenu}>Offers</Link>
               </li>
               <li>
                 <Link href="/" onClick={closeMobileMenu}>UZO Cards</Link>
@@ -225,7 +225,7 @@ const HeaderTop = () => {
                       <li>
                         <FontAwesomeIcon icon={faPassport} />
                         <Link href="/book?searchMode=Events" onClick={() => setShowBooking(false)}>
-                          Travel Insurance
+                          Insurance
                         </Link>
                       </li>
                     </ul>
@@ -322,13 +322,13 @@ const LogInSignUp = () => {
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <Link href="/LoginOne">
+          <Link href="/loginOne">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             UZO ONE Login
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <Link href="/LoginPass">
+          <Link href="/loginPass">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             UZO PASS Login
           </Link>

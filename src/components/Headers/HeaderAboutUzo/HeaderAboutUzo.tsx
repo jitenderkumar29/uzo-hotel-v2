@@ -633,6 +633,9 @@ const HeaderAboutUzo: React.FC = () => {
                       </div>
                     ))}
                   </div>
+                  <div className={styles.contentRight}>
+                    {""}
+                  </div>
                 </div>
                 {/* <div className={styles.megaMenuMain}>
                   <h2 className={styles.megaMenuTitle}>{menuItems[activeMenuItem].label}</h2>

@@ -7,6 +7,7 @@ import logoImage from '@/assets/icons/logo26.png';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 
 const LoginPass = () => {
@@ -144,9 +145,9 @@ const LoginPass = () => {
                 </div>
 
                 <div className={styles.forgot}>
-                  <a href="#" className={styles.link}>
+                  <Link href="/forgotPasswordUzoPass" className={styles.link}>
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -175,9 +176,9 @@ const LoginPass = () => {
               <div className={styles.register}>
                 <span>
                   Don&apos;t have an account?{' '}
-                  <a href="#" className={styles.link}>
+                  <Link href="/registerUzoPass" className={styles.link}>
                     Register
-                  </a>
+                  </Link>
                 </span>
               </div>
             </form>

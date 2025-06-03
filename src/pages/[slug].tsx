@@ -29,6 +29,13 @@ const LoginOne = lazy(() => import('../components/Auth/LoginOne/LoginOne'))
 const LoginPass = lazy(() => import('../components/Auth/LoginPass/LoginPass'))
 const AboutUzoHotels = lazy(() => import('../components/AboutUzoHotels/AboutUzoHotels'))
 const RegisterUser = lazy(() => import('../components/Auth/RegisterUser/RegisterUser'))
+const RegisterUzoOne = lazy(() => import('../components/Auth/RegisterUzoOne/RegisterUzoOne'))
+const RegisterUzoPass = lazy(() => import('../components/Auth/RegisterUzoPass/RegisterUzoPass'))
+const ForgotPasswordUser = lazy(() => import('../components/Auth/ForgotPasswordUser/ForgotPasswordUser'))
+const ResetPasswordUser = lazy(() => import('../components/Auth/ResetPasswordUser/ResetPasswordUser'))
+const ForgotPasswordUzoOne = lazy(() => import('../components/Auth/ForgotPasswordUzoOne/ForgotPasswordUzoOne'))
+const ForgotPasswordUzoPass = lazy(() => import('../components/Auth/ForgotPasswordUzoPass/ForgotPasswordUzoPass'))
+const OffersUzo = lazy(() => import('../components/OffersUzo/OffersUzo'))
 // Example of lazy-loaded components using `dynamic`
 // const Book = dynamic(() => import('./Book/Book'), { suspense: true }) as ComponentType;
 // const HotelBooking = dynamic(() => import('./HotelBooking/HotelBooking'), { suspense: true });
@@ -90,12 +97,12 @@ const pageMap: Record<string, () => ReactElement> = {
       <Login />
     </Suspense>
   ),
-  LoginOne: () => (
+  loginOne: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <LoginOne />
     </Suspense>
   ),
-  LoginPass: () => (
+  loginPass: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <LoginPass />
     </Suspense>
@@ -108,6 +115,42 @@ const pageMap: Record<string, () => ReactElement> = {
   registerUser: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <RegisterUser />
+    </Suspense>
+  ),
+  registerUzoOne: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RegisterUzoOne />
+    </Suspense>
+  ),
+  registerUzoPass: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RegisterUzoPass />
+    </Suspense>
+  ),
+  forgotPasswordUser: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ForgotPasswordUser />
+    </Suspense>
+  ),
+  resetPasswordUser: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResetPasswordUser />
+    </Suspense>
+  ),
+  forgotPasswordUzoOne: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ForgotPasswordUzoOne />
+    </Suspense>
+  ),
+
+  forgotPasswordUzoPass: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ForgotPasswordUzoPass />
+    </Suspense>
+  ),
+  offersUzo: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OffersUzo />
     </Suspense>
   ),
   // book: () => <Book />,
