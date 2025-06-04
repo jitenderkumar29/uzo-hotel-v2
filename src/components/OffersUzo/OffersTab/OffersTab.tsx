@@ -1,10 +1,11 @@
+'use client'
 import React, { useState } from 'react';
 import styles from './OffersTab.module.css';
 import { Plane, Hotel, Bus, Car, Flame, Clock } from 'lucide-react';
 import { FaPiggyBank } from 'react-icons/fa';
 import OfferCards from '../OfferCards/OfferCards';
 import { BiSolidOffer } from 'react-icons/bi';
-import { bankOffers, filterBankCategories, filterCategories, mockOffers } from '@/app/data';
+import { bankOffers, busOffers, cabOffers, expiredOffers, filterBankCategories, filterBusCategories, filterCabCategories, filterCategories, filterExpiredCategories, filterFlightCategories, filterHotCategories, filterHotelCategories, flightOffers, hotelOffers, hotOffers, mockOffers } from '@/app/data';
 
 const OffersTab: React.FC = () => {
   const [activeTab, setActiveTab] = useState('special-offers');
@@ -88,10 +89,18 @@ const OffersTab: React.FC = () => {
         <OfferCards offers={mockOffers} filterCategories={filterCategories} /></>)}
       {activeTab === "bank-offers" && (<>
         <OfferCards offers={bankOffers} filterCategories={filterBankCategories} /></>)}
-      {/* {activeTab === "flight-offers" && (<>
-        <OfferCards offers={flightOffers} filterCategories={filterFlightCategories} /></>)} */}
-      {/* {activeTab === "hotel-offers" && (<>
-        <OfferCards offers={hotelOffers} filterCategories={filterHotelCategories} /></>)} */}
+      {activeTab === "flight-offers" && (<>
+        <OfferCards offers={flightOffers} filterCategories={filterFlightCategories} /></>)}
+      {activeTab === "hotel-offers" && (<>
+        <OfferCards offers={hotelOffers} filterCategories={filterHotelCategories} /></>)}
+      {activeTab === "bus-offers" && (<>
+        <OfferCards offers={busOffers} filterCategories={filterBusCategories} /></>)}
+      {activeTab === "cab-offers" && (<>
+        <OfferCards offers={cabOffers} filterCategories={filterCabCategories} /></>)}
+      {activeTab === "hot-deals" && (<>
+        <OfferCards offers={hotOffers} filterCategories={filterHotCategories} /></>)}
+      {activeTab === "expired-offers" && (<>
+        <OfferCards offers={expiredOffers} filterCategories={filterExpiredCategories} /></>)}
     </>
   );
 };

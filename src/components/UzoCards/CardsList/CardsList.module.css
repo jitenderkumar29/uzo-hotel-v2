@@ -1,0 +1,110 @@
+.cardsSection {
+  width: 100%;
+  background-color: var(--dark-white);
+  /* background-color: #f3f6fb; */
+  padding: 1rem 1rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--link-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.1rem;
+  /* margin-bottom: 0.5rem; */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color-black);
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--dark-white);
+  border-radius: 12px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); */
+  /*padding: 1rem;
+  */
+  flex: 1;
+  /*width: 300px;
+  */
+  text-align: center;
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.applyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--light-orange);
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  gap: 0.5rem;
+}
+
+.applyButton:hover {
+  background-color: var(--dark-orange);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .cardsWrapper {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsWrapper {
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

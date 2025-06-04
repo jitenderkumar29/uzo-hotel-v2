@@ -1,0 +1,266 @@
+.headerTopBody {
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.HotelSearchBarTopBody {
+  background-color: var(--dark-accent);
+  position: sticky;
+  top: 0; /* This is crucial for sticky positioning to work */
+  z-index: 10;
+  /* Ensures the header stays above other content */
+  width: 100%; /* Takes full width */
+  /* z-index: 29; */
+  font-family: "Arial", sans-serif;
+}
+.uzoCardsSection {
+  width: 100%;
+  background-color: var(--dark-white);
+  font-family: "Arial", sans-serif;
+}
+
+.bannerArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  background-color: var(--dark-white);
+  /* background: linear-gradient(to right, #f5f8fd, #f0f4fc); */
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.bnrContent {
+  flex: 1 1 500px;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.bnrSubtitle {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.bnrTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-color-black);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.bnrTagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color-black);
+  margin-bottom: 0.5rem;
+}
+
+.bnrDesc {
+  font-size: 1rem;
+  color: var(--text-color-black);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  font-weight: 600;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: var(--dark-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.cardImages {
+  position: relative;
+  flex: 1 1 400px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: 120px;
+}
+
+.card {
+  position: absolute;
+  width: 240px;
+  height: 150px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card positioning to match the reference image */
+.card1 {
+  transform: rotate(-45deg) translate(-75px, -110px);
+  z-index: 1;
+  -webkit-transform: rotate(-45deg) translate(-75px, -110px);
+  -moz-transform: rotate(-45deg) translate(-75px, -110px);
+  -ms-transform: rotate(-45deg) translate(-75px, -110px);
+  -o-transform: rotate(-45deg) translate(-75px, -110px);
+}
+
+.card2 {
+  transform: rotate(-45deg) translate(-20px, -30px);
+  z-index: 2;
+  -webkit-transform: rotate(-45deg) translate(-20px, -30px);
+  -moz-transform: rotate(-45deg) translate(-20px, -30px);
+  -ms-transform: rotate(-45deg) translate(-20px, -30px);
+  -o-transform: rotate(-45deg) translate(-20px, -30px);
+}
+
+.card3 {
+  transform: rotate(-45deg) translate(-120px, 30px);
+  z-index: 4;
+  -webkit-transform: rotate(-45deg) translate(-120px, 30px);
+  -moz-transform: rotate(-45deg) translate(-120px, 30px);
+  -ms-transform: rotate(-45deg) translate(-120px, 30px);
+  -o-transform: rotate(-45deg) translate(-120px, 30px);
+}
+
+.card4 {
+  transform: rotate(-45deg) translate(-70px, 110px);
+  z-index: 3;
+  -webkit-transform: rotate(-45deg) translate(-70px, 110px);
+  -moz-transform: rotate(-45deg) translate(-70px, 110px);
+  -ms-transform: rotate(-45deg) translate(-70px, 110px);
+  -o-transform: rotate(-45deg) translate(-70px, 110px);
+}
+
+/* Hover effects */
+.card1:hover {
+  transform: scale(1.05) rotate(-45deg) translate(-75px, -110px);
+  z-index: 10;
+}
+
+.card2:hover {
+  transform: scale(1.05) rotate(-45deg) translate(-20px, -30px);
+  z-index: 10;
+}
+
+.card3:hover {
+  transform: scale(1.05) rotate(-45deg) translate(-120px, 30px);
+  z-index: 10;
+}
+
+.card4:hover {
+  transform: scale(1.05) rotate(-45deg) translate(-70px, 110px);
+  z-index: 10;
+}
+
+.card:hover {
+  /* transform: scale(1.05) !important; */
+  /*transform: scale(1.05) translateY(-10px) rotate(0deg) !important;
+  */ /*z-index: 10 !important;
+  */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bannerArea {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .bnrContent {
+    margin-bottom: 2rem;
+  }
+
+  .cardImages {
+    margin-top: 2rem;
+    min-height: 300px;
+  }
+
+  .card {
+    width: 200px;
+    height: 125px;
+  }
+
+  .card1 {
+    transform: rotate(-8deg) translate(-60px, -40px);
+  }
+
+  .card2 {
+    transform: rotate(-4deg) translate(-15px, -15px);
+  }
+
+  .card3 {
+    transform: rotate(2deg) translate(30px, 15px);
+  }
+
+  .card4 {
+    transform: rotate(8deg) translate(75px, 45px);
+  }
+}
+
+@media (max-width: 600px) {
+  .bnrTitle {
+    font-size: 2rem;
+  }
+
+  .bnrSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .bnrDesc {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: 160px;
+    height: 100px;
+  }
+
+  .card1 {
+    transform: rotate(-8deg) translate(-40px, -30px);
+  }
+
+  .card2 {
+    transform: rotate(-4deg) translate(-10px, -10px);
+  }
+
+  .card3 {
+    transform: rotate(2deg) translate(20px, 10px);
+  }
+
+  .card4 {
+    transform: rotate(8deg) translate(50px, 30px);
+  }
+}

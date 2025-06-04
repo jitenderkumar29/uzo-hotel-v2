@@ -566,6 +566,15 @@ export const filterBankCategories: FilterCategoryInterface[] = [
   { "value": "sbi_insrt", "label": "SBI Bank" },
   { "value": "standard_insrt", "label": "Standard Chartered" }
 ]
+export const filterDaywiseCategories: FilterCategoryInterface[] = [
+  { value: "mon_insrt", label: "Monday" },
+  { value: "tue_insrt", label: "Tuesday" },
+  { value: "wed_insrt", label: "Wednesday" },
+  { value: "thu_insrt", label: "Thursday" }, // Note: corrected spelling from "Thrusday"
+  { value: "fri_insrt", label: "Friday" },
+  { value: "sat_insrt", label: "Saturday" },
+  { value: "sun_insrt", label: "Sunday" }
+]
 
 export const flightOffers: OfferInterface[] = [
   {
@@ -918,3 +927,373 @@ export const hotelOffers: OfferInterface[] = [
 ]
 
 export const filterHotelCategories: FilterCategoryInterface[] = []
+
+export const busOffers: OfferInterface[] = [
+  {
+    "id": 1,
+    "title": "New User Offer",
+    "description": "Grab Discount Up to Rs. 250 on First Bus Booking with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/bus-img/bus-new-user-27dec24-sm.webp",
+    "link": "https://www.easemytrip.com/offers/bus-new-user.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTFIRST",
+    "categories": ["bus", "new_user"]
+  },
+  {
+    "id": 2,
+    "title": "Bus Deal",
+    "description": "Bus Tickets to Different Destinations At A Discount up to Rs. 500",
+    "imageUrl": "https://images.emtcontent.com/bus-img/emtbus-7jan25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/emt-bus.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTBUS",
+    "categories": ["bus", "discount"]
+  },
+  {
+    "id": 3,
+    "title": "Zing Bus Offer",
+    "description": "Be Ready for the Road Trip, Get Flat 12.5% OFF* on Bus Tickets",
+    "imageUrl": "https://images.emtcontent.com/bus-img/zingbus-23aug24-sm2.webp",
+    "link": "https://www.easemytrip.com/offers/zingbus.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTZING",
+    "categories": ["bus", "zingbus"]
+  },
+  {
+    "id": 4,
+    "title": "Deal of the Day",
+    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
+    "link": "https://www.easemytrip.com/offers/bus-easeday.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EASEDAY",
+    "categories": ["bus", "daily_deal"]
+  },
+  {
+    "id": 5,
+    "title": "VRL Travel Offer",
+    "description": "Enjoy 12% Discount & Up to Rs.100 on VRL Travels Bus Tickets",
+    "imageUrl": "https://images.emtcontent.com/bus-img/vrl-bus-29aug24-sm2.webp",
+    "link": "https://www.easemytrip.com/offers/vrl-bus-service.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTVRL",
+    "categories": ["bus", "vrl_travel"]
+  },
+  {
+    "id": 6,
+    "title": "Bus Offer",
+    "description": "Book Bus Tickets for Your Preferred Route at 10% Discount",
+    "imageUrl": "https://images.emtcontent.com/bus-img/bus10-7aug24-sm.png",
+    "link": "https://www.easemytrip.com/offers/bus10.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "BUS10",
+    "categories": ["bus", "discount"]
+  }
+]
+
+export const filterBusCategories: FilterCategoryInterface[] = []
+
+export const cabOffers: OfferInterface[] = [
+  {
+    "id": 1,
+    "title": "Deal of the Day",
+    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
+    "link": "https://www.easemytrip.com/offers/cab-easeday.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EASEDAY",
+    "categories": ["cab", "daily_deal"]
+  },
+  {
+    "id": 2,
+    "title": "Hourly rental cab",
+    "description": "Get up to Rs. 900 OFF on Cab Bookings with EaseMyTrip",
+    "imageUrl": "https://images.emtcontent.com/cab-img/rental-cabs-7aug24-sm.png",
+    "link": "https://www.easemytrip.com/offers/hourly-rental-cabs.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTHOURLY",
+    "categories": ["cab", "rental", "discount"]
+  },
+  {
+    "id": 3,
+    "title": "Cab Offer",
+    "description": "Get Up to 10% Off* on Airport transfer Hourly rental, One Way & Round Trip Cab Book",
+    "imageUrl": "https://images.emtcontent.com/cab-img/cab-deal-sm2.png",
+    "link": "https://www.easemytrip.com/offers/cab-deal.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTCAB",
+    "categories": ["cab", "discount"]
+  },
+  {
+    "id": 4,
+    "title": "Partial Payment",
+    "description": "Enjoy Cab Booking by Paying 15% and Rest to Driver",
+    "imageUrl": "https://images.emtcontent.com/offer-img/cab-partial-payment-sm.png",
+    "link": "https://www.easemytrip.com/offers/partial-payment.html",
+    "bookingPeriod": "",
+    "promoCode": "",
+    "categories": ["cab", "payment"]
+  }
+]
+
+export const filterCabCategories: FilterCategoryInterface[] = []
+
+export const hotOffers: OfferInterface[] = [
+  {
+    "id": 1,
+    "title": "Hero Fincorp",
+    "description": "Get an Instant Personal Loan of Up to Rs. 5,00,000",
+    "imageUrl": "https://images.emtcontent.com/offer-img/hero-25-05-sm21.webp",
+    "link": "https://www.easemytrip.com/offers/instant-personal-loan.html",
+    "bookingPeriod": "Avail Now",
+    "promoCode": "",
+    "categories": ["finance", "loan"]
+  },
+  {
+    "id": 2,
+    "title": "TaxManager",
+    "description": "Get Discounts on Expert-Assisted Tax Filing",
+    "imageUrl": "https://images.emtcontent.com/offer-img/taxmanager-23-05-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/taxmanager.html",
+    "bookingPeriod": "Valid till: 31st Mar, 2026",
+    "promoCode": "",
+    "categories": ["finance", "tax"]
+  },
+  {
+    "id": 3,
+    "title": "Aero Essentials",
+    "description": "Experience the Joy of Stress-Free Travel with Aero Essentials!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/Aero-essentials-sm.webp",
+    "link": "https://www.easemytrip.com/offers/aero-essentials.html",
+    "bookingPeriod": "Valid till: 31st Dec, 2025",
+    "promoCode": "",
+    "categories": ["travel", "essentials"]
+  },
+  {
+    "id": 4,
+    "title": "Outdoor Goats",
+    "description": "Get Travel Ready with Outdoor Goats!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/OG-08-may-sm.webp",
+    "link": "https://www.easemytrip.com/offers/outdoor-goats.html",
+    "bookingPeriod": "Valid till: 31st July, 2025",
+    "promoCode": "",
+    "categories": ["travel", "gear"]
+  },
+  {
+    "id": 5,
+    "title": "One Percent Club",
+    "description": "Address Your Finances with the One Percent Club!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/one-percent-offer-15-04-25-sm.png",
+    "link": "https://www.easemytrip.com/offers/one-percent.html",
+    "bookingPeriod": "Valid till: 31st Dec, 2025",
+    "promoCode": "",
+    "categories": ["finance", "investment"]
+  },
+  {
+    "id": 6,
+    "title": "abCoffee",
+    "description": "abCoffee Welcomes You with a Free Cappuccino",
+    "imageUrl": "https://images.emtcontent.com/offer-img/coffee-post-11-04-25-sm.png",
+    "link": "https://www.easemytrip.com/offers/abcoffee.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "",
+    "categories": ["food", "beverage"]
+  },
+  {
+    "id": 7,
+    "title": "McDelivery",
+    "description": "A Korean Meal Could Be Your Ticket to Wanderlust!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/mcdelivery22-03-25-sm.png",
+    "link": "https://www.easemytrip.com/offers/mcdelivery.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "KOREAN100",
+    "categories": ["food", "delivery"]
+  },
+  {
+    "id": 8,
+    "title": "FirstCry Offer",
+    "description": "Bring Joy to Your Baby's Giggle with FirstCry",
+    "imageUrl": "https://images.emtcontent.com/offer-img/first-cry-07march25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/first-cry.html",
+    "bookingPeriod": "Valid till: 31st March, 2026",
+    "promoCode": "FCEMT40",
+    "categories": ["shopping", "baby"]
+  },
+  {
+    "id": 9,
+    "title": "Salty Offer",
+    "description": "Glam Up with Timeless Accessories from Salty!",
+    "imageUrl": "https://images.emtcontent.com/offer-img/salty-27feb27-sm.png",
+    "link": "https://www.easemytrip.com/offers/salty.html",
+    "bookingPeriod": "Valid till: 31st July, 2025",
+    "promoCode": "EMT333",
+    "categories": ["fashion", "accessories"]
+  },
+  {
+    "id": 10,
+    "title": "Isak Fragrances Offer",
+    "description": "Turn Heads, Capture Hearts with Isak Fragrances",
+    "imageUrl": "https://images.emtcontent.com/offer-img/isak-fragrances-sm.webp",
+    "link": "https://www.easemytrip.com/offers/isak-fragrances.html",
+    "bookingPeriod": "Valid till: 30th Jun, 2025",
+    "promoCode": "EMTXISAK",
+    "categories": ["beauty", "fragrance"]
+  },
+  {
+    "id": 11,
+    "title": "M&S SPARKS Offer",
+    "description": "Take-Off with FLAT INR 500 OFF* on Flight Bookings",
+    "imageUrl": "https://images.emtcontent.com/offer-img/m-and-s-deal-sm2.webp",
+    "link": "https://www.easemytrip.com/offers/m-and-s-deal.html",
+    "bookingPeriod": "Book Now",
+    "promoCode": "",
+    "categories": ["travel", "fashion"]
+  },
+  {
+    "id": 12,
+    "title": "Kedia Capital Offer",
+    "description": "Enjoy Exclusive Benefits on your Demat Account",
+    "imageUrl": "https://images.emtcontent.com/offer-img/kedia-19jul24-sm.png",
+    "link": "https://www.easemytrip.com/offers/kedia-capital-deal.html",
+    "bookingPeriod": "Valid till: 31st July, 2025",
+    "promoCode": "EMT",
+    "categories": ["finance", "investment"]
+  },
+  {
+    "id": 13,
+    "title": "EatSure Offer",
+    "description": "Devour the Flavours You Love with EatSure",
+    "imageUrl": "https://images.emtcontent.com/offer-img/eat-sure-24jan25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/eat-sure.html",
+    "bookingPeriod": "Valid till: 31st Dec, 2025",
+    "promoCode": "EMTES120",
+    "categories": ["food", "delivery"]
+  },
+  {
+    "id": 14,
+    "title": "Commbitz x True dtac Offer",
+    "description": "Get Your Free Sim Card for Your Thailand Trip",
+    "imageUrl": "https://images.emtcontent.com/offer-img/commbitz-sm.webp",
+    "link": "https://www.easemytrip.com/offers/commbitz.html",
+    "bookingPeriod": "Book Now",
+    "promoCode": "",
+    "categories": ["travel", "sim"]
+  },
+  {
+    "id": 15,
+    "title": "Acko Technology",
+    "description": "Book your new car with Acko Drive today at unbeatable discounts",
+    "imageUrl": "https://images.emtcontent.com/offer-img/acko-sm5.png",
+    "link": "https://ackodrive.com/",
+    "bookingPeriod": "",
+    "promoCode": "",
+    "categories": ["automobile", "finance"]
+  }
+]
+
+export const filterHotCategories: FilterCategoryInterface[] = []
+
+export const expiredOffers: OfferInterface[] = [
+  {
+    "id": 1,
+    "title": "AirAsia Flight",
+    "description": "Book Flights to Thailand with AirAsia & Grab Up to 20% OFF*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/airasia-flight-route-1feb25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/airasia-flight-route.html",
+    "bookingPeriod": "Valid till : 1st Jun 2025",
+    "promoCode": "",
+    "categories": ["airAsia_insrt"]
+  },
+  {
+    "id": 2,
+    "title": "Yolo Bus",
+    "description": "Take the Savings Route with FLAT INR 100 Discount on Yolo Bus",
+    "imageUrl": "https://images.emtcontent.com/bus-img/yolo-bus-31may25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/yolo-bus.html",
+    "bookingPeriod": "Till 31st May, 2025",
+    "promoCode": "EMT100",
+    "categories": ["bus"]
+  },
+  {
+    "id": 3,
+    "title": "Starbucks Offer",
+    "description": "Slurp the Sun Away With Special Starbucks Offer",
+    "imageUrl": "https://images.emtcontent.com/offer-img/starbucks06-05-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/starbucks-offer.html",
+    "bookingPeriod": "Valid till : 31st May, 2025",
+    "promoCode": "",
+    "categories": ["food"]
+  },
+  {
+    "id": 4,
+    "title": "Fab Hotels",
+    "description": "Kickstart Your Dream Getaway With Up to 55% OFF* on Fab Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/FAB-hotel-29-04-25-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/fab-hotel/",
+    "bookingPeriod": "Valid till : 30th May 2025",
+    "promoCode": "",
+    "categories": ["hotel"]
+  },
+  {
+    "id": 5,
+    "title": "MP Tourism Hotels",
+    "description": "Experience the Best of Madhya Pradesh with Best Discounts on MP Tourism Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/mp-tourism-hotel-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/mp-hotel/",
+    "bookingPeriod": "Valid till : 31st May, 2025",
+    "promoCode": "",
+    "categories": ["hotel"]
+  },
+  {
+    "id": 6,
+    "title": "Ramee Hotels & Resorts",
+    "description": "Grab Up to 35% OFF* on Booking Ramee Group of Hotels",
+    "imageUrl": "https://images.emtcontent.com/hotel-img/ramee-group-hotels-sm.webp",
+    "link": "https://www.easemytrip.com/hotels/chains/ramee-group/",
+    "bookingPeriod": "Valid till :31st May 2025",
+    "promoCode": "",
+    "categories": ["hotel"]
+  },
+  {
+    "id": 7,
+    "title": "Indigo Flight Deal",
+    "description": "Get Up to 10% OFF* on Domestic & International Flights with IndiGo Airlines",
+    "imageUrl": "https://images.emtcontent.com/offer-img/Indigo-29-04-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/indigo-fares.html",
+    "bookingPeriod": "Valid till : 30th May 2025",
+    "promoCode": "",
+    "categories": ["indigo_insrt"]
+  },
+  {
+    "id": 8,
+    "title": "Egypt Air",
+    "description": "Enjoy Up to 50% OFF* on Flights Between Egypt & Mumbai",
+    "imageUrl": "https://images.emtcontent.com/offer-img/Egyptair-22-may-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/egyptair-flight.html",
+    "bookingPeriod": "Valid Till : 30th May, 2025",
+    "promoCode": "",
+    "categories": ["flight"]
+  },
+  {
+    "id": 9,
+    "title": "Royal Jordanian",
+    "description": "Enjoy Flights from India to UK & Europe at Fares Starting from INR 37,455*",
+    "imageUrl": "https://images.emtcontent.com/offer-img/royal-jordanian-may-25-sm.webp",
+    "link": "https://www.easemytrip.com/offers/royal-jordanian.html",
+    "bookingPeriod": "Valid till : 28th May, 2025",
+    "promoCode": "",
+    "categories": ["flight"]
+  },
+  {
+    "id": 10,
+    "title": "Gulf Air Offer",
+    "description": "Book Flights from India with Gulf Air & Enjoy Promotional Fares",
+    "imageUrl": "https://images.emtcontent.com/offer-img/GulfAirlines-17-may-sm.webp",
+    "link": "https://www.easemytrip.com/offers/gulf-air-fare.html",
+    "bookingPeriod": "Valid till: 28th May, 2025",
+    "promoCode": "",
+    "categories": ["gulfair_insrt"]
+  }
+]
+
+export const filterExpiredCategories: FilterCategoryInterface[] = []

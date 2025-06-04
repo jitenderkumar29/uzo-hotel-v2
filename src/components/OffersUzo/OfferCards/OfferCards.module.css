@@ -99,6 +99,10 @@
   margin-bottom: 20px;
 }
 
+.filtersSidebarDay {
+  margin-top: 1.25rem;
+}
+
 .filtersHeader h3 {
   font-size: 18px;
   font-weight: 600;

@@ -100,6 +100,7 @@ const HeaderTop = () => {
               </li>
               <li>
                 <Link href="/" onClick={closeMobileMenu}>UZO Cards</Link>
+                {/* <Link href="/uzoCards" onClick={closeMobileMenu}>UZO Cards</Link> */}
               </li>
               {/* <li>
                 <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
@@ -291,7 +292,8 @@ const HeaderTop = () => {
                 <Link href="/corporateMember" onClick={closeMobileMenu}>Corporate Member</Link>
               </li>
               <li>
-                <Link href="/" onClick={closeMobileMenu}>List Your Property</Link>
+                <Link href="/" onClick={closeMobileMenu}>UZO Cards</Link>
+                {/* <Link href="/UzoCards" onClick={closeMobileMenu}>UZO Cards</Link> */}
               </li>
               <li>
                 <Link href="/" onClick={closeMobileMenu}>English</Link>

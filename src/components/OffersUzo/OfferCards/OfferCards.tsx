@@ -1,8 +1,10 @@
+'use client'
 import { useState, useEffect, useCallback } from 'react';
 import { FiSearch, FiX, FiCopy, FiCheck } from 'react-icons/fi';
 import styles from './OfferCards.module.css';
 import { FilterCategoryInterface, OfferInterface } from '@/interfaces';
 import Image from 'next/image';
+import { filterDaywiseCategories } from '@/app/data';
 
 
 
@@ -73,7 +75,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.heading}>Amazing Travel Offers and Deals</h1>
+        <h1 className={styles.heading}>Amazing Offers and Deals</h1>
         <div className={styles.searchContainer}>
           <div className={styles.searchInput}>
             <FiSearch className={styles.searchIcon} />
@@ -102,6 +104,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
       </div>
 
       <div className={styles.mainContent}>
+
         {/* Filters sidebar - shown on desktop and when toggled on mobile */}
         {filterCategories.length > 0 && (<div className={`${styles.filtersSidebar} ${showFilters ? styles.showFilters : ''}`}>
           <div className={styles.filtersHeader}>
@@ -116,7 +119,6 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
               <FiX />
             </button>
           </div>
-
           <div className={styles.filtersList}>
             {filterCategories.map((category) => (
               <div key={category.value} className={styles.filterItem}>
@@ -132,14 +134,54 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
               </div>
             ))}
           </div>
-
           <button
             className={styles.applyFilters}
             onClick={() => setShowFilters(false)}
           >
             Apply Filters
           </button>
+
+          {filterDaywiseCategories.length > 0 && (<div className={styles.filtersSidebarDay}>
+            <div className={styles.filtersHeader}>
+              <h3>Daywise Offers</h3>
+              <button className={styles.resetButton} onClick={resetFilters}>
+                Reset
+              </button>
+              <button
+                className={styles.closeFilters}
+                onClick={() => setShowFilters(false)}
+              >
+                <FiX />
+              </button>
+            </div>
+
+            <div className={styles.filtersList}>
+              {filterDaywiseCategories.map((category) => (
+                <div key={category.value} className={styles.filterItem}>
+                  <label className={styles.checkboxContainer}>
+                    <input
+                      type="checkbox"
+                      checked={activeFilters.includes(category.value)}
+                      onChange={() => toggleFilter(category.value)}
+                    />
+                    <span className={styles.checkmark}></span>
+                    <span className={styles.filterLabel}>{category.label}</span>
+                  </label>
+                </div>
+              ))}
+            </div>
+            <button
+              className={styles.applyFilters}
+              onClick={() => setShowFilters(false)}
+            >
+              Apply Filters
+            </button>
+          </div>)}
         </div>)}
+        {/* {filterDaywiseCategories.length > 0 && (<div className={`${styles.filtersSidebar} ${showFilters ? styles.showFilters : ''}`}>
+
+
+        </div>)} */}
 
         {/* Offers grid */}
         <div className={styles.offersGrid}>
