@@ -19,7 +19,7 @@
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 20px;
   color: var(--text-color-black);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -27,7 +27,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 42px;
   color: var(--text-color-black);
   margin-bottom: 0.75rem;
   font-weight: 600;

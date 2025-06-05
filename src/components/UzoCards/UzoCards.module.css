@@ -39,13 +39,13 @@
 .bnrContent {
   flex: 1 1 500px;
   max-width: 600px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .bnrSubtitle {
   color: var(--link-color);
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
@@ -53,7 +53,7 @@
 
 .bnrTitle {
   font-size: 2.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-color-black);
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -263,4 +263,9 @@
   .card4 {
     transform: rotate(8deg) translate(50px, 30px);
   }
+}
+
+/* Footer style */
+.footerBox {
+  margin-top: -90px !important;
 }

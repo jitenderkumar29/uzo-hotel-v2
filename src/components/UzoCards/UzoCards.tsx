@@ -11,6 +11,7 @@ import CardBenefits from './CardBenefits/CardBenefits'
 import AvailBenefits from './AvailBenefits/AvailBenefits'
 import CardsList from './CardsList/CardsList'
 import Image from 'next/image'
+import FooterUzo from '../FooterUzo/FooterUzo';
 
 const UzoCards: React.FC = () => {
   return (
@@ -55,6 +56,9 @@ const UzoCards: React.FC = () => {
       <CardBenefits />
       <AvailBenefits />
       <CardsList />
+      <div className={styles.footerBox}>
+        <FooterUzo />
+      </div>
     </>
   )
 }

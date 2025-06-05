@@ -5,6 +5,7 @@ import styles from './OfferCards.module.css';
 import { FilterCategoryInterface, OfferInterface } from '@/interfaces';
 import Image from 'next/image';
 import { filterDaywiseCategories } from '@/app/data';
+import Link from 'next/link';
 
 
 
@@ -191,7 +192,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
             </div>
           ) : (
             filteredOffers.map((offer) => (
-              <a
+              <Link
                 key={offer.id}
                 href={offer.link}
                 target="_blank"
@@ -246,7 +247,7 @@ const OfferCards = ({ offers, filterCategories }: OfferCardsProps) => {
                     </div>
                   )}
                 </div>
-              </a>
+              </Link>
             ))
           )}
         </div>

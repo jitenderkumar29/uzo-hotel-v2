@@ -2,7 +2,8 @@
   width: 100%;
   background-color: var(--dark-white);
   /* background-color: #f3f6fb; */
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  font-family: "Arial", sans-serif;
 }
 
 .container {
@@ -20,7 +21,7 @@
   color: var(--link-color);
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 20px;
   /* margin-bottom: 0.5rem; */
 }
 

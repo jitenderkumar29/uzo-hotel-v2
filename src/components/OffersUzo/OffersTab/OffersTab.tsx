@@ -6,6 +6,7 @@ import { FaPiggyBank } from 'react-icons/fa';
 import OfferCards from '../OfferCards/OfferCards';
 import { BiSolidOffer } from 'react-icons/bi';
 import { bankOffers, busOffers, cabOffers, expiredOffers, filterBankCategories, filterBusCategories, filterCabCategories, filterCategories, filterExpiredCategories, filterFlightCategories, filterHotCategories, filterHotelCategories, flightOffers, hotelOffers, hotOffers, mockOffers } from '@/app/data';
+import Link from 'next/link';
 
 const OffersTab: React.FC = () => {
   const [activeTab, setActiveTab] = useState('special-offers');
@@ -15,50 +16,50 @@ const OffersTab: React.FC = () => {
       id: 'special-offers',
       label: 'Special Offers',
       icon: <BiSolidOffer className={styles.icon} />,
-      href: 'https://www.easemytrip.com/deals.html'
+      href: '/'
     },
     {
       id: 'bank-offers',
       label: 'Bank Offers',
       icon: <FaPiggyBank className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/bank-deals.html',
+      href: '/',
       hasNotification: true
     },
     {
       id: 'flight-offers',
       label: 'Flight Offers',
       icon: <Plane className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/flights.html'
+      href: '/'
     },
     {
       id: 'hotel-offers',
       label: 'Hotel Offers',
       icon: <Hotel className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/hotels.html'
+      href: '/'
     },
     {
       id: 'bus-offers',
       label: 'Bus Offers',
       icon: <Bus className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/bus.html'
+      href: '/'
     },
     {
       id: 'cab-offers',
       label: 'Cab Offers',
       icon: <Car className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/cab.html'
+      href: '/'
     },
     {
       id: 'hot-deals',
       label: 'Hot Deals',
       icon: <Flame className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/hot-deals.html'
+      href: '/'
     },
     {
       id: 'expired-offers',
       label: 'Expired Offers',
       icon: <Clock className={styles.icon} />,
-      href: 'https://www.easemytrip.com/offers/expired.html'
+      href: '/'
     }
   ];
 
@@ -68,7 +69,7 @@ const OffersTab: React.FC = () => {
         <div className={styles.tabsContainer}>
           <div className={styles.tabs}>
             {tabs.map((tab) => (
-              <a
+              <Link
                 key={tab.id}
                 href={tab.href}
                 className={`${styles.tab} ${activeTab === tab.id ? styles.activeTab : ''}`}
@@ -80,7 +81,7 @@ const OffersTab: React.FC = () => {
                 {tab.icon && <span className={styles.iconContainer}>{tab.icon}</span>}
                 <span className={styles.label}>{tab.label}</span>
                 {tab.hasNotification && <span className={styles.notificationDot}></span>}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
