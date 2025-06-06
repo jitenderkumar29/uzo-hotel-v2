@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef, FormEvent } from 'react';
+import { useState, useRef, FormEvent, useEffect } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import styles from './Login.module.css';
 import Image from 'next/image';
@@ -25,6 +25,15 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
+  // Check for saved username on component mount
+  useEffect(() => {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      setUsername(savedUsername);
+      setRememberMe(true); // Auto-check remember me if username exists
+    }
+  }, []);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -46,7 +55,8 @@ const Login = () => {
 
     // Simulate API call
     setTimeout(() => {
-      alert(`Welcome back, ${username}!`);
+
+      // alert(`Welcome back, ${username}!`);
       setIsSubmitting(false);
       // Reset form if not remembering
       if (!rememberMe) {
@@ -54,6 +64,20 @@ const Login = () => {
         setPassword('');
       }
     }, 1000);
+
+    setIsSubmitting(true);
+    try {
+      // Your login logic here
+      // await loginUser(username, password);
+
+      // Redirect after successful login
+      localStorage.setItem('username', username); // Save to localStorage
+      router.push('/'); // or any other route
+    } catch (error) {
+      console.error('Login failed', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,6 +172,23 @@ const Login = () => {
                 </div>
               </div>
 
+              {/* {user ? (
+                // Show user information when logged in
+                <div className={styles.userInfo}>
+                  Welcome, {user.name}!
+                </div>
+              ) : (
+                // Show login form when not logged in
+                <div className={styles.inputBox}>
+                  <button
+                    type="submit"
+                    className={styles.inputSubmit}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Logging in...' : 'Login'}
+                  </button>
+                </div>
+              )} */}
               <div className={styles.inputBox}>
                 <button
                   type="submit"

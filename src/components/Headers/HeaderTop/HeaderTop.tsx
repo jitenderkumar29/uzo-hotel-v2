@@ -10,18 +10,28 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus, faCalendar, faCreditCard, faFilm, faHotel, faPassport, faPlaneDeparture, faShip, faTasks, faTaxi, faTimes, faTrain, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import LanguageSelector from '../../LanguageSelector/LanguageSelector';
+import { useRouter } from 'next/navigation';
 
 const HeaderTop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const [showLogInDropDown, setShowLogInDropDown] = useState(false);
+  const [showUserDropDown, setShowUserDropDown] = useState(false);
   const bookingRef = useRef<HTMLDivElement>(null);
   const [showLanguage, setShowLanguage] = useState(false);
+  const [username, setUsername] = useState<string>('');
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  useEffect(() => {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      setUsername(savedUsername);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +62,8 @@ const HeaderTop = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [showBooking]);
+
+
 
   return (
     <div className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ''}`}>
@@ -116,6 +128,7 @@ const HeaderTop = () => {
                 {/* <Link href="/" onClick={closeMobileMenu}><LanguageSelector /></Link> */}
               </li>
             </ul>
+
             {showLanguage && (
               <div className={styles.loginDropDown} onMouseEnter={() => setShowLanguage(true)}
                 onMouseLeave={() => setShowLanguage(false)}
@@ -124,10 +137,21 @@ const HeaderTop = () => {
               </div>
             )}
 
-            <button className={styles.loginBtn} onMouseEnter={() => setShowLogInDropDown(true)}
-              onMouseLeave={() => setShowLogInDropDown(false)}
-            >Log In/SignUp</button>
+            {username ? (<button className={styles.loginBtn}
+              onMouseEnter={() => setShowUserDropDown(true)}
+              onMouseLeave={() => setShowUserDropDown(false)}>Welcome, {username}!</button>) :
+              // {username ? (<button className={styles.loginBtn}>Welcome, {username}!</button>) :
+              (<button className={styles.loginBtn} onMouseEnter={() => setShowLogInDropDown(true)}
+                onMouseLeave={() => setShowLogInDropDown(false)}
+              >Log In/SignUp</button>)}
 
+            {showUserDropDown && (
+              <div className={styles.loginDropDown} onMouseEnter={() => setShowUserDropDown(true)}
+                onMouseLeave={() => setShowUserDropDown(false)}
+              >
+                <UserProfileDropDown />
+              </div>
+            )}
             {showLogInDropDown && (
               <div className={styles.loginDropDown} onMouseEnter={() => setShowLogInDropDown(true)}
                 onMouseLeave={() => setShowLogInDropDown(false)}
@@ -331,6 +355,61 @@ const LogInSignUp = () => {
           <Link href="/loginPass">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             UZO PASS Login
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const UserProfileDropDown = () => {
+  const router = useRouter();
+  const logOut = () => {
+    // 1. Remove user data from localStorage
+    localStorage.removeItem('username');
+    localStorage.removeItem('authToken'); // Remove any auth tokens if you have them
+
+    // 2. Clear any application state (if using React state)
+    // setUser(null);
+    // setIsAuthenticated(false);
+
+    // 3. Redirect to login page
+    router.push('/login');
+
+    // 4. Optional: Force refresh if needed (rarely necessary)
+    // window.location.reload();
+  };
+  return (
+    <div className={styles.sideMenuDropdown}>
+      <div className={styles.sideMenuDropdown__linksListWrapper}>
+        <div className={styles.sideMenuDropdown__linkItem} >
+          <Link href="/userProfile" type='button' >
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            My Profile
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <Link href="/">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            My Wallet
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <Link href="/">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            My Booking
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <Link href="/">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            Reward Balance
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem} onClick={() => logOut()}>
+          <Link href="/">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            LogOut
           </Link>
         </div>
       </div>
