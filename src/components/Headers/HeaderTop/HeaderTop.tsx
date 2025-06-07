@@ -407,7 +407,7 @@ const UserProfileDropDown = () => {
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem} onClick={() => logOut()}>
-          <Link href="/">
+          <Link href="#">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             LogOut
           </Link>

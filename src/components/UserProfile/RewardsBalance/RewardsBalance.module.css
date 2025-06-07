@@ -1,0 +1,309 @@
+.container {
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* padding: 1rem; */
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, */
+  /* sans-serif; */
+  color: var(--text-color-black);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color-black);
+  /*margin-bottom: 1rem;
+  */
+  background-color: var(--dark-white);
+  padding: 1rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.rewardsCard {
+  background-color: var(--backgound);
+  border-radius: 8px;
+  /* padding: 1rem; */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.balanceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  background-color: var(--dark-white);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.pointsBox {
+  background-color: var(--dark-white);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 4px;
+  max-width: 200px;
+}
+
+.pointsValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a0d4a;
+  margin: 0;
+}
+
+.pointsLabel {
+  font-size: 0.9rem;
+  color: var(--text-color-black);
+  margin: 0.5rem 0 0;
+}
+
+.couponsSection {
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  margin-bottom: 1rem;
+}
+
+.couponItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.couponAmount {
+  font-weight: 500;
+}
+
+.couponCode {
+  color: var(--text-color-black);
+  font-family: monospace;
+}
+
+.copyButton {
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background-color: var(--dark-orange);
+}
+
+.redeemSection {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.redeemOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.redeemCard {
+  background-color: var(--dark-white);
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.redeemInfo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.redeemAmount {
+  font-weight: 600;
+}
+
+.redeemPoints {
+  font-size: 0.8rem;
+  color: var(--text-color-black);
+}
+
+.redeemButton {
+  background-color: var(--light-orange);
+  color: var(--dark-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.redeemButton:hover {
+  background-color: var(--dark-orange);
+}
+
+.activitySection {
+  margin-bottom: 1rem;
+}
+
+.activityTable {
+  background-color: var(--dark-white);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: #f5f5f5;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.cellPoints {
+  text-align: right;
+  font-weight: 500;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.waysToEarnSection {
+  margin-top: 2rem;
+  background-color: var(--dark-white);
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.waysToEarnTitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  margin-bottom: 1rem;
+}
+
+.waysToEarnGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.earnCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.earnIcon {
+  border: 1px solid var(--link-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--link-color);
+}
+
+.earnPoints {
+  font-weight: 500;
+}
+
+.earnLabel {
+  font-size: 0.9rem;
+  color: var(--text-color-black);
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .balanceSection {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .pointsBox {
+    min-width: 180px;
+  }
+
+  .couponsSection {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .redeemOptions {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .waysToEarnGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1.5fr 0.8fr;
+    font-size: 0.9rem;
+  }
+
+  .redeemOptions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .waysToEarnGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}

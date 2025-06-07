@@ -1,0 +1,178 @@
+/* CoTravellers.module.css */
+
+.coTravellersSection {
+  width: 100%;
+  /* padding: 2rem 1rem; */
+  /* background-color: #f8f9fb; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.statsContainerWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* overflow: hidden; */
+}
+
+.statsContainer {
+  display: flex;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cardContainer {
+  /* min-width: 280px; */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 150px;
+  flex: 1;
+}
+
+.imageContainer {
+  width: 300px;
+  height: 150px;
+  position: relative; /* required for next/image fill */
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.icon {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 0.4rem;
+  color: #333;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--dark-white);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.navButton:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navButtonLeft {
+  left: -15px;
+}
+.navButtonLeft:hover {
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
+}
+
+.navButtonRight {
+  right: -15px;
+}
+.navButtonRight:hover {
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
+}
+
+.footerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.footerText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.addButton {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.addButton:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .statsContainer {
+    gap: 0.5rem;
+  }
+
+  .cardContainer {
+    min-width: 80%;
+  }
+
+  .navButtonLeft {
+    left: 0;
+  }
+
+  .navButtonRight {
+    right: 0;
+  }
+
+  .footerSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

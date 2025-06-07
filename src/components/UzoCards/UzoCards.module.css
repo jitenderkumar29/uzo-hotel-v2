@@ -11,9 +11,9 @@
   z-index: 10;
   /* Ensures the header stays above other content */
   width: 100%; /* Takes full width */
-  /* z-index: 29; */
   font-family: "Arial", sans-serif;
 }
+
 .uzoCardsSection {
   width: 100%;
   background-color: var(--dark-white);

@@ -1,5 +1,5 @@
-"use client"
-import { useState } from "react"
+"use client";
+import { useCallback, useEffect, useState } from "react"
 import {
   ChevronDown,
   ChevronUp,
@@ -9,6 +9,16 @@ import {
 import styles from "./UserProfile.module.css"
 import { MapPin, Globe, Plane, Building, Bus, Car, Train, Palmtree, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import HeaderTop from "../Headers/HeaderTop/HeaderTop"
+import { HotelSearchProvider } from "@/app/Context/HotelSearchContext"
+import HotelSearchBarTop from "../SearchBarMultiple/HotelSearchBarTop/HotelSearchBarTop"
+import UserBooking from "./UserBooking/UserBooking"
+import CoTravellers from "./CoTravellers/CoTravellers"
+import PromoCodes from "./PromoCodes/PromoCodes"
+import CardsCoupons from "./CardsCoupons/CardsCoupons"
+import UzoWallet from "./UzoWallet/UzoWallet"
+import RewardsBalance from "./RewardsBalance/RewardsBalance"
+import { useRouter } from "next/navigation"
 
 type NavItem = {
   id: string;
@@ -24,12 +34,14 @@ type StatCard = {
   number: number;
   label: string;
   icon: React.ComponentType<{ size?: number }>;
+  imgUrl: string | undefined;
 };
 
 
 export default function UserProfile() {
   const [activeSection, setActiveSection] = useState<string>("general");
   const [selectedTab, setSelectedTab] = useState<string>("account");
+  const router = useRouter();
 
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([
     {
@@ -66,7 +78,7 @@ export default function UserProfile() {
     },
     {
       id: "gift",
-      title: "Cards/ Coupons",
+      title: "Cards/Coupons",
       description: "Check savings on your booking",
       imgUrl: "/icons/couponLogo.png",
       // icon: Gift,
@@ -108,51 +120,60 @@ export default function UserProfile() {
   const statsData: StatCard[] = [
     {
       id: "cities",
-      number: 0,
+      number: 5,
       label: "Cities\nVisited",
-      icon: MapPin
+      icon: MapPin,
+      imgUrl: "/images/cityBG.jpg"
     },
     {
       id: "countries",
-      number: 0,
+      number: 1,
       label: "Countries\nVisited",
-      icon: Globe
+      icon: Globe,
+      imgUrl: "/images/countriesBG.jpg"
+
     },
     {
       id: "flights",
-      number: 0,
+      number: 15,
       label: "Flight\nBookings",
-      icon: Plane
+      icon: Plane,
+      imgUrl: "/images/flightsBG.jpg"
     },
     {
       id: "hotels",
-      number: 0,
+      number: 10,
       label: "Hotel\nBookings",
-      icon: Building
+      icon: Building,
+      imgUrl: "/images/hotelsBG.jpg"
     },
     {
       id: "bus",
-      number: 0,
+      number: 50,
       label: "Bus\nBookings",
-      icon: Bus
+      icon: Bus,
+      imgUrl: "/images/busBG.jpg"
     },
     {
       id: "cab",
-      number: 0,
+      number: 20,
       label: "Cab\nBookings",
-      icon: Car
+      icon: Car,
+      imgUrl: "/images/cabBG.jpg"
     },
     {
       id: "train",
-      number: 0,
+      number: 25,
       label: "Train\nBookings",
-      icon: Train
+      icon: Train,
+      imgUrl: "/images/trainBG.jpg"
     },
     {
       id: "holidays",
-      number: 0,
+      number: 30,
       label: "Holidays\nBookings",
-      icon: Palmtree
+      icon: Palmtree,
+      imgUrl: "/images/holidaysBG.jpg"
     }
   ];
 
@@ -187,108 +208,175 @@ export default function UserProfile() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + statsData.length) % statsData.length);
   };
 
+  const logOut = useCallback(() => {
+    // const logOut = () => {
+    // logout logic here
+    // 1. Remove user data from localStorage
+    localStorage.removeItem('username');
+    localStorage.removeItem('authToken'); // Remove any auth tokens if you have them
+
+    // 2. Clear any application state (if using React state)
+    // setUser(null);
+    // setIsAuthenticated(false);
+
+    // 3. Redirect to login page
+    router.push('/login');
+
+    // 4. Optional: Force refresh if needed (rarely necessary)
+    // window.location.reload();
+  }, [router]);
+
+
+  useEffect(() => {
+    if (selectedTab === "logout") {
+      logOut();
+    }
+  }, [selectedTab, logOut]); // This will run whenever selectedTab changes
 
   return (
-    <div className={styles.userProfile}>
-      <div className={styles.container}>
-        <div className={styles.maincontent}>
-          {/* <div className={styles.breadcrumbOverlay}> */}
-          <div className={styles.breadcrumb}>
-            <span className={styles.breadcrumbItem}>My Bookings</span>
-            <span className={styles.breadcrumbSeparator}>&gt;</span>
-            <span className={styles.breadcrumbActive}>Profile</span>
-          </div>
-          {/* </div> */}
+    <>
+      <div className={styles.headerTopBody}>
+        <HeaderTop />
+      </div>
+      <div className={styles.HotelSearchBarTopBody}>
+        <HotelSearchProvider>
+          <HotelSearchBarTop />
+        </HotelSearchProvider>
+      </div>
+      <div className={styles.userProfile}>
+        <div className={styles.container}>
+          <div className={styles.maincontent}>
+            {/* <div className={styles.breadcrumbOverlay}> */}
+            <div className={styles.breadcrumb}>
+              <span className={styles.breadcrumbItem}>My Bookings</span>
+              <span className={styles.breadcrumbSeparator}>&gt;</span>
+              <span className={styles.breadcrumbActive}>Profile</span>
+              <span className={styles.breadcrumbSeparator}>&gt;</span>
+              <span className={styles.breadcrumbActiveSub}> {navigationItems.find(item => item.id === selectedTab)?.title}</span>
+            </div>
+            {/* </div> */}
 
-          <div className={styles.profileContainer}>
-            {/* Left Panel - Navigation */}
-            <div className={styles.leftPanel}>
-              <div className={styles.profileHeader}>
-                <div className={styles.profileName}>Mr. Customer</div>
-                <div className={styles.profileJoined}>
-                  <span className={styles.joinedText}>Joined Since May, 2020</span>
-                </div>
-                <div className={styles.profileCompletion}>
-                  <div className={styles.completionText}>
-                    <span className={styles.completionPercentage}>20%</span> Profile Completed
+            <div className={styles.profileContainer}>
+              {/* Left Panel - Navigation */}
+              <div className={styles.leftPanel}>
+                <div className={styles.profileHeader}>
+                  <div className={styles.profileName}>Mr. Customer</div>
+                  <div className={styles.profileJoined}>
+                    <span className={styles.joinedText}>Joined Since May, 2020</span>
                   </div>
-                  <div className={styles.progressBar}>
-                    <div className={styles.progressFill} style={{ width: '20%' }} />
+                  <div className={styles.profileCompletion}>
+                    <div className={styles.completionText}>
+                      <span className={styles.completionPercentage}>20%</span> Profile Completed
+                    </div>
+                    <div className={styles.progressBar}>
+                      <div className={styles.progressFill} style={{ width: '20%' }} />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className={styles.navItems}>
-                {navigationItems.map((item) => {
-                  // const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.id}
-                      className={`${styles.navItem} ${item.active ? styles.active : ''}`}
-                      onClick={() => handleNavItemClick(item.id)}
-                    >
-                      {/* <div className={styles.navIcon}>
+                <div className={styles.navItems}>
+                  {navigationItems.map((item) => {
+                    // const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.id}
+                        className={`${styles.navItem} ${item.active ? styles.active : ''}`}
+                        onClick={() => handleNavItemClick(item.id)}
+                      >
+                        {/* <div className={styles.navIcon}>
                         <Icon size={20} />
                       </div> */}
-                      <Image src={item.imgUrl || '/default-image.png'} alt={item.title} width={20} height={20} className={styles.imgIcon} />
-                      <div className={styles.navContent}>
-                        <div className={styles.navTitle}>{item.title}</div>
-                        {item.description && (
-                          <div className={styles.navDescription}>{item.description}</div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Right Panel - Content */}
-            {selectedTab === "account" && (<div className={styles.rightPanel}>
-              {/* Stats Cards */}
-              <div className={styles.statsSection}>
-                <div className={styles.statsContainerWrapper}>
-                  <div className={styles.statsContainer}>
-                    {visibleCards.map((card) => {
-                      const Icon = card.icon;
-                      return (
-                        <div key={card.id} className={styles.statsCard}>
-                          <div className={styles.statsNumber}>{card.number}</div>
-                          <div className={styles.statsLabel}>
-                            {card.label.split('\n').map((line, i) => (
-                              <span key={i}>
-                                {line}
-                                {i < card.label.split('\n').length - 1 && <br />}
-                              </span>
-                            ))}
-                          </div>
-                          <div className={styles.statsIcon}>
-                            <Icon size={20} />
-                          </div>
+                        <Image src={item.imgUrl || '/default-image.png'} alt={item.title} width={20} height={20} className={styles.imgIcon} />
+                        <div className={styles.navContent}>
+                          <div className={styles.navTitle}>{item.title}</div>
+                          {item.description && (
+                            <div className={styles.navDescription}>{item.description}</div>
+                          )}
                         </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Overlay Navigation Buttons */}
-                  <button
-                    className={`${styles.navButton} ${styles.navButtonLeft}`}
-                    onClick={prevCards}
-                    aria-label="Previous cards"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-
-                  <button
-                    className={`${styles.navButton} ${styles.navButtonRight}`}
-                    onClick={nextCards}
-                    aria-label="Next cards"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-              {/* <div className={styles.statsSection}>
+
+              {/* Right Panel - Content */}
+              {selectedTab === "account" && (<div className={styles.rightPanel}>
+                {/* Stats Cards */}
+                <div className={styles.statsSection}>
+                  <div className={styles.statsContainerWrapper}>
+                    <div className={styles.statsContainer}>
+                      {visibleCards.map((card) => {
+                        const Icon = card.icon;
+                        return (
+                          <>
+                            <div className={styles.cardContainer} key={card.id}>
+                              <div className={styles.imageWrapper}>
+                                <div className={styles.imageContainer}>
+                                  <Image
+                                    src={card.imgUrl || '/default-image.png'}
+                                    alt={card.label}
+                                    width={2417}
+                                    height={1500}
+                                    className={styles.cardImage}
+                                  />
+                                </div>
+                                <div className={styles.statsCardOverlay}>
+                                  <div className={styles.statsNumber}>{card.number}</div>
+                                  <div className={styles.statsLabel}>
+                                    {card.label.split('\n').map((line, i) => (
+                                      <span key={i}>
+                                        {line}
+                                        {i < card.label.split('\n').length - 1 && <br />}
+                                      </span>
+                                    ))}
+                                  </div>
+                                  <div className={styles.statsIcon}>
+                                    <Icon size={20} />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            {/* <div className={styles.imageContainer} key={card.id}>
+                            <Image src={card.imgUrl || '/default-image.png'} alt={card.label} width={2417} height={1500} />
+                          </div>
+                          <div key={card.id} className={styles.statsCard}>
+                            <div className={styles.statsNumber}>{card.number}</div>
+                            <div className={styles.statsLabel}>
+                              {card.label.split('\n').map((line, i) => (
+                                <span key={i}>
+                                  {line}
+                                  {i < card.label.split('\n').length - 1 && <br />}
+                                </span>
+                              ))}
+                            </div>
+                            <div className={styles.statsIcon}>
+                              <Icon size={20} />
+                            </div>
+                          </div> */}
+                          </>
+                        );
+                      })}
+                    </div>
+
+                    {/* Overlay Navigation Buttons */}
+                    <button
+                      className={`${styles.navButton} ${styles.navButtonLeft}`}
+                      onClick={prevCards}
+                      aria-label="Previous cards"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+
+                    <button
+                      className={`${styles.navButton} ${styles.navButtonRight}`}
+                      onClick={nextCards}
+                      aria-label="Next cards"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </div>
+                </div>
+                {/* <div className={styles.statsSection}>
             <button
               className={styles.navButton}
               onClick={prevCards}
@@ -328,8 +416,8 @@ export default function UserProfile() {
             </button>
           </div> */}
 
-              {/* <Icon className={styles.statsIcon} /> */}
-              {/* <div className={styles.statsContainer}>
+                {/* <Icon className={styles.statsIcon} /> */}
+                {/* <div className={styles.statsContainer}>
             <div className={styles.statsCard}>
               <div className={styles.statsNumber}>0</div>
               <div className={styles.statsLabel}>
@@ -412,355 +500,375 @@ export default function UserProfile() {
           </div> */}
 
 
-              {/* Form Sections */}
-              <div className={styles.formSections}>
-                {/* General Details */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("general")}>
-                    <h2 className={styles.sectionTitle}>General Details</h2>
-                    {activeSection === "general" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
-
-                  {activeSection === "general" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Passenger Type <span className={styles.required}>*</span>
-                          </label>
-                          <select className={styles.formSelect}>
-                            <option value="">Select</option>
-                            <option value="adult">Adult</option>
-                            <option value="child">Child</option>
-                            <option value="infant">Infant</option>
-                          </select>
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            First Name <span className={styles.required}>*</span>
-                          </label>
-                          <input type="text" placeholder="First Name" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Last Name</label>
-                          <input type="text" placeholder="Last Name" className={styles.formInput} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Date of Birth <span className={styles.required}>*</span>
-                          </label>
-                          <input type="date" className={styles.formInput} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Address</label>
-                          <input type="text" placeholder="Address" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>City</label>
-                          <input type="text" placeholder="City" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>State</label>
-                          <input type="text" placeholder="State" className={styles.formInput} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>PinCode</label>
-                          <input type="text" placeholder="Pincode" className={styles.formInput} maxLength={6} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Update</button>
-                      </div>
+                {/* Form Sections */}
+                <div className={styles.formSections}>
+                  {/* General Details */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("general")}>
+                      <h2 className={styles.sectionTitle}>General Details</h2>
+                      {activeSection === "general" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                     </div>
-                  )}
-                </div>
 
-                {/* Contact Details */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("contact")}>
-                    <h2 className={styles.sectionTitle}>Contact Details</h2>
-                    {activeSection === "contact" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
+                    {activeSection === "general" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Passenger Type <span className={styles.required}>*</span>
+                            </label>
+                            <select className={styles.formSelect}>
+                              <option value="">Select</option>
+                              <option value="adult">Adult</option>
+                              <option value="child">Child</option>
+                              <option value="infant">Infant</option>
+                            </select>
+                          </div>
 
-                  {activeSection === "contact" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.contactRow}>
-                        <div className={styles.contactColumn}>
-                          <div className={styles.contactHeader}>
-                            <h3 className={styles.contactTitle}>Email Id</h3>
-                            <button className={styles.addButton}>
-                              <Plus size={16} /> Add
-                            </button>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              First Name <span className={styles.required}>*</span>
+                            </label>
+                            <input type="text" placeholder="First Name" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Last Name</label>
+                            <input type="text" placeholder="Last Name" className={styles.formInput} />
                           </div>
                         </div>
 
-                        <div className={styles.contactColumn}>
-                          <div className={styles.contactHeader}>
-                            <h3 className={styles.contactTitle}>Mobile No</h3>
-                            <button className={styles.addButton}>
-                              <Plus size={16} /> Add
-                            </button>
-                          </div>
-                          <div className={styles.verifiedContact}>
-                            <span>7042341856</span>
-                            <span className={styles.verifiedBadge}>
-                              <Check size={14} />
-                            </span>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Date of Birth <span className={styles.required}>*</span>
+                            </label>
+                            <input type="date" className={styles.formInput} />
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
 
-                {/* Passport Details */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("passport")}>
-                    <h2 className={styles.sectionTitle}>Passport Details</h2>
-                    {activeSection === "passport" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Address</label>
+                            <input type="text" placeholder="Address" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>City</label>
+                            <input type="text" placeholder="City" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>State</label>
+                            <input type="text" placeholder="State" className={styles.formInput} />
+                          </div>
+                        </div>
+
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>PinCode</label>
+                            <input type="text" placeholder="Pincode" className={styles.formInput} maxLength={6} />
+                          </div>
+                        </div>
+
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Update</button>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
-                  {activeSection === "passport" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Passport Number <span className={styles.required}>*</span>
-                          </label>
-                          <input type="text" placeholder="Passport Number" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Passport Expiry Date <span className={styles.required}>*</span>
-                          </label>
-                          <input type="date" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Upload Passport Copy</label>
-                          <div className={styles.fileUpload}>
-                            <button className={styles.fileButton}>
-                              Choose File
-                            </button>
-                            <input type="file" className={styles.fileInput} />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Update</button>
-                      </div>
+                  {/* Contact Details */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("contact")}>
+                      <h2 className={styles.sectionTitle}>Contact Details</h2>
+                      {activeSection === "contact" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                     </div>
-                  )}
-                </div>
 
-                {/* Visa Details */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("visa")}>
-                    <h2 className={styles.sectionTitle}>Visa Details</h2>
-                    {activeSection === "visa" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
+                    {activeSection === "contact" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.contactRow}>
+                          <div className={styles.contactColumn}>
+                            <div className={styles.contactHeader}>
+                              <h3 className={styles.contactTitle}>Email Id</h3>
+                              <button className={styles.addButton}>
+                                <Plus size={16} /> Add
+                              </button>
+                            </div>
+                          </div>
 
-                  {activeSection === "visa" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Visa Number <span className={styles.required}>*</span>
-                          </label>
-                          <input type="text" placeholder="Visa Number" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Visa Expiry Date <span className={styles.required}>*</span>
-                          </label>
-                          <input type="date" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Upload Visa Copy</label>
-                          <div className={styles.fileUpload}>
-                            <button className={styles.fileButton}>
-                              Choose File
-                            </button>
-                            <input type="file" className={styles.fileInput} />
+                          <div className={styles.contactColumn}>
+                            <div className={styles.contactHeader}>
+                              <h3 className={styles.contactTitle}>Mobile No</h3>
+                              <button className={styles.addButton}>
+                                <Plus size={16} /> Add
+                              </button>
+                            </div>
+                            <div className={styles.verifiedContact}>
+                              <span>7042341856</span>
+                              <span className={styles.verifiedBadge}>
+                                <Check size={14} />
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
-
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Update</button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Frequent Flyer Detail */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("frequentFlyer")}>
-                    <h2 className={styles.sectionTitle}>Frequent Flyer Detail</h2>
-                    {activeSection === "frequentFlyer" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    )}
                   </div>
 
-                  {activeSection === "frequentFlyer" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Airline Name</label>
-                          <select className={styles.formSelect}>
-                            <option value="">Select Airline</option>
-                            <option value="air_india">Air India</option>
-                            <option value="indigo">IndiGo</option>
-                            <option value="emirates">Emirates</option>
-                            <option value="lufthansa">Lufthansa</option>
-                          </select>
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Frequent Flyer No</label>
-                          <input type="text" placeholder="Frequent Flyer No" className={styles.formInput} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Submit</button>
-                      </div>
+                  {/* Passport Details */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("passport")}>
+                      <h2 className={styles.sectionTitle}>Passport Details</h2>
+                      {activeSection === "passport" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                     </div>
-                  )}
-                </div>
 
-                {/* Covid-19 Vaccination Certificates */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("covid")}>
-                    <h2 className={styles.sectionTitle}>Covid-19 Vaccination Certificates</h2>
-                    {activeSection === "covid" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
+                    {activeSection === "passport" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Passport Number <span className={styles.required}>*</span>
+                            </label>
+                            <input type="text" placeholder="Passport Number" className={styles.formInput} />
+                          </div>
 
-                  {activeSection === "covid" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            No of Vaccines <span className={styles.required}>*</span>
-                          </label>
-                          <input type="number" min="1" max="9" className={styles.formInput} />
-                        </div>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Passport Expiry Date <span className={styles.required}>*</span>
+                            </label>
+                            <input type="date" className={styles.formInput} />
+                          </div>
 
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Last Vaccination Date <span className={styles.required}>*</span>
-                          </label>
-                          <input type="date" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>
-                            Vaccination Name <span className={styles.required}>*</span>
-                          </label>
-                          <input type="text" placeholder="Vaccination Name" className={styles.formInput} />
-                        </div>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Upload Certificate</label>
-                          <div className={styles.fileUpload}>
-                            <button className={styles.fileButton}>
-                              Choose File
-                            </button>
-                            <input type="file" className={styles.fileInput} />
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Upload Passport Copy</label>
+                            <div className={styles.fileUpload}>
+                              <button className={styles.fileButton}>
+                                Choose File
+                              </button>
+                              <input type="file" className={styles.fileInput} />
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Update</button>
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Update</button>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* IRCTC Profile */}
-                <div className={styles.formSection}>
-                  <div className={styles.sectionHeader} onClick={() => toggleSection("irctc")}>
-                    <h2 className={styles.sectionTitle}>IRCTC Profile</h2>
-                    {activeSection === "irctc" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    )}
                   </div>
 
-                  {activeSection === "irctc" && (
-                    <div className={styles.sectionContent}>
-                      <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>IRCTC User Name</label>
-                          <input type="text" placeholder="IRCTC UserId" className={styles.formInput} />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                          <label className={styles.formLabel}>Select Prefered Seat</label>
-                          <select className={styles.formSelect}>
-                            <option value="">Select Berth Preference</option>
-                            <option value="lower">Lower</option>
-                            <option value="upper">Upper</option>
-                            <option value="middle">Middle</option>
-                            <option value="side_lower">Side Lower</option>
-                            <option value="side_upper">Side Upper</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div className={styles.formActions}>
-                        <button className={styles.updateButton}>Update</button>
-                      </div>
-
-                      <div className={styles.irctcLinks}>
-                        <button className={styles.irctcLink}>
-                          Create IRCTC Account
-                        </button>
-                        <button className={styles.irctcLink}>
-                          Forgot IRCTC User ID
-                        </button>
-                        <button className={styles.irctcLink}>
-                          Reset IRCTC Password
-                        </button>
-                      </div>
+                  {/* Visa Details */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("visa")}>
+                      <h2 className={styles.sectionTitle}>Visa Details</h2>
+                      {activeSection === "visa" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                     </div>
-                  )}
-                </div>
 
-                <div className={styles.deactivateAccount}>
-                  <button className={styles.deactivateButton}>
-                    De-Activate Account
-                  </button>
-                </div>
-              </div>
-            </div>)}
+                    {activeSection === "visa" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Visa Number <span className={styles.required}>*</span>
+                            </label>
+                            <input type="text" placeholder="Visa Number" className={styles.formInput} />
+                          </div>
 
-            {selectedTab === "bookings" && (<div className={styles.rightPanel}>bookings</div>)}
-            {selectedTab === "travelers" && (<div className={styles.rightPanel}>travelers</div>)}
-            {selectedTab === "promo" && (<div className={styles.rightPanel}>promotions</div>)}
-            {selectedTab === "gift" && (<div className={styles.rightPanel}>gift</div>)}
-            {selectedTab === "wallet" && (<div className={styles.rightPanel}>wallet</div>)}
-            {selectedTab === "settings" && (<div className={styles.rightPanel}>settings</div>)}
-            {selectedTab === "logout" && (<div className={styles.rightPanel}>logout</div>)}
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Visa Expiry Date <span className={styles.required}>*</span>
+                            </label>
+                            <input type="date" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Upload Visa Copy</label>
+                            <div className={styles.fileUpload}>
+                              <button className={styles.fileButton}>
+                                Choose File
+                              </button>
+                              <input type="file" className={styles.fileInput} />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Update</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Frequent Flyer Detail */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("frequentFlyer")}>
+                      <h2 className={styles.sectionTitle}>Frequent Flyer Detail</h2>
+                      {activeSection === "frequentFlyer" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </div>
+
+                    {activeSection === "frequentFlyer" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Airline Name</label>
+                            <select className={styles.formSelect}>
+                              <option value="">Select Airline</option>
+                              <option value="air_india">Air India</option>
+                              <option value="indigo">IndiGo</option>
+                              <option value="emirates">Emirates</option>
+                              <option value="lufthansa">Lufthansa</option>
+                            </select>
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Frequent Flyer No</label>
+                            <input type="text" placeholder="Frequent Flyer No" className={styles.formInput} />
+                          </div>
+                        </div>
+
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Submit</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Covid-19 Vaccination Certificates */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("covid")}>
+                      <h2 className={styles.sectionTitle}>Covid-19 Vaccination Certificates</h2>
+                      {activeSection === "covid" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </div>
+
+                    {activeSection === "covid" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              No of Vaccines <span className={styles.required}>*</span>
+                            </label>
+                            <input type="number" min="1" max="9" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Last Vaccination Date <span className={styles.required}>*</span>
+                            </label>
+                            <input type="date" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>
+                              Vaccination Name <span className={styles.required}>*</span>
+                            </label>
+                            <input type="text" placeholder="Vaccination Name" className={styles.formInput} />
+                          </div>
+                        </div>
+
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Upload Certificate</label>
+                            <div className={styles.fileUpload}>
+                              <button className={styles.fileButton}>
+                                Choose File
+                              </button>
+                              <input type="file" className={styles.fileInput} />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Update</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* IRCTC Profile */}
+                  <div className={styles.formSection}>
+                    <div className={styles.sectionHeader} onClick={() => toggleSection("irctc")}>
+                      <h2 className={styles.sectionTitle}>IRCTC Profile</h2>
+                      {activeSection === "irctc" ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </div>
+
+                    {activeSection === "irctc" && (
+                      <div className={styles.sectionContent}>
+                        <div className={styles.formRow}>
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>IRCTC User Name</label>
+                            <input type="text" placeholder="IRCTC UserId" className={styles.formInput} />
+                          </div>
+
+                          <div className={styles.formGroup}>
+                            <label className={styles.formLabel}>Select Prefered Seat</label>
+                            <select className={styles.formSelect}>
+                              <option value="">Select Berth Preference</option>
+                              <option value="lower">Lower</option>
+                              <option value="upper">Upper</option>
+                              <option value="middle">Middle</option>
+                              <option value="side_lower">Side Lower</option>
+                              <option value="side_upper">Side Upper</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className={styles.formActions}>
+                          <button className={styles.updateButton}>Update</button>
+                        </div>
+
+                        <div className={styles.irctcLinks}>
+                          <button className={styles.irctcLink}>
+                            Create IRCTC Account
+                          </button>
+                          <button className={styles.irctcLink}>
+                            Forgot IRCTC User ID
+                          </button>
+                          <button className={styles.irctcLink}>
+                            Reset IRCTC Password
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className={styles.deactivateAccount}>
+                    <button className={styles.deactivateButton}>
+                      De-Activate Account
+                    </button>
+                  </div>
+                </div>
+              </div>)}
+
+              {selectedTab === "bookings" && (<div className={styles.rightPanel}>
+                <UserBooking />
+              </div>)}
+              {selectedTab === "travelers" && (<div className={styles.rightPanel}>
+                <CoTravellers />
+              </div>)}
+              {selectedTab === "promo" && (<div className={styles.rightPanel}>
+                <PromoCodes />
+              </div>)}
+              {selectedTab === "gift" && (<div className={styles.rightPanel}>
+                <CardsCoupons />
+              </div>)}
+              {selectedTab === "wallet" && (<div className={styles.rightPanel}>
+                <UzoWallet />
+              </div>)}
+              {selectedTab === "reward" && (<div className={styles.rightPanel}>
+                <RewardsBalance />
+              </div>)}
+              {selectedTab === "settings" && (<div className={styles.rightPanel}>
+                {/* <SettingsUser /> */}
+              </div>)}
+              {selectedTab === "logout" && (<div className={styles.rightPanel} onClick={() => logOut()}>
+              </div>)}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {/* <div className={styles.footerBox}>
+        <FooterUzo />
+      </div> */}
+    </>
   )
 }
