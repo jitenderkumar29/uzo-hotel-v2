@@ -15,11 +15,10 @@ import HotelSearchBarTop from "../SearchBarMultiple/HotelSearchBarTop/HotelSearc
 import UserBooking from "./UserBooking/UserBooking"
 import CoTravellers from "./CoTravellers/CoTravellers"
 import PromoCodes from "./PromoCodes/PromoCodes"
-import CardsCoupons from "./CardsCoupons/CardsCoupons"
-import UzoWallet from "./UzoWallet/UzoWallet"
 import RewardsBalance from "./RewardsBalance/RewardsBalance"
 import { useRouter, useSearchParams } from "next/navigation"
 import SettingsUser from "./SettingsUser/SettingsUser";
+import GiftCards from "./GiftCards/GiftCards";
 
 type NavItem = {
   id: string;
@@ -96,7 +95,7 @@ export default function UserProfile() {
     },
     {
       id: "gift",
-      title: "Cards/Coupons",
+      title: "Gift Cards",
       description: "Check savings on your booking",
       imgUrl: "/icons/couponLogo.png",
       // icon: Gift,
@@ -354,23 +353,7 @@ export default function UserProfile() {
                                 </div>
                               </div>
                             </div>
-                            {/* <div className={styles.imageContainer} key={card.id}>
-                            <Image src={card.imgUrl || '/default-image.png'} alt={card.label} width={2417} height={1500} />
-                          </div>
-                          <div key={card.id} className={styles.statsCard}>
-                            <div className={styles.statsNumber}>{card.number}</div>
-                            <div className={styles.statsLabel}>
-                              {card.label.split('\n').map((line, i) => (
-                                <span key={i}>
-                                  {line}
-                                  {i < card.label.split('\n').length - 1 && <br />}
-                                </span>
-                              ))}
-                            </div>
-                            <div className={styles.statsIcon}>
-                              <Icon size={20} />
-                            </div>
-                          </div> */}
+
                           </>
                         );
                       })}
@@ -394,128 +377,6 @@ export default function UserProfile() {
                     </button>
                   </div>
                 </div>
-                {/* <div className={styles.statsSection}>
-            <button
-              className={styles.navButton}
-              onClick={prevCards}
-              aria-label="Previous cards"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <div className={styles.statsContainer}>
-              {visibleCards.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.id} className={styles.statsCard}>
-                    <div className={styles.statsNumber}>{card.number}</div>
-                    <div className={styles.statsLabel}>
-                      {card.label.split('\n').map((line, i) => (
-                        <span key={i}>
-                          {line}
-                          {i < card.label.split('\n').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </div>
-                    <div className={styles.statsIcon}>
-                      <Icon size={20} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <button
-              className={styles.navButton}
-              onClick={nextCards}
-              aria-label="Next cards"
-              >
-              <ChevronRight size={20} />
-            </button>
-          </div> */}
-
-                {/* <Icon className={styles.statsIcon} /> */}
-                {/* <div className={styles.statsContainer}>
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Cities
-                <br />
-                Visited
-              </div>
-              <MapPin className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Countries
-                <br />
-                Visited
-              </div>
-              <Globe className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Flight
-                <br />
-                Bookings
-              </div>
-              <Plane className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Hotel
-                <br />
-                Bookings
-              </div>
-              <Building className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Bus
-                <br />
-                Bookings
-              </div>
-              <Bus className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Cab
-                <br />
-                Bookings
-              </div>
-              <Car className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Train
-                <br />
-                Bookings
-              </div>
-              <Train className={styles.statsIcon} />
-            </div>
-
-            <div className={styles.statsCard}>
-              <div className={styles.statsNumber}>0</div>
-              <div className={styles.statsLabel}>
-                Holidays
-                <br />
-                Bookings
-              </div>
-              <Palmtree className={styles.statsIcon} />
-            </div>
-          </div> */}
 
 
                 {/* Form Sections */}
@@ -867,10 +728,10 @@ export default function UserProfile() {
                 <PromoCodes />
               </div>)}
               {selectedTab === "gift" && (<div className={styles.rightPanel}>
-                <CardsCoupons />
+                <GiftCards />
               </div>)}
               {selectedTab === "wallet" && (<div className={styles.rightPanel}>
-                <UzoWallet />
+                {/* <UzoWallet /> */}
               </div>)}
               {selectedTab === "reward" && (<div className={styles.rightPanel}>
                 <RewardsBalance />

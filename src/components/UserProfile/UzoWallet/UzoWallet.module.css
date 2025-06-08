@@ -88,6 +88,14 @@
   transform: translateY(-2px);
 }
 
+.transferDetails {
+  width: 50%;
+}
+
+.addWalletMoney {
+  width: 50%;
+}
+
 .transferInfo h2 {
   font-size: 18px;
   font-weight: 600;
@@ -100,6 +108,15 @@
   color: var(--text-color-black);
   display: flex;
   align-items: center;
+}
+.transferInfo:hover p {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.transferLinkIcon {
+  color: var(--link-color);
+  margin-left: 10px;
 }
 
 .arrowIcon {
@@ -128,7 +145,7 @@
   min-width: 120px;
   background-color: var(--dark-white);
   border-radius: 8px;
-  padding: 24px;
+  padding: 24px 12px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-color);
@@ -358,9 +375,10 @@
   color: #ff8f00;
 }
 
-.statusBadge.failed {
+.statusBadge.refund {
   background-color: #ffebee;
-  color: #c62828;
+  color: #2e7d32;
+  /* color: #c62828; */
 }
 
 /* Modals */
@@ -542,4 +560,65 @@
   .spendingCategories {
     flex-direction: column;
   }
+}
+
+/* Tab Style */
+/* Tabbed Summary Styles */
+.tabbedSummaryContainer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.summaryTabs {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.summaryTab {
+  flex: 1;
+  padding: 2.25rem 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.summaryTab:hover {
+  background-color: #f9f9f9;
+}
+
+.summaryTab.activeTab {
+  color: #147ad6;
+  font-weight: 600;
+  border-bottom: 2px solid #147ad6;
+}
+
+.tabIcon {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.tabContent {
+  padding: 20px;
+}
+
+.summaryCard {
+  text-align: center;
+  padding: 15px;
+}
+
+.summaryDescription {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
 }

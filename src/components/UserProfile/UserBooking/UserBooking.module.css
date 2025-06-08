@@ -1,7 +1,5 @@
 .container {
   width: 100%;
-  /* padding: 2rem; */
-  /* background-color: #f9fafb; */
 }
 
 .mainContent {
@@ -17,28 +15,15 @@
   gap: 1rem;
 }
 
-/* Tabs Carousel */
-.tabsContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.carouselWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.tabsWrapper {
-  display: flex;
+/* Tabs Grid */
+.tabsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  flex: 1;
-  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .tab {
-  flex: 1 0 30%;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -91,36 +76,192 @@
   color: var(--text-color-black);
 }
 
-/* Carousel Buttons */
-.navButton {
-  background-color: #f1f5f9;
-  border: none;
-  padding: 0.5rem;
+/* Booking Content */
+.bookingContent {
+  background-color: var(--dark-white);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+.bookingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bookingCard {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.bookingImage {
+  width: 200px;
+  height: 150px;
   border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookingDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bookingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bookingTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.bookingStatus {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.bookingStatus.confirmed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.bookingStatus.completed {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.bookingStatus.refund-pending {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.bookingStatus.payment-failed {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.bookingStatus.payment-verification {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.bookingMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color-black);
+}
+
+.bookingDate,
+.bookingAmount {
   display: flex;
   align-items: center;
-  justify-content: center;
-  -webkit-transition: background-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease;
-  -ms-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
+  gap: 0.5rem;
 }
 
-.navButton:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.metaIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-color-black);
 }
 
-.navButton:hover:not(:disabled) {
-  background-color: #e2e8f0;
+.amount {
+  font-weight: 600;
+}
+
+.bookingActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.viewDetailsBtn,
+.cancelBtn,
+.refundBtn,
+.exploreBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.viewDetailsBtn {
+  background-color: var(--light-orange);
+  color: #fff;
+  border: none;
+  white-space: nowrap;
+  display: inline-flex; /* or inline-block */
+  align-items: center; /* vertically center text/icons */
+  gap: 0.5rem;
+  /* background-color: var(--link-color);
+  color: white;
+  border: none; */
+}
+
+.viewDetailsBtn:hover {
+  background-color: var(--dark-orange);
+}
+
+.cancelBtn {
+  background-color: white;
+  color: #b91c1c;
+  border: 1px solid #b91c1c;
+}
+
+.cancelBtn:hover {
+  background-color: #fee2e2;
+}
+
+.refundBtn {
+  background-color: white;
+  color: #065f46;
+  border: 1px solid #065f46;
+}
+
+.refundBtn:hover {
+  background-color: #d1fae5;
+}
+
+.exploreBtn {
+  background-color: var(--link-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.exploreBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.actionIcon {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
 }
 
 /* No Bookings Message */
 .noBookingsContainer {
   text-align: center;
-  padding: 0rem 0;
+  padding: 2rem 0;
   background-color: var(--dark-white);
   border-radius: 8px;
   border: 1px solid var(--border-color);
@@ -134,49 +275,20 @@
 }
 
 .illustrationWrapper {
-  /* max-width: 300px; */
-  margin-bottom: 0rem;
+  max-width: 300px;
+  margin-bottom: 1rem;
 }
 
 .imageOverlayWrapper {
   position: relative;
   width: 100%;
-  /* max-width: 400px; */
-  /* or desired max */
-}
-
-.illustration {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
 }
 
 .overlayText {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  color: var(--dark-white);
-  font-size: 20px;
-  font-weight: 600;
-  background: rgba(0, 0, 0, 0.5);
-  /*optionalforcontrast*/
-  padding: 8px 12px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-}
-
-.noBookingsText {
-  font-size: 1rem;
   color: var(--text-color-black);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
 }
 
 /* Right Section (Sidebar) */
@@ -290,7 +402,6 @@
 .arrow {
   font-size: 0.8rem;
   color: var(--link-color);
-  margin-left: -50px !important;
 }
 
 .featuresList {
@@ -323,62 +434,4 @@
   width: 64px;
   height: 64px;
   color: var(--text-color-black);
-}
-
-.carouselWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.tabsWrapper {
-  display: flex;
-  gap: 1rem;
-  overflow: hidden;
-  flex: 1;
-  padding: 0 0rem;
-}
-
-/* Overlay Buttons */
-.navButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border-color);
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navButton:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.navButton:hover:not(:disabled) {
-  background-color: var(--light-accent);
-  color: var(--dark-white);
-}
-
-.prevButton {
-  left: -15px;
-}
-
-.nextButton {
-  right: -15px;
-}
-.prevButton:hover {
-  background-color: var(--light-accent);
-  color: var(--dark-white);
-}
-
-.nextButton:hover {
-  background-color: var(--light-accent);
 }

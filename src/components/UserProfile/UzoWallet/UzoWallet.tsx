@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faArrowRight,
   faMoneyBillTransfer,
   faMoneyBillWave,
   faReply,
@@ -11,15 +10,16 @@ import {
   faTrain,
   faHotel,
   faBus,
-  faFileInvoiceDollar
+  faFileInvoiceDollar,
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './UzoWallet.module.css';
+import { Wallet } from 'lucide-react';
 
 interface Transaction {
   id: number;
   description: string;
   amount: number;
-  status: 'Completed' | 'Pending' | 'Failed';
+  status: 'Completed' | 'Pending' | 'Refund';
   comment: string;
   date: string;
 }
@@ -28,6 +28,8 @@ const UzoWallet: React.FC = () => {
   const [showTransferModal, setShowTransferModal] = useState(false);
   const [showOTPModal, setShowOTPModal] = useState(false);
   const [otp, setOtp] = useState('');
+  const [activeSummaryTab, setActiveSummaryTab] = useState<'spend' | 'refund' | 'pending'>('spend');
+
 
   // Sample data
   const walletBalance = 1250.50;
@@ -53,10 +55,10 @@ const UzoWallet: React.FC = () => {
     },
     {
       id: 2,
-      description: 'Hotel Refund',
+      description: 'Hotel Booking',
       amount: 150,
       status: 'Completed',
-      comment: 'Cancellation #HT456',
+      comment: 'Success #HT456',
       date: '2023-06-10'
     },
     {
@@ -67,6 +69,58 @@ const UzoWallet: React.FC = () => {
       comment: 'Promo code: SUMMER25',
       date: '2023-06-05'
     }
+  ];
+  const transactionsRefund: Transaction[] = [
+    {
+      id: 1,
+      description: 'Flight Booking - Agra to Bareilly',
+      amount: 950,
+      status: 'Refund',
+      comment: 'Ticket #AB1234',
+      date: '2025-06-25'
+    },
+    {
+      id: 2,
+      description: 'Hotel Refund',
+      amount: 850,
+      status: 'Refund',
+      comment: 'Cancellation #HT456',
+      date: '2024-06-11'
+    },
+    // {
+    //   id: 3,
+    //   description: 'Cashback Reward',
+    //   amount: 50.25,
+    //   status: 'Refund',
+    //   comment: 'Promo code: SUMMER25',
+    //   date: '2023-06-05'
+    // }
+  ];
+  const transactionsPending: Transaction[] = [
+    {
+      id: 1,
+      description: 'Flight Booking - Chennai to Hyderabad',
+      amount: 350,
+      status: 'Pending',
+      comment: 'Ticket #AB1234',
+      date: '2023-05-05'
+    },
+    {
+      id: 2,
+      description: 'Hotel Refund request',
+      amount: 250,
+      status: 'Pending',
+      comment: 'Cancellation #HT456',
+      date: '2023-12-06'
+    },
+    // {
+    //   id: 3,
+    //   description: 'Cashback Reward',
+    //   amount: 110.25,
+    //   status: 'Pending',
+    //   comment: 'Promo code: SUMMER25',
+    //   date: '2025-06-05'
+    // }
   ];
 
   const handleTransferClick = () => {
@@ -107,21 +161,101 @@ const UzoWallet: React.FC = () => {
       <div className={styles.content}>
         <div className={styles.leftSection}>
           {/* Transfer Money Card */}
-          <div className={styles.transferCard} onClick={handleTransferClick}>
-            <div className={styles.transferInfo}>
-              <h2>Transfer Money</h2>
-              <p>
-                Transfer your Money to Bank Account
-                <FontAwesomeIcon icon={faArrowRight} className={styles.arrowIcon} />
-              </p>
+          <div className={styles.transferCard} >
+            <div className={styles.transferDetails} onClick={handleTransferClick}>
+              <div className={styles.transferInfo}>
+                <h2>Transfer Money</h2>
+                <p>
+                  To Your Bank Account
+                  <FontAwesomeIcon icon={faMoneyBillTransfer} className={styles.transferLinkIcon} />
+
+                  {/* Transfer your Money to Bank Account */}
+                  {/* <FontAwesomeIcon icon={faArrowRight} className={styles.arrowIcon} /> */}
+                </p>
+              </div>
+              {/* <div className={styles.transferIcon}>
+                <FontAwesomeIcon icon={faMoneyBillTransfer} />
+              </div> */}
             </div>
-            <div className={styles.transferIcon}>
-              <FontAwesomeIcon icon={faMoneyBillTransfer} />
-            </div>
+            <div className={styles.addWalletMoney}>
+              <div className={styles.transferInfo}>
+                <h2>Add Money</h2>
+                <p>
+                  To Your Wallet
+                  <Wallet size={20} className={styles.transferLinkIcon} />
+                </p>
+              </div></div>
           </div>
 
           {/* Spending Summary */}
-          <div className={styles.spendingSummary}>
+          <div className={styles.tabbedSummaryContainer}>
+            <div className={styles.summaryTabs}>
+              <button
+                className={`${styles.summaryTab} ${activeSummaryTab === 'spend' ? styles.activeTab : ''}`}
+                onClick={() => setActiveSummaryTab('spend')}
+              >
+                <FontAwesomeIcon icon={faMoneyBillWave} className={styles.tabIcon} />
+                <span>Total Spend</span>
+                <div className={styles.summaryAmount}>₹ {totalSpend.toFixed(2)}</div>
+                {/* <div className={styles.summaryDescription}>Total amount spent from your wallet</div> */}
+              </button>
+              <button
+                className={`${styles.summaryTab} ${activeSummaryTab === 'refund' ? styles.activeTab : ''}`}
+                onClick={() => setActiveSummaryTab('refund')}
+              >
+                <FontAwesomeIcon icon={faReply} className={styles.tabIcon} />
+                <span>Total Refund</span>
+                <div className={styles.summaryAmount}>₹ {totalRefund.toFixed(2)}</div>
+                {/* <div className={styles.summaryDescription}>Total amount refunded to your wallet</div> */}
+              </button>
+              <button
+                className={`${styles.summaryTab} ${activeSummaryTab === 'pending' ? styles.activeTab : ''}`}
+                onClick={() => setActiveSummaryTab('pending')}
+              >
+                <FontAwesomeIcon icon={faCoins} className={styles.tabIcon} />
+                <span>Refund Pending</span>
+                <div className={styles.summaryAmount}>₹ {totalCashback.toFixed(2)}</div>
+                {/* <div className={styles.summaryDescription}>Amount pending to be refunded</div> */}
+              </button>
+            </div>
+
+            {/* <div className={styles.tabContent}>
+              {activeSummaryTab === 'spend' && (
+                <div className={styles.summaryCard}>
+                  <div className={styles.summaryIcon}>
+                    <FontAwesomeIcon icon={faMoneyBillWave} className={styles.sumIcon} />
+                  </div>
+                  <div className={styles.summaryTitle}>Total Spend</div>
+                  <div className={styles.summaryAmount}>₹ {totalSpend.toFixed(2)}</div>
+                  <div className={styles.summaryDescription}>Total amount spent from your wallet</div>
+                </div>
+              )}
+
+              {activeSummaryTab === 'refund' && (
+                <div className={styles.summaryCard}>
+                  <div className={styles.summaryIcon}>
+                    <FontAwesomeIcon icon={faReply} className={styles.sumIcon} />
+                  </div>
+                  <div className={styles.summaryTitle}>Total Refund</div>
+                  <div className={styles.summaryAmount}>₹ {totalRefund.toFixed(2)}</div>
+                  <div className={styles.summaryDescription}>Total amount refunded to your wallet</div>
+                </div>
+              )}
+
+              {activeSummaryTab === 'pending' && (
+                <div className={styles.summaryCard}>
+                  <div className={styles.summaryIcon}>
+                    <FontAwesomeIcon icon={faCoins} className={styles.sumIcon} />
+                  </div>
+                  <div className={styles.summaryTitle}>Refund Pending</div>
+                  <div className={styles.summaryAmount}>₹ {totalCashback.toFixed(2)}</div>
+                  <div className={styles.summaryDescription}>Amount pending to be refunded</div>
+                </div>
+              )}
+            </div> */}
+
+          </div>
+          {/* <div className={styles.spendingSummary}>
             <div className={styles.summaryCard}>
               <div className={styles.summaryIcon}>
                 <FontAwesomeIcon icon={faMoneyBillWave} className={styles.sumIcon} />
@@ -142,10 +276,11 @@ const UzoWallet: React.FC = () => {
               <div className={styles.summaryIcon}>
                 <FontAwesomeIcon icon={faCoins} className={styles.sumIcon} />
               </div>
-              <div className={styles.summaryTitle}>Total Cashback</div>
+              <div className={styles.summaryTitle}>Refund Pending</div>
               <div className={styles.summaryAmount}>₹ {totalCashback.toFixed(2)}</div>
             </div>
-          </div>
+          </div> */}
+
         </div>
 
         {/* Right Section - Pie Chart */}
@@ -212,21 +347,63 @@ const UzoWallet: React.FC = () => {
             <div className={styles.headerColumn}>Comment</div>
           </div>
 
-          {transactions.map(transaction => (
-            <div key={transaction.id} className={styles.tableRow}>
-              <div className={styles.rowColumn} style={{ paddingLeft: '30px' }}>
-                <div className={styles.transactionDescription}>{transaction.description}</div>
-                <div className={styles.transactionDate}>{transaction.date}</div>
-              </div>
-              <div className={styles.rowColumn}>₹ {transaction.amount.toFixed(2)}</div>
-              <div className={styles.rowColumn}>
-                <span className={`${styles.statusBadge} ${styles[transaction.status.toLowerCase()]}`}>
-                  {transaction.status}
-                </span>
-              </div>
-              <div className={styles.rowColumn}>{transaction.comment}</div>
-            </div>
-          ))}
+          {activeSummaryTab === 'spend' && (
+            <div>
+              {transactions.map(transaction => (
+                <div key={transaction.id} className={styles.tableRow}>
+                  <div className={styles.rowColumn} style={{ paddingLeft: '30px' }}>
+                    <div className={styles.transactionDescription}>{transaction.description}</div>
+                    <div className={styles.transactionDate}>{transaction.date}</div>
+                  </div>
+                  <div className={styles.rowColumn}>₹ {transaction.amount.toFixed(2)}</div>
+                  <div className={styles.rowColumn}>
+                    <span className={`${styles.statusBadge} ${styles[transaction.status.toLowerCase()]}`}>
+                      {transaction.status}
+                    </span>
+                  </div>
+                  <div className={styles.rowColumn}>{transaction.comment}</div>
+                </div>
+              ))
+              }
+            </div>)}
+          {activeSummaryTab === 'refund' && (
+            <div>
+              {transactionsRefund.map(transaction => (
+                <div key={transaction.id} className={styles.tableRow}>
+                  <div className={styles.rowColumn} style={{ paddingLeft: '30px' }}>
+                    <div className={styles.transactionDescription}>{transaction.description}</div>
+                    <div className={styles.transactionDate}>{transaction.date}</div>
+                  </div>
+                  <div className={styles.rowColumn}>₹ {transaction.amount.toFixed(2)}</div>
+                  <div className={styles.rowColumn}>
+                    <span className={`${styles.statusBadge} ${styles[transaction.status.toLowerCase()]}`}>
+                      {transaction.status}
+                    </span>
+                  </div>
+                  <div className={styles.rowColumn}>{transaction.comment}</div>
+                </div>
+              ))
+              }
+            </div>)}
+          {activeSummaryTab === 'pending' && (
+            <div>
+              {transactionsPending.map(transaction => (
+                <div key={transaction.id} className={styles.tableRow}>
+                  <div className={styles.rowColumn} style={{ paddingLeft: '30px' }}>
+                    <div className={styles.transactionDescription}>{transaction.description}</div>
+                    <div className={styles.transactionDate}>{transaction.date}</div>
+                  </div>
+                  <div className={styles.rowColumn}>₹ {transaction.amount.toFixed(2)}</div>
+                  <div className={styles.rowColumn}>
+                    <span className={`${styles.statusBadge} ${styles[transaction.status.toLowerCase()]}`}>
+                      {transaction.status}
+                    </span>
+                  </div>
+                  <div className={styles.rowColumn}>{transaction.comment}</div>
+                </div>
+              ))
+              }
+            </div>)}
         </div>
       </div>
 
