@@ -18,7 +18,8 @@ interface VideoItem {
 }
 
 const defaultVideos = [
-  { title: 'Explore Seychelles', src: '/videos/video1.mp4', thumbnail: thumbnail1 },
+  { title: 'Explore Seychelles', src: '/videos/video11.mp4', thumbnail: thumbnail1 },
+  // { title: 'Explore Seychelles', src: '/videos/video1.mp4', thumbnail: thumbnail1 },
   { title: 'Visit Goa', src: '/videos/video2.mp4', thumbnail: thumbnail2 },
   { title: 'Magical Maldives', src: '/videos/video3.mp4', thumbnail: thumbnail3 },
   { title: 'Discover Nainital', src: '/videos/video4.mp4', thumbnail: thumbnail4 },

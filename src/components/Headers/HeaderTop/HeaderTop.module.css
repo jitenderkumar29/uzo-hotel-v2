@@ -157,6 +157,10 @@
   color: var(--dark-white);
 }
 
+.userButton {
+  text-transform: capitalize;
+}
+
 .loginDropDown {
   position: absolute;
   top: 63px;

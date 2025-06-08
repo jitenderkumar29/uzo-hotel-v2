@@ -94,7 +94,7 @@ const AboutUzoHotels = () => {
   ];
 
   return (
-    <>
+    <div className={styles.aboutUzoHotels}>
       <div className={styles.headerTopBody}>
         <HeaderAboutUzo />
         {/* <HeaderTransparent /> */}
@@ -118,14 +118,28 @@ const AboutUzoHotels = () => {
                 <source src="https://photos.mandarinoriental.com/is/content/MandarinOriental/mohg-spring-global-home-video-desktop" type="video/mp4" />
                 This video format is not supported by your browser
               </video>)}
+              {/* {activeTab === "RESORTS" && (
+                <div className={styles.videoWrapper}>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className={isVideoPlaying ? styles.playing : styles.paused}
+                  >
+                    <source src="/videos/resorts.mp4" type="video/mp4" />
+                    This video format is not supported by your browser
+                  </video>
+                </div>
+              )} */}
               {activeTab === "RESORTS" && (<video
                 autoPlay
                 muted
                 loop
                 playsInline
                 className={isVideoPlaying ? styles.playing : styles.paused}>
-
                 <source src="https://photos.mandarinoriental.com/is/content/MandarinOriental/residences-lifestyle-video-without-title-credits" type="video/mp4" />
+                {/* <source src="/videos/resorts.mp4" type="video/mp4" /> */}
                 This video format is not supported by your browser
               </video>)}
               {activeTab === "APARTHOTELS" && (<video
@@ -210,7 +224,7 @@ const AboutUzoHotels = () => {
         </div>
       </section>
 
-      <section>
+      <section className={styles.masthead}>
         <div className={styles.mastheadDescription}>
           {activeTab === "HOTELS" && (
             <p className={styles.descriptionText}>
@@ -374,7 +388,7 @@ const AboutUzoHotels = () => {
       {/* <div ref={dineRef}>
         {activeTab === "DINE" && <DineComponent />}
       </div> */}
-    </>
+    </div>
   );
 };
 

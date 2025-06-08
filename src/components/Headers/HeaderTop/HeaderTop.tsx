@@ -137,7 +137,7 @@ const HeaderTop = () => {
               </div>
             )}
 
-            {username ? (<button className={styles.loginBtn}
+            {username ? (<button className={`${styles.loginBtn} ${styles.userButton}`}
               onMouseEnter={() => setShowUserDropDown(true)}
               onMouseLeave={() => setShowUserDropDown(false)}>Welcome, {username}!</button>) :
               // {username ? (<button className={styles.loginBtn}>Welcome, {username}!</button>) :
@@ -393,19 +393,18 @@ const UserProfileDropDown = () => {
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          {/* <Link href="/book?searchMode=Flights" onClick={() => setShowBooking(false)}> */}
-
-          <Link href="/userProfile?userMode=wallet">
-            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
-            <Image src="/icons/walletLogo.png" alt="My Wallet" width={24} height={24} className={styles.sideMenuDropdownImg} />
-            My Wallet
-          </Link>
-        </div>
-        <div className={styles.sideMenuDropdown__linkItem}>
           <Link href="/userProfile?userMode=bookings">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
             <Image src="/icons/bookingLogo.png" alt="My Booking" width={24} height={24} className={styles.sideMenuDropdownImg} />
             My Booking
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          {/* <Link href="/book?searchMode=Flights" onClick={() => setShowBooking(false)}> */}
+          <Link href="/userProfile?userMode=wallet">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/walletLogo.png" alt="My Wallet" width={24} height={24} className={styles.sideMenuDropdownImg} />
+            My Wallet
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>

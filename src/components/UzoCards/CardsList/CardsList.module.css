@@ -2,8 +2,9 @@
   width: 100%;
   background-color: var(--dark-white);
   /* background-color: #f3f6fb; */
-  padding: 1rem 1rem 2rem 1rem;
+  /* padding: 1rem 1rem 2rem 1rem; */
   font-family: "Arial", sans-serif;
+  padding-top: 1rem;
 }
 
 .container {
@@ -34,8 +35,9 @@
 .cardsWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
+  padding-top: 0.3rem;
 }
 
 .card {
@@ -108,4 +110,58 @@
   .title {
     font-size: 1.5rem;
   }
+}
+
+/* Scrollable wrapper */
+.cardsWrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Optional: hide scrollbar */
+.cardsWrapper::-webkit-scrollbar {
+  display: none;
+}
+.cardsWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card */
+.card {
+  flex: 0 0 auto;
+  width: 300px;
+  background-color: var(--dark-white);
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Nav buttons */
+.navButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  margin-top: -65px;
+}
+
+.navButton {
+  background-color: var(--dark-white);
+  border: none;
+  color: var(--text-color-black);
+  padding: 0.5rem 0.9rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
 }
