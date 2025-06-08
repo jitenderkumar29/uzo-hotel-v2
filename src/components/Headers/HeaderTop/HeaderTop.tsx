@@ -342,18 +342,21 @@ const LogInSignUp = () => {
         <div className={styles.sideMenuDropdown__linkItem} >
           <Link href="/login" type='button' >
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/loginLogo.png" alt="User Profile" width={1024} height={1024} className={styles.sideMenuDropdownImg} />
             UZO Login
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
           <Link href="/loginOne">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/loginOneLogo.png" alt="User Profile" width={180} height={171} className={styles.sideMenuDropdownImg} />
             UZO ONE Login
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
           <Link href="/loginPass">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/loginPassLogo.png" alt="User Profile" width={120} height={157} className={styles.sideMenuDropdownImg} />
             UZO PASS Login
           </Link>
         </div>
@@ -385,30 +388,46 @@ const UserProfileDropDown = () => {
         <div className={styles.sideMenuDropdown__linkItem} >
           <Link href="/userProfile" type='button' >
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/userProfile.png" alt="User Profile" width={24} height={24} className={styles.sideMenuDropdownImg} />
             My Profile
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <Link href="/">
+          {/* <Link href="/book?searchMode=Flights" onClick={() => setShowBooking(false)}> */}
+
+          <Link href="/userProfile?userMode=wallet">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/walletLogo.png" alt="My Wallet" width={24} height={24} className={styles.sideMenuDropdownImg} />
             My Wallet
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <Link href="/">
+          <Link href="/userProfile?userMode=bookings">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/bookingLogo.png" alt="My Booking" width={24} height={24} className={styles.sideMenuDropdownImg} />
             My Booking
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem}>
-          <Link href="/">
+          <Link href="/userProfile?userMode=reward">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
-            Reward Balance
+            <Image src="/icons/rewardsLogo.png" alt="Rewards Balance" width={24} height={24} className={styles.sideMenuDropdownImg} />
+
+            Rewards Balance
+          </Link>
+        </div>
+        <div className={styles.sideMenuDropdown__linkItem}>
+          <Link href="/userProfile?userMode=settings">
+            {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/settings.png" alt="Settings" width={24} height={24} className={styles.sideMenuDropdownImg} />
+
+            Settings
           </Link>
         </div>
         <div className={styles.sideMenuDropdown__linkItem} onClick={() => logOut()}>
-          <Link href="#">
+          <Link href="/">
             {/* <FontAwesomeIcon icon={faSignInAlt} className={styles.icon} /> */}
+            <Image src="/icons/logoutLogo.png" alt="LogOut" width={24} height={24} className={styles.sideMenuDropdownImg} />
             LogOut
           </Link>
         </div>

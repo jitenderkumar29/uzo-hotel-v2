@@ -18,7 +18,8 @@ import PromoCodes from "./PromoCodes/PromoCodes"
 import CardsCoupons from "./CardsCoupons/CardsCoupons"
 import UzoWallet from "./UzoWallet/UzoWallet"
 import RewardsBalance from "./RewardsBalance/RewardsBalance"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
+import SettingsUser from "./SettingsUser/SettingsUser";
 
 type NavItem = {
   id: string;
@@ -43,6 +44,23 @@ export default function UserProfile() {
   const [selectedTab, setSelectedTab] = useState<string>("account");
   const router = useRouter();
 
+  const searchParams = useSearchParams();
+  // const userMode = searchParams?.get("userMode") ?? "account";
+  // setSelectedTab(userMode);
+  // console.log("userMode");
+  // console.log(userMode);
+  useEffect(() => {
+    const userMode = searchParams?.get("userMode") ?? "account";
+    if (userMode) {
+      setSelectedTab(userMode);
+    }
+    setNavigationItems(prevItems =>
+      prevItems.map(item => ({
+        ...item,
+        active: item.id === userMode
+      })))
+  }, [searchParams]);
+
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([
     {
       id: "account",
@@ -54,8 +72,8 @@ export default function UserProfile() {
     },
     {
       id: "bookings",
-      title: "Your Bookings",
-      description: "Check your latest/cancelled/pending bookings",
+      title: "My Bookings",
+      description: "Check latest / cancelled / pending bookings",
       imgUrl: "/icons/bookingLogo.png",
       // icon: Ticket,
       active: false
@@ -858,7 +876,7 @@ export default function UserProfile() {
                 <RewardsBalance />
               </div>)}
               {selectedTab === "settings" && (<div className={styles.rightPanel}>
-                {/* <SettingsUser /> */}
+                <SettingsUser />
               </div>)}
               {selectedTab === "logout" && (<div className={styles.rightPanel} onClick={() => logOut()}>
               </div>)}

@@ -138,18 +138,22 @@
 }
 
 .addButton {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--light-orange);
+  color: var(--dark-white);
   padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 8px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.2s;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .addButton:hover {
-  background-color: #0056b3;
+  background-color: var(--dark-orange);
 }
 
 /* Responsive Design */

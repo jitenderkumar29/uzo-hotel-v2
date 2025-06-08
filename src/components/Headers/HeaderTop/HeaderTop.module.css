@@ -574,6 +574,13 @@
   padding: 0px 0;
 }
 
+.sideMenuDropdownImg {
+  padding-right: 10px;
+  margin-left: -10px;
+  height: auto;
+  width: 30px;
+}
+
 .sideMenuDropdown__linkItem {
   width: 100%;
   transition: background-color 0.2s ease;
