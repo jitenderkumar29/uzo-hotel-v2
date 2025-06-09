@@ -34,8 +34,8 @@ export default function UserBooking() {
     },
     {
       id: "cancelled",
-      title: "Cancelled/Refunded",
-      subtitle: "Check/Refund Status",
+      title: "Cancelled",
+      subtitle: "Check Status",
       icon: <X className={styles.tabIcon} />,
     },
     {
@@ -54,6 +54,12 @@ export default function UserBooking() {
       id: "locked",
       title: "Locked",
       subtitle: "Check Locked Trips",
+      icon: <Lock className={styles.tabIcon} />,
+    },
+    {
+      id: "refunded",
+      title: "Refunded",
+      subtitle: "Refund Status",
       icon: <Lock className={styles.tabIcon} />,
     },
   ]
@@ -118,6 +124,15 @@ export default function UserBooking() {
         date: "1-10 July 2023",
         status: "Payment Verification",
         amount: "$2500"
+      }
+    ],
+    refunded: [
+      {
+        id: "RF12345",
+        title: "Holiday Package",
+        date: "11-20 July 2024",
+        status: "Refunded",
+        amount: "$3500"
       }
     ]
   }

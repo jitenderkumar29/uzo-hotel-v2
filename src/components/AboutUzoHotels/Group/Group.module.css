@@ -1,0 +1,118 @@
+.aboutUzoHotels {
+  overflow: hidden;
+}
+
+.headerTopBody {
+  width: 100%;
+  position: fixed;
+  z-index: 11;
+}
+
+.groupContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 550px;
+  overflow: hidden;
+}
+
+.imageOverlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.groupImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3); /* 30% opacity overlay */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.textBlock {
+  max-width: 1200px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .groupContainer {
+    max-height: 500px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .textBlock {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .groupContainer {
+    max-height: 400px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .contentOverlay {
+    padding: 1rem;
+  }
+}
+
+/* Footer style */
+.footerBox {
+  margin-top: -90px !important;
+}

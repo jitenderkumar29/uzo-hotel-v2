@@ -24,6 +24,7 @@ import VisionChoice from './Vision/VisionChoice/VisionChoice';
 import CelebrationType from './Celebrate/CelebrationType/CelebrationType';
 import FooterUzo from '../FooterUzo/FooterUzo';
 import WellnessProgrammes from './WellnessUzoHotels/WellnessProgrammes/WellnessProgrammes';
+import Retreats from './WellnessUzoHotels/Retreats/Retreats';
 
 const AboutUzoHotels = () => {
   const [isVideoPlaying,] = useState(true);
@@ -58,14 +59,14 @@ const AboutUzoHotels = () => {
       case 'APARTHOTELS':
         homesRef.current?.scrollIntoView({ behavior: 'smooth' });
         break;
+      case 'Villa & Homes':
+        visionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        break;
       case 'DINE':
         dineRef.current?.scrollIntoView({ behavior: 'smooth' });
         break;
       case 'WELLNESS':
         wellnessRef.current?.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'VISION':
-        visionRef.current?.scrollIntoView({ behavior: 'smooth' });
         break;
       case 'EXPLORE':
         exploreRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -85,9 +86,9 @@ const AboutUzoHotels = () => {
     { title: 'HOTELS', icon: <FaHotel />, link: '/', ref: hotelsRef },
     { title: 'RESORTS', icon: <FaHome />, link: '/', ref: residencesRef },
     { title: 'APARTHOTELS', icon: <FaHome />, link: '/', ref: homesRef },
+    { title: 'Villa & Homes', icon: <FaInvision />, link: '/', ref: visionRef },
     { title: 'DINE', icon: <FaUtensils />, link: '/', ref: dineRef },
     { title: 'WELLNESS', icon: <FaSpa />, link: '/', ref: wellnessRef },
-    { title: 'VISION', icon: <FaInvision />, link: '/', ref: visionRef },
     { title: 'EXPLORE', icon: <FaMapMarkedAlt />, link: '/', ref: exploreRef },
     { title: 'CELEBRATE', icon: <GiPartyPopper />, link: '/', ref: celebrateRef },
     // { title: 'GIFT', icon: <FaGift />, link: '/', ref: giftRef }
@@ -152,6 +153,16 @@ const AboutUzoHotels = () => {
                 <source src="https://photos.mandarinoriental.com/is/content/MandarinOriental/exclusive-homes-desktop-video" />
                 This video format is not supported by your browser
               </video>)}
+              {activeTab === "Villa & Homes" && (<video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className={isVideoPlaying ? styles.playing : styles.paused}>
+
+                <source src="https://photos.mandarinoriental.com/is/content/MandarinOriental/mohg-global-meet-video-desktop" />
+                This video format is not supported by your browser
+              </video>)}
               {activeTab === "DINE" && (<video
                 autoPlay
                 muted
@@ -170,16 +181,6 @@ const AboutUzoHotels = () => {
                 className={isVideoPlaying ? styles.playing : styles.paused}>
 
                 <source src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJvYXV0aCI6eyJjbGllbnRfaWQiOiJzaXRlY29yZSJ9LCJwYXRoIjoibWFuZGFyaW4tb3JpZW50YWwtaG90ZWwtZ3JvdXBcL2ZpbGVcL3VKOU1hVUt2UTF2Mm14RkdVMkdDLm1wNCJ9:mandarin-oriental-hotel-group:CpljMIp8WPWOSSkzhJ2WJbUDB6Q3tABNMY-q6qf8mRE?format=mp4" />
-                This video format is not supported by your browser
-              </video>)}
-              {activeTab === "VISION" && (<video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className={isVideoPlaying ? styles.playing : styles.paused}>
-
-                <source src="https://photos.mandarinoriental.com/is/content/MandarinOriental/mohg-global-meet-video-desktop" />
                 This video format is not supported by your browser
               </video>)}
               {activeTab === "EXPLORE" && (<video
@@ -240,6 +241,10 @@ const AboutUzoHotels = () => {
             <p className={styles.descriptionText}>
               Mandarin Oriental’s acclaimed collection of luxury hotels, resorts and private homes awaits you. Perfectly located in the world’s most prestigious destinations, Mandarin Oriental welcomes you with legendary service and 21st-century luxury that is steeped in the values of the Orient.
             </p>)}
+          {activeTab === "Villa & Homes" && (
+            <p className={styles.descriptionText}>
+              At Hotel Vision, our mission is to craft immersive, tailored experiences through innovation, sustainability, and world-class service. We aim to be the destination of choice for discerning travelers who seek more than just a place to stay.
+            </p>)}
           {activeTab === "DINE" && (
             <p className={styles.descriptionText}>
               A truly unique lifestyle with the best of both worlds; the comforts of a private home combined with the unsurpassed amenities and legendary service of Mandarin Oriental.
@@ -247,10 +252,6 @@ const AboutUzoHotels = () => {
           {activeTab === "WELLNESS" && (
             <p className={styles.descriptionText}>
               Mandarin Oriental’s award-winning spa and wellness facilities are dedicated to providing an exceptional experience. Rooted in oriental philosophy and authentic rituals, our serene sanctuaries combine ancient techniques with modern innovations to create a personalised journey of renewal and tranquillity.
-            </p>)}
-          {activeTab === "VISION" && (
-            <p className={styles.descriptionText}>
-              At Hotel Vision, our mission is to craft immersive, tailored experiences through innovation, sustainability, and world-class service. We aim to be the destination of choice for discerning travelers who seek more than just a place to stay.
             </p>)}
           {activeTab === "EXPLORE" && (
             <p className={styles.descriptionText}>
@@ -301,6 +302,11 @@ const AboutUzoHotels = () => {
           </div> */}
         </div>
       </>)}
+      {activeTab === "Villa & Homes" && (
+        <>
+          <Vision />
+          <VisionChoice />
+        </>)}
       {activeTab === "DINE" && (<>
         <div className={styles.dineBody}>
           {/* <div className={styles.residencesContainer}>
@@ -363,11 +369,7 @@ const AboutUzoHotels = () => {
           <WellnessUzoHotels />
           <WellnessProgrammes />
           <WellnessLatestNews />
-        </>)}
-      {activeTab === "VISION" && (
-        <>
-          <Vision />
-          <VisionChoice />
+          <Retreats />
         </>)}
       {activeTab === "EXPLORE" && (
         <>

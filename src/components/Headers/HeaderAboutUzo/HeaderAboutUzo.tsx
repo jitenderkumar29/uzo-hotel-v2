@@ -47,7 +47,7 @@ const HeaderAboutUzo: React.FC = () => {
       heading: "World Leading Hospitality Group",
       description: "Building on the strength of our teams and of our holistic ecosystem of leading brands, personalized services & expert solutions, we break new ground to reimagine hospitality and inspire new ways to experience the world.",
       label: "GROUP",
-      href: "/aboutUzoHotels",
+      href: "/group",
       sections: [
         {
           title: "Who We Are",
@@ -67,6 +67,16 @@ const HeaderAboutUzo: React.FC = () => {
             { label: "Board Committees", href: "/" },
             { label: "Executive Management", href: "/" },
             { label: "Our Ethics & Compliance", href: "/" },
+          ],
+        },
+        {
+          title: "Vision",
+          items: [
+            { label: "Our Vision", href: "/" },
+            { label: "Our Mission", href: "/" },
+            { label: "Our Values", href: "/" },
+            { label: "Sustainability Goals", href: "/" },
+            { label: "Diversity & Inclusion", href: "/" },
           ],
         },
       ],

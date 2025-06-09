@@ -19,6 +19,8 @@ import RewardsBalance from "./RewardsBalance/RewardsBalance"
 import { useRouter, useSearchParams } from "next/navigation"
 import SettingsUser from "./SettingsUser/SettingsUser";
 import GiftCards from "./GiftCards/GiftCards";
+import UzoWallet from "./UzoWallet/UzoWallet";
+import FooterUzo from "../FooterUzo/FooterUzo";
 
 type NavItem = {
   id: string;
@@ -731,7 +733,7 @@ export default function UserProfile() {
                 <GiftCards />
               </div>)}
               {selectedTab === "wallet" && (<div className={styles.rightPanel}>
-                {/* <UzoWallet /> */}
+                <UzoWallet />
               </div>)}
               {selectedTab === "reward" && (<div className={styles.rightPanel}>
                 <RewardsBalance />
@@ -744,10 +746,11 @@ export default function UserProfile() {
             </div>
           </div>
         </div>
+        <div className={styles.footerBox}>
+          <FooterUzo />
+        </div>
       </div>
-      {/* <div className={styles.footerBox}>
-        <FooterUzo />
-      </div> */}
+
     </>
   )
 }

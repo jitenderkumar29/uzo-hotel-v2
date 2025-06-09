@@ -209,7 +209,7 @@ const GiftCards = () => {
                       checked={sameAsSender}
                       onChange={handleSameAsSender}
                     />
-                    Same as sender details
+                    <span>Same as sender details</span>
                   </label>
                 </div>
                 {/* <div className={styles.receiverLabel}>

@@ -38,6 +38,7 @@ const ForgotPasswordUzoPass = lazy(() => import('../components/Auth/ForgotPasswo
 const OffersUzo = lazy(() => import('../components/OffersUzo/OffersUzo'))
 const UzoCards = lazy(() => import('../components/UzoCards/UzoCards'))
 const UserProfile = lazy(() => import('../components/UserProfile/UserProfile'))
+const Group = lazy(() => import('../components/AboutUzoHotels/Group/Group'));
 // Example of lazy-loaded components using `dynamic`
 // const Book = dynamic(() => import('./Book/Book'), { suspense: true }) as ComponentType;
 // const HotelBooking = dynamic(() => import('./HotelBooking/HotelBooking'), { suspense: true });
@@ -163,6 +164,11 @@ const pageMap: Record<string, () => ReactElement> = {
   userProfile: () => (
     <Suspense fallback={<div>Loading...</div>}>
       <UserProfile />
+    </Suspense>
+  ),
+  group: () => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Group />
     </Suspense>
   ),
   // book: () => <Book />,

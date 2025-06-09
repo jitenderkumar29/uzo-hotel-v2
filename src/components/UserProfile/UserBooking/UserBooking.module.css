@@ -162,6 +162,10 @@
   background-color: #ede9fe;
   color: #5b21b6;
 }
+.bookingStatus.refunded {
+  background-color: #d1fae5;
+  color: #065f46;
+}
 
 .bookingMeta {
   display: flex;

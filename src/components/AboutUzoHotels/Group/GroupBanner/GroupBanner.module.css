@@ -1,0 +1,114 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+  color: #333;
+  background-color: var(--background);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #006cb7;
+  margin: 1rem auto 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.authorName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #006cb7;
+  margin: 0;
+}
+
+.authorTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contentWrapper {
+    gap: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+  }
+}
