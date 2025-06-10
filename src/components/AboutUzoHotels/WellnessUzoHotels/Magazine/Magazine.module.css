@@ -1,10 +1,15 @@
 /* styles/Magazine.module.css */
 
+.magazineContainer {
+  padding-bottom: 2rem;
+}
+
 .magazineSection {
-  background-color: #14100f;
+  background-color: var(--text-color-black);
   padding: 2rem 1rem;
-  color: #fff;
+  color: var(--dark-white);
   width: 100%;
+  padding-bottom: 4rem;
 }
 
 .wrapper {
@@ -39,14 +44,14 @@
 .description {
   font-size: 1rem;
   line-height: 1.5;
-  color: #ccc;
+  color: var(--dark-white);
 }
 
 .primaryLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
+  color: var(--dark-white);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -80,7 +85,7 @@
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  color: white;
+  color: var(--dark-white);
   max-width: 90%;
 }
 
@@ -97,7 +102,7 @@
   gap: 0.25rem;
   font-weight: 600;
   text-decoration: none;
-  color: #fff;
+  color: var(--dark-white);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease;
 }

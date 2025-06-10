@@ -23,27 +23,41 @@ const Retreats: React.FC = () => {
       title: "ReEnergise",
       imageUrl: "/images/wellness1.jpg",
       // imageUrl: "https://images.pexels.com/photos/29090573/pexels-photo-29090573/free-photo-of-luxurious-poolside-retreat-in-dubai-resort.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/en/dubai/jumeira-beach/wellness"
+      link: "/"
     },
     {
-      location: "Hong Kong, Mandarin Oriental",
+      location: "Hong Kong, Mandarin UZO Hotels",
       title: "Signature Traditional Chinese Therapy",
       imageUrl: "images/wellness2.jpg",
       // imageUrl: "https://images.pexels.com/photos/7610571/pexels-photo-7610571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/en/hong-kong/victoria-harbour/wellness/retreat"
+      link: "/"
     },
     {
       location: "Prague",
       title: "On the Silk Road",
       imageUrl: "https://images.pexels.com/photos/3770110/pexels-photo-3770110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/en/prague/mala-strana/wellness"
+      link: "/"
     },
     {
       location: "Singapore",
-      title: "Journey to Oriental Oasis",
+      title: "Journey to UZO Hotels Oasis",
       imageUrl: "https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      description: "Experience an Oriental retreat designed and sequenced to lead you to grow in introspection, awareness and living with intention.",
-      link: "/en/singapore/marina-bay/explore/journey-to-oriental-oasis"
+      description: "Experience an UZO Hotels retreat designed and sequenced to lead you to grow in introspection, awareness and living with intention.",
+      link: "/"
+    },
+    {
+      location: "Dabai",
+      title: "Journey to Dubai",
+      imageUrl: "https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      description: "Experience an UZO retreat designed and sequenced to lead you to grow in introspection, awareness and living with intention.",
+      link: "/"
+    },
+    {
+      location: "South Koria",
+      title: "Journey to UZO Hotels",
+      imageUrl: "https://images.pexels.com/photos/32457877/pexels-photo-32457877/free-photo-of-elegant-hotel-exterior-in-cannes-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      description: "Experience an UZO retreat designed and sequenced to lead you to grow in introspection, awareness and living with intention.",
+      link: "/"
     }
   ];
 
