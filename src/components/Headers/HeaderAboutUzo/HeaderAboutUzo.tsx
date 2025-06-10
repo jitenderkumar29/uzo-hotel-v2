@@ -5,7 +5,7 @@ import { ChevronRight, ChevronDown } from "lucide-react"
 import styles from "./HeaderAboutUzo.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import logoImage from '@/assets/icons/logo26.png';
+import logoImage from '@/assets/icons/logo.png';
 
 
 interface MenuItem {

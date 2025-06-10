@@ -32,6 +32,7 @@
   overflow-x: auto;
   gap: 10px;
   margin-bottom: 1rem;
+  width: 100%;
   /* padding-bottom: 5px; */
 }
 
@@ -41,7 +42,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
+  min-width: 170px;
   padding: 12px 15px;
   background-color: #f8f9fa;
   border: 1px solid #ddd;
@@ -284,6 +285,11 @@
 
 .cardImage {
   padding: 0 5px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .cardImage img {
@@ -416,4 +422,51 @@
     align-items: flex-start;
     gap: 10px;
   }
+}
+
+/* Pre Next Button */
+.categoryTabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabsContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.tabsContainer::-webkit-scrollbar {
+  display: none; /* For Chrome/Safari */
+}
+
+.navButton {
+  background: var(--dark-white);
+  border: 1px solid var(--border-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: var(--link-color);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navButton:hover:not(:disabled) {
+  background-color: var(--dark-accent);
+  color: var(--dark-white);
+}
+
+.navButtonIcon {
+  /* border: 1px solid var(--border-color);
+  border-radius: 50%; */
 }

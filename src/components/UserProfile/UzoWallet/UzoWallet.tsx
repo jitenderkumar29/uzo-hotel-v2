@@ -152,7 +152,7 @@ const UzoWallet: React.FC = () => {
       <div className={styles.header}>
         <h1 className={styles.title}>UZO Wallet</h1>
         <div className={styles.balance}>
-          <span className={styles.balanceLabel}>UZO Cash</span>
+          <span className={styles.balanceLabel}>UZO Balance</span>
           <span className={styles.balanceAmount}>₹ {walletBalance.toFixed(2)}</span>
         </div>
       </div>
@@ -195,7 +195,7 @@ const UzoWallet: React.FC = () => {
                 onClick={() => setActiveSummaryTab('spend')}
               >
                 <FontAwesomeIcon icon={faMoneyBillWave} className={styles.tabIcon} />
-                <span>Total Spend</span>
+                <span>Total Added Amount</span>
                 <div className={styles.summaryAmount}>₹ {totalSpend.toFixed(2)}</div>
                 {/* <div className={styles.summaryDescription}>Total amount spent from your wallet</div> */}
               </button>

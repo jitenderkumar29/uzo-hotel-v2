@@ -25,6 +25,7 @@ import CelebrationType from './Celebrate/CelebrationType/CelebrationType';
 import FooterUzo from '../FooterUzo/FooterUzo';
 import WellnessProgrammes from './WellnessUzoHotels/WellnessProgrammes/WellnessProgrammes';
 import Retreats from './WellnessUzoHotels/Retreats/Retreats';
+import Magazine from './WellnessUzoHotels/Magazine/Magazine';
 
 const AboutUzoHotels = () => {
   const [isVideoPlaying,] = useState(true);
@@ -370,6 +371,7 @@ const AboutUzoHotels = () => {
           <WellnessProgrammes />
           <WellnessLatestNews />
           <Retreats />
+          <Magazine />
         </>)}
       {activeTab === "EXPLORE" && (
         <>

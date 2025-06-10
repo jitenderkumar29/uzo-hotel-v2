@@ -3,7 +3,7 @@ import { useState, useRef, FormEvent, useEffect } from 'react';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import styles from './Login.module.css';
 import Image from 'next/image';
-import logoImage from '@/assets/icons/logo26.png';
+import logoImage from '@/assets/icons/logo.png';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';

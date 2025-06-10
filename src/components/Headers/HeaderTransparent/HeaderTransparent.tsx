@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './HeaderTransparent.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faPlaneDeparture, faHotel, faBus, faTrain, faUmbrellaBeach, faTaxi, faTasks, faCalendar, faShip, faFilm, faCreditCard, faPassport } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '@/assets/icons/logo26.png';
+import logoImage from '@/assets/icons/logo.png';
 import headerTop1 from '@/assets/images/headerTop1.jpg';
 import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';

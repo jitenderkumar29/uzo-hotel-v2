@@ -21,13 +21,15 @@ const Retreats: React.FC = () => {
     {
       location: "Dubai, Jumeira Beach",
       title: "ReEnergise",
-      imageUrl: "https://images.pexels.com/photos/29090573/pexels-photo-29090573/free-photo-of-luxurious-poolside-retreat-in-dubai-resort.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      imageUrl: "/images/wellness1.jpg",
+      // imageUrl: "https://images.pexels.com/photos/29090573/pexels-photo-29090573/free-photo-of-luxurious-poolside-retreat-in-dubai-resort.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       link: "/en/dubai/jumeira-beach/wellness"
     },
     {
       location: "Hong Kong, Mandarin Oriental",
       title: "Signature Traditional Chinese Therapy",
-      imageUrl: "https://images.pexels.com/photos/7610571/pexels-photo-7610571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      imageUrl: "images/wellness2.jpg",
+      // imageUrl: "https://images.pexels.com/photos/7610571/pexels-photo-7610571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       link: "/en/hong-kong/victoria-harbour/wellness/retreat"
     },
     {

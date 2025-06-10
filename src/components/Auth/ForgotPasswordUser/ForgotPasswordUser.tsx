@@ -3,7 +3,7 @@ import { useState, useRef, FormEvent } from 'react';
 import { FaEnvelope } from 'react-icons/fa';
 import styles from './ForgotPasswordUser.module.css';
 import Image from 'next/image';
-import logoImage from '@/assets/icons/logo26.png';
+import logoImage from '@/assets/icons/logo.png';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

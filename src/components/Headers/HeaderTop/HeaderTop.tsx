@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './HeaderTop.module.css';
-import logoImage from '@/assets/icons/logo26.png';
+import logoImage from '@/assets/icons/logo.png';
 import headerTop1 from '@/assets/images/headerTop1.jpg';
 import headerTop2 from '@/assets/images/headerTop2.jpg';
 import Image from 'next/image';

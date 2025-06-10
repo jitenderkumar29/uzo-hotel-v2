@@ -4,6 +4,8 @@ import { FaGift, FaBirthdayCake, FaCalendarAlt, FaUser, FaEnvelope, FaMobileAlt 
 import { GiPartyPopper } from 'react-icons/gi';
 import { MdPets } from 'react-icons/md';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const GiftCards = () => {
   const [activeTab, setActiveTab] = useState('Birthday');
@@ -75,16 +77,42 @@ const GiftCards = () => {
         <h2 className={styles.sectionTitle}>Select Gift Card Category</h2>
 
         <div className={styles.categoryTabs}>
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`${styles.tab} ${activeTab === category.id ? styles.activeTab : ''}`}
-              onClick={() => setActiveTab(category.id)}
-            >
-              <span className={styles.tabIcon}>{category.icon}</span>
-              <span>{category.id}</span>
-            </button>
-          ))}
+          <button
+            className={styles.navButton}
+            onClick={() => {
+              const currentIndex = categories.findIndex(cat => cat.id === activeTab);
+              const prevIndex = (currentIndex - 1 + categories.length) % categories.length;
+              setActiveTab(categories[prevIndex].id);
+            }}
+            disabled={activeTab === categories[0].id}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} className={styles.navButtonIcon}/>
+          </button>
+
+          <div className={styles.tabsContainer}>
+            {categories.map(category => (
+              <button
+                key={category.id}
+                className={`${styles.tab} ${activeTab === category.id ? styles.activeTab : ''}`}
+                onClick={() => setActiveTab(category.id)}
+              >
+                <span className={styles.tabIcon}>{category.icon}</span>
+                <span>{category.id}</span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            className={styles.navButton}
+            onClick={() => {
+              const currentIndex = categories.findIndex(cat => cat.id === activeTab);
+              const nextIndex = (currentIndex + 1) % categories.length;
+              setActiveTab(categories[nextIndex].id);
+            }}
+            disabled={activeTab === categories[categories.length - 1].id}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
         </div>
 
         <div className={styles.formSection}>

@@ -10,40 +10,17 @@ interface Slide {
   imageUrl: string;
 }
 
-const slides: Slide[] = [
-  {
-    title: 'We Are an Unrivaled Leader across Brand Segments',
-    description: 'Our unmatched brand portfolio is the industry’s most diverse: 40+ hotel brands across all segments from luxury to economy, a comprehensive portfolio of extended stay and branded residences, plus entertainment, restaurants & bars, coworking, business services, and more.',
-    imageUrl: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'We Are an Expert Business Partner',
-    description: 'We bring unique expertise and solutions to maximize performance, value, and growth for our partners across operational management, talent, sustainability, procurement, distribution, loyalty, digital, and more. Our Business Booster brands bring deep expertise to drive day-to-day operations and performance.',
-    imageUrl: 'https://images.pexels.com/photos/7876711/pexels-photo-7876711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'We Are Shaping a New Future for Hospitality',
-    description: 'Our pioneering spirit fosters innovation and continuous transformation. We look ahead, trailblazing towards emerging trends and anticipating opportunities. We dynamically form partnerships with start-ups, businesses, and associations, accelerating innovation to design the future of hospitality.',
-    imageUrl: 'https://images.pexels.com/photos/52988/swim-water-diving-underwater-52988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'We Are the Most Diversified Hospitality Group',
-    description: 'Our holistic ecosystem of brands and experiences, value-added services and solutions, all-in-one booking platform, and powerful loyalty program allows us to expand our services and relationships with our clients and enhance the Accor experience both during and beyond hotel stays, while delivering business performance to our partners.',
-    imageUrl: 'https://images.pexels.com/photos/7108317/pexels-photo-7108317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'Global Presence with Local Expertise',
-    description: 'We bring unique expertise and solutions to maximize performance, value, and growth for our partners across operational management, talent, sustainability, procurement, distribution, loyalty, digital, and more. Our Business Booster brands bring deep expertise to drive day-to-day operations and performance.',
-    imageUrl: 'https://images.pexels.com/photos/3182755/pexels-photo-3182755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'Innovation in Guest Experiences',
-    description: 'Our pioneering spirit fosters innovation and continuous transformation. We look ahead, trailblazing towards emerging trends and anticipating opportunities. We dynamically form partnerships with start-ups, businesses, and associations, accelerating innovation to design the future of hospitality.',
-    imageUrl: 'https://images.pexels.com/photos/2451570/pexels-photo-2451570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  }
-];
+interface GroupSlideProps {
+  slides: Slide[];
+  headerTitle?: string;
+  headerDescription?: string;
+}
 
-const GroupSlide: React.FC = () => {
+const GroupSlide: React.FC<GroupSlideProps> = ({
+  slides,
+  headerTitle = "An Integrated Hospitality Ecosystem Designed for Growth",
+  headerDescription = "Our diversified ecosystem of leading brands, tailored services and expert solutions..."
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(3);
   const [expandedSlide, setExpandedSlide] = useState<number | null>(null);
@@ -74,7 +51,6 @@ const GroupSlide: React.FC = () => {
     }
   };
 
-
   const toggleExpand = (index: number) => {
     setExpandedSlide(expandedSlide === index ? null : index);
   };
@@ -84,10 +60,10 @@ const GroupSlide: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            <h3>An Integrated Hospitality Ecosystem Designed for Growth</h3>
+            <h3>{headerTitle}</h3>
           </h2>
           <p className={styles.subtitle}>
-            Our diversified ecosystem of leading brands, tailored services and expert solutions...
+            {headerDescription}
           </p>
         </div>
 
@@ -107,7 +83,6 @@ const GroupSlide: React.FC = () => {
               style={{
                 transform: `translateX(-${(100 / slides.length) * activeIndex}%)`,
                 width: `${slides.length * (100 / visibleSlides)}%`
-
               }}
             >
               {slides.map((slide, index) => (

@@ -5,11 +5,11 @@ export const mockOffers: OfferInterface[] = [
   {
     "id": 1,
     "title": "New User Offer",
-    "description": "Register and Get Discount on First Bookings with EaseMyTrip",
+    "description": "Register and Get Discount on First Bookings with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/emtfirst-3jan24-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFIRST",
+    "promoCode": "UZOFIRST",
     "categories": ["special_insrt", "flight_insrt"]
   },
   {
@@ -19,13 +19,13 @@ export const mockOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 10th Jun, 2025",
-    "promoCode": "EMT17",
+    "promoCode": "UZO17",
     "categories": ["special_insrt"]
   },
   {
     "id": 3,
     "title": "Book With ₹0 Payment",
-    "description": "Book Your Favorite Hotels INR 0 with EaseMyTrip",
+    "description": "Book Your Favorite Hotels INR 0 with UZO Hotels",
     "imageUrl": "/images/bookNow.png",
     "link": "/offersUzo",
     "categories": ["hotel_insrt"]
@@ -36,7 +36,7 @@ export const mockOffers: OfferInterface[] = [
     "description": "Explore Holy Sites with Budget-Friendly Pilgrimage Packages!",
     "imageUrl": "https://images.emtcontent.com/offer-img/EMTDIVINE21-march-25-sm.webp",
     "link": "/offersUzo",
-    "promoCode": "EMTDIVINE",
+    "promoCode": "UZODIVINE",
     "categories": ["special_insrt"]
   },
   {
@@ -52,16 +52,16 @@ export const mockOffers: OfferInterface[] = [
   {
     "id": 6,
     "title": "International Flight Offer",
-    "description": "Book International Flights with EaseMyTrip & Get a Free Universal Travel Adapter",
+    "description": "Book International Flights with UZO Hotels & Get a Free Universal Travel Adapter",
     "imageUrl": "https://images.emtcontent.com/offer-img/international-flights-ticket-25feb25-sm.webp",
     "link": "/offersUzo",
-    "promoCode": "EMTPOWER",
+    "promoCode": "UZOPOWER",
     "categories": ["flight_insrt"]
   },
   {
     "id": 7,
     "title": "Win Assured Vouchers",
-    "description": "Travel with EaseMyTrip to Win Assured Vouchers Worth INR 4000",
+    "description": "Travel with UZO Hotels to Win Assured Vouchers Worth INR 4000",
     "imageUrl": "https://images.emtcontent.com/offer-img/delight-3feb23-sm3.png",
     "link": "/offersUzo",
     "bookingPeriod": "Till 31st Jul, 2025",
@@ -71,7 +71,7 @@ export const mockOffers: OfferInterface[] = [
   {
     "id": 8,
     "title": "Deal of the Day",
-    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "description": "Enjoy Different Deals Each Day with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -80,9 +80,9 @@ export const mockOffers: OfferInterface[] = [
   },
   {
     "id": 9,
-    "title": "EaseMyTrip Co-Branded Cards",
+    "title": "UZO Hotels Co-Branded Cards",
     "description": "Apply for Co-Branded Cards Now & Unlock special benefits and privileges",
-    "imageUrl": "https://images.emtcontent.com/offer-img/emtcards-sm.webp",
+    "imageUrl": "/images/offer1.jpg",
     "link": "/offersUzo",
     "categories": []
   },
@@ -92,7 +92,7 @@ export const mockOffers: OfferInterface[] = [
     "description": "Enjoy the Best of IIFA With Exclusive Travel Discounts",
     "imageUrl": "https://images.emtcontent.com/offer-img/iffa25-sm.webp",
     "link": "/offersUzo",
-    "promoCode": "EMTIIFA",
+    "promoCode": "UZOIIFA",
     "categories": []
   },
   {
@@ -114,17 +114,17 @@ export const mockOffers: OfferInterface[] = [
   {
     "id": 13,
     "title": "Flybig Sale",
-    "description": "Book Your Flybig Flight Tickets with EaseMyTrip & Enjoy Rs.500 off",
+    "description": "Book Your Flybig Flight Tickets with UZO Hotels & Enjoy Rs.500 off",
     "imageUrl": "https://images.emtcontent.com/offer-img/flybig-airlines-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTBIG",
+    "promoCode": "UZOBIG",
     "categories": ["flight_insrt"]
   },
   {
     "id": 14,
     "title": "Free Cab offer",
-    "description": "Enjoy Free Cab on Flight Bookings with EaseMyTrip",
+    "description": "Enjoy Free Cab on Flight Bookings with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/free-cab-8jan24-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -133,31 +133,31 @@ export const mockOffers: OfferInterface[] = [
   },
   {
     "id": 15,
-    "title": "BOB EMT Debit Cards",
-    "description": "Enjoy Amazing Discounts on Flights, Hotels, Bus with BOB EMT Debit Cards",
+    "title": "BOB UZO Debit Cards",
+    "description": "Enjoy Amazing Discounts on Flights, Hotels, Bus with BOB UZO Debit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/bob-bank-18mar25-sm3.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till : 31st Dec, 2025",
-    "promoCode": "EMTBOBDC",
+    "promoCode": "UZOBOBDC",
     "categories": ["bob_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
     "id": 16,
-    "title": "PNB EMT Credit Cards",
-    "description": "Wander the world with Wonderful Deals with PNB EMT Credit Cards",
+    "title": "PNB UZO Credit Cards",
+    "description": "Wander the world with Wonderful Deals with PNB UZO Credit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/pnb-emt-co-branded-credit-card-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till : 31st Dec, 2026",
-    "promoCode": "PNBEMT",
+    "promoCode": "PNBUZO",
     "categories": ["bnk_insrt"]
   },
   {
     "id": 17,
     "title": "Standard Chartered",
-    "description": "Travel discounts on the Standard Chartered - EaseMyTrip Credit Cards",
+    "description": "Travel discounts on the Standard Chartered - UZO Hotels Credit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/emtscb-16july-sm.png",
     "link": "/offersUzo",
-    "promoCode": "EMTSCB",
+    "promoCode": "UZOSCB",
     "categories": ["bnk_insrt"]
   },
   {
@@ -193,11 +193,11 @@ export const mockOffers: OfferInterface[] = [
   {
     "id": 21,
     "title": "Special Discounts",
-    "description": "Get Irresistible Discounts on Flight, Hotel and Bus Bookings with EaseMyTrip",
+    "description": "Get Irresistible Discounts on Flight, Hotel and Bus Bookings with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/tripemt-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "TRIPEMT",
+    "promoCode": "TRIPUZO",
     "categories": ["bus_insrt", "flight_insrt", "hotel_insrt"]
   },
   {
@@ -217,7 +217,7 @@ export const mockOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-deal-for-flyers-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFLY",
+    "promoCode": "UZOFLY",
     "categories": ["hotel_insrt"]
   },
   {
@@ -227,7 +227,7 @@ export const mockOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-new-8jan25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFIRST",
+    "promoCode": "UZOFIRST",
     "categories": ["hotel_insrt"]
   },
   {
@@ -237,7 +237,7 @@ export const mockOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/bus-img/emtbus-7jan25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTBUS",
+    "promoCode": "UZOBUS",
     "categories": ["bus_insrt"]
   },
   {
@@ -257,13 +257,13 @@ export const mockOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/cab-img/cab-deal-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTCAB",
+    "promoCode": "UZOCAB",
     "categories": ["cab_insrt"]
   },
   {
     "id": 28,
     "title": "Domestic Flight Sale",
-    "description": "Book Your Domestic Flight Tickets with EaseMyTrip & Enjoy Rs.305 off",
+    "description": "Book Your Domestic Flight Tickets with UZO Hotels & Enjoy Rs.305 off",
     "imageUrl": "https://images.emtcontent.com/offer-img/domestic-flight-ticket-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -296,7 +296,7 @@ export const mockOffers: OfferInterface[] = [
   },
   {
     "id": 32,
-    "title": "Chat with EaseMyTrip",
+    "title": "Chat with UZO Hotels",
     "description": "Get instant solution for your queries on WhatsApp Chat",
     "imageUrl": "https://images.emtcontent.com/offer-img/whatsapp-sm.png",
     "link": "/offersUzo",
@@ -304,12 +304,12 @@ export const mockOffers: OfferInterface[] = [
   },
   {
     "id": 33,
-    "title": "EMT Wallet",
+    "title": "UZO Wallet",
     "description": "For Your Cancellation Refunds, Cashbacks, And New Booking",
-    "imageUrl": "https://images.emtcontent.com/offer-img/wallet-sm.png",
+    "imageUrl": "/images/offer2.jpg",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTCASH",
+    "promoCode": "UZOCASH",
     "categories": ["special_insrt"]
   }
 ];
@@ -351,7 +351,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/hdfc-pixel-credit-card-sm1.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTPIXEMI",
+    "promoCode": "UZOPIXEMI",
     "categories": ["hdfc_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -371,7 +371,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/airtel-payment-bank-11mar25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTAIRTEL",
+    "promoCode": "UZOAIRTEL",
     "categories": ["mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -391,7 +391,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/hsbc-20feb25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2025",
-    "promoCode": "EMTHSBCT1",
+    "promoCode": "UZOHSBCT1",
     "categories": ["hsbc_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -401,7 +401,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/ICICIEMT-10-04-25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "ICICIEMT",
+    "promoCode": "ICICIUZO",
     "categories": ["icici_insrt"]
   },
   {
@@ -411,7 +411,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/tide-card-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "TIDEMT",
+    "promoCode": "TIDUZO",
     "categories": ["tide_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -431,17 +431,17 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/federal-bank-credit-card-6mar25-mob.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFEDEMI",
+    "promoCode": "UZOFEDEMI",
     "categories": ["federal_insrt"]
   },
   {
     "id": 12,
-    "title": "BOB EMT Debit Cards",
-    "description": "Enjoy Amazing Discounts on Flights, Hotels, Bus with BOB EMT Debit Cards",
+    "title": "BOB UZO Debit Cards",
+    "description": "Enjoy Amazing Discounts on Flights, Hotels, Bus with BOB UZO Debit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/bob-bank-18mar25-sm3.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2025",
-    "promoCode": "EMTBOBDC",
+    "promoCode": "UZOBOBDC",
     "categories": ["bob_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -471,7 +471,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/emtyes-26feb25-sm2.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTYES",
+    "promoCode": "UZOYES",
     "categories": ["yes_insrt", "wed_insrt"]
   },
   {
@@ -481,7 +481,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/dbs-bank-debit-card-20mar25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTDBSINT",
+    "promoCode": "UZODBSINT",
     "categories": ["dbs_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -496,12 +496,12 @@ export const bankOffers: OfferInterface[] = [
   },
   {
     "id": 18,
-    "title": "PNB EMT Credit Cards",
-    "description": "Wander the world with Wonderful Deals with PNB EMT Credit Cards",
+    "title": "PNB UZO Credit Cards",
+    "description": "Wander the world with Wonderful Deals with PNB UZO Credit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/pnb-emt-co-branded-credit-card-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2026",
-    "promoCode": "PNBEMT",
+    "promoCode": "PNBUZO",
     "categories": ["pnb_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -521,7 +521,7 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/EMTMBK-27-may-25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTMBK",
+    "promoCode": "UZOMBK",
     "categories": ["mobiKwik_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   },
   {
@@ -531,17 +531,17 @@ export const bankOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/digibank-21jan25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2025",
-    "promoCode": "DBSEMT",
+    "promoCode": "DBSUZO",
     "categories": ["dbs_insrt"]
   },
   {
     "id": 22,
     "title": "Standard Chartered",
-    "description": "Travel discounts on the Standard Chartered - EaseMyTrip Credit Cards",
+    "description": "Travel discounts on the Standard Chartered - UZO Hotels Credit Cards",
     "imageUrl": "https://images.emtcontent.com/offer-img/emtscb-16july-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2025",
-    "promoCode": "EMTSCB",
+    "promoCode": "UZOSCB",
     "categories": ["standard_insrt", "mon_insrt", "tue_insrt", "wed_insrt", "thu_insrt", "fri_insrt", "sat_insrt", "sun_insrt"]
   }
 ];
@@ -584,7 +584,7 @@ export const flightOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/emtfirst-3jan24-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFIRST",
+    "promoCode": "UZOFIRST",
     "categories": ["new_user"]
   },
   {
@@ -594,7 +594,7 @@ export const flightOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 10th Jun, 2025",
-    "promoCode": "EMT17",
+    "promoCode": "UZO17",
     "categories": ["anniversary"]
   },
   {
@@ -691,7 +691,7 @@ export const hotelOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/emtstay-12may25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTHOTELS",
+    "promoCode": "UZOHOTELS",
     "categories": ["hotel_deals"]
   },
   {
@@ -701,7 +701,7 @@ export const hotelOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/17th-anniversary-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 10th Jun, 2025",
-    "promoCode": "EMT17",
+    "promoCode": "UZO17",
     "categories": ["anniversary_sale"]
   },
   {
@@ -711,13 +711,13 @@ export const hotelOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-new-6feb25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFIRST",
+    "promoCode": "UZOFIRST",
     "categories": ["new_user", "hotel"]
   },
   {
     "id": 4,
     "title": "Book With ₹0 Payment",
-    "description": "Book Your Favorite Hotels INR 0 with EaseMyTrip",
+    "description": "Book Your Favorite Hotels INR 0 with UZO Hotels",
     "imageUrl": "/images/bookNow.png",
     "link": "/offersUzo",
     "bookingPeriod": "Book Now",
@@ -780,7 +780,7 @@ export const hotelOffers: OfferInterface[] = [
   {
     "id": 11,
     "title": "Amritara Hotels",
-    "description": "Unlock Up to 40% OFF* on Booking Amritara Hotels & Resorts with EaseMyTrip",
+    "description": "Unlock Up to 40% OFF* on Booking Amritara Hotels & Resorts with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/hotel-img/amritara-hotels-27feb25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -817,7 +817,7 @@ export const hotelOffers: OfferInterface[] = [
   {
     "id": 15,
     "title": "Sterling Hotels",
-    "description": "Book Sterling Hotels & Grab Unbeatable Discounts with EaseMyTrip",
+    "description": "Book Sterling Hotels & Grab Unbeatable Discounts with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/hotel-img/sterling-hotels-17June24-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -871,7 +871,7 @@ export const hotelOffers: OfferInterface[] = [
   {
     "id": 21,
     "title": "Deal of the Day",
-    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "description": "Enjoy Different Deals Each Day with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -885,7 +885,7 @@ export const hotelOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/hotel-deal-for-flyers-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFLY",
+    "promoCode": "UZOFLY",
     "categories": ["flyers_deal"]
   },
   {
@@ -911,7 +911,7 @@ export const hotelOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/hotel-img/emt30-7aug24-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMT30",
+    "promoCode": "UZO30",
     "categories": ["last_minute"]
   },
   {
@@ -932,11 +932,11 @@ export const busOffers: OfferInterface[] = [
   {
     "id": 1,
     "title": "New User Offer",
-    "description": "Grab Discount Up to Rs. 250 on First Bus Booking with EaseMyTrip",
+    "description": "Grab Discount Up to Rs. 250 on First Bus Booking with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/bus-img/bus-new-user-27dec24-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTFIRST",
+    "promoCode": "UZOFIRST",
     "categories": ["bus", "new_user"]
   },
   {
@@ -946,7 +946,7 @@ export const busOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/bus-img/emtbus-7jan25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTBUS",
+    "promoCode": "UZOBUS",
     "categories": ["bus", "discount"]
   },
   {
@@ -956,13 +956,13 @@ export const busOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/bus-img/zingbus-23aug24-sm2.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTZING",
+    "promoCode": "UZOZING",
     "categories": ["bus", "zingbus"]
   },
   {
     "id": 4,
     "title": "Deal of the Day",
-    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "description": "Enjoy Different Deals Each Day with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -976,7 +976,7 @@ export const busOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/bus-img/vrl-bus-29aug24-sm2.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTVRL",
+    "promoCode": "UZOVRL",
     "categories": ["bus", "vrl_travel"]
   },
   {
@@ -997,7 +997,7 @@ export const cabOffers: OfferInterface[] = [
   {
     "id": 1,
     "title": "Deal of the Day",
-    "description": "Enjoy Different Deals Each Day with EaseMyTrip",
+    "description": "Enjoy Different Deals Each Day with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/offer-img/easeday14apr23-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
@@ -1007,11 +1007,11 @@ export const cabOffers: OfferInterface[] = [
   {
     "id": 2,
     "title": "Hourly rental cab",
-    "description": "Get up to Rs. 900 OFF on Cab Bookings with EaseMyTrip",
+    "description": "Get up to Rs. 900 OFF on Cab Bookings with UZO Hotels",
     "imageUrl": "https://images.emtcontent.com/cab-img/rental-cabs-7aug24-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTHOURLY",
+    "promoCode": "UZOHOURLY",
     "categories": ["cab", "rental", "discount"]
   },
   {
@@ -1021,7 +1021,7 @@ export const cabOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/cab-img/cab-deal-sm2.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTCAB",
+    "promoCode": "UZOCAB",
     "categories": ["cab", "discount"]
   },
   {
@@ -1116,7 +1116,7 @@ export const hotOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/first-cry-07march25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st March, 2026",
-    "promoCode": "FCEMT40",
+    "promoCode": "FCUZO40",
     "categories": ["shopping", "baby"]
   },
   {
@@ -1126,7 +1126,7 @@ export const hotOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/salty-27feb27-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st July, 2025",
-    "promoCode": "EMT333",
+    "promoCode": "UZO333",
     "categories": ["fashion", "accessories"]
   },
   {
@@ -1136,7 +1136,7 @@ export const hotOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/isak-fragrances-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 30th Jun, 2025",
-    "promoCode": "EMTXISAK",
+    "promoCode": "UZOXISAK",
     "categories": ["beauty", "fragrance"]
   },
   {
@@ -1156,7 +1156,7 @@ export const hotOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/kedia-19jul24-sm.png",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st July, 2025",
-    "promoCode": "EMT",
+    "promoCode": "UZO",
     "categories": ["finance", "investment"]
   },
   {
@@ -1166,7 +1166,7 @@ export const hotOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/offer-img/eat-sure-24jan25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till: 31st Dec, 2025",
-    "promoCode": "EMTES120",
+    "promoCode": "UZOES120",
     "categories": ["food", "delivery"]
   },
   {
@@ -1211,7 +1211,7 @@ export const expiredOffers: OfferInterface[] = [
     "imageUrl": "https://images.emtcontent.com/bus-img/yolo-bus-31may25-sm.webp",
     "link": "/offersUzo",
     "bookingPeriod": "Till 31st May, 2025",
-    "promoCode": "EMT100",
+    "promoCode": "UZO100",
     "categories": ["bus"]
   },
   {
@@ -1256,9 +1256,9 @@ export const expiredOffers: OfferInterface[] = [
   },
   {
     "id": 7,
-    "title": "Indigo Flight Deal",
+    "title": "UZO Flight Deal",
     "description": "Get Up to 10% OFF* on Domestic & International Flights with IndiGo Airlines",
-    "imageUrl": "https://images.emtcontent.com/offer-img/Indigo-29-04-25-sm.webp",
+    "imageUrl": "/images/offer3.jpg",
     "link": "/offersUzo",
     "bookingPeriod": "Valid till : 30th May 2025",
     "promoCode": "",
