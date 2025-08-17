@@ -263,104 +263,106 @@ const ImagePagination: React.FC = () => {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className={styles.carouselContainer}>
-      <div className={styles.carouselWrapper}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlide}
-            className={styles.carouselSlide}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={imageVariants}
-          >
-            <Image
-              src={currentSlide.image}
-              alt={currentSlide.alt}
-              className={styles.slideImage}
-              width={1600}
-              height={800}
-              priority
-            />
+    <div className={styles.carouselContainerBody}>
+      <div className={styles.carouselContainerBodyPad}>
+        <div className={styles.carouselContainer}>
+          <div className={styles.carouselWrapper}>
             <AnimatePresence mode="wait">
               <motion.div
-                key={`content-${activeSlide}`}
-                className={styles.slideContent}
+                key={activeSlide}
+                className={styles.carouselSlide}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={{
-                  hidden: {},
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.15,
-                      delayChildren: 0.2,
-                    },
-                  },
-                  exit: {
-                    transition: {
-                      staggerChildren: 0.1,
-                      staggerDirection: -1,
-                    },
-                  },
-                }}
+                variants={imageVariants}
               >
-                {/* Top-down: title */}
-                <motion.h3
-                  className={styles.slideTitle}
-                  variants={{
-                    hidden: { opacity: 0, y: -40 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-                    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
-                  }}
-                >
-                  <span>{currentSlide.title}</span>{" "}
-                  <span className={styles.title2}>{currentSlide.title2}</span>
-                </motion.h3>
-
-                {/* Top-down: title2 */}
-                <motion.h3
-                  className={styles.slideTitle2}
-                  variants={{
-                    hidden: { opacity: 0, y: -40 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-                    exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
-                  }}
-                >
-                  <span>{currentSlide.title3}</span>{" "}
-                  <span className={styles.title4}>{currentSlide.title4}</span>
-                </motion.h3>
-
-                {/* Bottom-up: description */}
-                <motion.p
-                  className={styles.slideDescription}
-                  variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-                    exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
-                  }}
-                >
-                  {currentSlide.description}
-                </motion.p>
-
-                {/* Bottom-up: description2 (conditionally) */}
-                {currentSlide.description2 && (
-                  <motion.p
-                    className={styles.slideDescription}
+                <Image
+                  src={currentSlide.image}
+                  alt={currentSlide.alt}
+                  className={styles.slideImage}
+                  width={1600}
+                  height={800}
+                  priority
+                />
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`content-${activeSlide}`}
+                    className={styles.slideContent}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
                     variants={{
-                      hidden: { opacity: 0, y: 40 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-                      exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
+                      hidden: {},
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.15,
+                          delayChildren: 0.2,
+                        },
+                      },
+                      exit: {
+                        transition: {
+                          staggerChildren: 0.1,
+                          staggerDirection: -1,
+                        },
+                      },
                     }}
                   >
-                    {currentSlide.description2}
-                  </motion.p>
-                )}
-              </motion.div>
-            </AnimatePresence>
+                    {/* Top-down: title */}
+                    <motion.h3
+                      className={styles.slideTitle}
+                      variants={{
+                        hidden: { opacity: 0, y: -40 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                        exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
+                      }}
+                    >
+                      <span>{currentSlide.title}</span>{" "}
+                      <span className={styles.title2}>{currentSlide.title2}</span>
+                    </motion.h3>
+
+                    {/* Top-down: title2 */}
+                    <motion.h3
+                      className={styles.slideTitle2}
+                      variants={{
+                        hidden: { opacity: 0, y: -40 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                        exit: { opacity: 0, y: -30, transition: { duration: 0.4, ease: "easeIn" } },
+                      }}
+                    >
+                      <span>{currentSlide.title3}</span>{" "}
+                      <span className={styles.title4}>{currentSlide.title4}</span>
+                    </motion.h3>
+
+                    {/* Bottom-up: description */}
+                    <motion.p
+                      className={styles.slideDescription}
+                      variants={{
+                        hidden: { opacity: 0, y: 40 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                        exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
+                      }}
+                    >
+                      {currentSlide.description}
+                    </motion.p>
+
+                    {/* Bottom-up: description2 (conditionally) */}
+                    {currentSlide.description2 && (
+                      <motion.p
+                        className={styles.slideDescription}
+                        variants={{
+                          hidden: { opacity: 0, y: 40 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                          exit: { opacity: 0, y: 30, transition: { duration: 0.4, ease: "easeIn" } },
+                        }}
+                      >
+                        {currentSlide.description2}
+                      </motion.p>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
 
 
-            {/* <div className={styles.slideContent}>
+                {/* <div className={styles.slideContent}>
               <h3 className={styles.slideTitle}>
                 <span>{currentSlide.title}</span>{" "}
                 <span className={styles.title2}>{currentSlide.title2}</span>
@@ -374,37 +376,39 @@ const ImagePagination: React.FC = () => {
                 <p className={styles.slideDescription}>{currentSlide.description2}</p>
               )}
             </div> */}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-      {/* Controls */}
-      <div className={styles.carouselControls}>
-        <button
-          onClick={togglePlayPause}
-          className={styles.playPauseButton}
-          aria-label={isPlaying ? "Pause" : "Play"}
-        >
-          {isPlaying ? (
-            <div className={styles.pauseIcon}>
-              <span></span>
-              <span></span>
-            </div>
-          ) : (
-            <div className={styles.playIcon}></div>
-          )}
-        </button>
-
-        <div className={styles.carouselDots}>
-          {slides.map((_, index) => (
+          {/* Controls */}
+          <div className={styles.carouselControls}>
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`${styles.carouselDot} ${index === activeSlide ? styles.active : ''}`}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === activeSlide ? true : undefined}
-            />
-          ))}
+              onClick={togglePlayPause}
+              className={styles.playPauseButton}
+              aria-label={isPlaying ? "Pause" : "Play"}
+            >
+              {isPlaying ? (
+                <div className={styles.pauseIcon}>
+                  <span></span>
+                  <span></span>
+                </div>
+              ) : (
+                <div className={styles.playIcon}></div>
+              )}
+            </button>
+
+            <div className={styles.carouselDots}>
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`${styles.carouselDot} ${index === activeSlide ? styles.active : ''}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === activeSlide ? true : undefined}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

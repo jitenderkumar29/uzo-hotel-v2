@@ -106,6 +106,7 @@ const Login = () => {
               </span>
             </div>
           </div>
+          
           <div className={styles.loginBox}>
             <div className={styles.loginHeader}>
               <span>Login</span>
@@ -219,6 +220,7 @@ const Login = () => {
                   </Link>
                 </span>
               </div>
+              
             </form>
           </div>
         </div>
